@@ -1508,7 +1508,7 @@
 		        if (gameover) {
 		            isDragging = false;
 
-		            if (music) music.loop = false;
+		            if (music) music.pause();
 
 		        	koishi.ontouchstart = null;
 		    		koishi.ontouchend = null;
