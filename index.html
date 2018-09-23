@@ -59,6 +59,7 @@
 
         .skip-start-animation .start-animation,
         .skip-start-animation .start-animation:before {
+            -webkit-animation: none !important;
             animation: none !important;
         }
 
@@ -68,6 +69,7 @@
 
         .no-animation *,
         .no-animation *:before {
+            -webkit-animation-play-state: paused !important;
             animation-play-state: paused !important;
         }
 
@@ -88,12 +90,30 @@
             text-decoration: none;
         }
 
+        @-webkit-keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         @keyframes fade-in {
             from {
                 opacity: 0;
             }
             to {
                 opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
             }
         }
 
@@ -139,12 +159,17 @@
             text-align: center;
             margin: 1em auto 1.5em auto;
             border-radius: 2px;
+            -webkit-transform: scaleX(0);
             transform: scaleX(0);
+            -webkit-transform-origin: right;
             transform-origin: right;
+            transition: 0.25s -webkit-transform 0.25s;
             transition: 0.25s transform 0.25s;
+            transition: 0.25s transform 0.25s, 0.25s -webkit-transform 0.25s;
         }
 
         section.not-mainmenu:target>.text-container>h1 {
+            -webkit-transform: scaleX(1);
             transform: scaleX(1);
         }
 
@@ -225,12 +250,17 @@
         }
 
         .not-mainmenu>.text-container {
+            transition: 0.25s -webkit-transform;
             transition: 0.25s transform;
+            transition: 0.25s transform, 0.25s -webkit-transform;
+            -webkit-transform-origin: bottom right;
             transform-origin: bottom right;
+            -webkit-transform: scale(0);
             transform: scale(0);
         }
 
         section.not-mainmenu:target>.text-container {
+            -webkit-transform: scale(1);
             transform: scale(1);
         }
 
@@ -251,14 +281,28 @@
             width: calc(100% + 129vh);
             height: 70vh;
             z-index: -1;
+            -webkit-animation: 30s sky-move 0.1s linear infinite;
             animation: 30s sky-move 0.1s linear infinite;
+        }
+
+        @-webkit-keyframes sky-move {
+            0% {
+                -webkit-transform: translateX(0vh);
+                transform: translateX(0vh);
+            }
+            100% {
+                -webkit-transform: translateX(-129vh);
+                transform: translateX(-129vh);
+            }
         }
 
         @keyframes sky-move {
             0% {
+                -webkit-transform: translateX(0vh);
                 transform: translateX(0vh);
             }
             100% {
+                -webkit-transform: translateX(-129vh);
                 transform: translateX(-129vh);
             }
         }
@@ -272,14 +316,28 @@
             width: calc(100% + 5vh);
             height: 32.5vh;
             margin-top: 6.5vh;
+            -webkit-animation: 0.375s railings-move 0.15s linear infinite;
             animation: 0.375s railings-move 0.15s linear infinite;
+        }
+
+        @-webkit-keyframes railings-move {
+            0% {
+                -webkit-transform: translateX(0vh);
+                transform: translateX(0vh);
+            }
+            100% {
+                -webkit-transform: translateX(-5vh);
+                transform: translateX(-5vh);
+            }
         }
 
         @keyframes railings-move {
             0% {
+                -webkit-transform: translateX(0vh);
                 transform: translateX(0vh);
             }
             100% {
+                -webkit-transform: translateX(-5vh);
                 transform: translateX(-5vh);
             }
         }
@@ -288,15 +346,30 @@
             background: linear-gradient(to right, rgba(0, 0, 0, 0.25) 50%, transparent 50%) 0 0/12vh 100% repeat-x, linear-gradient(to bottom, yellow, burlywood);
             width: calc(100% + 12vh);
             height: 12vh;
+            -webkit-transform-origin: top;
             transform-origin: top;
+            -webkit-animation: 0.9s floor-move 0.2s linear infinite;
             animation: 0.9s floor-move 0.2s linear infinite;
+        }
+
+        @-webkit-keyframes floor-move {
+            0% {
+                -webkit-transform: perspective(20vh) rotateX(30deg) translateX(0vh);
+                transform: perspective(20vh) rotateX(30deg) translateX(0vh);
+            }
+            100% {
+                -webkit-transform: perspective(20vh) rotateX(30deg) translateX(-12vh);
+                transform: perspective(20vh) rotateX(30deg) translateX(-12vh);
+            }
         }
 
         @keyframes floor-move {
             0% {
+                -webkit-transform: perspective(20vh) rotateX(30deg) translateX(0vh);
                 transform: perspective(20vh) rotateX(30deg) translateX(0vh);
             }
             100% {
+                -webkit-transform: perspective(20vh) rotateX(30deg) translateX(-12vh);
                 transform: perspective(20vh) rotateX(30deg) translateX(-12vh);
             }
         }
@@ -322,6 +395,7 @@
         }
 
         .not-mainmenu:target~#mainmenu #koishi-walk-containr>div {
+            -webkit-animation-play-state: paused !important;
             animation-play-state: paused !important;
         }
 
@@ -332,17 +406,36 @@
             left: 1vh;
             width: 39.40vh;
             height: 80vh;
+            -webkit-animation: 0.75s koishi-walk-body-move infinite;
             animation: 0.75s koishi-walk-body-move infinite;
+        }
+
+        @-webkit-keyframes koishi-walk-body-move {
+            0% {
+                -webkit-transform: translateX(0vh);
+                transform: translateX(0vh);
+            }
+            75% {
+                -webkit-transform: translateX(0.15vh);
+                transform: translateX(0.15vh);
+            }
+            100% {
+                -webkit-transform: translateX(0.15vh);
+                transform: translateX(0.15vh);
+            }
         }
 
         @keyframes koishi-walk-body-move {
             0% {
+                -webkit-transform: translateX(0vh);
                 transform: translateX(0vh);
             }
             75% {
+                -webkit-transform: translateX(0.15vh);
                 transform: translateX(0.15vh);
             }
             100% {
+                -webkit-transform: translateX(0.15vh);
                 transform: translateX(0.15vh);
             }
         }
@@ -351,56 +444,140 @@
             background: url(koishi-walk.svg) 0 0/157.62vh 400vh no-repeat;
             width: 157.62vh;
             height: 400vh;
+            -webkit-animation: 1.5s koishi-walk-leg-move steps(1) infinite;
             animation: 1.5s koishi-walk-leg-move steps(1) infinite;
+        }
+
+        @-webkit-keyframes koishi-walk-leg-move {
+            0% {
+                -webkit-transform: translate3d(0vh, 0vh, 0);
+                transform: translate3d(0vh, 0vh, 0);
+            }
+            6.67% {
+                -webkit-transform: translate3d(-39.4vh, 0vh, 0);
+                transform: translate3d(-39.4vh, 0vh, 0);
+            }
+            13.33% {
+                -webkit-transform: translate3d(-78.8vh, 0vh, 0);
+                transform: translate3d(-78.8vh, 0vh, 0);
+            }
+            20% {
+                -webkit-transform: translate3d(-118.2vh, 0vh, 0);
+                transform: translate3d(-118.2vh, 0vh, 0);
+            }
+            26.67% {
+                -webkit-transform: translate3d(0vh, -80vh, 0);
+                transform: translate3d(0vh, -80vh, 0);
+            }
+            33.33% {
+                -webkit-transform: translate3d(-39.4vh, -80vh, 0);
+                transform: translate3d(-39.4vh, -80vh, 0);
+            }
+            40% {
+                -webkit-transform: translate3d(-78.8vh, -80vh, 0);
+                transform: translate3d(-78.8vh, -80vh, 0);
+            }
+            46.67% {
+                -webkit-transform: translate3d(-118.2vh, -80vh, 0);
+                transform: translate3d(-118.2vh, -80vh, 0);
+            }
+            53.33% {
+                -webkit-transform: translate3d(0vh, -160vh, 0);
+                transform: translate3d(0vh, -160vh, 0);
+            }
+            60% {
+                -webkit-transform: translate3d(-39.4vh, -160vh, 0);
+                transform: translate3d(-39.4vh, -160vh, 0);
+            }
+            66.67% {
+                -webkit-transform: translate3d(-78.8vh, -160vh, 0);
+                transform: translate3d(-78.8vh, -160vh, 0);
+            }
+            73.33% {
+                -webkit-transform: translate3d(-118.2vh, -160vh, 0);
+                transform: translate3d(-118.2vh, -160vh, 0);
+            }
+            80% {
+                -webkit-transform: translate3d(0vh, -240vh, 0);
+                transform: translate3d(0vh, -240vh, 0);
+            }
+            86.67% {
+                -webkit-transform: translate3d(-39.4vh, -240vh, 0);
+                transform: translate3d(-39.4vh, -240vh, 0);
+            }
+            93.33% {
+                -webkit-transform: translate3d(-78.8vh, -240vh, 0);
+                transform: translate3d(-78.8vh, -240vh, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(-118.2vh, -240vh, 0);
+                transform: translate3d(-118.2vh, -240vh, 0);
+            }
         }
 
         @keyframes koishi-walk-leg-move {
             0% {
+                -webkit-transform: translate3d(0vh, 0vh, 0);
                 transform: translate3d(0vh, 0vh, 0);
             }
             6.67% {
+                -webkit-transform: translate3d(-39.4vh, 0vh, 0);
                 transform: translate3d(-39.4vh, 0vh, 0);
             }
             13.33% {
+                -webkit-transform: translate3d(-78.8vh, 0vh, 0);
                 transform: translate3d(-78.8vh, 0vh, 0);
             }
             20% {
+                -webkit-transform: translate3d(-118.2vh, 0vh, 0);
                 transform: translate3d(-118.2vh, 0vh, 0);
             }
             26.67% {
+                -webkit-transform: translate3d(0vh, -80vh, 0);
                 transform: translate3d(0vh, -80vh, 0);
             }
             33.33% {
+                -webkit-transform: translate3d(-39.4vh, -80vh, 0);
                 transform: translate3d(-39.4vh, -80vh, 0);
             }
             40% {
+                -webkit-transform: translate3d(-78.8vh, -80vh, 0);
                 transform: translate3d(-78.8vh, -80vh, 0);
             }
             46.67% {
+                -webkit-transform: translate3d(-118.2vh, -80vh, 0);
                 transform: translate3d(-118.2vh, -80vh, 0);
             }
             53.33% {
+                -webkit-transform: translate3d(0vh, -160vh, 0);
                 transform: translate3d(0vh, -160vh, 0);
             }
             60% {
+                -webkit-transform: translate3d(-39.4vh, -160vh, 0);
                 transform: translate3d(-39.4vh, -160vh, 0);
             }
             66.67% {
+                -webkit-transform: translate3d(-78.8vh, -160vh, 0);
                 transform: translate3d(-78.8vh, -160vh, 0);
             }
             73.33% {
+                -webkit-transform: translate3d(-118.2vh, -160vh, 0);
                 transform: translate3d(-118.2vh, -160vh, 0);
             }
             80% {
+                -webkit-transform: translate3d(0vh, -240vh, 0);
                 transform: translate3d(0vh, -240vh, 0);
             }
             86.67% {
+                -webkit-transform: translate3d(-39.4vh, -240vh, 0);
                 transform: translate3d(-39.4vh, -240vh, 0);
             }
             93.33% {
+                -webkit-transform: translate3d(-78.8vh, -240vh, 0);
                 transform: translate3d(-78.8vh, -240vh, 0);
             }
             100% {
+                -webkit-transform: translate3d(-118.2vh, -240vh, 0);
                 transform: translate3d(-118.2vh, -240vh, 0);
             }
         }
@@ -411,27 +588,44 @@
             left: 0;
             width: 100%;
             height: 50%;
+            -webkit-transform: scaleY(0);
             transform: scaleY(0);
+            -webkit-animation: 0.5s curtain-scale 0.25s backwards;
             animation: 0.5s curtain-scale 0.25s backwards;
         }
 
         .curtain.top {
             top: 0;
+            -webkit-transform-origin: top;
             transform-origin: top;
             border-bottom: 1px solid orange;
         }
 
         .curtain.bottom {
             bottom: 0;
+            -webkit-transform-origin: bottom;
             transform-origin: bottom;
             border-top: 1px solid orange;
         }
 
-        @keyframes curtain-scale {
+        @-webkit-keyframes curtain-scale {
             0% {
+                -webkit-transform: scaleY(1);
                 transform: scaleY(1);
             }
             100% {
+                -webkit-transform: scaleY(0);
+                transform: scaleY(0);
+            }
+        }
+
+        @keyframes curtain-scale {
+            0% {
+                -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+            }
+            100% {
+                -webkit-transform: scaleY(0);
                 transform: scaleY(0);
             }
         }
@@ -453,8 +647,11 @@
             margin-top: 30vh;
             width: 100%;
             height: 10vh;
+            -webkit-transform: scaleY(0);
             transform: scaleY(0);
+            transition: 0.25s -webkit-transform;
             transition: 0.25s transform;
+            transition: 0.25s transform, 0.25s -webkit-transform;
         }
 
         .not-mainmenu:target~#mainmenu>hgroup,
@@ -482,6 +679,7 @@
             border-radius: 100%;
             box-shadow: 0 0 2vmin rgba(0, 0, 0, 0.5);
             z-index: 10;
+            -webkit-animation: 0.5s nav-move 0.25s backwards;
             animation: 0.5s nav-move 0.25s backwards;
         }
 
@@ -495,6 +693,7 @@
             bottom: 0;
             opacity: 0;
             z-index: -1;
+            -webkit-animation: 0.25s fade-out 0.5s backwards;
             animation: 0.25s fade-out 0.5s backwards;
         }
 
@@ -503,6 +702,7 @@
             list-style: none;
             margin: 3.5vh auto 0 auto;
             padding: 0;
+            -webkit-animation: 0.25s fade-in 0.5s backwards;
             animation: 0.25s fade-in 0.5s backwards;
         }
 
@@ -523,11 +723,24 @@
             color: white;
         }
 
-        @keyframes nav-move {
+        @-webkit-keyframes nav-move {
             0% {
+                -webkit-transform: translate3d(50vw, -27vh, 0) translate3d(-2vmin, -2vmin, 0) translateX(-50%) rotateZ(180deg);
                 transform: translate3d(50vw, -27vh, 0) translate3d(-2vmin, -2vmin, 0) translateX(-50%) rotateZ(180deg);
             }
             100% {
+                -webkit-transform: translate3d(0vh, 0vh, 0) translate3d(0vmin, 0vmin, 0) translateX(0%) rotateZ(-360deg);
+                transform: translate3d(0vh, 0vh, 0) translate3d(0vmin, 0vmin, 0) translateX(0%) rotateZ(-360deg);
+            }
+        }
+
+        @keyframes nav-move {
+            0% {
+                -webkit-transform: translate3d(50vw, -27vh, 0) translate3d(-2vmin, -2vmin, 0) translateX(-50%) rotateZ(180deg);
+                transform: translate3d(50vw, -27vh, 0) translate3d(-2vmin, -2vmin, 0) translateX(-50%) rotateZ(180deg);
+            }
+            100% {
+                -webkit-transform: translate3d(0vh, 0vh, 0) translate3d(0vmin, 0vmin, 0) translateX(0%) rotateZ(-360deg);
                 transform: translate3d(0vh, 0vh, 0) translate3d(0vmin, 0vmin, 0) translateX(0%) rotateZ(-360deg);
             }
         }
@@ -561,53 +774,120 @@
             width: 330vh;
             height: 240vh;
             cursor: pointer;
+            -webkit-animation: 1s koishi-float-move steps(1) infinite;
             animation: 1s koishi-float-move steps(1) infinite;
+            -webkit-animation-play-state: paused;
             animation-play-state: paused;
         }
 
         #about:target #koishi-float {
+            -webkit-animation-play-state: running;
             animation-play-state: running;
         }
 
         #koishi-float:hover {
+            -webkit-animation-play-state: paused !important;
             animation-play-state: paused !important;
+        }
+
+        @-webkit-keyframes koishi-float-move {
+            0% {
+                -webkit-transform: translate3d(0vh, 0vh, 0);
+                transform: translate3d(0vh, 0vh, 0);
+            }
+            9.09% {
+                -webkit-transform: translate3d(-90vh, 0vh, 0);
+                transform: translate3d(-90vh, 0vh, 0);
+            }
+            18.18% {
+                -webkit-transform: translate3d(-180vh, 0vh, 0);
+                transform: translate3d(-180vh, 0vh, 0);
+            }
+            27.27% {
+                -webkit-transform: translate3d(-270vh, 0vh, 0);
+                transform: translate3d(-270vh, 0vh, 0);
+            }
+            36.36% {
+                -webkit-transform: translate3d(0vh, -90vh, 0);
+                transform: translate3d(0vh, -90vh, 0);
+            }
+            45.45% {
+                -webkit-transform: translate3d(-90vh, -90vh, 0);
+                transform: translate3d(-90vh, -90vh, 0);
+            }
+            54.55% {
+                -webkit-transform: translate3d(-180vh, -90vh, 0);
+                transform: translate3d(-180vh, -90vh, 0);
+            }
+            63.64% {
+                -webkit-transform: translate3d(-270vh, -90vh, 0);
+                transform: translate3d(-270vh, -90vh, 0);
+            }
+            72.73% {
+                -webkit-transform: translate3d(0vh, -180vh, 0);
+                transform: translate3d(0vh, -180vh, 0);
+            }
+            81.82% {
+                -webkit-transform: translate3d(-90vh, -180vh, 0);
+                transform: translate3d(-90vh, -180vh, 0);
+            }
+            90.91% {
+                -webkit-transform: translate3d(-180vh, -180vh, 0);
+                transform: translate3d(-180vh, -180vh, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(-270vh, -180vh, 0);
+                transform: translate3d(-270vh, -180vh, 0);
+            }
         }
 
         @keyframes koishi-float-move {
             0% {
+                -webkit-transform: translate3d(0vh, 0vh, 0);
                 transform: translate3d(0vh, 0vh, 0);
             }
             9.09% {
+                -webkit-transform: translate3d(-90vh, 0vh, 0);
                 transform: translate3d(-90vh, 0vh, 0);
             }
             18.18% {
+                -webkit-transform: translate3d(-180vh, 0vh, 0);
                 transform: translate3d(-180vh, 0vh, 0);
             }
             27.27% {
+                -webkit-transform: translate3d(-270vh, 0vh, 0);
                 transform: translate3d(-270vh, 0vh, 0);
             }
             36.36% {
+                -webkit-transform: translate3d(0vh, -90vh, 0);
                 transform: translate3d(0vh, -90vh, 0);
             }
             45.45% {
+                -webkit-transform: translate3d(-90vh, -90vh, 0);
                 transform: translate3d(-90vh, -90vh, 0);
             }
             54.55% {
+                -webkit-transform: translate3d(-180vh, -90vh, 0);
                 transform: translate3d(-180vh, -90vh, 0);
             }
             63.64% {
+                -webkit-transform: translate3d(-270vh, -90vh, 0);
                 transform: translate3d(-270vh, -90vh, 0);
             }
             72.73% {
+                -webkit-transform: translate3d(0vh, -180vh, 0);
                 transform: translate3d(0vh, -180vh, 0);
             }
             81.82% {
+                -webkit-transform: translate3d(-90vh, -180vh, 0);
                 transform: translate3d(-90vh, -180vh, 0);
             }
             90.91% {
+                -webkit-transform: translate3d(-180vh, -180vh, 0);
                 transform: translate3d(-180vh, -180vh, 0);
             }
             100% {
+                -webkit-transform: translate3d(-270vh, -180vh, 0);
                 transform: translate3d(-270vh, -180vh, 0);
             }
         }
@@ -627,6 +907,7 @@
             font-size: 1.25em;
             width: 22em;
             max-width: 100%;
+            -webkit-transform: rotateZ(-2.5deg);
             transform: rotateZ(-2.5deg);
         }
 
@@ -675,19 +956,35 @@
             left: 0;
             width: 100%;
             height: 140vmin;
+            -webkit-animation: 2.5s game-background-move linear infinite;
             animation: 2.5s game-background-move linear infinite;
+            -webkit-animation-play-state: paused;
             animation-play-state: paused;
         }
 
         #work:target #game-background {
+            -webkit-animation-play-state: running;
             animation-play-state: running;
+        }
+
+        @-webkit-keyframes game-background-move {
+            0% {
+                -webkit-transform: translateY(-45vmin);
+                transform: translateY(-45vmin);
+            }
+            100% {
+                -webkit-transform: translateY(0vh);
+                transform: translateY(0vh);
+            }
         }
 
         @keyframes game-background-move {
             0% {
+                -webkit-transform: translateY(-45vmin);
                 transform: translateY(-45vmin);
             }
             100% {
+                -webkit-transform: translateY(0vh);
                 transform: translateY(0vh);
             }
         }
@@ -709,11 +1006,22 @@
             width: 5.12vmin;
             top: 0;
             left: 0;
+            -webkit-transform: translate3d(42.44vmin, 0, 0);
             transform: translate3d(42.44vmin, 0, 0);
         }
 
         #reisen-sprite.blink {
+            -webkit-animation: 0.2s reisen-blink linear infinite;
             animation: 0.2s reisen-blink linear infinite;
+        }
+
+        @-webkit-keyframes reisen-blink {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         @keyframes reisen-blink {
@@ -733,6 +1041,7 @@
             width: 11.1vmin;
             top: 0;
             left: 0;
+            -webkit-transform: translate3d(39.45vmin, 75vmin, 0);
             transform: translate3d(39.45vmin, 75vmin, 0);
         }
 
@@ -744,6 +1053,7 @@
             height: 90vh;
             width: 1.78vh;
             overflow: hidden;
+            -webkit-transform: translate3d(44.11vmin, -12vmin, 0);
             transform: translate3d(44.11vmin, -12vmin, 0);
         }
 
@@ -752,19 +1062,35 @@
             position: absolute;
             height: 93.55vmin;
             width: 1.78vmin;
+            -webkit-animation: 0.075s heart-stream-move linear infinite;
             animation: 0.075s heart-stream-move linear infinite;
+            -webkit-animation-play-state: paused;
             animation-play-state: paused;
         }
 
         #work:target #heart-stream {
+            -webkit-animation-play-state: running;
             animation-play-state: running;
+        }
+
+        @-webkit-keyframes heart-stream-move {
+            0% {
+                -webkit-transform: translateY(0vh);
+                transform: translateY(0vh);
+            }
+            100% {
+                -webkit-transform: translateY(-1.78vh);
+                transform: translateY(-1.78vh);
+            }
         }
 
         @keyframes heart-stream-move {
             0% {
+                -webkit-transform: translateY(0vh);
                 transform: translateY(0vh);
             }
             100% {
+                -webkit-transform: translateY(-1.78vh);
                 transform: translateY(-1.78vh);
             }
         }
@@ -786,6 +1112,11 @@
             margin: 35vmin auto 2em auto;
             padding: 0.25em 0;
             opacity: 0;
+        }
+
+        #game-controls>p::-moz-selection,
+        #game-controls>button::-moz-selection {
+            background: transparent;
         }
 
         #game-controls>p::selection,
@@ -850,6 +1181,7 @@
             width: 100%;
             height: 1vh;
             box-shadow: 0 0 2vh 1vh yellow;
+            -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
         }
 
@@ -868,6 +1200,7 @@
             border: 2.5vh double black;
             box-shadow: 0 0 2vh 0vh yellow;
             opacity: 0;
+            -webkit-transform: translateX(-100%) rotate(15deg) rotateY(-540deg) scale(0);
             transform: translateX(-100%) rotate(15deg) rotateY(-540deg) scale(0);
         }
 
@@ -878,8 +1211,11 @@
         }
 
         #draw-transition.active-1>#light-ray {
+            -webkit-transform: translateX(0);
             transform: translateX(0);
+            transition: 0.25s -webkit-transform 0.25s linear;
             transition: 0.25s transform 0.25s linear;
+            transition: 0.25s transform 0.25s linear, 0.25s -webkit-transform 0.25s linear;
         }
 
         #draw-transition.active-1:after {
@@ -889,8 +1225,11 @@
 
         #draw-transition.active-1>#tarot {
             opacity: 1;
+            -webkit-transform: translateX(0%) rotate(15deg) rotateY(0deg) scale(1);
             transform: translateX(0%) rotate(15deg) rotateY(0deg) scale(1);
+            transition: 0s opacity 0.5s, 0.5s -webkit-transform 0.5s;
             transition: 0.5s transform 0.5s, 0s opacity 0.5s;
+            transition: 0.5s transform 0.5s, 0s opacity 0.5s, 0.5s -webkit-transform 0.5s;
         }
     </style>
 
@@ -1125,786 +1464,786 @@
 	</script>
 
     <script type="text/javascript">
-    	"use strict";
+        "use strict";
 
-		var NOT_MAINMENU = /about|work|others/i;
+        var NOT_MAINMENU = /about|work|others/i;
 
-		var particles;
-		var game;
+        var particles;
+        var game;
 
-		var windowHeight = window.innerHeight;
-		var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+        var windowWidth = window.innerWidth;
 
-		var audio = true;
+        var audio = true;
 
-		function Particles() {
-		    var context = this;
-		    var canvas = id("particles");
-		    var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
+        function Particles() {
+            var context = this;
+            var canvas = id("particles");
+            var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
 
-		    canvas.width = vw(100);
-		    canvas.height = vw(100);
+            canvas.width = vw(100);
+            canvas.height = vw(100);
 
-		    var realHeight = vh(20);
+            var realHeight = vh(20);
 
-		    var program = createProgram(gl, "v-shader", "f-shader");
+            var program = createProgram(gl, "v-shader", "f-shader");
 
-		    var vertexBuffer = {};
-		    var colorBuffer = {};
+            var vertexBuffer = {};
+            var colorBuffer = {};
 
-		    var Shape = {
-		        type: ["triangle", "square", "circle"],
-		        mode: [gl.TRIANGLES, gl.TRIANGLE_FAN, gl.TRIANGLE_FAN],
-		        sides: [3, 4, 32],
-		        color: [
-		            [1, 1, 0],
-		            [0, 1, 1],
-		            [0.5, 1, 0]
-		        ],
-		        size: [realHeight * 0.175, realHeight * 0.175, realHeight * 0.13125],
-		        array: [],
-		        count: canvas.width * 0.05
-		    };
+            var Shape = {
+                type: ["triangle", "square", "circle"],
+                mode: [gl.TRIANGLES, gl.TRIANGLE_FAN, gl.TRIANGLE_FAN],
+                sides: [3, 4, 32],
+                color: [
+                    [1, 1, 0],
+                    [0, 1, 1],
+                    [0.5, 1, 0]
+                ],
+                size: [realHeight * 0.175, realHeight * 0.175, realHeight * 0.13125],
+                array: [],
+                count: canvas.width * 0.05
+            };
 
-		    for (var i = 0; i < Shape.type.length; i++) {
-		        vertexBuffer[Shape.type[i]] = createVertexBuffer(gl, Shape.sides[i], Shape.size[i] / canvas.width, null);
-		        colorBuffer[Shape.type[i]] = createColorBuffer(gl, Shape.color[i], 1, Shape.sides[i]);
+            for (var i = 0; i < Shape.type.length; i++) {
+                vertexBuffer[Shape.type[i]] = createVertexBuffer(gl, Shape.sides[i], Shape.size[i] / canvas.width, null);
+                colorBuffer[Shape.type[i]] = createColorBuffer(gl, Shape.color[i], 1, Shape.sides[i]);
 
-		        Shape.array.push([]);
+                Shape.array.push([]);
 
-		        for (var j = 0; j < Shape.count / Shape.type.length; j++) {
-		            Shape.array[i].push({
-		                speed: Math.random() * 1.5 + 1.5,
-		                rotation: Math.random() * 360,
-		                x: Math.random() * canvas.width - canvas.width,
-		                y: Math.random() * (realHeight / 2 - Shape.size[i] * 2) + Shape.size[i]
-		            });
-		        }
-		    };
+                for (var j = 0; j < Shape.count / Shape.type.length; j++) {
+                    Shape.array[i].push({
+                        speed: Math.random() * 1.5 + 1.5,
+                        rotation: Math.random() * 360,
+                        x: Math.random() * canvas.width - canvas.width,
+                        y: Math.random() * (realHeight / 2 - Shape.size[i] * 2) + Shape.size[i]
+                    });
+                }
+            };
 
-		    colorBuffer.black = createColorBuffer(gl, [0.5, 0.5, 0.5], 1, 32);
+            colorBuffer.black = createColorBuffer(gl, [0.5, 0.5, 0.5], 1, 32);
 
-		    gl.viewport(0, 0, canvas.width, canvas.width);
-		    gl.clearColor(0, 0, 0, 0);
+            gl.viewport(0, 0, canvas.width, canvas.width);
+            gl.clearColor(0, 0, 0, 0);
 
-		    var mvMatrix, s, x, y;
+            var mvMatrix, s, x, y;
 
-		    var pause = false;
-		    var widthOffset = -(canvas.width - realHeight) / canvas.width;
-		    var resetX = -1;
-		    var resetY = realHeight / 2 / canvas.width;
+            var pause = false;
+            var widthOffset = -(canvas.width - realHeight) / canvas.width;
+            var resetX = -1;
+            var resetY = realHeight / 2 / canvas.width;
 
-		    requestAnimationFrame(draw);
+            requestAnimationFrame(draw);
 
-		    function draw() {
-		        for (var i = 0; i < Shape.type.length; i++) {
-		            gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer[Shape.type[i]]);
-		            gl.vertexAttribPointer(program.positionAttribute, 2, gl.FLOAT, false, 0, 0);
+            function draw() {
+                for (var i = 0; i < Shape.type.length; i++) {
+                    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer[Shape.type[i]]);
+                    gl.vertexAttribPointer(program.positionAttribute, 2, gl.FLOAT, false, 0, 0);
 
-		            for (var j = 0; j < Shape.array[i].length; j++) {
-		                s = Shape.array[i][j];
-		                x = resetX + s.x / canvas.width * 2;
-		                y = widthOffset + resetY - (s.y + Math.sin(s.x / canvas.width * 2 * Math.PI) * Shape.size[i] * 2) / canvas.width * 2;
+                    for (var j = 0; j < Shape.array[i].length; j++) {
+                        s = Shape.array[i][j];
+                        x = resetX + s.x / canvas.width * 2;
+                        y = widthOffset + resetY - (s.y + Math.sin(s.x / canvas.width * 2 * Math.PI) * Shape.size[i] * 2) / canvas.width * 2;
 
-		                mvMatrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1];
-
-		                if (i !== 2) rotateZ(mvMatrix, s.rotation * Math.PI / 180);
-
-		                gl.uniformMatrix4fv(program.mvMatrix, false, mvMatrix);
-
-		                gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.black);
-		                gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
-		                gl.drawArrays(gl.LINE_LOOP, 0, Shape.sides[i]);
-
-		                gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer[Shape.type[i]]);
-		                gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
-		                gl.drawArrays(Shape.mode[i], 0, Shape.sides[i]);
-
-		                if (i !== 2) s.rotation = (s.rotation - 2) % 360;
-
-		                s.x = (s.x > canvas.width + Shape.size[i]) ? -Shape.size[i] : s.x + s.speed;
-		            }
-		        }
-
-		        if (!pause) requestAnimationFrame(draw);
-		    }
-
-		    this.pause = function() {
-		        pause = true;
-		    }
-
-		    this.play = function() {
-		        pause = false;
-		        requestAnimationFrame(draw);
-		    }
-		}
-
-		function Game() {
-		    var canvas = id("touhou");
-		    var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
-
-		    canvas.width = vmin(90);
-		    canvas.height = vmin(90);
-
-		    var scoreDisplay = id("game-score");
-		    var reisen = id("reisen-sprite");
-		    var koishi = id("koishi-sprite");
-		    var heart = id("heart-container");
-		    var background = id("game-background");
-		    var heartStream = id("heart-stream");
-
-		    fastdom.mutate(function() {
-		        heartStream.style.cssText = "";
-		        background.style.cssText = "";
-
-		        reisen.style.cssText = "visibility: visible";
-		        koishi.style.cssText = "visibility: visible";
-		        heart.style.cssText = "visibility: visible";
-
-		        scoreDisplay.textContent = "0";
-		    });
-
-		    if (audio) {
-		        var music = id("game-music");
-
-		        music.play();
-		        music.loop = true;
-		    }
-
-		    var program = createProgram(gl, "game-v-shader", "game-f-shader");
-
-		    var vertexBuffer = {};
-		    var colorBuffer = {};
-
-		    var Shape = {
-		        size: canvas.height * 0.04 * 3 / 4,
-		        normalArray: [],
-		        bossArray: [],
-		        count: canvas.height * 0.05
-		    }
-
-		    var Game = {
-		        bossCenter: [42.44, 0],
-		        bossOffset: [2.56, 6.25],
-		        bossHitbox: {},
-		        bossDirection: (Math.random() >= 0.5) ? "left" : "right",
-		        playerCenter: [39.45, 75],
-		        playerOffset: [5.55, 7.5],
-		        playerHitbox: {},
-		        normalBulletSpeed: 5,
-		        bossBulletSpeed: 2.5
-		    }
-
-		    Game.bossHitbox = {
-		        x: vmin(Game.bossCenter[0] + Game.bossOffset[0]),
-		        y: vmin(Game.bossCenter[1] + Game.bossOffset[1])
-		    };
-
-		    Game.playerHitbox = {
-		        x: vmin(Game.playerCenter[0] + Game.playerOffset[0]),
-		        y: vmin(Game.playerCenter[1] + Game.playerOffset[1])
-		    };
-
-		    for (var i = 0; i < Shape.count; i++) {
-		        Shape.normalArray.push({
-		            x: Math.random() * (canvas.width - Shape.size * 2) + Shape.size,
-		            y: Math.random() * canvas.height - canvas.height * 2
-		        });
-		    }
-
-		    for (var i = 0; i < 2; i++) {
-		        Shape.bossArray.push([]);
-
-		        for (var j = 0; j < Shape.count; j++) {
-		            var rotation = ((Shape.count - j - 1) / Shape.count * 360 + 270) * Math.PI / 180;
-
-		            Shape.bossArray[i].push({
-		                x: vmin(Game.bossCenter[0] + Game.bossOffset[0]),
-		                y: vmin(Game.bossCenter[1] + Game.bossOffset[1]),
-		                rMatrix: rotateZ([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], rotation)
-		            });
-		        }
-		    }
-
-		    vertexBuffer.circle = createVertexBuffer(gl, 32, Shape.size / canvas.width, null);
-		    vertexBuffer.bullet = createVertexBuffer(gl, 32, Shape.size / canvas.width, "bullet");
-
-		    colorBuffer.red = createColorBuffer(gl, [1, 0, 0], 1, 32);
-		    colorBuffer.orange = createColorBuffer(gl, [1, 0.5, 0, ], 1, 32);
-		    colorBuffer.green = createColorBuffer(gl, [0, 1, 0], 1, 32);
-		    colorBuffer.yellow = createColorBuffer(gl, [1, 1, 0], 1, 32);
-
-		    gl.uniform1f(program.expand, 0.15);
-		    gl.uniform1f(program.radius, Shape.size / 2);
-		    gl.uniform1f(program.windowHeight, canvas.height);
-
-		    gl.viewport(0, 0, canvas.height, canvas.height);
-		    gl.clearColor(0, 0, 0, 0);
-
-		    var p, s, x, y, i, j, a, mvMatrix, currentMousePosition;
-		    var tick = 0;
-		    var scoreValue = 0;
-		    var isDragging = false;
-		    var gameover = false;
-
-		    koishi.onmousedown = koishiMouseDown;
-
-		    koishi.ontouchstart = function(e) {
-		        koishiMouseDown(e.touches[0]);
-		    }
-
-		    koishi.ontouchend = function(e) {
-		        koishiMouseDown(e.touches[0]);
-		    }
-
-		    id("game-container").onmousemove = gameContainerMousemove;
-
-		    id("game-container").ontouchmove = function(e) {
-		        e.preventDefault();
-
-		        gameContainerMousemove(e.touches[0]);
-		    }
-
-		    requestAnimationFrame(draw);
-
-		    function koishiMouseDown(e) {
-		        if (gameover) return;
+                        mvMatrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1];
+
+                        if (i !== 2) rotateZ(mvMatrix, s.rotation * Math.PI / 180);
+
+                        gl.uniformMatrix4fv(program.mvMatrix, false, mvMatrix);
+
+                        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.black);
+                        gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
+                        gl.drawArrays(gl.LINE_LOOP, 0, Shape.sides[i]);
+
+                        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer[Shape.type[i]]);
+                        gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
+                        gl.drawArrays(Shape.mode[i], 0, Shape.sides[i]);
+
+                        if (i !== 2) s.rotation = (s.rotation - 2) % 360;
+
+                        s.x = (s.x > canvas.width + Shape.size[i]) ? -Shape.size[i] : s.x + s.speed;
+                    }
+                }
+
+                if (!pause) requestAnimationFrame(draw);
+            }
+
+            this.pause = function() {
+                pause = true;
+            }
+
+            this.play = function() {
+                pause = false;
+                requestAnimationFrame(draw);
+            }
+        }
+
+        function Game() {
+            var canvas = id("touhou");
+            var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
+
+            canvas.width = vmin(90);
+            canvas.height = vmin(90);
+
+            var scoreDisplay = id("game-score");
+            var reisen = id("reisen-sprite");
+            var koishi = id("koishi-sprite");
+            var heart = id("heart-container");
+            var background = id("game-background");
+            var heartStream = id("heart-stream");
+
+            fastdom.mutate(function() {
+                heartStream.style.cssText = "";
+                background.style.cssText = "";
+
+                reisen.style.cssText = "visibility: visible";
+                koishi.style.cssText = "visibility: visible";
+                heart.style.cssText = "visibility: visible";
+
+                scoreDisplay.textContent = "0";
+            });
+
+            if (audio) {
+                var music = id("game-music");
+
+                music.play();
+                music.loop = true;
+            }
+
+            var program = createProgram(gl, "game-v-shader", "game-f-shader");
+
+            var vertexBuffer = {};
+            var colorBuffer = {};
+
+            var Shape = {
+                size: canvas.height * 0.04 * 3 / 4,
+                normalArray: [],
+                bossArray: [],
+                count: canvas.height * 0.05
+            }
+
+            var Game = {
+                bossCenter: [42.44, 0],
+                bossOffset: [2.56, 6.25],
+                bossHitbox: {},
+                bossDirection: (Math.random() >= 0.5) ? "left" : "right",
+                playerCenter: [39.45, 75],
+                playerOffset: [5.55, 7.5],
+                playerHitbox: {},
+                normalBulletSpeed: 5,
+                bossBulletSpeed: 2.5
+            }
+
+            Game.bossHitbox = {
+                x: vmin(Game.bossCenter[0] + Game.bossOffset[0]),
+                y: vmin(Game.bossCenter[1] + Game.bossOffset[1])
+            };
+
+            Game.playerHitbox = {
+                x: vmin(Game.playerCenter[0] + Game.playerOffset[0]),
+                y: vmin(Game.playerCenter[1] + Game.playerOffset[1])
+            };
+
+            for (var i = 0; i < Shape.count; i++) {
+                Shape.normalArray.push({
+                    x: Math.random() * (canvas.width - Shape.size * 2) + Shape.size,
+                    y: Math.random() * canvas.height - canvas.height * 2
+                });
+            }
+
+            for (var i = 0; i < 2; i++) {
+                Shape.bossArray.push([]);
+
+                for (var j = 0; j < Shape.count; j++) {
+                    var rotation = ((Shape.count - j - 1) / Shape.count * 360 + 270) * Math.PI / 180;
+
+                    Shape.bossArray[i].push({
+                        x: vmin(Game.bossCenter[0] + Game.bossOffset[0]),
+                        y: vmin(Game.bossCenter[1] + Game.bossOffset[1]),
+                        rMatrix: rotateZ([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], rotation)
+                    });
+                }
+            }
+
+            vertexBuffer.circle = createVertexBuffer(gl, 32, Shape.size / canvas.width, null);
+            vertexBuffer.bullet = createVertexBuffer(gl, 32, Shape.size / canvas.width, "bullet");
+
+            colorBuffer.red = createColorBuffer(gl, [1, 0, 0], 1, 32);
+            colorBuffer.orange = createColorBuffer(gl, [1, 0.5, 0, ], 1, 32);
+            colorBuffer.green = createColorBuffer(gl, [0, 1, 0], 1, 32);
+            colorBuffer.yellow = createColorBuffer(gl, [1, 1, 0], 1, 32);
+
+            gl.uniform1f(program.expand, 0.15);
+            gl.uniform1f(program.radius, Shape.size / 2);
+            gl.uniform1f(program.windowHeight, canvas.height);
+
+            gl.viewport(0, 0, canvas.height, canvas.height);
+            gl.clearColor(0, 0, 0, 0);
+
+            var p, s, x, y, i, j, a, mvMatrix, currentMousePosition;
+            var tick = 0;
+            var scoreValue = 0;
+            var isDragging = false;
+            var gameover = false;
+
+            koishi.onmousedown = koishiMouseDown;
+
+            koishi.ontouchstart = function(e) {
+                koishiMouseDown(e.touches[0]);
+            }
+
+            koishi.ontouchend = function(e) {
+                koishiMouseDown(e.touches[0]);
+            }
+
+            id("game-container").onmousemove = gameContainerMousemove;
+
+            id("game-container").ontouchmove = function(e) {
+                e.preventDefault();
+
+                gameContainerMousemove(e.touches[0]);
+            }
+
+            requestAnimationFrame(draw);
+
+            function koishiMouseDown(e) {
+                if (gameover) return;
 
-		        if (isDragging) {
-		            isDragging = false;
-		        } else {
-		            currentMousePosition = [e.clientX, e.clientY];
-		            isDragging = true;
-		        }
-		    }
+                if (isDragging) {
+                    isDragging = false;
+                } else {
+                    currentMousePosition = [e.clientX, e.clientY];
+                    isDragging = true;
+                }
+            }
 
-		    function gameContainerMousemove(e) {
-		        if (!isDragging) return;
+            function gameContainerMousemove(e) {
+                if (!isDragging) return;
 
-		        Game.playerCenter[0] -= (currentMousePosition[0] - e.clientX) / vmin(100) * 100;
-		        Game.playerCenter[1] -= (currentMousePosition[1] - e.clientY) / vmin(100) * 100;
+                Game.playerCenter[0] -= (currentMousePosition[0] - e.clientX) / vmin(100) * 100;
+                Game.playerCenter[1] -= (currentMousePosition[1] - e.clientY) / vmin(100) * 100;
 
-		        currentMousePosition[0] = e.clientX;
-		        currentMousePosition[1] = e.clientY;
+                currentMousePosition[0] = e.clientX;
+                currentMousePosition[1] = e.clientY;
 
-		        fastdom.mutate(function() {
-		            koishi.style.transform = "translate3d(" + Game.playerCenter[0] + "vmin, " + Game.playerCenter[1] + "vmin, 0)";
-		            heart.style.transform = "translate3d(" + (Game.playerCenter[0] + 4.66) + "vmin, " + (Game.playerCenter[1] + 3 - 90) + "vmin, 0)";
-		        });
-		    }
+                fastdom.mutate(function() {
+                    koishi.style.transform = "translate3d(" + Game.playerCenter[0] + "vmin, " + Game.playerCenter[1] + "vmin, 0)";
+                    heart.style.transform = "translate3d(" + (Game.playerCenter[0] + 4.66) + "vmin, " + (Game.playerCenter[1] + 3 - 90) + "vmin, 0)";
+                });
+            }
 
-		    function draw() {
-		        gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer.circle);
-		        gl.vertexAttribPointer(program.positionAttribute, 2, gl.FLOAT, false, 0, 0);
+            function draw() {
+                gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer.circle);
+                gl.vertexAttribPointer(program.positionAttribute, 2, gl.FLOAT, false, 0, 0);
 
-		        if (tick >= 4 * 60) {
-		            if (Game.bossCenter[0] >= 90 - Game.bossOffset[0]) Game.bossDirection = "right";
-		            if (Game.bossCenter[0] <= 0) Game.bossDirection = "left";
+                if (tick >= 4 * 60) {
+                    if (Game.bossCenter[0] >= 90 - Game.bossOffset[0]) Game.bossDirection = "right";
+                    if (Game.bossCenter[0] <= 0) Game.bossDirection = "left";
 
-		            Game.bossCenter[0] += (Game.bossDirection === "left") ? 0.5 : -0.5;
-
-		            fastdom.mutate(function() {
-		                reisen.style.transform = "translate3d(" + Game.bossCenter[0] + "vmin, 0, 0)";
-		            });
-		        }
-
-		        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.green);
-		        gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
-
-		        p = Game.playerHitbox;
-		        p.x = vmin(Game.playerCenter[0] + Game.playerOffset[0]);
-		        p.y = vmin(Game.playerCenter[1] + Game.playerOffset[1]);
+                    Game.bossCenter[0] += (Game.bossDirection === "left") ? 0.5 : -0.5;
+
+                    fastdom.mutate(function() {
+                        reisen.style.transform = "translate3d(" + Game.bossCenter[0] + "vmin, 0, 0)";
+                    });
+                }
+
+                gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.green);
+                gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
+
+                p = Game.playerHitbox;
+                p.x = vmin(Game.playerCenter[0] + Game.playerOffset[0]);
+                p.y = vmin(Game.playerCenter[1] + Game.playerOffset[1]);
 
-		        x = -1 + p.x / canvas.width * 2;
-		        y = 1 - p.y / canvas.height * 2;
+                x = -1 + p.x / canvas.width * 2;
+                y = 1 - p.y / canvas.height * 2;
 
-		        gl.uniformMatrix4fv(program.mvMatrix, false, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1]);
-		        gl.uniform2fv(program.center, [p.x, p.y]);
-		        gl.drawArrays(gl.TRIANGLE_FAN, 0, 32);
+                gl.uniformMatrix4fv(program.mvMatrix, false, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1]);
+                gl.uniform2fv(program.center, [p.x, p.y]);
+                gl.drawArrays(gl.TRIANGLE_FAN, 0, 32);
 
-		        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.red);
-		        gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
+                gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.red);
+                gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
 
-		        for (i = 0; i < Shape.normalArray.length; i++) {
-		            s = Shape.normalArray[i];
-		            x = -1 + s.x / canvas.width * 2;
-		            y = 1 - s.y / canvas.height * 2;
+                for (i = 0; i < Shape.normalArray.length; i++) {
+                    s = Shape.normalArray[i];
+                    x = -1 + s.x / canvas.width * 2;
+                    y = 1 - s.y / canvas.height * 2;
 
-		            if (!gameover && isDistanceSmallerThanValue(p.x, p.y, s.x, s.y, Shape.size)) gameover = true;
+                    if (!gameover && isDistanceSmallerThanValue(p.x, p.y, s.x, s.y, Shape.size)) gameover = true;
 
-		            gl.uniformMatrix4fv(program.mvMatrix, false, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1]);
-		            gl.uniform2fv(program.center, [s.x, s.y]);
-		            gl.drawArrays(gl.TRIANGLE_FAN, 0, 32);
+                    gl.uniformMatrix4fv(program.mvMatrix, false, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1]);
+                    gl.uniform2fv(program.center, [s.x, s.y]);
+                    gl.drawArrays(gl.TRIANGLE_FAN, 0, 32);
 
-		            if (s.y >= canvas.height + Shape.size) {
-		                s.y = -Shape.size;
-		                s.x = Math.random() * (canvas.width - Shape.size * 2) + Shape.size;
-		            } else {
-		                s.y += Game.normalBulletSpeed;
-		            }
-		        }
+                    if (s.y >= canvas.height + Shape.size) {
+                        s.y = -Shape.size;
+                        s.x = Math.random() * (canvas.width - Shape.size * 2) + Shape.size;
+                    } else {
+                        s.y += Game.normalBulletSpeed;
+                    }
+                }
 
-		        gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer.bullet);
-		        gl.vertexAttribPointer(program.positionAttribute, 2, gl.FLOAT, false, 0, 0);
+                gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer.bullet);
+                gl.vertexAttribPointer(program.positionAttribute, 2, gl.FLOAT, false, 0, 0);
 
-		        for (i = 0; i < Shape.bossArray.length; i++) {
-		            if (i === 1 && tick < 1.5 * 60) continue;
+                for (i = 0; i < Shape.bossArray.length; i++) {
+                    if (i === 1 && tick < 1.5 * 60) continue;
 
-		            if (i === 0) gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.yellow);
-		            if (i === 1) gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.orange);
+                    if (i === 0) gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.yellow);
+                    if (i === 1) gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer.orange);
 
-		            gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
+                    gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
 
-		            for (j = 0; j < Shape.bossArray[i].length; j++) {
-		                s = Shape.bossArray[i][j];
-		                x = -1 + s.x / canvas.width * 2;
-		                y = 1 - s.y / canvas.height * 2;
+                    for (j = 0; j < Shape.bossArray[i].length; j++) {
+                        s = Shape.bossArray[i][j];
+                        x = -1 + s.x / canvas.width * 2;
+                        y = 1 - s.y / canvas.height * 2;
 
-		                if (!gameover && isDistanceSmallerThanValue(p.x, p.y, s.x, s.y, Shape.size)) gameover = true;
+                        if (!gameover && isDistanceSmallerThanValue(p.x, p.y, s.x, s.y, Shape.size)) gameover = true;
 
-		                mvMatrix = s.rMatrix;
-		                mvMatrix[12] = x;
-		                mvMatrix[13] = y;
+                        mvMatrix = s.rMatrix;
+                        mvMatrix[12] = x;
+                        mvMatrix[13] = y;
 
-		                gl.uniformMatrix4fv(program.mvMatrix, false, mvMatrix);
-		                gl.uniform2fv(program.center, [s.x, s.y]);
+                        gl.uniformMatrix4fv(program.mvMatrix, false, mvMatrix);
+                        gl.uniform2fv(program.center, [s.x, s.y]);
 
-		                gl.drawArrays(gl.TRIANGLE_FAN, 0, 18);
+                        gl.drawArrays(gl.TRIANGLE_FAN, 0, 18);
 
-		                a = j / Shape.bossArray[i].length * Math.PI * 2;
+                        a = j / Shape.bossArray[i].length * Math.PI * 2;
 
-		                s.x += Math.cos(a) * Game.bossBulletSpeed;
-		                s.y += Math.sin(a) * Game.bossBulletSpeed;
+                        s.x += Math.cos(a) * Game.bossBulletSpeed;
+                        s.y += Math.sin(a) * Game.bossBulletSpeed;
 
-		                if (tick >= 8 * 60) {
-		                    s.x = vmin(Game.bossCenter[0] + Game.bossOffset[0]);
-		                    s.y = vmin(Game.bossCenter[1] + Game.bossOffset[1]);
-		                }
-		            }
-		        }
+                        if (tick >= 8 * 60) {
+                            s.x = vmin(Game.bossCenter[0] + Game.bossOffset[0]);
+                            s.y = vmin(Game.bossCenter[1] + Game.bossOffset[1]);
+                        }
+                    }
+                }
 
-		        if (tick >= 8 * 60) tick = 0;
+                if (tick >= 8 * 60) tick = 0;
 
-		        tick++;
+                tick++;
 
-		        if (Math.abs(Game.playerCenter[0] + 2.99 - Game.bossCenter[0]) <= 2.5) {
-		            scoreValue += 100;
+                if (Math.abs(Game.playerCenter[0] + 2.99 - Game.bossCenter[0]) <= 2.5) {
+                    scoreValue += 100;
 
-		            if (scoreValue % 1000 === 0) {
-		                fastdom.mutate(function() {
-		                    scoreDisplay.textContent = "Score: " + (scoreValue / 1000) + "k+";
-		                });
-		            }
+                    if (scoreValue % 1000 === 0) {
+                        fastdom.mutate(function() {
+                            scoreDisplay.textContent = "Score: " + (scoreValue / 1000) + "k+";
+                        });
+                    }
 
-		            if (reisen.className === "") {
-		                fastdom.mutate(function() {
-		                    reisen.className = "blink";
-		                });
-		            }
-		        } else if (reisen.className === "blink") {
-		            fastdom.mutate(function() {
-		                reisen.className = "";
-		            });
-		        }
+                    if (reisen.className === "") {
+                        fastdom.mutate(function() {
+                            reisen.className = "blink";
+                        });
+                    }
+                } else if (reisen.className === "blink") {
+                    fastdom.mutate(function() {
+                        reisen.className = "";
+                    });
+                }
 
 
-		        if (gameover) {
-		            isDragging = false;
+                if (gameover) {
+                    isDragging = false;
 
-		            if (music) music.pause();
+                    if (music) music.pause();
 
-		        	koishi.ontouchstart = null;
-		    		koishi.ontouchend = null;
+                    koishi.ontouchstart = null;
+                    koishi.ontouchend = null;
 
-		    		id("game-container").onmousemove = null;
-		    		id("game-container").ontouchmove = null;
+                    id("game-container").onmousemove = null;
+                    id("game-container").ontouchmove = null;
 
-		            fastdom.mutate(function() {
-		                background.style.animationPlayState = "paused";
-		                heartStream.style.animationPlayState = "paused";
+                    fastdom.mutate(function() {
+                        background.style.animationPlayState = "paused";
+                        heartStream.style.animationPlayState = "paused";
 
-		                q("#game-controls > p").style.opacity = "1";
-		                q("#game-controls > p").innerHTML = "FINAL SCORE<br>" + scoreValue;
+                        q("#game-controls > p").style.opacity = "1";
+                        q("#game-controls > p").innerHTML = "FINAL SCORE<br>" + scoreValue;
 
-		                id("game-controls").style.visibility = "visible";
+                        id("game-controls").style.visibility = "visible";
 
-		                reisen.className = "";
+                        reisen.className = "";
 
-		                if (scoreValue >= 50000) {
-		                    q("#work .unlock").innerHTML = 'Link: <a href="senbonzakura/index.html" title="Thousand Cherry Blossoms" target="_blank" rel="noopener">Thousand Cherry Blossoms</a>';
-		                }
-		            });
+                        if (scoreValue >= 50000) {
+                            q("#work .unlock").innerHTML = 'Link: <a href="senbonzakura/index.html" title="Thousand Cherry Blossoms" target="_blank" rel="noopener">Thousand Cherry Blossoms</a>';
+                        }
+                    });
 
-		            particles.play();
-		        } else {
-		            requestAnimationFrame(draw);
-		        }
-		    }
-		}
+                    particles.play();
+                } else {
+                    requestAnimationFrame(draw);
+                }
+            }
+        }
 
-		//WEBGL UTILITIES
+        //WEBGL UTILITIES
 
-		function createVertexBuffer(gl, count, radius, special) {
-		    var vertexbuffer = gl.createBuffer();
-		    var vertices;
+        function createVertexBuffer(gl, count, radius, special) {
+            var vertexbuffer = gl.createBuffer();
+            var vertices;
 
-		    if (special === undefined || special === null) {
-		        vertices = new Float32Array(count * 2);
+            if (special === undefined || special === null) {
+                vertices = new Float32Array(count * 2);
 
-		        for (var i = 0; i < count; i++) {
-		            var a = i / count * Math.PI * 2;
+                for (var i = 0; i < count; i++) {
+                    var a = i / count * Math.PI * 2;
 
-		            vertices[i * 2 + 0] = Math.cos(a) * radius;
-		            vertices[i * 2 + 1] = Math.sin(a) * radius;
-		        }
-		    }
+                    vertices[i * 2 + 0] = Math.cos(a) * radius;
+                    vertices[i * 2 + 1] = Math.sin(a) * radius;
+                }
+            }
 
-		    if (special === "bullet") {
-		        vertices = new Float32Array(count + 4);
+            if (special === "bullet") {
+                vertices = new Float32Array(count + 4);
 
-		        vertices[0] = -radius;
-		        vertices[1] = -radius;
+                vertices[0] = -radius;
+                vertices[1] = -radius;
 
-		        vertices[2] = radius;
-		        vertices[3] = -radius;
+                vertices[2] = radius;
+                vertices[3] = -radius;
 
-		        for (var i = 0; i < count / 2; i++) {
-		            var a = i / count * Math.PI * 2;
+                for (var i = 0; i < count / 2; i++) {
+                    var a = i / count * Math.PI * 2;
 
-		            vertices[i * 2 + 4] = Math.cos(a) * radius;
-		            vertices[i * 2 + 5] = Math.sin(a) * radius;
-		        }
-		    }
+                    vertices[i * 2 + 4] = Math.cos(a) * radius;
+                    vertices[i * 2 + 5] = Math.sin(a) * radius;
+                }
+            }
 
-		    gl.bindBuffer(gl.ARRAY_BUFFER, vertexbuffer);
-		    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+            gl.bindBuffer(gl.ARRAY_BUFFER, vertexbuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
 
-		    return vertexbuffer;
-		}
+            return vertexbuffer;
+        }
 
-		function createColorBuffer(gl, rgb, alpha, count) {
-		    var colorBuffer = gl.createBuffer();
-		    var colors = new Float32Array(count * 4);
+        function createColorBuffer(gl, rgb, alpha, count) {
+            var colorBuffer = gl.createBuffer();
+            var colors = new Float32Array(count * 4);
 
-		    for (var i = 0; i < count; i++) {
-		        colors[i * 4 + 0] = rgb[0];
-		        colors[i * 4 + 1] = rgb[1];
-		        colors[i * 4 + 2] = rgb[2];
-		        colors[i * 4 + 3] = alpha;
-		    }
+            for (var i = 0; i < count; i++) {
+                colors[i * 4 + 0] = rgb[0];
+                colors[i * 4 + 1] = rgb[1];
+                colors[i * 4 + 2] = rgb[2];
+                colors[i * 4 + 3] = alpha;
+            }
 
-		    gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
-		    gl.bufferData(gl.ARRAY_BUFFER, colors, gl.STATIC_DRAW);
+            gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, colors, gl.STATIC_DRAW);
 
-		    return colorBuffer;
-		}
+            return colorBuffer;
+        }
 
-		function createProgram(gl, vShader, fShader) {
-		    var vertexShader = gl.createShader(gl.VERTEX_SHADER);
-		    var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+        function createProgram(gl, vShader, fShader) {
+            var vertexShader = gl.createShader(gl.VERTEX_SHADER);
+            var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
 
-		    gl.shaderSource(vertexShader, id(vShader).innerHTML);
-		    gl.shaderSource(fragmentShader, id(fShader).innerHTML);
+            gl.shaderSource(vertexShader, id(vShader).innerHTML);
+            gl.shaderSource(fragmentShader, id(fShader).innerHTML);
 
-		    gl.compileShader(vertexShader);
-		    gl.compileShader(fragmentShader);
+            gl.compileShader(vertexShader);
+            gl.compileShader(fragmentShader);
 
-		    var program = gl.createProgram();
+            var program = gl.createProgram();
 
-		    gl.attachShader(program, vertexShader);
-		    gl.attachShader(program, fragmentShader);
-		    gl.linkProgram(program);
-		    gl.useProgram(program);
+            gl.attachShader(program, vertexShader);
+            gl.attachShader(program, fragmentShader);
+            gl.linkProgram(program);
+            gl.useProgram(program);
 
-		    program.positionAttribute = gl.getAttribLocation(program, "aVertexPosition");
-		    program.colorAttribute = gl.getAttribLocation(program, "aVertexColor");
+            program.positionAttribute = gl.getAttribLocation(program, "aVertexPosition");
+            program.colorAttribute = gl.getAttribLocation(program, "aVertexColor");
 
-		    gl.enableVertexAttribArray(program.positionAttribute);
-		    gl.enableVertexAttribArray(program.colorAttribute);
+            gl.enableVertexAttribArray(program.positionAttribute);
+            gl.enableVertexAttribArray(program.colorAttribute);
 
-		    program.mvMatrix = gl.getUniformLocation(program, "uMVMatrix");
+            program.mvMatrix = gl.getUniformLocation(program, "uMVMatrix");
 
-		    if (fShader === "game-f-shader") {
-		        program.expand = gl.getUniformLocation(program, "expand");
-		        program.center = gl.getUniformLocation(program, "center");
-		        program.radius = gl.getUniformLocation(program, "radius");
-		        program.windowHeight = gl.getUniformLocation(program, "windowHeight")
-		    }
+            if (fShader === "game-f-shader") {
+                program.expand = gl.getUniformLocation(program, "expand");
+                program.center = gl.getUniformLocation(program, "center");
+                program.radius = gl.getUniformLocation(program, "radius");
+                program.windowHeight = gl.getUniformLocation(program, "windowHeight")
+            }
 
-		    return program;
-		}
+            return program;
+        }
 
-		function rotateZ(m, angle) {
-		    var c = Math.cos(angle);
-		    var s = Math.sin(angle);
-		    var mv0 = m[0],
-		        mv4 = m[4],
-		        mv8 = m[8];
+        function rotateZ(m, angle) {
+            var c = Math.cos(angle);
+            var s = Math.sin(angle);
+            var mv0 = m[0],
+                mv4 = m[4],
+                mv8 = m[8];
 
-		    m[0] = c * m[0] - s * m[1];
-		    m[4] = c * m[4] - s * m[5];
-		    m[8] = c * m[8] - s * m[9];
-		    m[1] = c * m[1] + s * mv0;
-		    m[5] = c * m[5] + s * mv4;
-		    m[9] = c * m[9] + s * mv8;
+            m[0] = c * m[0] - s * m[1];
+            m[4] = c * m[4] - s * m[5];
+            m[8] = c * m[8] - s * m[9];
+            m[1] = c * m[1] + s * mv0;
+            m[5] = c * m[5] + s * mv4;
+            m[9] = c * m[9] + s * mv8;
 
-		    return m;
-		}
+            return m;
+        }
 
-		function navHover() {
-			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) return; 
+        function navHover() {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) return;
 
-		    var hovering = false;
+            var hovering = false;
 
-		    var frame = id("frame");
-		    var frameTextOverlay = id("frame-text-overlay");
-		    var koishiWalk = id("koishi-walk-container");
-		    var shadow = id("shadow");
+            var frame = id("frame");
+            var frameTextOverlay = id("frame-text-overlay");
+            var koishiWalk = id("koishi-walk-container");
+            var shadow = id("shadow");
 
-		    var  a = qa("#mainmenu>nav>ul>li>a");
+            var a = qa("#mainmenu>nav>ul>li>a");
 
-		    for (var i = 0; i < a.length; i++){
-		        a[i].onmouseover = function(e) {
-		            hovering = true;
+            for (var i = 0; i < a.length; i++) {
+                a[i].onmouseover = function(e) {
+                    hovering = true;
 
-		            fastdom.mutate(function() {
-		                frame.style.opacity = "1";
-		                frameTextOverlay.style.backgroundImage = "url('data:image/svg+xml;utf8,%3Csvg%20height%3D%2230%22%20width%3D%22" + (e.target.textContent.length * 10 + 20) + "%22%20style%3D%22background%3A%20orange%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Ctext%20x%3D%225%22%20y%3D%2220%22%20fill%3D%22white%22%20style%3D%22font%3A%20bold%2015px%20Verdana, sans-serif%22%3E" + e.target.textContent.toUpperCase() + "%3C%2Ftext%3E%0A%3C%2Fsvg%3E')";
-		                frameTextOverlay.style.transform = "none";
+                    fastdom.mutate(function() {
+                        frame.style.opacity = "1";
+                        frameTextOverlay.style.backgroundImage = "url('data:image/svg+xml;utf8,%3Csvg%20height%3D%2230%22%20width%3D%22" + (e.target.textContent.length * 10 + 20) + "%22%20style%3D%22background%3A%20orange%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Ctext%20x%3D%225%22%20y%3D%2220%22%20fill%3D%22white%22%20style%3D%22font%3A%20bold%2015px%20Verdana, sans-serif%22%3E" + e.target.textContent.toUpperCase() + "%3C%2Ftext%3E%0A%3C%2Fsvg%3E')";
+                        frameTextOverlay.style.transform = "none";
 
-		                koishiWalk.style.opacity = "0";
-		                shadow.style.opacity = "0";
-		            });
-		        }
+                        koishiWalk.style.opacity = "0";
+                        shadow.style.opacity = "0";
+                    });
+                }
 
-		        a[i].onmouseout = function(e) {
-		            hovering = false;
+                a[i].onmouseout = function(e) {
+                    hovering = false;
 
-		            setTimeout(function() {
-		                if (hovering) return;
+                    setTimeout(function() {
+                        if (hovering) return;
 
-		                fastdom.mutate(function() {
-		                    frame.style.opacity = "";
-		                    frameTextOverlay.style.transform = "";
+                        fastdom.mutate(function() {
+                            frame.style.opacity = "";
+                            frameTextOverlay.style.transform = "";
 
-		                    koishiWalk.style.opacity = "";
-		                    shadow.style.opacity = "";
-		                });
-		            }, 250);
-		        }
-		    };
-		}
+                            koishiWalk.style.opacity = "";
+                            shadow.style.opacity = "";
+                        });
+                    }, 250);
+                }
+            };
+        }
 
-		function rng() {
-		    var s = 0;
-		    var t = 0;
-		    var n = 0;
-		    var lastCoords = { x: 0, y: 0 };
-		    var lock = false;
-		    var img = id("neko");
+        function rng() {
+            var s = 0;
+            var t = 0;
+            var n = 0;
+            var lastCoords = { x: 0, y: 0 };
+            var lock = false;
+            var img = id("neko");
 
-		    img.addEventListener("touchmove", function(event) {
-		        event.preventDefault();
+            img.addEventListener("touchmove", function(event) {
+                event.preventDefault();
 
-		        var newEvent = new Event('mousemove');
-		        newEvent.clientX = event.touches[0].clientX;
-		        newEvent.clientY = event.touches[0].clientY;
+                var newEvent = new Event('mousemove');
+                newEvent.clientX = event.touches[0].clientX;
+                newEvent.clientY = event.touches[0].clientY;
 
-		        img.dispatchEvent(newEvent);
-		    }, { passive: false });
+                img.dispatchEvent(newEvent);
+            }, { passive: false });
 
-		    img.addEventListener("mousemove", function(event) {
-		        if (lock || (event.clientX === lastCoords.x && event.clientY === lastCoords.y)) return;
+            img.addEventListener("mousemove", function(event) {
+                if (lock || (event.clientX === lastCoords.x && event.clientY === lastCoords.y)) return;
 
-		        lock = true;
+                lock = true;
 
-		        var newCoords = { x: event.clientX, y: event.clientY };
+                var newCoords = { x: event.clientX, y: event.clientY };
 
-		        var angle = (lastCoords.x === lastCoords.y) ? Math.PI / 2 : Math.atan(Math.abs(lastCoords.y - newCoords.y) / Math.abs(lastCoords.x - newCoords.x));
-		        var real = (angle / (Math.PI / 2) + parseInt(Date.now().toString().slice(-8), 10) / 1e8) % 1;
+                var angle = (lastCoords.x === lastCoords.y) ? Math.PI / 2 : Math.atan(Math.abs(lastCoords.y - newCoords.y) / Math.abs(lastCoords.x - newCoords.x));
+                var real = (angle / (Math.PI / 2) + parseInt(Date.now().toString().slice(-8), 10) / 1e8) % 1;
 
-		        var real_bin = (real % 1).toString(2).substring(2);
+                var real_bin = (real % 1).toString(2).substring(2);
 
-		        while (real_bin.length < 52) {
-		            real_bin += "0";
-		        }
+                while (real_bin.length < 52) {
+                    real_bin += "0";
+                }
 
-		        var m = real;
-		        var mPrime = real_bin.split("").reverse().reduceRight(function(r, a) { return (r + parseInt(a, 2)) / 2; }, 0);
+                var m = real;
+                var mPrime = real_bin.split("").reverse().reduceRight(function(r, a) { return (r + parseInt(a, 2)) / 2; }, 0);
 
-		        var g = tentMap((s + m) % 1, (t + mPrime) % 1);
+                var g = tentMap((s + m) % 1, (t + mPrime) % 1);
 
-		        var x = (mPrime + g) % 1;
+                var x = (mPrime + g) % 1;
 
-		        var s2 = tentMap(Math.min(x, t), Math.max(x, t));
-		        var t2 = (s + g) % 1;
+                var s2 = tentMap(Math.min(x, t), Math.max(x, t));
+                var t2 = (s + g) % 1;
 
-		        n++;
+                n++;
 
-		        s = s2;
-		        t = t2;
-		        lastCoords = newCoords;
+                s = s2;
+                t = t2;
+                lastCoords = newCoords;
 
-		        if (n % 128 === 0) {
-		            var draw_transition = id("draw-transition");
-		            var num = Math.floor((s + t) % 1 * 10);
+                if (n % 128 === 0) {
+                    var draw_transition = id("draw-transition");
+                    var num = Math.floor((s + t) % 1 * 10);
 
-		            draw_transition.className = "active-1";
-		            id("tarot").textContent = num;
+                    draw_transition.className = "active-1";
+                    id("tarot").textContent = num;
 
-		            setTimeout(function() {
-		                id("number-history").textContent += "[" + num + "] ";
-		            }, 1000);
+                    setTimeout(function() {
+                        id("number-history").textContent += "[" + num + "] ";
+                    }, 1000);
 
-		            setTimeout(function() {
-		                draw_transition.className = "";
-		                lock = false;
-		            }, 3000);
-		        } else {
-		            lock = false;
-		        }
-		    }, false);
+                    setTimeout(function() {
+                        draw_transition.className = "";
+                        lock = false;
+                    }, 3000);
+                } else {
+                    lock = false;
+                }
+            }, false);
 
-		    function tentMap(a, x) {
-		        if (0 < x && x <= a) {
-		            return x / a;
-		        } else if (a < x && x < 1) {
-		            return (1 - x) / (1 - a);
-		        } else {
-		            console.warn("Error computing g.");
-		            return 0;
-		        }
-		    }
-		}
+            function tentMap(a, x) {
+                if (0 < x && x <= a) {
+                    return x / a;
+                } else if (a < x && x < 1) {
+                    return (1 - x) / (1 - a);
+                } else {
+                    console.warn("Error computing g.");
+                    return 0;
+                }
+            }
+        }
 
-		//ONDOMREADT
+        //ONDOMREADT
 
-		document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", DOMContentLoaded) : DOMContentLoaded();
+        document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", DOMContentLoaded) : DOMContentLoaded();
 
-		function DOMContentLoaded() {
-		    if (window.location.hash.substring(1).match(NOT_MAINMENU)) {
-		        fastdom.mutate(function() {
-		            document.body.className += " skip-start-animation";
-		        });
-		    };
+        function DOMContentLoaded() {
+            if (window.location.hash.substring(1).match(NOT_MAINMENU)) {
+                fastdom.mutate(function() {
+                    document.body.className += " skip-start-animation";
+                });
+            };
 
-		    fastdom.mutate(function() {
-		        document.body.className = document.body.className.replace("no-transition", "");
-		    });
-		}
+            fastdom.mutate(function() {
+                document.body.className = document.body.className.replace("no-transition", "");
+            });
+        }
 
-		//ONLOAD
+        //ONLOAD
 
-		window.onload = function() {
-		    particles = new Particles();
+        window.onload = function() {
+            particles = new Particles();
 
-		    q("#game-controls > .play").onclick = function() {
-		        particles.pause();
-		        game = new Game();
+            q("#game-controls > .play").onclick = function() {
+                particles.pause();
+                game = new Game();
 
-		        fastdom.mutate(function() {
-		            id("game-controls").style.visibility = "hidden";
-		        });
-		    }
+                fastdom.mutate(function() {
+                    id("game-controls").style.visibility = "hidden";
+                });
+            }
 
-		    q("#game-controls > .audio").onclick = function() {
-		        id("game-music").pause();
-		        audio = !audio;
+            q("#game-controls > .audio").onclick = function() {
+                id("game-music").pause();
+                audio = !audio;
 
-		        fastdom.mutate(function() {
-		            q("#game-controls > .audio").textContent = "Audio: " + (audio ? "ON" : "OFF");
-		        });
-		    }
+                fastdom.mutate(function() {
+                    q("#game-controls > .audio").textContent = "Audio: " + (audio ? "ON" : "OFF");
+                });
+            }
 
-		    rng();
+            rng();
 
-		    setTimeout(navHover, 1000);
+            setTimeout(navHover, 1000);
 
-		    fastdom.mutate(function() {
-		        id("cover").style.opacity = "0";
-		        document.body.className = document.body.className.replace("no-animation", "");
-		    });
+            fastdom.mutate(function() {
+                id("cover").style.opacity = "0";
+                document.body.className = document.body.className.replace("no-animation", "");
+            });
 
-		    var resizing = 0;
+            var resizing = 0;
 
-		    id("koishi-float-container").addEventListener("click", function() {
-		        var ktc = id("koishi-text-container");
-		        var ntc = q("#about>.text-container");
+            id("koishi-float-container").addEventListener("click", function() {
+                var ktc = id("koishi-text-container");
+                var ntc = q("#about>.text-container");
 
-		        var ktc_display = "";
+                var ktc_display = "";
 
-		        fastdom.measure(function() {
-		            ktc_display = ktc.style.display;
-		        });
+                fastdom.measure(function() {
+                    ktc_display = ktc.style.display;
+                });
 
-		        fastdom.mutate(function() {
-		            if (ktc_display === "") {
-		                ktc.style.display = "block";
-		                ntc.style.display = "none";
-		            } else {
-		                ktc.style.display = "";
-		                ntc.style.display = "";
-		            }
-		        });
-		    });
+                fastdom.mutate(function() {
+                    if (ktc_display === "") {
+                        ktc.style.display = "block";
+                        ntc.style.display = "none";
+                    } else {
+                        ktc.style.display = "";
+                        ntc.style.display = "";
+                    }
+                });
+            });
 
-		    window.onresize = function() {
-		        resizing++;
+            window.onresize = function() {
+                resizing++;
 
-		        particles.pause();
+                particles.pause();
 
-		        setTimeout(function() {
-		            resizing--;
+                setTimeout(function() {
+                    resizing--;
 
-		            if (resizing === 0) {
-		                fastdom.mutate(function() {
-		                    windowHeight = window.innerHeight;
-		                    windowWidth = window.innerWidth;
+                    if (resizing === 0) {
+                        fastdom.mutate(function() {
+                            windowHeight = window.innerHeight;
+                            windowWidth = window.innerWidth;
 
-		                    particles = new Particles();
-		                });
-		            }
-		        }, 150);
-		    }
-		}
+                            particles = new Particles();
+                        });
+                    }
+                }, 150);
+            }
+        }
 
-		//GENERAL UTILITIES
+        //GENERAL UTILITIES
 
-		function vh(n) {
-		    return n * windowHeight / 100;
-		}
+        function vh(n) {
+            return n * windowHeight / 100;
+        }
 
-		function vw(n) {
-		    return n * windowWidth / 100;
-		}
+        function vw(n) {
+            return n * windowWidth / 100;
+        }
 
-		function vmin(n) {
-			return (windowWidth < windowHeight) ? vw(n) : vh(n); 
-		}
+        function vmin(n) {
+            return (windowWidth < windowHeight) ? vw(n) : vh(n);
+        }
 
-		function id(id) {
-		    return document.getElementById(id);
-		}
+        function id(id) {
+            return document.getElementById(id);
+        }
 
-		function q(str) {
-		    return document.querySelector(str);
-		}
+        function q(str) {
+            return document.querySelector(str);
+        }
 
-		function qa(str) {
-		    return document.querySelectorAll(str);
-		}
+        function qa(str) {
+            return document.querySelectorAll(str);
+        }
 
-		function isDistanceSmallerThanValue(ax, ay, bx, by, d) {
-		    if (Math.abs(ax - bx) >= d * 1.5 || Math.abs(ay - by) >= d * 1.5) {
-		        return 0;
-		    };
+        function isDistanceSmallerThanValue(ax, ay, bx, by, d) {
+            if (Math.abs(ax - bx) >= d * 1.5 || Math.abs(ay - by) >= d * 1.5) {
+                return 0;
+            };
 
-		    if (Math.pow(ax - bx, 2) + Math.pow(ay - by, 2) >= d * d) {
-		        return 0;
-		    };
+            if (Math.pow(ax - bx, 2) + Math.pow(ay - by, 2) >= d * d) {
+                return 0;
+            };
 
-		    return 1;
-		}
+            return 1;
+        }
     </script>
 </body>
 
