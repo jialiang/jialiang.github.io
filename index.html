@@ -1006,8 +1006,8 @@
             width: 5.12vmin;
             top: 0;
             left: 0;
-            -webkit-transform: translate3d(42.44vmin, 0, 0);
-            transform: translate3d(42.44vmin, 0, 0);
+            -webkit-transform: translate3d(828.91%, 0, 0);
+            transform: translate3d(828.91%, 0, 0);
         }
 
         #reisen-sprite.blink {
@@ -1041,8 +1041,8 @@
             width: 11.1vmin;
             top: 0;
             left: 0;
-            -webkit-transform: translate3d(39.45vmin, 75vmin, 0);
-            transform: translate3d(39.45vmin, 75vmin, 0);
+            -webkit-transform: translate3d(355.41%, 500%, 0);
+            transform: translate3d(355.41%, 500%, 0);
         }
 
         #heart-container {
@@ -1053,8 +1053,8 @@
             height: 90vh;
             width: 1.78vh;
             overflow: hidden;
-            -webkit-transform: translate3d(44.11vmin, -12vmin, 0);
-            transform: translate3d(44.11vmin, -12vmin, 0);
+            -webkit-transform: translate3d(2478.09%, -13.33%, 0);
+            transform: translate3d(2478.09%, -13.33%, 0);
         }
 
         #heart-stream {
@@ -1727,8 +1727,11 @@
                 currentMousePosition[1] = e.clientY;
 
                 fastdom.mutate(function() {
-                    koishi.style.transform = "translate3d(" + Game.playerCenter[0] + "vmin, " + Game.playerCenter[1] + "vmin, 0)";
-                    heart.style.transform = "translate3d(" + (Game.playerCenter[0] + 4.66) + "vmin, " + (Game.playerCenter[1] + 3 - 90) + "vmin, 0)";
+                    koishi.style.transform = "translate3d(" + (Game.playerCenter[0] / 11.1 * 100) + "%, " + (Game.playerCenter[1] / 15 * 100) + "%, 0)";
+                    heart.style.transform = "translate3d(" + ((Game.playerCenter[0] + 4.66) / 1.78 * 100) + "%, " + ((Game.playerCenter[1] + 3 - 90) / 90 * 100) + "%, 0)";
+
+                    koishi.style.webkitTransform = "translate3d(" + (Game.playerCenter[0] / 11.1 * 100) + "%, " + (Game.playerCenter[1] / 15 * 100) + "%, 0)";
+                    heart.style.webkitTransform = "translate3d(" + ((Game.playerCenter[0] + 4.66) / 1.78 * 100) + "%, " + ((Game.playerCenter[1] + 3 - 90) / 90 * 100) + "%, 0)";
                 });
             }
 
@@ -1743,7 +1746,8 @@
                     Game.bossCenter[0] += (Game.bossDirection === "left") ? 0.5 : -0.5;
 
                     fastdom.mutate(function() {
-                        reisen.style.transform = "translate3d(" + Game.bossCenter[0] + "vmin, 0, 0)";
+                        reisen.style.transform = "translate3d(" + (Game.bossCenter[0] / 5.12 * 100) + "%, 0, 0)";
+                        reisen.style.webkitTransform = "translate3d(" + (Game.bossCenter[0] / 5.12 * 100) + "%, 0, 0)";
                     });
                 }
 
@@ -1831,7 +1835,7 @@
 
                     if (scoreValue % 1000 === 0) {
                         fastdom.mutate(function() {
-                            scoreDisplay.textContent = "Score: " + (scoreValue / 1000) + "k+";
+                            scoreDisplay.textContent = "Score: " + ((scoreValue - (scoreValue % 1000)) / 1000) + "k+";
                         });
                     }
 
@@ -2010,6 +2014,7 @@
                         frame.style.opacity = "1";
                         frameTextOverlay.style.backgroundImage = "url('data:image/svg+xml;utf8,%3Csvg%20height%3D%2230%22%20width%3D%22" + (e.target.textContent.length * 10 + 20) + "%22%20style%3D%22background%3A%20orange%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Ctext%20x%3D%225%22%20y%3D%2220%22%20fill%3D%22white%22%20style%3D%22font%3A%20bold%2015px%20Verdana, sans-serif%22%3E" + e.target.textContent.toUpperCase() + "%3C%2Ftext%3E%0A%3C%2Fsvg%3E')";
                         frameTextOverlay.style.transform = "none";
+                        frameTextOverlay.style.webkitTransform = "none";
 
                         koishiWalk.style.opacity = "0";
                         shadow.style.opacity = "0";
@@ -2025,6 +2030,7 @@
                         fastdom.mutate(function() {
                             frame.style.opacity = "";
                             frameTextOverlay.style.transform = "";
+                            frameTextOverlay.style.webkitTransform = "";
 
                             koishiWalk.style.opacity = "";
                             shadow.style.opacity = "";
