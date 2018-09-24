@@ -74,15 +74,25 @@
         }
 
         #cover {
+        	display: table;
             background: white;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            padding: 1em;
             pointer-events: none;
             z-index: 100;
             transition: 0.25s opacity;
+        }
+
+        #cover>p {
+        	display: table-cell;
+            color: rgb(51, 51, 51);
+            font-size: 0.9em;
+            text-align: right;
+            vertical-align: bottom;
         }
 
         a {
@@ -1247,7 +1257,9 @@
 </head>
 
 <body class="no-transition no-animation">
-    <div id="cover" role="presentation"></div>
+    <div id="cover" role="presentation">
+        <p>Website is now preparing. Please wait warmly until it is ready.</p>
+    </div>
 
     <section id="about" class="not-mainmenu">
         <div class="text-container">
