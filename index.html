@@ -74,7 +74,7 @@
         }
 
         #cover {
-        	display: table;
+            display: table;
             background: white;
             position: fixed;
             top: 0;
@@ -88,7 +88,7 @@
         }
 
         #cover>p {
-        	display: table-cell;
+            display: table-cell;
             color: rgb(51, 51, 51);
             font-size: 0.9em;
             text-align: right;
@@ -319,6 +319,8 @@
 
         #particles {
             margin-top: calc(-100vw + 32.5vh);
+            width: 100vw;
+            height: 100vw;
         }
 
         #railings {
@@ -2052,6 +2054,22 @@
             };
         }
 
+        function fastClick() {
+            var a = qa("nav>ul>li>a, .back");
+
+            for (var i = 0; i < a.length; i++) {
+                a[i].onmousedown = function(e) {
+                    e.preventDefault();
+                    window.location = this.href;
+                }
+
+                a[i].ontouchstart = function(e) {
+                    e.preventDefault();
+                    window.location = this.href;
+                }
+            }
+        }
+
         function rng() {
             var s = 0;
             var t = 0;
@@ -2153,8 +2171,6 @@
         //ONLOAD
 
         window.onload = function() {
-            particles = new Particles();
-
             q("#game-controls > .play").onclick = function() {
                 particles.pause();
                 game = new Game();
@@ -2174,8 +2190,14 @@
             }
 
             rng();
+            fastClick();
 
-            setTimeout(navHover, 1000);
+            setTimeout(function() {
+                requestAnimationFrame(function() {
+                    particles = new Particles();
+                    navHover();
+                });
+            }, 850);
 
             fastdom.mutate(function() {
                 id("cover").style.opacity = "0";
