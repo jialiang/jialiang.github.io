@@ -1260,7 +1260,8 @@
 
 <body class="no-transition no-animation">
     <div id="cover" role="presentation">
-        <p>Website is now preparing. <wbr>Please wait warmly until it is ready.</p>
+        <p>Website is now preparing.
+            <wbr>Please wait warmly until it is ready.</p>
     </div>
 
     <section id="about" class="not-mainmenu">
@@ -1491,6 +1492,12 @@
         var audio = true;
 
         function Particles() {
+        	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        		this.play = function() {};
+        		this.pause = function() {};
+        		return;
+        	}
+
             var context = this;
             var canvas = id("particles");
             var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
