@@ -178,7 +178,7 @@
             transition: 0.25s transform 0.25s, 0.25s -webkit-transform 0.25s;
         }
 
-        section.not-mainmenu:target>.text-container>h1 {
+        .not-mainmenu:target>.text-container>h1 {
             -webkit-transform: scaleX(1);
             transform: scaleX(1);
         }
@@ -318,9 +318,7 @@
         }
 
         #particles {
-            margin-top: calc(-100vw + 32.5vh);
-            width: 100vw;
-            height: 100vw;
+            margin-top: 10vh;
         }
 
         #railings {
@@ -1022,8 +1020,6 @@
             width: 5.12vmin;
             top: 0;
             left: 0;
-            -webkit-transform: translate3d(828.91%, 0, 0);
-            transform: translate3d(828.91%, 0, 0);
         }
 
         #reisen-sprite.blink {
@@ -1057,8 +1053,6 @@
             width: 11.1vmin;
             top: 0;
             left: 0;
-            -webkit-transform: translate3d(355.41%, 500%, 0);
-            transform: translate3d(355.41%, 500%, 0);
         }
 
         #heart-container {
@@ -1069,8 +1063,6 @@
             height: 90vmin;
             width: 1.78vmin;
             overflow: hidden;
-            -webkit-transform: translate3d(2478.09%, -13.33%, 0);
-            transform: translate3d(2478.09%, -13.33%, 0);
         }
 
         #heart-stream {
@@ -1496,20 +1488,18 @@
         var audio = true;
 
         function Particles() {
-        	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        		this.play = function() {};
-        		this.pause = function() {};
-        		return;
-        	}
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                this.play = function() {};
+                this.pause = function() {};
+                return;
+            }
 
             var context = this;
             var canvas = id("particles");
             var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
 
             canvas.width = vw(100);
-            canvas.height = vw(100);
-
-            var realHeight = vh(20);
+            canvas.height = vh(20);
 
             var program = createProgram(gl, "v-shader", "f-shader");
 
@@ -1525,13 +1515,13 @@
                     [0, 1, 1],
                     [0.5, 1, 0]
                 ],
-                size: [realHeight * 0.175, realHeight * 0.175, realHeight * 0.13125],
+                size: [canvas.height * 0.175, canvas.height * 0.175, canvas.height * 0.13125],
                 array: [],
                 count: canvas.width * 0.05
             };
 
             for (var i = 0; i < Shape.type.length; i++) {
-                vertexBuffer[Shape.type[i]] = createVertexBuffer(gl, Shape.sides[i], Shape.size[i] / canvas.width, null);
+                vertexBuffer[Shape.type[i]] = createVertexBuffer(gl, Shape.sides[i], Shape.size[i] / canvas.width, "particles");
                 colorBuffer[Shape.type[i]] = createColorBuffer(gl, Shape.color[i], 1, Shape.sides[i]);
 
                 Shape.array.push([]);
@@ -1541,22 +1531,21 @@
                         speed: Math.random() * 1.5 + 1.5,
                         rotation: Math.random() * 360,
                         x: Math.random() * canvas.width - canvas.width,
-                        y: Math.random() * (realHeight / 2 - Shape.size[i] * 2) + Shape.size[i]
+                        y: Math.random() * (canvas.height / 2 - Shape.size[i] * 2) + Shape.size[i]
                     });
                 }
             };
 
             colorBuffer.black = createColorBuffer(gl, [0.5, 0.5, 0.5], 1, 32);
 
-            gl.viewport(0, 0, canvas.width, canvas.width);
+            gl.viewport(0, 0, canvas.width, canvas.height);
             gl.clearColor(0, 0, 0, 0);
 
             var mvMatrix, s, x, y;
 
             var pause = false;
-            var widthOffset = -(canvas.width - realHeight) / canvas.width;
             var resetX = -1;
-            var resetY = realHeight / 2 / canvas.width;
+            var resetY = 0.5;
 
             requestAnimationFrame(draw);
 
@@ -1568,11 +1557,11 @@
                     for (var j = 0; j < Shape.array[i].length; j++) {
                         s = Shape.array[i][j];
                         x = resetX + s.x / canvas.width * 2;
-                        y = widthOffset + resetY - (s.y + Math.sin(s.x / canvas.width * 2 * Math.PI) * Shape.size[i] * 2) / canvas.width * 2;
+                        y = resetY - (s.y + Math.sin(s.x / canvas.width * 2 * Math.PI) * Shape.size[i] * 2) / canvas.width * 2 * canvas.width / canvas.height;
 
                         mvMatrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1];
 
-                        if (i !== 2) rotateZ(mvMatrix, s.rotation * Math.PI / 180);
+                        rotateZ(mvMatrix, s.rotation * Math.PI / 180);
 
                         gl.uniformMatrix4fv(program.mvMatrix, false, mvMatrix);
 
@@ -1584,7 +1573,7 @@
                         gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
                         gl.drawArrays(Shape.mode[i], 0, Shape.sides[i]);
 
-                        if (i !== 2) s.rotation = (s.rotation - 2) % 360;
+                        s.rotation = (s.rotation - 2) % 360;
 
                         s.x = (s.x > canvas.width + Shape.size[i]) ? -Shape.size[i] : s.x + s.speed;
                     }
@@ -1710,6 +1699,18 @@
             var scoreValue = 0;
             var isDragging = false;
             var gameover = false;
+            var vmin01 = vmin(1);
+
+            fastdom.mutate(function() {
+                koishi.style.transform = "translate3d(" + (Game.playerCenter[0] * vmin01) + "px," + (Game.playerCenter[1] * vmin01) + "px,0)";
+                koishi.style.webkitTransform = "translate3d(" + (Game.playerCenter[0] * vmin01) + "px," + (Game.playerCenter[1] * vmin01) + "px,0)";
+
+                reisen.style.transform = "translate3d(" + (Game.bossCenter[0] * vmin01) + "px," + (Game.bossCenter[1] * vmin01) + "px,0)";
+                reisen.style.webkitTransform = "translate3d(" + (Game.bossCenter[0] * vmin01) + "px," + (Game.bossCenter[1] * vmin01) + "px,0)";
+
+                heart.style.transform = "translate3d(" + ((Game.playerCenter[0] + 4.66) * vmin01) + "px, " + ((Game.playerCenter[1] + 3 - 90) * vmin01) + "px, 0)";
+                heart.style.webkitTransform = "translate3d(" + ((Game.playerCenter[0] + 4.66) * vmin01) + "px, " + ((Game.playerCenter[1] + 3 - 90) * vmin01) + "px, 0)";
+            });
 
             koishi.onmousedown = koishiMouseDown;
 
@@ -1752,11 +1753,11 @@
                 currentMousePosition[1] = e.clientY;
 
                 fastdom.mutate(function() {
-                    koishi.style.transform = "translate3d(" + (Game.playerCenter[0] / 11.1 * 100) + "%, " + (Game.playerCenter[1] / 15 * 100) + "%, 0)";
-                    heart.style.transform = "translate3d(" + ((Game.playerCenter[0] + 4.66) / 1.78 * 100) + "%, " + ((Game.playerCenter[1] + 3 - 90) / 90 * 100) + "%, 0)";
+                    koishi.style.transform = "translate3d(" + (Game.playerCenter[0] * vmin01) + "px, " + (Game.playerCenter[1] * vmin01) + "px, 0)";
+                    heart.style.transform = "translate3d(" + ((Game.playerCenter[0] + 4.66) * vmin01) + "px, " + ((Game.playerCenter[1] + 3 - 90) * vmin01) + "px, 0)";
 
-                    koishi.style.webkitTransform = "translate3d(" + (Game.playerCenter[0] / 11.1 * 100) + "%, " + (Game.playerCenter[1] / 15 * 100) + "%, 0)";
-                    heart.style.webkitTransform = "translate3d(" + ((Game.playerCenter[0] + 4.66) / 1.78 * 100) + "%, " + ((Game.playerCenter[1] + 3 - 90) / 90 * 100) + "%, 0)";
+                    koishi.style.webkitTransform = "translate3d(" + (Game.playerCenter[0] * vmin01) + "px, " + (Game.playerCenter[1] * vmin01) + "px, 0)";
+                    heart.style.webkitTransform = "translate3d(" + ((Game.playerCenter[0] + 4.66) * vmin01) + "px, " + ((Game.playerCenter[1] + 3 - 90) * vmin01) + "px, 0)";
                 });
             }
 
@@ -1771,8 +1772,8 @@
                     Game.bossCenter[0] += (Game.bossDirection === "left") ? 0.5 : -0.5;
 
                     fastdom.mutate(function() {
-                        reisen.style.transform = "translate3d(" + (Game.bossCenter[0] / 5.12 * 100) + "%, 0, 0)";
-                        reisen.style.webkitTransform = "translate3d(" + (Game.bossCenter[0] / 5.12 * 100) + "%, 0, 0)";
+                        reisen.style.transform = "translate3d(" + (Game.bossCenter[0] * vmin01) + "px, 0, 0)";
+                        reisen.style.webkitTransform = "translate3d(" + (Game.bossCenter[0] * vmin01) + "px, 0, 0)";
                     });
                 }
 
@@ -1916,7 +1917,7 @@
             var vertexbuffer = gl.createBuffer();
             var vertices;
 
-            if (special === undefined || special === null) {
+            if (special === undefined || special === null || special === "particles") {
                 vertices = new Float32Array(count * 2);
 
                 for (var i = 0; i < count; i++) {
@@ -1924,6 +1925,8 @@
 
                     vertices[i * 2 + 0] = Math.cos(a) * radius;
                     vertices[i * 2 + 1] = Math.sin(a) * radius;
+
+                    if (special === "particles") vertices[i * 2 + 1] *= vw(100) / vh(20);
                 }
             }
 
@@ -2004,7 +2007,7 @@
 
         function rotateZ(m, angle) {
             var c = Math.cos(angle);
-            var s = Math.sin(angle);
+            var s = Math.sin(angle) * vh(20) / vw(100);
             var mv0 = m[0],
                 mv4 = m[4],
                 mv8 = m[8];
@@ -2203,12 +2206,8 @@
             rng();
             fastClick();
 
-            setTimeout(function() {
-                requestAnimationFrame(function() {
-                    particles = new Particles();
-                    navHover();
-                });
-            }, 850);
+            particles = new Particles();
+            navHover();
 
             fastdom.mutate(function() {
                 id("cover").style.opacity = "0";
