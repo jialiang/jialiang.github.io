@@ -1561,7 +1561,7 @@
 
                         mvMatrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1];
 
-                        rotateZ(mvMatrix, s.rotation * Math.PI / 180);
+                        rotateZ(mvMatrix, s.rotation * Math.PI / 180, 2);
 
                         gl.uniformMatrix4fv(program.mvMatrix, false, mvMatrix);
 
@@ -1674,7 +1674,7 @@
                     Shape.bossArray[i].push({
                         x: vmin(Game.bossCenter[0] + Game.bossOffset[0]),
                         y: vmin(Game.bossCenter[1] + Game.bossOffset[1]),
-                        rMatrix: rotateZ([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], rotation)
+                        rMatrix: rotateZ([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], rotation, 1)
                     });
                 }
             }
@@ -2005,9 +2005,12 @@
             return program;
         }
 
-        function rotateZ(m, angle) {
+        function rotateZ(m, angle, mode) {
             var c = Math.cos(angle);
-            var s = Math.sin(angle) * vh(20) / vw(100);
+            var s = Math.sin(angle);
+
+            if(mode === 2) s *= vh(20) / vw(100);
+
             var mv0 = m[0],
                 mv4 = m[4],
                 mv8 = m[8];
