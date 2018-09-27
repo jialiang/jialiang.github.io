@@ -155,10 +155,22 @@
             color: rgb(51, 51, 51);
             width: 95vh;
             max-width: 100%;
-            min-height: 100%;
+            min-height: 100vh;
             padding: 1em 2em 2em 2em;
             margin: auto;
             box-shadow: 0 0 2.5vh rgba(0, 0, 0, 0.5);
+            transition: 0.25s -webkit-transform;
+            transition: 0.25s transform;
+            transition: 0.25s transform, 0.25s -webkit-transform;
+            -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+            -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+        }
+
+        .not-mainmenu:target>.text-container {
+            -webkit-transform: scale(1);
+            transform: scale(1);
         }
 
         .text-container>h1 {
@@ -220,6 +232,10 @@
             color: white;
         }
 
+        section:target {
+        	height: auto;
+        }
+
         section:target,
         #mainmenu {
             opacity: 1;
@@ -227,6 +243,7 @@
         }
 
         #mainmenu {
+            position: fixed;
             padding: 0 3vmin;
             z-index: 1;
         }
@@ -257,21 +274,6 @@
 
         .not-mainmenu {
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75)) 0 0/100% 3px repeat-y;
-        }
-
-        .not-mainmenu>.text-container {
-            transition: 0.25s -webkit-transform;
-            transition: 0.25s transform;
-            transition: 0.25s transform, 0.25s -webkit-transform;
-            -webkit-transform-origin: bottom right;
-            transform-origin: bottom right;
-            -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-        }
-
-        section.not-mainmenu:target>.text-container {
-            -webkit-transform: scale(1);
-            transform: scale(1);
         }
 
         figure {
@@ -318,7 +320,7 @@
         }
 
         #particles {
-            margin-top: 10vh;
+            margin-top: 10.5vh;
         }
 
         #railings {
