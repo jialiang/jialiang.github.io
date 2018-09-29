@@ -2428,7 +2428,7 @@
 
         //ONLOAD
 
-        window.onload = function() {
+        document.body.onload = function() {
             q("#game-controls > .play").onclick = function() {
                 particles.pause();
                 game = new Game();
