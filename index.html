@@ -105,6 +105,30 @@
             }
         }
 
+        @-webkit-keyframes city-move {
+            0% {
+                -webkit-transform: translateX(0vh);
+                transform: translateX(0vh);
+            }
+
+            100% {
+                -webkit-transform: translateX(-53.54vh);
+                transform: translateX(-53.54vh);
+            }
+        }
+
+        @keyframes city-move {
+            0% {
+                -webkit-transform: translateX(0vh);
+                transform: translateX(0vh);
+            }
+
+            100% {
+                -webkit-transform: translateX(-53.54vh);
+                transform: translateX(-53.54vh);
+            }
+        }
+
         @-webkit-keyframes railings-move {
             0% {
                 -webkit-transform: translateX(0vh);
@@ -728,6 +752,21 @@
             -webkit-animation: 30s sky-move linear infinite;
 
             animation: 30s sky-move linear infinite;
+        }
+
+        #city {
+            position: absolute;
+            bottom: 17vh;
+            z-index: -1;
+
+            width: calc(100% + 53.54vh);
+            height: 20vh;
+
+            background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2278' height='851'%3E%3Cpath d='M1129.5 179.21v599h48v-72h72v-383h168v360h48v-48h48v48h24v-144h144v-360h143v527h48v-215h144v-96h24v-24h24v-24h24v-24h24v-24h24v24h24v24h24v24h24v24h24v240h48v215H2.5v-120h24v-191h24v-96h24v-96h48v96h24v96h24v191h24v-551h168v599h48v-335h143v120h24v-288h144v360h96v-96h48v72h48v-432z' fill='%23ccc' stroke='%23000' stroke-width='5'/%3E%3Cpath d='M1247 36v144h-96v599h-48v-72h-72V324H863v360h-48v-48h-48v48h-24V540H599V180H456v527h-48V492H264v-96h-24v-24h-24v-24h-24v-24h-24v-24h-24v24h-24v24H96v24H72v24H48v240H0v215h2278V731h-24V540h-24v-96h-24v-96h-48v96h-24v96h-24v191h-24V180h-168v599h-48V444h-143v120h-24V276h-144v360h-96v-96h-48v72h-48V180h-96V36z' fill='%23999' stroke='%23000' stroke-width='5'/%3E%3Cpath d='M288 659v48h24v-48zM336 659v48h24v-48zM288 539v48h24v-48zM336 539v48h24v-48zM959 731v48h24v-48zM1055 731v48h24v-48zM1822 707v48h24v-48zM1822 611v48h24v-48zM1822 515v48h24v-48zM1750 659v48h24v-48zM1750 563v48h24v-48zM1750 467v48h24v-48zM911 659v48h24v-48zM959 587v48h24v-48zM911 515v48h24v-48zM959 443v48h24v-48zM911 371v48h24v-48z' fill='none'/%3E%3C/svg%3E") 0 0/auto 100%;
+
+            -webkit-animation: 15s city-move linear infinite;
+
+            animation: 15s city-move linear infinite;
         }
 
         #particles {
@@ -1639,6 +1678,7 @@
         </hgroup>
         <figure>
             <div id="sky"></div>
+            <div id="city"></div>
             <canvas id="particles"></canvas>
             <div id="railings"></div>
             <div id="floor"></div>
