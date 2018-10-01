@@ -1775,6 +1775,8 @@
             canvas.width = vw(100);
             canvas.height = vh(20);
 
+            var ratio = canvas.width / canvas.height;
+
             var program = createProgram(gl, "v-shader", "f-shader");
 
             var vertexBuffer = {};
@@ -1790,6 +1792,7 @@
                     [0.5, 1, 0]
                 ],
                 size: [canvas.height * 0.175, canvas.height * 0.175, canvas.height * 0.13125],
+                rawSize: [0.175, 0.175, 0.13125],
                 array: [],
                 count: canvas.width * 0.05
             };
@@ -1802,10 +1805,10 @@
 
                 for (var j = 0; j < Shape.count / Shape.type.length; j++) {
                     Shape.array[i].push({
-                        speed: Math.random() * 1.5 + 1.5,
-                        rotation: Math.random() * 360,
-                        x: Math.random() * canvas.width - canvas.width,
-                        y: Math.random() * (canvas.height / 2 - Shape.size[i] * 2) + Shape.size[i]
+                        speed: (Math.random() * 1.5 + 1.5) / canvas.width * 2,
+                        rotation: Math.random() * Math.PI * 2,
+                        x: (Math.random() * canvas.width - canvas.width) / canvas.width * 2 - 1,
+                        y: 0.5 - (Math.random() * (canvas.height / 2 - Shape.size[i] * 2) + Shape.size[i]) / canvas.width * 2 * ratio
                     });
                 }
             };
@@ -1815,11 +1818,9 @@
             gl.viewport(0, 0, canvas.width, canvas.height);
             gl.clearColor(0, 0, 0, 0);
 
-            var mvMatrix, s, x, y;
+            var mvMatrix, s;
 
             var pause = false;
-            var resetX = -1;
-            var resetY = 0.5;
 
             requestAnimationFrame(draw);
 
@@ -1830,12 +1831,10 @@
 
                     for (var j = 0; j < Shape.array[i].length; j++) {
                         s = Shape.array[i][j];
-                        x = resetX + s.x / canvas.width * 2;
-                        y = resetY - (s.y + Math.sin(s.x / canvas.width * 2 * Math.PI) * Shape.size[i] * 2) / canvas.width * 2 * canvas.width / canvas.height;
 
-                        mvMatrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, x, y, 0, 1];
+                        mvMatrix = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, s.x, s.y + Math.sin(s.x * Math.PI) * Shape.rawSize[i] * 4, 0, 1];
 
-                        rotateZ(mvMatrix, s.rotation * Math.PI / 180, 2);
+                        rotateZ(mvMatrix, s.rotation, 2);
 
                         gl.uniformMatrix4fv(program.mvMatrix, false, mvMatrix);
 
@@ -1847,9 +1846,9 @@
                         gl.vertexAttribPointer(program.colorAttribute, 4, gl.FLOAT, false, 0, 0);
                         gl.drawArrays(Shape.mode[i], 0, Shape.sides[i]);
 
-                        s.rotation = (s.rotation - 2) % 360;
+                        s.rotation = (s.rotation > 6.283) ? 0 : s.rotation + 0.035;
 
-                        s.x = (s.x > canvas.width + Shape.size[i]) ? -Shape.size[i] : s.x + s.speed;
+                        s.x = (s.x > 1) ? -1 : s.x + s.speed;
                     }
                 }
 
