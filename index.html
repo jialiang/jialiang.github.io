@@ -3315,11 +3315,13 @@
             };
 
             document.body.className = document.body.className.replace("no-transition", "");
+
+            DOMContentLoaded2();
         }
 
         //ONLOAD
 
-        document.body.onload = function() {
+        function DOMContentLoaded2() {
             q("#game-controls > .play").onclick = function() {
                 particles.pause();
                 game = new Game();
