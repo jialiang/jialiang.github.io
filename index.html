@@ -3378,9 +3378,9 @@
 
             track.mode = "hidden";
             track.oncuechange = function(e) {
-                currentText = "<div class='jpn'>" + this.activeCues[0].getCueAsHTML().textContent.replace("*", "</div><div class='eng'>") + "</div>";
-
                 if (this.activeCues.length > 0) {
+                    currentText = "<div class='jpn'>" + this.activeCues[0].getCueAsHTML().textContent.replace("*", "</div><div class='eng'>") + "</div>";
+
                     fastdom.mutate(function() {
                         subtitles.innerHTML = currentText;
                     });
