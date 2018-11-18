@@ -2583,7 +2583,6 @@
         "use strict";
 
         var NOT_MAINMENU = /about|work|others/i;
-        var MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
 
         var particles;
         var game;
@@ -2594,7 +2593,7 @@
         var audio = true;
 
         function Particles() {
-            if (MOBILE.test(navigator.userAgent)) {
+            if (windowHeight > windowWidth) {
                 this.play = function() {};
                 this.pause = function() {};
                 return;
@@ -2684,7 +2683,11 @@
                     }
                 }
 
-                if (!pause) requestAnimationFrame(draw);
+                if (pause) {
+                    gl.clear(gl.COLOR_BUFFER_BIT);
+                } else {
+                    requestAnimationFrame(draw);
+                }
             }
 
             this.pause = function() {
@@ -3133,7 +3136,7 @@
         }
 
         function navHover() {
-            if (MOBILE.test(navigator.userAgent)) return;
+            if (windowHeight > windowWidth) return;
 
             var hovering = false;
 
