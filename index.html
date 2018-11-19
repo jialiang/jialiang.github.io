@@ -1292,7 +1292,7 @@
 		    z-index: 2;
 
 		    height: 20vh;
-		    margin-top: 11.5vh;
+		    margin-top: 11vh;
 
 		    pointer-events: none;
 		    transition: 0.25s opacity;
@@ -1331,7 +1331,8 @@
 		    background: linear-gradient(to right, rgba(0, 0, 0, .25) 50%, rgba(0, 0, 0, 0) 50%) 0 0/12vh 100% repeat-x, linear-gradient(to bottom, #111, cyan);
 		}
 
-		#shadow
+		#shadow,
+		#yin-shadow
 		{
 		    position: absolute;
 		    bottom: 2.5vh;
@@ -2276,7 +2277,8 @@
 				font-size: 6.25vh;
 			}
 
-			#koishi-walk-container {
+			#koishi-walk-container,
+			#shadow {
 		    	left: calc(70% - 25vh)
 		    }
 
@@ -2483,7 +2485,8 @@
             <canvas id="particles" class="ori-theme"></canvas>
             <div id="railings"></div>
             <div id="floor"></div>
-            <div id="shadow" class="start-animation"></div>
+            <div id="shadow" class="start-animation ori-theme"></div>
+            <div id="yin-shadow" class="alt-theme widescreen-exclusive"></div>
 
             <div id="cat-walk-container" class="start-animation widescreen-exclusive">
                 <div id="cat-walk" class="widescreen-exclusive"></div>
@@ -2498,7 +2501,7 @@
                 <div id="yin-walk-leg" class="alt-theme"></div>
                 <div id="yin-walk-body" class="alt-theme"></div>
                 <video id="bonus-bgm" preload="auto">
-                	<source src="music/Tsukiakari.ac3" type="audio/ac3">
+                    <source src="music/Tsukiakari.ac3" type="audio/ac3">
                     <source src="music/Tsukiakari.flac" type="audio/flac">
                     <source src="music/Tsukiakari.mp3" type="audio/mpeg">
                     <track label="subtitles" kind="subtitles" srclang="en" src="music/Tsukiakari.vtt" default>
@@ -2594,7 +2597,7 @@
         var audio = true;
 
         function Particles() {
-            if (windowHeight > windowWidth) {
+            if (windowHeight > windowWidth || (windowHeight <= windowWidth && /Mobi/.test(navigator.userAgent))) {
                 this.play = function() {};
                 this.pause = function() {};
                 return;
@@ -2602,7 +2605,13 @@
 
             var context = this;
             var canvas = id("particles");
-            var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
+            var gl = canvas.getContext("webgl", { antialias: true, powerPreference: "high-performance", failIfMajorPerformanceCaveat: true }) || canvas.getContext("experimental-webgl");
+
+            if (!gl) {
+                this.play = function() {};
+                this.pause = function() {};
+                return;
+            }
 
             canvas.width = vw(100);
             canvas.height = vh(20);
@@ -2703,7 +2712,7 @@
 
         function Game() {
             var canvas = id("touhou");
-            var gl = canvas.getContext("webgl", { antialias: true }) || canvas.getContext("experimental-webgl");
+            var gl = canvas.getContext("webgl", { antialias: true, powerPreference: "high-performance" }) || canvas.getContext("experimental-webgl");
 
             canvas.width = vmin(90);
             canvas.height = vmin(90);
@@ -3137,8 +3146,6 @@
         }
 
         function navHover() {
-            if (windowHeight > windowWidth) return;
-
             var hovering = false;
 
             var frameTextOverlay = id("frame-text-overlay");
