@@ -1128,34 +1128,11 @@
                     transition: none !important;
         }
 
-        .no-animation .start-animation,
-        .no-animation .start-animation:before,
-        .no-animation .start-animation:after
-        {
-            -webkit-animation-play-state: paused !important;
-                    animation-play-state: paused !important;
-        }
-
         a
         {
             text-decoration: none;
 
             color: orangered;
-        }
-
-        #cover
-        {
-            position: fixed;
-            z-index: 100;
-
-            width: 100%;
-            height: 100%;
-
-            -webkit-transition: .25s opacity .15s;
-                    transition: .25s opacity .15s;
-            pointer-events: none;
-
-            background: white;
         }
 
         section
@@ -1377,8 +1354,8 @@
             height: 15vh;
 
             cursor: pointer;
-            -webkit-animation: .5s fade-in 1.65s backwards;
-                    animation: .5s fade-in 1.65s backwards;
+            -webkit-animation: .5s fade-in 1.63s backwards;
+                    animation: .5s fade-in 1.63s backwards;
         }
 
         #cat-walk
@@ -1639,8 +1616,8 @@
             width: 33vh;
             height: 33vh;
 
-            -webkit-animation: .5s nav-move .25s backwards;
-                    animation: .5s nav-move .25s backwards;
+            -webkit-animation: .5s fade-in 1.75s backwards;
+                    animation: .5s fade-in 1.75s backwards;
 
             border: 1.5vh solid orange;
             border-radius: 100%;
@@ -1659,8 +1636,6 @@
             left: 0;
 
             content: '';
-            -webkit-animation: .25s fade-out .5s backwards;
-                    animation: .25s fade-out .5s backwards;
 
             opacity: 0;
             background: -webkit-gradient(linear, left top, right top, color-stop(45%, rgba(0, 0, 0, 0)), color-stop(45%, orange), color-stop(55%, orange), color-stop(55%, rgba(0, 0, 0, 0))) 0 0/auto 100% no-repeat;
@@ -1675,9 +1650,6 @@
             padding: 0;
 
             list-style: none;
-
-            -webkit-animation: .25s fade-in .5s backwards;
-                    animation: .25s fade-in .5s backwards;
         }
 
         nav a
@@ -2344,9 +2316,7 @@
     <meta name="og:type" content="website">
 </head>
 
-<body class="no-animation no-transition">
-    <div id="cover" role="presentation"></div>
-
+<body class="no-transition">
     <section id="about" class="not-mainmenu">
         <div class="text-container">
             <h1>About</h1>
@@ -2521,13 +2491,13 @@
 
             <div id="floor"></div>
 
-            <div id="shadow" class="start-animation"></div>
+            <div id="shadow" class=""></div>
 
-            <div id="cat-walk-container" class="start-animation widescreen-exclusive">
+            <div id="cat-walk-container" class="widescreen-exclusive">
                 <div id="cat-walk" class="widescreen-exclusive"></div>
             </div>
 
-            <div id="koishi-walk-container" class="start-animation">
+            <div id="koishi-walk-container">
                 <div id="koishi-walk-leg" class="ori-theme"></div>
                 <div id="koishi-walk-body" class="ori-theme"></div>
             </div>
@@ -2635,6 +2605,7 @@
             if (windowHeight > windowWidth || (windowHeight <= windowWidth && /Mobi/.test(navigator.userAgent))) {
                 this.play = function() {};
                 this.pause = function() {};
+                this.isPaused = function() {};
                 return;
             }
 
@@ -2645,6 +2616,7 @@
             if (!gl) {
                 this.play = function() {};
                 this.pause = function() {};
+                this.isPaused = function() {};
                 return;
             }
 
@@ -3367,10 +3339,6 @@
                 fastdom.mutate(function() {
                     document.body.className += " skip-start-animation";
                 });
-            } else {
-                fastdom.mutate(function() {
-                    id("cover").style.cssText = "transition: none; opacity: 0";
-                });
             };
 
             fastdom.mutate(function() {
@@ -3453,13 +3421,7 @@
             rng();
             fastClick();
 
-            particles = new Particles();
             navHover();
-
-            fastdom.mutate(function() {
-                id("cover").style.opacity = "0";
-                document.body.className = document.body.className.replace("no-animation", "");
-            });
 
             id("koishi-float-container").addEventListener("click", koishiFloatTrigger);
 
@@ -3486,6 +3448,8 @@
                     }
                 }, 150);
             }
+
+            particles = new Particles();
         }
 
         //GENERAL UTILITIES
