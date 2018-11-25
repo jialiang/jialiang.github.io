@@ -1492,7 +1492,7 @@
         .text-container>h1 {
             font-size: 2em;
 
-            width: 4em;
+            width: 5.5em;
             margin: 1em auto 1.5em auto;
 
             -webkit-transition: .25s -webkit-transform .35s;
@@ -1802,6 +1802,58 @@
             font-size: .9em;
 
             white-space: nowrap;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        form>label {
+            display: inline-block;
+            width: 100%;
+            margin: 0.25em 0;
+            line-height: 1.5;
+        }
+
+        form input[type=text] {
+            width: calc(100% - 7.5em);
+            float: right;
+            border-radius: 2px;
+            border: 1px solid lightgray;
+            padding: 0.25em;
+        }
+
+        input[type=button] {
+            background: orange;
+            font: inherit;
+            padding: 0.25em 1em;
+            border-radius: 1em;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type=button]:hover {
+            background: red;
+            color: white;
+        }
+
+        #more {
+            display: block;
+            margin: 0 0 0 auto;
+        }
+
+        #message {
+            text-align: center;
+        }
+
+        #guestbook-entry {
+            border: 1px solid lightgray;
+            border-radius: 2px;
+            padding: 1em;
+        }
+
+        #guestbook-entry .entry-line {
+            margin: 0.5em 0;
         }
 
         #neko {
@@ -2120,6 +2172,12 @@
                 <a href="https://github.com/wilsonpage/fastdom" title="Fastdom's Github Page" target="_blank" rel="noopener">Fastdom's Github Page</a> <small>( <a href="screenshot/ss5.png" title="Screenshot of Fastdom's Github Page" target="_blank" rel="noopener">screenshot</a> )</small> .</p>
             <br>
 
+            <h2>Guestbook</h2>
+            <p>Thank you for making it to the end of this website! Before you leave, you can leave an entry in the <a href="#guestbook" title="Guestbook">guestbook</a> to ackonowledge your visit or to comment on your experience.</p>
+            <br>
+            <p>The guestbook is hosted by Google App Engine in Google's Jurong West, Singapore datacenter. It is powered by NodeJS and LokiJS, a high-performance in-memory database.</p>
+            <br>
+
             <h2>Lucky Cat</h2>
             <p>Rub on the Lucky Cat to get a lucky number!</p>
             <br>
@@ -2152,6 +2210,44 @@
             <br>
 
             <a class="back" title="Back to Mainmenu" href="#">Back</a>
+        </div>
+    </section>
+
+    <section id="guestbook" class="not-mainmenu">
+        <div class="text-container">
+            <h1>Guestbook</h1>
+            <ul>
+                <li>Each IP address is limited to 1 entry per day.</li>
+                <li>Entries can only be modified by the IP address that created it.</li>
+                <li>Previous day's entries are made immutable on 0001 UTC.</li>
+                <li>All fields are mandatory except for website field.</li>
+            </ul>
+            <br>
+            <form>
+                <label>*Name
+                    <input type="text" name="name" required>
+                </label>
+                <br>
+                <label>*Message
+                    <input type="text" name="message" required>
+                </label>
+                <br>
+                <label>Website
+                    <input type="text" name="website">
+                </label>
+                <br>
+                <br>
+                <input id="submit" type="button" value="Insert or Update">
+                <input id="delete" type="button" value="Delete">
+            </form>
+            <br>
+            <p id="message">Loading entries...</p>
+            <br>
+            <div id="guestbook-entry"></div>
+            <br>
+            <input id="more" type="button" value="Load More">
+            <br>
+            <a class="back" title="Back to Others" href="#others">Back</a>
         </div>
     </section>
 
@@ -2276,7 +2372,7 @@
     <script>
         "use strict";
 
-        var NOT_MAINMENU = /about|work|others/i;
+        var NOT_MAINMENU = /about|work|others|guestbook/i;
 
         var particles;
         var game;
@@ -3036,6 +3132,124 @@
             }
         }
 
+        function submitGuestbook() {
+            fastdom.mutate(function() {
+                id("message").textContent = "Sending request...";
+            });
+
+            postAjax("https://guestbook-11111111.appspot.com/insertOrUpdate", {
+                    name: q("input[name='name']").value || "",
+                    message: q("input[name='message']").value || "",
+                    website: q("input[name='website']").value || "",
+                },
+                function(status, response) {
+                    if (!response) {
+                        fastdom.mutate(function() {
+                            id("message").textContent = "No response from server.";
+                        });
+                        return;
+                    }
+
+                    fastdom.mutate(function() {
+                        id("message").textContent = response.message;
+
+                        if (status === 200) populateGuestbook(0);
+                    });
+                }
+            )
+        }
+
+        function deleteGuestbook() {
+            fastdom.mutate(function() {
+                id("message").textContent = "Sending request...";
+            });
+
+            postAjax("https://guestbook-11111111.appspot.com/remove", {},
+                function(status, response) {
+                    if (!response) {
+                        fastdom.mutate(function() {
+                            id("message").textContent = "No response from server.";
+                        });
+                        return;
+                    }
+
+                    fastdom.mutate(function() {
+                        id("message").textContent = response.message;
+
+                        if (status === 200) populateGuestbook(0);
+                    });
+                }
+            )
+        }
+
+        function populateGuestbook(page) {
+            fastdom.mutate(function() {
+                id("message").textContent = "Sending request...";
+            });
+
+            postAjax("https://guestbook-11111111.appspot.com/retrieve", {
+                    page: page
+                },
+                function(status, response) {
+                    fastdom.mutate(function() {
+                        id("more").value = "Load More";
+                    });
+
+                    if (!response) {
+                        fastdom.mutate(function() {
+                            id("message").textContent = "No response from server.";
+                        });
+                        return;
+                    }
+
+                    if (status !== 200) {
+                        fastdom.mutate(function() {
+                            id("message").textContent = response.message;
+                        });
+                        return;
+                    }
+
+                    fastdom.mutate(function() {
+                        id("message").textContent = response.message;
+
+                        styleGuestbook(response.result);
+
+                        q("input[name='name']").value = response.entry.name || "";
+                        q("input[name='message']").value = response.entry.message || "";
+                        q("input[name='website']").value = response.entry.website || "";
+                    });
+                }
+            )
+        }
+
+        function styleGuestbook(results) {
+            var str = "";
+
+            results.forEach(function(result) {
+                str += "<div class='entry'><div class='entry-line'><b>";
+                str += (result.name || "") + "</b> <small>(";
+                str += (result.date || "") + ")</small></div><div class='entry-line'>";
+                str += (result.message || "") + "</div><div class='entry-line'><a href='";
+                str += (result.website || "") + "' target='_blank' rel='noopener'>";
+                str += (result.website || "") + "</a></div><br>";
+                str += "</div>";
+            });
+
+            fastdom.mutate(function() {
+                id("guestbook-entry").innerHTML += str;
+            });
+        }
+
+        function loadmoreGuestbook() {
+            var page = Math.floor(qa(".entry").length / 20) + 1;
+
+            fastdom.mutate(function() {
+                id("more").value = "Loading...";
+            });
+
+            populateGuestbook(page);
+        }
+
         //ONDOMREADT
 
         document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", DOMContentLoaded) : DOMContentLoaded();
@@ -3165,6 +3379,22 @@
             particles = new Particles();
         }
 
+        window.onload = function() {
+            populateGuestbook(0);
+
+            id("submit").onclick = function() {
+                submitGuestbook();
+            }
+
+            id("delete").onclick = function() {
+                deleteGuestbook();
+            }
+
+            id("more").onclick = function() {
+                loadmoreGuestbook();
+            }
+        }
+
         //GENERAL UTILITIES
 
         function vh(n) {
@@ -3201,6 +3431,17 @@
             };
 
             return 1;
+        }
+
+        function postAjax(url, data, success) {
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState > 3) success(xhr.status, JSON.parse(xhr.responseText));
+            };
+
+            xhr.open("POST", url);
+            xhr.send(JSON.stringify(data));
         }
     </script>
 </body>
