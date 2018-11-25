@@ -3153,7 +3153,7 @@
                     fastdom.mutate(function() {
                         id("message").textContent = response.message;
 
-                        if (status === 200) populateGuestbook(0);
+                        if (status === 200) populateGuestbook(0, true);
                     });
                 }
             )
@@ -3176,13 +3176,13 @@
                     fastdom.mutate(function() {
                         id("message").textContent = response.message;
 
-                        if (status === 200) populateGuestbook(0);
+                        if (status === 200) populateGuestbook(0, true);
                     });
                 }
             )
         }
 
-        function populateGuestbook(page) {
+        function populateGuestbook(page, reset) {
             fastdom.mutate(function() {
                 id("message").textContent = "Sending request...";
             });
@@ -3209,10 +3209,16 @@
                         return;
                     }
 
+                    var str = styleGuestbook(response.result, reset);
+
                     fastdom.mutate(function() {
                         id("message").textContent = response.message;
 
-                        styleGuestbook(response.result);
+                        if(reset) {
+                            id("guestbook-entry").innerHTML = str; 
+                        } else {
+                            id("guestbook-entry").innerHTML += str;
+                        }
 
                         q("input[name='name']").value = response.entry.name || "";
                         q("input[name='message']").value = response.entry.message || "";
@@ -3222,7 +3228,7 @@
             )
         }
 
-        function styleGuestbook(results) {
+        function styleGuestbook(results, reset) {
             var str = "";
 
             results.forEach(function(result) {
@@ -3235,9 +3241,7 @@
                 str += "</div>";
             });
 
-            fastdom.mutate(function() {
-                id("guestbook-entry").innerHTML += str;
-            });
+            return str;
         }
 
         function loadmoreGuestbook() {
@@ -3247,7 +3251,7 @@
                 id("more").value = "Loading...";
             });
 
-            populateGuestbook(page);
+            populateGuestbook(page, false);
         }
 
         //ONDOMREADT
@@ -3380,7 +3384,7 @@
         }
 
         window.onload = function() {
-            populateGuestbook(0);
+            populateGuestbook(0, true);
 
             id("submit").onclick = function() {
                 submitGuestbook();
