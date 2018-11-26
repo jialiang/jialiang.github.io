@@ -1831,6 +1831,7 @@
             font: inherit;
 
             padding: .25em 1em;
+            margin-bottom: 1em;
 
             cursor: pointer;
 
@@ -1844,7 +1845,7 @@
             background: red;
         }
 
-        #more {
+        #older {
             display: block;
 
             margin: 0 0 0 auto;
@@ -2248,13 +2249,13 @@
                 <br>
                 <input id="submit" type="button" value="Insert or Update">
                 <input id="delete" type="button" value="Delete">
+                <input id="refresh" type="button" value="Refresh">
             </form>
-            <br>
-            <p id="message"></p>
+            <p id="message">Populating guestbook...</p>
             <br>
             <div id="guestbook-entry"></div>
             <br>
-            <input id="more" type="button" value="Load More">
+            <input id="older" type="button" value="Load Older">
             <br>
             <a class="back" title="Back to Others" href="#others">Back</a>
         </div>
@@ -3203,7 +3204,7 @@
                 },
                 function(status, response) {
                     fastdom.mutate(function() {
-                        id("more").value = "Load More";
+                        id("older").value = "Load Older";
                     });
 
                     if (!response) {
@@ -3257,9 +3258,9 @@
             return str;
         }
 
-        function loadmoreGuestbook() {
+        function loadolderGuestbook() {
             fastdom.mutate(function() {
-                id("more").value = "Loading...";
+                id("older").value = "Loading...";
             });
 
             populateGuestbook(Math.floor(qa(".entry").length / 20) + 1, false);
@@ -3391,17 +3392,10 @@
         window.onload = function() {
             populateGuestbook(0, true);
 
-            id("submit").onclick = function() {
-                submitGuestbook();
-            }
-
-            id("delete").onclick = function() {
-                deleteGuestbook();
-            }
-
-            id("more").onclick = function() {
-                loadmoreGuestbook();
-            }
+            id("submit").onclick = submitGuestbook;
+            id("delete").onclick = deleteGuestbook;
+            id("older").onclick = loadolderGuestbook;
+            id("refresh").onclick = function() { populateGuestbook(0, true); }
         }
 
         //GENERAL UTILITIES
