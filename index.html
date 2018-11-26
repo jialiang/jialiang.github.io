@@ -1809,36 +1809,44 @@
         }
 
         form>label {
-            display: inline-block;
-            width: 100%;
-            margin: 0.25em 0;
             line-height: 1.5;
+
+            display: inline-block;
+
+            width: 100%;
+            margin: .25em 0;
         }
 
         form input[type=text] {
-            width: calc(100% - 7.5em);
             float: right;
-            border-radius: 2px;
+
+            width: calc(100% - 7.5em);
+            padding: .25em;
+
             border: 1px solid lightgray;
-            padding: 0.25em;
+            border-radius: 2px;
         }
 
         input[type=button] {
-            background: orange;
             font: inherit;
-            padding: 0.25em 1em;
-            border-radius: 1em;
-            border: none;
+
+            padding: .25em 1em;
+
             cursor: pointer;
+
+            border: none;
+            border-radius: 1em;
+            background: orange;
         }
 
         input[type=button]:hover {
-            background: red;
             color: white;
+            background: red;
         }
 
         #more {
             display: block;
+
             margin: 0 0 0 auto;
         }
 
@@ -1847,13 +1855,14 @@
         }
 
         #guestbook-entry {
+            padding: 1em;
+
             border: 1px solid lightgray;
             border-radius: 2px;
-            padding: 1em;
         }
 
         #guestbook-entry .entry-line {
-            margin: 0.5em 0;
+            margin: .5em 0;
         }
 
         #neko {
@@ -2241,7 +2250,7 @@
                 <input id="delete" type="button" value="Delete">
             </form>
             <br>
-            <p id="message">Loading entries...</p>
+            <p id="message"></p>
             <br>
             <div id="guestbook-entry"></div>
             <br>
@@ -3094,12 +3103,8 @@
 
             var ktc_display = "";
 
-            fastdom.measure(function() {
-                ktc_display = ktc.style.display;
-            });
-
             fastdom.mutate(function() {
-                if (ktc_display === "") {
+                if (ktc.style.display === "") {
                     ktc.style.display = "block";
                     ntc.style.display = "none";
                 } else {
@@ -3133,8 +3138,10 @@
         }
 
         function submitGuestbook() {
+            var message = id("message");
+
             fastdom.mutate(function() {
-                id("message").textContent = "Sending request...";
+                message.textContent = "Submiting entry...";
             });
 
             postAjax("https://guestbook-11111111.appspot.com/insertOrUpdate", {
@@ -3145,46 +3152,50 @@
                 function(status, response) {
                     if (!response) {
                         fastdom.mutate(function() {
-                            id("message").textContent = "No response from server.";
+                            message.textContent = "No response from server.";
                         });
                         return;
                     }
 
                     fastdom.mutate(function() {
-                        id("message").textContent = response.message;
-
-                        if (status === 200) populateGuestbook(0, true);
+                        message.textContent = response.message;
                     });
+
+                    if (status === 200) populateGuestbook(0, true);
                 }
             )
         }
 
         function deleteGuestbook() {
+            var message = id("message");
+
             fastdom.mutate(function() {
-                id("message").textContent = "Sending request...";
+                message.textContent = "Deleting entry...";
             });
 
             postAjax("https://guestbook-11111111.appspot.com/remove", {},
                 function(status, response) {
                     if (!response) {
                         fastdom.mutate(function() {
-                            id("message").textContent = "No response from server.";
+                            message.textContent = "No response from server.";
                         });
                         return;
                     }
 
                     fastdom.mutate(function() {
-                        id("message").textContent = response.message;
-
-                        if (status === 200) populateGuestbook(0, true);
+                        message.textContent = response.message;
                     });
+
+                    if (status === 200) populateGuestbook(0, true);
                 }
             )
         }
 
         function populateGuestbook(page, reset) {
+            var message = id("message");
+
             fastdom.mutate(function() {
-                id("message").textContent = "Sending request...";
+                message.textContent = "Populating guestbook...";
             });
 
             postAjax("https://guestbook-11111111.appspot.com/retrieve", {
@@ -3197,14 +3208,14 @@
 
                     if (!response) {
                         fastdom.mutate(function() {
-                            id("message").textContent = "No response from server.";
+                            message.textContent = "No response from server.";
                         });
                         return;
                     }
 
                     if (status !== 200) {
                         fastdom.mutate(function() {
-                            id("message").textContent = response.message;
+                            message.textContent = response.message;
                         });
                         return;
                     }
@@ -3212,10 +3223,10 @@
                     var str = styleGuestbook(response.result, reset);
 
                     fastdom.mutate(function() {
-                        id("message").textContent = response.message;
+                        message.textContent = response.message;
 
-                        if(reset) {
-                            id("guestbook-entry").innerHTML = str; 
+                        if (reset) {
+                            id("guestbook-entry").innerHTML = str;
                         } else {
                             id("guestbook-entry").innerHTML += str;
                         }
@@ -3229,9 +3240,11 @@
         }
 
         function styleGuestbook(results, reset) {
-            var str = "";
+            var result, str = "";
 
-            results.forEach(function(result) {
+            for (var i = 0; i < results.length; i++) {
+                result = results[i];
+
                 str += "<div class='entry'><div class='entry-line'><b>";
                 str += (result.name || "") + "</b> <small>(";
                 str += (result.date || "") + ")</small></div><div class='entry-line'>";
@@ -3239,19 +3252,17 @@
                 str += (result.website || "") + "' target='_blank' rel='noopener'>";
                 str += (result.website || "") + "</a></div><br>";
                 str += "</div>";
-            });
+            };
 
             return str;
         }
 
         function loadmoreGuestbook() {
-            var page = Math.floor(qa(".entry").length / 20) + 1;
-
             fastdom.mutate(function() {
                 id("more").value = "Loading...";
             });
 
-            populateGuestbook(page, false);
+            populateGuestbook(Math.floor(qa(".entry").length / 20) + 1, false);
         }
 
         //ONDOMREADT
@@ -3269,12 +3280,6 @@
                 document.body.className = document.body.className.replace("no-transition", "");
             });
 
-            DOMContentLoaded2();
-        }
-
-        //ONLOAD
-
-        function DOMContentLoaded2() {
             q("#game-controls > .play").onclick = function() {
                 game = new Game();
 
@@ -3441,7 +3446,7 @@
             var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
             xhr.onreadystatechange = function() {
-                if (xhr.readyState > 3) success(xhr.status, JSON.parse(xhr.responseText));
+                if (xhr.readyState > 3) success(xhr.status, (xhr.responseText ? JSON.parse(xhr.responseText) : null));
             };
 
             xhr.open("POST", url);
