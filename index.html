@@ -1855,14 +1855,28 @@
             text-align: center;
         }
 
-        #guestbook-entry {
-            padding: 1em;
+        #guestbook-entries {
+            padding: 0.5em;
 
             border: 1px solid lightgray;
             border-radius: 2px;
+
+            list-style: none;
         }
 
-        #guestbook-entry .entry-line {
+        #guestbook-entries li {
+            opacity: 0;
+
+            animation: 1s fade-in 0.25s forwards;
+        }
+
+        #guestbook-entries h3 {
+            font-size: 1em;
+
+            margin: .5em 0;
+        }
+
+        #guestbook-entries p {
             margin: .5em 0;
         }
 
@@ -2253,8 +2267,7 @@
             </form>
             <p id="message">Populating guestbook...</p>
             <br>
-            <div id="guestbook-entry"></div>
-            <br>
+            <ul id="guestbook-entries"></ul>
             <input id="older" type="button" value="Load Older">
             <br>
             <a class="back" title="Back to Others" href="#others">Back</a>
@@ -3227,9 +3240,9 @@
                         message.textContent = response.message;
 
                         if (reset) {
-                            id("guestbook-entry").innerHTML = str;
+                            id("guestbook-entries").innerHTML = str;
                         } else {
-                            id("guestbook-entry").innerHTML += str;
+                            id("guestbook-entries").innerHTML += str;
                         }
 
                         q("input[name='name']").value = response.entry.name || "";
@@ -3246,13 +3259,12 @@
             for (var i = 0; i < results.length; i++) {
                 result = results[i];
 
-                str += "<div class='entry'><div class='entry-line'><b>";
-                str += (result.name || "") + "</b> <small>(";
-                str += (result.date || "") + ")</small></div><div class='entry-line'>";
-                str += (result.message || "") + "</div><div class='entry-line'><a href='";
+                str += "<li class='entry'><h3 class='entry-line'>";
+                str += (result.name || "") + " <small>(";
+                str += (result.date || "") + ")</small></h3><p>";
+                str += (result.message || "") + "</p><p><a href='";
                 str += (result.website || "") + "' target='_blank' rel='noopener'>";
-                str += (result.website || "") + "</a></div><br>";
-                str += "</div>";
+                str += (result.website || "") + "</a></p><br></lli>";
             };
 
             return str;
