@@ -1482,6 +1482,7 @@
             min-height: 100%;
             margin: auto;
             padding: 1em 2em 2em 2em;
+            overflow: hidden;
 
             color: rgb(51, 51, 51);
             background: white;
@@ -1601,7 +1602,15 @@
         }
 
         #koishi-text-container {
-            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+
+            transition: .25s opacity;
+
+            opacity: 0;
+            pointer-events: none;
         }
 
         #koishi-text-container>p {
@@ -2397,13 +2406,14 @@
 
         var NOT_MAINMENU = /about|work|others|guestbook/i;
 
-        var particles;
-        var game;
+        var particles, game;
 
         var windowHeight = window.innerHeight;
         var windowWidth = window.innerWidth;
 
-        var audio = true;
+        var gameAudio = true;
+
+        //PARTICLES
 
         function Particles(startPaused) {
             if (windowHeight > windowWidth || (windowHeight <= windowWidth && /Mobi/.test(navigator.userAgent))) {
@@ -2525,6 +2535,8 @@
             }
         }
 
+        //GAME
+
         function Game() {
             var alreadyPaused = particles.isPaused();
 
@@ -2554,7 +2566,7 @@
                 scoreDisplay.textContent = "0";
             });
 
-            if (audio) {
+            if (gameAudio) {
                 var bonusBgm = id("bonus-bgm");
                 var music = id("game-music");
 
@@ -2964,68 +2976,7 @@
             return m;
         }
 
-        function navHover() {
-            var hovering = false;
-
-            var frameTextOverlay = id("frame-text-overlay");
-            var koishiWalk = id("koishi-walk-container");
-            var catWalk = id("cat-walk-container");
-            var yinWalk = id("yin-walk-container");
-            var shadow = id("shadow");
-
-            var a = qa("#mainmenu>nav>ul>li>a");
-
-            for (var i = 0; i < a.length; i++) {
-                a[i].onmouseover = function(e) {
-                    hovering = true;
-
-                    fastdom.mutate(function() {
-                        frameTextOverlay.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg width='" + (e.target.textContent.length * 10 + 20) + "' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='90' height='30' fill='orange'%3E%3C/rect%3E%3Ctext x='5' y='20' fill='white' font-weight='bold' font-size='15px' font-family='Verdana, sans-serif'%3E" + e.target.textContent.toUpperCase() + "%3C/text%3E%3C/svg%3E\")";
-                        frameTextOverlay.style.transform = "scale(1)";
-                        frameTextOverlay.style.webkitTransform = "scaleX(1)";
-
-                        catWalk.style.opacity = "0";
-                        koishiWalk.style.opacity = "0";
-                        yinWalk.style.opacity = "0";
-                        shadow.style.opacity = "0";
-                    });
-                }
-
-                a[i].onmouseout = function(e) {
-                    hovering = false;
-
-                    setTimeout(function() {
-                        if (hovering) return;
-
-                        fastdom.mutate(function() {
-                            frameTextOverlay.style.transform = "";
-                            frameTextOverlay.style.webkitTransform = "";
-
-                            catWalk.style.opacity = "";
-                            koishiWalk.style.opacity = "";
-                            yinWalk.style.opacity = "";
-                            shadow.style.opacity = "";
-                        });
-                    }, 250);
-                }
-            };
-        }
-
-        function fastClick() {
-            var a = qa("nav>ul>li>a, .back");
-
-            for (var i = 0; i < a.length; i++) {
-                a[i].onmousedown = function(e) {
-                    e.preventDefault();
-                    window.location = this.href;
-                }
-
-                a[i].ontouchstart = function(e) {
-                    e.preventDefault();
-                    window.location = this.href;
-                }
-            }
-        }
+        //LUCKY CAT RNG
 
         function rng() {
             var s = 0;
@@ -3037,6 +2988,7 @@
 
             img.addEventListener("touchmove", function(event) {
                 event.preventDefault();
+                event.stopPropagation();
 
                 var newEvent = new Event('mousemove');
                 newEvent.clientX = event.touches[0].clientX;
@@ -3109,47 +3061,7 @@
             }
         }
 
-        function koishiFloatTrigger(state) {
-            if (state === 1) return;
-
-            var ktc = id("koishi-text-container");
-            var ntc = q("#about>.text-container");
-
-            var ktc_display = "";
-
-            fastdom.mutate(function() {
-                if (ktc.style.display === "") {
-                    ktc.style.display = "block";
-                    ntc.style.display = "none";
-                } else {
-                    ktc.style.display = "";
-                    ntc.style.display = "";
-                }
-            });
-        }
-
-        function catWalkTrigger(state) {
-            if (state === 1) return;
-
-            var figure = q("#mainmenu figure");
-            var koishiFloat = id("koishi-float-container");
-
-            if (figure.className === "show-ori-theme") {
-                fastdom.mutate(function() {
-                    figure.className = "show-alt-theme";
-                    koishiFloat.style.opacity = "0";
-                });
-
-                particles.pause();
-            } else {
-                fastdom.mutate(function() {
-                    figure.className = "show-ori-theme";
-                    koishiFloat.style.opacity = "";
-                });
-
-                particles.play();
-            }
-        }
+        //GUESTBOOK FUNCTIONS
 
         function submitGuestbook() {
             var message = id("message");
@@ -3259,7 +3171,7 @@
             for (var i = 0; i < results.length; i++) {
                 result = results[i];
 
-                str += "<li class='entry'><h3 class='entry-line'>";
+                str += "<li class='entry'><h3>";
                 str += (result.name || "") + " <small>(";
                 str += (result.date || "") + ")</small></h3><p>";
                 str += (result.message || "") + "</p><p><a href='";
@@ -3278,6 +3190,116 @@
             populateGuestbook(Math.floor(qa(".entry").length / 20) + 1, false);
         }
 
+        //OTHER FUNCTIONS
+
+        function navHover() {
+            var hovering = false;
+
+            var frameTextOverlay = id("frame-text-overlay");
+            var koishiWalk = id("koishi-walk-container");
+            var catWalk = id("cat-walk-container");
+            var yinWalk = id("yin-walk-container");
+            var shadow = id("shadow");
+
+            var a = qa("#mainmenu>nav>ul>li>a");
+
+            for (var i = 0; i < a.length; i++) {
+                a[i].onmouseover = function(e) {
+                    hovering = true;
+
+                    fastdom.mutate(function() {
+                        frameTextOverlay.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg width='" + (e.target.textContent.length * 10 + 20) + "' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='90' height='30' fill='orange'%3E%3C/rect%3E%3Ctext x='5' y='20' fill='white' font-weight='bold' font-size='15px' font-family='Verdana, sans-serif'%3E" + e.target.textContent.toUpperCase() + "%3C/text%3E%3C/svg%3E\")";
+                        frameTextOverlay.style.transform = "scale(1)";
+                        frameTextOverlay.style.webkitTransform = "scaleX(1)";
+
+                        catWalk.style.opacity = "0";
+                        koishiWalk.style.opacity = "0";
+                        yinWalk.style.opacity = "0";
+                        shadow.style.opacity = "0";
+                    });
+                }
+
+                a[i].onmouseout = function(e) {
+                    hovering = false;
+
+                    setTimeout(function() {
+                        if (hovering) return;
+
+                        fastdom.mutate(function() {
+                            frameTextOverlay.style.transform = "";
+                            frameTextOverlay.style.webkitTransform = "";
+
+                            catWalk.style.opacity = "";
+                            koishiWalk.style.opacity = "";
+                            yinWalk.style.opacity = "";
+                            shadow.style.opacity = "";
+                        });
+                    }, 250);
+                }
+            };
+        }
+
+        function koishiFloatTrigger(state) {
+            if (state === 1) return;
+
+            var ktc = id("koishi-text-container");
+            var ntc = q("#about>.text-container");
+
+            fastdom.mutate(function() {
+                if (ktc.style.opacity === "") {
+                    ktc.style.opacity = "1";
+                    ktc.style.pointerEvents = "auto";
+                    ntc.style.height = "100%";
+                } else {
+                    ktc.style.opacity = "";
+                    ktc.style.pointerEvents = "";
+                    ntc.style.height = "";
+                }
+            });
+        }
+
+        function catWalkTrigger(state) {
+            if (state === 1) return;
+
+            var figure = q("#mainmenu figure");
+            var koishiFloat = id("koishi-float-container");
+
+            if (figure.className === "show-ori-theme") {
+                fastdom.mutate(function() {
+                    figure.className = "show-alt-theme";
+                    koishiFloat.style.opacity = "0";
+                });
+
+                particles.pause();
+            } else {
+                fastdom.mutate(function() {
+                    figure.className = "show-ori-theme";
+                    koishiFloat.style.opacity = "";
+                });
+
+                particles.play();
+            }
+        }
+
+        function registerGameControls() {
+            q("#game-controls > .play").onclick = function() {
+                game = new Game();
+
+                fastdom.mutate(function() {
+                    id("game-controls").style.visibility = "hidden";
+                });
+            }
+
+            q("#game-controls > .audio").onclick = function() {
+                id("game-music").pause();
+                gameAudio = !gameAudio;
+
+                fastdom.mutate(function() {
+                    q("#game-controls > .audio").textContent = "Audio: " + (gameAudio ? "ON" : "OFF");
+                });
+            }
+        }
+
         //ONDOMREADT
 
         document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", DOMContentLoaded) : DOMContentLoaded();
@@ -3293,86 +3315,59 @@
                 document.body.className = document.body.className.replace("no-transition", "");
             });
 
-            q("#game-controls > .play").onclick = function() {
-                game = new Game();
+            id("submit").onclick = submitGuestbook;
+            id("delete").onclick = deleteGuestbook;
+            id("refresh").onclick = function() { populateGuestbook(0, true); }
+            id("older").onclick = loadolderGuestbook;
 
-                fastdom.mutate(function() {
-                    id("game-controls").style.visibility = "hidden";
+            populateGuestbook(0, true);
+            navHover();
+            registerGameControls();
+
+            var a = qa("nav>ul>li>a, .back");
+
+            for (var i = 0; i < a.length; i++) {
+                registerFastClick(a[i], function(state, elem) {
+                    window.location = elem.href;
                 });
             }
 
-            q("#game-controls > .audio").onclick = function() {
-                id("game-music").pause();
-                audio = !audio;
+            registerFastClick(id("cat-walk-container"), catWalkTrigger);
+            registerFastClick(id("koishi-float-container"), koishiFloatTrigger);
+            registerFastClick(id("yin-walk-body"), function(state) {
+                if (state === 1) return;
 
-                fastdom.mutate(function() {
-                    q("#game-controls > .audio").textContent = "Audio: " + (audio ? "ON" : "OFF");
-                });
-            }
+                var bgm = id("bonus-bgm");
+                var subtitles = id("subtitles");
 
-            var catWalkContainer = id("cat-walk-container");
-            var catWalkTriggerState = 0;
+                if (!bgm.paused) {
+                    bgm.pause();
+                    return;
+                }
 
-            catWalkContainer.onmousedown = function(e) {
-                e.preventDefault();
-                catWalkTrigger(catWalkTriggerState);
-                catWalkTriggerState = 0;
-            }
+                if (subtitles.innerHTML === "" && bgm.readyState !== 4) {
+                    fastdom.mutate(function() {
+                        subtitles.innerHTML = "<div class='eng'>Loading Audio...</div>";
+                    });
+                }
 
-            catWalkContainer.ontouchstart = function(e) {
-                e.preventDefault();
-                catWalkTrigger(0);
-                catWalkTriggerState = 1;
-            }
+                bgm.play();
+            });
 
-            var bgm = id("bonus-bgm");
-            var track = bgm.textTracks[0];
-            var subtitles = id("subtitles");
-            var currentText = "";
+            var track = id("bonus-bgm").textTracks[0];
 
             track.mode = "hidden";
             track.oncuechange = function(e) {
-                if (this.activeCues.length > 0) {
-                    currentText = "<div class='jpn'>" + this.activeCues[0].getCueAsHTML().textContent.replace("*", "</div><div class='eng'>") + "</div>";
+                if (this.activeCues.length === 0) return;
 
-                    fastdom.mutate(function() {
-                        subtitles.innerHTML = currentText;
-                    });
-                }
-            }
+                var text = "<div class='jpn'>" + this.activeCues[0].getCueAsHTML().textContent.replace("*", "</div><div class='eng'>") + "</div>";
 
-            id("yin-walk-body").onclick = function() {
-                if (bgm.paused) {
-                    bgm.play();
-
-                    if (bgm.readyState !== 4 && currentText === "")
-                        fastdom.mutate(function() {
-                            subtitles.innerHTML = "<div class='eng'>Loading Audio...</div>";
-                        });
-                } else {
-                    bgm.pause();
-                }
+                fastdom.mutate(function() {
+                    id("subtitles").innerHTML = text;
+                });
             }
 
             rng();
-            fastClick();
-
-            navHover();
-
-            var koishiFloatContainer = id("koishi-float-container");
-            var koishiFloatTriggerState = 0;
-
-            koishiFloatContainer.onmousedown = function(e) {
-                e.preventDefault();
-                koishiFloatTrigger(koishiFloatTriggerState);
-                koishiFloatTriggerState = 0;
-            }
-
-            koishiFloatContainer.ontouchstart = function(e) {
-                e.preventDefault();
-                koishiFloatTrigger(0);
-                koishiFloatTriggerState = 1;
-            }
 
             var resizing = 0;
             var startPaused = null;
@@ -3397,13 +3392,6 @@
                     }
                 }, 150);
             }
-
-            populateGuestbook(0, true);
-
-            id("submit").onclick = submitGuestbook;
-            id("delete").onclick = deleteGuestbook;
-            id("older").onclick = loadolderGuestbook;
-            id("refresh").onclick = function() { populateGuestbook(0, true); }
 
             particles = new Particles();
         }
@@ -3455,6 +3443,22 @@
 
             xhr.open("POST", url);
             xhr.send(JSON.stringify(data));
+        }
+
+        function registerFastClick(elem, execute) {
+            var state = 0;
+
+            elem.ontouchstart = function(e) {
+                e.preventDefault();
+                execute(0, elem);
+                state = 1;
+            }
+
+            elem.onmousedown = function(e) {
+                e.preventDefault();
+                execute(state, elem);
+                state = 0;
+            }
         }
     </script>
 </body>
