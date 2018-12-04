@@ -2213,7 +2213,7 @@
             <h2>Guestbook</h2>
             <p>Thank you for making it to the end of this website! Before you leave, you can leave an entry in the Guestbook to ackonowledge your visit or to comment on your experience.</p>
             <br>
-            <p>The guestbook is hosted in Moncks Corner, South Carolina and utilises Google App Engine as its reverse proxy and Google Compute Engine as its web server. It is powered by NodeJS and LokiJS, a high-performance in-memory database.</p>
+            <p>The guestbook is hosted in Amazon's Ashburn, Virginia datacenter and managed by Heroku. It is powered by NodeJS and LokiJS, a high-performance in-memory database for submillisecond IO performance.</p>
             <br>
             <p>You can view the <a href="https://github.com/jialiang/super-simple-guestbook" title="Guestbook Git repository" target="_blank" rel="noopener">Git Repository</a> here.</p>
             <a href="#guestbook" title="Guestbook" class="internal-link">Guestbook</a>
@@ -3078,7 +3078,7 @@
                 message.textContent = "Submiting entry...";
             });
 
-            postAjax("https://guestbook-224200.appspot.com/entries", "POST", {
+            postAjax("https://guestbook-1.herokuapp.com/entries", "POST", {
                     name: q("input[name='name']").value || "",
                     message: q("input[name='message']").value || "",
                     website: q("input[name='website']").value || "",
@@ -3107,7 +3107,7 @@
                 message.textContent = "Deleting entry...";
             });
 
-            postAjax("https://guestbook-224200.appspot.com/entries", "DELETE", {},
+            postAjax("https://guestbook-1.herokuapp.com/entries", "DELETE", {},
                 function(status, response) {
                     if (!response) {
                         fastdom.mutate(function() {
@@ -3127,7 +3127,7 @@
 
         function populateGuestbook(page, reset) {
             var message = id("message");
-            var url = "https://guestbook-224200.appspot.com/entries" + (page ? "?page=" + page : "");
+            var url = "https://guestbook-1.herokuapp.com/entries" + (page ? "?page=" + page : "");
 
             fastdom.mutate(function() {
                 message.textContent = "Populating guestbook...";
