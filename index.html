@@ -2223,14 +2223,14 @@
             <h2>Guestbook</h2>
             <p>Thank you for making it to the end of this website! Before you leave, you can leave an entry in the Guestbook to ackonowledge your visit or to comment on your experience.</p>
             <br>
-            <p>The web server for the guestbook is hosted in Amazon's Ashburn, Virginia datacenter and managed by Heroku while Cloudility is used for persistent storage. It is powered by NodeJS and features LokiJS, an in-memory database for sub-millisecond data access, and Turbo-HTTP, a low-level HTTP library utilising native C bindings.</p>
+            <p>The guestbook is hosted in Amazon's Ashburn, Virginia datacenter on an instance managed by Heroku and uses Cloudinary for persistent storage. It is the world's fastest NodeJS guestbook with an in-memory database for sub-millisecond data access and interoperability with native C libraries for super fast request handling.</p>
             <br>
             <p>Load test results using Bombardier (flags: -c 100 -d 5s) ran against a local server to retrieve and list 3 entries are as follows:
                 <ul>
                     <li>Average reqs/sec: 11698.23</li>
                     <li>Average latency: 8.54ms</li>
                 </ul>
-                <p>For comparison, a simple ExpressJS "Hello World" application in the same environment:</p>
+                <p>For comparison, a simple ExpressJS Hello World application in the same environment:</p>
                 <ul>
                     <li>Average reqs/sec: 9730.06</li>
                     <li>Average latency: 10.26ms</li>
