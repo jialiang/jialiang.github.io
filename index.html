@@ -996,7 +996,7 @@
 
             float: right;
 
-            color: #222;
+            color: #333;
         }
 
         figure {
@@ -1075,8 +1075,8 @@
             -webkit-animation: .375s railings-move linear infinite;
             animation: .375s railings-move linear infinite;
 
-            background: -webkit-gradient(linear, left top, right top, color-stop(25%, #111), color-stop(25%, rgba(0, 0, 0, 0))) 0 0/5vh 100% repeat-x, -webkit-gradient(linear, left top, left bottom, color-stop(8%, #111), color-stop(8%, rgba(0, 0, 0, 0)), color-stop(22%, rgba(0, 0, 0, 0)), color-stop(22%, #111), color-stop(30%, #111), color-stop(30%, rgba(0, 0, 0, 0)), color-stop(92%, rgba(0, 0, 0, 0)), color-stop(92%, #111));
-            background: linear-gradient(to right, #111 25%, rgba(0, 0, 0, 0) 25%) 0 0/5vh 100% repeat-x, linear-gradient(to bottom, #111 8%, rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 0) 22%, #111 22%, #111 30%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 92%, #111 92%);
+            background: -webkit-gradient(linear, left top, left bottom, from(#333), color-stop(8%, #000), color-stop(8%, rgba(0, 0, 0, 0)), color-stop(22%, rgba(0, 0, 0, 0)), color-stop(22%, #333), color-stop(30%, #000), color-stop(30%, rgba(0, 0, 0, 0)), color-stop(92%, rgba(0, 0, 0, 0)), color-stop(92%, #333), to(#000)), -webkit-gradient(linear, left top, right top, from(#333), color-stop(25%, #000), color-stop(25%, rgba(0, 0, 0, 0))) 0 0/5vh 100% repeat-x;
+            background: linear-gradient(to bottom, #333, #000 8%, rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 0) 22%, #333 22%, #000 30%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 92%, #333 92%, #000), linear-gradient(to right, #333, #000 25%, rgba(0, 0, 0, 0) 25%) 0 0/5vh 100% repeat-x;
         }
 
         #floor {
