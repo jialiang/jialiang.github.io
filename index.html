@@ -931,6 +931,19 @@
         color: orangered;
       }
 
+      hr {
+        display: block;
+
+        margin-top: 0.5em;
+        margin-right: auto;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+
+        border-width: 1px;
+        border-color: lightgray;
+        border-style: inset;
+      }
+
       section {
         position: absolute;
         z-index: 2;
@@ -1576,7 +1589,7 @@
       .text-container > h1 {
         font-size: 2em;
 
-        width: 5.5em;
+        width: 6em;
         margin: 1em auto 1.5em auto;
 
         -webkit-transition: 0.25s -webkit-transform 0.35s;
@@ -1640,10 +1653,19 @@
         background: orange;
       }
 
+      .internal-link {
+        margin: 0.75em 0 1.5em calc(50% - 3.5em);
+        padding: 0.25em;
+      }
+
       .back:hover,
       .internal-link:hover {
         color: white;
         background-color: red;
+      }
+
+      .text-center {
+        text-align: center;
       }
 
       #koishi-float-container {
@@ -2280,7 +2302,14 @@
     <section id="work" class="not-mainmenu">
       <div class="text-container">
         <h1>Work</h1>
-        <p>Sorry for the inconvenience but this section is currently under construction. Please check back again at a later date.</p>
+        <h2>Space Gems</h2>
+        <p>A tile-matching game done the React way.</p>
+        <a href="#spacegems" title="Space Gems" class="internal-link">More info</a> <br />
+
+        <hr />
+        <br />
+
+        <p>This section is still under construction and more projects will be added soon.</p>
         <br />
         <p>
           In the meantime, why not try out my simple home-made Touhou-style bullet hell shooter below! The objective is simple: avoid getting hit and earn
@@ -2390,7 +2419,7 @@
           Thank you for making it to the end of this website! Before you leave, you can leave an entry in the Guestbook to ackonowledge your visit or to comment
           on your experience.
         </p>
-        <br />
+        <a href="#guestbook" title="Guestbook" class="internal-link">Guestbook</a> <br />
         <p>
           The guestbook is hosted in Amazon's Ashburn, Virginia datacenter on an instance managed by Heroku and uses Cloudinary for persistent storage. It is
           the world's fastest NodeJS guestbook with an in-memory database for sub-millisecond data access and interoperability with native C libraries for super
@@ -2411,7 +2440,7 @@
           You can view the
           <a href="https://github.com/jialiang/super-simple-guestbook" title="Guestbook Git repository" target="_blank" rel="noopener">Git Repository</a> here.
         </p>
-        <a href="#guestbook" title="Guestbook" class="internal-link">Guestbook</a> <br />
+        <br />
 
         <h2>Lucky Cat</h2>
         <p>Rub on the Lucky Cat to get a lucky number!</p>
@@ -2528,6 +2557,48 @@
         <ul id="guestbook-entries"></ul>
         <input id="older" type="button" value="Load Older" /> <br />
         <a class="back" title="Back to Others" href="#others">Back</a>
+      </div>
+    </section>
+
+    <section id="spacegems" class="not-mainmenu">
+      <div class="text-container">
+        <h1>Space Gems</h1>
+        <p>
+          Space Gems is a relaxing tile-matching game reminiscence of simpler times when games of this genre did not come bundled with micro-transactions and
+          in-app advertisements.
+        </p>
+        <br />
+        <br />
+
+        <p class="text-center"><a href="space-gems" title="Play Space Gems" target="_blank" rel="noopener">&#9654; Play the game here.</a></p>
+        <br />
+        <br />
+
+        <p>
+          It is made with React, following proper React patterns. However,
+          <a href="https://github.com/developit/preact" title="Preact on Github" target="_blank" rel="noopener">Preact</a>, a "tiny (3kb) implementation of the
+          core value of React", is used in the end product instead of
+          <a href="https://github.com/facebook/react" title="React on Github" target="_blank" rel="noopener">React</a> and
+          <a href="https://github.com/facebook/react/tree/master/packages/react-dom" title="React-DOM on Github" target="_blank" rel="noopener">React-DOM</a>.
+          The <a href="https://github.com/developit/preact-compat" title="Preact-Compat on Github" target="_blank" rel="noopener">Preact-Compat</a> library is
+          also added to serve as a compatibility layer to avoid the need to make changes to the existing code. All this was done to reduce the file size of the end
+          product. As a result, the entire source code of the game now weights in at only 27kb gzipped. For comparison, the React-DOM library alone weights in
+          at a hefty 30kb gzipped.
+        </p>
+        <br />
+
+        <p>
+          The beautiful backgrounds featured in the game is courtesy of
+          <a href="https://pixabay.com/en/users/daswortgewand-8385/" title="Reimund Bertrams on Pixabay" target="_blank" rel="noopener">Reimund Bertrams</a>,
+          who was kind enough to release them under the CC0 license, while the ambient music is produced by
+          <a href="https://www.purple-planet.com/using-our-free-music" title="Purple Music's website" target="_blank" rel="noopener">Purple Music</a> and
+          licensed under the Creative Commons Attribution License 3.0.
+        </p>
+        <br />
+
+        <p>This project is made locally in Singapore with 100% hand-crafted code.</p>
+        <br />
+        <a class="back" title="Back to Others" href="#work">Back</a>
       </div>
     </section>
 
@@ -2688,7 +2759,7 @@
     <script>
       "use strict";
 
-      var NOT_MAINMENU = /about|work|others|guestbook/i;
+      var NOT_MAINMENU = /about|work|others|guestbook|spacegems/i;
 
       var particles, game;
 
