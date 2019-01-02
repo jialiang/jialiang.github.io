@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="canonical" href="https://jialiang.github.io" />
 
-    <style type="text/css">
+    <style>
       @font-face {
         font-family: "Roboto";
         font-weight: 500;
@@ -971,8 +971,12 @@
         pointer-events: auto;
       }
 
-      hgroup {
+      header {
         height: 10vh;
+      }
+
+      hgroup {
+        display: inline;
       }
 
       hgroup > h1 {
@@ -1002,7 +1006,7 @@
         color: orange;
       }
 
-      hgroup > address {
+      address {
         font-size: 2.5vh;
         font-style: normal;
         line-height: 10vh;
@@ -1563,7 +1567,7 @@
         opacity: 1;
       }
 
-      .not-mainmenu:target ~ #mainmenu > hgroup,
+      .not-mainmenu:target ~ #mainmenu > header,
       .not-mainmenu:target ~ #mainmenu #frame-text-overlay,
       .not-mainmenu:target ~ #mainmenu #cat-walk-container,
       .not-mainmenu:target ~ #mainmenu #koishi-walk-container,
@@ -2137,12 +2141,6 @@
         opacity: 1;
       }
 
-      @media not speech {
-        figcaption {
-          display: none;
-        }
-      }
-
       @media (max-aspect-ratio: 1/1) {
         .widescreen-exclusive {
           -webkit-transition: none !important;
@@ -2617,11 +2615,13 @@
     </div>
 
     <section id="mainmenu">
-      <hgroup>
-        <h1>Jia Liang</h1>
-        <h2>Software Engineer</h2>
+      <header>
+        <hgroup>
+          <h1>Jia Liang</h1>
+          <h2>Software Engineer</h2>
+        </hgroup>
         <address class="super-widescreen-exclusive">hojialiang@yahoo.com</address>
-      </hgroup>
+      </header>
 
       <figure class="show-ori-theme">
         <div id="sky" class="ori-theme"></div>
@@ -2653,7 +2653,6 @@
             <track label="subtitles" kind="subtitles" srclang="en" src="music/Tsukiakari.vtt" default />
           </video>
         </div>
-        <figcaption>Koishi walking under the sunshine :)</figcaption>
 
         <div id="frame-text-overlay"></div>
 
