@@ -2,8 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no" />
     <meta name="theme-color" content="#FFFFFF" />
     <meta name="robots" content="index,follow,noimageindex" />
 
@@ -706,6 +705,106 @@
         }
       }
 
+      @-webkit-keyframes ball-flex {
+        0% {
+          -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+
+          opacity: 1;
+        }
+        20% {
+          -webkit-transform: scale(2, 0.75);
+          transform: scale(2, 0.75);
+
+          opacity: 0.75;
+        }
+        40% {
+          -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+
+          opacity: 1;
+        }
+        60% {
+          -webkit-transform: scale(0.75, 2);
+          transform: scale(0.75, 2);
+
+          opacity: 0.75;
+        }
+        80% {
+          -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+
+          opacity: 1;
+        }
+      }
+
+      @keyframes ball-flex {
+        0% {
+          -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+
+          opacity: 1;
+        }
+        20% {
+          -webkit-transform: scale(2, 0.75);
+          transform: scale(2, 0.75);
+
+          opacity: 0.75;
+        }
+        40% {
+          -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+
+          opacity: 1;
+        }
+        60% {
+          -webkit-transform: scale(0.75, 2);
+          transform: scale(0.75, 2);
+
+          opacity: 0.75;
+        }
+        80% {
+          -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes square-scale {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @keyframes square-scale {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
       @-webkit-keyframes koishi-float-move {
         0% {
           -webkit-transform: translate3d(0vh, 0vh, 0);
@@ -1019,9 +1118,9 @@
       figure {
         position: relative;
 
-        overflow: hidden;
+        overflow-y: hidden;
 
-        height: 86vh;
+        height: 95vh;
         margin: 0;
 
         border-radius: 1.5vmin;
@@ -1193,7 +1292,7 @@
 
       #shadow {
         position: absolute;
-        bottom: 2.5vh;
+        top: 76.5vh;
         left: calc(70% - 20vh);
 
         width: 35vh;
@@ -1201,8 +1300,8 @@
 
         -webkit-transition: 0.25s opacity;
         transition: 0.25s opacity;
-        -webkit-animation: 0.5s fade-in 1.5s backwards;
-        animation: 0.5s fade-in 1.5s backwards;
+        -webkit-animation: 0.5s fade-in 2.6s ease backwards;
+        animation: 0.5s fade-in 2.6s ease backwards;
 
         border-radius: 100%;
         background: rgba(0, 0, 0, 0.25);
@@ -1218,8 +1317,8 @@
         margin: 25vh 0 -2.35vh calc(30% - 20vh);
 
         cursor: pointer;
-        -webkit-animation: 0.5s fade-in 1.65s backwards;
-        animation: 0.5s fade-in 1.65s backwards;
+        -webkit-animation: 0.5s fade-in 2.75s ease backwards;
+        animation: 0.5s fade-in 2.75s ease backwards;
       }
 
       #cat-walk {
@@ -1248,8 +1347,8 @@
 
         -webkit-transition: 0.25s opacity;
         transition: 0.25s opacity;
-        -webkit-animation: 0.5s fade-in 1.5s backwards;
-        animation: 0.5s fade-in 1.5s backwards;
+        -webkit-animation: 0.5s fade-in 2.6s ease backwards;
+        animation: 0.5s fade-in 2.6s ease backwards;
       }
 
       #koishi-walk-body,
@@ -1268,8 +1367,8 @@
         width: 39.4vh;
         height: 80vh;
 
-        -webkit-animation: 1.5s koishi-walk-body-move infinite;
-        animation: 1.5s koishi-walk-body-move infinite;
+        -webkit-animation: 1.5s koishi-walk-body-move ease infinite;
+        animation: 1.5s koishi-walk-body-move ease infinite;
 
         background-repeat: no-repeat;
         background-position: 0 -320vh;
@@ -1319,8 +1418,8 @@
         height: 80vh;
 
         cursor: pointer;
-        -webkit-animation: 1.5s koishi-walk-body-move infinite;
-        animation: 1.5s koishi-walk-body-move infinite;
+        -webkit-animation: 1.5s koishi-walk-body-move ease infinite;
+        animation: 1.5s koishi-walk-body-move ease infinite;
 
         background-repeat: no-repeat;
         background-position: -240vh -160vh;
@@ -1378,36 +1477,90 @@
       .curtain.one {
         left: 0;
 
-        -webkit-animation: 0.35s curtain-scale 0.5s backwards;
-        animation: 0.35s curtain-scale 0.5s backwards;
+        -webkit-animation: 0.35s curtain-scale 1.5s ease backwards;
+        animation: 0.35s curtain-scale 1.5s ease backwards;
       }
 
       .curtain.two {
         left: 20%;
 
-        -webkit-animation: 0.35s curtain-scale 0.55s backwards;
-        animation: 0.35s curtain-scale 0.55s backwards;
+        -webkit-animation: 0.35s curtain-scale 1.65s ease backwards;
+        animation: 0.35s curtain-scale 1.65s ease backwards;
       }
 
       .curtain.three {
         left: 40%;
 
-        -webkit-animation: 0.35s curtain-scale 0.7s backwards;
-        animation: 0.35s curtain-scale 0.7s backwards;
+        -webkit-animation: 0.35s curtain-scale 1.8s ease backwards;
+        animation: 0.35s curtain-scale 1.8s ease backwards;
       }
 
       .curtain.four {
         left: 60%;
 
-        -webkit-animation: 0.35s curtain-scale 0.85s backwards;
-        animation: 0.35s curtain-scale 0.85s backwards;
+        -webkit-animation: 0.35s curtain-scale 1.95s ease backwards;
+        animation: 0.35s curtain-scale 1.95s ease backwards;
       }
 
       .curtain.five {
         left: 80%;
 
-        -webkit-animation: 0.35s curtain-scale 1s backwards;
-        animation: 0.35s curtain-scale 1s backwards;
+        -webkit-animation: 0.35s curtain-scale 2.1s ease backwards;
+        animation: 0.35s curtain-scale 2.1s ease backwards;
+      }
+
+      #intro-animation {
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        width: 100%;
+        height: 86vh;
+        opacity: 0;
+
+        overflow: hidden;
+
+        -webkit-animation: 0.15s fade-out 1.4s steps(1) backwards;
+        animation: 0.15s fade-out 1.4s steps(1) backwards;
+        pointer-events: none;
+      }
+
+      #ball {
+        width: 50vmin;
+        height: 50vmin;
+        margin: calc(43vh - 25vmin) calc(50% - 25vmin);
+
+        -webkit-animation: 0.6s ball-flex ease 0.15s both;
+        animation: 0.6s ball-flex ease 0.15s both;
+
+        border-radius: 50%;
+        background: orange;
+      }
+
+      #square {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        -webkit-animation: 0.5s square-scale 0.65s ease backwards;
+        animation: 0.5s square-scale 0.65s ease backwards;
+
+        background: orange;
+      }
+
+      #square:after {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        content: "";
+        -webkit-animation: 0.5s square-scale 0.9s ease backwards;
+        animation: 0.5s square-scale 0.9s ease backwards;
+
+        background: white;
       }
 
       #subtitles {
@@ -1463,8 +1616,8 @@
         width: 36vh;
         height: 36vh;
 
-        -webkit-animation: 0.5s fade-in 1.8s backwards;
-        animation: 0.5s fade-in 1.8s backwards;
+        -webkit-animation: 0.5s fade-in 2.9s ease backwards;
+        animation: 0.5s fade-in 2.9s ease backwards;
 
         border-radius: 100%;
         background: radial-gradient(circle at center, white 65%, transparent 0%),
@@ -1532,6 +1685,11 @@
       }
 
       footer {
+        position: absolute;
+        top: 96vh;
+        left: -3vmin;
+        z-index: 9;
+
         width: 100%;
         height: 4vh;
 
@@ -2001,7 +2159,7 @@
       #guestbook-entries li {
         opacity: 0;
 
-        animation: 1s fade-in 0.25s forwards;
+        animation: 1s fade-in 0.25s ease forwards;
       }
 
       #guestbook-entries h3 {
@@ -2150,6 +2308,7 @@
           animation-play-state: paused !important;
 
           opacity: 0 !important;
+          pointer-events: none !important;
         }
       }
 
@@ -2642,6 +2801,11 @@
         <div class="curtain four start-animation" role="presentation"></div>
         <div class="curtain five start-animation" role="presentation"></div>
 
+        <div id="intro-animation" class="start-animation" role="presentation">
+          <div id="ball" class="start-animation"></div>
+          <div id="square" class="start-animation"></div>
+        </div>
+
         <div id="subtitles" class="alt-theme"></div>
       </figure>
 
@@ -2865,7 +3029,7 @@
           if (pause) {
             gl.clear(gl.COLOR_BUFFER_BIT);
           } else {
-            requestAnimationFrame(function(){
+            requestAnimationFrame(function() {
               requestAnimationFrame(draw);
             });
           }
@@ -3676,9 +3840,23 @@
 
       //ONDOMREADT
 
-      document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", DOMContentLoaded) : DOMContentLoaded();
+      document.readyState === "loading"
+        ? document.addEventListener("DOMContentLoaded", DOMContentLoaded) : DOMContentLoaded();
 
       function DOMContentLoaded() {
+        var figure = document.getElementsByTagName("figure")[0];
+
+        figure.addEventListener(
+          "scroll",
+          function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.scrollLeft = 0;
+            return false;
+          },
+          false
+        );
+
         if (window.location.hash.substring(1).match(NOT_MAINMENU)) {
           fastdom.mutate(function() {
             document.body.className += " skip-start-animation";
