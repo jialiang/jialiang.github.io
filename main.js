@@ -676,21 +676,21 @@
     }.call(this, r(1), r(0)));
   },
   function(t, e, n) {
-    (function(P, N, O) {
+    (function(S, N, O) {
       t.exports = function() {
         var e = particles.isPaused();
         particles.pause();
-        var n = P.id("touhou"),
+        var n = S.id("touhou"),
           i =
             n.getContext("webgl", { antialias: !0, powerPreference: "high-performance" }) ||
             n.getContext("experimental-webgl");
-        (n.width = P.vmin(90)), (n.height = P.vmin(90));
-        var r = P.id("game-score"),
-          o = P.id("reisen-sprite"),
-          a = P.id("koishi-sprite"),
-          s = P.id("heart-container"),
-          u = P.id("game-background"),
-          c = P.id("heart-stream");
+        (n.width = S.vmin(90)), (n.height = S.vmin(90));
+        var r = S.id("game-score"),
+          o = S.id("reisen-sprite"),
+          a = S.id("koishi-sprite"),
+          s = S.id("heart-container"),
+          u = S.id("game-background"),
+          c = S.id("heart-stream");
         if (
           (N.mutate(function() {
             (c.style.cssText = ""),
@@ -702,8 +702,8 @@
           }),
           gameAudio)
         ) {
-          var t = P.id("bonus-bgm"),
-            l = P.id("game-music");
+          var t = S.id("bonus-bgm"),
+            l = S.id("game-music");
           t.paused || t.pause(), (l.volume = 0.67), l.play(), (l.loop = !0);
         }
         var f,
@@ -713,8 +713,8 @@
           p,
           y,
           g,
-          v = O.createProgram(i, "game-v-shader", "game-f-shader"),
-          b = {},
+          b = O.createProgram(i, "game-v-shader", "game-f-shader"),
+          v = {},
           w = {},
           x = { size: (0.04 * n.height * 3) / 4, normalArray: [], bossArray: [], count: 0.05 * n.height },
           A = {
@@ -726,8 +726,8 @@
             normalBulletSpeed: 0.0085 * n.height,
             bossBulletSpeed: 0.0043 * n.height
           };
-        (A.bossHitbox = { x: P.vmin(A.bossCenter[0]), y: P.vmin(A.bossCenter[1]) }),
-          (A.playerHitbox = { x: P.vmin(A.playerCenter[0]), y: P.vmin(A.playerCenter[1]) });
+        (A.bossHitbox = { x: S.vmin(A.bossCenter[0]), y: S.vmin(A.bossCenter[1]) }),
+          (A.playerHitbox = { x: S.vmin(A.playerCenter[0]), y: S.vmin(A.playerCenter[1]) });
         for (var C = 0; C < x.count; C++)
           x.normalArray.push({
             x: Math.random() * (n.width - 2 * x.size) + x.size,
@@ -738,35 +738,35 @@
           for (var M = 0; M < x.count; M++) {
             var k = ((((x.count - M - 1) / x.count) * 360 + 270) * Math.PI) / 180;
             x.bossArray[C].push({
-              x: P.vmin(0.95 * A.bossCenter[0]),
-              y: P.vmin(A.bossCenter[1]),
+              x: S.vmin(0.95 * A.bossCenter[0]),
+              y: S.vmin(A.bossCenter[1]),
               rMatrix: O.rotateZ([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], k, 1)
             });
           }
         }
-        (b.circle = O.createVertexBuffer(i, 32, x.size / n.width, null)),
-          (b.bullet = O.createVertexBuffer(i, 32, x.size / n.width, "bullet")),
+        (v.circle = O.createVertexBuffer(i, 32, x.size / n.width, null)),
+          (v.bullet = O.createVertexBuffer(i, 32, x.size / n.width, "bullet")),
           (w.red = O.createColorBuffer(i, [1, 0, 0], 1, 32)),
           (w.orange = O.createColorBuffer(i, [1, 0.5, 0], 1, 32)),
           (w.green = O.createColorBuffer(i, [0, 1, 0], 1, 32)),
           (w.yellow = O.createColorBuffer(i, [1, 1, 0], 1, 32)),
-          i.uniform1f(v.expand, 0.15),
-          i.uniform1f(v.radius, x.size / 2),
-          i.uniform1f(v.windowHeight, n.height),
+          i.uniform1f(b.expand, 0.15),
+          i.uniform1f(b.radius, x.size / 2),
+          i.uniform1f(b.windowHeight, n.height),
           i.viewport(0, 0, n.height, n.height),
           i.clearColor(0, 0, 0, 0);
         var T = 0,
           F = 0,
           R = !1,
           E = !1,
-          L = P.vmin(1);
+          L = S.vmin(1);
         function B(t) {
           E || (R = !R && ((g = [t.clientX, t.clientY]), !0));
         }
-        function S(t) {
+        function P(t) {
           R &&
-            ((A.playerCenter[0] -= ((g[0] - t.clientX) / P.vmin(100)) * 100),
-            (A.playerCenter[1] -= ((g[1] - t.clientY) / P.vmin(100)) * 100),
+            ((A.playerCenter[0] -= ((g[0] - t.clientX) / S.vmin(100)) * 100),
+            (A.playerCenter[1] -= ((g[1] - t.clientY) / S.vmin(100)) * 100),
             (g[0] = t.clientX),
             (g[1] = t.clientY),
             N.mutate(function() {
@@ -796,13 +796,13 @@
           (a.ontouchend = function(t) {
             B(t.touches[0]);
           }),
-          (P.id("game-container").onmousemove = S),
-          (P.id("game-container").ontouchmove = function(t) {
-            t.preventDefault(), S(t.touches[0]);
+          (S.id("game-container").onmousemove = P),
+          (S.id("game-container").ontouchmove = function(t) {
+            t.preventDefault(), P(t.touches[0]);
           }),
           requestAnimationFrame(function t() {
-            i.bindBuffer(i.ARRAY_BUFFER, b.circle);
-            i.vertexAttribPointer(v.positionAttribute, 2, i.FLOAT, !1, 0, 0);
+            i.bindBuffer(i.ARRAY_BUFFER, v.circle);
+            i.vertexAttribPointer(b.positionAttribute, 2, i.FLOAT, !1, 0, 0);
             240 <= T &&
               (92.44 <= A.bossCenter[0] && (A.bossDirection = "right"),
               A.bossCenter[0] <= 2.56 && (A.bossDirection = "left"),
@@ -813,36 +813,36 @@
                     "translate3d(" + A.bossCenter[0] * L + "px, " + A.bossCenter[1] * L + "px, 0)");
               }));
             i.bindBuffer(i.ARRAY_BUFFER, w.green);
-            i.vertexAttribPointer(v.colorAttribute, 4, i.FLOAT, !1, 0, 0);
+            i.vertexAttribPointer(b.colorAttribute, 4, i.FLOAT, !1, 0, 0);
             f = A.playerHitbox;
-            f.x = P.vmin(0.95 * A.playerCenter[0]);
-            f.y = P.vmin(0.95 * A.playerCenter[1]);
+            f.x = S.vmin(0.95 * A.playerCenter[0]);
+            f.y = S.vmin(0.95 * A.playerCenter[1]);
             m = (f.x / n.width) * 2 - 1;
             h = 1 - (f.y / n.height) * 2;
-            i.uniformMatrix4fv(v.mvMatrix, !1, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, m, h, 0, 1]);
-            i.uniform2fv(v.center, [f.x, f.y]);
+            i.uniformMatrix4fv(b.mvMatrix, !1, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, m, h, 0, 1]);
+            i.uniform2fv(b.center, [f.x, f.y]);
             i.drawArrays(i.TRIANGLE_FAN, 0, 32);
             i.bindBuffer(i.ARRAY_BUFFER, w.red);
-            i.vertexAttribPointer(v.colorAttribute, 4, i.FLOAT, !1, 0, 0);
+            i.vertexAttribPointer(b.colorAttribute, 4, i.FLOAT, !1, 0, 0);
             for (C = 0; C < x.normalArray.length; C++)
               (d = x.normalArray[C]),
                 (m = (d.x / n.width) * 2 - 1),
                 (h = 1 - (d.y / n.height) * 2),
-                !E && P.isDistanceSmallerThanValue(f.x, f.y, d.x, d.y, x.size) && (E = !0),
-                i.uniformMatrix4fv(v.mvMatrix, !1, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, m, h, 0, 1]),
-                i.uniform2fv(v.center, [d.x, d.y]),
+                !E && S.isDistanceSmallerThanValue(f.x, f.y, d.x, d.y, x.size) && (E = !0),
+                i.uniformMatrix4fv(b.mvMatrix, !1, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, m, h, 0, 1]),
+                i.uniform2fv(b.center, [d.x, d.y]),
                 i.drawArrays(i.TRIANGLE_FAN, 0, 32),
                 d.y >= n.height + x.size
                   ? ((d.y = -x.size), (d.x = Math.random() * (n.width - 2 * x.size) + x.size))
                   : (d.y += A.normalBulletSpeed);
-            i.bindBuffer(i.ARRAY_BUFFER, b.bullet);
-            i.vertexAttribPointer(v.positionAttribute, 2, i.FLOAT, !1, 0, 0);
+            i.bindBuffer(i.ARRAY_BUFFER, v.bullet);
+            i.vertexAttribPointer(b.positionAttribute, 2, i.FLOAT, !1, 0, 0);
             for (C = 0; C < x.bossArray.length; C++)
               if (!(1 === C && T < 90))
                 for (
                   0 === C && i.bindBuffer(i.ARRAY_BUFFER, w.yellow),
                     1 === C && i.bindBuffer(i.ARRAY_BUFFER, w.orange),
-                    i.vertexAttribPointer(v.colorAttribute, 4, i.FLOAT, !1, 0, 0),
+                    i.vertexAttribPointer(b.colorAttribute, 4, i.FLOAT, !1, 0, 0),
                     M = 0;
                   M < x.bossArray[C].length;
                   M++
@@ -850,16 +850,16 @@
                   (d = x.bossArray[C][M]),
                     (m = (d.x / n.width) * 2 - 1),
                     (h = 1 - (d.y / n.height) * 2),
-                    !E && P.isDistanceSmallerThanValue(f.x, f.y, d.x, d.y, x.size) && (E = !0),
+                    !E && S.isDistanceSmallerThanValue(f.x, f.y, d.x, d.y, x.size) && (E = !0),
                     ((y = d.rMatrix)[12] = m),
                     (y[13] = h),
-                    i.uniformMatrix4fv(v.mvMatrix, !1, y),
-                    i.uniform2fv(v.center, [d.x, d.y]),
+                    i.uniformMatrix4fv(b.mvMatrix, !1, y),
+                    i.uniform2fv(b.center, [d.x, d.y]),
                     i.drawArrays(i.TRIANGLE_FAN, 0, 18),
                     (p = (M / x.bossArray[C].length) * Math.PI * 2),
                     (d.x += Math.cos(p) * A.bossBulletSpeed),
                     (d.y += Math.sin(p) * A.bossBulletSpeed),
-                    480 <= T && ((d.x = P.vmin(0.95 * A.bossCenter[0])), (d.y = P.vmin(A.bossCenter[1])));
+                    480 <= T && ((d.x = S.vmin(0.95 * A.bossCenter[0])), (d.y = S.vmin(A.bossCenter[1])));
             480 <= T && (T = 0);
             T++;
             Math.abs(A.playerCenter[0] - A.bossCenter[0]) <= 2.5
@@ -880,17 +880,17 @@
                 l && l.pause(),
                 (a.ontouchstart = null),
                 (a.ontouchend = null),
-                (P.id("game-container").onmousemove = null),
-                (P.id("game-container").ontouchmove = null),
+                (S.id("game-container").onmousemove = null),
+                (S.id("game-container").ontouchmove = null),
                 N.mutate(function() {
                   (u.style.animationPlayState = "paused"),
                     (c.style.animationPlayState = "paused"),
-                    (P.q("#game-controls > p").style.opacity = "1"),
-                    (P.q("#game-controls > p").innerHTML = "FINAL SCORE<br>" + F),
-                    (P.id("game-controls").style.visibility = "visible"),
+                    (S.q("#game-controls > p").style.opacity = "1"),
+                    (S.q("#game-controls > p").innerHTML = "FINAL SCORE<br>" + F),
+                    (S.id("game-controls").style.visibility = "visible"),
                     (o.className = ""),
                     5e4 <= F &&
-                      (P.q("#work .unlock").innerHTML =
+                      (S.q("#work .unlock").innerHTML =
                         'Link: <a href="senbonzakura/index.html" title="Thousand Cherry Blossoms" target="_blank" rel="noopener">Thousand Cherry Blossoms</a>');
                 }),
                 e || particles.play())
@@ -900,75 +900,75 @@
     }.call(this, n(0), n(1), n(3)));
   },
   function(t, e, n) {
-    (function(v) {
+    (function(b) {
       t.exports = function() {
         var d = 0,
           m = 0,
           h = 0,
           p = { x: 0, y: 0 },
           y = !1,
-          n = v.id("neko");
+          t = b.id("neko"),
+          e = !1;
+        function n(t, e) {
+          if (!(y || (t === p.x && e === p.y))) {
+            y = !0;
+            for (
+              var n = { x: t, y: e },
+                i =
+                  ((p.x === p.y ? Math.PI / 2 : Math.atan(Math.abs(p.y - n.y) / Math.abs(p.x - n.x))) / (Math.PI / 2) +
+                    parseInt(
+                      Date.now()
+                        .toString()
+                        .slice(-8),
+                      10
+                    ) /
+                      1e8) %
+                  1,
+                r = (i % 1).toString(2).substring(2);
+              r.length < 52;
+
+            )
+              r += "0";
+            var o = i,
+              a = r
+                .split("")
+                .reverse()
+                .reduceRight(function(t, e) {
+                  return (t + parseInt(e, 2)) / 2;
+                }, 0),
+              s = g((d + o) % 1, (m + a) % 1),
+              u = ((t = (a + s) % 1), g(Math.min(t, m), Math.max(t, m))),
+              c = (d + s) % 1;
+            if (((d = u), (m = c), (p = n), ++h % 128 == 0)) {
+              var l = b.id("draw-transition"),
+                f = Math.floor(((d + m) % 1) * 10);
+              (l.className = "active-1"),
+                (b.id("tarot").textContent = f),
+                setTimeout(function() {
+                  b.id("number-history").textContent += "[" + f + "] ";
+                }, 1e3),
+                setTimeout(function() {
+                  (l.className = ""), (y = !1);
+                }, 3e3);
+            } else y = !1;
+          }
+        }
         function g(t, e) {
           return 0 < e && e <= t ? e / t : t < e && e < 1 ? (1 - e) / (1 - t) : (console.warn("Error computing g."), 0);
         }
-        n.addEventListener(
+        t.addEventListener(
           "touchmove",
           function(t) {
-            t.preventDefault(), t.stopPropagation();
-            var e = new Event("mousemove");
-            (e.clientX = t.touches[0].clientX), (e.clientY = t.touches[0].clientY), n.dispatchEvent(e);
+            t.preventDefault(), t.stopPropagation(), n(t.touches[0].clientX, t.touches[0].clientY), (e = !0);
           },
           { passive: !1 }
         ),
-          n.addEventListener(
+          t.addEventListener(
             "mousemove",
             function(t) {
-              if (!(y || (t.clientX === p.x && t.clientY === p.y))) {
-                y = !0;
-                for (
-                  var e = { x: t.clientX, y: t.clientY },
-                    n =
-                      ((p.x === p.y ? Math.PI / 2 : Math.atan(Math.abs(p.y - e.y) / Math.abs(p.x - e.x))) /
-                        (Math.PI / 2) +
-                        parseInt(
-                          Date.now()
-                            .toString()
-                            .slice(-8),
-                          10
-                        ) /
-                          1e8) %
-                      1,
-                    i = (n % 1).toString(2).substring(2);
-                  i.length < 52;
-
-                )
-                  i += "0";
-                var r = n,
-                  o = i
-                    .split("")
-                    .reverse()
-                    .reduceRight(function(t, e) {
-                      return (t + parseInt(e, 2)) / 2;
-                    }, 0),
-                  a = g((d + r) % 1, (m + o) % 1),
-                  s = (o + a) % 1,
-                  u = g(Math.min(s, m), Math.max(s, m)),
-                  c = (d + a) % 1;
-                if (((d = u), (m = c), (p = e), ++h % 128 == 0)) {
-                  var l = v.id("draw-transition"),
-                    f = Math.floor(((d + m) % 1) * 10);
-                  (l.className = "active-1"),
-                    (v.id("tarot").textContent = f),
-                    setTimeout(function() {
-                      v.id("number-history").textContent += "[" + f + "] ";
-                    }, 1e3),
-                    setTimeout(function() {
-                      (l.className = ""), (y = !1);
-                    }, 3e3);
-                } else y = !1;
-              }
+              t.preventDefault(), t.stopPropagation(), e || n(t.clientX, t.clientY), (e = !1);
             },
-            !1
+            { passive: !1 }
           );
       };
     }.call(this, n(0)));
