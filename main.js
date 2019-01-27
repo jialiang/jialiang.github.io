@@ -352,9 +352,9 @@
   function(t, e, a) {
     (function(n, i) {
       var t = a(5);
-      t.keys().forEach(t), a(23);
+      t.keys().forEach(t), a(22);
       var r = a(2),
-        o = a(24);
+        o = a(23);
       function e() {
         window.location.hash.substring(1).match(NOT_MAINMENU)
           ? ((document.body.className += " skip-start-animation"), o())
@@ -363,14 +363,14 @@
             document.body.className = document.body.className.replace("no-transition", "");
           }),
           (particles = new r()),
-          i.registerFastClick(i.id("cat-walk"), a(25)),
-          i.registerFastClick(i.id("yin-walk-body"), a(26)),
-          i.registerFastClick(i.id("koishi-float"), a(27));
+          i.registerFastClick(i.id("cat-walk"), a(24)),
+          i.registerFastClick(i.id("yin-walk-body"), a(25)),
+          i.registerFastClick(i.id("koishi-float"), a(26));
         for (var t = i.qa("nav>ul>li>a, .back, .internal-link"), e = 0; e < t.length; e++)
           i.registerFastClick(t[e], function(t, e) {
             window.location = e.href;
           });
-        a(28)(), a(29)(), a(31)(), a(32)();
+        a(27)(), a(28)(), a(30)(), a(31)();
       }
       "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", e) : e();
     }.call(this, a(1), a(0)));
@@ -391,9 +391,8 @@
       "./media-queries.css": 17,
       "./not-mainmenu.css": 18,
       "./others.css": 19,
-      "./pop.css": 20,
-      "./work.css": 21,
-      "./yin.css": 22
+      "./work.css": 20,
+      "./yin.css": 21
     };
     function r(t) {
       var e = o(t);
@@ -411,7 +410,6 @@
       (r.resolve = o),
       ((t.exports = r).id = 5);
   },
-  function(t, e, n) {},
   function(t, e, n) {},
   function(t, e, n) {},
   function(t, e, n) {},
@@ -659,7 +657,7 @@
   },
   function(i, t, r) {
     (function(t, e) {
-      var n = r(30);
+      var n = r(29);
       i.exports = function() {
         (e.q("#game-controls > .play").onclick = function() {
           (game = new n()),
