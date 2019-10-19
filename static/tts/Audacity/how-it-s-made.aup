@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no" ?>
 <!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
-<project xmlns="http://audacity.sourceforge.net/xml/" projname="how-it-s-made_data" version="1.3.0" audacityversion="2.3.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="8.9111625640" rate="24000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="how-it-s-made_data" version="1.3.0" audacityversion="2.3.2" sel0="0.0000000000" sel1="0.0000000000" vpos="560" h="0.0000000000" zoom="8.9111625640" rate="24000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
 	<tags/>
 	<wavetrack name="output" channel="2" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="24000" gain="1.0" pan="0.0" colorindex="0">
 		<waveclip offset="0.00000000" colorindex="0">
@@ -61,7 +61,7 @@
 			<envelope numpoints="0"/>
 		</waveclip>
 	</wavetrack>
-	<wavetrack name="output" channel="2" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="1" rate="24000" gain="1.0" pan="0.0" colorindex="0">
+	<wavetrack name="output" channel="2" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="24000" gain="1.0" pan="0.0" colorindex="0">
 		<waveclip offset="0.00000000" colorindex="0">
 			<sequence maxsamples="262144" sampleformat="262159" numsamples="4726656">
 				<waveblock start="0">
@@ -243,29 +243,29 @@
 			<envelope numpoints="0"/>
 		</waveclip>
 	</wavetrack>
-	<wavetrack name="output" channel="2" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="24000" gain="1.0" pan="0.0" colorindex="0">
+	<wavetrack name="output" channel="2" linked="0" mute="0" solo="1" height="150" minimized="0" isSelected="1" rate="24000" gain="1.0" pan="0.0" colorindex="0">
 		<waveclip offset="0.00000000" colorindex="0">
-			<sequence maxsamples="262144" sampleformat="262159" numsamples="1791936">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1638720">
 				<waveblock start="0">
-					<simpleblockfile filename="e0808216.au" len="262144" min="-0.556355" max="0.651882" rms="0.106539"/>
+					<simpleblockfile filename="e08085db.au" len="262144" min="-0.556355" max="0.651882" rms="0.106539"/>
 				</waveblock>
 				<waveblock start="262144">
-					<simpleblockfile filename="e08082fc.au" len="262144" min="-0.600731" max="0.641934" rms="0.114734"/>
+					<simpleblockfile filename="e0808d31.au" len="262144" min="-0.600731" max="0.641934" rms="0.114734"/>
 				</waveblock>
 				<waveblock start="524288">
-					<simpleblockfile filename="e08087b9.au" len="262144" min="-0.623534" max="0.527271" rms="0.11003"/>
+					<simpleblockfile filename="e080812a.au" len="262144" min="-0.623534" max="0.524339" rms="0.110025"/>
 				</waveblock>
 				<waveblock start="786432">
-					<simpleblockfile filename="e0808e2f.au" len="262144" min="-0.526823" max="0.684913" rms="0.108822"/>
+					<simpleblockfile filename="e08087f8.au" len="262144" min="-0.526823" max="0.685115" rms="0.108721"/>
 				</waveblock>
 				<waveblock start="1048576">
-					<simpleblockfile filename="e08083e8.au" len="262144" min="-0.661933" max="0.876585" rms="0.1102"/>
+					<simpleblockfile filename="e0808158.au" len="262144" min="-0.656198" max="0.861124" rms="0.109362"/>
 				</waveblock>
 				<waveblock start="1310720">
-					<simpleblockfile filename="e0808a0d.au" len="262144" min="-0.541282" max="0.727833" rms="0.114448"/>
+					<simpleblockfile filename="e08081f7.au" len="262144" min="-0.544262" max="0.706552" rms="0.115454"/>
 				</waveblock>
 				<waveblock start="1572864">
-					<simpleblockfile filename="e08081bb.au" len="219072" min="-0.576758" max="0.788428" rms="0.110237"/>
+					<simpleblockfile filename="e0808f88.au" len="65856" min="-0.43688" max="0.43028" rms="0.096327"/>
 				</waveblock>
 			</sequence>
 			<envelope numpoints="0"/>
