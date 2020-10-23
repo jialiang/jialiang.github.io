@@ -341,6 +341,13 @@
         box-shadow: 0 0 1em black, 0 0 1em black inset;
       }
 
+      #thanks .text-container ul {
+        margin: 2em 0;
+      }
+      #thanks .text-container ul li {
+        margin-bottom: 1em;
+      }
+
       section.mainmenu {
         z-index: 1;
         overflow-y: hidden;
@@ -1027,13 +1034,6 @@
         }
       }
 
-      #thanks .text-container ul {
-        margin: 2em 0;
-      }
-      #thanks .text-container ul li {
-        margin-bottom: 1em;
-      }
-
       .about-filter {
         transform: scale3d(0, 0, 1);
         pointer-events: none;
@@ -1458,19 +1458,23 @@
             ago.<br />Lived in Singapore for 2 years.
           </p>
           <hr />
-          <p><strong>At my current job, I use</strong></p>
+          <p>At my current job, I use:</p>
           <p>
             React, Redux.<br />HTML, CSS, JavaScript.<br />NodeJS, Typescript,
             Jest.<br />Sequelize, Knex, Postgres.
           </p>
-          <p>See resume for full skill list.</p>
-          <hr />
-          <p><strong>In my free time</strong></p>
+          <p>You can see my resume for the full list.</p>
+          <p>But I don&#39;t think that&#39;s what&#39;s important.</p>
           <p>
-            I play PC games.<br />Watch anime.<br />Go sightseeing.<br />Make
-            web apps.<br />Take naps.
+            Algorithms &amp; Frameworks are easily learned.<br />Attitude &amp;
+            Mindset, not so much.
           </p>
-          <hr />
+          <p>
+            Want someone who can hit the ground running?<br />It&#39;s a
+            marathon, not a sprint.
+          </p>
+          <p><strong>Let&#39;s talk.</strong></p>
+          <p>The combined power of the 2 of us may surprise even the world.</p>
         </div>
       </section>
 
@@ -1737,7 +1741,13 @@
               href="https://daringfireball.net/projects/markdown/"
               >Markdown</a
             >
-            is used for layout &amp; content.<br />Sass is used for styling.
+            is used for layout &amp; content.<br /><a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://sass-lang.com/"
+              >Sass</a
+            >
+            is used for styling.
           </p>
           <p>
             JavaScript libraries powered by
@@ -1810,9 +1820,9 @@
           </p>
           <p>
             During rendering performance testing, the website is able to both
-            play animations &amp; scroll smoothly on an 2016 Asus Zenfone 3
-            &amp; 2015 Macbook Pro.<br />The test is done in Firefox &amp;
-            Chrome for the former and Safari for the latter.
+            play animations &amp; scroll smoothly on a 2016 Asus Zenfone 3 &amp;
+            2015 Macbook Pro.<br />The test is done in Firefox &amp; Chrome for
+            the former and Safari for the latter.
           </p>
           <p>
             This website has a
@@ -1834,8 +1844,9 @@
             <li>Internet Explorer 11</li>
           </ul>
           <p>
-            It also functions with JavaScript disabled with hardly any
-            degradation.
+            It also functions fine with JavaScript disabled.<br />The only line
+            of JavaScript used is just to make sure the opening animation
+            doesn&#39;t play if the page loads with a valid hash fragment.
           </p>
           <p>This website supports screens of:</p>
           <ul>
@@ -1866,7 +1877,6 @@
                 >9:21</a
               >.
             </li>
-            <li>Device pixel ratio as high as 3.</li>
           </ul>
           <h2>Accessibility</h2>
           <p>This website has the following accessibility features:</p>
@@ -1897,7 +1907,7 @@
               <a
                 target="_blank"
                 rel="noreferrer noopener"
-                href="https://validator.w3.org/"
+                href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fjialiang.github.io%2F"
                 >W3C Markup Validation Service</a
               >.
             </li>
@@ -2006,42 +2016,17 @@
             <li>The glow is independent of the characters.</li>
             <li>The light of the glow bleeds into nearby code.</li>
           </ul>
-          <h2>Results</h2>
+          <h2>Conclusion</h2>
           <p>
-            I think what I have looks kind of good but it too looks nothing like
-            the real thing.
+            Looking at my list of observations, it&#39;s no wonder that making a
+            convincing replica in code is difficult.
           </p>
           <p>
-            Looking at my observations now, it does seem like a tall order to
-            make a convincing copy in code.
+            After spending a lazy weekend fiddling around, I would say for most
+            practical purposes, it is better to just take the idea of the
+            digital rain and make it beautiful rather than try to mimic it
+            faithfully.
           </p>
-          <h2>Takeaway</h2>
-          <p>So what did I learned technical-wise from doing this project?</p>
-          <ul>
-            <li>
-              <p>
-                Firefox have trouble animating opacity of elements with lots
-                texts with text-shadow.
-              </p>
-            </li>
-            <li>
-              <p>
-                Applying <code>filter: blur</code> on the body is surprisingly
-                viable. I&#39;d expect the animation to slow to a crawl
-                everywhere but it didn&#39;t. Even on mobile, it is only Firefox
-                who struggled while Chrome chugs along at an acceptable
-                framerate. I&#39;m now more open-minded about using it in future
-                projects.
-              </p>
-            </li>
-            <li>
-              <p>
-                For presentation purposes, the illusion of randomness is
-                sufficient.
-              </p>
-            </li>
-            <li><p>Everyone blurs and shadows things differently.</p></li>
-          </ul>
           <hr />
           <p>
             <small

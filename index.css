@@ -294,6 +294,13 @@ a::selection {
   box-shadow: 0 0 1em black, 0 0 1em black inset;
 }
 
+#thanks .text-container ul {
+  margin: 2em 0;
+}
+#thanks .text-container ul li {
+  margin-bottom: 1em;
+}
+
 section.mainmenu {
   z-index: 1;
   overflow-y: hidden;
@@ -977,13 +984,6 @@ section.mainmenu .intro-2 .reveal:nth-child(4) {
   100% {
     transform: translate3d(100vw, 100vh, 0) rotateZ(760.29deg) scale(0.88);
   }
-}
-
-#thanks .text-container ul {
-  margin: 2em 0;
-}
-#thanks .text-container ul li {
-  margin-bottom: 1em;
 }
 
 .about-filter {
