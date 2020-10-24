@@ -294,8 +294,8 @@
         left: 0;
         padding: 0.5em;
         text-align: right;
-        background: rgba(0, 0, 0, 0.8);
-        box-shadow: 0 0 2.5em black inset;
+        background: radial-gradient(rgba(0, 0, 0, 0), black 99%),
+          rgba(0, 0, 0, 0.8);
         text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
       }
       .text-container a figure figcaption .title {
@@ -339,13 +339,6 @@
         border-radius: 100%;
         background: white;
         box-shadow: 0 0 1em black, 0 0 1em black inset;
-      }
-
-      #thanks .text-container ul {
-        margin: 2em 0;
-      }
-      #thanks .text-container ul li {
-        margin-bottom: 1em;
       }
 
       section.mainmenu {
@@ -1034,6 +1027,13 @@
         }
       }
 
+      #thanks .text-container ul {
+        margin: 2em 0;
+      }
+      #thanks .text-container ul li {
+        margin-bottom: 1em;
+      }
+
       .about-filter {
         transform: scale3d(0, 0, 1);
         pointer-events: none;
@@ -1056,12 +1056,14 @@
         position: absolute;
         top: 0;
         height: 100%;
-        transform: scale3d(0, 1, 1);
         border-right: 2px solid maroon;
+        border-left: 2px solid #333;
         background: linear-gradient(
               to right,
-              rgba(0, 0, 0, 0.5) 50%,
-              rgba(0, 0, 0, 0) 50%
+              rgba(0, 0, 0, 0) 25%,
+              rgba(0, 0, 0, 0.5) 30%,
+              rgba(0, 0, 0, 0.5) 70%,
+              rgba(0, 0, 0, 0) 75%
             )
             0 33%/25px 25vh repeat-x,
           linear-gradient(to right, maroon, rgba(194, 0, 0, 0.6), red);
@@ -1069,11 +1071,14 @@
       .about-decorations .pillar:nth-child(1) {
         left: 0;
         width: 25%;
+        transform: rotateZ(-5deg) scale3d(0, 1, 1);
         transform-origin: left;
       }
       .about-decorations .pillar:nth-child(2) {
         left: 75%;
         width: 12.5%;
+        transform: rotateZ(5deg) scale3d(0, 1, 1);
+        transform-origin: right;
       }
       .about-decorations .flower-1,
       .about-decorations .flower-2 {
@@ -1105,14 +1110,14 @@
         transform: scale3d(1, 1, 1);
       }
 
-      #about:target ~ .about-decorations .pillar {
-        transform: scale3d(1, 1, 1);
-      }
       #about:target ~ .about-decorations .pillar:nth-child(1) {
         transition: 0.25s transform 0.6s;
+        transform: rotateZ(-5deg) scale3d(1, 1, 1);
       }
+
       #about:target ~ .about-decorations .pillar:nth-child(2) {
         transition: 0.25s transform 0.75s;
+        transform: rotateZ(5deg) scale3d(1, 1, 1);
       }
 
       #about:target ~ .about-decorations .flower-1 {
@@ -1469,12 +1474,12 @@
             Algorithms &amp; Frameworks are easily learned.<br />Attitude &amp;
             Mindset, not so much.
           </p>
+          <p><strong>Instead of reading, let&#39;s talk.</strong></p>
           <p>
-            Want someone who can hit the ground running?<br />It&#39;s a
-            marathon, not a sprint.
+            <a href="mailto:hojialiang@yahoo.com" title="My Email"
+              >hojialiang@yahoo.com</a
+            >
           </p>
-          <p><strong>Let&#39;s talk.</strong></p>
-          <p>The combined power of the 2 of us may surprise even the world.</p>
         </div>
       </section>
 
@@ -1768,7 +1773,7 @@
           <h2>Performance</h2>
           <p>
             The entire website inclusive of all resources for my 1080p screen
-            has a transfer size of only 223kB, of which:
+            has a transfer size of only 209kB, of which:
           </p>
           <table>
             <thead>
@@ -1780,15 +1785,15 @@
             <tbody>
               <tr>
                 <td class="text-left">WEBP</td>
-                <td class="text-right">70kB (31%)</td>
+                <td class="text-right">70kB (33%)</td>
               </tr>
               <tr>
                 <td class="text-left">SVG</td>
-                <td class="text-right">84kB (38%)</td>
+                <td class="text-right">84kB (40%)</td>
               </tr>
               <tr>
                 <td class="text-left">WOFF2</td>
-                <td class="text-right">32kB (15%)</td>
+                <td class="text-right">19kB (9%)</td>
               </tr>
               <tr>
                 <td class="text-left">PNG</td>
@@ -1796,7 +1801,7 @@
               </tr>
               <tr>
                 <td class="text-left">CSS</td>
-                <td class="text-right">8kB (3%)</td>
+                <td class="text-right">8kB (4%)</td>
               </tr>
               <tr>
                 <td class="text-left">HTML</td>
@@ -1991,8 +1996,7 @@
           </p>
           <h2>Observations</h2>
           <p>
-            Looking at the video clip above, here are some of my observations on
-            what&#39;s going on:
+            Looking at the video clip above, here are some of my observations:
           </p>
           <ul>
             <li>
@@ -2000,32 +2004,51 @@
               axis.
             </li>
             <li>
-              The code doesn&#39;t actually move but continuously appended at
-              the bottom.
+              The code doesn&#39;t actually move but is continuously appended at
+              the bottom.<br /><br />
             </li>
-            <li>At the end of the trail, the code fades out.</li>
+            <li>At the top of the trail, the code fades out.</li>
             <li>
-              There seem to be some sort of motion blur on the code fading out.
+              There seem to be some sort of motion blur on the code fading
+              out.<br /><br />
             </li>
+            <li>The glow is not constant but pulsates.</li>
+            <li>
+              The glow is independent of the characters. It travels smoothly
+              down as new characters appear.
+            </li>
+            <li>The light of the glow bleeds into nearby code.<br /><br /></li>
             <li>There can be more than 1 stream of code per column.</li>
             <li>
               Each frame, some of the characters change but most remain the
               same.
             </li>
-            <li>The glow is not constant but pulsates.</li>
-            <li>The glow is independent of the characters.</li>
-            <li>The light of the glow bleeds into nearby code.</li>
           </ul>
           <h2>Conclusion</h2>
           <p>
-            Looking at my list of observations, it&#39;s no wonder that making a
-            convincing replica in code is difficult.
+            After spending a lazy weekend fiddling around, I made some mistakes
+            in my approach that makes creating a convincing replica impossible.
+            So I had to improvise to at least make it look nice.
           </p>
           <p>
-            After spending a lazy weekend fiddling around, I would say for most
-            practical purposes, it is better to just take the idea of the
-            digital rain and make it beautiful rather than try to mimic it
-            faithfully.
+            I think the difficult part is perfecting the glow. It needs to move
+            smoothly down the characters like someone shining a light across the
+            code. I would think something like this setup would be needed:
+          </p>
+          <p>
+            3 layers: 1 layer of text as the base, 1 layer as the lightsource
+            and 1 layer as the mask to make the lightsource conforms to the
+            shape of the text. I think something like this approach involving
+            mix-blend-mode would work:
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://codepen.io/giana/pen/qmKNeE"
+              >https://codepen.io/giana/pen/qmKNeE</a
+            >.
+          </p>
+          <p>
+            Anyway, I&#39;m thinking of giving this another go in the future.
           </p>
           <hr />
           <p>
@@ -2106,7 +2129,6 @@
       </div>
       <div class="work-filter" role="presentation"></div>
       <div class="work-decorations" role="presentation">
-        <div class="circle"></div>
         <div class="fish-1"></div>
         <div class="fish-2"></div>
       </div>

@@ -247,8 +247,7 @@ a::selection {
   left: 0;
   padding: 0.5em;
   text-align: right;
-  background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 2.5em black inset;
+  background: radial-gradient(rgba(0, 0, 0, 0), black 99%), rgba(0, 0, 0, 0.8);
   text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
 }
 .text-container a figure figcaption .title {
@@ -292,13 +291,6 @@ a::selection {
   border-radius: 100%;
   background: white;
   box-shadow: 0 0 1em black, 0 0 1em black inset;
-}
-
-#thanks .text-container ul {
-  margin: 2em 0;
-}
-#thanks .text-container ul li {
-  margin-bottom: 1em;
 }
 
 section.mainmenu {
@@ -986,6 +978,13 @@ section.mainmenu .intro-2 .reveal:nth-child(4) {
   }
 }
 
+#thanks .text-container ul {
+  margin: 2em 0;
+}
+#thanks .text-container ul li {
+  margin-bottom: 1em;
+}
+
 .about-filter {
   transform: scale3d(0, 0, 1);
   pointer-events: none;
@@ -1008,12 +1007,14 @@ section.mainmenu .intro-2 .reveal:nth-child(4) {
   position: absolute;
   top: 0;
   height: 100%;
-  transform: scale3d(0, 1, 1);
   border-right: 2px solid maroon;
+  border-left: 2px solid #333;
   background: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0) 50%
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0.5) 30%,
+        rgba(0, 0, 0, 0.5) 70%,
+        rgba(0, 0, 0, 0) 75%
       )
       0 33%/25px 25vh repeat-x,
     linear-gradient(to right, maroon, rgba(194, 0, 0, 0.6), red);
@@ -1021,11 +1022,14 @@ section.mainmenu .intro-2 .reveal:nth-child(4) {
 .about-decorations .pillar:nth-child(1) {
   left: 0;
   width: 25%;
+  transform: rotateZ(-5deg) scale3d(0, 1, 1);
   transform-origin: left;
 }
 .about-decorations .pillar:nth-child(2) {
   left: 75%;
   width: 12.5%;
+  transform: rotateZ(5deg) scale3d(0, 1, 1);
+  transform-origin: right;
 }
 .about-decorations .flower-1,
 .about-decorations .flower-2 {
@@ -1057,14 +1061,14 @@ section.mainmenu .intro-2 .reveal:nth-child(4) {
   transform: scale3d(1, 1, 1);
 }
 
-#about:target ~ .about-decorations .pillar {
-  transform: scale3d(1, 1, 1);
-}
 #about:target ~ .about-decorations .pillar:nth-child(1) {
   transition: 0.25s transform 0.6s;
+  transform: rotateZ(-5deg) scale3d(1, 1, 1);
 }
+
 #about:target ~ .about-decorations .pillar:nth-child(2) {
   transition: 0.25s transform 0.75s;
+  transform: rotateZ(5deg) scale3d(1, 1, 1);
 }
 
 #about:target ~ .about-decorations .flower-1 {
