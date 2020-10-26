@@ -585,37 +585,37 @@
 
       @keyframes expand {
         0% {
-          transform: scale(0);
+          transform: scale3d(0, 0, 1);
         }
         100% {
-          transform: scale(1);
+          transform: none;
         }
       }
 
       @keyframes expand-x {
         0% {
-          transform: scaleX(0);
+          transform: scale3d(0, 1, 1);
         }
         100% {
-          transform: scaleX(1);
+          transform: none;
         }
       }
 
       @keyframes shrink-x {
         0% {
-          transform: scaleX(1);
+          transform: none;
         }
         100% {
-          transform: scaleX(0);
+          transform: scale3d(0, 1, 1);
         }
       }
 
       @keyframes shrink-y {
         0% {
-          transform: scaleY(1);
+          transform: none;
         }
         100% {
-          transform: scaleY(0);
+          transform: scale3d(1, 0, 1);
         }
       }
 
@@ -1027,13 +1027,6 @@
         }
       }
 
-      #thanks .text-container ul {
-        margin: 2em 0;
-      }
-      #thanks .text-container ul li {
-        margin-bottom: 1em;
-      }
-
       .about-filter {
         transform: scale3d(0, 0, 1);
         pointer-events: none;
@@ -1056,8 +1049,6 @@
         position: absolute;
         top: 0;
         height: 100%;
-        border-right: 2px solid maroon;
-        border-left: 2px solid #333;
         background: linear-gradient(
               to right,
               rgba(0, 0, 0, 0) 25%,
@@ -1107,27 +1098,27 @@
 
       #about:target ~ .about-filter {
         transition: 0.3s transform 0.1s;
-        transform: scale3d(1, 1, 1);
+        transform: none;
       }
 
       #about:target ~ .about-decorations .pillar:nth-child(1) {
         transition: 0.25s transform 0.6s;
-        transform: rotateZ(-5deg) scale3d(1, 1, 1);
+        transform: rotateZ(-5deg);
       }
 
       #about:target ~ .about-decorations .pillar:nth-child(2) {
         transition: 0.25s transform 0.75s;
-        transform: rotateZ(5deg) scale3d(1, 1, 1);
+        transform: rotateZ(5deg);
       }
 
       #about:target ~ .about-decorations .flower-1 {
         transition: 0.25s transform 0.3s;
-        transform: rotateZ(24deg) scale3d(1, 1, 1);
+        transform: rotateZ(24deg);
       }
 
       #about:target ~ .about-decorations .flower-2 {
         transition: 0.25s transform 0.45s;
-        transform: rotateZ(-90deg) scale3d(1, 1, 1);
+        transform: rotateZ(-90deg);
       }
 
       section {
@@ -1141,10 +1132,6 @@
       section.mainmenu .nav a {
         transition: 0.5s opacity;
         opacity: 1;
-      }
-
-      .text-container {
-        animation: 0.5s fade-in 0.4s both;
       }
 
       .back {
@@ -1165,6 +1152,7 @@
 
       section:target {
         display: block;
+        animation: 0.5s fade-in 0.4s both;
       }
       section:target ~ section.mainmenu .glow {
         animation-play-state: paused;
@@ -1256,7 +1244,7 @@
 
       #thanks:target ~ .thanks-filter {
         transition: 0.3s transform 0.1s;
-        transform: scale3d(1, 1, 1);
+        transform: none;
       }
 
       @keyframes star-fade-in {
@@ -1265,7 +1253,7 @@
           opacity: 0;
         }
         100% {
-          transform: scale3d(1, 1, 1) rotateZ(14deg);
+          transform: rotateZ(14deg);
           opacity: 1;
         }
       }
@@ -1344,18 +1332,25 @@
       }
 
       #work:target ~ .work-filter {
-        transition: 0.3s transform 0.1s;
-        transform: scale3d(1, 1, 1);
+        transition: 0.29s transform 0.1s;
+        transform: none;
       }
 
       #work:target ~ .work-decorations .fish-1 {
-        transition: 0.25s transform 0.3s;
-        transform: scale3d(1, 1, 1);
+        transition: 0.24s transform 0.4s;
+        transform: none;
       }
 
       #work:target ~ .work-decorations .fish-2 {
-        transition: 0.25s transform 0.45s;
-        transform: rotateZ(90deg) scale3d(1, 1, 1);
+        transition: 0.24s transform 0.65s;
+        transform: rotateZ(90deg);
+      }
+
+      #thanks .text-container ul {
+        margin: 2em 0;
+      }
+      #thanks .text-container ul li {
+        margin-bottom: 1em;
       }
     </style>
   </head>
