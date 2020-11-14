@@ -429,6 +429,7 @@ section.mainmenu .intro-1 .square {
   width: 51%;
   height: 51%;
   animation: 1.25s square-shrink 0.8s both ease-in-out;
+  will-change: transform;
 }
 section.mainmenu .intro-1 .square:nth-child(1) {
   top: 0;
@@ -1308,11 +1309,11 @@ section:target.article ~ .to-work {
 }
 
 #work:target ~ .work-decorations .fish-1 {
-  transition: 0.24s transform 0.4s ease-in;
+  transition: 0.24s transform 0.4s;
   transform: scale3d(1, 1, 1);
 }
 
 #work:target ~ .work-decorations .fish-2 {
-  transition: 0.24s transform 0.65s ease-out;
+  transition: 0.24s transform 0.65s;
   transform: rotate3d(0, 0, 1, 90deg) scale3d(1, 1, 1);
 }
