@@ -427,14 +427,14 @@ section.mainmenu .intro-0 {
   font-weight: bold;
   line-height: 10vh;
   position: absolute;
-  top: 45vh;
+  top: 30vh;
   right: 0;
   left: 0;
   width: 67%;
   height: 10vh;
   margin: auto;
   transform-origin: right;
-  animation: 0.29s intro-0-shrink-x 0.5s both;
+  animation: 0.34s intro-0-shrink-x 0.55s both;
   text-align: center;
   color: white;
   border: 4px solid white;
@@ -446,19 +446,21 @@ section.mainmenu .intro-0 {
 }
 section.mainmenu .intro-0 .inner {
   position: absolute;
-  top: 1vh;
-  left: 1vh;
-  width: calc(100% - 2vh);
-  height: calc(100% - 2vh);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   transform-origin: left;
-  animation: 0.29s intro-0-inner-expand-x 0.2s linear both;
+  animation: 0.34s intro-0-inner-expand-x 0.2s linear both;
   text-align: center;
   color: white;
   background: white;
 }
 section.mainmenu .intro-1 {
-  animation: 0.3s fade-out 0.8s both ease-out;
-  background: #d1a12e;
+  animation: 0.5s fade-out 0.9s both ease-out;
+  background: #d1a12e
+    url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill=''%3E%3Cpath d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/%3E%3C/svg%3E")
+    0 70%/40px auto repeat-x;
 }
 @media (max-aspect-ratio: 1 / 1) {
   section.mainmenu .room,
