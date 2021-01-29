@@ -45,30 +45,18 @@ body {
 .sub-body > div,
 .sub-body > svg {
   z-index: 1;
-  top: 0;
+  top: 5%;
   width: 100%;
   outline: none;
 }
 .sub-body > section {
   position: absolute;
   z-index: 2;
-  overflow-x: hidden;
-  overflow-y: auto;
   box-sizing: border-box;
-  height: 100%;
+  height: 90%;
   transform: translateZ(0);
-  border-left: 2px solid rgba(0, 0, 0, 0);
   content-visibility: auto;
   overscroll-behavior-y: contain;
-}
-.sub-body > section:focus {
-  box-sizing: border-box;
-  border-left-color: white;
-}
-@media (max-aspect-ratio: 1 / 1) {
-  .sub-body > section {
-    border-left: none !important;
-  }
 }
 .sub-body > div,
 .sub-body > svg,
@@ -79,12 +67,14 @@ body {
   overflow: hidden;
   width: calc(100vh * 3 / 2);
   max-width: 100%;
-  height: 100%;
+  height: 90%;
   margin: auto;
 }
 .sub-body .cover {
   z-index: 2;
+  top: 0;
   width: calc(102vh * 3 / 2);
+  height: 100%;
   pointer-events: none;
 }
 .sub-body .back {
@@ -94,6 +84,9 @@ body {
   right: calc(50vw - 50vh / 2 * 3);
   bottom: 1vh;
   transform: rotate3d(0, 0, 1, -3deg);
+}
+.sub-body .back span {
+  background: linear-gradient(#333, #333) 50% 100%/0.5em 2px no-repeat;
 }
 @media (max-aspect-ratio: 3 / 2) {
   .sub-body .back {
@@ -144,8 +137,19 @@ a::selection {
   background: linear-gradient(goldenrod, yellow);
 }
 
+.scroll-container {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  border-left: 2px solid rgba(0, 0, 0, 0);
+}
+.scroll-container:focus {
+  border-left-color: rgba(255, 255, 255, 0.5);
+}
+
 .text-container {
   font-size: 1.35em;
+  display: block;
   box-sizing: border-box;
   width: 100%;
   max-width: 25.5em;
@@ -244,6 +248,7 @@ a::selection {
   top: 0;
   left: 0;
   width: 100%;
+  border: none;
 }
 .text-container a figure figcaption {
   position: absolute;
@@ -260,6 +265,9 @@ a::selection {
   font-weight: bold;
   text-align: left;
   color: white;
+}
+.text-container a figure figcaption .title span {
+  background: linear-gradient(#ddd, #ddd) 50% 95%/0.5em 1px no-repeat;
 }
 .text-container a figure figcaption .action {
   font-size: 0.8em;
@@ -431,7 +439,7 @@ section.mainmenu .nav {
   font-size: 5vmin;
   position: absolute;
   z-index: 1;
-  top: 57.5vh;
+  top: 50vh;
   left: 0;
   width: 100%;
   text-align: center;
@@ -559,7 +567,7 @@ section.mainmenu .nav .thanks-link {
 .about-decorations .pillar {
   position: absolute;
   top: 0;
-  height: 100%;
+  height: 110%;
   background: linear-gradient(
         to right,
         rgba(0, 0, 0, 0) 25%,
@@ -573,7 +581,7 @@ section.mainmenu .nav .thanks-link {
 .about-decorations .pillar:nth-child(1) {
   left: 0;
   width: 25%;
-  transform: rotate3d(0, 0, 1, -5deg) translate3d(-110%, 0, 0);
+  transform: rotate3d(0, 0, 1, -5deg) translate3d(-115%, 0, 0);
   transform-origin: left;
 }
 @media (max-aspect-ratio: 1 / 1) {
@@ -584,7 +592,7 @@ section.mainmenu .nav .thanks-link {
 .about-decorations .pillar:nth-child(2) {
   left: 75%;
   width: 12.5%;
-  transform: rotate3d(0, 0, 1, 5deg) translate3d(220%, 0, 0);
+  transform: rotate3d(0, 0, 1, 5deg) translate3d(225%, 0, 0);
   transform-origin: right;
 }
 @media (max-aspect-ratio: 1 / 1) {
@@ -595,8 +603,8 @@ section.mainmenu .nav .thanks-link {
 .about-decorations .flower-1,
 .about-decorations .flower-2 {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -25px;
+  left: -25px;
   width: 350px;
   height: 350px;
   transform: rotate3d(0, 0, 1, 24deg) scale3d(0, 0, 1);
