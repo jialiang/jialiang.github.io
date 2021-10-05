@@ -135,7 +135,6 @@
         height: 100%;
         text-align: center;
         white-space: nowrap;
-        text-shadow: 0 0 4px black;
       }
 
       header h1 {
@@ -669,7 +668,7 @@
               <picture>
                 <source srcset="images/miku-cover.webp" type="image/webp" />
                 <source srcset="images/miku-cover.jpg" type="image/jpeg" />
-                <img src="images/miku-cover.jpg" alt="" />
+                <img src="images/miku-cover.jpg" alt="3D Engine For Miku project cover image" />
               </picture>
             </div>
             <div class="text-container" style="background: #103c3b">
@@ -687,7 +686,7 @@
               <picture>
                 <source srcset="images/space-gem-cover.webp" type="image/webp" />
                 <source srcset="images/space-gem-cover.jpg" type="image/jpeg" />
-                <img src="images/space-gem-cover.jpg" alt="" />
+                <img src="images/space-gem-cover.jpg" alt="Space Gem project cover Image" />
               </picture>
             </div>
             <div class="text-container" style="background: #4c2f90">
@@ -705,7 +704,7 @@
               <picture>
                 <source srcset="images/shit-compressor-cover.webp" type="image/webp" />
                 <source srcset="images/shit-compressor-cover.jpg" type="image/jpeg" />
-                <img src="images/shit-compressor-cover.jpg" alt="" />
+                <img src="images/shit-compressor-cover.jpg" alt="Shit Compressor project cover image" />
               </picture>
             </div>
             <div class="text-container" style="background: #99350a">
@@ -723,7 +722,7 @@
               <picture>
                 <source srcset="images/yugioh-cover.webp" type="image/webp" />
                 <source srcset="images/yugioh-cover.jpg" type="image/jpeg" />
-                <img src="images/yugioh-cover.jpg" alt="" />
+                <img src="images/yugioh-cover.jpg" alt="Yu-Gi-Oh Secret Rare Effect with CSS project cover image" />
               </picture>
             </div>
             <div class="text-container" style="background: #a9194b">
@@ -834,7 +833,7 @@
         </p>
 
         <p>
-          One of the optimizations I made is using
+          One of the more complex optimizations I made is using
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas"
             target="_blank"
@@ -862,7 +861,13 @@
           >.
         </p>
 
-        <p>I'm quite pleased with how the star field turned out.</p>
+        <p>
+          I'm' proud to say that even on a Xiaomi Redmi Note 4, it runs at 55-60 fps on both Firefox
+          Mobile and Chrome for Android. For context, the Xiaomi Redmi Note 4 is a 170 USD mid-range
+          phone released in early 2017.
+        </p>
+
+        <p>User experience-wise, I'm quite pleased with how the star field turned out.</p>
 
         <ul>
           <li>
@@ -979,7 +984,7 @@
             rel="noopener noreferrer"
             >Google Search Carousel</a
           >
-          and they don't have scroll snapping too. Thus, I decided to scrap this idea.
+          and they don't have scroll snapping either. Thus, I decided to scrap this idea.
         </p>
 
         <h3>How It's Made Section</h3>
@@ -1238,7 +1243,7 @@
       precision mediump float;
 
       uniform vec2 iResolution;
-      uniform float iTime; // shader playback time (in seconds)
+      uniform float iTime;
 
       uniform sampler2D iChannel0;
 
@@ -1246,25 +1251,21 @@
           return texture2D(iChannel0, (vec2(x) + 0.5) / 256.0);
       }
 
-      vec3 supernova() {
-          vec2 position = -1.0 + 2.0 * gl_FragCoord.xy / iResolution.xy;
-
-          float baseIntensity = abs(sin(1.0 - abs(position.x) * abs(position.y) + iTime * 1.25));
-          float poweredIntesity = max(pow(baseIntensity * 2.0, 2.0) - 2.0, 0.0);
+      vec3 supernova(vec2 fragCoord) {
+          float baseIntensity = abs(sin(1.0 - abs(fragCoord.x * fragCoord.y) + iTime * 0.5));
+          float poweredIntesity = max(pow(baseIntensity * 2.0, 4.0) - 14.0, 0.0);
 
           return vec3(
-            poweredIntesity - 1.5,
+            0.0,
             poweredIntesity / 3.0,
             poweredIntesity / 2.0
           );
       }
 
-      vec3 starfield() {
-          vec3 ray;
-          ray.xy = 2.0 * (gl_FragCoord.xy - iResolution.xy * 0.5) / iResolution.x;
-          ray.z = 1.0;
+      vec3 starfield(vec2 fragCoord) {
+          vec3 ray = vec3(fragCoord, 1.0);
 
-          float offset = iTime * 0.7;
+          float offset = iTime;
           float speed_2 = 2.5;
           float speed = speed_2 + 0.5;
 
@@ -1274,14 +1275,14 @@
 
           vec3 pos = 2.0 * stp + 0.5;
 
-          for(int i = 0; i < 5; i++) {
+          for (int i = 0; i < 3; i++) {
               float z = fract(noise(ivec2(pos.xy)).x - offset);
-              float d = 50.0 * z - pos.z;
+              float d = 25.0 * z - pos.z;
               float width = pow(max(0.0, 1.0 - 8.0 * length(fract(pos.xy) - 0.5)), 2.0);
 
               vec3 color = vec3(
                 1.0 - abs(d + speed_2 * 0.5) / speed / 2.0,
-                1.0 - abs(d) / speed,
+                1.0 - abs(d + sin(iTime * 0.75)) / speed,
                 1.0 - abs(d - speed_2 * 0.5) / speed
               );
               color = max(vec3(0.0), color);
@@ -1294,7 +1295,9 @@
       }
 
       void main() {
-          gl_FragColor = vec4(starfield(), 1.0) + vec4(supernova(), 1.0) * 0.12;
+          vec2 fragCoord = 2.0 * (gl_FragCoord.xy - iResolution.xy * 0.5) / iResolution.x;
+
+          gl_FragColor = vec4(starfield(fragCoord), 1.0) + vec4(supernova(fragCoord), 1.0) * 0.1;
       }
     </script>
 
@@ -1395,7 +1398,7 @@
       }
 
       function renderWebGL(totalTime) {
-        gl.uniform1f(iTimeLoc, totalTime / 1000);
+        gl.uniform1f(iTimeLoc, (totalTime % 10000) / 1000);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       }
 
@@ -1455,9 +1458,6 @@
         const width = window.innerWidth * devicePixelRatio;
         const height = window.innerHeight * 0.8 * devicePixelRatio;
 
-        canvas.width = width;
-        canvas.height = height;
-
         if (canvas.transferControlToOffscreen) {
           // We support off-screen canvas!
 
@@ -1488,6 +1488,9 @@
           requestAnimationFrame(draw);
         } else {
           // We don't support offscreen canvas, use normal way
+
+          canvas.width = width;
+          canvas.height = height;
 
           initWebGL(canvas, vertexShaderSource, fragmentShaderSource);
 
