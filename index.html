@@ -196,6 +196,58 @@
 
       /*#endregion*/
 
+      /* USP */
+      /*#region*/
+
+      #usp {
+        font-size: 4.6rem;
+        font-weight: bold;
+        line-height: 1.1;
+        box-sizing: border-box;
+        width: 52.5rem;
+        max-width: 100%;
+        margin: 0 auto 15rem auto;
+        padding: 0.3rem;
+      }
+
+      @media (max-width: 41rem) {
+        #usp {
+          margin-bottom: 10rem;
+        }
+      }
+
+      @media (max-width: 30rem) {
+        #usp {
+          font-size: 15.25vw;
+        }
+      }
+
+      #usp ul {
+        margin: 30vh 0 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      #usp li {
+        margin-top: calc(-60vh + 3.5rem);
+        margin-bottom: -30vh;
+        pointer-events: none;
+      }
+
+      #usp li:last-child {
+        margin-bottom: -30vh;
+      }
+
+      #usp .space {
+        height: 30vh;
+      }
+
+      #usp .text {
+        pointer-events: all;
+      }
+
+      /*#endregion*/
+
       /* PERSONAL */
       /*#region*/
 
@@ -211,8 +263,6 @@
 
       #personal .image-container {
         position: absolute;
-
-        /* z-index: -1; */
         top: 0;
         left: 0;
         overflow: hidden;
@@ -251,7 +301,7 @@
       }
 
       #personal ul {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -613,6 +663,36 @@
       </div>
     </header>
 
+    <section id="usp">
+      <ul>
+        <li>
+          <div class="space"></div>
+          <div class="text">3+ Years Experience.</div>
+          <div class="space"></div>
+        </li>
+        <li>
+          <div class="space"></div>
+          <div class="text">Full-Stack JavaScript.</div>
+          <div class="space"></div>
+        </li>
+        <li>
+          <div class="space"></div>
+          <div class="text">Exceptional Frontend.</div>
+          <div class="space"></div>
+        </li>
+        <li>
+          <div class="space"></div>
+          <div class="text">Information Systems Graduate.</div>
+          <div class="space"></div>
+        </li>
+        <li>
+          <div class="space"></div>
+          <div class="text">Always Learning.</div>
+          <div class="space"></div>
+        </li>
+      </ul>
+    </section>
+
     <section id="personal">
       <div class="image-container">
         <picture>
@@ -704,7 +784,10 @@
               <picture>
                 <source srcset="images/shit-compressor-cover.webp" type="image/webp" />
                 <source srcset="images/shit-compressor-cover.jpg" type="image/jpeg" />
-                <img src="images/shit-compressor-cover.jpg" alt="Shit Compressor project cover image" />
+                <img
+                  src="images/shit-compressor-cover.jpg"
+                  alt="Shit Compressor project cover image"
+                />
               </picture>
             </div>
             <div class="text-container" style="background: #99350a">
@@ -722,7 +805,10 @@
               <picture>
                 <source srcset="images/yugioh-cover.webp" type="image/webp" />
                 <source srcset="images/yugioh-cover.jpg" type="image/jpeg" />
-                <img src="images/yugioh-cover.jpg" alt="Yu-Gi-Oh Secret Rare Effect with CSS project cover image" />
+                <img
+                  src="images/yugioh-cover.jpg"
+                  alt="Yu-Gi-Oh Secret Rare Effect with CSS project cover image"
+                />
               </picture>
             </div>
             <div class="text-container" style="background: #a9194b">
@@ -779,17 +865,10 @@
         <h3>Header</h3>
 
         <p>
-          I like how the headers are done on the product pages for the
-          <a href="https://www.apple.com/ipad-pro/" target="_blank" rel="noopener noreferrer"
-            >iPad Pro</a
-          >,
+          I like how the header is done on the
           <a href="https://www.apple.com/macbook-pro-16/" target="_blank" rel="noopener noreferrer"
-            >MacBook Pro 16-inch</a
-          >
-          and
-          <a href="https://www.apple.com/iphone-13-pro/" target="_blank" rel="noopener noreferrer"
-            >iPhone 13 Pro</a
-          >. They all start with this big headline and tagline. The big bold letters stand in stark
+            >product page for the MacBook Pro 16-inch</a
+          >. It starts with this big headline and tagline. The big bold letters stand in stark
           contrast to the simple background. Without any other elements around it, your attention is
           immediately drawn to it. From there, the headline sets the context and the tagline sets
           the tone and expectation. The boldness of the font and the use of periods creates an air
@@ -802,6 +881,8 @@
           enough. I figure generative art can be a good alternative. It provides visual interest but
           more importantly sends a message of technical competence.
         </p>
+
+        <h3>Background</h3>
 
         <p>
           Around this time, I was marathoning through all 5 seasons of Rick and Morty and got hooked
@@ -881,6 +962,21 @@
             Intel UHD Graphics 630 GPU.
           </li>
         </ul>
+
+        <h3>Intro Section</h3>
+
+        <p>
+          I decided to list down my value propositions right after the header. My method was
+          inspired by the
+          <a
+            href="https://www.apple.com/my/iphone-13-pro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >iPhone 13 Pro product page</a
+          >. Most people don't like reading so I made my messages as short as possible. I made them
+          big and bold so that they're hard to miss. The fade-on-scroll effect makes it interactive.
+          This way users are more likely to slow down, play with it and read everything.
+        </p>
 
         <h3>Personal Section</h3>
 
@@ -1410,6 +1506,8 @@
     </script>
 
     <script>
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
       function initBgm() {
         const bgmAudio = document.getElementById("bgm-audio");
         const bgmButton = document.getElementById("bgm-button");
@@ -1433,8 +1531,6 @@
       }
 
       function initCanvas() {
-        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
         if (!prefersReducedMotion || prefersReducedMotion.matches) return;
 
         let pause = false; // pause by user scrolled to how-its-made section
@@ -1597,7 +1693,29 @@
         }
       }
 
+      function initUsp() {
+        if (!prefersReducedMotion || prefersReducedMotion.matches) return;
+
+        if (typeof IntersectionObserver !== "undefined") {
+          const observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                entry.target.style.opacity = Math.pow(entry.intersectionRatio, 6) * 1.25;
+              });
+            },
+            {
+              threshold: [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0],
+            }
+          );
+
+          const li = document.querySelectorAll("#usp li");
+
+          for (let i = 0; i < li.length; i++) observer.observe(li[i]);
+        }
+      }
+
       initBgm();
+      initUsp();
       initCanvas();
       initCarouselScroll();
       backgroundClipFeatureDetection();
