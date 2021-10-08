@@ -211,44 +211,43 @@
         box-sizing: border-box;
         width: 52.5rem;
         max-width: 100%;
-        margin: 0 auto 15rem auto;
-        padding: 0.3rem;
+        margin: 0 auto 10rem auto;
+        padding: 0 0.7rem;
       }
 
       @media (max-width: 41rem) {
         #usp {
-          margin-bottom: 10rem;
+          margin-bottom: 5rem;
         }
       }
 
       @media (max-width: 30rem) {
         #usp {
-          font-size: 15.25vw;
+          font-size: 15.25vmin;
         }
       }
 
       #usp ul {
-        margin: 30vh 0 0 0;
+        margin: 0;
         padding: 0;
         list-style: none;
       }
 
       #usp li {
-        margin-top: calc(-60vh + 3.5rem);
-        margin-bottom: -30vh;
-        pointer-events: none;
-      }
-
-      #usp li:last-child {
-        margin-bottom: -30vh;
-      }
-
-      #usp .space {
-        height: 30vh;
+        position: relative;
+        margin-bottom: 3.5rem;
       }
 
       #usp .text {
-        pointer-events: all;
+        will-change: opacity;
+      }
+
+      #usp .intersection-point {
+        position: absolute;
+        top: 50%;
+        width: 1px;
+        height: 80vh;
+        transform: translateY(-50%);
       }
 
       /*#endregion*/
@@ -671,29 +670,20 @@
     <section id="usp">
       <ul>
         <li>
-          <div class="space"></div>
           <div class="text">3+ Years Experience.</div>
-          <div class="space"></div>
+          <div class="intersection-point"></div>
         </li>
         <li>
-          <div class="space"></div>
           <div class="text">Full-Stack JavaScript.</div>
-          <div class="space"></div>
+          <div class="intersection-point"></div>
         </li>
         <li>
-          <div class="space"></div>
           <div class="text">Exceptional Frontend.</div>
-          <div class="space"></div>
+          <div class="intersection-point"></div>
         </li>
         <li>
-          <div class="space"></div>
           <div class="text">Information Systems Graduate.</div>
-          <div class="space"></div>
-        </li>
-        <li>
-          <div class="space"></div>
-          <div class="text">Always Learning.</div>
-          <div class="space"></div>
+          <div class="intersection-point"></div>
         </li>
       </ul>
     </section>
@@ -968,11 +958,11 @@
           >.
         </p>
         <p>
-          I am aware using a seperate host for static assets does mean that the browser needs to
-          perform an additional DNS lookup, initial connection and SSL handshake after parsing the
-          HTML. However, even with these overhead, Cloudinary still manages to match or beat GitHub
-          Pages' time. It should be said that Cloudinary cannot be used to host websites. They will
-          serve HTML files as attachments rather than webpages.
+          I am aware using a seperate host for static assets does have its drawbacks. For one, that
+          the browser needs to perform an additional DNS lookup, initial connection and SSL
+          handshake after parsing the HTML. However, even with these overhead, Cloudinary still
+          manages to match or beat GitHub Pages' time. It should be said that Cloudinary cannot be
+          used to host websites. They will serve HTML files as attachments rather than webpages.
         </p>
         <p>
           Audio files are still served through GitHub Pages because latency is less of an issue for
@@ -1083,8 +1073,8 @@
         <h3>Intro Section</h3>
 
         <p>
-          I decided to list down my value propositions right after the header. My method was
-          inspired by the
+          I decided to list down my value propositions right after the header. You know, to tickle
+          the reader's balls a bit. My method was inspired by the
           <a
             href="https://www.apple.com/my/iphone-13-pro/"
             target="_blank"
@@ -1817,7 +1807,10 @@
           const observer = new IntersectionObserver(
             function (entries) {
               entries.forEach(function (entry) {
-                entry.target.style.opacity = Math.pow(entry.intersectionRatio, 6) * 1.25;
+                entry.target.previousElementSibling.style.opacity = Math.pow(
+                  entry.intersectionRatio,
+                  6
+                );
               });
             },
             {
@@ -1825,9 +1818,10 @@
             }
           );
 
-          const li = document.querySelectorAll("#usp li");
+          const intersectionPoints = document.querySelectorAll("#usp .intersection-point");
 
-          for (let i = 0; i < li.length; i++) observer.observe(li[i]);
+          for (let i = 0; i < intersectionPoints.length; i++)
+            observer.observe(intersectionPoints[i]);
         }
       }
 
