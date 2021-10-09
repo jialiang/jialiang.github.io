@@ -564,24 +564,18 @@
         background: black;
       }
 
-      #how-its-made .observation-point-container {
-        position: absolute;
-        top: 100vh;
-        pointer-events: none;
-      }
-
       #how-its-made .observation-point {
         position: sticky;
         top: 0;
         width: 1px;
-        height: 1px;
+        height: 80vh;
       }
 
       #how-its-made .article {
         box-sizing: border-box;
         width: 45rem;
         max-width: 100%;
-        margin: auto;
+        margin: -80vh auto 0 auto;
         padding: 0 1rem;
       }
 
@@ -890,9 +884,7 @@
     </section>
 
     <section id="how-its-made">
-      <div class="observation-point-container">
-        <div class="observation-point"></div>
-      </div>
+      <div class="observation-point"></div>
 
       <div class="article">
         <h2>
@@ -1073,8 +1065,8 @@
         <h3>Intro Section</h3>
 
         <p>
-          I decided to list down my value propositions right after the header. You know, to tickle
-          the reader's balls a bit. My method was inspired by the
+          I decided to list down my value propositions right after the header. My method was
+          inspired by the
           <a
             href="https://www.apple.com/my/iphone-13-pro/"
             target="_blank"
@@ -1511,11 +1503,17 @@
       let iTimeLoc = null;
 
       function initWebGL(canvas, vertexShaderSource, fragmentShaderSource) {
-        const glOptions = { alpha: false, antialias: false };
+        const glOptions = { alpha: false, antialias: false, failIfMajorPerformanceCaveat: true };
 
         gl = canvas.getContext("webgl", glOptions);
 
-        if (!gl) gl = canvas.getContext("experimental-webgl", glOptions);
+        if (!gl) {
+          try {
+            gl = canvas.getContext("experimental-webgl", glOptions);
+          } catch {
+            return;
+          }
+        }
 
         if (!gl) return;
 
@@ -1598,6 +1596,10 @@
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, noiseImage);
         gl.generateMipmap(gl.TEXTURE_2D);
         gl.uniform1i(iChannel0Loc, 0);
+
+        if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
+
+        return true;
       }
 
       function renderWebGL(totalTime) {
@@ -1605,7 +1607,7 @@
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       }
 
-      onmessage = function (e) {
+      self.onmessage = function (e) {
         if (e.data.raf) return renderWebGL(e.data.raf);
 
         return initWebGL(e.data.canvas, e.data.vertexShaderSource, e.data.fragmentShaderSource);
@@ -1673,6 +1675,16 @@
 
           const worker = new Worker(window.URL.createObjectURL(workerCodeBlob));
 
+          worker.onmessage = function (e) {
+            const draw = function (totalTime) {
+              if (!pause) worker.postMessage({ raf: totalTime });
+
+              requestAnimationFrame(draw);
+            };
+
+            requestAnimationFrame(draw);
+          };
+
           worker.postMessage(
             {
               canvas: offscreenCanvas,
@@ -1681,21 +1693,15 @@
             },
             [offscreenCanvas]
           );
-
-          const draw = function (totalTime) {
-            if (!pause) worker.postMessage({ raf: totalTime });
-
-            requestAnimationFrame(draw);
-          };
-
-          requestAnimationFrame(draw);
         } else {
           // We don't support offscreen canvas, use normal way
 
           canvas.width = width;
           canvas.height = height;
 
-          initWebGL(canvas, vertexShaderSource, fragmentShaderSource);
+          const initWebGLSuccess = initWebGL(canvas, vertexShaderSource, fragmentShaderSource);
+
+          if (!initWebGLSuccess) return;
 
           const draw = function (totalTime) {
             if (!pause) renderWebGL(totalTime);
