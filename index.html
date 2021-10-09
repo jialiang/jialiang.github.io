@@ -919,7 +919,7 @@
         <h3>Hosting</h3>
 
         <p>
-          The HTML and static media files are hosted on
+          The HTML and media files are hosted on
           <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer"
             >GitHub Pages</a
           >. Most of my repositories are already hosted on GitHub so I'm using them out of
@@ -935,7 +935,7 @@
         <p>
           The main reason I use Cloudinary is because GitHub Pages sets a 10 minute cache-control
           header on all resources. Despite being a widely requested feature, they refuse to allow us
-          to set a longer cache expiry period. By contrast, Cloudinary has a reasonable 10 minute
+          to set a longer cache expiry period. By contrast, Cloudinary has a reasonable 30 days
           cache-control period. Caching greatly reduces the latency of future file requests. It
           allows browsers to make use of their local copy of the file. This is way faster than
           retrieving the file again from the server.
