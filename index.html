@@ -27,7 +27,7 @@
     />
     <link
       rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/image/upload/v1634220239/jialiang.github.io/images-2/iwlavylf5ua068yrmmvk.png"
+      href="https://res.cloudinary.com/dedvquoyt/image/upload/v1634450805/jialiang.github.io/images-2/ahaqa71ykthag9omoeda.png"
       as="image"
       crossorigin
     />
@@ -128,7 +128,7 @@
         height: 100vh;
         border-top: 10vh solid black;
         border-bottom: 10vh solid black;
-        background: linear-gradient(to bottom right, #5f005f, #e7857a, #f1cc95);
+        background: linear-gradient(172.5deg, #630063, #e7857a, #f1cc95);
 
         contain: strict;
       }
@@ -144,7 +144,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         text-align: center;
       }
 
@@ -168,10 +168,11 @@
       header .scroll {
         font-size: 1rem;
         font-weight: 500;
-        position: absolute;
+        position: fixed;
         bottom: 10px;
         left: 10px;
         padding: 0.15rem 0.3rem;
+        opacity: 0;
         color: white;
         background: black;
       }
@@ -186,7 +187,7 @@
         }
       }
 
-      @media (max-width: 300px), (max-height: 300px) {
+      @media (max-width: 320px), (max-height: 320px) {
         header h1 {
           font-size: 22vmin;
         }
@@ -213,7 +214,7 @@
         padding: 0.15rem 0.3rem;
         cursor: pointer;
         color: white;
-        border: none;
+        border: 1px solid white;
         background: black;
       }
 
@@ -233,14 +234,8 @@
         box-sizing: border-box;
         width: 52.5rem;
         max-width: 100%;
-        margin: 0 auto 10rem auto;
+        margin: 0 auto 15rem auto;
         padding: 0 0.7rem;
-      }
-
-      @media (max-width: 41rem) {
-        #usp {
-          margin-bottom: 5rem;
-        }
       }
 
       @media (max-width: 30rem) {
@@ -268,7 +263,7 @@
         position: absolute;
         top: 50%;
         width: 1px;
-        height: 80vh;
+        height: 70vh;
         transform: translateY(-50%);
       }
 
@@ -690,7 +685,7 @@
     <header>
       <div class="text-container">
         <h1>Jia Liang.</h1>
-        <p>I can be your new <span>software engineer</span>.</p>
+        <p>Software engineer.</p>
       </div>
       <div class="scroll">Scroll down.</div>
     </header>
@@ -969,9 +964,10 @@
           large media content. Cloudinary also has a strict 33GB per month free bandwidth limit.
         </p>
         <p>
-          Another bonus of using Cloudinary is you can have them serve your images in different
-          formats just by changing the URL. My current setup uses AVIF as the preferred image
-          format. If AVIF is not supported then Cloudinary will choose the best supported format.
+          Cloudinary also let me serve my images in different formats just by changing the URL. My
+          current setup have AVIF as the preferred image format. If AVIF is not supported then
+          Cloudinary will automatically choose the best supported format based on the user's
+          browser.
         </p>
 
         <h3>Header</h3>
@@ -1013,8 +1009,8 @@
             href="https://experiments.withgoogle.com/clouds"
             target="_blank"
             rel="noopener noreferrer"
-            >Clouds by Mr. Dood</a
-          >. Mr Dood is the creator of THREE.js. The way it works is by peppering images of clouds
+            >Clouds by Mr. Doob</a
+          >. Mr Doob is the creator of THREE.js. The way it works is by peppering images of clouds
           throughout the scene. The same cloud image is used but its position, scale, rotation and
           opacity are randomised to create variation. This approach produces some pretty good
           looking clouds as long as you don't need to rotate the camera horizontally.
@@ -1025,15 +1021,28 @@
           look good. It's a reason why real dynamic weather systems in games are such a big deal.
         </p>
         <p>
-          Mr. Dood's demo uses THREE.js and I kept it that way. Rewriting it would involve a lot of
-          effort for very little gain. I understand that THREE.js is a big library. The latest
-          minified THREE.js library is 590kB big and 120kB when gzipped. Thus I made an effort to
-          remove unused code through tree-shaking. I managed to shrink the library down to only
-          130kB big and 39kB when gzipped.
+          Mr. Doob's demo uses THREE.js and I kept it that way. Rewriting it would involve a lot of
+          effort for very little gain. I understand that THREE.js is a big library at 590kB minified
+          (120kB gzipped). Thus I made an effort to remove unused code through tree-shaking. The
+          tools I use is my own modified version of
+          <a
+            href="https://github.com/pinqy520/coverage-shaker"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Coverage Shaker</a
+          >
+          and the
+          <a
+            href="https://developers.google.com/closure/compiler"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Closure Compiler</a
+          >. Coupled with a little elbow grease, I managed to shrink the library down to only 60kB
+          minified (20kB gzipped).
         </p>
 
         <p>
-          One of the more complex optimizations I made is using
+          Performance-wise, one of the more optimizations I made is using
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas"
             target="_blank"
@@ -1420,7 +1429,7 @@
       <source src="audios/Thunderclouds.mp3" type="audio/mp3" />
     </audio>
 
-    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1634319491/jialiang.github.io/scripts/three.module.min_kcqrwv.js"></script>
+    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1634484087/jialiang.github.io/scripts/three.module.min_qxuq31.js"></script>
 
     <script id="vertex-shader-source" type="x-shader/x-vertex">
       varying vec2 vUv;
@@ -1453,7 +1462,7 @@
     <script id="webgl-code">
       if (self.importScripts) {
         self.importScripts(
-          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1634319491/jialiang.github.io/scripts/three.module.min_kcqrwv.js"
+          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1634484087/jialiang.github.io/scripts/three.module.min_qxuq31.js"
         );
       }
 
@@ -1493,105 +1502,106 @@
         camera.position.y = 0;
         camera.position.z = 100;
 
-        new THREE.ImageBitmapLoader().load(
-          "https://res.cloudinary.com/dedvquoyt/image/upload/v1634220239/jialiang.github.io/images-2/iwlavylf5ua068yrmmvk.png",
-          function (imageBitmap) {
-            const texture = new THREE.CanvasTexture(imageBitmap);
+        return new Promise(function (resolve) {
+          new THREE.ImageBitmapLoader().load(
+            "https://res.cloudinary.com/dedvquoyt/image/upload/v1634450805/jialiang.github.io/images-2/ahaqa71ykthag9omoeda.png",
+            function (imageBitmap) {
+              const texture = new THREE.CanvasTexture(imageBitmap);
 
-            texture.magFilter = THREE.LinearFilter;
-            texture.minFilter = THREE.LinearMipMapLinearFilter;
+              texture.magFilter = THREE.LinearFilter;
+              texture.minFilter = THREE.LinearMipMapLinearFilter;
 
-            const fog = new THREE.Fog(0x4584b4, -100, 3000);
+              const fog = new THREE.Fog(0x4584b4, -100, 3000);
 
-            const material = new THREE.ShaderMaterial({
-              uniforms: {
-                map: { type: "t", value: texture },
-                fogColor: { type: "c", value: fog.color },
-                fogNear: { type: "f", value: fog.near },
-                fogFar: { type: "f", value: fog.far },
-              },
-              vertexShader: vertexShaderSource,
-              fragmentShader: fragmentShaderSource,
-              depthWrite: false,
-              depthTest: false,
-              transparent: true,
-            });
+              const material = new THREE.ShaderMaterial({
+                uniforms: {
+                  map: { type: "t", value: texture },
+                  fogColor: { type: "c", value: fog.color },
+                  fogNear: { type: "f", value: fog.near },
+                  fogFar: { type: "f", value: fog.far },
+                },
+                vertexShader: vertexShaderSource,
+                fragmentShader: fragmentShaderSource,
+                depthWrite: false,
+                depthTest: false,
+                transparent: true,
+              });
 
-            const plane = new THREE.Mesh(new THREE.PlaneGeometry(64, 64));
-            const geometry = new THREE.Geometry();
+              const plane = new THREE.Mesh(new THREE.PlaneGeometry(64, 64));
+              const geometry = new THREE.Geometry();
 
-            const randomNumbers = [
-              0.764, 0.36, 0.001, 0.979, 0.158, 0.209, 0.42, 0.122, 0.577, 0.777, 0.204, 0.046,
-              0.562, 0.755, 0.339, 0.785, 0.84, 0.324, 0.581, 0.338, 0.436, 0.166, 0.112, 0.383,
-              0.644, 0.954, 0.022, 0.92, 0.215, 0.055, 0.168, 0.619, 0.616, 0.863, 0.909, 0.98,
-              0.914, 0.708, 0.024, 0.334, 0.319, 0.771, 0.771, 0.851, 0.06, 0.267, 0.892, 0.345,
-              0.364, 0.137, 0.115, 0.194, 0.432, 0.936, 0.955, 0.873, 0.999, 0.752, 0.717, 0.063,
-              0.719, 0.121, 0.956, 0.847, 0.601, 0.046, 0.471, 0.229, 0.628, 0.844, 0.204, 0.895,
-              0.88, 0.602, 0.615, 0.269, 0.264, 0.712, 0.854, 0.417, 0.625, 0.688, 0.626, 0.986,
-              0.514, 0.241, 0.14, 0.365, 0.357, 0.671, 0.099, 0.704, 0.657, 0.596, 0.433, 0.631,
-              0.463, 0.17, 0.724, 0.93, 0.638, 0.949, 0.787, 0.237, 0.701, 0.462, 0.753, 0.44,
-              0.533, 0.344, 0.189, 0.414, 0.493, 0.917, 0.074, 0.593, 0.024, 0.305, 0.756, 0.469,
-              0.384, 0.141, 0.826, 0.033, 0.019, 0.923, 0.225, 0.651, 0.514, 0.362, 0.315, 0.402,
-              0.385, 0.655, 0.96, 0.203, 0.573, 0.438, 0.613, 0.488, 0.535, 0.436, 0.459, 0.212,
-              0.608, 0.164, 0.373, 0.284, 0.981, 0.112, 0.698, 0.814, 0.151, 0.35, 0.356, 0.507,
-              0.284, 0.882, 0.074, 0.311, 0.607, 0.08, 0.433, 0.607, 0.501, 0.254, 0.193, 0.795,
-              0.9, 0.467, 0.868, 0.617, 0.437, 0.697, 0.989, 0.507, 0.529, 0.36, 0.024, 0.695,
-              0.506, 0.642, 0.994, 0.418, 0.632, 0.03, 0.082, 0.445, 0.266, 0.766, 0.828, 0.353,
-              0.084, 0.961, 0.233, 0.314, 0.374, 0.411, 0.501, 0.236, 0.696, 0.527, 0.368, 0.464,
-              0.028, 0.244, 0.06, 0.597, 0.667, 0.269, 0.792, 0.263, 0.159, 0.434, 0.255, 0.354,
-              0.298, 0.978, 0.685, 0.351, 0.448, 0.147, 0.608, 0.974, 0.716, 0.768, 0.449, 0.892,
-              0.252, 0.087, 0.368, 0.91, 0.466, 0.914, 0.561, 0.413, 0.905, 0.931, 0.424, 0.401,
-              0.408, 0.167, 0.667, 0.075, 0.14, 0.179, 0.83, 0.18, 0.957, 0.196, 0.151, 0.456,
-              0.717, 0.143, 0.042, 0.538, 0.271, 0.482, 0.109, 0.637, 0.642, 0.474, 0.535, 0.709,
-              0.231, 0.453, 0.82, 0.783, 0.509, 0.256, 0.658, 0.268, 0.955, 0.997, 0.54, 0.293,
-              0.019, 0.039, 0.308, 0.078, 0.81, 0.976, 0.605, 0.236, 0.405, 0.106, 0.456, 0.763,
-              0.367, 0.319, 0.845, 0.347, 0.251, 0.266, 0.667, 0.646, 0.906, 0.831, 0.774, 0.828,
-            ];
+              const randomNumbers = [
+                0.764, 0.36, 0.001, 0.979, 0.158, 0.209, 0.42, 0.122, 0.577, 0.777, 0.204, 0.046,
+                0.562, 0.755, 0.339, 0.785, 0.84, 0.324, 0.581, 0.338, 0.436, 0.166, 0.112, 0.383,
+                0.644, 0.954, 0.022, 0.92, 0.215, 0.055, 0.168, 0.619, 0.616, 0.863, 0.909, 0.98,
+                0.914, 0.708, 0.024, 0.334, 0.319, 0.771, 0.771, 0.851, 0.06, 0.267, 0.892, 0.345,
+                0.364, 0.137, 0.115, 0.194, 0.432, 0.936, 0.955, 0.873, 0.999, 0.752, 0.717, 0.063,
+                0.719, 0.121, 0.956, 0.847, 0.601, 0.046, 0.471, 0.229, 0.628, 0.844, 0.204, 0.895,
+                0.88, 0.602, 0.615, 0.269, 0.264, 0.712, 0.854, 0.417, 0.625, 0.688, 0.626, 0.986,
+                0.514, 0.241, 0.14, 0.365, 0.357, 0.671, 0.099, 0.704, 0.657, 0.596, 0.433, 0.631,
+                0.463, 0.17, 0.724, 0.93, 0.638, 0.949, 0.787, 0.237, 0.701, 0.462, 0.753, 0.44,
+                0.533, 0.344, 0.189, 0.414, 0.493, 0.917, 0.074, 0.593, 0.024, 0.305, 0.756, 0.469,
+                0.384, 0.141, 0.826, 0.033, 0.019, 0.923, 0.225, 0.651, 0.514, 0.362, 0.315, 0.402,
+                0.385, 0.655, 0.96, 0.203, 0.573, 0.438, 0.613, 0.488, 0.535, 0.436, 0.459, 0.212,
+                0.608, 0.164, 0.373, 0.284, 0.981, 0.112, 0.698, 0.814, 0.151, 0.35, 0.356, 0.507,
+                0.284, 0.882, 0.074, 0.311, 0.607, 0.08, 0.433, 0.607, 0.501, 0.254, 0.193, 0.795,
+                0.9, 0.467, 0.868, 0.617, 0.437, 0.697, 0.989, 0.507, 0.529, 0.36, 0.024, 0.695,
+                0.506, 0.642, 0.994, 0.418, 0.632, 0.03, 0.082, 0.445, 0.266, 0.766, 0.828, 0.353,
+                0.084, 0.961, 0.233, 0.314, 0.374, 0.411, 0.501, 0.236, 0.696, 0.527, 0.368, 0.464,
+                0.028, 0.244, 0.06, 0.597, 0.667, 0.269, 0.792, 0.263, 0.159, 0.434, 0.255, 0.354,
+                0.298, 0.978, 0.685, 0.351, 0.448, 0.147, 0.608, 0.974, 0.716, 0.768, 0.449, 0.892,
+                0.252, 0.087, 0.368, 0.91, 0.466, 0.914, 0.561, 0.413, 0.905, 0.931, 0.424, 0.401,
+                0.408, 0.167, 0.667, 0.075, 0.14, 0.179, 0.83, 0.18, 0.957, 0.196, 0.151, 0.456,
+                0.717, 0.143, 0.042, 0.538, 0.271, 0.482, 0.109, 0.637, 0.642, 0.474, 0.535, 0.709,
+                0.231, 0.453, 0.82, 0.783, 0.509, 0.256, 0.658, 0.268, 0.955, 0.997, 0.54, 0.293,
+                0.019, 0.039, 0.308, 0.078, 0.81, 0.976, 0.605, 0.236, 0.405, 0.106, 0.456, 0.763,
+                0.367, 0.319, 0.845, 0.347, 0.251, 0.266, 0.667, 0.646, 0.906, 0.831, 0.774, 0.828,
+              ];
 
-            for (let i = 0; i < 50; i++) {
-              plane.position.x = randomNumbers.pop() * 400;
-              plane.position.y = -randomNumbers.pop() * randomNumbers.pop() * 200 - 15;
-              plane.position.z = i;
+              for (let i = 0; i < 50; i++) {
+                plane.position.x = randomNumbers.pop() * 400;
+                plane.position.y = -randomNumbers.pop() * randomNumbers.pop() * 200 - 15;
+                plane.position.z = i;
 
-              plane.rotation.z = randomNumbers.pop() * Math.PI;
-              plane.scale.x = plane.scale.y = randomNumbers.pop() * randomNumbers.pop() * 1.5 + 0.5;
+                plane.rotation.z = randomNumbers.pop() * Math.PI;
+                plane.scale.x = plane.scale.y =
+                  randomNumbers.pop() * randomNumbers.pop() * 1.5 + 0.5;
 
-              plane.updateMatrix();
-              geometry.merge(plane.geometry, plane.matrix);
+                plane.updateMatrix();
+                geometry.merge(plane.geometry, plane.matrix);
 
-              if (plane.position.x < 250) {
                 plane.position.x = plane.position.x + 400;
 
                 plane.updateMatrix();
                 geometry.merge(plane.geometry, plane.matrix);
               }
+
+              const mesh_1 = new THREE.Mesh(geometry, material);
+              const mesh_2 = new THREE.Mesh(geometry, material);
+
+              mesh_2.position.z = -100;
+
+              scene = new THREE.Scene();
+              scene.add(mesh_1);
+              scene.add(mesh_2);
+
+              startTime = performance.now();
+
+              if (performanceCaveat) {
+                requestAnimationFrame(function () {
+                  camera.position.x = 100;
+
+                  renderer.render(scene, camera);
+                });
+                return;
+              }
+
+              if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
+
+              resolve(!performanceCaveat);
             }
-
-            const mesh_1 = new THREE.Mesh(geometry, material);
-            const mesh_2 = new THREE.Mesh(geometry, material);
-
-            mesh_2.position.z = -100;
-
-            scene = new THREE.Scene();
-            scene.add(mesh_1);
-            scene.add(mesh_2);
-
-            startTime = performance.now();
-
-            if (performanceCaveat) {
-              requestAnimationFrame(function () {
-                camera.position.x = 100;
-
-                renderer.render(scene, camera);
-              });
-              return;
-            }
-
-            if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
-          }
-        );
-
-        return !performanceCaveat;
+          );
+        });
       }
 
       function renderWebGL(currentTime) {
@@ -1698,17 +1708,17 @@
           canvas.width = width;
           canvas.height = height;
 
-          const initWebGLSuccess = initWebGL(canvas, vertexShaderSource, fragmentShaderSource);
+          initWebGL(canvas, vertexShaderSource, fragmentShaderSource).then(function (ok) {
+            if (!ok) return;
 
-          if (!initWebGLSuccess) return;
+            const draw = function (totalTime) {
+              if (!pause) renderWebGL(totalTime);
 
-          const draw = function (totalTime) {
-            if (!pause) renderWebGL(totalTime);
+              requestAnimationFrame(draw);
+            };
 
             requestAnimationFrame(draw);
-          };
-
-          requestAnimationFrame(draw);
+          });
         }
       }
 
@@ -1719,12 +1729,12 @@
         const right = document.getElementById("project-carousel-right-button");
 
         const newPosition = function (mode) {
-          if (carousel.scrollWidth < innerWidth) return 0;
+          if (carousel.scrollWidth < window.innerWidth) return 0;
 
           const scrollPos = carousel.scrollLeft;
           const carouselWidth = carousel.scrollWidth;
           const halfCardWidth = (8 * carouselWidth) / 74;
-          const halfWindowWidth = innerWidth / 2;
+          const halfWindowWidth = window.innerWidth / 2;
           const carouselMiddlePos = scrollPos + halfWindowWidth;
 
           const offsetLefts = [];
@@ -1766,7 +1776,10 @@
             if (closestToMiddleIndex === cards.length - 1) return carouselWidth;
 
             // the right card is mostly but not completely showing, so completely show it
-            if (scrollPos + innerWidth - halfCardWidth * 2 < offsetLefts[closestToMiddleIndex]) {
+            if (
+              scrollPos + window.innerWidth - halfCardWidth * 2 <
+              offsetLefts[closestToMiddleIndex]
+            ) {
               return getNewOffsetLeft(closestToMiddleIndex);
             }
 
@@ -1814,12 +1827,12 @@
               entries.forEach(function (entry) {
                 entry.target.previousElementSibling.style.opacity = Math.pow(
                   entry.intersectionRatio,
-                  6
+                  8
                 );
               });
             },
             {
-              threshold: [0.5, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0],
+              threshold: [0.5, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975, 1.0],
             }
           );
 
@@ -1831,8 +1844,15 @@
       }
 
       function initScrollMessage() {
+        if (localStorage.getItem("knowsHowToScroll")) return;
+
+        const scroll = document.querySelector(".scroll");
+
+        scroll.style.opacity = 1;
+
         window.onscroll = function () {
-          document.querySelector(".scroll").style.opacity = 0;
+          localStorage.setItem("knowsHowToScroll", "yes");
+          scroll.style.opacity = 0;
           window.onscroll = null;
         };
       }
