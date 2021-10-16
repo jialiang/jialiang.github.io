@@ -25,6 +25,12 @@
       type="font/woff2"
       crossorigin
     />
+    <link
+      rel="preload"
+      href="https://res.cloudinary.com/dedvquoyt/image/upload/v1634220239/jialiang.github.io/images-2/iwlavylf5ua068yrmmvk.png"
+      as="image"
+      crossorigin
+    />
 
     <title>Jia Liang | Software Engineer</title>
     <meta name="description" content="Personal website of software engineer, Jia Liang" />
@@ -80,7 +86,7 @@
         font-family: "Roboto", sans-serif;
         width: 100%;
         height: 100%;
-        color: white;
+        color: black;
         background: black;
       }
 
@@ -98,7 +104,7 @@
 
       a {
         text-decoration: none;
-        color: #2d98fc;
+        color: #47a6ff;
       }
 
       a:hover {
@@ -122,6 +128,7 @@
         height: 100vh;
         border-top: 10vh solid black;
         border-bottom: 10vh solid black;
+        background: linear-gradient(to bottom right, #5f005f, #e7857a, #f1cc95);
 
         contain: strict;
       }
@@ -137,21 +144,36 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         text-align: center;
-        white-space: nowrap;
       }
 
       header h1 {
         font-size: 7.5rem;
-        font-weight: 500;
+        font-weight: 700;
         margin: 0;
+        white-space: nowrap;
       }
 
       header p {
         font-size: 2.5rem;
-        font-weight: 400;
+        font-weight: 500;
         margin: 0.5em 0 0 0;
+      }
+
+      header p span {
+        white-space: nowrap;
+      }
+
+      header .scroll {
+        font-size: 1rem;
+        font-weight: 500;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        padding: 0.15rem 0.3rem;
+        color: white;
+        background: black;
       }
 
       @media (max-width: 32.625rem) {
@@ -192,11 +214,11 @@
         cursor: pointer;
         color: white;
         border: none;
-        background: none;
+        background: black;
       }
 
       #bgm-button:focus {
-        outline: 1px solid #2d98fc;
+        outline: 1px solid #47a6ff;
       }
 
       /*#endregion*/
@@ -262,7 +284,8 @@
         width: 52.5rem;
         max-width: 100%;
         min-height: 52.5rem;
-        margin: 5rem auto 15rem auto;
+        margin: 5rem auto 7.5rem auto;
+        color: white;
       }
 
       #personal .image-container {
@@ -275,7 +298,6 @@
         height: 100%;
         max-height: 52.5rem;
         margin: auto;
-        transform: rotate3d(0, 0, 1, -5deg);
         border-radius: 2.5rem;
       }
 
@@ -286,15 +308,10 @@
         max-width: 100%;
         margin: 0 2rem 0 auto;
         padding: 4rem;
-        border-left: 1px solid rgba(255, 200, 2500, 0.2);
+        border-bottom: 1px solid rgba(255, 200, 250, 0.2);
+        border-left: 1px solid rgba(255, 200, 250, 0.2);
         border-radius: 1.5rem;
-        background: linear-gradient(
-            to right,
-            transparent,
-            rgba(255, 255, 255, 0.075) 2%,
-            transparent 4%
-          ),
-          radial-gradient(rgba(0, 5, 10, 0.8), black 90%);
+        background: #241b28;
       }
 
       #personal h2 {
@@ -332,11 +349,11 @@
       }
 
       #personal .link-container:hover {
-        -webkit-text-fill-color: #2d98fc;
+        -webkit-text-fill-color: #47a6ff;
       }
 
       #personal .link-container:focus {
-        outline: 1px solid #2d98fc;
+        outline: 1px solid #47a6ff;
       }
 
       #personal .link-subtext {
@@ -355,10 +372,10 @@
         #personal .text-container {
           width: 100%;
           margin: 0;
-          padding: 6rem 0.7rem;
+          padding: 5rem 0.7rem 4.3rem 0.7rem;
+          border-bottom: none;
           border-left: none;
           border-radius: 0;
-          background: radial-gradient(rgba(0, 5, 10, 0.5), black 90%);
         }
       }
 
@@ -369,8 +386,14 @@
 
       #projects {
         box-sizing: border-box;
-        padding: 0 0 15rem 0;
-        background: linear-gradient(transparent, rgba(0, 5, 10, 0.5) 10%, black 90%);
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto 10rem auto;
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(255, 200, 250, 0.2);
+        border-left: 1px solid rgba(255, 200, 250, 0.2);
+        border-radius: 1.5rem;
+        background: #3e1921;
       }
 
       #projects h2 {
@@ -382,6 +405,7 @@
         max-width: 100%;
         margin: 0 auto 4.5rem auto;
         padding: 0 1rem;
+        color: white;
       }
 
       #projects h2 span {
@@ -412,11 +436,10 @@
       }
 
       #projects ul:focus {
-        outline: 1px solid #2d98fc;
+        outline: 1px solid #47a6ff;
       }
 
       #projects li {
-        position: relative;
         display: inline-block;
         flex-shrink: 0;
         margin-right: 2rem;
@@ -431,30 +454,13 @@
         }
       }
 
-      #projects li::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: "";
-        pointer-events: none;
-        background: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.15),
-          transparent,
-          transparent,
-          rgba(0, 0, 0, 0.35)
-        );
-      }
-
       #projects li:last-child {
         margin-right: 0;
       }
 
       #projects li:hover {
         transform: perspective(250px) rotateY(0deg);
-        border-bottom-color: #2d98fc;
+        border-bottom-color: #47a6ff;
       }
 
       #projects a {
@@ -470,7 +476,7 @@
       }
 
       #projects a:focus {
-        outline: 2px solid #2d98fc;
+        outline: 2px solid #47a6ff;
       }
 
       #projects .image-container {
@@ -485,6 +491,7 @@
         font-size: 1.35rem;
         font-weight: 500;
         line-height: 1.1;
+        position: relative;
         display: flex;
         overflow: hidden;
         align-items: center;
@@ -495,9 +502,26 @@
         padding: 0.25rem;
         text-align: center;
         color: white;
-        border-bottom: 6px solid transparent;
         border-bottom-right-radius: 0.75rem;
         border-bottom-left-radius: 0.75rem;
+      }
+
+      #projects .text-container::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        content: "";
+        pointer-events: none;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.15),
+          transparent,
+          transparent,
+          rgba(0, 0, 0, 0.35)
+        );
       }
 
       #projects .text-container div {
@@ -505,8 +529,8 @@
         padding: 0.75rem 0.5rem;
       }
 
-      #projects a:hover .text-container {
-        border-bottom-color: #2d98fc;
+      #projects a:hover .text-container::after {
+        border-bottom: 6px solid #47a6ff;
       }
 
       #projects .carousel-button-container {
@@ -529,7 +553,7 @@
       }
 
       #projects .carousel-button-container button:focus {
-        outline: 2px solid #2d98fc;
+        outline: 2px solid #47a6ff;
       }
 
       #projects .carousel-button-container svg {
@@ -537,19 +561,25 @@
         height: 100%;
       }
 
-      @media (max-width: 40.625rem) {
-        #projects {
-          background: radial-gradient(rgba(0, 5, 10, 0.5), black 90%);
-        }
-      }
-
       @media (max-width: 74.1rem) {
+        #projects {
+          border-bottom: none;
+          border-left: none;
+          border-radius: 0;
+        }
+
         #projects li:last-child {
           margin-right: 2rem;
         }
 
         #projects .carousel-button-container {
           display: flex;
+        }
+      }
+
+      @media (max-width: 41rem) {
+        #projects {
+          margin-bottom: 0;
         }
       }
 
@@ -560,8 +590,8 @@
 
       #how-its-made {
         position: relative;
-        padding: 0 0 15rem 0;
-        background: black;
+        padding: 5rem 0 15rem 0;
+        background: #151516;
       }
 
       #how-its-made .observation-point {
@@ -583,6 +613,7 @@
         font-size: 2.5rem;
         font-weight: 400;
         margin: 0 0 4.5rem 0;
+        color: white;
       }
 
       #how-its-made h2 span {
@@ -598,12 +629,14 @@
         font-size: 2rem;
         font-weight: 700;
         margin: 2em 0 1em 0;
+        color: white;
       }
 
       #how-its-made h4 {
         font-size: 1.35rem;
         font-weight: 700;
         margin: 2.5em 0 0 0;
+        color: white;
       }
 
       #how-its-made p,
@@ -619,7 +652,7 @@
         margin-left: 0;
         padding: 1.25rem;
         border-left: 2px solid white;
-        background: #151313;
+        background: #202021;
       }
 
       #how-its-made ol {
@@ -657,8 +690,9 @@
     <header>
       <div class="text-container">
         <h1>Jia Liang.</h1>
-        <p>Your new software engineer.</p>
+        <p>I can be your new <span>software engineer</span>.</p>
       </div>
+      <div class="scroll">Scroll down.</div>
     </header>
 
     <section id="usp">
@@ -687,25 +721,19 @@
         <picture>
           <source
             srcset="
-              https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/space_ope70z.webp
+              https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/p3r2ovsxxcmn3e4smuix.avif
             "
-            type="image/webp"
-          />
-          <source
-            srcset="
-              https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/space_eau5a8.jpg
-            "
-            type="image/jpeg"
+            type="image/avif"
           />
           <img
-            src="https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/space_eau5a8.jpg"
+            src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/p3r2ovsxxcmn3e4smuix"
             alt=""
           />
         </picture>
       </div>
 
       <div class="text-container">
-        <h2>Reach out and together,<br />we'll reach for the stars.</h2>
+        <h2>Reach out and together,<br />we'll reach for the sky.</h2>
 
         <ul>
           <li>
@@ -737,7 +765,7 @@
     <section id="projects">
       <h2>
         <span>Explore.</span>
-        <span>My personal projects.</span>
+        <span style="color: #ffb44c">My personal projects.</span>
       </h2>
       <ul id="project-carousel">
         <li>
@@ -750,23 +778,17 @@
               <picture>
                 <source
                   srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621647/jialiang.github.io/images/miku-cover_wksmhp.webp
+                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/guyzjeueuevoysvobrjr.avif
                   "
-                  type="image/webp"
-                />
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621647/jialiang.github.io/images/miku-cover_hen7qs.jpg
-                  "
-                  type="image/jpeg"
+                  type="image/avif"
                 />
                 <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/v1633621647/jialiang.github.io/images/miku-cover_hen7qs.jpg"
+                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/guyzjeueuevoysvobrjr"
                   alt="3D Engine For Miku project cover image"
                 />
               </picture>
             </div>
-            <div class="text-container" style="background: #103c3b">
+            <div class="text-container" style="background: #005c5c">
               <div>3D Engine For Miku</div>
             </div>
           </a>
@@ -781,23 +803,17 @@
               <picture>
                 <source
                   srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/space-gem-cover_ak18tl.webp
+                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vqpduedeerdckoyqhjln.avif
                   "
-                  type="image/webp"
-                />
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/space-gem-cover_vmafnz.jpg
-                  "
-                  type="image/jpeg"
+                  type="image/avif"
                 />
                 <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/space-gem-cover_vmafnz.jpg"
+                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vqpduedeerdckoyqhjln"
                   alt="Space Gem project cover Image"
                 />
               </picture>
             </div>
-            <div class="text-container" style="background: #4c2f90">
+            <div class="text-container" style="background: #2f4790">
               <div>Space Gem</div>
             </div>
           </a>
@@ -812,18 +828,12 @@
               <picture>
                 <source
                   srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/shit-compressor-cover_vnsgfw.webp
+                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/zvjg0w8rfysg80a6tial.avif
                   "
-                  type="image/webp"
-                />
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/shit-compressor-cover_elcvgz.jpg
-                  "
-                  type="image/jpeg"
+                  type="image/avif"
                 />
                 <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/v1633621648/jialiang.github.io/images/shit-compressor-cover_elcvgz.jpg"
+                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/zvjg0w8rfysg80a6tial"
                   alt="Shit Compressor project cover image"
                 />
               </picture>
@@ -843,18 +853,12 @@
               <picture>
                 <source
                   srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621649/jialiang.github.io/images/yugioh-cover_h75v2d.webp
+                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/fhzlnqvhx4m5e62og6zu.avif
                   "
-                  type="image/webp"
-                />
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/v1633621649/jialiang.github.io/images/yugioh-cover_nkd3l7.jpg
-                  "
-                  type="image/jpeg"
+                  type="image/avif"
                 />
                 <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/v1633621649/jialiang.github.io/images/yugioh-cover_nkd3l7.jpg"
+                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/fhzlnqvhx4m5e62og6zu"
                   alt="Yu-Gi-Oh Secret Rare Effect with CSS project cover image"
                 />
               </picture>
@@ -889,14 +893,18 @@
       <div class="article">
         <h2>
           <span>How.</span>
-          <span>The making of this website.</span>
+          <span style="color: #72e5ce">The making of this website.</span>
         </h2>
 
         <p>
           It's that time of the year again where I revamp my personal website. The one you're
-          looking at right now is the 4th edition. I reckon the entire development lifecycle of this
-          website took me 7 man-days. I'd say I spent most of that time improving accessibility and
-          writing this document.
+          looking at right now is the 4th edition 1st Revision. It was revised following community
+          feedback.
+        </p>
+
+        <p>
+          I reckon the entire development lifecycle of this website took me 10 man-days. I'd say I
+          spent most of that time improving accessibility and writing this document.
         </p>
 
         <p>
@@ -921,7 +929,7 @@
           However, I use
           <a href="https://cloudinary.com/" target="_blank" rel="noopener noreferrer">Cloudinary</a>
           to host all other static assets. Cloudinary uses a multi-CDN approach with 3 CDNs: Akamai,
-          Cloudfront and Fastly. I discover them when I was prodding through the internals of
+          Cloudfront and Fastly. I discovered them when I was prodding through the internals of
           <a href="https://www.nike.com">Nike's website</a>.
         </p>
         <p>
@@ -950,15 +958,20 @@
           >.
         </p>
         <p>
-          I am aware using a seperate host for static assets does have its drawbacks. For one, that
-          the browser needs to perform an additional DNS lookup, initial connection and SSL
-          handshake after parsing the HTML. However, even with these overhead, Cloudinary still
-          manages to match or beat GitHub Pages' time. It should be said that Cloudinary cannot be
-          used to host websites. They will serve HTML files as attachments rather than webpages.
+          I am aware using a seperate host for static assets does have its drawbacks. For one, the
+          browser needs to perform an additional DNS lookup, initial connection and SSL handshake
+          after parsing the HTML. However, even with all this overhead, Cloudinary still manages to
+          match or beat GitHub Pages' time. It should be said that Cloudinary cannot be used to host
+          websites. They will serve HTML files as attachments rather than webpages.
         </p>
         <p>
           Audio files are still served through GitHub Pages because latency is less of an issue for
           large media content. Cloudinary also has a strict 33GB per month free bandwidth limit.
+        </p>
+        <p>
+          Another bonus of using Cloudinary is you can have them serve your images in different
+          formats just by changing the URL. My current setup uses AVIF as the preferred image
+          format. If AVIF is not supported then Cloudinary will choose the best supported format.
         </p>
 
         <h3>Header</h3>
@@ -984,32 +997,39 @@
         <h3>Background</h3>
 
         <p>
-          Around this time, I was marathoning through all 5 seasons of Rick and Morty and got hooked
-          on one of the songs called "Goodbye Moonmen". I later found a
+          Originally, the background features a star field animation as inspired by
           <a
             aria-label="Goodbye Moonmen remix by The Living Tombstone"
             href="https://www.youtube.com/watch?v=vdEWZq-m27M"
             target="_blank"
             rel="noopener noreferrer"
-            >remix by The Living Tombstone</a
-          >. Not only did that become my favorite version, it has a music video which looked cool
-          and doable with WebGL. That's how I got the idea for the star field background.
+            >The Living Tombstone's Goodbye Moonmen remix</a
+          >. But it was changed because of feedback that it was too distracting.
         </p>
 
         <p>
-          To start, I looked if someone had done something visually similar. After all, why reinvent
-          the wheel from scratch when you could improve upon someone else's octagon instead. That's
-          when I found
-          <a href="https://www.shadertoy.com/view/Xdl3D2" target="_blank" rel="noopener noreferrer"
-            >Hazel Quantock's Interstellar</a
-          >, distributed under the
+          The current moving cloud animation is modified from
           <a
-            href="https://creativecommons.org/publicdomain/zero/1.0/"
+            href="https://experiments.withgoogle.com/clouds"
             target="_blank"
             rel="noopener noreferrer"
-            >CC0 license</a
-          >. After a bit of customization and some optimizations later, it became the star field you
-          see on this webpage. This also forms the basis for the Space theme of the website.
+            >Clouds by Mr. Dood</a
+          >. Mr Dood is the creator of THREE.js. The way it works is by peppering images of clouds
+          throughout the scene. The same cloud image is used but its position, scale, rotation and
+          opacity are randomised to create variation. This approach produces some pretty good
+          looking clouds as long as you don't need to rotate the camera horizontally.
+        </p>
+        <p>
+          As you can see, these are not real volumetric clouds and not physically accurate.
+          Unfortunately, raymarching and scattering are all very GPU intensive if you want them to
+          look good. It's a reason why real dynamic weather systems in games are such a big deal.
+        </p>
+        <p>
+          Mr. Dood's demo uses THREE.js and I kept it that way. Rewriting it would involve a lot of
+          effort for very little gain. I understand that THREE.js is a big library. The latest
+          minified THREE.js library is 590kB big and 120kB when gzipped. Thus I made an effort to
+          remove unused code through tree-shaking. I managed to shrink the library down to only
+          130kB big and 39kB when gzipped.
         </p>
 
         <p>
@@ -1042,7 +1062,7 @@
         </p>
 
         <p>
-          I'm proud to say that even on a Xiaomi Redmi Note 4, it runs at 55-60 fps on both Firefox
+          I'm proud to say that even on a Xiaomi Redmi Note 4, it runs at 60 fps on both Firefox
           Mobile and Chrome for Android. For context, the Xiaomi Redmi Note 4 is a 170 USD mid-range
           phone released in early 2017.
         </p>
@@ -1055,9 +1075,9 @@
             the content. The motion's rhythmic nature allows the brain to become habituated to it.
           </li>
           <li>It's something fresh and not something you often see on the web.</li>
-          <li>It's light on bandwidth since everything is procedurally generated by code.</li>
+          <li>It's light on bandwidth since most of it is procedurally generated by code.</li>
           <li>
-            It uses a reasonable amount of GPU. For a 1080p 60Hz screen, it uses around 50% of an
+            It uses a reasonable amount of GPU. For a 1080p 60Hz screen, it uses around 36% of an
             Intel UHD Graphics 630 GPU.
           </li>
         </ul>
@@ -1109,11 +1129,6 @@
 
         <p>
           I also added an image near the text box to further break up the monotony with more color.
-          I wanted both elements to feel cohesive and fit with the Space theme. So I made it look
-          like a scene where you received a postcard along with an invitation on a datapad.
-        </p>
-
-        <p>
           The
           <a
             href="https://pixabay.com/illustrations/earth-space-sunlight-sun-rays-1756274/"
@@ -1124,17 +1139,16 @@
           was created by Arek Socha. It is distributed under the
           <a href="https://pixabay.com/service/license/" target="_blank" rel="noopener noreferrer"
             >Pixabay license</a
-          >. I cropped it to be vertical, overexposed it to make the sunlight more intense and added
-          some white noise to give it a textured look. I added a slight shine to the text box to
-          give it depth and make it seem glossy.
+          >.
         </p>
 
         <p>
-          I think just having my GitHub profile, resume and email is enough. I do have a LinkedIn,
-          but I'm not active on it. Some people also give a professional summary or details of their
-          life in this section. For the former, it's just rehashing their resume in a wordier less
-          intuitive way. For the latter, most people just aren't interested unless you're someone
-          noteworthy or happened to mention something the reader is really enthusiastic about.
+          I think just having my GitHub profile, resume and email is enough. I do have a LinkedIn
+          account, but I'm not active on it. Some people also give a professional summary or details
+          of their life in this section. For the former, it's just rehashing their resume in a
+          wordier, less intuitive way. For the latter, most people just aren't interested unless
+          you're someone noteworthy or happened to mention something the reader is really
+          enthusiastic about.
         </p>
 
         <h3>Projects Section</h3>
@@ -1223,8 +1237,7 @@
 
         <p>
           Probably the most famous criterion. A website must have a sufficient color contrast ratio
-          for all texts: 7:1 for normal texts and 4.5:1 for large texts. The lowest color contrast
-          ratio on this webpage is 7.07:1 on text links.
+          for all texts: 7:1 for normal texts and 4.5:1 for large texts.
         </p>
 
         <h4>Success Criterion 1.4.8: Visual Presentation</h4>
@@ -1269,8 +1282,8 @@
             target="_blank"
             rel="noopener noreferrer"
             >forced-color-adjust and -ms-high-contrast-adjust</a
-          >. They allow elements to be opt-out from being overridden if their original colors serve
-          a functional purpose.
+          >. They allow elements to opt-out from being overridden if their original colors serve a
+          functional purpose.
         </p>
 
         <br />
@@ -1396,25 +1409,6 @@
           </li>
         </ul>
 
-        <h3>Images</h3>
-
-        <p>My workflow for handling images are as follows:</p>
-
-        <ul>
-          <li>
-            I make sure to source my images straight from the horse's mouth. You don't know how many
-            compression cycles an image on a random website has gone through. It also helps to know
-            who the original author is so proper credit can be given.
-          </li>
-          <li>
-            If lossy compression is needed for final delivery, I use my own tool, Shit Compressor,
-            to generate the JPG and WebP files. I strike a balance between size and quality by
-            aiming for a DSSIM score as close to 0.01 as possible on the output image. DSSIM is a
-            metric for measuring perceived similarity between 2 images. A score of 0.01 and below
-            considers distortion to be imperceptible.
-          </li>
-        </ul>
-
         <h3>Privacy</h3>
 
         <p>As always, this webpage contains absolutely no tracking whatsoever.</p>
@@ -1422,189 +1416,190 @@
     </section>
 
     <audio id="bgm-audio">
-      <source src="audios/GoodbyeMoonmen.flac" type="audio/flac" />
-      <source src="audios/GoodbyeMoonmen.mp3" type="audio/mp3" />
+      <source src="audios/Thunderclouds.flac" type="audio/flac" />
+      <source src="audios/Thunderclouds.mp3" type="audio/mp3" />
     </audio>
 
-    <script id="vertex-shader-source" type="x-shader/x-vertex">
-      attribute vec3 a_Position;
+    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1634319491/jialiang.github.io/scripts/three.module.min_kcqrwv.js"></script>
 
-      void main(void) {
-        gl_Position = vec4(a_Position, 1.0);
+    <script id="vertex-shader-source" type="x-shader/x-vertex">
+      varying vec2 vUv;
+
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
       }
     </script>
 
     <script id="fragment-shader-source" type="x-shader/x-fragment">
-      precision mediump float;
+      uniform sampler2D map;
 
-      uniform vec2 iResolution;
-      uniform float iTime;
+      uniform vec3 fogColor;
+      uniform float fogNear;
+      uniform float fogFar;
 
-      uniform sampler2D iChannel0;
-
-      vec4 noise(in ivec2 x) {
-          return texture2D(iChannel0, (vec2(x) + 0.5) / 256.0);
-      }
-
-      vec3 supernova(vec2 fragCoord) {
-          float baseIntensity = abs(sin(1.0 - abs(fragCoord.x * fragCoord.y) + iTime * 0.5));
-          float poweredIntesity = max(pow(baseIntensity * 2.0, 4.0) - 14.0, 0.0);
-
-          return vec3(
-            0.0,
-            poweredIntesity / 3.0,
-            poweredIntesity / 2.0
-          );
-      }
-
-      vec3 starfield(vec2 fragCoord) {
-          vec3 ray = vec3(fragCoord, 1.0);
-
-          float offset = iTime;
-          float speed_2 = 2.5;
-          float speed = speed_2 + 0.5;
-
-          vec3 fragColor = vec3(0.0);
-
-          vec3 stp = ray / max(abs(ray.x), abs(ray.y));
-
-          vec3 pos = 2.0 * stp + 0.5;
-
-          for (int i = 0; i < 3; i++) {
-              float z = fract(noise(ivec2(pos.xy)).x - offset);
-              float d = 25.0 * z - pos.z;
-              float width = pow(max(0.0, 1.0 - 8.0 * length(fract(pos.xy) - 0.5)), 2.0);
-
-              vec3 color = vec3(
-                1.0 - abs(d + speed_2 * 0.5) / speed / 2.0,
-                1.0 - abs(d + sin(iTime * 0.75)) / speed,
-                1.0 - abs(d - speed_2 * 0.5) / speed
-              );
-              color = max(vec3(0.0), color);
-
-              fragColor += 1.5 * (1.0 - z) * color * width;
-              pos += stp;
-          }
-
-          return fragColor;
-      }
+      varying vec2 vUv;
 
       void main() {
-          vec2 fragCoord = 2.0 * (gl_FragCoord.xy - iResolution.xy * 0.5) / iResolution.x;
+        float depth = gl_FragCoord.z / gl_FragCoord.w;
+        float fogFactor = smoothstep(fogNear, fogFar, depth);
 
-          gl_FragColor = vec4(starfield(fragCoord), 1.0) + vec4(supernova(fragCoord), 1.0) * 0.1;
+        gl_FragColor = texture2D(map, vUv);
+        gl_FragColor.w *= pow(gl_FragCoord.z, 20.0);
+        gl_FragColor = mix(gl_FragColor, vec4(fogColor, gl_FragColor.w), fogFactor);
       }
     </script>
 
     <script id="webgl-code">
-      let gl;
-
-      let iResolutionLoc;
-      let iTimeLoc = null;
-
-      function initWebGL(canvas, vertexShaderSource, fragmentShaderSource) {
-        const glOptions = { alpha: false, antialias: false, failIfMajorPerformanceCaveat: true };
-
-        gl = canvas.getContext("webgl", glOptions);
-
-        if (!gl) {
-          try {
-            gl = canvas.getContext("experimental-webgl", glOptions);
-          } catch {
-            return;
-          }
-        }
-
-        if (!gl) return;
-
-        gl.viewport(0, 0, canvas.width, canvas.height);
-
-        // Shaders and Program
-
-        const vertexShader = gl.createShader(gl.VERTEX_SHADER);
-        const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
-
-        gl.shaderSource(vertexShader, vertexShaderSource);
-        gl.shaderSource(fragmentShader, fragmentShaderSource);
-
-        gl.compileShader(vertexShader);
-        gl.compileShader(fragmentShader);
-
-        const program = gl.createProgram();
-
-        gl.attachShader(program, vertexShader);
-        gl.attachShader(program, fragmentShader);
-        gl.linkProgram(program);
-        gl.useProgram(program);
-
-        // Position buffer
-
-        const positionBuffer = gl.createBuffer();
-
-        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-        gl.bufferData(
-          gl.ARRAY_BUFFER,
-          // prettier-ignore
-          new Float32Array([
-             1,  1, 0,
-            -1,  1, 0,
-             1, -1, 0,
-            -1, -1, 0
-          ]),
-          gl.STATIC_DRAW
+      if (self.importScripts) {
+        self.importScripts(
+          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1634319491/jialiang.github.io/scripts/three.module.min_kcqrwv.js"
         );
-        gl.enableVertexAttribArray(0);
-        gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
-
-        // Uniforms
-
-        iResolutionLoc = gl.getUniformLocation(program, "iResolution");
-        iTimeLoc = gl.getUniformLocation(program, "iTime");
-
-        gl.uniform2fv(iResolutionLoc, [canvas.width, canvas.height]);
-        gl.uniform1f(iTimeLoc, 0);
-
-        // Textures
-
-        let noiseImage;
-
-        if (typeof document !== "undefined") {
-          noiseImage = document.createElement("canvas");
-          noiseImage.width = 256;
-          noiseImage.height = 256;
-        } else {
-          noiseImage = new OffscreenCanvas(256, 256);
-        }
-
-        const context = noiseImage.getContext("2d");
-
-        const imageData = context.getImageData(0, 0, 256, 256);
-        const pixels = imageData.data;
-
-        for (let i = 0; i < pixels.length; i += 4) {
-          pixels[i] = Math.random() * 256;
-          pixels[i + 3] = 255;
-        }
-
-        context.putImageData(imageData, 0, 0);
-
-        const texture = gl.createTexture();
-        const iChannel0Loc = gl.getUniformLocation(program, "iChannel0");
-
-        gl.activeTexture(gl.TEXTURE0);
-        gl.bindTexture(gl.TEXTURE_2D, texture);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, noiseImage);
-        gl.generateMipmap(gl.TEXTURE_2D);
-        gl.uniform1i(iChannel0Loc, 0);
-
-        if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
-
-        return true;
       }
 
-      function renderWebGL(totalTime) {
-        gl.uniform1f(iTimeLoc, (totalTime % 10000) / 1000);
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      let renderer;
+      let camera;
+      let scene;
+      let startTime;
+      let performanceCaveat = false;
+
+      function initWebGL(canvas, vertexShaderSource, fragmentShaderSource) {
+        const THREE = initThreeJS();
+
+        try {
+          renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: false,
+            alpha: true,
+            failIfMajorPerformanceCaveat: true,
+            stencil: false,
+            depth: false,
+          });
+        } catch (e) {
+          renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: false,
+            alpha: true,
+            stencil: false,
+            depth: false,
+          });
+
+          performanceCaveat = true;
+        }
+
+        renderer.setSize(canvas.width, canvas.height, false);
+
+        camera = new THREE.PerspectiveCamera(30, canvas.width / canvas.height, 1, 3000);
+        camera.position.y = 0;
+        camera.position.z = 100;
+
+        new THREE.ImageBitmapLoader().load(
+          "https://res.cloudinary.com/dedvquoyt/image/upload/v1634220239/jialiang.github.io/images-2/iwlavylf5ua068yrmmvk.png",
+          function (imageBitmap) {
+            const texture = new THREE.CanvasTexture(imageBitmap);
+
+            texture.magFilter = THREE.LinearFilter;
+            texture.minFilter = THREE.LinearMipMapLinearFilter;
+
+            const fog = new THREE.Fog(0x4584b4, -100, 3000);
+
+            const material = new THREE.ShaderMaterial({
+              uniforms: {
+                map: { type: "t", value: texture },
+                fogColor: { type: "c", value: fog.color },
+                fogNear: { type: "f", value: fog.near },
+                fogFar: { type: "f", value: fog.far },
+              },
+              vertexShader: vertexShaderSource,
+              fragmentShader: fragmentShaderSource,
+              depthWrite: false,
+              depthTest: false,
+              transparent: true,
+            });
+
+            const plane = new THREE.Mesh(new THREE.PlaneGeometry(64, 64));
+            const geometry = new THREE.Geometry();
+
+            const randomNumbers = [
+              0.764, 0.36, 0.001, 0.979, 0.158, 0.209, 0.42, 0.122, 0.577, 0.777, 0.204, 0.046,
+              0.562, 0.755, 0.339, 0.785, 0.84, 0.324, 0.581, 0.338, 0.436, 0.166, 0.112, 0.383,
+              0.644, 0.954, 0.022, 0.92, 0.215, 0.055, 0.168, 0.619, 0.616, 0.863, 0.909, 0.98,
+              0.914, 0.708, 0.024, 0.334, 0.319, 0.771, 0.771, 0.851, 0.06, 0.267, 0.892, 0.345,
+              0.364, 0.137, 0.115, 0.194, 0.432, 0.936, 0.955, 0.873, 0.999, 0.752, 0.717, 0.063,
+              0.719, 0.121, 0.956, 0.847, 0.601, 0.046, 0.471, 0.229, 0.628, 0.844, 0.204, 0.895,
+              0.88, 0.602, 0.615, 0.269, 0.264, 0.712, 0.854, 0.417, 0.625, 0.688, 0.626, 0.986,
+              0.514, 0.241, 0.14, 0.365, 0.357, 0.671, 0.099, 0.704, 0.657, 0.596, 0.433, 0.631,
+              0.463, 0.17, 0.724, 0.93, 0.638, 0.949, 0.787, 0.237, 0.701, 0.462, 0.753, 0.44,
+              0.533, 0.344, 0.189, 0.414, 0.493, 0.917, 0.074, 0.593, 0.024, 0.305, 0.756, 0.469,
+              0.384, 0.141, 0.826, 0.033, 0.019, 0.923, 0.225, 0.651, 0.514, 0.362, 0.315, 0.402,
+              0.385, 0.655, 0.96, 0.203, 0.573, 0.438, 0.613, 0.488, 0.535, 0.436, 0.459, 0.212,
+              0.608, 0.164, 0.373, 0.284, 0.981, 0.112, 0.698, 0.814, 0.151, 0.35, 0.356, 0.507,
+              0.284, 0.882, 0.074, 0.311, 0.607, 0.08, 0.433, 0.607, 0.501, 0.254, 0.193, 0.795,
+              0.9, 0.467, 0.868, 0.617, 0.437, 0.697, 0.989, 0.507, 0.529, 0.36, 0.024, 0.695,
+              0.506, 0.642, 0.994, 0.418, 0.632, 0.03, 0.082, 0.445, 0.266, 0.766, 0.828, 0.353,
+              0.084, 0.961, 0.233, 0.314, 0.374, 0.411, 0.501, 0.236, 0.696, 0.527, 0.368, 0.464,
+              0.028, 0.244, 0.06, 0.597, 0.667, 0.269, 0.792, 0.263, 0.159, 0.434, 0.255, 0.354,
+              0.298, 0.978, 0.685, 0.351, 0.448, 0.147, 0.608, 0.974, 0.716, 0.768, 0.449, 0.892,
+              0.252, 0.087, 0.368, 0.91, 0.466, 0.914, 0.561, 0.413, 0.905, 0.931, 0.424, 0.401,
+              0.408, 0.167, 0.667, 0.075, 0.14, 0.179, 0.83, 0.18, 0.957, 0.196, 0.151, 0.456,
+              0.717, 0.143, 0.042, 0.538, 0.271, 0.482, 0.109, 0.637, 0.642, 0.474, 0.535, 0.709,
+              0.231, 0.453, 0.82, 0.783, 0.509, 0.256, 0.658, 0.268, 0.955, 0.997, 0.54, 0.293,
+              0.019, 0.039, 0.308, 0.078, 0.81, 0.976, 0.605, 0.236, 0.405, 0.106, 0.456, 0.763,
+              0.367, 0.319, 0.845, 0.347, 0.251, 0.266, 0.667, 0.646, 0.906, 0.831, 0.774, 0.828,
+            ];
+
+            for (let i = 0; i < 50; i++) {
+              plane.position.x = randomNumbers.pop() * 400;
+              plane.position.y = -randomNumbers.pop() * randomNumbers.pop() * 200 - 15;
+              plane.position.z = i;
+
+              plane.rotation.z = randomNumbers.pop() * Math.PI;
+              plane.scale.x = plane.scale.y = randomNumbers.pop() * randomNumbers.pop() * 1.5 + 0.5;
+
+              plane.updateMatrix();
+              geometry.merge(plane.geometry, plane.matrix);
+
+              if (plane.position.x < 250) {
+                plane.position.x = plane.position.x + 400;
+
+                plane.updateMatrix();
+                geometry.merge(plane.geometry, plane.matrix);
+              }
+            }
+
+            const mesh_1 = new THREE.Mesh(geometry, material);
+            const mesh_2 = new THREE.Mesh(geometry, material);
+
+            mesh_2.position.z = -100;
+
+            scene = new THREE.Scene();
+            scene.add(mesh_1);
+            scene.add(mesh_2);
+
+            startTime = performance.now();
+
+            if (performanceCaveat) {
+              requestAnimationFrame(function () {
+                camera.position.x = 100;
+
+                renderer.render(scene, camera);
+              });
+              return;
+            }
+
+            if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
+          }
+        );
+
+        return !performanceCaveat;
+      }
+
+      function renderWebGL(currentTime) {
+        if (startTime == null) return; // WebGL not finished initializing, ignore draw call
+
+        camera.position.x = (((currentTime - startTime) * 0.0025) % 400) + 100;
+
+        renderer.render(scene, camera);
       }
 
       self.onmessage = function (e) {
@@ -1660,8 +1655,8 @@
         const vertexShaderSource = document.getElementById("vertex-shader-source").innerHTML;
         const fragmentShaderSource = document.getElementById("fragment-shader-source").innerHTML;
 
-        const width = window.innerWidth * devicePixelRatio;
-        const height = window.innerHeight * 0.8 * devicePixelRatio;
+        const width = window.innerWidth;
+        const height = window.innerHeight * 0.8;
 
         if (canvas.transferControlToOffscreen) {
           // We support off-screen canvas!
@@ -1675,6 +1670,7 @@
 
           const worker = new Worker(window.URL.createObjectURL(workerCodeBlob));
 
+          // Start drawing when worker tells us initialization is complete
           worker.onmessage = function (e) {
             const draw = function (totalTime) {
               if (!pause) worker.postMessage({ raf: totalTime });
@@ -1685,6 +1681,7 @@
             requestAnimationFrame(draw);
           };
 
+          // Sent message to worker to kick-start WebGL initialization
           worker.postMessage(
             {
               canvas: offscreenCanvas,
@@ -1695,6 +1692,8 @@
           );
         } else {
           // We don't support offscreen canvas, use normal way
+
+          if (window.fetch == null) return; // doesn't support fetch, probably IE11
 
           canvas.width = width;
           canvas.height = height;
@@ -1820,7 +1819,7 @@
               });
             },
             {
-              threshold: [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0],
+              threshold: [0.5, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0],
             }
           );
 
@@ -1831,8 +1830,16 @@
         }
       }
 
+      function initScrollMessage() {
+        window.onscroll = function () {
+          document.querySelector(".scroll").style.opacity = 0;
+          window.onscroll = null;
+        };
+      }
+
       initBgm();
       initUsp();
+      initScrollMessage();
       initCanvas();
       initCarouselScroll();
       backgroundClipFeatureDetection();
