@@ -90,9 +90,9 @@
         background: black;
       }
 
-      @media (max-width: 300px) {
+      @media (max-width: 18.75rem) {
         html {
-          font-size: 5.325vw;
+          font-size: 5.2vw;
         }
       }
 
@@ -126,9 +126,9 @@
         box-sizing: border-box;
         width: 100%;
         height: 100vh;
-        border-top: 10vh solid black;
-        border-bottom: 10vh solid black;
-        background: linear-gradient(172.5deg, #630063, #e7857a, #f1cc95);
+        border-top: 10vh solid snow;
+        border-bottom: 10vh solid snow;
+        background: linear-gradient(to bottom right, #753bb0, hotpink, yellow);
 
         contain: strict;
       }
@@ -139,30 +139,29 @@
       /*#region*/
 
       header {
-        line-height: 1;
+        font-size: 10rem;
+        line-height: 1.125;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        box-sizing: border-box;
         height: 100%;
+        margin: auto;
+        padding: 0 0.7rem;
         text-align: center;
       }
 
       header h1 {
-        font-size: 7.5rem;
+        font-size: 1em;
         font-weight: 700;
         margin: 0;
         white-space: nowrap;
       }
 
-      header p {
-        font-size: 2.5rem;
+      header h2 {
+        font-size: 0.35em;
         font-weight: 500;
-        margin: 0.5em 0 0 0;
-      }
-
-      header p span {
-        white-space: nowrap;
+        margin: 0;
       }
 
       header .scroll {
@@ -173,27 +172,13 @@
         left: 10px;
         padding: 0.15rem 0.3rem;
         opacity: 0;
-        color: white;
-        background: black;
+        color: black;
+        background: white;
       }
 
-      @media (max-width: 32.625rem) {
-        header h1 {
-          font-size: 22vw;
-        }
-
-        header p {
-          font-size: 7.52vw;
-        }
-      }
-
-      @media (max-width: 320px), (max-height: 320px) {
-        header h1 {
-          font-size: 22vmin;
-        }
-
-        header p {
-          font-size: 7.52vmin;
+      @media (max-width: 45.125rem) {
+        header {
+          font-size: 21.15vw;
         }
       }
 
@@ -207,15 +192,17 @@
       }
 
       #bgm-button {
+        font-family: "Roboto", sans-serif;
         font-size: 1rem;
+        font-weight: 500;
         position: absolute;
         top: 0.85rem;
         right: 0.7rem;
         padding: 0.15rem 0.3rem;
         cursor: pointer;
-        color: white;
-        border: 1px solid white;
-        background: black;
+        color: black;
+        border: 2px solid black;
+        background: white;
       }
 
       #bgm-button:focus {
@@ -228,20 +215,52 @@
       /*#region*/
 
       #usp {
-        font-size: 4.6rem;
-        font-weight: bold;
+        font-size: 6rem;
+        font-weight: 700;
         line-height: 1.1;
         box-sizing: border-box;
-        width: 52.5rem;
+        width: 80rem;
         max-width: 100%;
         margin: 0 auto 15rem auto;
         padding: 0 0.7rem;
+        text-align: center;
       }
 
-      @media (max-width: 30rem) {
+      @media (max-width: 60.75rem) {
         #usp {
-          font-size: 15.25vmin;
+          width: 55rem;
         }
+      }
+
+      @media (max-width: 33.5rem) {
+        #usp {
+          font-size: 17vw;
+        }
+      }
+
+      #usp p {
+        font-size: 2.5rem;
+        font-weight: 500;
+        width: 45.25rem;
+        max-width: 100%;
+        margin: 0 auto 7.5rem auto;
+        color: #151516;
+      }
+
+      @media (max-width: 26.6875rem) {
+        #usp p {
+          font-size: 8.5vw;
+        }
+      }
+
+      @media (max-width: 190px) {
+        #usp p {
+          font-size: 1.5rem;
+        }
+      }
+
+      #usp a {
+        color: #06c;
       }
 
       #usp ul {
@@ -332,7 +351,7 @@
         display: inline-block;
         padding: 0.1rem 0.3rem;
         border-bottom: 3px solid transparent;
-        background: linear-gradient(to right, darkorange, deepskyblue);
+        background: linear-gradient(to right, #00ffe7, #00cfff);
         -webkit-background-clip: text;
         background-clip: text;
 
@@ -685,12 +704,18 @@
     <header>
       <div class="text-container">
         <h1>Jia Liang.</h1>
-        <p>Software engineer.</p>
+        <h2>Software engineer.</h2>
       </div>
       <div class="scroll">Scroll down.</div>
     </header>
 
     <section id="usp">
+      <p>
+        The software engineer for when you really need websites that are really fast, beautiful,
+        modern, accessible and easy-to-maintain.
+        <br />
+        Always open to new full-time opportunities.
+      </p>
       <ul>
         <li>
           <div class="text">3+ Years Experience.</div>
@@ -888,7 +913,7 @@
       <div class="article">
         <h2>
           <span>How.</span>
-          <span style="color: #72e5ce">The making of this website.</span>
+          <span style="color: #ffa9ab">The making of this website.</span>
         </h2>
 
         <p>
@@ -1042,7 +1067,7 @@
         </p>
 
         <p>
-          Performance-wise, one of the more optimizations I made is using
+          Performance-wise, one of the more complex optimizations I made is using
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas"
             target="_blank"
@@ -1149,15 +1174,6 @@
           <a href="https://pixabay.com/service/license/" target="_blank" rel="noopener noreferrer"
             >Pixabay license</a
           >.
-        </p>
-
-        <p>
-          I think just having my GitHub profile, resume and email is enough. I do have a LinkedIn
-          account, but I'm not active on it. Some people also give a professional summary or details
-          of their life in this section. For the former, it's just rehashing their resume in a
-          wordier, less intuitive way. For the latter, most people just aren't interested unless
-          you're someone noteworthy or happened to mention something the reader is really
-          enthusiastic about.
         </p>
 
         <h3>Projects Section</h3>
@@ -1832,7 +1848,10 @@
               });
             },
             {
-              threshold: [0.5, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975, 1.0],
+              threshold: [
+                0.5, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87,
+                0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99,
+              ],
             }
           );
 
@@ -1844,17 +1863,23 @@
       }
 
       function initScrollMessage() {
-        if (localStorage.getItem("knowsHowToScroll")) return;
+        if (typeof IntersectionObserver !== "undefined") {
+          const scrollMsg = document.querySelector(".scroll");
 
-        const scroll = document.querySelector(".scroll");
+          const observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.intersectionRatio === 1.0) scrollMsg.style.opacity = "1";
+                else scrollMsg.style.opacity = "0";
+              });
+            },
+            {
+              threshold: [1.0],
+            }
+          );
 
-        scroll.style.opacity = 1;
-
-        window.onscroll = function () {
-          localStorage.setItem("knowsHowToScroll", "yes");
-          scroll.style.opacity = 0;
-          window.onscroll = null;
-        };
+          observer.observe(document.querySelector("header"));
+        }
       }
 
       initBgm();
