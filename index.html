@@ -133,6 +133,14 @@
         contain: strict;
       }
 
+      .visually-hidden {
+        font-size: 0;
+        overflow: hidden;
+        width: 0;
+        height: 0;
+        margin: 0;
+      }
+
       /*#endregion*/
 
       /* HEADER */
@@ -158,7 +166,7 @@
         white-space: nowrap;
       }
 
-      header h2 {
+      header p {
         font-size: 0.35em;
         font-weight: 500;
         margin: 0;
@@ -617,7 +625,7 @@
 
       #how-its-made .article {
         box-sizing: border-box;
-        width: 45rem;
+        width: 40rem;
         max-width: 100%;
         margin: -80vh auto 0 auto;
         padding: 0 1rem;
@@ -673,6 +681,28 @@
         margin: 0;
       }
 
+      #how-its-made figure {
+        position: relative;
+        width: 100%;
+        margin: 0 0 2rem 0;
+        padding-top: 53.33%;
+        color: #aaa;
+      }
+
+      #how-its-made figure img {
+        position: absolute;
+        top: 0;
+        height: auto;
+        border: 1px solid white;
+
+        aspect-ratio: 1.875;
+        object-fit: contain;
+      }
+
+      #how-its-made figcaption {
+        margin-top: 0.75rem;
+      }
+
       /*#endregion*/
     </style>
 
@@ -704,12 +734,14 @@
     <header>
       <div class="text-container">
         <h1>Jia Liang.</h1>
-        <h2>Software engineer.</h2>
+        <p>Software engineer.</p>
       </div>
       <div class="scroll">Scroll down.</div>
     </header>
 
     <section id="usp">
+      <h2 class="visually-hidden">About Me</h2>
+
       <p>
         The software engineer for when you really need websites that are really fast, beautiful,
         modern, accessible and easy-to-maintain.
@@ -793,6 +825,7 @@
             href="https://jialiang.github.io/3D-Engine-For-Miku/"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="3D Engine For Miku project"
           >
             <div class="image-container">
               <picture>
@@ -818,6 +851,7 @@
             href="https://jialiang.github.io/space-gems/"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="Space Gems project"
           >
             <div class="image-container">
               <picture>
@@ -829,12 +863,12 @@
                 />
                 <img
                   src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vqpduedeerdckoyqhjln"
-                  alt="Space Gem project cover Image"
+                  alt="Space Gems project cover Image"
                 />
               </picture>
             </div>
             <div class="text-container" style="background: #2f4790">
-              <div>Space Gem</div>
+              <div>Space Gems</div>
             </div>
           </a>
         </li>
@@ -843,6 +877,7 @@
             href="https://github.com/jialiang/ShitCompressor"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="Shit Compressor project"
           >
             <div class="image-container">
               <picture>
@@ -868,6 +903,7 @@
             href="https://jialiang.github.io/ygo-ocg-secret-rare/"
             target="_blank"
             rel="noreferrer noopener"
+            aria-label="Yu-Gi-Oh Secret Rare Effect with CSS project"
           >
             <div class="image-container">
               <picture>
@@ -939,26 +975,27 @@
         <h3>Hosting</h3>
 
         <p>
-          The HTML and media files are hosted on
+          HTML and media files are hosted on
           <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer"
             >GitHub Pages</a
-          >. Most of my repositories are already hosted on GitHub so I'm using them out of
+          >. Most of my repositories are already hosted on GitHub so I'm mostly using them out of
           convenience. They use Fastly as their CDN.
         </p>
         <p>
           However, I use
           <a href="https://cloudinary.com/" target="_blank" rel="noopener noreferrer">Cloudinary</a>
-          to host all other static assets. Cloudinary uses a multi-CDN approach with 3 CDNs: Akamai,
-          Cloudfront and Fastly. I discovered them when I was prodding through the internals of
+          to host static assets like images, font files and JavaScript files. Cloudinary uses a
+          multi-CDN approach with 3 CDNs: Akamai, Cloudfront and Fastly. I discovered them when I
+          was prodding through the internals of
           <a href="https://www.nike.com">Nike's website</a>.
         </p>
         <p>
           The main reason I use Cloudinary is because GitHub Pages sets a 10 minute cache-control
           header on all resources. Despite being a widely requested feature, they refuse to allow us
           to set a longer cache expiry period. By contrast, Cloudinary has a reasonable 30 days
-          cache-control period. Caching greatly reduces the latency of future file requests. It
-          allows browsers to make use of their local copy of the file. This is way faster than
-          retrieving the file again from the server.
+          cache-control period. Caching allows browsers to store copies of files locally to be
+          served in the future. Retrieving files from your hard drive is significantly faster than
+          retrieving it from the server.
         </p>
         <p>
           Caching aside, on my home internet, Cloudinary delivers files around 60% faster than
@@ -969,7 +1006,7 @@
           I repeat this multiple times and average the results.
         </p>
         <p>
-          But don't just take my word for it, according to CDNPerf, in Asia where I'm based:
+          It's not only me. According to CDNPerf, in Asia where I'm based:
           <a
             href="https://www.cdnperf.com/cdn-compare?type=performance&location=continents&cdn=akamai-cdn,aws-cloudfront-cdn,cloudflare-cdn,fastly-cdn&locationValue=Asia"
             target="_blank"
@@ -978,7 +1015,7 @@
           >.
         </p>
         <p>
-          I am aware using a seperate host for static assets does have its drawbacks. For one, the
+          I am aware using a separate host for static assets does have its drawbacks. For one, the
           browser needs to perform an additional DNS lookup, initial connection and SSL handshake
           after parsing the HTML. However, even with all this overhead, Cloudinary still manages to
           match or beat GitHub Pages' time. It should be said that Cloudinary cannot be used to host
@@ -989,13 +1026,30 @@
           large media content. Cloudinary also has a strict 33GB per month free bandwidth limit.
         </p>
         <p>
-          Cloudinary also let me serve my images in different formats just by changing the URL. My
-          current setup have AVIF as the preferred image format. If AVIF is not supported then
+          Cloudinary also lets me serve my images in different formats just by changing the URL. My
+          current setup has AVIF as the preferred image format. If AVIF is not supported then
           Cloudinary will automatically choose the best supported format based on the user's
           browser.
         </p>
 
         <h3>Header</h3>
+
+        <figure class="image-container">
+          <picture>
+            <source
+              srcset="
+                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/qb79cbb3x0jlp1fxcuhs.avif
+              "
+              type="image/avif"
+            />
+            <img
+              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/qb79cbb3x0jlp1fxcuhs"
+              alt="MacBook Pro 16-inch Product Page screenshot"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>MacBook Pro 16-inch Product Page screenshot.</figcaption>
+        </figure>
 
         <p>
           I like how the header is done on the
@@ -1018,7 +1072,7 @@
         <h3>Background</h3>
 
         <p>
-          Originally, the background features a star field animation as inspired by
+          Originally, the background featured a star field animation as inspired by
           <a
             aria-label="Goodbye Moonmen remix by The Living Tombstone"
             href="https://www.youtube.com/watch?v=vdEWZq-m27M"
@@ -1029,27 +1083,66 @@
         </p>
 
         <p>
-          The current moving cloud animation is modified from
+          The current background is inspired by the
+          <a
+            href="https://www.youtube.com/watch?v=kg1BljLu9YY"
+            target="_blank"
+            rel="noopener noreferrer"
+            >music video of Thunderclouds by LSD</a
+          >. This song was famously known for being the music that played during the commercial for
+          the Samsung Galaxy Note 9.
+        </p>
+
+        <p>
+          I scoured the internet for implementation ideas before stumbling on
           <a
             href="https://experiments.withgoogle.com/clouds"
             target="_blank"
             rel="noopener noreferrer"
             >Clouds by Mr. Doob</a
-          >. Mr Doob is the creator of THREE.js. The way it works is by peppering images of clouds
-          throughout the scene. The same cloud image is used but its position, scale, rotation and
-          opacity are randomised to create variation. This approach produces some pretty good
-          looking clouds as long as you don't need to rotate the camera horizontally.
+          >. If you're not aware, Mr. Doob is the creator of THREE.js. The way it works is by
+          peppering images of clouds throughout the scene. The same cloud image is used but its
+          position, scale, rotation and opacity are randomised to create variation. This approach
+          produces some pretty fast and good looking clouds.
         </p>
         <p>
-          As you can see, these are not real volumetric clouds and not physically accurate.
-          Unfortunately, raymarching and scattering are all very GPU intensive if you want them to
-          look good. It's a reason why real dynamic weather systems in games are such a big deal.
+          As you can see, these are not real physically accurate volumetric clouds. Unfortunately,
+          raymarching and scattering are all very complex and GPU intensive. It's a reason why real
+          dynamic weather systems in games are such a big deal.
         </p>
         <p>
           Mr. Doob's demo uses THREE.js and I kept it that way. Rewriting it would involve a lot of
           effort for very little gain. I understand that THREE.js is a big library at 590kB minified
-          (120kB gzipped). Thus I made an effort to remove unused code through tree-shaking. The
-          tools I use is my own modified version of
+          (120kB gzipped). Mind you, besides the cost of downloading the file, the browser still
+          needs to parse all that JavaScript code. Thus, I decided to make an effort to remove
+          unused code.
+        </p>
+
+        <p>
+          Unfortunately, THREE.js isn't an easy library to tree-shake. This is best illustrated by
+          trying to build the THREE.js library yourself. THREE.js uses Rollup which has tree-shaking
+          capabilities built-in. Even exporting just the WebGLRenderer class alone gives you a 353kB
+          big distributable. There are a few factors for this:
+        </p>
+
+        <ul>
+          <li>
+            Eager initialization. In the WebGLRenderer class that I mentioned, its constructor
+            automatically creates instances for WebXR, morph targets, cube maps, shadow maps etc.
+            regardless if you need it or not. The rest of the class naturally operates with the
+            assumption that these attributes have been initialized. Thus these initializations are
+            not so easily removed.
+          </li>
+          <li>
+            Inability to tree-shaker class methods. Bundlers like Rollup and Webpack can only
+            tree-shake classes and top-level variables through static analysis. The dynamic nature
+            of JavaScript makes more granular forms of tree-shaking difficult to do safely.
+          </li>
+        </ul>
+
+        <p>
+          With these problems in mind, the tools I use for tree-shaking is my own modified version
+          of
           <a
             href="https://github.com/pinqy520/coverage-shaker"
             target="_blank"
@@ -1064,6 +1157,16 @@
             >Closure Compiler</a
           >. Coupled with a little elbow grease, I managed to shrink the library down to only 60kB
           minified (20kB gzipped).
+        </p>
+
+        <p>
+          For context, in the Chrome Developer Console, there's a Coverage tab. It shows you a
+          line-by-line breakdown of used and unused code during runtime. This report can be exported
+          as a JSON file. Coverage Shaker can help to remove unused code blocks based on the
+          exported report. This approach is tree-shaking through dynamic analysis. After this, I
+          looked through the output and made some big wins through manual intervention. Finally, the
+          Closure Compiler is used to minify the file while preserving externally referenced
+          symbols.
         </p>
 
         <p>
@@ -1118,9 +1221,26 @@
 
         <h3>Intro Section</h3>
 
+        <figure class="image-container">
+          <picture>
+            <source
+              srcset="
+                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vre3hivoeyvkgb7m9teo.avif
+              "
+              type="image/avif"
+            />
+            <img
+              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vre3hivoeyvkgb7m9teo"
+              alt="iPhone 13 Pro product page screenshot"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>iPhone 13 Pro product page screenshot.</figcaption>
+        </figure>
+
         <p>
-          I decided to list down my value propositions right after the header. My method was
-          inspired by the
+          In the intro section right after the header, I decided to list down my value propositions.
+          My method was inspired by the
           <a
             href="https://www.apple.com/my/iphone-13-pro/"
             target="_blank"
@@ -1133,8 +1253,26 @@
 
         <h3>Personal Section</h3>
 
+        <figure class="image-container">
+          <picture>
+            <source
+              srcset="
+                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/l97akulcvaburgr3ilnr.avif
+              "
+              type="image/avif"
+            />
+            <img
+              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/l97akulcvaburgr3ilnr"
+              alt="iPad Pro product page screenshot"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>iPad Pro product page screenshot.</figcaption>
+        </figure>
+
         <p>
-          I decided to follow the way Apple presents key numbers and facts on the
+          For the next section, I decided to follow the way Apple presents key numbers and facts on
+          the
           <a href="https://www.apple.com/ipad-pro/" target="_blank" rel="noopener noreferrer"
             >iPad Pro product page</a
           >. Those big bold neon-like gradient-colored texts over a black were really eye-catching.
@@ -1177,6 +1315,23 @@
         </p>
 
         <h3>Projects Section</h3>
+
+        <figure class="image-container">
+          <picture>
+            <source
+              srcset="
+                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/grqwjah3tyshruu0kkgk.avif
+              "
+              type="image/avif"
+            />
+            <img
+              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/grqwjah3tyshruu0kkgk"
+              alt="Apple Music homepage screenshot"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>Apple Music homepage screenshot.</figcaption>
+        </figure>
 
         <p>
           I envisioned my personal projects shown the same way apps show a list of song cover art.
@@ -1221,18 +1376,20 @@
           and they don't have scroll snapping either. Thus, I decided to scrap this idea.
         </p>
 
-        <h3>How It's Made Section</h3>
+        <h3>Article Section</h3>
 
         <p>
-          For this section I made the background black instead of semi-transparent like the others.
-          This way you can focus better on the text. The background animation is also turned off
-          since it won't be visible anymore. I achieved this using the
+          For the article section I made the background black so you can focus better on the text.
+          The background animation is also turned off since it won't be visible anymore. I achieved
+          this using the
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
             target="_blank"
             rel="noopener noreferrer"
             >Intersection Observer API</a
-          >. The body text is also made off-white to reduce eye-strain.
+          >
+          to know which section the user is currently on. The body text is also made off-white to
+          reduce eye-strain.
         </p>
 
         <p>
@@ -1300,8 +1457,8 @@
             rel="noopener noreferrer"
             >Technique G156: Using a technology that has commonly-available user agents that can
             change the foreground and background of blocks of text</a
-          >. It asks that you don't unnecessarily prevent your stylesheets from being overridden.
-          For context, there are CSS properties like
+          >. Basically, it asks that you don't unnecessarily prevent your stylesheets from being
+          overridden. For context, there are CSS properties like
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/CSS/forced-color-adjust"
             target="_blank"
@@ -1429,7 +1586,7 @@
             extremely small sides.
           </li>
           <li>
-            I simulate the viewport sizes of iPhone, iPad and a 1080p monitor. This test covers
+            I simulate the viewport sizes of the iPhone, iPad and a 1080p monitor. This test covers
             widely-used screen sizes.
           </li>
         </ul>
