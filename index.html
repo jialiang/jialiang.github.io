@@ -181,7 +181,7 @@
         padding: 0.15rem 0.3rem;
         opacity: 0;
         color: black;
-        background: white;
+        background: snow;
       }
 
       @media (max-width: 45.125rem) {
@@ -302,49 +302,63 @@
       #personal {
         position: relative;
         display: flex;
-        align-items: center;
-        width: 52.5rem;
+        align-items: stretch;
+        box-sizing: border-box;
+        width: 84rem;
         max-width: 100%;
-        min-height: 52.5rem;
-        margin: 5rem auto 7.5rem auto;
+        margin: 5rem auto 2rem auto;
+        padding: 0 2rem;
         color: white;
       }
 
-      #personal .image-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-        width: 35rem;
-        max-width: 100%;
-        height: 100%;
-        max-height: 52.5rem;
-        margin: auto;
-        border-radius: 2.5rem;
-      }
-
-      #personal .text-container {
-        z-index: 1;
+      #personal .text-container-1 {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
         box-sizing: border-box;
-        width: 35rem;
-        max-width: 100%;
-        margin: 0 2rem 0 auto;
+        margin-right: 2rem;
         padding: 4rem;
-        border-bottom: 1px solid rgba(255, 200, 250, 0.2);
-        border-left: 1px solid rgba(255, 200, 250, 0.2);
         border-radius: 1.5rem;
-        background: #241b28;
+        background: linear-gradient(to bottom right, #ffddf3, #fec2eb, #ffb7b7);
       }
 
-      #personal h2 {
+      #personal .text-container-1 h2 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        max-width: 26rem;
+        color: purple;
+      }
+
+      #personal .text-container-1 h2 span {
+        color: black;
+      }
+
+      #personal .text-container-2 {
+        flex-shrink: 0;
+        box-sizing: border-box;
+        width: 40rem;
+        max-width: 100%;
+        padding: 6rem 4rem;
+        border-radius: 1.5rem;
+        background: #12213a;
+      }
+
+      #personal .text-container-2 h2 {
         font-size: 2.5rem;
         font-weight: 400;
         line-height: 1.1;
-        margin: 0 0 4.5rem 0;
+        display: none;
+        box-sizing: border-box;
+        width: 72rem;
+        max-width: 100%;
+        margin: 0 auto 4.5rem auto;
+        opacity: 0.85;
+        color: white;
       }
 
       #personal ul {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -352,6 +366,10 @@
 
       #personal li {
         margin: 0 0 3.2rem 0;
+      }
+
+      #personal li:last-child {
+        margin-bottom: 0;
       }
 
       #personal .link-container {
@@ -384,20 +402,61 @@
         padding: 0 0.3rem;
       }
 
-      @media (max-width: 41rem) {
+      @media (max-width: 84rem) {
         #personal {
-          overflow: hidden;
-          min-height: auto;
-          margin: 0;
+          margin-bottom: 10rem;
+        }
+      }
+
+      @media (max-width: 74.375rem) {
+        #personal .text-container-1 {
+          padding: 4rem 2rem;
         }
 
-        #personal .text-container {
-          width: 100%;
+        #personal .text-container-1 h2 {
+          font-size: 3rem;
+        }
+
+        #personal .text-container-2 {
+          width: 35rem;
+          padding: 4rem 2rem;
+        }
+
+        #personal .text-container-2 li {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 62.5rem) {
+        #personal .text-container-2 {
+          width: 31rem;
+        }
+      }
+
+      @media (max-width: 58.375rem) {
+        #personal .text-container-1 h2 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 55.5rem) {
+        #personal {
           margin: 0;
-          padding: 5rem 0.7rem 4.3rem 0.7rem;
-          border-bottom: none;
-          border-left: none;
+          padding: 0;
+        }
+
+        #personal .text-container-1 {
+          display: none;
+        }
+
+        #personal .text-container-2 {
+          width: 100%;
+          padding: 5rem 0.7rem 7.5rem 0.7rem;
           border-radius: 0;
+        }
+
+        #personal .text-container-2 h2 {
+          display: block;
         }
       }
 
@@ -583,13 +642,16 @@
         height: 100%;
       }
 
-      @media (max-width: 74.1rem) {
+      @media (max-width: 84rem) {
         #projects {
+          max-width: 100%;
           border-bottom: none;
           border-left: none;
           border-radius: 0;
         }
+      }
 
+      @media (max-width: 74.1rem) {
         #projects li:last-child {
           margin-right: 2rem;
         }
@@ -599,7 +661,7 @@
         }
       }
 
-      @media (max-width: 41rem) {
+      @media (max-width: 55.5rem) {
         #projects {
           margin-bottom: 0;
         }
@@ -769,24 +831,14 @@
     </section>
 
     <section id="personal">
-      <div class="image-container">
-        <picture>
-          <source
-            srcset="
-              https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/p3r2ovsxxcmn3e4smuix.avif
-            "
-            type="image/avif"
-          />
-          <img
-            src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/p3r2ovsxxcmn3e4smuix"
-            alt=""
-          />
-        </picture>
+      <div class="text-container-1">
+        <h2>Reach out <span>and together, we'll reach for the sky.</span></h2>
       </div>
 
-      <div class="text-container">
-        <h2>Reach out and together,<br />we'll reach for the sky.</h2>
-
+      <div class="text-container-2">
+        <h2>
+          <span>Reach out and together,<br />we'll reach for the sky.</span>
+        </h2>
         <ul>
           <li>
             <a class="link-container" href="mailto:hojialiang@yahoo.com"
@@ -1297,21 +1349,6 @@
             >95% of users support text-fill-color</a
           >. With that said, I use feature detection and fallback to solid colors on browsers that
           don't support them.
-        </p>
-
-        <p>
-          I also added an image near the text box to further break up the monotony with more color.
-          The
-          <a
-            href="https://pixabay.com/illustrations/earth-space-sunlight-sun-rays-1756274/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >sunrise over Earth image</a
-          >
-          was created by Arek Socha. It is distributed under the
-          <a href="https://pixabay.com/service/license/" target="_blank" rel="noopener noreferrer"
-            >Pixabay license</a
-          >.
         </p>
 
         <h3>Projects Section</h3>
