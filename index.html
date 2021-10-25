@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#000" />
+    <meta name="theme-color" content="#FFF" />
     <link
       rel="preload"
       href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-regular_nsxhnt.woff2"
@@ -27,7 +27,7 @@
     />
     <link
       rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/image/upload/v1634450805/jialiang.github.io/images-2/ahaqa71ykthag9omoeda.png"
+      href="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ahaqa71ykthag9omoeda"
       as="image"
       crossorigin
     />
@@ -87,7 +87,7 @@
         width: 100%;
         height: 100%;
         color: black;
-        background: black;
+        background: white;
       }
 
       @media (max-width: 18.75rem) {
@@ -316,45 +316,35 @@
         align-items: center;
         flex-grow: 1;
         box-sizing: border-box;
+        min-width: 26rem;
+        max-width: 31rem;
         margin-right: 2rem;
         padding: 4rem;
-        border-radius: 1.5rem;
-        background: linear-gradient(to bottom right, #ffddf3, #fec2eb, #ffb7b7);
+        border-radius: 2.5rem;
+        background: #151516;
       }
 
       #personal .text-container-1 h2 {
         font-size: 3.5rem;
         font-weight: 700;
         line-height: 1.1;
-        max-width: 26rem;
-        color: purple;
+        margin: 0;
+        color: white;
       }
 
-      #personal .text-container-1 h2 span {
-        color: black;
+      #personal .text-container-1 h2 span:first-child {
+        color: #ffa9ab;
       }
 
       #personal .text-container-2 {
+        flex-grow: 1;
         flex-shrink: 0;
         box-sizing: border-box;
         width: 40rem;
         max-width: 100%;
         padding: 6rem 4rem;
-        border-radius: 1.5rem;
+        border-radius: 2.5rem;
         background: #12213a;
-      }
-
-      #personal .text-container-2 h2 {
-        font-size: 2.5rem;
-        font-weight: 400;
-        line-height: 1.1;
-        display: none;
-        box-sizing: border-box;
-        width: 72rem;
-        max-width: 100%;
-        margin: 0 auto 4.5rem auto;
-        opacity: 0.85;
-        color: white;
       }
 
       #personal ul {
@@ -404,13 +394,50 @@
 
       @media (max-width: 84rem) {
         #personal {
-          margin-bottom: 10rem;
+          margin-bottom: 0;
+        }
+
+        #personal {
+          padding: 0;
+        }
+
+        #personal .text-container-1 {
+          margin-right: 0;
+          border-radius: 0;
+        }
+
+        #personal .text-container-2 {
+          border-radius: 0;
         }
       }
 
-      @media (max-width: 74.375rem) {
+      @media (max-width: 68rem) {
         #personal .text-container-1 {
-          padding: 4rem 2rem;
+          min-width: 22rem;
+          max-width: 27rem;
+          padding-right: 3rem;
+          padding-left: 3rem;
+        }
+
+        #personal .text-container-1 h2 {
+          font-size: 3.25rem;
+        }
+
+        #personal .text-container-2 {
+          width: 35rem;
+          padding-right: 3rem;
+          padding-left: 3rem;
+        }
+
+        #personal .text-container-2 li {
+          font-size: 2.75rem;
+        }
+      }
+
+      @media (max-width: 58rem) {
+        #personal .text-container-1 {
+          min-width: 21rem;
+          max-width: 26rem;
         }
 
         #personal .text-container-1 h2 {
@@ -418,8 +445,7 @@
         }
 
         #personal .text-container-2 {
-          width: 35rem;
-          padding: 4rem 2rem;
+          width: 33rem;
         }
 
         #personal .text-container-2 li {
@@ -427,36 +453,35 @@
         }
       }
 
-      @media (max-width: 62.5rem) {
-        #personal .text-container-2 {
-          width: 31rem;
-        }
-      }
-
-      @media (max-width: 58.375rem) {
-        #personal .text-container-1 h2 {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 55.5rem) {
+      @media (max-width: 55rem) {
         #personal {
-          margin: 0;
-          padding: 0;
+          flex-direction: column;
         }
 
         #personal .text-container-1 {
-          display: none;
+          max-width: 100%;
+          padding: 3.5rem 0.7rem 0 0.7rem;
+          background: #12213a;
+        }
+
+        #personal .text-container-1 h2 {
+          font-size: 2.5rem;
+          font-weight: 400;
+          color: #b6ff9b;
+        }
+
+        #personal .text-container-1 h2 span:first-child {
+          font-size: 1.84em;
+          font-weight: bold;
+          line-height: 0.85;
+          display: block;
+          margin-bottom: 0.15em;
+          color: white;
         }
 
         #personal .text-container-2 {
           width: 100%;
           padding: 5rem 0.7rem 7.5rem 0.7rem;
-          border-radius: 0;
-        }
-
-        #personal .text-container-2 h2 {
-          display: block;
         }
       }
 
@@ -473,7 +498,7 @@
         padding: 5rem 0;
         border-bottom: 1px solid rgba(255, 200, 250, 0.2);
         border-left: 1px solid rgba(255, 200, 250, 0.2);
-        border-radius: 1.5rem;
+        border-radius: 2.5rem;
         background: #3e1921;
       }
 
@@ -645,25 +670,20 @@
       @media (max-width: 84rem) {
         #projects {
           max-width: 100%;
+          margin-bottom: 0;
           border-bottom: none;
           border-left: none;
           border-radius: 0;
         }
       }
 
-      @media (max-width: 74.1rem) {
+      @media (max-width: 76rem) {
         #projects li:last-child {
           margin-right: 2rem;
         }
 
         #projects .carousel-button-container {
           display: flex;
-        }
-      }
-
-      @media (max-width: 55.5rem) {
-        #projects {
-          margin-bottom: 0;
         }
       }
 
@@ -676,6 +696,38 @@
         position: relative;
         padding: 5rem 0 15rem 0;
         background: #151516;
+      }
+
+      #how-its-made .inverse-radius-container {
+        position: absolute;
+        top: -2.5rem;
+        width: 100%;
+        height: 2.5rem;
+      }
+
+      #how-its-made .inverse-radius-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: radial-gradient(circle, transparent 2.5rem, #151516 2.55rem) 5rem -2.5rem/5rem 5rem;
+      }
+
+      #how-its-made .inverse-radius-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: radial-gradient(circle, transparent 2.5rem, #151516 2.55rem) 2.5rem -2.5rem/5rem
+          5rem;
+      }
+
+      @media (max-width: 84rem) {
+        #how-its-made .inverse-radius-container {
+          display: none;
+        }
       }
 
       #how-its-made .observation-point {
@@ -832,13 +884,10 @@
 
     <section id="personal">
       <div class="text-container-1">
-        <h2>Reach out <span>and together, we'll reach for the sky.</span></h2>
+        <h2><span>Reach out.</span> <span>Together, we'll reach for the sky.</span></h2>
       </div>
 
       <div class="text-container-2">
-        <h2>
-          <span>Reach out and together,<br />we'll reach for the sky.</span>
-        </h2>
         <ul>
           <li>
             <a class="link-container" href="mailto:hojialiang@yahoo.com"
@@ -996,6 +1045,11 @@
     </section>
 
     <section id="how-its-made">
+      <div class="inverse-radius-container">
+        <div class="inverse-radius-left"></div>
+        <div class="inverse-radius-right"></div>
+      </div>
+
       <div class="observation-point"></div>
 
       <div class="article">
@@ -1011,8 +1065,8 @@
         </p>
 
         <p>
-          I reckon the entire development lifecycle of this website took me 10 man-days. I'd say I
-          spent most of that time improving accessibility and writing this document.
+          I reckon the entire development lifecycle of this website took me 10 man-days. Most of
+          that time improving accessibility and writing this document.
         </p>
 
         <p>
@@ -1152,15 +1206,15 @@
             target="_blank"
             rel="noopener noreferrer"
             >Clouds by Mr. Doob</a
-          >. If you're not aware, Mr. Doob is the creator of THREE.js. The way it works is by
-          peppering images of clouds throughout the scene. The same cloud image is used but its
-          position, scale, rotation and opacity are randomised to create variation. This approach
-          produces some pretty fast and good looking clouds.
+          >. If you're not aware, Mr. Doob is the creator of THREE.js. It works by peppering images
+          of clouds throughout the scene. The same cloud image is used but its position, scale,
+          rotation and opacity are randomised to create variation. This approach produces some
+          pretty fast and good looking clouds.
         </p>
         <p>
           As you can see, these are not real physically accurate volumetric clouds. Unfortunately,
-          raymarching and scattering are all very complex and GPU intensive. It's a reason why real
-          dynamic weather systems in games are such a big deal.
+          those require raymarching and scattering which are all very complex and GPU intensive
+          processes.
         </p>
         <p>
           Mr. Doob's demo uses THREE.js and I kept it that way. Rewriting it would involve a lot of
@@ -1172,15 +1226,15 @@
 
         <p>
           Unfortunately, THREE.js isn't an easy library to tree-shake. This is best illustrated by
-          trying to build the THREE.js library yourself. THREE.js uses Rollup which has tree-shaking
-          capabilities built-in. Even exporting just the WebGLRenderer class alone gives you a 353kB
-          big distributable. There are a few factors for this:
+          trying to build the THREE.js library yourself. THREE.js uses Rollup as its build tool
+          which has tree-shaking capabilities built-in. Even exporting just the WebGLRenderer class
+          alone gives you a 353kB big distributable. There are a few factors for this:
         </p>
 
         <ul>
           <li>
             Eager initialization. In the WebGLRenderer class that I mentioned, its constructor
-            automatically creates instances for WebXR, morph targets, cube maps, shadow maps etc.
+            automatically creates instances for WebXR, morph targets, cube maps, shadow maps etc
             regardless if you need it or not. The rest of the class naturally operates with the
             assumption that these attributes have been initialized. Thus these initializations are
             not so easily removed.
@@ -1214,11 +1268,14 @@
         <p>
           For context, in the Chrome Developer Console, there's a Coverage tab. It shows you a
           line-by-line breakdown of used and unused code during runtime. This report can be exported
-          as a JSON file. Coverage Shaker can help to remove unused code blocks based on the
-          exported report. This approach is tree-shaking through dynamic analysis. After this, I
-          looked through the output and made some big wins through manual intervention. Finally, the
-          Closure Compiler is used to minify the file while preserving externally referenced
-          symbols.
+          as a JSON file. Coverage Shaker removes unused code blocks based on the exported report.
+          This approach is tree-shaking through dynamic analysis.
+        </p>
+
+        <p>
+          After this, I looked through the output and further removed big chunks of code through
+          manual intervention. Finally, the Closure Compiler is used to minify the file while
+          preserving externally referenced symbols.
         </p>
 
         <p>
@@ -1309,46 +1366,30 @@
           <picture>
             <source
               srcset="
-                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/l97akulcvaburgr3ilnr.avif
+                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/eogu5worgn6fk0wkgkdx.avif
               "
               type="image/avif"
             />
             <img
-              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/l97akulcvaburgr3ilnr"
-              alt="iPad Pro product page screenshot"
+              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/eogu5worgn6fk0wkgkdx"
+              alt="MacBook Pro 13 inch product page screenshot"
               loading="lazy"
             />
           </picture>
-          <figcaption>iPad Pro product page screenshot.</figcaption>
+          <figcaption>MacBook Pro 13 inch product page screenshot.</figcaption>
         </figure>
 
         <p>
-          For the next section, I decided to follow the way Apple presents key numbers and facts on
-          the
-          <a href="https://www.apple.com/ipad-pro/" target="_blank" rel="noopener noreferrer"
-            >iPad Pro product page</a
-          >. Those big bold neon-like gradient-colored texts over a black were really eye-catching.
-          The visual hierarchy made information easy to skim and pick up.
+          For the next section, I decided to follow the card based approach that dominates the
+          <a href="https://www.apple.com/macbook-pro-13/" target="_blank" rel="noopener noreferrer"
+            >MacBook Pro 13 inch product page</a
+          >. I think that this is a great way to introduce more colors to break up the monotony. It
+          also helps to group elements together.
         </p>
 
         <p>
-          Apple themselves use a canvas-based approach to create the gradient text. But this method
-          prevents text from wrapping. The same effect can be achieved in CSS using background-clip
-          and text-fill-color. While these properties are non-standard,
-          <a
-            href="https://caniuse.com/background-clip-text"
-            target="_blank"
-            rel="noopener noreferrer"
-            >97% of users support background-clip</a
-          >
-          and
-          <a
-            href="https://caniuse.com/mdn-css_properties_-webkit-text-fill-color"
-            target="_blank"
-            rel="noopener noreferrer"
-            >95% of users support text-fill-color</a
-          >. With that said, I use feature detection and fallback to solid colors on browsers that
-          don't support them.
+          On mobile, they are simplified to just have different colored backgrounds instead. Since
+          cards layout tend to be less space efficient.
         </p>
 
         <h3>Projects Section</h3>
@@ -1417,8 +1458,8 @@
 
         <p>
           For the article section I made the background black so you can focus better on the text.
-          The background animation is also turned off since it won't be visible anymore. I achieved
-          this using the
+          The background animation is also turned off completely since it won't be visible anymore.
+          I used the
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
             target="_blank"
@@ -1714,7 +1755,7 @@
 
         return new Promise(function (resolve) {
           new THREE.ImageBitmapLoader().load(
-            "https://res.cloudinary.com/dedvquoyt/image/upload/v1634450805/jialiang.github.io/images-2/ahaqa71ykthag9omoeda.png",
+            "https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ahaqa71ykthag9omoeda",
             function (imageBitmap) {
               const texture = new THREE.CanvasTexture(imageBitmap);
 
@@ -1817,7 +1858,7 @@
       function renderWebGL(currentTime) {
         if (startTime == null) return; // WebGL not finished initializing, ignore draw call
 
-        camera.position.x = (((currentTime - startTime) * 0.0025) % 400) + 100;
+        camera.position.x = (((currentTime - startTime) * 0.0025 - 100) % 400) + 200;
 
         renderer.render(scene, camera);
       }
