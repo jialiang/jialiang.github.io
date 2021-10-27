@@ -698,38 +698,6 @@
         background: #151516;
       }
 
-      #how-its-made .inverse-radius-container {
-        position: absolute;
-        top: -2.5rem;
-        width: 100%;
-        height: 2.5rem;
-      }
-
-      #how-its-made .inverse-radius-left {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 2.5rem;
-        height: 2.5rem;
-        background: radial-gradient(circle, transparent 2.5rem, #151516 2.55rem) 5rem -2.5rem/5rem 5rem;
-      }
-
-      #how-its-made .inverse-radius-right {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 2.5rem;
-        height: 2.5rem;
-        background: radial-gradient(circle, transparent 2.5rem, #151516 2.55rem) 2.5rem -2.5rem/5rem
-          5rem;
-      }
-
-      @media (max-width: 84rem) {
-        #how-its-made .inverse-radius-container {
-          display: none;
-        }
-      }
-
       #how-its-made .observation-point {
         position: sticky;
         top: 0;
@@ -1045,11 +1013,6 @@
     </section>
 
     <section id="how-its-made">
-      <div class="inverse-radius-container">
-        <div class="inverse-radius-left"></div>
-        <div class="inverse-radius-right"></div>
-      </div>
-
       <div class="observation-point"></div>
 
       <div class="article">
@@ -1675,7 +1638,7 @@
       </div>
     </section>
 
-    <audio id="bgm-audio">
+    <audio id="bgm-audio" preload="metadata">
       <source src="audios/Thunderclouds.flac" type="audio/flac" />
       <source src="audios/Thunderclouds.mp3" type="audio/mp3" />
     </audio>
@@ -1723,7 +1686,7 @@
       let startTime;
       let performanceCaveat = false;
 
-      function initWebGL(canvas, vertexShaderSource, fragmentShaderSource) {
+      function initWebGL(canvas, cloudImage, vertexShaderSource, fragmentShaderSource) {
         const THREE = initThreeJS();
 
         try {
@@ -1753,106 +1716,97 @@
         camera.position.y = 0;
         camera.position.z = 100;
 
-        return new Promise(function (resolve) {
-          new THREE.ImageBitmapLoader().load(
-            "https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ahaqa71ykthag9omoeda",
-            function (imageBitmap) {
-              const texture = new THREE.CanvasTexture(imageBitmap);
+        const texture = new THREE.CanvasTexture(cloudImage);
 
-              texture.magFilter = THREE.LinearFilter;
-              texture.minFilter = THREE.LinearMipMapLinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.minFilter = THREE.LinearMipMapLinearFilter;
 
-              const fog = new THREE.Fog(0x4584b4, -100, 3000);
+        const fog = new THREE.Fog(0x4584b4, -100, 3000);
 
-              const material = new THREE.ShaderMaterial({
-                uniforms: {
-                  map: { type: "t", value: texture },
-                  fogColor: { type: "c", value: fog.color },
-                  fogNear: { type: "f", value: fog.near },
-                  fogFar: { type: "f", value: fog.far },
-                },
-                vertexShader: vertexShaderSource,
-                fragmentShader: fragmentShaderSource,
-                depthWrite: false,
-                depthTest: false,
-                transparent: true,
-              });
-
-              const plane = new THREE.Mesh(new THREE.PlaneGeometry(64, 64));
-              const geometry = new THREE.Geometry();
-
-              const randomNumbers = [
-                0.764, 0.36, 0.001, 0.979, 0.158, 0.209, 0.42, 0.122, 0.577, 0.777, 0.204, 0.046,
-                0.562, 0.755, 0.339, 0.785, 0.84, 0.324, 0.581, 0.338, 0.436, 0.166, 0.112, 0.383,
-                0.644, 0.954, 0.022, 0.92, 0.215, 0.055, 0.168, 0.619, 0.616, 0.863, 0.909, 0.98,
-                0.914, 0.708, 0.024, 0.334, 0.319, 0.771, 0.771, 0.851, 0.06, 0.267, 0.892, 0.345,
-                0.364, 0.137, 0.115, 0.194, 0.432, 0.936, 0.955, 0.873, 0.999, 0.752, 0.717, 0.063,
-                0.719, 0.121, 0.956, 0.847, 0.601, 0.046, 0.471, 0.229, 0.628, 0.844, 0.204, 0.895,
-                0.88, 0.602, 0.615, 0.269, 0.264, 0.712, 0.854, 0.417, 0.625, 0.688, 0.626, 0.986,
-                0.514, 0.241, 0.14, 0.365, 0.357, 0.671, 0.099, 0.704, 0.657, 0.596, 0.433, 0.631,
-                0.463, 0.17, 0.724, 0.93, 0.638, 0.949, 0.787, 0.237, 0.701, 0.462, 0.753, 0.44,
-                0.533, 0.344, 0.189, 0.414, 0.493, 0.917, 0.074, 0.593, 0.024, 0.305, 0.756, 0.469,
-                0.384, 0.141, 0.826, 0.033, 0.019, 0.923, 0.225, 0.651, 0.514, 0.362, 0.315, 0.402,
-                0.385, 0.655, 0.96, 0.203, 0.573, 0.438, 0.613, 0.488, 0.535, 0.436, 0.459, 0.212,
-                0.608, 0.164, 0.373, 0.284, 0.981, 0.112, 0.698, 0.814, 0.151, 0.35, 0.356, 0.507,
-                0.284, 0.882, 0.074, 0.311, 0.607, 0.08, 0.433, 0.607, 0.501, 0.254, 0.193, 0.795,
-                0.9, 0.467, 0.868, 0.617, 0.437, 0.697, 0.989, 0.507, 0.529, 0.36, 0.024, 0.695,
-                0.506, 0.642, 0.994, 0.418, 0.632, 0.03, 0.082, 0.445, 0.266, 0.766, 0.828, 0.353,
-                0.084, 0.961, 0.233, 0.314, 0.374, 0.411, 0.501, 0.236, 0.696, 0.527, 0.368, 0.464,
-                0.028, 0.244, 0.06, 0.597, 0.667, 0.269, 0.792, 0.263, 0.159, 0.434, 0.255, 0.354,
-                0.298, 0.978, 0.685, 0.351, 0.448, 0.147, 0.608, 0.974, 0.716, 0.768, 0.449, 0.892,
-                0.252, 0.087, 0.368, 0.91, 0.466, 0.914, 0.561, 0.413, 0.905, 0.931, 0.424, 0.401,
-                0.408, 0.167, 0.667, 0.075, 0.14, 0.179, 0.83, 0.18, 0.957, 0.196, 0.151, 0.456,
-                0.717, 0.143, 0.042, 0.538, 0.271, 0.482, 0.109, 0.637, 0.642, 0.474, 0.535, 0.709,
-                0.231, 0.453, 0.82, 0.783, 0.509, 0.256, 0.658, 0.268, 0.955, 0.997, 0.54, 0.293,
-                0.019, 0.039, 0.308, 0.078, 0.81, 0.976, 0.605, 0.236, 0.405, 0.106, 0.456, 0.763,
-                0.367, 0.319, 0.845, 0.347, 0.251, 0.266, 0.667, 0.646, 0.906, 0.831, 0.774, 0.828,
-              ];
-
-              for (let i = 0; i < 50; i++) {
-                plane.position.x = randomNumbers.pop() * 400;
-                plane.position.y = -randomNumbers.pop() * randomNumbers.pop() * 200 - 15;
-                plane.position.z = i;
-
-                plane.rotation.z = randomNumbers.pop() * Math.PI;
-                plane.scale.x = plane.scale.y =
-                  randomNumbers.pop() * randomNumbers.pop() * 1.5 + 0.5;
-
-                plane.updateMatrix();
-                geometry.merge(plane.geometry, plane.matrix);
-
-                plane.position.x = plane.position.x + 400;
-
-                plane.updateMatrix();
-                geometry.merge(plane.geometry, plane.matrix);
-              }
-
-              const mesh_1 = new THREE.Mesh(geometry, material);
-              const mesh_2 = new THREE.Mesh(geometry, material);
-
-              mesh_2.position.z = -100;
-
-              scene = new THREE.Scene();
-              scene.add(mesh_1);
-              scene.add(mesh_2);
-
-              startTime = performance.now();
-
-              if (performanceCaveat) {
-                requestAnimationFrame(function () {
-                  camera.position.x = 100;
-
-                  renderer.render(scene, camera);
-                });
-                return;
-              }
-
-              if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
-
-              resolve(!performanceCaveat);
-            }
-          );
+        const material = new THREE.ShaderMaterial({
+          uniforms: {
+            map: { type: "t", value: texture },
+            fogColor: { type: "c", value: fog.color },
+            fogNear: { type: "f", value: fog.near },
+            fogFar: { type: "f", value: fog.far },
+          },
+          vertexShader: vertexShaderSource,
+          fragmentShader: fragmentShaderSource,
+          depthWrite: false,
+          depthTest: false,
+          transparent: true,
         });
+
+        const plane = new THREE.Mesh(new THREE.PlaneGeometry(64, 64));
+        const geometry = new THREE.Geometry();
+
+        const randomNumbers = [
+          0.764, 0.36, 0.001, 0.979, 0.158, 0.209, 0.42, 0.122, 0.577, 0.777, 0.204, 0.046, 0.562,
+          0.755, 0.339, 0.785, 0.84, 0.324, 0.581, 0.338, 0.436, 0.166, 0.112, 0.383, 0.644, 0.954,
+          0.022, 0.92, 0.215, 0.055, 0.168, 0.619, 0.616, 0.863, 0.909, 0.98, 0.914, 0.708, 0.024,
+          0.334, 0.319, 0.771, 0.771, 0.851, 0.06, 0.267, 0.892, 0.345, 0.364, 0.137, 0.115, 0.194,
+          0.432, 0.936, 0.955, 0.873, 0.999, 0.752, 0.717, 0.063, 0.719, 0.121, 0.956, 0.847, 0.601,
+          0.046, 0.471, 0.229, 0.628, 0.844, 0.204, 0.895, 0.88, 0.602, 0.615, 0.269, 0.264, 0.712,
+          0.854, 0.417, 0.625, 0.688, 0.626, 0.986, 0.514, 0.241, 0.14, 0.365, 0.357, 0.671, 0.099,
+          0.704, 0.657, 0.596, 0.433, 0.631, 0.463, 0.17, 0.724, 0.93, 0.638, 0.949, 0.787, 0.237,
+          0.701, 0.462, 0.753, 0.44, 0.533, 0.344, 0.189, 0.414, 0.493, 0.917, 0.074, 0.593, 0.024,
+          0.305, 0.756, 0.469, 0.384, 0.141, 0.826, 0.033, 0.019, 0.923, 0.225, 0.651, 0.514, 0.362,
+          0.315, 0.402, 0.385, 0.655, 0.96, 0.203, 0.573, 0.438, 0.613, 0.488, 0.535, 0.436, 0.459,
+          0.212, 0.608, 0.164, 0.373, 0.284, 0.981, 0.112, 0.698, 0.814, 0.151, 0.35, 0.356, 0.507,
+          0.284, 0.882, 0.074, 0.311, 0.607, 0.08, 0.433, 0.607, 0.501, 0.254, 0.193, 0.795, 0.9,
+          0.467, 0.868, 0.617, 0.437, 0.697, 0.989, 0.507, 0.529, 0.36, 0.024, 0.695, 0.506, 0.642,
+          0.994, 0.418, 0.632, 0.03, 0.082, 0.445, 0.266, 0.766, 0.828, 0.353, 0.084, 0.961, 0.233,
+          0.314, 0.374, 0.411, 0.501, 0.236, 0.696, 0.527, 0.368, 0.464, 0.028, 0.244, 0.06, 0.597,
+          0.667, 0.269, 0.792, 0.263, 0.159, 0.434, 0.255, 0.354, 0.298, 0.978, 0.685, 0.351, 0.448,
+          0.147, 0.608, 0.974, 0.716, 0.768, 0.449, 0.892, 0.252, 0.087, 0.368, 0.91, 0.466, 0.914,
+          0.561, 0.413, 0.905, 0.931, 0.424, 0.401, 0.408, 0.167, 0.667, 0.075, 0.14, 0.179, 0.83,
+          0.18, 0.957, 0.196, 0.151, 0.456, 0.717, 0.143, 0.042, 0.538, 0.271, 0.482, 0.109, 0.637,
+          0.642, 0.474, 0.535, 0.709, 0.231, 0.453, 0.82, 0.783, 0.509, 0.256, 0.658, 0.268, 0.955,
+          0.997, 0.54, 0.293, 0.019, 0.039, 0.308, 0.078, 0.81, 0.976, 0.605, 0.236, 0.405, 0.106,
+          0.456, 0.763, 0.367, 0.319, 0.845, 0.347, 0.251, 0.266, 0.667, 0.646, 0.906, 0.831, 0.774,
+          0.828,
+        ];
+
+        for (let i = 0; i < 50; i++) {
+          plane.position.x = randomNumbers.pop() * 400;
+          plane.position.y = -randomNumbers.pop() * randomNumbers.pop() * 200 - 15;
+          plane.position.z = i;
+
+          plane.rotation.z = randomNumbers.pop() * Math.PI;
+          plane.scale.x = plane.scale.y = randomNumbers.pop() * randomNumbers.pop() * 1.5 + 0.5;
+
+          plane.updateMatrix();
+          geometry.merge(plane.geometry, plane.matrix);
+
+          plane.position.x = plane.position.x + 400;
+
+          plane.updateMatrix();
+          geometry.merge(plane.geometry, plane.matrix);
+        }
+
+        const mesh_1 = new THREE.Mesh(geometry, material);
+        const mesh_2 = new THREE.Mesh(geometry, material);
+
+        mesh_2.position.z = -100;
+
+        scene = new THREE.Scene();
+        scene.add(mesh_1);
+        scene.add(mesh_2);
+
+        startTime = performance.now();
+
+        if (performanceCaveat) {
+          requestAnimationFrame(function () {
+            camera.position.x = 100;
+
+            renderer.render(scene, camera);
+          });
+          return false;
+        }
+
+        if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
+
+        return true;
       }
 
       function renderWebGL(currentTime) {
@@ -1866,7 +1820,12 @@
       self.onmessage = function (e) {
         if (e.data.raf) return renderWebGL(e.data.raf);
 
-        return initWebGL(e.data.canvas, e.data.vertexShaderSource, e.data.fragmentShaderSource);
+        return initWebGL(
+          e.data.canvas,
+          e.data.cloudImage,
+          e.data.vertexShaderSource,
+          e.data.fragmentShaderSource
+        );
       };
     </script>
 
@@ -1919,6 +1878,8 @@
         const width = window.innerWidth;
         const height = window.innerHeight * 0.8;
 
+        const cloudImage = document.getElementById("cloud-image");
+
         if (canvas.transferControlToOffscreen) {
           // We support off-screen canvas!
 
@@ -1930,6 +1891,16 @@
           offscreenCanvas.height = height;
 
           const worker = new Worker(window.URL.createObjectURL(workerCodeBlob));
+
+          const cloudCanvas = document.createElement("canvas");
+          const cloudCanvasContext = cloudCanvas.getContext("2d");
+
+          cloudCanvas.width = 256;
+          cloudCanvas.height = 256;
+
+          cloudCanvasContext.drawImage(cloudImage, 0, 0);
+
+          const cloudImageData = cloudCanvasContext.getImageData(0, 0, 256, 256);
 
           // Start drawing when worker tells us initialization is complete
           worker.onmessage = function (e) {
@@ -1946,6 +1917,7 @@
           worker.postMessage(
             {
               canvas: offscreenCanvas,
+              cloudImage: cloudImageData,
               vertexShaderSource: vertexShaderSource,
               fragmentShaderSource: fragmentShaderSource,
             },
@@ -1954,22 +1926,22 @@
         } else {
           // We don't support offscreen canvas, use normal way
 
-          if (window.fetch == null) return; // doesn't support fetch, probably IE11
+          if (window.Promise == null) return; // doesn't support promise, probably IE11
 
           canvas.width = width;
           canvas.height = height;
 
-          initWebGL(canvas, vertexShaderSource, fragmentShaderSource).then(function (ok) {
-            if (!ok) return;
+          const ok = initWebGL(canvas, cloudImage, vertexShaderSource, fragmentShaderSource);
 
-            const draw = function (totalTime) {
-              if (!pause) renderWebGL(totalTime);
+          if (ok !== true) return;
 
-              requestAnimationFrame(draw);
-            };
+          const draw = function (totalTime) {
+            if (!pause) renderWebGL(totalTime);
 
             requestAnimationFrame(draw);
-          });
+          };
+
+          requestAnimationFrame(draw);
         }
       }
 
@@ -2120,9 +2092,16 @@
       initBgm();
       initUsp();
       initScrollMessage();
-      initCanvas();
       initCarouselScroll();
       backgroundClipFeatureDetection();
     </script>
+
+    <img
+      id="cloud-image"
+      style="display: none"
+      src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ahaqa71ykthag9omoeda"
+      onload="initCanvas()"
+      crossorigin="anonymous"
+    />
   </body>
 </html>
