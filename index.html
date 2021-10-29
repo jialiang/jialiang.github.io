@@ -182,6 +182,8 @@
         opacity: 0;
         color: black;
         background: snow;
+
+        will-change: opacity;
       }
 
       @media (max-width: 45.125rem) {
@@ -1224,8 +1226,8 @@
             target="_blank"
             rel="noopener noreferrer"
             >Closure Compiler</a
-          >. Coupled with a little elbow grease, I managed to shrink the library down to only 60kB
-          minified (20kB gzipped).
+          >. Coupled with a little elbow grease, I managed to shrink the library down to only 40kB
+          minified (14kB gzipped).
         </p>
 
         <p>
@@ -1643,7 +1645,7 @@
       <source src="audios/Thunderclouds.mp3" type="audio/mp3" />
     </audio>
 
-    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1634484087/jialiang.github.io/scripts/three.module.min_qxuq31.js"></script>
+    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635522227/jialiang.github.io/scripts/three.module.min_s7vmat.js"></script>
 
     <script id="vertex-shader-source" type="x-shader/x-vertex">
       varying vec2 vUv;
@@ -1676,7 +1678,7 @@
     <script id="webgl-code">
       if (self.importScripts) {
         self.importScripts(
-          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1634484087/jialiang.github.io/scripts/three.module.min_qxuq31.js"
+          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1635522227/jialiang.github.io/scripts/three.module.min_s7vmat.js"
         );
       }
 
@@ -1795,14 +1797,13 @@
 
         startTime = performance.now();
 
-        if (performanceCaveat) {
-          requestAnimationFrame(function () {
-            camera.position.x = 100;
+        requestAnimationFrame(function () {
+          camera.position.x = 100;
 
-            renderer.render(scene, camera);
-          });
-          return false;
-        }
+          renderer.render(scene, camera);
+        });
+
+        if (performanceCaveat) return false;
 
         if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
 
