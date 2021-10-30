@@ -310,7 +310,7 @@
         max-width: 100%;
         margin: 5rem auto 2rem auto;
         padding: 0 2rem;
-        color: white;
+        color: black;
       }
 
       #personal .text-container-1 {
@@ -328,7 +328,7 @@
 
       #personal .text-container-1 h2 {
         font-size: 3.5rem;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 1.1;
         margin: 0;
         color: white;
@@ -346,7 +346,7 @@
         max-width: 100%;
         padding: 6rem 4rem;
         border-radius: 2.5rem;
-        background: #12213a;
+        background: lightgoldenrodyellow;
       }
 
       #personal ul {
@@ -368,20 +368,11 @@
         font-weight: 700;
         display: inline-block;
         padding: 0.1rem 0.3rem;
-        border-bottom: 3px solid transparent;
-        background: linear-gradient(to right, #00ffe7, #00cfff);
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        -webkit-text-fill-color: transparent;
-      }
-
-      .no-background-clip #personal .link-container {
-        background: transparent;
+        color: #4b623c;
       }
 
       #personal .link-container:hover {
-        -webkit-text-fill-color: #47a6ff;
+        color: #06c;
       }
 
       #personal .link-container:focus {
@@ -390,6 +381,7 @@
 
       #personal .link-subtext {
         font-size: 0.6em;
+        font-weight: 500;
         line-height: 1.5;
         padding: 0 0.3rem;
       }
@@ -484,6 +476,20 @@
         #personal .text-container-2 {
           width: 100%;
           padding: 5rem 0.7rem 7.5rem 0.7rem;
+          color: white;
+          background: #12213a;
+        }
+
+        #personal .link-container {
+          color: #00ffe7;
+        }
+
+        #personal .link-container:hover {
+          color: #47a6ff;
+        }
+
+        #personal .link-subtext {
+          font-weight: 400;
         }
       }
 
@@ -2034,12 +2040,6 @@
         };
       }
 
-      function backgroundClipFeatureDetection() {
-        if (document.body.style.webkitBackgroundClip === undefined) {
-          document.body.className += "no-background-clip";
-        }
-      }
-
       function initUsp() {
         if (!prefersReducedMotion || prefersReducedMotion.matches) return;
 
@@ -2092,7 +2092,6 @@
       initUsp();
       initScrollMessage();
       initCarouselScroll();
-      backgroundClipFeatureDetection();
     </script>
 
     <img
