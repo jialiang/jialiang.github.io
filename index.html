@@ -6,21 +6,21 @@
     <meta name="theme-color" content="#FFF" />
     <link
       rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-regular_nsxhnt.woff2"
+      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Text-400_postip.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-500_irlqws.woff2"
+      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-500_rdt92s.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-700_tmzaa9.woff2"
+      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-700_sqxknw.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -42,12 +42,12 @@
     <style>
       /* roboto-regular - latin */
       @font-face {
-        font-family: "Roboto";
+        font-family: "Sans";
         font-weight: 400;
         font-style: normal;
 
         font-display: swap;
-        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-regular_nsxhnt.woff2")
+        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Text-400_postip.woff2")
             format("woff2"),
           url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-regular_poclwz.woff")
             format("woff");
@@ -55,12 +55,12 @@
 
       /* roboto-500 - latin */
       @font-face {
-        font-family: "Roboto";
+        font-family: "Sans";
         font-weight: 500;
         font-style: normal;
 
         font-display: swap;
-        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-500_irlqws.woff2")
+        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-500_rdt92s.woff2")
             format("woff2"),
           url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-500_neeaxt.woff")
             format("woff");
@@ -68,12 +68,12 @@
 
       /* roboto-700 - latin */
       @font-face {
-        font-family: "Roboto";
+        font-family: "Sans";
         font-weight: 700;
         font-style: normal;
 
         font-display: swap;
-        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-700_tmzaa9.woff2")
+        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-700_sqxknw.woff2")
             format("woff2"),
           url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-700_nibwrv.woff")
             format("woff");
@@ -83,7 +83,7 @@
       /*#region*/
 
       html {
-        font-family: "Roboto", sans-serif;
+        font-family: "Sans", sans-serif;
         width: 100%;
         height: 100%;
         color: black;
@@ -128,7 +128,7 @@
         height: 100vh;
         border-top: 10vh solid snow;
         border-bottom: 10vh solid snow;
-        background: linear-gradient(to bottom right, #753bb0, hotpink, yellow);
+        background: linear-gradient(to bottom right, #cc82ff, hotpink, yellow);
 
         contain: strict;
       }
@@ -174,7 +174,7 @@
 
       header .scroll {
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 400;
         position: fixed;
         bottom: 10px;
         left: 10px;
@@ -204,7 +204,7 @@
       #bgm-button {
         font-family: "Roboto", sans-serif;
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 400;
         position: absolute;
         top: 0.85rem;
         right: 0.7rem;
@@ -249,23 +249,23 @@
       }
 
       #usp p {
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 500;
         width: 45.25rem;
         max-width: 100%;
-        margin: 0 auto 7.5rem auto;
+        margin: 0 auto 10rem auto;
         color: #151516;
       }
 
-      @media (max-width: 26.6875rem) {
+      @media (max-width: 48rem) {
         #usp p {
-          font-size: 8.5vw;
+          font-size: 6.5vw;
         }
       }
 
-      @media (max-width: 190px) {
+      @media (max-width: 32rem) {
         #usp p {
-          font-size: 1.5rem;
+          font-size: 2rem;
         }
       }
 
@@ -280,8 +280,10 @@
       }
 
       #usp li {
+        line-height: 1;
         position: relative;
-        margin-bottom: 3.5rem;
+        margin-bottom: 5rem;
+        letter-spacing: -2px;
       }
 
       #usp .text {
@@ -376,7 +378,7 @@
       }
 
       #personal .link-container:focus {
-        outline: 1px solid #47a6ff;
+        outline: 2px solid #06c;
       }
 
       #personal .link-subtext {
@@ -453,6 +455,7 @@
         }
 
         #personal .text-container-1 {
+          min-width: 0;
           max-width: 100%;
           padding: 3.5rem 0.7rem 0 0.7rem;
           background: #12213a;
@@ -460,7 +463,7 @@
 
         #personal .text-container-1 h2 {
           font-size: 2.5rem;
-          font-weight: 400;
+          font-weight: 500;
           color: #b6ff9b;
         }
 
@@ -488,6 +491,10 @@
           color: #47a6ff;
         }
 
+        #personal .link-container:focus {
+          outline: 1px solid #47a6ff;
+        }
+
         #personal .link-subtext {
           font-weight: 400;
         }
@@ -512,7 +519,7 @@
 
       #projects h2 {
         font-size: 2.5rem;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 1.1;
         box-sizing: border-box;
         width: 72rem;
@@ -723,7 +730,7 @@
 
       #how-its-made h2 {
         font-size: 2.5rem;
-        font-weight: 400;
+        font-weight: 500;
         margin: 0 0 4.5rem 0;
         color: white;
       }
@@ -833,8 +840,9 @@
       <h2 class="visually-hidden">About Me</h2>
 
       <p>
-        The software engineer for when you really need websites that are really fast, beautiful,
-        modern, accessible and easy-to-maintain.
+        The person for when you really need websites that are really Fast, Beautiful, Modern,
+        Accessible and Maintainable.
+        <br />
         <br />
         Always open to new full-time opportunities.
       </p>
@@ -1817,7 +1825,7 @@
       function renderWebGL(currentTime) {
         if (startTime == null) return; // WebGL not finished initializing, ignore draw call
 
-        camera.position.x = (((currentTime - startTime) * 0.0025 + 200 * offset) % 400) + 200;
+        camera.position.x = (((currentTime - startTime) * 0.0025 + 100 + 100 * offset) % 400) + 200;
 
         renderer.render(scene, camera);
       }
