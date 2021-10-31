@@ -40,7 +40,6 @@
     <link rel="canonical" href="https://jialiang.github.io/" />
 
     <style>
-      /* roboto-regular - latin */
       @font-face {
         font-family: "Sans";
         font-weight: 400;
@@ -53,7 +52,6 @@
             format("woff");
       }
 
-      /* roboto-500 - latin */
       @font-face {
         font-family: "Sans";
         font-weight: 500;
@@ -66,7 +64,6 @@
             format("woff");
       }
 
-      /* roboto-700 - latin */
       @font-face {
         font-family: "Sans";
         font-weight: 700;
@@ -128,7 +125,7 @@
         height: 100vh;
         border-top: 10vh solid snow;
         border-bottom: 10vh solid snow;
-        background: linear-gradient(to bottom right, #cc82ff, hotpink, yellow);
+        background: linear-gradient(to bottom right, #935bc8, hotpink, yellow);
 
         contain: strict;
       }
@@ -155,6 +152,7 @@
         box-sizing: border-box;
         height: 100%;
         margin: auto;
+        margin-bottom: 50vh;
         padding: 0 0.7rem;
         text-align: center;
       }
@@ -174,7 +172,7 @@
 
       header .scroll {
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 500;
         position: fixed;
         bottom: 10px;
         left: 10px;
@@ -202,9 +200,9 @@
       }
 
       #bgm-button {
-        font-family: "Roboto", sans-serif;
+        font-family: inherit;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 500;
         position: absolute;
         top: 0.85rem;
         right: 0.7rem;
@@ -231,21 +229,10 @@
         box-sizing: border-box;
         width: 80rem;
         max-width: 100%;
-        margin: 0 auto 15rem auto;
-        padding: 0 0.7rem;
-        text-align: center;
-      }
-
-      @media (max-width: 60.75rem) {
-        #usp {
-          width: 55rem;
-        }
-      }
-
-      @media (max-width: 33.5rem) {
-        #usp {
-          font-size: 17vw;
-        }
+        margin: 0 auto 2rem auto;
+        padding: 8rem 4rem 4rem 4rem;
+        border-radius: 2.5rem;
+        background: #fbdcbe;
       }
 
       #usp ul {
@@ -257,8 +244,12 @@
       #usp li {
         line-height: 1;
         position: relative;
-        margin-bottom: 5rem;
+        margin-bottom: 3.5rem;
         letter-spacing: -2px;
+      }
+
+      #usp li span {
+        color: #744000;
       }
 
       #usp .text {
@@ -273,6 +264,39 @@
         transform: translateY(-50%);
       }
 
+      @media (max-width: 84rem) {
+        #usp {
+          width: 100%;
+          margin-bottom: 0;
+          border-radius: 0;
+        }
+      }
+
+      @media (max-width: 68rem) {
+        #usp {
+          padding-left: 3rem;
+          padding-right: 3rem;
+        }
+
+        #usp ul {
+          max-width: 52.25rem;
+        }
+      }
+
+      @media (max-width: 55rem) {
+        #usp {
+          font-size: 4.6rem;
+          padding-left: 0.7rem;
+          padding-right: 0.7rem;
+        }
+      }
+
+      @media (max-width: 27rem) {
+        #usp {
+          font-size: 17.5vw;
+        }
+      }
+
       /*#endregion*/
 
       /* PERSONAL */
@@ -285,7 +309,7 @@
         box-sizing: border-box;
         width: 84rem;
         max-width: 100%;
-        margin: 5rem auto 2rem auto;
+        margin: 0 auto 2rem auto;
         padding: 0 2rem;
         color: black;
       }
@@ -311,6 +335,10 @@
         color: white;
       }
 
+      #personal .text-container-1 h2 span {
+        display: block;
+      }
+
       #personal .text-container-1 h2 span:first-child {
         color: #ffa9ab;
       }
@@ -319,7 +347,7 @@
         flex-grow: 1;
         flex-shrink: 0;
         box-sizing: border-box;
-        width: 40rem;
+        width: 41rem;
         max-width: 100%;
         padding: 6rem 4rem;
         border-radius: 2.5rem;
@@ -345,21 +373,23 @@
         font-weight: 700;
         display: inline-block;
         padding: 0.1rem 0.3rem;
+        margin-bottom: 0.15rem;
         color: #4b623c;
       }
 
       #personal .link-container:hover {
         color: #06c;
+        text-decoration: 2px underline;
       }
 
       #personal .link-container:focus {
-        outline: 2px solid #06c;
+        outline: 2px dotted #06c;
       }
 
       #personal .link-subtext {
         font-size: 0.6em;
         font-weight: 500;
-        line-height: 1.5;
+        line-height: 1.1;
         padding: 0 0.3rem;
       }
 
@@ -395,7 +425,7 @@
         }
 
         #personal .text-container-2 {
-          width: 35rem;
+          width: 36rem;
           padding-right: 3rem;
           padding-left: 3rem;
         }
@@ -416,7 +446,7 @@
         }
 
         #personal .text-container-2 {
-          width: 33rem;
+          width: 33.25rem;
         }
 
         #personal .text-container-2 li {
@@ -432,14 +462,14 @@
         #personal .text-container-1 {
           min-width: 0;
           max-width: 100%;
-          padding: 3.5rem 0.7rem 0 0.7rem;
-          background: #12213a;
+          padding: 5rem 0.7rem 0.15rem 0.7rem;
+          background: #fafad2;
         }
 
         #personal .text-container-1 h2 {
           font-size: 2.5rem;
           font-weight: 500;
-          color: #b6ff9b;
+          color: #404040;
         }
 
         #personal .text-container-1 h2 span:first-child {
@@ -448,30 +478,13 @@
           line-height: 0.85;
           display: block;
           margin-bottom: 0.15em;
-          color: white;
+          margin-left: -0.035em;
+          color: black;
         }
 
         #personal .text-container-2 {
           width: 100%;
           padding: 5rem 0.7rem 7.5rem 0.7rem;
-          color: white;
-          background: #12213a;
-        }
-
-        #personal .link-container {
-          color: #00ffe7;
-        }
-
-        #personal .link-container:hover {
-          color: #47a6ff;
-        }
-
-        #personal .link-container:focus {
-          outline: 1px solid #47a6ff;
-        }
-
-        #personal .link-subtext {
-          font-weight: 400;
         }
       }
 
@@ -484,7 +497,7 @@
         box-sizing: border-box;
         width: 100%;
         max-width: 80rem;
-        margin: 0 auto 10rem auto;
+        margin: 0 auto 15rem auto;
         padding: 5rem 0;
         border-bottom: 1px solid rgba(255, 200, 250, 0.2);
         border-left: 1px solid rgba(255, 200, 250, 0.2);
@@ -511,6 +524,7 @@
       #projects h2 span:first-child {
         font-size: 1.84em;
         font-weight: 700;
+        margin-left: -0.035em;
       }
 
       #projects ul {
@@ -717,6 +731,7 @@
       #how-its-made h2 span:first-child {
         font-size: 1.84em;
         font-weight: 700;
+        margin-left: -0.035em;
       }
 
       #how-its-made h3 {
@@ -812,23 +827,23 @@
     </header>
 
     <section id="usp">
-      <h2 class="visually-hidden">About Me</h2>
+      <h2 class="visually-hidden">Why Choose Me.</h2>
 
       <ul>
         <li>
-          <div class="text">3+ Years Experience.</div>
+          <div class="text"><span>3 Years</span> Experience.</div>
           <div class="intersection-point"></div>
         </li>
         <li>
-          <div class="text">Full-Stack JavaScript.</div>
+          <div class="text">Full-Stack <span>JavaScript</span>.</div>
           <div class="intersection-point"></div>
         </li>
         <li>
-          <div class="text">Exceptional Frontend.</div>
+          <div class="text">Exceptional <span>Frontend</span>.</div>
           <div class="intersection-point"></div>
         </li>
         <li>
-          <div class="text">Information Systems Graduate.</div>
+          <div class="text">Information Systems <span>Graduate</span>.</div>
           <div class="intersection-point"></div>
         </li>
       </ul>
@@ -836,7 +851,7 @@
 
     <section id="personal">
       <div class="text-container-1">
-        <h2><span>Reach out.</span> <span>Together, we'll reach for the sky.</span></h2>
+        <h2><span>Reach out.</span><span>I'm always open to trying new things.</span></h2>
       </div>
 
       <div class="text-container-2">
@@ -2031,9 +2046,8 @@
             },
             {
               threshold: [
-                0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83,
-                0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97,
-                0.98, 0.99,
+                0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.76, 0.78, 0.8, 0.82, 0.84, 0.86, 0.88, 0.9, 0.92,
+                0.94, 0.96, 0.98, 1.0,
               ],
             }
           );
