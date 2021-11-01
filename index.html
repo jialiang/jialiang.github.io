@@ -89,7 +89,7 @@
 
       @media (max-width: 18.75rem) {
         html {
-          font-size: 5.2vw;
+          font-size: 5.2vmin;
         }
       }
 
@@ -153,7 +153,7 @@
         height: 100%;
         margin: auto;
         margin-bottom: 50vh;
-        padding: 0 0.7rem;
+        padding: 0 1rem;
         text-align: center;
       }
 
@@ -190,6 +190,18 @@
         }
       }
 
+      @media (min-aspect-ratio: 2 / 1) and (max-height: 26.25rem) {
+        header {
+          font-size: 33vh;
+        }
+      }
+
+      @media (max-aspect-ratio: 2 / 1) and (min-aspect-ratio: 1 / 1) and (max-height: 26.25rem) {
+        header {
+          font-size: 22vh;
+        }
+      }
+
       /*#endregion*/
 
       /* BGM */
@@ -205,7 +217,7 @@
         font-weight: 500;
         position: absolute;
         top: 0.85rem;
-        right: 0.7rem;
+        right: 1rem;
         padding: 0.15rem 0.3rem;
         cursor: pointer;
         color: black;
@@ -214,7 +226,8 @@
       }
 
       #bgm-button:focus {
-        outline: 1px solid #47a6ff;
+        outline: 2px solid #47a6ff;
+        outline-offset: 2px;
       }
 
       /*#endregion*/
@@ -232,7 +245,8 @@
         margin: 0 auto 2rem auto;
         padding: 8rem 4rem 4rem 4rem;
         border-radius: 2.5rem;
-        background: #fbdcbe;
+        background: #fdedcb;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
       #usp ul {
@@ -264,39 +278,6 @@
         transform: translateY(-50%);
       }
 
-      @media (max-width: 84rem) {
-        #usp {
-          width: 100%;
-          margin-bottom: 0;
-          border-radius: 0;
-        }
-      }
-
-      @media (max-width: 68rem) {
-        #usp {
-          padding-left: 3rem;
-          padding-right: 3rem;
-        }
-
-        #usp ul {
-          max-width: 52.25rem;
-        }
-      }
-
-      @media (max-width: 55rem) {
-        #usp {
-          font-size: 4.6rem;
-          padding-left: 0.7rem;
-          padding-right: 0.7rem;
-        }
-      }
-
-      @media (max-width: 27rem) {
-        #usp {
-          font-size: 17.5vw;
-        }
-      }
-
       /*#endregion*/
 
       /* PERSONAL */
@@ -324,7 +305,8 @@
         margin-right: 2rem;
         padding: 4rem;
         border-radius: 2.5rem;
-        background: #151516;
+        background: #2b193e;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
       #personal .text-container-1 h2 {
@@ -340,7 +322,7 @@
       }
 
       #personal .text-container-1 h2 span:first-child {
-        color: #ffa9ab;
+        color: #fec2eb;
       }
 
       #personal .text-container-2 {
@@ -349,9 +331,10 @@
         box-sizing: border-box;
         width: 41rem;
         max-width: 100%;
-        padding: 6rem 4rem;
+        padding: 5rem 2.5rem;
         border-radius: 2.5rem;
-        background: lightgoldenrodyellow;
+        background: #fcedea;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
       #personal ul {
@@ -362,28 +345,49 @@
       }
 
       #personal li {
-        margin: 0 0 3.2rem 0;
+        display: inline-block;
+        margin: 0 0 2.5rem 0;
       }
 
       #personal li:last-child {
         margin-bottom: 0;
       }
 
-      #personal .link-container {
+      #personal a {
+        display: block;
+        padding: 1rem;
+        border-radius: 2.5rem;
+        border-radius: 2rem;
+        background: #f4b6b0;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      #personal a:hover {
+        text-decoration: none;
+        background: #4b1f12;
+      }
+
+      #personal a:hover .link-text {
+        color: #f4b6b0;
+      }
+
+      #personal a:hover .link-subtext {
+        color: white;
+      }
+
+      #personal a:focus {
+        outline: 2px solid #06c;
+        outline-offset: 2px;
+      }
+
+      #personal .link-text {
         font-weight: 700;
+        line-height: 1.1;
+        position: relative;
         display: inline-block;
+        margin-bottom: 0.5rem;
         padding: 0.1rem 0.3rem;
-        margin-bottom: 0.15rem;
-        color: #4b623c;
-      }
-
-      #personal .link-container:hover {
-        color: #06c;
-        text-decoration: 2px underline;
-      }
-
-      #personal .link-container:focus {
-        outline: 2px dotted #06c;
+        color: #4b1f12;
       }
 
       #personal .link-subtext {
@@ -391,101 +395,7 @@
         font-weight: 500;
         line-height: 1.1;
         padding: 0 0.3rem;
-      }
-
-      @media (max-width: 84rem) {
-        #personal {
-          margin-bottom: 0;
-        }
-
-        #personal {
-          padding: 0;
-        }
-
-        #personal .text-container-1 {
-          margin-right: 0;
-          border-radius: 0;
-        }
-
-        #personal .text-container-2 {
-          border-radius: 0;
-        }
-      }
-
-      @media (max-width: 68rem) {
-        #personal .text-container-1 {
-          min-width: 22rem;
-          max-width: 27rem;
-          padding-right: 3rem;
-          padding-left: 3rem;
-        }
-
-        #personal .text-container-1 h2 {
-          font-size: 3.25rem;
-        }
-
-        #personal .text-container-2 {
-          width: 36rem;
-          padding-right: 3rem;
-          padding-left: 3rem;
-        }
-
-        #personal .text-container-2 li {
-          font-size: 2.75rem;
-        }
-      }
-
-      @media (max-width: 58rem) {
-        #personal .text-container-1 {
-          min-width: 21rem;
-          max-width: 26rem;
-        }
-
-        #personal .text-container-1 h2 {
-          font-size: 3rem;
-        }
-
-        #personal .text-container-2 {
-          width: 33.25rem;
-        }
-
-        #personal .text-container-2 li {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 55rem) {
-        #personal {
-          flex-direction: column;
-        }
-
-        #personal .text-container-1 {
-          min-width: 0;
-          max-width: 100%;
-          padding: 5rem 0.7rem 0.15rem 0.7rem;
-          background: #fafad2;
-        }
-
-        #personal .text-container-1 h2 {
-          font-size: 2.5rem;
-          font-weight: 500;
-          color: #404040;
-        }
-
-        #personal .text-container-1 h2 span:first-child {
-          font-size: 1.84em;
-          font-weight: bold;
-          line-height: 0.85;
-          display: block;
-          margin-bottom: 0.15em;
-          margin-left: -0.035em;
-          color: black;
-        }
-
-        #personal .text-container-2 {
-          width: 100%;
-          padding: 5rem 0.7rem 7.5rem 0.7rem;
-        }
+        color: black;
       }
 
       /*#endregion*/
@@ -503,6 +413,7 @@
         border-left: 1px solid rgba(255, 200, 250, 0.2);
         border-radius: 2.5rem;
         background: #3e1921;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
       #projects h2 {
@@ -513,7 +424,7 @@
         width: 72rem;
         max-width: 100%;
         margin: 0 auto 4.5rem auto;
-        padding: 0 1rem;
+        padding: 0 2rem;
         color: white;
       }
 
@@ -671,13 +582,42 @@
         height: 100%;
       }
 
+      /*#endregion*/
+
+      /* Media Queries */
+
       @media (max-width: 84rem) {
+        #usp {
+          width: 100%;
+          margin-bottom: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        #personal {
+          width: 100%;
+          margin-bottom: 0;
+          padding: 0;
+        }
+
+        #personal .text-container-1 {
+          margin-right: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        #personal .text-container-2 {
+          border-radius: 0;
+          box-shadow: none;
+        }
+
         #projects {
           max-width: 100%;
           margin-bottom: 0;
           border-bottom: none;
           border-left: none;
           border-radius: 0;
+          box-shadow: none;
         }
       }
 
@@ -688,6 +628,111 @@
 
         #projects .carousel-button-container {
           display: flex;
+        }
+      }
+
+      @media (max-width: 68rem) {
+        #usp {
+          padding-right: 3rem;
+          padding-left: 3rem;
+        }
+
+        #usp ul {
+          max-width: 52rem;
+        }
+
+        #personal .text-container-1 {
+          min-width: 22rem;
+          max-width: 27rem;
+          padding-right: 3rem;
+          padding-left: 3rem;
+        }
+
+        #personal .text-container-1 h2 {
+          font-size: 3.25rem;
+        }
+
+        #personal .text-container-2 {
+          width: 36rem;
+          padding-right: 2rem;
+          padding-left: 2rem;
+        }
+
+        #personal .text-container-2 li {
+          font-size: 2.75rem;
+        }
+      }
+
+      @media (max-width: 60rem) {
+        #usp {
+          font-size: 4.6rem;
+          padding-right: 2rem;
+          padding-left: 2rem;
+        }
+
+        #personal {
+          flex-direction: column;
+        }
+
+        #personal .text-container-1 {
+          min-width: 0;
+          max-width: 100%;
+          padding: 5rem 2rem 0.15rem 2rem;
+          background: #fcedea;
+        }
+
+        #personal .text-container-1 h2 {
+          font-size: 2.5rem;
+          font-weight: 500;
+          color: #404040;
+        }
+
+        #personal .text-container-1 h2 span:first-child {
+          font-size: 1.84em;
+          font-weight: bold;
+          line-height: 0.85;
+          display: block;
+          margin-bottom: 0.15em;
+          margin-left: -0.035em;
+          color: black;
+        }
+
+        #personal .text-container-2 {
+          width: 100%;
+          padding: 5rem 2rem;
+        }
+
+        #personal .text-container-2 ul {
+          max-width: 40rem;
+        }
+      }
+
+      @media (max-width: 50rem) {
+        #usp ul {
+          max-width: 39rem;
+        }
+      }
+
+      @media (max-width: 36rem) {
+        #personal .text-container-2 a {
+          max-width: 16rem;
+        }
+      }
+
+      @media (max-width: 28.5rem) {
+        #usp {
+          font-size: 17.5vw;
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+
+        #personal .text-container-1,
+        #personal .text-container-2 {
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+        #projects h2 {
+          padding: 0 1rem;
         }
       }
 
@@ -857,26 +902,24 @@
       <div class="text-container-2">
         <ul>
           <li>
-            <a class="link-container" href="mailto:hojialiang@yahoo.com"
-              >hojialiang@<wbr />yahoo.com</a
-            >
-            <div class="link-subtext">Let's get in touch.</div>
+            <a href="mailto:hojialiang@yahoo.com">
+              <div class="link-text">hojialiang@<wbr />yahoo.com</div>
+              <div class="link-subtext">Let's get in touch.</div>
+            </a>
           </li>
 
           <li>
-            <a class="link-container" href="resume.pdf" target="_blank">View my Resume.</a>
-            <div class="link-subtext">Learn more about me.</div>
+            <a href="resume.pdf" target="_blank">
+              <div class="link-text">View my Resume</div>
+              <div class="link-subtext">Learn more about me.</div>
+            </a>
           </li>
 
           <li>
-            <a
-              class="link-container"
-              href="https://github.com/jialiang"
-              target="_blank"
-              rel="noreferrer noopener"
-              >Visit my GitHub.</a
-            >
-            <div class="link-subtext">See what I'm currently up to.</div>
+            <a href="https://github.com/jialiang" target="_blank" rel="noreferrer noopener">
+              <div class="link-text">Visit my GitHub</div>
+              <div class="link-subtext">See what I'm currently up to.</div>
+            </a>
           </li>
         </ul>
       </div>
@@ -1017,7 +1060,7 @@
       <div class="article">
         <h2>
           <span>How.</span>
-          <span style="color: #ffa9ab">The making of this website.</span>
+          <span style="color: #72e5ce">The making of this website.</span>
         </h2>
 
         <p>
@@ -1642,7 +1685,7 @@
       <source src="audios/Thunderclouds.mp3" type="audio/mp3" />
     </audio>
 
-    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635522227/jialiang.github.io/scripts/three.module.min_s7vmat.js"></script>
+    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635775926/jialiang.github.io/scripts/three.module.min_oukweh.js"></script>
 
     <script id="vertex-shader-source" type="x-shader/x-vertex">
       varying vec2 vUv;
@@ -1675,7 +1718,7 @@
     <script id="webgl-code">
       if (self.importScripts) {
         self.importScripts(
-          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1635522227/jialiang.github.io/scripts/three.module.min_s7vmat.js"
+          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1635775926/jialiang.github.io/scripts/three.module.min_oukweh.js"
         );
       }
 
