@@ -226,7 +226,7 @@
       }
 
       #bgm-button:focus {
-        outline: 2px solid #47a6ff;
+        outline: 2px solid #06c;
         outline-offset: 2px;
       }
 
@@ -305,7 +305,7 @@
         margin-right: 2rem;
         padding: 4rem;
         border-radius: 2.5rem;
-        background: #2b193e;
+        background: #2f2330;
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
@@ -322,7 +322,7 @@
       }
 
       #personal .text-container-1 h2 span:first-child {
-        color: #fec2eb;
+        color: #ffc1eb;
       }
 
       #personal .text-container-2 {
@@ -356,6 +356,7 @@
       #personal a {
         display: block;
         padding: 1rem;
+        transition: 0.25s transform;
         border-radius: 2.5rem;
         border-radius: 2rem;
         background: #f4b6b0;
@@ -363,21 +364,21 @@
       }
 
       #personal a:hover {
+        transform: scale(1.025);
         text-decoration: none;
-        background: #4b1f12;
-      }
 
-      #personal a:hover .link-text {
-        color: #f4b6b0;
-      }
-
-      #personal a:hover .link-subtext {
-        color: white;
+        filter: brightness(1.1);
       }
 
       #personal a:focus {
         outline: 2px solid #06c;
         outline-offset: 2px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #projects a {
+          transform: none !important;
+        }
       }
 
       #personal .link-text {
@@ -412,7 +413,7 @@
         border-bottom: 1px solid rgba(255, 200, 250, 0.2);
         border-left: 1px solid rgba(255, 200, 250, 0.2);
         border-radius: 2.5rem;
-        background: #3e1921;
+        background: #fff7b3;
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
@@ -421,11 +422,11 @@
         font-weight: 500;
         line-height: 1.1;
         box-sizing: border-box;
-        width: 72rem;
+        width: 82rem;
         max-width: 100%;
         margin: 0 auto 4.5rem auto;
-        padding: 0 2rem;
-        color: white;
+        padding: 0 4rem;
+        color: black;
       }
 
       #projects h2 span {
@@ -442,10 +443,10 @@
         display: flex;
         overflow-y: auto;
         box-sizing: border-box;
-        width: 74rem;
+        width: 84rem;
         max-width: 100%;
         margin: 0 auto;
-        padding: 1.4rem 1.4rem;
+        padding: 1.4rem 4rem 1.4rem 4.67rem;
         list-style: none;
         transform: translate3d(0, 0, 0);
 
@@ -457,7 +458,7 @@
       }
 
       #projects ul:focus {
-        outline: 1px solid #47a6ff;
+        outline: 1px solid #06c;
       }
 
       #projects li {
@@ -481,15 +482,15 @@
 
       #projects li:hover {
         transform: perspective(250px) rotateY(0deg);
-        border-bottom-color: #47a6ff;
+        border-bottom-color: #06c;
       }
 
       #projects a {
         display: block;
         width: 16rem;
         height: 23rem;
-        padding: 0.3rem;
         border-radius: 0.75rem;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
       #projects a:hover {
@@ -497,7 +498,8 @@
       }
 
       #projects a:focus {
-        outline: 2px solid #47a6ff;
+        outline: 2px solid #06c;
+        outline-offset: 0.3rem;
       }
 
       #projects .image-container {
@@ -522,7 +524,7 @@
         height: 7rem;
         padding: 0.25rem;
         text-align: center;
-        color: white;
+        color: black;
         border-bottom-right-radius: 0.75rem;
         border-bottom-left-radius: 0.75rem;
       }
@@ -538,28 +540,30 @@
         pointer-events: none;
         background: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.1),
           transparent,
           transparent,
-          rgba(0, 0, 0, 0.35)
+          rgba(0, 0, 0, 0.1)
         );
       }
 
       #projects .text-container div {
         overflow: hidden;
         padding: 0.75rem 0.5rem;
+        opacity: 0.75;
       }
 
       #projects a:hover .text-container::after {
-        border-bottom: 6px solid #47a6ff;
+        border-bottom: 6px solid #06c;
       }
 
       #projects .carousel-button-container {
         display: none;
         justify-content: space-between;
-        width: 135rem;
+        width: 84rem;
         max-width: 90%;
         margin: 2.5rem auto 0 auto;
+        padding: 0 4rem;
       }
 
       #projects .carousel-button-container button {
@@ -567,24 +571,26 @@
         height: 4rem;
         padding: 0;
         cursor: pointer;
-        color: white;
+        color: black;
         border: none;
         border-radius: 100%;
         background: none;
       }
 
       #projects .carousel-button-container button:focus {
-        outline: 2px solid #47a6ff;
+        outline: 2px solid #06c;
       }
 
       #projects .carousel-button-container svg {
         width: 100%;
         height: 100%;
+
+        filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.2));
       }
 
       /*#endregion*/
 
-      /* Media Queries */
+      /* MEDIA QUERIES */
 
       @media (max-width: 84rem) {
         #usp {
@@ -632,7 +638,9 @@
       }
 
       @media (max-width: 68rem) {
-        #usp {
+        #usp,
+        #projects h2,
+        #projects .carousel-button-container {
           padding-right: 3rem;
           padding-left: 3rem;
         }
@@ -660,6 +668,11 @@
 
         #personal .text-container-2 li {
           font-size: 2.75rem;
+        }
+
+        #projects ul {
+          padding-right: 3rem;
+          padding-left: 3.67rem;
         }
       }
 
@@ -705,6 +718,17 @@
         #personal .text-container-2 ul {
           max-width: 40rem;
         }
+
+        #projects h2,
+        #projects .carousel-button-container {
+          padding-right: 2rem;
+          padding-left: 2rem;
+        }
+
+        #projects ul {
+          padding-right: 2rem;
+          padding-left: 2.67rem;
+        }
       }
 
       @media (max-width: 50rem) {
@@ -727,12 +751,16 @@
         }
 
         #personal .text-container-1,
-        #personal .text-container-2 {
+        #personal .text-container-2,
+        #projects h2,
+        #projects .carousel-button-container {
           padding-right: 1rem;
           padding-left: 1rem;
         }
-        #projects h2 {
-          padding: 0 1rem;
+
+        #projects ul {
+          padding-right: 1rem;
+          padding-left: 1.67rem;
         }
       }
 
@@ -928,7 +956,7 @@
     <section id="projects">
       <h2>
         <span>Explore.</span>
-        <span style="color: #ffb44c">My personal projects.</span>
+        <span style="color: #544d2d">My personal projects.</span>
       </h2>
       <ul id="project-carousel">
         <li>
@@ -952,7 +980,7 @@
                 />
               </picture>
             </div>
-            <div class="text-container" style="background: #005c5c">
+            <div class="text-container" style="background: #9effff">
               <div>3D Engine For Miku</div>
             </div>
           </a>
@@ -978,7 +1006,7 @@
                 />
               </picture>
             </div>
-            <div class="text-container" style="background: #2f4790">
+            <div class="text-container" style="background: #9eadff">
               <div>Space Gems</div>
             </div>
           </a>
@@ -1004,7 +1032,7 @@
                 />
               </picture>
             </div>
-            <div class="text-container" style="background: #99350a">
+            <div class="text-container" style="background: #ffc79e">
               <div>Shit Compressor</div>
             </div>
           </a>
@@ -1030,7 +1058,7 @@
                 />
               </picture>
             </div>
-            <div class="text-container" style="background: #a9194b">
+            <div class="text-container" style="background: #ff9ebe">
               <div>Yu-Gi-Oh Secret Rare Effect with CSS</div>
             </div>
           </a>
@@ -1038,14 +1066,14 @@
       </ul>
       <div class="carousel-button-container">
         <button id="project-carousel-left-button" aria-label="scroll projects carousel left">
-          <svg fill="white" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+          <svg fill="black" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
             <path
               d="m1037 1395 102-102q19-19 19-45t-19-45L832 896l307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19L493 851q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
             ></path>
           </svg>
         </button>
         <button id="project-carousel-right-button" aria-label="scroll projects carousel right">
-          <svg fill="white" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+          <svg fill="black" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
             <path
               d="m845 1395 454-454q19-19 19-45t-19-45L845 397q-19-19-45-19t-45 19L653 499q-19 19-19 45t19 45l307 307-307 307q-19 19-19 45t19 45l102 102q19 19 45 19t45-19zm819-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
             ></path>
