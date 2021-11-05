@@ -87,9 +87,9 @@
         background: white;
       }
 
-      @media (max-width: 18.75rem) {
+      @media (max-width: 22.5rem) {
         html {
-          font-size: 5.2vmin;
+          font-size: 4.44vmin;
         }
       }
 
@@ -125,7 +125,7 @@
         height: 100vh;
         border-top: 10vh solid snow;
         border-bottom: 10vh solid snow;
-        background: linear-gradient(to bottom right, #935bc8, hotpink, yellow);
+        background: linear-gradient(to bottom right, #a547ff, hotpink, yellow);
 
         contain: strict;
       }
@@ -212,11 +212,17 @@
         position: absolute;
         top: 0.85rem;
         right: 1rem;
-        padding: 0.15rem 0.3rem;
+        padding: 0.15rem 0.5rem;
         cursor: pointer;
         color: black;
         border: 2px solid black;
+        border-radius: 2em;
         background: white;
+      }
+
+      #bgm-button:hover {
+        color: white;
+        background: black;
       }
 
       #bgm-button:focus {
@@ -235,7 +241,7 @@
         line-height: 1.1;
         box-sizing: border-box;
         width: 80rem;
-        max-width: 100%;
+        max-width: calc(100% - 4rem);
         margin: 0 auto 2rem auto;
         padding: 8rem 4rem 4rem 4rem;
         border-radius: 2.5rem;
@@ -280,6 +286,7 @@
         position: relative;
         display: flex;
         align-items: stretch;
+        justify-content: center;
         box-sizing: border-box;
         width: 84rem;
         max-width: 100%;
@@ -326,12 +333,33 @@
         max-width: 100%;
         padding: 5rem 2.5rem;
         border-radius: 2.5rem;
-        background: #fcedea;
+        background: #fdedee;
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      #personal .text-container-2 h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 1.1;
+        display: none;
+        margin: 0 0 4.5rem 0;
+      }
+
+      #personal .text-container-2 h2 span {
+        display: block;
+      }
+
+      #personal .text-container-2 h2 span:first-child {
+        font-size: 1.84em;
+        font-weight: 700;
+        line-height: 0.85;
+        margin-bottom: 0.15em;
+        margin-left: -0.035em;
       }
 
       #personal ul {
         font-size: 3rem;
+        max-width: 45rem;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -351,7 +379,7 @@
         padding: 1rem;
         transition: 0.25s transform;
         border-radius: 2rem;
-        background: #f4b6b0;
+        background: #ffdad4;
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
@@ -398,8 +426,8 @@
 
       #projects {
         box-sizing: border-box;
-        width: 100%;
-        max-width: 80rem;
+        width: 80rem;
+        max-width: calc(100% - 4rem);
         margin: 0 auto 15rem auto;
         padding: 5rem 0;
         border-radius: 2.5rem;
@@ -563,6 +591,10 @@
         background: none;
       }
 
+      #projects .carousel-button-container button:hover svg {
+        fill: #a75c00;
+      }
+
       #projects .carousel-button-container button:focus {
         outline: 2px solid #06c;
       }
@@ -597,7 +629,7 @@
         width: 40rem;
         max-width: 100%;
         margin: -80vh auto 0 auto;
-        padding: 0 4rem;
+        padding: 0 2.5rem;
       }
 
       #how-its-made h2 {
@@ -679,165 +711,88 @@
       /*#region*/
 
       @media (max-width: 84rem) {
-        #usp {
-          width: 100%;
-          margin-bottom: 0;
-          border-radius: 0;
-          box-shadow: none;
-        }
-
-        #personal {
-          width: 100%;
-          margin-bottom: 0;
-          padding: 0;
-        }
-
-        #personal .text-container-1 {
-          margin-right: 0;
-          border-radius: 0;
-          box-shadow: none;
-        }
-
-        #personal .text-container-2 {
-          border-radius: 0;
-          box-shadow: none;
-        }
-
-        #projects {
-          max-width: 100%;
-          margin-bottom: 0;
-          border-bottom: none;
-          border-left: none;
-          border-radius: 0;
-          box-shadow: none;
-        }
-      }
-
-      @media (max-width: 76rem) {
-        #projects li:last-child {
-          margin-right: 2rem;
-        }
-
         #projects .carousel-button-container {
           display: flex;
         }
       }
 
-      @media (max-width: 68rem) {
+      @media (max-width: 75rem) {
+        #usp {
+          font-size: 5.5rem;
+        }
+
         #usp,
         #projects h2,
         #projects ul,
-        #projects .carousel-button-container,
-        #how-its-made .article {
-          padding-right: 3rem;
-          padding-left: 3rem;
-        }
-
-        #usp ul {
-          max-width: 52rem;
+        #projects .carousel-button-container {
+          padding-right: 2.5rem;
+          padding-left: 2.5rem;
         }
 
         #personal .text-container-1 {
-          min-width: 22rem;
-          max-width: 27rem;
-          padding-right: 3rem;
-          padding-left: 3rem;
+          display: none;
         }
 
-        #personal .text-container-1 h2 {
-          font-size: 3.25rem;
-        }
-
-        #personal .text-container-2 {
-          width: 36rem;
-          padding-right: 2rem;
-          padding-left: 2rem;
-        }
-
-        #personal .text-container-2 li {
-          font-size: 2.75rem;
+        #personal .text-container-2 h2 {
+          display: block;
         }
       }
 
-      @media (max-width: 60rem) {
+      @media (max-width: 70rem) {
+        #usp ul {
+          max-width: 47rem;
+        }
+      }
+
+      @media (max-width: 45rem) {
         #usp {
-          font-size: 4.6rem;
-          padding-right: 2rem;
-          padding-left: 2rem;
+          font-size: 5rem;
+        }
+
+        #personal ul {
+          max-width: 20rem;
+        }
+      }
+
+      @media (max-width: 38.75rem) {
+        #usp,
+        #personal,
+        #personal .text-container-2,
+        #projects {
+          max-width: 100%;
+          margin: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        #usp {
+          padding-bottom: 2rem;
         }
 
         #personal {
-          flex-direction: column;
-        }
-
-        #personal .text-container-1 {
-          min-width: 0;
-          max-width: 100%;
-          padding: 5rem 2rem 0.15rem 2rem;
-          background: #fcedea;
-        }
-
-        #personal .text-container-1 h2 {
-          font-size: 2.5rem;
-          font-weight: 500;
-          color: #404040;
-        }
-
-        #personal .text-container-1 h2 span:first-child {
-          font-size: 1.84em;
-          font-weight: bold;
-          line-height: 0.85;
-          display: block;
-          margin-bottom: 0.15em;
-          margin-left: -0.035em;
-          color: black;
-        }
-
-        #personal .text-container-2 {
-          width: 100%;
-          padding: 5rem 2rem;
-        }
-
-        #personal .text-container-2 ul {
-          max-width: 40rem;
-        }
-
-        #projects h2,
-        #projects ul,
-        #projects .carousel-button-container,
-        #how-its-made .article {
-          padding-right: 2rem;
-          padding-left: 2rem;
+          padding: 0;
         }
       }
 
-      @media (max-width: 50rem) {
-        #usp ul {
-          max-width: 39rem;
-        }
-      }
-
-      @media (max-width: 36rem) {
-        #personal .text-container-2 a {
-          max-width: 16rem;
-        }
-      }
-
-      @media (max-width: 28.5rem) {
+      @media (max-width: 31.25rem) {
         #usp {
-          font-size: 17.5vw;
+          font-size: calc(0.175 * (100vw - 2rem));
           padding-right: 1rem;
           padding-left: 1rem;
         }
 
-        #personal .text-container-1,
         #personal .text-container-2,
         #projects h2,
         #projects ul,
-        #projects .carousel-button-container,
-        #how-its-made .article {
+        #how-its-made .article,
+        #projects .carousel-button-container {
           padding-right: 1rem;
           padding-left: 1rem;
+        }
+
+        #personal ul {
+          font-size: 2.5rem;
+          max-width: 17rem;
         }
       }
 
@@ -906,6 +861,10 @@
       </div>
 
       <div class="text-container-2">
+        <h2>
+          <span>Reach out.</span
+          ><span style="color: #404040">I'm always open to trying new things.</span>
+        </h2>
         <ul>
           <li>
             <a href="mailto:hojialiang@yahoo.com">
@@ -934,7 +893,7 @@
     <section id="projects">
       <h2>
         <span>Explore.</span>
-        <span style="color: #544d2d">My personal projects.</span>
+        <span style="color: #a75c00">My personal projects.</span>
       </h2>
       <ul id="project-carousel">
         <li>
