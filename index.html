@@ -527,7 +527,6 @@
         font-size: 1.35rem;
         font-weight: 500;
         line-height: 1.1;
-        position: relative;
         display: flex;
         overflow: hidden;
         align-items: center;
@@ -542,24 +541,6 @@
         border-bottom-left-radius: 1rem;
       }
 
-      #projects .text-container::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        content: "";
-        pointer-events: none;
-        background: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.1),
-          transparent,
-          transparent,
-          rgba(0, 0, 0, 0.1)
-        );
-      }
-
       #projects .text-container div {
         overflow: hidden;
         padding: 0.75rem 0.5rem;
@@ -571,7 +552,7 @@
       }
 
       #projects .carousel-button-container {
-        display: none;
+        display: flex;
         justify-content: space-between;
         box-sizing: border-box;
         width: 84rem;
@@ -709,12 +690,6 @@
 
       /* MEDIA QUERIES */
       /*#region*/
-
-      @media (max-width: 84rem) {
-        #projects .carousel-button-container {
-          display: flex;
-        }
-      }
 
       @media (max-width: 75rem) {
         #usp {
@@ -997,6 +972,32 @@
             </div>
             <div class="text-container" style="background: #ff9ebe">
               <div>Yu-Gi-Oh Secret Rare Effect with CSS</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://jialiang.github.io/pure-css-android-12-scallop-clock/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Pure CSS Android 12 Clock project"
+          >
+            <div class="image-container">
+              <picture>
+                <source
+                  srcset="
+                    https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/iae2zvujw8rxccbytvm3.avif
+                  "
+                  type="image/avif"
+                />
+                <img
+                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/iae2zvujw8rxccbytvm3"
+                  alt="Pure CSS Android 12 Clock cover image"
+                />
+              </picture>
+            </div>
+            <div class="text-container" style="background: #ffecc9">
+              <div>Pure CSS Android 12 Clock</div>
             </div>
           </a>
         </li>
@@ -1941,6 +1942,8 @@
       }
 
       function initCarouselScroll() {
+        const projectCount = 5;
+
         const carousel = document.getElementById("project-carousel");
         const cards = document.querySelectorAll("#project-carousel li");
         const left = document.getElementById("project-carousel-left-button");
@@ -1951,7 +1954,7 @@
 
           const scrollPos = carousel.scrollLeft;
           const carouselWidth = carousel.scrollWidth;
-          const halfCardWidth = (8 * carouselWidth) / 74;
+          const halfCardWidth = ((carouselWidth / (projectCount * 18)) * 16) / 2;
           const halfWindowWidth = window.innerWidth / 2;
           const carouselMiddlePos = scrollPos + halfWindowWidth;
 
