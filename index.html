@@ -138,6 +138,18 @@
         margin: 0;
       }
 
+      .left-arrow {
+        transform: rotateZ(0deg);
+      }
+
+      .right-arrow {
+        transform: rotateZ(180deg);
+      }
+
+      .top-arrow {
+        transform: rotateZ(90deg);
+      }
+
       /*#endregion*/
 
       /* HEADER */
@@ -184,7 +196,7 @@
         will-change: opacity;
       }
 
-      @media (max-width: 45.125rem) {
+      @media (max-width: 45.5rem) {
         header {
           font-size: 21vw;
         }
@@ -357,6 +369,10 @@
         margin-left: -0.035em;
       }
 
+      #personal .text-container-2 h2 span:last-child {
+        color: #404040;
+      }
+
       #personal ul {
         font-size: 3rem;
         max-width: 45rem;
@@ -457,6 +473,10 @@
         margin-left: -0.035em;
       }
 
+      #projects h2 span:last-child {
+        color: #a75c00;
+      }
+
       #projects ul {
         display: flex;
         overflow-y: auto;
@@ -464,11 +484,18 @@
         width: 84rem;
         max-width: 100%;
         margin: 0 auto;
-        padding: 1.4rem 4rem;
+        padding: 1.4rem 0 1.4rem 4rem;
         list-style: none;
         transform: translate3d(0, 0, 0);
 
         scrollbar-width: none;
+      }
+
+      #projects ul:after {
+        display: inline-block;
+        flex-shrink: 0;
+        width: 4rem;
+        content: "";
       }
 
       #projects ul::-webkit-scrollbar {
@@ -601,8 +628,44 @@
       #how-its-made .observation-point {
         position: sticky;
         top: 0;
+        left: 0;
         width: 1px;
         height: 80vh;
+      }
+
+      #how-its-made .back-to-top-container {
+        position: sticky;
+        top: calc(100% - 4.85rem);
+        left: 0;
+        width: calc(100% + 6.5rem);
+        max-width: calc(100% + (50vw - 50%) - 1rem);
+        margin: auto;
+        text-align: right;
+        pointer-events: none;
+      }
+
+      @media all and (-ms-high-contrast: none) {
+        #how-its-made .back-to-top-container {
+          visibility: hidden;
+        }
+      }
+
+      #how-its-made .back-to-top {
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+        pointer-events: auto;
+        border-radius: 100%;
+        background: black;
+      }
+
+      #how-its-made .back-to-top:hover svg {
+        fill: #72e5ce;
+      }
+
+      #how-its-made .back-to-top:focus {
+        outline: 2px solid #06c;
       }
 
       #how-its-made .article {
@@ -630,6 +693,10 @@
         margin-left: -0.035em;
       }
 
+      #how-its-made h2 span:last-child {
+        color: #72e5ce;
+      }
+
       #how-its-made h3 {
         font-size: 2rem;
         font-weight: 700;
@@ -644,8 +711,13 @@
         color: white;
       }
 
+      #how-its-made #article-introduction {
+        margin-top: -1.5rem;
+      }
+
       #how-its-made p,
       #how-its-made ul,
+      #how-its-made nav,
       #how-its-made blockquote {
         font-size: 1.25rem;
         line-height: 1.44;
@@ -660,7 +732,7 @@
         background: #202021;
       }
 
-      #how-its-made ol {
+      #how-its-made blockquote ol {
         margin: 0;
       }
 
@@ -837,8 +909,8 @@
 
       <div class="text-container-2">
         <h2>
-          <span>Reach out.</span
-          ><span style="color: #404040">I'm always open to trying new things.</span>
+          <span>Reach out.</span>
+          <span>I'm always open to trying new things.</span>
         </h2>
         <ul>
           <li>
@@ -868,7 +940,7 @@
     <section id="projects">
       <h2>
         <span>Explore.</span>
-        <span style="color: #a75c00">My personal projects.</span>
+        <span>My personal projects.</span>
       </h2>
       <ul id="project-carousel">
         <li>
@@ -1004,16 +1076,26 @@
       </ul>
       <div class="carousel-button-container">
         <button id="project-carousel-left-button" aria-label="scroll projects carousel left">
-          <svg fill="black" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            fill="black"
+            class="left-arrow"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="m1037 1395 102-102q19-19 19-45t-19-45L832 896l307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19L493 851q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
             ></path>
           </svg>
         </button>
         <button id="project-carousel-right-button" aria-label="scroll projects carousel right">
-          <svg fill="black" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            fill="black"
+            class="right-arrow"
+            viewBox="0 0 1792 1792"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
-              d="m845 1395 454-454q19-19 19-45t-19-45L845 397q-19-19-45-19t-45 19L653 499q-19 19-19 45t19 45l307 307-307 307q-19 19-19 45t19 45l102 102q19 19 45 19t45-19zm819-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
+              d="m1037 1395 102-102q19-19 19-45t-19-45L832 896l307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19L493 851q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
             ></path>
           </svg>
         </button>
@@ -1023,11 +1105,49 @@
     <section id="how-its-made">
       <div class="observation-point"></div>
 
-      <div class="article">
+      <div id="how-its-made-article" class="article">
         <h2>
           <span>How.</span>
-          <span style="color: #72e5ce">The making of this website.</span>
+          <span>The making of this website.</span>
         </h2>
+
+        <nav aria-label="article table of contents">
+          <h3>Table of Contents</h3>
+          <ol>
+            <li><a href="#article-introduction">Introduction</a></li>
+            <li><a href="#article-hosting">Hosting</a></li>
+            <li><a href="#article-header">Header Design</a></li>
+            <li><a href="#article-background">Background Design</a></li>
+            <li><a href="#article-intro">Intro Section</a></li>
+            <li><a href="#article-personal">Personal Section</a></li>
+            <li><a href="#article-projects">Projects Section</a></li>
+            <li><a href="#article-article">Article Section</a></li>
+            <li><a href="#article-accessibility">Accessibility</a></li>
+            <li><a href="#article-compatability">Compatability</a></li>
+            <li><a href="#article-privacy">Privacy</a></li>
+          </ol>
+        </nav>
+
+        <div class="back-to-top-container">
+          <a
+            class="back-to-top"
+            href="#how-its-made-article"
+            aria-label="go to article table of contents"
+          >
+            <svg
+              fill="white"
+              class="top-arrow"
+              viewBox="0 0 1792 1792"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m1037 1395 102-102q19-19 19-45t-19-45L832 896l307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19L493 851q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+
+        <h3 id="article-introduction">Introduction</h3>
 
         <p>
           It's that time of the year again where I revamp my personal website. The one you're
@@ -1049,7 +1169,7 @@
           if I don't always agree with their business practices.
         </p>
 
-        <h3>Hosting</h3>
+        <h3 id="article-hosting">Hosting</h3>
 
         <p>
           HTML and media files are hosted on
@@ -1079,8 +1199,8 @@
           GitHub Pages. I tested this by first opening a new incognito browser window. Then I track
           the time it takes for them to transfer a 15kB payload. Do note that even if you enable
           "disable cache" in the developer console, browsers may still keep connections alive and
-          cache DNS lookups. Therefore a new incognito window is necessary for a truly clean slate.
-          I repeat this multiple times and average the results.
+          cache DNS lookups. A new incognito window is necessary for a truly clean slate. I repeat
+          this multiple times and average the results.
         </p>
         <p>
           It's not only me. According to CDNPerf, in Asia where I'm based:
@@ -1109,7 +1229,33 @@
           browser.
         </p>
 
-        <h3>Header</h3>
+        <h4>Update 2021-01-11:</h4>
+
+        <p>
+          I would like to provide an update on something I noticed after a period of monitoring.
+          Most CDNs purge infrequently accessed resources from their edge servers. This is a problem
+          for low traffic websites like mine. For the rare visitor that stumbles upon this website,
+          it is likely the CDN's edge server will not have the necessary resources cached. Instead,
+          a cache-miss will happen and the CDN will have to recache by fetching from the origin
+          server. This causes considerable latency.
+        </p>
+        <p>
+          You can verify a cache-miss occured by looking at the "x-cache" or "server-timing" header
+          in the HTTP response. Do note that enabling "disable cache" in the developer console will
+          cause the browser to include a "cache-control: no-cache" header in the HTTP request. This
+          header will force the CDN to connect to the origin server to revalidate the cached
+          resource.
+        </p>
+        <p>
+          To solve this problem, I make use of the free uptime monitor service of
+          <a href="https://hetrixtools.com/" target="_blank" rel="noopener noreferrer"
+            >HetrixTools</a
+          >. Every minute, the critical resources of this webpage will be fetched from 4 different
+          locations: Singapore, London, San Franciso and New York. This prevents those resouces from
+          being purged from the CDN's edge server around these regions due to inactivity.
+        </p>
+
+        <h3 id="article-header">Header Design</h3>
 
         <figure class="image-container">
           <picture>
@@ -1146,7 +1292,7 @@
           more importantly sends a message of technical competence.
         </p>
 
-        <h3>Background</h3>
+        <h3 id="article-background">Background Design</h3>
 
         <p>
           Originally, the background featured a star field animation as inspired by
@@ -1299,7 +1445,7 @@
           </li>
         </ul>
 
-        <h3>Intro Section</h3>
+        <h3 id="article-intro">Intro Section</h3>
 
         <figure class="image-container">
           <picture>
@@ -1331,7 +1477,7 @@
           This way users are more likely to slow down, play with it and read everything.
         </p>
 
-        <h3>Personal Section</h3>
+        <h3 id="article-personal">Personal Section</h3>
 
         <figure class="image-container">
           <picture>
@@ -1363,7 +1509,7 @@
           cards layout tend to be less space efficient.
         </p>
 
-        <h3>Projects Section</h3>
+        <h3 id="article-projects">Projects Section</h3>
 
         <figure class="image-container">
           <picture>
@@ -1416,7 +1562,7 @@
           and they don't have scroll snapping either. Thus, I decided to scrap this idea.
         </p>
 
-        <h3>Article Section</h3>
+        <h3 id="article-article">Article Section</h3>
 
         <p>
           For the article section I made the background black so you can focus better on the text.
@@ -1446,7 +1592,7 @@
           the level of Harry Potter in terms of readability.
         </p>
 
-        <h3>Accessibility</h3>
+        <h3 id="article-accessibility">Accessibility</h3>
 
         <p>
           On accessibility, I refer to the
@@ -1593,7 +1739,7 @@
           the Hemingway App to determine the readability level of my texts and adjust accordingly.
         </p>
 
-        <h3>Compatibility</h3>
+        <h3 id="article-compatability">Compatibility</h3>
 
         <p>
           This website should work with the latest version of all major browsers. At the time of
@@ -1631,7 +1777,7 @@
           </li>
         </ul>
 
-        <h3>Privacy</h3>
+        <h3 id="article-privacy">Privacy</h3>
 
         <p>As always, this webpage contains absolutely no tracking whatsoever.</p>
       </div>
@@ -1950,8 +2096,6 @@
         const right = document.getElementById("project-carousel-right-button");
 
         const newPosition = function (mode) {
-          if (carousel.scrollWidth < window.innerWidth) return 0;
-
           const scrollPos = carousel.scrollLeft;
           const carouselWidth = carousel.scrollWidth;
           const halfCardWidth = ((carouselWidth / (projectCount * 18)) * 16) / 2;
@@ -2014,6 +2158,7 @@
         // feature detection: scrollTo
         if (!carousel.scrollTo) {
           carousel.scrollTo = function (obj) {
+            console.log(obj.left);
             carousel.scrollLeft = obj.left;
           };
         }
