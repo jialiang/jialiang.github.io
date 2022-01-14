@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#FFF" />
+
     <link
       rel="preload"
       href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Text-400_postip.woff2"
@@ -23,12 +24,6 @@
       href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-700_sqxknw.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ehlxmb2ry29zn3vl5v3b"
-      as="image"
       crossorigin
     />
 
@@ -633,6 +628,10 @@
         height: 80vh;
       }
 
+      #how-its-made nav li {
+        margin-bottom: 0.5rem;
+      }
+
       #how-its-made .back-to-top-container {
         position: sticky;
         top: calc(100% - 4.85rem);
@@ -884,7 +883,7 @@
 
       <ul>
         <li>
-          <div class="text"><span>3 Years</span> Experience.</div>
+          <div class="text"><span>4 Years</span> Experience.</div>
           <div class="intersection-point"></div>
         </li>
         <li>
@@ -1251,8 +1250,8 @@
           <a href="https://hetrixtools.com/" target="_blank" rel="noopener noreferrer"
             >HetrixTools</a
           >. Every minute, the critical resources of this webpage will be fetched from 4 different
-          locations: Singapore, London, San Franciso and New York. This prevents those resouces from
-          being purged from the CDN's edge server around these regions due to inactivity.
+          locations: Singapore, London, San Francisco and New York. This prevents those resources
+          from being purged from the CDN's edge server around these regions due to inactivity.
         </p>
 
         <h3 id="article-header">Header Design</h3>
@@ -2232,13 +2231,21 @@
       initCarouselScroll();
     </script>
 
-    <img
-      id="cloud-image"
-      style="display: none"
-      src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ehlxmb2ry29zn3vl5v3b"
-      alt=""
-      onload="initCanvas()"
-      crossorigin="anonymous"
-    />
+    <picture>
+      <source
+        srcset="
+          https://res.cloudinary.com/dedvquoyt/image/upload/f_webp,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ehlxmb2ry29zn3vl5v3b.webp
+        "
+        type="image/webp"
+      />
+      <img
+        id="cloud-image"
+        style="display: none"
+        src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ehlxmb2ry29zn3vl5v3b"
+        alt=""
+        onload="initCanvas()"
+        crossorigin="anonymous"
+      />
+    </picture>
   </body>
 </html>
