@@ -161,8 +161,8 @@
         box-sizing: border-box;
         width: 100%;
         height: 100vh;
-        border-top: 10vh solid snow;
-        border-bottom: 10vh solid snow;
+        border-top: 10vh solid rgba(255, 255, 255, 0.925);
+        border-bottom: 10vh solid rgba(255, 255, 255, 0.925);
         background: linear-gradient(to bottom right, #a547ff, hotpink, yellow);
 
         contain: strict;
@@ -229,7 +229,6 @@
         padding: 0.15rem 0.3rem;
         opacity: 0;
         color: black;
-        background: snow;
 
         will-change: opacity;
       }
@@ -267,7 +266,7 @@
         color: black;
         border: 2px solid black;
         border-radius: 2em;
-        background: white;
+        background: #fffeed;
       }
 
       #bgm-button:hover {
@@ -295,7 +294,7 @@
         margin: 0 auto 2rem auto;
         padding: 8rem 4rem 4rem 4rem;
         border-radius: 2.5rem;
-        background: #fdedcb;
+        background: linear-gradient(to right, #ffe7b3, #fdedcb);
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
@@ -355,7 +354,7 @@
         margin-right: 2rem;
         padding: 4rem;
         border-radius: 2.5rem;
-        background: #2f2330;
+        background: linear-gradient(to right, #281e28, #2b082f);
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
@@ -383,7 +382,7 @@
         max-width: 100%;
         padding: 5rem 2.5rem;
         border-radius: 2.5rem;
-        background: #fdedee;
+        background: linear-gradient(to right, #fdedee, #ffe8e9);
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
       }
 
@@ -450,7 +449,8 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        #personal a {
+        #personal a,
+        #projects a {
           transform: none !important;
         }
       }
@@ -699,7 +699,7 @@
         cursor: pointer;
         pointer-events: auto;
         border-radius: 100%;
-        background: black;
+        background: #151516;
       }
 
       #how-its-made .back-to-top:hover svg {
@@ -792,7 +792,7 @@
         height: auto;
         border: 1px solid white;
 
-        aspect-ratio: 1.875;
+        aspect-ratio: 15 / 8;
         object-fit: contain;
       }
 
@@ -1147,7 +1147,7 @@
     <section id="how-its-made">
       <div class="observation-point"></div>
 
-      <div id="how-its-made-article" class="article">
+      <article id="how-its-made-article" class="article">
         <h2>
           <span>How.</span>
           <span>The making of this website.</span>
@@ -1271,7 +1271,7 @@
           browser.
         </p>
 
-        <h4>Update 2021-01-11:</h4>
+        <h4>Update 2022-01-11:</h4>
 
         <p>
           I would like to provide an update on something I noticed after a period of monitoring.
@@ -1822,7 +1822,7 @@
         <h3 id="article-privacy">Privacy</h3>
 
         <p>As always, this webpage contains absolutely no tracking whatsoever.</p>
-      </div>
+      </article>
     </section>
 
     <audio id="bgm-audio" preload="metadata">
