@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 135.467 135.467" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+      <filter style="color-interpolation-filters:sRGB" id="a" x="-.057" y="-.063" width="1.138" height="1.152">
+         <feFlood flood-opacity=".498" flood-color="#000" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" stdDeviation="3" result="blur" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+      <filter style="color-interpolation-filters:sRGB" id="b" x="-.069" y="-.094" width="1.166" height="1.226">
+         <feFlood flood-opacity=".498" flood-color="#000" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" stdDeviation="3" result="blur" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+   </defs>
+   <path style="fill:#f60;stroke:#000;stroke-width:.132292;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0;fill-opacity:1;filter:url(#a)" d="M98.248 10.916 2.599 78.234l36.128 48.084 91.23-62.38Z" />
+   <path style="fill:#ff0;fill-opacity:1;stroke:none;stroke-width:.132292;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;filter:url(#b)" d="m2.063 78.462 96.11-67.821 8.734 14.503L9.189 87.483Z" />
+   <path style="fill:#ff0;fill-opacity:1;stroke:none;stroke-width:.132292;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="m126.88 56.526-94.992 62.966 6.84 6.826 91.23-62.38z" />
+   <path style="fill:#ff0;stroke:#ff0;stroke-width:3.96876;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m39.567 77.625-5.533 31.185M19.197 89.697l35.375 8.215m46.777-60.608-5.533 31.184M80.978 49.375l35.376 8.215m-46.274-.251-5.532 31.184M49.71 69.41l35.376 8.215" />
+</svg>

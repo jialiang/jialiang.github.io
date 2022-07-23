@@ -1,2320 +1,1252 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#FFF" />
-
-    <link
-      rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Text-400_postip.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-500_rdt92s.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-700_sqxknw.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff" />
 
     <title>Jia Liang | Software Engineer</title>
     <meta name="description" content="Personal website of software engineer, Jia Liang" />
     <meta name="author" content="Jia Liang, hojialiang@yahoo.com" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@graph": [
-          {
-            "@type": "Person",
-            "@id": "https://jialiang.github.io/#person",
-            "name": "Jia Liang",
-            "description": "I'm a software engineer with 4 years of working experience. I specialize in web technologies like NodeJs and React.",
-            "jobTitle": "Software Engineer",
-            "email": "hojialiang@yahoo.com",
-            "url": "https://jialiang.github.io/"
-          },
-          {
-            "@type": "Article",
-            "@id": "https://jialiang.github.io/#article",
-            "headline": "How. The making of this website.",
-            "name": "How. The making of this website.",
-            "description": "A walkthrough of the development process of Jia Liang's personal website.",
-            "about": {
-              "@type": "WebPage",
-              "name": "Jia Liang | Software Engineer",
-              "description": "Personal website of software engineer, Jia Liang",
-              "url": "https://jialiang.github.io/"
-            },
-            "image": "https://jialiang.github.io/images/webpage-image.png",
-            "author": {
-              "@id": "https://jialiang.github.io/#person"
-            },
-            "inLanguage": {
-              "@type": "Language",
-              "name": "English",
-              "alternateName": "en"
-            },
-            "isAccessibleForFree": true,
-            "isFamilyFriendly": true,
-            "datePublished": "2021-10-03",
-            "dateModified": "2022-01-14"
-          }
-        ]
-      }
-    </script>
-
     <link rel="icon" type="image/x-icon" href="https://jialiang.github.io/favicon.png" />
     <link rel="canonical" href="https://jialiang.github.io/" />
 
+    <link rel="preload" href="./images/bg-2-2560 (optimized).avif" as="image" type="image/avif" />
+
     <style>
       @font-face {
-        font-family: "Sans";
+        font-family: "Noto Serif JP";
         font-weight: 400;
         font-style: normal;
 
-        font-display: swap;
-        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Text-400_postip.woff2")
-            format("woff2"),
-          url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-regular_poclwz.woff")
-            format("woff");
+        src: url(./fonts/noto-serif-jp-regular.woff2) format("woff2"),
+          url(./fonts/noto-serif-jp-regular.woff) format("woff");
       }
 
       @font-face {
-        font-family: "Sans";
-        font-weight: 500;
-        font-style: normal;
-
-        font-display: swap;
-        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-500_rdt92s.woff2")
-            format("woff2"),
-          url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-500_neeaxt.woff")
-            format("woff");
-      }
-
-      @font-face {
-        font-family: "Sans";
+        font-family: "Noto Serif JP";
         font-weight: 700;
         font-style: normal;
 
-        font-display: swap;
-        src: url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1635608934/jialiang.github.io/fonts/Google-Sans-Display-700_sqxknw.woff2")
-            format("woff2"),
-          url("https://res.cloudinary.com/dedvquoyt/raw/upload/v1633621647/jialiang.github.io/fonts/roboto-v29-latin-700_nibwrv.woff")
-            format("woff");
+        src: url(./fonts/noto-serif-jp-bold.woff2) format("woff2"),
+          url(./fonts/noto-serif-jp-bold.woff) format("woff");
       }
 
-      /* GENERAL */
-      /*#region*/
+      @font-face {
+        font-family: "Chihaya Jun";
+        font-weight: 400;
+        font-style: normal;
+
+        src: url(./fonts/chihaya-jun.woff2) format("woff2"),
+          url(./fonts/chihaya-jun.woff) format("woff");
+      }
+
+      ::selection {
+        background: rgba(255, 255, 0, 0.67);
+      }
 
       html {
-        font-family: "Sans", sans-serif;
-        width: 100%;
-        height: 100%;
+        font-family: "Noto Serif JP";
         color: black;
         background: white;
       }
 
       @media (max-width: 22.5rem) {
         html {
-          font-size: 4.44vmin;
+          font-size: 4.44vw;
         }
       }
 
       body {
-        width: 100%;
-        height: 100%;
         margin: 0;
-      }
-
-      a {
-        text-decoration: none;
-        color: #47a6ff;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-      }
-
-      canvas {
-        position: fixed;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100vh;
-        border-top: 10vh solid rgba(255, 255, 255, 0.925);
-        border-bottom: 10vh solid rgba(255, 255, 255, 0.925);
-        background: linear-gradient(to bottom right, #a547ff, hotpink, yellow);
-
-        contain: strict;
-      }
-
-      .visually-hidden {
-        font-size: 0;
-        overflow: hidden;
-        width: 0;
-        height: 0;
-        margin: 0;
-      }
-
-      .left-arrow {
-        transform: rotateZ(0deg);
-      }
-
-      .right-arrow {
-        transform: rotateZ(180deg);
-      }
-
-      .top-arrow {
-        transform: rotateZ(90deg);
-      }
-
-      /*#endregion*/
-
-      /* HEADER */
-      /*#region*/
-
-      header {
-        font-size: 10rem;
-        line-height: 1.125;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        height: 100%;
-        margin: auto;
-        margin-bottom: 50vh;
-        padding: 0 1rem;
         text-align: center;
       }
 
-      header h1 {
-        font-size: 1em;
-        font-weight: 700;
-        margin: 0;
-        white-space: nowrap;
-      }
-
-      header p {
-        font-size: 0.35em;
-        font-weight: 500;
-        margin: 0;
-      }
-
-      header .scroll {
-        font-size: 1rem;
-        font-weight: 500;
+      .right-bar {
         position: fixed;
-        bottom: 10px;
-        left: 10px;
-        padding: 0.15rem 0.3rem;
-        opacity: 0;
-        color: black;
-
-        will-change: opacity;
+        z-index: 2;
+        right: 0;
+        bottom: 0;
+        width: 5rem;
+        height: 100%;
+        background: #ff454b url(./images/stars.svg) 0 0/100% auto repeat-y;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
       }
 
-      @media (max-width: 45.5rem) {
-        header {
-          font-size: 21vw;
-        }
-      }
-
-      @media (min-aspect-ratio: 7 / 6) and (max-height: 40rem) {
-        header {
-          font-size: 25vh;
-        }
-      }
-
-      /*#endregion*/
-
-      /* BGM */
-      /*#region*/
-
-      #bgm-audio {
-        display: none;
-      }
-
-      #bgm-button {
-        font-family: inherit;
-        font-size: 1rem;
-        font-weight: 500;
-        position: absolute;
-        top: 0.85rem;
-        right: 1rem;
-        padding: 0.15rem 0.5rem;
-        cursor: pointer;
-        color: black;
-        border: 2px solid black;
-        border-radius: 2em;
-        background: #fffeed;
-      }
-
-      #bgm-button:hover {
-        color: white;
-        background: black;
-      }
-
-      #bgm-button:focus {
-        outline: 2px solid #06c;
-        outline-offset: 2px;
-      }
-
-      /*#endregion*/
-
-      /* USP */
-      /*#region*/
-
-      #usp {
-        font-size: 6rem;
-        font-weight: 700;
-        line-height: 1.1;
-        box-sizing: border-box;
-        width: 80rem;
-        max-width: calc(100% - 4rem);
-        margin: 0 auto 2rem auto;
-        padding: 8rem 4rem 4rem 4rem;
-        border-radius: 2.5rem;
-        background: linear-gradient(to right, #ffe7b3, #fdedcb);
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      #usp ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      #usp li {
-        line-height: 1;
-        position: relative;
-        margin-bottom: 3.5rem;
-        letter-spacing: -2px;
-      }
-
-      #usp li span {
-        color: #744000;
-      }
-
-      #usp .text {
-        will-change: opacity;
-      }
-
-      #usp .intersection-point {
-        position: absolute;
-        top: 0;
-        width: 1px;
-        height: 40vh;
-      }
-
-      /*#endregion*/
-
-      /* PERSONAL */
-      /*#region*/
-
-      #personal {
-        position: relative;
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-        box-sizing: border-box;
-        width: 84rem;
-        max-width: 100%;
-        margin: 0 auto 2rem auto;
-        padding: 0 2rem;
-        color: black;
-      }
-
-      #personal .text-container-1 {
-        display: flex;
-        align-items: center;
-        flex-grow: 1;
-        box-sizing: border-box;
-        min-width: 26rem;
-        max-width: 31rem;
-        margin-right: 2rem;
-        padding: 4rem;
-        border-radius: 2.5rem;
-        background: linear-gradient(to right, #281e28, #2b082f);
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      #personal .text-container-1 h2 {
-        font-size: 3.5rem;
-        font-weight: 500;
-        line-height: 1.1;
-        margin: 0;
-        color: white;
-      }
-
-      #personal .text-container-1 h2 span {
-        display: block;
-      }
-
-      #personal .text-container-1 h2 span:first-child {
-        color: #ffc1eb;
-      }
-
-      #personal .text-container-2 {
-        flex-grow: 1;
-        flex-shrink: 0;
-        box-sizing: border-box;
-        width: 41rem;
-        max-width: 100%;
-        padding: 5rem 2.5rem;
-        border-radius: 2.5rem;
-        background: linear-gradient(to right, #fdedee, #ffe8e9);
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      #personal .text-container-2 h2 {
-        font-size: 2.5rem;
-        font-weight: 500;
-        line-height: 1.1;
-        display: none;
-        margin: 0 0 4.5rem 0;
-      }
-
-      #personal .text-container-2 h2 span {
-        display: block;
-      }
-
-      #personal .text-container-2 h2 span:first-child {
-        font-size: 1.84em;
-        font-weight: 700;
-        line-height: 0.85;
-        margin-bottom: 0.15em;
-        margin-left: -0.035em;
-      }
-
-      #personal .text-container-2 h2 span:last-child {
-        color: #404040;
-      }
-
-      #personal ul {
-        font-size: 3rem;
-        max-width: 45rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      #personal li {
+      .right-bar a {
         display: inline-block;
-        margin: 0 0 2.5rem 0;
+        width: 2rem;
+        height: 2rem;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border: 3px solid #333;
+        border-radius: 100%;
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
       }
 
-      #personal li:last-child {
-        margin-bottom: 0;
+      .right-bar a:hover,
+      .right-bar a:focus {
+        background: snow;
       }
 
-      #personal a {
-        display: block;
-        padding: 1rem;
-        transition: 0.25s transform;
-        border-radius: 2rem;
-        background: #ffdad4;
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+      .right-bar svg {
+        width: 2rem;
+        height: 2rem;
       }
 
-      #personal a:hover {
-        transform: scale(1.025);
+      .right-bar .social-container {
+        position: absolute;
+        bottom: 7.5rem;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+      }
+
+      .right-bar .to-top {
+        position: absolute;
+        right: 0;
+        bottom: 1rem;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        margin: auto;
+        padding: 0.5rem;
+        color: white;
+        border: 0.25rem solid white;
+        border-radius: 100%;
+        box-shadow: none;
+      }
+
+      .right-bar .to-top:hover,
+      .right-bar .to-top:focus {
+        border-color: cyan;
+        background: lightcyan;
+      }
+
+      .right-bar .to-top:hover svg,
+      .right-bar .to-top:focus svg {
+        fill: #ff454b;
+      }
+
+      @media (max-width: 64rem) {
+        .right-bar {
+          width: 4.5rem;
+          height: 4.5rem;
+          margin: 0.5rem;
+          border-radius: 100%;
+        }
+
+        .right-bar .to-top {
+          bottom: 0.5rem;
+        }
+
+        .right-bar .social-container {
+          display: none;
+        }
+      }
+
+      .inner-body {
+        overflow: hidden;
+        width: 100%;
+        margin: auto;
+      }
+
+      a {
+        padding: 0 2px;
         text-decoration: none;
-
-        filter: brightness(1.1);
+        color: blue;
+        border: 1px solid rgba(255, 255, 255, 0);
       }
 
-      #personal a:focus {
-        outline: 2px solid #06c;
-        outline-offset: 2px;
+      a:focus {
+        border-color: cyan;
+        outline: none;
+        background: lightcyan;
+      }
+
+      a:hover {
+        color: #d300ff;
+      }
+
+      #background {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        margin: auto;
+        transition: 0.35s opacity;
+        opacity: 0;
+      }
+
+      @media (max-aspect-ratio: 16 / 9) {
+        #background {
+          top: 0;
+          right: auto;
+          bottom: auto;
+          left: 50vw;
+          width: auto;
+          height: 100vh;
+          transform: translateX(-50%);
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        #personal a,
-        #projects a {
-          transform: none !important;
+        #background {
+          transition: none !important;
         }
       }
 
-      #personal .link-text {
-        font-weight: 700;
-        line-height: 1.1;
+      header {
         position: relative;
+        z-index: 1;
         display: inline-block;
-        margin-bottom: 0.5rem;
-        padding: 0.1rem 0.3rem;
-        color: #4b1f12;
+        margin: 5rem 1rem 9rem 1rem;
+        padding: 2em 2em 3em 1.5em;
+        text-align: left;
+        border-radius: 5em;
+        background: #6af6ff;
+        background: linear-gradient(
+              to right,
+              rgba(32, 224, 255, 0.5) 50%,
+              rgba(255, 255, 255, 0) 51%
+            )
+            0 0/3em 100% repeat-x,
+          linear-gradient(to bottom, rgba(32, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 51%) 0 0/100%
+            3em repeat-y,
+          #b5edff;
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5em 0.5em 1em 0,
+          rgba(0, 0, 0, 0.25) -0.5em -0.5em 1em 0 inset,
+          rgba(255, 255, 255, 0.2) 0.5em 0.5em 1em 0 inset;
       }
 
-      #personal .link-subtext {
-        font-size: 0.6em;
+      header h1,
+      header h2 {
+        line-height: 1;
+        margin: 0;
+      }
+
+      header h1 {
+        font-size: 4.15em;
+        font-weight: 700;
+        margin-bottom: 0.25em;
+      }
+
+      header h2 {
+        font-size: 3em;
+        font-weight: 400;
+      }
+
+      @media (max-width: 36.5rem) {
+        header {
+          max-width: 19em;
+        }
+      }
+
+      @media (max-width: 24.0625rem) {
+        header {
+          font-size: 4vw;
+        }
+      }
+
+      #particles {
+        position: fixed;
+        top: 22.5vh;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 25vh;
+        min-height: 160px;
+        max-height: 50vw;
+        margin: auto;
+        transition: 0.5s opacity;
+      }
+
+      #links {
+        font-size: 1.2em;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 1rem;
+        list-style: none;
+      }
+
+      #links li {
+        display: inline-block;
+        margin: 0 0.5em 0.5rem 0.5rem;
+      }
+
+      #links a {
+        line-height: 2;
+        padding: 0 0.5em 0.15em 0.5em;
+        color: black;
+        border: 3px solid rgba(255, 255, 255, 0);
+        border-radius: 1em;
+        background: snow;
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+      }
+
+      #links a:hover,
+      #links a:focus {
+        border-color: cyan;
+        outline: none;
+        background: lightcyan;
+      }
+
+      #links svg {
+        position: relative;
+        top: -1px;
+        width: 1rem;
+        height: 1em;
+        height: 1rem;
+        margin-right: 0.15em;
+        vertical-align: middle;
+
+        fill: black;
+      }
+
+      section {
+        font-family: "Chihaya Jun";
+        line-height: 0.9;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 12.5rem;
+        text-align: left;
+        letter-spacing: -0.1em;
+      }
+
+      section h2 {
+        font-size: 2.75rem;
         font-weight: 500;
-        line-height: 1.1;
-        padding: 0 0.3rem;
+        text-align: center;
         color: black;
       }
 
-      /*#endregion*/
+      .paper-edge {
+        position: absolute;
+        top: 0;
+        left: -23px;
+        width: 25px;
+        height: 100%;
+        background: url(./images/paper-edge.png) 0 0/100% auto repeat-y;
+      }
 
-      /* PROJECTS */
-      /*#region*/
+      #usp {
+        text-align: center;
+      }
+
+      #usp .paper {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 32rem;
+        max-width: calc(100% - 2rem);
+        margin: 0 1rem;
+        padding: 1rem 1rem 4rem 2rem;
+        text-align: left;
+        border-radius: 4px;
+        background: url("./images/paper (optimized).jpg");
+        background: linear-gradient(to bottom, aqua 1px, rgba(255, 255, 255, 0) 0) 50% -1px/95% 2.3rem
+            repeat-y,
+          url("./images/paper (optimized).jpg");
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+      }
+
+      @media (max-width: 20.625rem) {
+        #usp .paper {
+          padding-left: 0.75rem;
+        }
+      }
+
+      #usp ul {
+        font-size: 2.25rem;
+        color: #002d5c;
+      }
+
+      #usp li {
+        margin-bottom: 1.5rem;
+      }
+
+      #usp .resume {
+        font-size: 1.75rem;
+        font-weight: 500;
+        border-bottom: 6px double;
+      }
+
+      #usp .orange-patch {
+        position: absolute;
+        z-index: 1;
+        top: -6rem;
+        left: -5rem;
+        width: 12.5rem;
+      }
+
+      #usp .star-badge {
+        position: absolute;
+        z-index: 1;
+        right: -3.5rem;
+        bottom: -6.5rem;
+        width: 12.5rem;
+      }
+
+      @media (max-width: 27.5rem) {
+        #usp .star-badge {
+          bottom: -8.5rem;
+        }
+      }
 
       #projects {
-        box-sizing: border-box;
-        width: 80rem;
-        max-width: calc(100% - 4rem);
-        margin: 0 auto 15rem auto;
-        padding: 5rem 0;
-        border-radius: 2.5rem;
-        background: #fff7b3;
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+        width: 53rem;
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+      }
+
+      #projects .bunny {
+        position: absolute;
+        z-index: 2;
+        top: -2.5rem;
+        left: -5rem;
+        width: 7.5rem;
       }
 
       #projects h2 {
-        font-size: 2.5rem;
-        font-weight: 500;
-        line-height: 1.1;
-        box-sizing: border-box;
-        width: 82rem;
-        max-width: 100%;
-        margin: 0 auto 4.5rem auto;
-        padding: 0 4rem;
-        color: black;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 2rem;
+        margin-left: 2rem;
+        padding: 1rem 2rem;
+        transform: rotate(-2deg);
+        border: 0.5rem double aquamarine;
+        border-radius: 0.5rem;
+        background: #fcf7dd;
+        background: linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 0) 1px,
+              pink 2px,
+              rgba(255, 255, 255, 0) 3px
+            )
+            0 1rem/100% 2.5rem,
+          linear-gradient(to bottom, rgba(255, 255, 255, 0) 1px, aqua 2px, rgba(255, 255, 255, 0) 0)
+            0 1.25rem/100% 2.5rem,
+          linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0) 1px,
+              pink 2px,
+              rgba(255, 255, 255, 0) 3px
+            )
+            1.5rem 0/2.5rem 100%,
+          linear-gradient(to right, rgba(255, 255, 255, 0) 1px, aqua 2px, rgba(255, 255, 255, 0) 0)
+            1.25rem 0/2.5rem 100%,
+          #fcf7dd;
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
-      #projects h2 span {
-        display: block;
-      }
+      @media (max-width: 27.5rem) {
+        #projects .bunny {
+          top: -1rem;
+        }
 
-      #projects h2 span:first-child {
-        font-size: 1.84em;
-        font-weight: 700;
-        margin-left: -0.035em;
-      }
-
-      #projects h2 span:last-child {
-        color: #a75c00;
+        #projects h2 {
+          width: 10.5rem;
+        }
       }
 
       #projects ul {
-        display: flex;
-        overflow-y: auto;
-        box-sizing: border-box;
-        width: 84rem;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 1.4rem 0 1.4rem 4rem;
+        font-size: 0;
+        padding: 0 0.25rem;
         list-style: none;
-        transform: translate3d(0, 0, 0);
-
-        scrollbar-width: none;
       }
 
-      #projects ul:after {
-        display: inline-block;
-        flex-shrink: 0;
-        width: 4rem;
-        content: "";
-      }
+      @media (max-width: 53rem) {
+        #projects ul {
+          overflow: auto;
+          white-space: nowrap;
 
-      #projects ul::-webkit-scrollbar {
-        display: none;
-      }
-
-      #projects ul:focus {
-        outline: 2px solid #06c;
+          scrollbar-color: white rgba(255, 255, 255, 0);
+        }
       }
 
       #projects li {
         display: inline-block;
-        flex-shrink: 0;
-        margin-right: 2rem;
-        cursor: pointer;
       }
 
-      @media (prefers-reduced-motion: reduce) {
-        #projects li {
-          transform: none !important;
-        }
-      }
-
-      #projects li:last-child {
-        margin-right: 0;
-      }
-
-      #projects a {
-        display: block;
-        width: 16rem;
-        height: 23rem;
-        transition: 0.25s transform;
-        border-radius: 1rem;
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      #projects a:hover {
-        transform: scale(1.025);
-        text-decoration: none;
-      }
-
-      #projects a:focus {
-        outline: 2px solid #06c;
-        outline-offset: 0.3rem;
-      }
-
-      #projects .image-container {
+      #projects li a {
+        display: inline-block;
         overflow: hidden;
+        box-sizing: border-box;
         width: 16rem;
-        height: 16rem;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
+        margin: 1.5rem 0.75rem;
+        padding: 0.5rem;
+        white-space: normal;
+        color: snow;
+        border: 3px solid rgba(255, 255, 255, 0);
+        border-radius: 0.5rem;
+        background: snow;
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
-      #projects .text-container {
-        font-size: 1.35rem;
-        font-weight: 500;
-        line-height: 1.1;
+      #projects li a:hover,
+      #projects li a:focus {
+        border-color: cyan;
+        background: lightcyan;
+      }
+
+      #projects li a:hover .title,
+      #projects li a:focus-visible .title {
+        border-bottom-color: cyan;
+      }
+
+      #projects li img {
+        box-sizing: border-box;
+        width: 100%;
+        transform: rotate(-1deg);
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
+      }
+
+      #projects li .title {
+        font-size: 1.75rem;
         display: flex;
-        overflow: hidden;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        width: 16rem;
-        height: 7rem;
-        padding: 0.25rem;
-        text-align: center;
+        height: 7.5rem;
+        padding: 1rem 0.5rem 1rem 0.5rem;
         color: black;
-        border-bottom-right-radius: 1rem;
-        border-bottom-left-radius: 1rem;
+        border-bottom: 3px double deepskyblue;
       }
 
-      #projects .text-container div {
-        overflow: hidden;
-        padding: 0.75rem 0.5rem;
-        opacity: 0.75;
-      }
-
-      #projects a:hover .text-container {
-        filter: brightness(1.1);
-      }
-
-      #projects .carousel-button-container {
-        display: flex;
-        justify-content: space-between;
-        box-sizing: border-box;
-        width: 84rem;
-        max-width: 100%;
-        margin: 2.5rem auto 0 auto;
-        padding: 0 4rem;
-      }
-
-      #projects .carousel-button-container button {
-        width: 4rem;
-        height: 4rem;
-        padding: 0;
-        cursor: pointer;
-        color: black;
-        border: none;
-        border-radius: 100%;
-        background: none;
-      }
-
-      #projects .carousel-button-container button:hover svg {
-        fill: #a75c00;
-      }
-
-      #projects .carousel-button-container button:focus {
-        outline: 2px solid #06c;
-      }
-
-      #projects .carousel-button-container svg {
+      #projects li .title div {
         width: 100%;
-        height: 100%;
-
-        filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.2));
       }
 
-      /*#endregion*/
-
-      /* HOW ITS MADE */
-      /*#region*/
-
-      #how-its-made {
-        position: relative;
-        padding: 5rem 0 15rem 0;
-        background: #151516;
+      #projects .button-container {
+        display: none;
+        justify-content: space-between;
+        margin: 1rem 0 0 0;
+        padding: 0 1rem;
       }
 
-      #how-its-made .observation-point {
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 1px;
-        height: 80vh;
-      }
-
-      #how-its-made nav li {
-        margin-bottom: 0.5rem;
-      }
-
-      #how-its-made .back-to-top-container {
-        position: sticky;
-        top: calc(100% - 4.85rem);
-        left: 0;
-        width: calc(100% + 6.5rem);
-        max-width: calc(100% + (50vw - 50%) - 1rem);
-        margin: auto;
-        text-align: right;
-        pointer-events: none;
-      }
-
-      @media all and (-ms-high-contrast: none) {
-        #how-its-made .back-to-top-container {
-          visibility: hidden;
+      @media (max-width: 53rem) {
+        #projects .button-container {
+          display: flex;
         }
       }
 
-      #how-its-made .back-to-top {
-        display: inline-block;
-        width: 4rem;
-        height: 4rem;
+      #projects .button-container button {
+        font-family: "Chihaya Jun";
+        font-size: 1.75rem;
+        padding: 0.5rem;
         cursor: pointer;
-        pointer-events: auto;
-        border-radius: 100%;
-        background: #151516;
+        letter-spacing: -0.1em;
+        border: 2px solid aquamarine;
+        background: #fcf7dd;
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
-      #how-its-made .back-to-top:hover svg {
-        fill: #72e5ce;
+      #projects .button-container .left-arrow {
+        padding-left: 1rem;
+        transform: rotate(5deg);
+        text-align: right;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 2rem;
       }
 
-      #how-its-made .back-to-top:focus {
-        outline: 2px solid #06c;
+      #projects .button-container .right-arrow {
+        padding-right: 1rem;
+        transform: rotate(-5deg);
+        text-align: left;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        border-bottom-left-radius: 0.25rem;
       }
 
-      #how-its-made .article {
+      #projects .button-container .left-arrow span,
+      #projects .button-container .right-arrow span {
+        border-top: 3px double pink;
+        border-bottom: 3px double pink;
+      }
+
+      #me {
+        padding: 0 1rem;
+      }
+
+      #me .paper {
+        position: relative;
         box-sizing: border-box;
         width: 40rem;
         max-width: 100%;
-        margin: -80vh auto 0 auto;
-        padding: 0 2.5rem;
+        margin: auto;
+        padding: 2rem 2rem 4rem 2rem;
+        border-radius: 4px;
+        background: url("./images/paper (optimized).jpg");
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
-      #how-its-made h2 {
-        font-size: 2.5rem;
-        font-weight: 500;
-        margin: 0 0 4.5rem 0;
-        color: white;
+      #me .header {
+        max-width: 100%;
+        margin: -8rem auto -1rem auto;
+        text-align: center;
       }
 
-      #how-its-made h2 span {
-        display: block;
+      #me .flower-1 {
+        width: 12.5rem;
+        vertical-align: middle;
       }
 
-      #how-its-made h2 span:first-child {
-        font-size: 1.84em;
-        font-weight: 700;
-        margin-left: -0.035em;
-      }
-
-      #how-its-made h2 span:last-child {
-        color: #72e5ce;
-      }
-
-      #how-its-made h3 {
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 2em 0 1em 0;
-        color: white;
-      }
-
-      #how-its-made h4 {
-        font-size: 1.35rem;
-        font-weight: 700;
-        margin: 2.5em 0 0 0;
-        color: white;
-      }
-
-      #how-its-made #article-introduction {
-        margin-top: -1.5rem;
-      }
-
-      #how-its-made p,
-      #how-its-made ul,
-      #how-its-made nav,
-      #how-its-made blockquote {
-        font-size: 1.25rem;
-        line-height: 1.44;
-        color: #dbdbdb;
-      }
-
-      #how-its-made blockquote {
-        margin-right: 0;
-        margin-left: 0;
-        padding: 1.25rem;
-        border-left: 2px solid white;
-        background: #202021;
-      }
-
-      #how-its-made blockquote ol {
+      #me h2 {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 17rem;
+        max-width: 100%;
         margin: 0;
-      }
-
-      #how-its-made figure {
-        position: relative;
-        width: 100%;
-        margin: 0 0 2rem 0;
-        padding-top: 53.33%;
-        color: #aaa;
-      }
-
-      #how-its-made figure img {
-        position: absolute;
-        top: 0;
-        height: auto;
-        border: 1px solid white;
-
-        aspect-ratio: 15 / 8;
-        object-fit: contain;
-      }
-
-      #how-its-made figcaption {
-        margin-top: 0.75rem;
-      }
-
-      /*#endregion*/
-
-      /* MEDIA QUERIES */
-      /*#region*/
-
-      @media (max-width: 75rem) {
-        #usp {
-          font-size: 5.5rem;
-        }
-
-        #usp,
-        #projects h2,
-        #projects ul,
-        #projects .carousel-button-container {
-          padding-right: 2.5rem;
-          padding-left: 2.5rem;
-        }
-
-        #personal .text-container-1 {
-          display: none;
-        }
-
-        #personal .text-container-2 h2 {
-          display: block;
-        }
-      }
-
-      @media (max-width: 70rem) {
-        #usp ul {
-          max-width: 47rem;
-        }
-      }
-
-      @media (max-width: 45rem) {
-        #usp {
-          font-size: 5rem;
-        }
-
-        #personal ul {
-          max-width: 20rem;
-        }
+        padding: 1rem;
+        vertical-align: middle;
+        border: 6px double darkorange;
+        border-radius: 2rem;
+        background: papayawhip;
+        background: papayawhip url(./images/circles.png) 0 0 / auto 100% repeat-x;
+        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
       @media (max-width: 38.75rem) {
-        #usp,
-        #personal,
-        #personal .text-container-2,
-        #projects {
-          max-width: 100%;
-          margin: 0;
-          border-radius: 0;
-          box-shadow: none;
+        #me .header {
+          width: 18rem;
+          margin-bottom: 4rem;
         }
 
-        #usp {
-          padding-bottom: 2rem;
+        #me h2 {
+          transform: rotate(-2deg);
         }
 
-        #personal {
-          padding: 0;
+        #me .paper {
+          background-position: 50% 1.67rem;
         }
       }
 
-      @media (max-width: 31.25rem) {
-        #usp {
-          font-size: calc(0.175 * (100vw - 2rem));
-          padding-right: 1rem;
-          padding-left: 1rem;
-        }
-
-        #personal .text-container-2,
-        #projects h2,
-        #projects ul,
-        #how-its-made .article,
-        #projects .carousel-button-container {
-          padding-right: 1rem;
-          padding-left: 1rem;
-        }
-
-        #personal ul {
-          font-size: 2.5rem;
-          max-width: 17rem;
-        }
+      #me p,
+      #me ol,
+      #me ul {
+        font-family: "Noto Serif JP";
+        font-size: 1.15rem;
+        line-height: 2.3rem;
+        margin: 2.3rem 0;
+        padding-bottom: 1px;
+        letter-spacing: 0;
+        background: linear-gradient(to bottom, aqua 1px, rgba(255, 255, 255, 0) 0) 0 0/100% 2.3rem
+          repeat-y;
       }
 
-      /*#endregion*/
+      #me ol,
+      #me ul {
+        margin-top: -2.3rem;
+        background-position: 0 -1px;
+      }
+
+      .rainbow {
+        position: relative;
+        z-index: 1;
+        height: 4px;
+        background: linear-gradient(to right, red, orange, yellow, lime, aqua, purple);
+      }
+
+      #credits {
+        font-family: "Noto Serif JP";
+        line-height: 1.33;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 0;
+        padding: 1rem;
+        text-align: center;
+        letter-spacing: 0;
+        color: #333;
+        background: snow;
+        background: linear-gradient(rgba(255, 255, 255, 0), snow),
+          radial-gradient(aquamarine 25%, rgba(255, 255, 255, 0) 0) 0 0/5px 5px, snow;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+      }
+
+      #credits div {
+        margin-bottom: 0.25rem;
+      }
+
+      @media (max-width: 48rem) {
+        #credits {
+          padding-bottom: 6rem;
+        }
+      }
     </style>
 
     <noscript>
       <style>
-        #bgm-button {
-          display: none !important;
+        header {
+          opacity: 1 !important;
         }
 
-        #projects ul {
-          scrollbar-width: initial !important;
-        }
-
-        #projects ul::-webkit-scrollbar {
-          display: initial !important;
-        }
-
-        #projects .carousel-button-container {
+        #projects .button-container {
           display: none !important;
         }
       </style>
     </noscript>
   </head>
   <body>
-    <button id="bgm-button">Play Music</button>
+    <div class="inner-body">
+      <picture>
+        <source type="image/avif" srcset="./images/bg-2-2560%20(optimized).avif" />
+        <source type="image/webp" srcset="./images/bg-2-1920%20(optimized).webp" />
+        <img
+          id="background"
+          src="./images/bg-2-1920%20(optimized).jpg"
+          alt=""
+          onload="this.style.opacity = '1';"
+        />
+      </picture>
 
-    <canvas aria-hidden="true"></canvas>
+      <canvas id="particles"></canvas>
 
-    <header>
-      <div class="text-container">
-        <h1>Jia Liang.</h1>
-        <p>Software engineer.</p>
-      </div>
-      <div class="scroll">Scroll down.</div>
-    </header>
-
-    <section id="usp">
-      <h2 class="visually-hidden">Why Choose Me.</h2>
-
-      <ul>
-        <li>
-          <div class="text"><span>4 Years</span> Experience.</div>
-          <div class="intersection-point"></div>
-        </li>
-        <li>
-          <div class="text">Full-Stack <span>JavaScript</span>.</div>
-          <div class="intersection-point"></div>
-        </li>
-        <li>
-          <div class="text">Exceptional <span>Frontend</span>.</div>
-          <div class="intersection-point"></div>
-        </li>
-        <li>
-          <div class="text">Information Systems <span>Graduate</span>.</div>
-          <div class="intersection-point"></div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="personal">
-      <div class="text-container-1">
-        <h2><span>Reach out.</span><span>I'm always open to trying new things.</span></h2>
-      </div>
-
-      <div class="text-container-2">
-        <h2>
-          <span>Reach out.</span>
-          <span>I'm always open to trying new things.</span>
-        </h2>
-        <ul>
-          <li>
-            <a href="mailto:hojialiang@yahoo.com">
-              <div class="link-text">hojialiang@<wbr />yahoo.com</div>
-              <div class="link-subtext">Let's get in touch.</div>
-            </a>
-          </li>
-
-          <li>
-            <a href="resume.pdf" target="_blank">
-              <div class="link-text">View my Resume</div>
-              <div class="link-subtext">Learn more about me.</div>
-            </a>
-          </li>
-
-          <li>
-            <a href="https://github.com/jialiang" target="_blank" rel="noreferrer noopener">
-              <div class="link-text">Visit my GitHub</div>
-              <div class="link-subtext">See what I'm currently up to.</div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>
-        <span>Explore.</span>
-        <span>My personal projects.</span>
-      </h2>
-      <ul id="project-carousel">
-        <li>
-          <a
-            href="https://jialiang.github.io/3D-Engine-For-Miku/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="3D Engine For Miku project"
-          >
-            <div class="image-container">
-              <picture>
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/guyzjeueuevoysvobrjr.avif
-                  "
-                  type="image/avif"
-                />
-                <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/guyzjeueuevoysvobrjr"
-                  alt="3D Engine For Miku project cover image"
-                />
-              </picture>
-            </div>
-            <div class="text-container" style="background: #9effff">
-              <div>3D Engine For Miku</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/jialiang/HTML-to-PDF-UA/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="HTML to PDF/UA-compliant PDF project"
-          >
-            <div class="image-container">
-              <picture>
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/okzrw6agxeeahducc7dy.avif
-                  "
-                  type="image/avif"
-                />
-                <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/okzrw6agxeeahducc7dy"
-                  alt="HTML to PDF/UA-compliant PDF project cover image"
-                />
-              </picture>
-            </div>
-            <div class="text-container" style="background: #ff9e9e">
-              <div>HTML to PDF/UA-compliant PDF</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://jialiang.github.io/space-gems/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Space Gems project"
-          >
-            <div class="image-container">
-              <picture>
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vqpduedeerdckoyqhjln.avif
-                  "
-                  type="image/avif"
-                />
-                <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vqpduedeerdckoyqhjln"
-                  alt="Space Gems project cover Image"
-                />
-              </picture>
-            </div>
-            <div class="text-container" style="background: #9eadff">
-              <div>Space Gems</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/jialiang/ShitCompressor"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Shit Compressor project"
-          >
-            <div class="image-container">
-              <picture>
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/zvjg0w8rfysg80a6tial.avif
-                  "
-                  type="image/avif"
-                />
-                <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/zvjg0w8rfysg80a6tial"
-                  alt="Shit Compressor project cover image"
-                />
-              </picture>
-            </div>
-            <div class="text-container" style="background: #ffc79e">
-              <div>Shit Compressor</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://jialiang.github.io/ygo-ocg-secret-rare/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Yu-Gi-Oh Secret Rare Effect with CSS project"
-          >
-            <div class="image-container">
-              <picture>
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/fhzlnqvhx4m5e62og6zu.avif
-                  "
-                  type="image/avif"
-                />
-                <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/fhzlnqvhx4m5e62og6zu"
-                  alt="Yu-Gi-Oh Secret Rare Effect with CSS project cover image"
-                />
-              </picture>
-            </div>
-            <div class="text-container" style="background: #ff9ebe">
-              <div>Yu-Gi-Oh Secret Rare Effect with CSS</div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://jialiang.github.io/pure-css-android-12-scallop-clock/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Pure CSS Android 12 Clock project"
-          >
-            <div class="image-container">
-              <picture>
-                <source
-                  srcset="
-                    https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/iae2zvujw8rxccbytvm3.avif
-                  "
-                  type="image/avif"
-                />
-                <img
-                  src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/iae2zvujw8rxccbytvm3"
-                  alt="Pure CSS Android 12 Clock cover image"
-                />
-              </picture>
-            </div>
-            <div class="text-container" style="background: #ffecc9">
-              <div>Pure CSS Android 12 Clock</div>
-            </div>
-          </a>
-        </li>
-      </ul>
-      <div class="carousel-button-container">
-        <button id="project-carousel-left-button" aria-label="scroll projects carousel left">
-          <svg
-            fill="black"
-            class="left-arrow"
-            viewBox="0 0 1792 1792"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="m1037 1395 102-102q19-19 19-45t-19-45L832 896l307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19L493 851q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
-            ></path>
-          </svg>
-        </button>
-        <button id="project-carousel-right-button" aria-label="scroll projects carousel right">
-          <svg
-            fill="black"
-            class="right-arrow"
-            viewBox="0 0 1792 1792"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="m1037 1395 102-102q19-19 19-45t-19-45L832 896l307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19L493 851q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-    </section>
-
-    <section id="how-its-made">
-      <div class="observation-point"></div>
-
-      <article id="how-its-made-article" class="article">
-        <h2>
-          <span>How.</span>
-          <span>The making of this website.</span>
-        </h2>
-
-        <nav aria-label="article table of contents">
-          <h3>Table of Contents</h3>
-          <ol>
-            <li><a href="#article-introduction">Introduction</a></li>
-            <li><a href="#article-hosting">Hosting</a></li>
-            <li><a href="#article-header">Header Design</a></li>
-            <li><a href="#article-background">Background Design</a></li>
-            <li><a href="#article-intro">Intro Section</a></li>
-            <li><a href="#article-personal">Personal Section</a></li>
-            <li><a href="#article-projects">Projects Section</a></li>
-            <li><a href="#article-article">Article Section</a></li>
-            <li><a href="#article-accessibility">Accessibility</a></li>
-            <li><a href="#article-compatability">Compatability</a></li>
-            <li><a href="#article-privacy">Privacy</a></li>
-          </ol>
-        </nav>
-
-        <div class="back-to-top-container">
-          <a
-            class="back-to-top"
-            href="#how-its-made-article"
-            aria-label="go to article table of contents"
-          >
-            <svg
-              fill="white"
-              class="top-arrow"
-              viewBox="0 0 1792 1792"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+      <ul id="links">
+        <li
+          ><a href="https://github.com/jialiang" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="24" height="24" focusable="false">
               <path
-                d="m1037 1395 102-102q19-19 19-45t-19-45L832 896l307-307q19-19 19-45t-19-45l-102-102q-19-19-45-19t-45 19L493 851q-19 19-19 45t19 45l454 454q19 19 45 19t45-19zm627-499q0 209-103 385.5T1281.5 1561 896 1664t-385.5-103T231 1281.5 128 896t103-385.5T510.5 231 896 128t385.5 103T1561 510.5 1664 896z"
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
               ></path>
             </svg>
-          </a>
+            <span>github.com/jialiang</span>
+          </a></li
+        ><li
+          ><a href="mailto:hojialiang@yahoo.com">
+            <svg viewBox="0 0 24 24" width="24" height="24" focusable="false">
+              <path
+                d="M12 12.713.015 3h23.971L12 12.713zm-5.425-1.822L0 5.562v12.501l6.575-7.172zm10.85 0L24 18.063V5.562l-6.575 5.329zm-1.557 1.261L12 15.287l-3.868-3.135L.022 21h23.956l-8.11-8.848z"
+              ></path>
+            </svg>
+            <span>hojialiang@yahoo.com</span></a
+          ></li
+        ><li
+          ><a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd1YnFT3TzASLxainoYNSd3VFSvdypBARAjs2H3Qy1QE5wFhg/viewform?usp=sf_link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" width="24" height="24" focusable="false">
+              <path
+                d="M13.74 8s1.53-8-3.33-8H2v24h20V11c0-3.42-5.25-3.75-8.26-3zM18 19H6v-1h12v1zm0-3H6v-1h12v1zm0-3H6v-1h12v1zM14.57.07c2.2 1.18 5.94 4.89 7.43 6.89a8.82 8.82 0 0 0-6.1-1.18c.23-1.47-.18-4.54-1.33-5.7z"
+              />
+            </svg>
+            <span>Contact</span></a
+          ></li
+        >
+      </ul>
+
+      <header>
+        <h1>Jia Liang</h1>
+        <h2>Software Engineer</h2>
+      </header>
+
+      <section id="usp">
+        <div class="paper">
+          <div class="paper-edge"></div>
+
+          <img class="orange-patch" src="./images/orange-patch.svg" alt="" aria-hidden="true" />
+
+          <h2>Summary</h2>
+          <ul>
+            <li><span>4 years Experience.</span></li>
+            <li><span>Full-Stack JavaScript.</span></li>
+            <li><span>Exceptional Frontend.</span></li>
+            <li><span>Information Systems Graduate.</span></li>
+          </ul>
+          <div>
+            <a href="/resume%20-%20Jia%20Liang.pdf" class="resume" rel="noreferrer noopener"
+              >View my Resume</a
+            >
+          </div>
+
+          <img class="star-badge" src="./images/star-badge.svg" alt="" aria-hidden="true" />
         </div>
+      </section>
 
-        <h3 id="article-introduction">Introduction</h3>
+      <section id="projects">
+        <h2
+          ><img class="bunny" src="./images/bunny.svg" alt="" aria-hidden="true" /> Personal
+          Projects</h2
+        >
 
-        <p>
-          It's that time of the year again where I revamp my personal website. The one you're
-          looking at right now is the 4th edition 1st Revision. It was revised following community
-          feedback.
-        </p>
+        <ul>
+          <li>
+            <a href="/3D-Engine-For-Miku/" rel="noreferrer noopener">
+              <picture>
+                <source type="image/webp" srcset="./images/miku-cover%20(optimized).webp" />
+                <img
+                  src="./images/miku-cover%20(optimized).jpg"
+                  alt="Hatsune Miku posing for the camera"
+                />
+              </picture>
+              <div class="title"><div>3D Engine for Miku</div></div>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/jialiang/HTML-to-PDF-UA/" rel="noreferrer noopener">
+              <img src="./images/pdf-cover.png" alt="Red PDF logo with white bold PDF text" />
+              <div class="title"><div>HTML to PDF/UA-compliant PDF</div></div>
+            </a>
+          </li>
+          <li>
+            <a href="/space-gems/" rel="noreferrer noopener">
+              <picture>
+                <source type="image/webp" srcset="./images/space-gem-cover%20(optimized).webp" />
+                <img
+                  src="./images/space-gem-cover%20(optimized).jpg"
+                  alt="Screenshot of the Space Gems game"
+                />
+              </picture>
+              <div class="title"><div>Space Gems</div></div>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/jialiang/ShitCompressor" rel="noreferrer noopener">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="./images/shit-compressor-cover%20(optimized).webp"
+                />
+                <img
+                  src="./images/shit-compressor-cover%20(optimized).jpg"
+                  alt="Screenshot of the UI of the Shit Compressor programme"
+                />
+              </picture>
+              <div class="title"><div>Shit Compressor</div></div>
+            </a>
+          </li>
+          <li>
+            <a href="/ygo-ocg-secret-rare/" rel="noreferrer noopener">
+              <picture>
+                <source type="image/webp" srcset="./images/yugioh-cover%20(optimized).webp" />
+                <img
+                  src="./images/yugioh-cover%20(optimized).jpg"
+                  alt="Headshot of Madamme Verre"
+                />
+              </picture>
+              <div class="title"><div>Yu-Gi-Oh Secret Rare Effect with CSS</div></div>
+            </a>
+          </li>
+          <li>
+            <a href="/pure-css-android-12-scallop-clock/">
+              <img
+                src="./images/clock-cover.png"
+                alt="Picture of beige analog clock with scallop outline"
+              />
+              <div class="title">Pure CSS Android 12 Clock</div>
+            </a>
+          </li>
+        </ul>
+        <div class="button-container">
+          <button class="left-arrow"><span>Prev</span></button>
+          <button class="right-arrow"><span>Next</span></button>
+        </div>
+      </section>
 
-        <p>
-          I reckon the entire development lifecycle of this website took me 10 man-days. Most of
-          that time improving accessibility and writing this document.
-        </p>
+      <section id="me">
+        <div class="paper">
+          <div class="paper-edge"></div>
 
-        <p>
-          This time around, I studied the
-          <a href="https://www.apple.com/" target="_blank" rel="noopener noreferrer"
-            >Apple website</a
+          <div class="header">
+            <img class="flower-1" src="./images/flower.svg" alt="" />
+            <h2>About Me</h2>
+          </div>
+
+          <p
+            >Currently, I&rsquo;m working as a full stack developer. Our tech team consists of seven
+            people. We&rsquo;re currently on a hybrid work arrangement.</p
           >
-          for design ideas. I've always considered Apple's marketing materials to be well done even
-          if I don't always agree with their business practices.
-        </p>
+          <p
+            >My company promotes interior designers on our platform to homeowners looking to
+            renovate. We have several web and mobile applications. I mainly work on the public
+            website and our own custom ERP (Enterprise Resource Planning) tool. We get millions of
+            page views per month for our public website.</p
+          >
+          <p
+            >My tasks are split evenly between frontend and backend. I develop new features, fix
+            bugs, do code reviews and help with tech-related matters.</p
+          >
+          <p>New features are usually things to:</p>
+          <ul>
+            <li>Improve conversions (e.g. website redesigns, A/B testing).</li>
+            <li>Improve efficiency (e.g. automation, data transformation).</li>
+            <li>Improve traffic (e.g. SEO improvements).</li>
+            <li>Improve data collection (e.g. event-based tracking, journey analytics).</li>
+          </ul>
+          <p>Tech support involves stuff like:</p>
+          <ul>
+            <li>Creating new reports in our business intelligence tool.</li>
+            <li>Advising on technical feasibility of ideas.</li>
+            <li
+              >Setting up tools like Facebook Pixels, Google Tag Manager, Shopify and Unbounce.</li
+            >
+          </ul>
+          <p
+            >We use Kanban boards to organise our tasks and work through them in order of priority.
+            We see our task to completion independently and liaise with stakeholders as needed. For
+            example, marketing for copy, UI designer for mock-ups, translator for translations,
+            department heads for clarifications etc.</p
+          >
+          <p
+            >I mainly work with React, Redux, JavaScript, HTML, Sass and PostgreSQL. Rarely, my
+            tasks involve MongoDB, ElasticSearch, RabbitMQ, NodeJS and Webpack. We use Git as our
+            version control.</p
+          >
+          <p
+            >In my job before this, I use C#, ASP.NET, Internet Information Services (IIS) and
+            Microsoft SQL Server. But that was a long time ago. I quit that job because working as a
+            government contractor involves too much bureaucracy.</p
+          >
+          <p
+            >Currently, there&rsquo;s no problem that&rsquo;s causing me to leave my current
+            company. I applied because I&rsquo;m curious what other opportunities are out there. I
+            will never mass apply for positions. I send every application after careful
+            consideration of the job posting.</p
+          >
+          <p
+            >It&rsquo;s not a big challenge for me to pick up new technologies. I&rsquo;ve done that
+            for various personal projects without issue.</p
+          >
+          <p
+            >I&rsquo;m also familiar with raster image editors like GIMP and vector image editors
+            like Inkscape.</p
+          >
+        </div>
+      </section>
 
-        <h3 id="article-hosting">Hosting</h3>
+      <div class="right-bar">
+        <ul class="social-container">
+          <li>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://jialiang.github.io/"
+              rel="noopener noreferrer"
+              aria-label="Share this page on Facebook"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#333" focusable="false">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3 8h-1.35c-.538 0-.65.221-.65.778V10h2l-.209 2H13v7h-3v-7H8v-2h2V7.692C10 5.923 10.931 5 13.029 5H15v3z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://twitter.com/intent/tweet?url=https://jialiang.github.io/"
+              rel="noopener noreferrer"
+              aria-label="Share this page on Twitter"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#333" focusable="false">
+                <path
+                  d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-3.594-1.555c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 3.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 4.557z"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.reddit.com/submit?url=https://jialiang.github.io/"
+              rel="noopener noreferrer"
+              aria-label="Share this page on Reddit"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#333" focusable="false">
+                <path
+                  d="M24 11.779a2.654 2.654 0 0 0-4.497-1.899c-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058a2.17 2.17 0 0 0 2.174 2.163c1.198 0 2.172-.97 2.172-2.163a2.171 2.171 0 0 0-4.193-.785l-4.329-1.015a.37.37 0 0 0-.44.249L11.755 7.82c-2.838.034-5.409.798-7.3 2.025a2.643 2.643 0 0 0-1.799-.712A2.654 2.654 0 0 0 0 11.779c0 .97.533 1.811 1.317 2.271a4.716 4.716 0 0 0-.086.857C1.231 18.818 6.039 22 11.95 22s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81A2.633 2.633 0 0 0 24 11.779zM6.776 13.595c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179L12 19.44l-.013.003c-1.777 0-3.028-.386-3.824-1.179a.369.369 0 0 1 0-.523.372.372 0 0 1 .526 0c.65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962a.373.373 0 0 1 .526 0 .37.37 0 0 1 0 .524zm-.189-3.095a1.58 1.58 0 0 1-1.581-1.574c0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <a class="to-top" href="#links" aria-label="Scroll to top">
+          <svg
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            fill="white"
+            stroke-linejoin="round"
+            stroke-miterlimit="2"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            focusable="false"
+          >
+            <path
+              d="M9.001 10.978H5.75a.751.751 0 0 1-.544-1.27l6.069-6.396a.998.998 0 0 1 1.45 0l6.068 6.396a.752.752 0 0 1-.543 1.27h-3.251v9.02c0 .531-.47 1.002-1 1.002h-3.998c-.53 0-1-.471-1-1.002z"
+              fill-rule="nonzero"
+            ></path>
+          </svg>
+        </a>
+      </div>
 
-        <p>
-          HTML and media files are hosted on
+      <div class="rainbow"></div>
+      <footer id="credits">
+        <div
+          >Thank you to Alexander Kahlkopf of
+          <a href="https://iconmonstr.com/" target="_blank" rel="noopener noreferrer">Iconmonstr</a>
+          for the icons.</div
+        >
+        <div
+          >The paper texture and image of Scheveningen Beach are from
+          <a href="https://www.istockphoto.com/" target="_blank" rel="noopener noreferrer">iStock</a
+          >.</div
+        >
+        <div
+          >Thanks to Google Fonts for
+          <a
+            href="https://fonts.google.com/noto/specimen/Noto+Serif+JP"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Noto Serif JP</a
+          >
+          and Chihaya for
+          <a
+            href="https://welina.xyz/font/tegaki/%E3%81%A1%E3%81%AF%E3%82%84%E7%B4%94/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Chihaya Jun</a
+          >.</div
+        >
+        <div
+          >Hosting provided by
           <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer"
-            >GitHub Pages</a
-          >. Most of my repositories are already hosted on GitHub so I'm mostly using them out of
-          convenience. They use Fastly as their CDN.
-        </p>
-        <p>
-          However, I use
-          <a href="https://cloudinary.com/" target="_blank" rel="noopener noreferrer">Cloudinary</a>
-          to host static assets like images, font files and JavaScript files. Cloudinary uses a
-          multi-CDN approach with 3 CDNs: Akamai, Cloudfront and Fastly. I discovered them when I
-          was prodding through the internals of
-          <a href="https://www.nike.com">Nike's website</a>.
-        </p>
-        <p>
-          The main reason I use Cloudinary is because GitHub Pages sets a 10 minute cache-control
-          header on all resources. Despite being a widely requested feature, they refuse to allow us
-          to set a longer cache expiry period. By contrast, Cloudinary has a reasonable 30 days
-          cache-control period. Caching allows browsers to store copies of files locally to be
-          served in the future. Retrieving files from your hard drive is significantly faster than
-          retrieving it from the server.
-        </p>
-        <p>
-          Caching aside, on my home internet, Cloudinary delivers files around 60% faster than
-          GitHub Pages. I tested this by first opening a new incognito browser window. Then I track
-          the time it takes for them to transfer a 15kB payload. Do note that even if you enable
-          "disable cache" in the developer console, browsers may still keep connections alive and
-          cache DNS lookups. A new incognito window is necessary for a truly clean slate. I repeat
-          this multiple times and average the results.
-        </p>
-        <p>
-          It's not only me. According to CDNPerf, in Asia where I'm based:
-          <a
-            href="https://www.cdnperf.com/cdn-compare?type=performance&location=continents&cdn=akamai-cdn,aws-cloudfront-cdn,cloudflare-cdn,fastly-cdn&locationValue=Asia"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Fastly is consistently slower than its competitors</a
-          >.
-        </p>
-        <p>
-          I am aware using a separate host for static assets does have its drawbacks. For one, the
-          browser needs to perform an additional DNS lookup, initial connection and SSL handshake
-          after parsing the HTML. However, even with all this overhead, Cloudinary still manages to
-          match or beat GitHub Pages' time. It should be said that Cloudinary cannot be used to host
-          websites. They will serve HTML files as attachments rather than webpages.
-        </p>
-        <p>
-          Audio files are still served through GitHub Pages because latency is less of an issue for
-          large media content. Cloudinary also has a strict 33GB per month free bandwidth limit.
-        </p>
-        <p>
-          Cloudinary also lets me serve my images in different formats just by changing the URL. My
-          current setup has AVIF as the preferred image format. If AVIF is not supported then
-          Cloudinary will automatically choose the best supported format based on the user's
-          browser.
-        </p>
-
-        <h4>Update 2022-01-11:</h4>
-
-        <p>
-          I would like to provide an update on something I noticed after a period of monitoring.
-          Most CDNs purge infrequently accessed resources from their edge servers. This is a problem
-          for low traffic websites like mine. For the rare visitor that stumbles upon this website,
-          it is likely the CDN's edge server will not have the necessary resources cached. Instead,
-          a cache-miss will happen and the CDN will have to recache by fetching from the origin
-          server. This causes considerable latency.
-        </p>
-        <p>
-          You can verify a cache-miss occured by looking at the "x-cache" or "server-timing" header
-          in the HTTP response. Do note that enabling "disable cache" in the developer console will
-          cause the browser to include a "cache-control: no-cache" header in the HTTP request. This
-          header will force the CDN to connect to the origin server to revalidate the cached
-          resource.
-        </p>
-        <p>
-          To solve this problem, I make use of the free uptime monitor service of
-          <a href="https://hetrixtools.com/" target="_blank" rel="noopener noreferrer"
-            >HetrixTools</a
-          >. Every minute, the critical resources of this webpage will be fetched from 4 different
-          locations: Singapore, London, San Francisco and New York. This prevents those resources
-          from being purged from the CDN's edge server around these regions due to inactivity.
-        </p>
-
-        <h3 id="article-header">Header Design</h3>
-
-        <figure class="image-container">
-          <picture>
-            <source
-              srcset="
-                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/qb79cbb3x0jlp1fxcuhs.avif
-              "
-              type="image/avif"
-            />
-            <img
-              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/qb79cbb3x0jlp1fxcuhs"
-              alt="MacBook Pro 16-inch Product Page screenshot"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>MacBook Pro 16-inch Product Page screenshot.</figcaption>
-        </figure>
-
-        <p>
-          I like how the header is done on the
-          <a href="https://www.apple.com/macbook-pro-16/" target="_blank" rel="noopener noreferrer"
-            >product page for the MacBook Pro 16-inch</a
-          >. It starts with this big headline and tagline. The big bold letters stand in stark
-          contrast to the simple background. Without any other elements around it, your attention is
-          immediately drawn to it. From there, the headline sets the context and the tagline sets
-          the tone and expectation. The boldness of the font and the use of periods creates an air
-          of confidence.
-        </p>
-
-        <p>
-          Apple also includes a product image near the header text to illustrate the product sold. I
-          considered putting a picture of myself, but I wasn't able to produce any that were good
-          enough. I figure generative art can be a good alternative. It provides visual interest but
-          more importantly sends a message of technical competence.
-        </p>
-
-        <h3 id="article-background">Background Design</h3>
-
-        <p>
-          Originally, the background featured a star field animation as inspired by
-          <a
-            aria-label="Goodbye Moonmen remix by The Living Tombstone"
-            href="https://www.youtube.com/watch?v=vdEWZq-m27M"
-            target="_blank"
-            rel="noopener noreferrer"
-            >The Living Tombstone's Goodbye Moonmen remix</a
-          >. But it was changed because of feedback that it was too distracting.
-        </p>
-
-        <p>
-          The current background is inspired by the
-          <a
-            href="https://www.youtube.com/watch?v=kg1BljLu9YY"
-            target="_blank"
-            rel="noopener noreferrer"
-            >music video of Thunderclouds by LSD</a
-          >. This song was famously known for being the music that played during the commercial for
-          the Samsung Galaxy Note 9.
-        </p>
-
-        <p>
-          I scoured the internet for implementation ideas before stumbling on
-          <a
-            href="https://experiments.withgoogle.com/clouds"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Clouds by Mr. Doob</a
-          >. If you're not aware, Mr. Doob is the creator of THREE.js. It works by peppering images
-          of clouds throughout the scene. The same cloud image is used but its position, scale,
-          rotation and opacity are randomised to create variation. This approach produces some
-          pretty fast and good looking clouds.
-        </p>
-        <p>
-          As you can see, these are not real physically accurate volumetric clouds. Unfortunately,
-          those require raymarching and scattering which are all very complex and GPU intensive
-          processes.
-        </p>
-        <p>
-          Mr. Doob's demo uses THREE.js and I kept it that way. Rewriting it would involve a lot of
-          effort for very little gain. I understand that THREE.js is a big library at 590kB minified
-          (120kB gzipped). Mind you, besides the cost of downloading the file, the browser still
-          needs to parse all that JavaScript code. Thus, I decided to make an effort to remove
-          unused code.
-        </p>
-
-        <p>
-          Unfortunately, THREE.js isn't an easy library to tree-shake. This is best illustrated by
-          trying to build the THREE.js library yourself. THREE.js uses Rollup as its build tool
-          which has tree-shaking capabilities built-in. Even exporting just the WebGLRenderer class
-          alone gives you a 353kB big distributable. There are a few factors for this:
-        </p>
-
-        <ul>
-          <li>
-            Eager initialization. In the WebGLRenderer class that I mentioned, its constructor
-            automatically creates instances for WebXR, morph targets, cube maps, shadow maps etc
-            regardless if you need it or not. The rest of the class naturally operates with the
-            assumption that these attributes have been initialized. Thus these initializations are
-            not so easily removed.
-          </li>
-          <li>
-            Inability to tree-shaker class methods. Bundlers like Rollup and Webpack can only
-            tree-shake classes and top-level variables through static analysis. The dynamic nature
-            of JavaScript makes more granular forms of tree-shaking difficult to do safely.
-          </li>
-        </ul>
-
-        <p>
-          With these problems in mind, the tools I use for tree-shaking is my own modified version
-          of
-          <a
-            href="https://github.com/pinqy520/coverage-shaker"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Coverage Shaker</a
-          >
-          and the
-          <a
-            href="https://developers.google.com/closure/compiler"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Closure Compiler</a
-          >. Coupled with a little elbow grease, I managed to shrink the library down to only 40kB
-          minified (14kB gzipped).
-        </p>
-
-        <p>
-          For context, in the Chrome Developer Console, there's a Coverage tab. It shows you a
-          line-by-line breakdown of used and unused code during runtime. This report can be exported
-          as a JSON file. Coverage Shaker removes unused code blocks based on the exported report.
-          This approach is tree-shaking through dynamic analysis.
-        </p>
-
-        <p>
-          After this, I looked through the output and further removed big chunks of code through
-          manual intervention. Finally, the Closure Compiler is used to minify the file while
-          preserving externally referenced symbols.
-        </p>
-
-        <p>
-          Performance-wise, one of the more complex optimizations I made is using
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas"
-            target="_blank"
-            rel="noopener noreferrer"
-            >OffscreenCanvas</a
-          >
-          and
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Web Workers</a
-          >. WebGL animation can be very CPU intensive especially during initialization. If done on
-          the main thread, it can block the execution of other tasks. This makes the user interface
-          unresponsive. In order to make it non-blocking, a Web Worker is spawned to execute code on
-          a separate thread. Web Workers do not have access to the DOM, so it cannot draw to the DOM
-          canvas directly. Thus OffscreenCanvas is needed as a go-between. Browsers that do not
-          support either features will fall back to using the main thread. The way I measure
-          improvements from this change is the time to interactive metric in
-          <a
-            href="https://developers.google.com/web/tools/lighthouse"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Lighthouse</a
-          >.
-        </p>
-
-        <p>
-          I'm proud to say that even on a Xiaomi Redmi Note 4, it runs at 60 fps on both Firefox
-          Mobile and Chrome for Android. For context, the Xiaomi Redmi Note 4 is a 170 USD mid-range
-          phone released in early 2017.
-        </p>
-
-        <p>User experience-wise, I'm quite pleased with how the star field turned out.</p>
-
-        <ul>
-          <li>
-            The constant motion makes the webpage feel alive and dynamic, yet doesn't distract from
-            the content. The motion's rhythmic nature allows the brain to become habituated to it.
-          </li>
-          <li>It's something fresh and not something you often see on the web.</li>
-          <li>It's light on bandwidth since most of it is procedurally generated by code.</li>
-          <li>
-            It uses a reasonable amount of GPU. For a 1080p 60Hz screen, it uses around 36% of an
-            Intel UHD Graphics 630 GPU.
-          </li>
-        </ul>
-
-        <h3 id="article-intro">Intro Section</h3>
-
-        <figure class="image-container">
-          <picture>
-            <source
-              srcset="
-                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vre3hivoeyvkgb7m9teo.avif
-              "
-              type="image/avif"
-            />
-            <img
-              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/vre3hivoeyvkgb7m9teo"
-              alt="iPhone 13 Pro product page screenshot"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>iPhone 13 Pro product page screenshot.</figcaption>
-        </figure>
-
-        <p>
-          In the intro section right after the header, I decided to list down my value propositions.
-          My method was inspired by the
-          <a
-            href="https://www.apple.com/my/iphone-13-pro/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >iPhone 13 Pro product page</a
-          >. Most people don't like reading so I made my messages as short as possible. I made them
-          big and bold so that they're hard to miss. The fade-on-scroll effect makes it interactive.
-          This way users are more likely to slow down, play with it and read everything.
-        </p>
-
-        <h3 id="article-personal">Personal Section</h3>
-
-        <figure class="image-container">
-          <picture>
-            <source
-              srcset="
-                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/eogu5worgn6fk0wkgkdx.avif
-              "
-              type="image/avif"
-            />
-            <img
-              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/eogu5worgn6fk0wkgkdx"
-              alt="MacBook Pro 13 inch product page screenshot"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>MacBook Pro 13 inch product page screenshot.</figcaption>
-        </figure>
-
-        <p>
-          For the next section, I decided to follow the card based approach that dominates the
-          <a href="https://www.apple.com/macbook-pro-13/" target="_blank" rel="noopener noreferrer"
-            >MacBook Pro 13 inch product page</a
-          >. I think that this is a great way to introduce more colors to break up the monotony. It
-          also helps to group elements together.
-        </p>
-
-        <p>
-          On mobile, they are simplified to just have different colored backgrounds instead. Since
-          cards layout tend to be less space efficient.
-        </p>
-
-        <h3 id="article-projects">Projects Section</h3>
-
-        <figure class="image-container">
-          <picture>
-            <source
-              srcset="
-                https://res.cloudinary.com/dedvquoyt/image/upload/f_avif,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/grqwjah3tyshruu0kkgk.avif
-              "
-              type="image/avif"
-            />
-            <img
-              src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/grqwjah3tyshruu0kkgk"
-              alt="Apple Music homepage screenshot"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>Apple Music homepage screenshot.</figcaption>
-        </figure>
-
-        <p>
-          I envisioned my personal projects shown the same way apps show a list of song cover art.
-          So I looked at Apple Music's user interface for inspiration. I did find the card-based
-          approach to be reasonable. I also liked how the background uses the dominant color of the
-          cover art to group text and image visually.
-        </p>
-
-        <p>
-          The cards all need to be in a single row. They shouldn't wrap so as not to interrupt the
-          compositional flow. Thus, horizontal overflow would occur on smaller screens. Most mouse
-          users don't really have a way to scroll horizontally. They would need to depend on
-          on-screen arrows, which can be tedious to use. But I decided it wasn't a big problem. I
-          only have 4 projects at the time of writing. Mouse users tend to have larger screens. All
-          the projects should fit with little to no scrolling required from them.
-        </p>
-
-        <p>
-          For a while, I considered adding scroll snapping. Think of it like auto-correct for
-          scrolling. It was easy to implement too now that CSS natively supports it. But I looked at
-          what people said on the internet and most aren't big fans. They claim it's invasive, takes
-          control away from the user and goes against user expectations. I looked at the
-          <a href="https://www.apple.com/store" target="_blank" rel="noopener noreferrer"
-            >Apple Store page</a
-          >
-          and the
-          <a
-            href="https://developers.google.com/search/docs/advanced/structured-data/carousel"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Google Search Carousel</a
-          >
-          and they don't have scroll snapping either. Thus, I decided to scrap this idea.
-        </p>
-
-        <h3 id="article-article">Article Section</h3>
-
-        <p>
-          For the article section I made the background black so you can focus better on the text.
-          The background animation is also turned off completely since it won't be visible anymore.
-          I used the
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Intersection Observer API</a
-          >
-          to know which section the user is currently on. The body text is also made off-white to
-          reduce eye-strain.
-        </p>
-
-        <p>
-          I typed this article on
-          <a href="https://docs.google.com" target="_blank" rel="noopener noreferrer"
-            >Google Docs</a
-          >
-          and used its spell checker and grammar checker. I also use the
-          <a href="https://hemingwayapp.com/" target="_blank" rel="noopener noreferrer"
-            >Hemingway App</a
-          >
-          to ensure good writing style and readability. It uses the Automated Readability Index
-          (ARI) to gauge my readability level. It gave my article a Grade 7, which means it's around
-          the level of Harry Potter in terms of readability.
-        </p>
-
-        <h3 id="article-accessibility">Accessibility</h3>
-
-        <p>
-          On accessibility, I refer to the
-          <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer"
-            >Web Content Accessibility Guidelines (WCAG) 2.1 standard</a
-          >. Here I'll discuss some of the Level AAA success criteria relevant to my website.
-        </p>
-
-        <h4>Success Criterion 1.4.6: Contrast (Enhanced)</h4>
-
-        <p>
-          Probably the most famous criterion. A website must have a sufficient color contrast ratio
-          for all texts: 7:1 for normal texts and 4.5:1 for large texts.
-        </p>
-
-        <h4>Success Criterion 1.4.8: Visual Presentation</h4>
-
-        <p>This success criterion has 5 requirements:</p>
-
-        <blockquote>
-          <ol>
-            <li>Foreground and background colors can be selected by the user.</li>
-          </ol>
-        </blockquote>
-
-        <p>
-          At first glance, the first criteria seems to significantly restrict your creative freedom,
-          but I later found out that that was not the case.
-        </p>
-
-        <p>
-          For context, browsers that meet
-          <a
-            href="https://www.w3.org/TR/UAAG10/guidelines.html#tech-configure-text-color"
-            target="_blank"
-            rel="noopener noreferrer"
-            >User Agent Accessibility Guidelines 1.0 (UAAG 1.0) Checkpoint 4.3</a
-          >
-          allow users to configure the background and foreground colors. They can also be set to
-          override the webpage's stylesheet.
-        </p>
-
-        <p>
-          One way to satisfy this requirement is using
-          <a
-            href="https://www.w3.org/WAI/WCAG21/Techniques/general/G156.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Technique G156: Using a technology that has commonly-available user agents that can
-            change the foreground and background of blocks of text</a
-          >. Basically, it asks that you don't unnecessarily prevent your stylesheets from being
-          overridden. For context, there are CSS properties like
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/CSS/forced-color-adjust"
-            target="_blank"
-            rel="noopener noreferrer"
-            >forced-color-adjust and -ms-high-contrast-adjust</a
-          >. They allow elements to opt-out from being overridden if their original colors serve a
-          functional purpose.
-        </p>
-
-        <br />
-
-        <blockquote>
-          <ol start="2">
-            <li>Width is no more than 80 characters or glyphs (40 if CJK).</li>
-            <li>Text is not justified (aligned to both the left and the right margins).</li>
-            <li>
-              Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph
-              spacing is at least 1.5 times larger than the line spacing.
-            </li>
-          </ol>
-        </blockquote>
-
-        <p>The next 3 requirements are quite straightforward:</p>
-
-        <ul>
-          <li>The width of my text blocks are around 70 characters.</li>
-          <li>None of my texts are justified.</li>
-          <li>My paragraph spacing is 2.27 times larger than my line spacing.</li>
-        </ul>
-        <br />
-
-        <blockquote>
-          <ol start="5">
-            <li>
-              Text can be resized without assistive technology up to 200 percent in a way that does
-              not require the user to scroll horizontally to read a line of text on a full-screen
-              window.
-            </li>
-          </ol>
-        </blockquote>
-
-        <p>
-          The fifth requirement was a bit confusing. After all, given a small enough screen size,
-          all websites eventually fail to allow doubling of text size without breaking. I did find
-          out that this requirement is related to
-          <a
-            href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Success Criterion 1.4.10: Reflow</a
-          >. Combining both criteria, I concluded that given a viewport of 1280×1024 CSS pixels,
-          users must be able to zoom up to 400%. During which, 200% text enlargement must be
-          possible.
-        </p>
-
-        <h4>Success Criterion 2.1.3: Keyboard (No Exception)</h4>
-
-        <p>
-          To satisfy this criteria, I tried navigating my website using only a keyboard. I also made
-          sure that the currently focused element is always visible and clearly distinguishable.
-          Focused elements on this website always have a blue outline.
-        </p>
-
-        <h4>Success Criterion 2.3.3: Animation from Interactions</h4>
-
-        <p>
-          Animations can cause dizziness or nausea in people with vestibular disorders. I use the
-          "prefers-reduced-motion" CSS Media Query to understand the user's motion preference. All
-          animations are disabled if the user prefers reduced motion.
-        </p>
-
-        <h4>Success Criterion 2.4.9: Link Purpose (Link Only)</h4>
-
-        <p>
-          Some vision-impaired users use their screen reader's "list of links" function for quick
-          navigation. I used the NVDA screen reader to make sure that the list of links for my
-          website makes sense even without context.
-        </p>
-
-        <h4>Success Criterion 2.4.10: Section Headings</h4>
-
-        <p>
-          Section headings allow for easy navigation and better reading comprehension. I went into
-          the Accessibility tab in the Firefox Developer Tools and checked that the outline of the
-          document makes sense.
-        </p>
-
-        <h4>Success Criterion 3.1.5: Reading Level</h4>
-
-        <p>
-          This is to accommodate people with lower secondary education level reading ability. I used
-          the Hemingway App to determine the readability level of my texts and adjust accordingly.
-        </p>
-
-        <h3 id="article-compatability">Compatibility</h3>
-
-        <p>
-          This website should work with the latest version of all major browsers. At the time of
-          writing these are:
-        </p>
-
-        <ul>
-          <li>Mozilla Firefox 92</li>
-          <li>Google Chrome 94</li>
-          <li>Microsoft Edge 94</li>
-          <li>Apple Safari 15</li>
-        </ul>
-
-        <p>
-          On Internet Explorer 11 and on browsers with JavaScript disabled, graceful degradation
-          occurs. All text and links would still show up and work but some features may be
-          unavailable.
-        </p>
-
-        <p>
-          I've tested this webpage on a wide range of simulated screen sizes. The 2 main ways I test
-          for screen size compatibility are as follows:
-        </p>
-
-        <ul>
-          <li>
-            I start with a 240×320 viewport (Nokia 8110 4G). First I stretch it horizontally until
-            it has a 32:9 aspect ratio (Double Full HD). Then I start over and stretch it vertically
-            until it has a 9:32 aspect ratio. This test covers extreme aspect-ratios combined with
-            extremely small sides.
-          </li>
-          <li>
-            I simulate the viewport sizes of the iPhone, iPad and a 1080p monitor. This test covers
-            widely-used screen sizes.
-          </li>
-        </ul>
-
-        <h3 id="article-privacy">Privacy</h3>
-
-        <p>As always, this webpage contains absolutely no tracking whatsoever.</p>
-      </article>
-    </section>
-
-    <audio id="bgm-audio" preload="metadata">
-      <source src="audios/Thunderclouds.flac" type="audio/flac" />
-      <source src="audios/Thunderclouds.mp3" type="audio/mp3" />
-    </audio>
-
-    <script src="https://res.cloudinary.com/dedvquoyt/raw/upload/v1635775926/jialiang.github.io/scripts/three.module.min_oukweh.js"></script>
-
-    <script id="vertex-shader-source" type="x-shader/x-vertex">
-      varying vec2 vUv;
-
-      void main() {
-        vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
-    </script>
-
-    <script id="fragment-shader-source" type="x-shader/x-fragment">
-      uniform sampler2D map;
-
-      uniform vec3 fogColor;
-      uniform float fogNear;
-      uniform float fogFar;
-
-      varying vec2 vUv;
-
-      void main() {
-        float depth = gl_FragCoord.z / gl_FragCoord.w;
-        float fogFactor = smoothstep(fogNear, fogFar, depth);
-
-        gl_FragColor = texture2D(map, vUv);
-        gl_FragColor.w *= pow(gl_FragCoord.z, 20.0);
-        gl_FragColor = mix(gl_FragColor, vec4(fogColor, gl_FragColor.w), fogFactor);
-      }
-    </script>
-
-    <script id="webgl-code">
-      if (self.importScripts) {
-        self.importScripts(
-          "https://res.cloudinary.com/dedvquoyt/raw/upload/v1635775926/jialiang.github.io/scripts/three.module.min_oukweh.js"
-        );
-      }
-
-      let renderer;
-      let camera;
-      let scene;
-      let startTime;
-      let offset = Math.random();
-      let performanceCaveat = false;
-
-      function initWebGL(canvas, cloudImage, vertexShaderSource, fragmentShaderSource) {
-        const THREE = initThreeJS();
-
-        try {
-          renderer = new THREE.WebGLRenderer({
-            canvas: canvas,
-            antialias: false,
-            alpha: true,
-            failIfMajorPerformanceCaveat: true,
-            stencil: false,
-            depth: false,
-          });
-        } catch (e) {
-          renderer = new THREE.WebGLRenderer({
-            canvas: canvas,
-            antialias: false,
-            alpha: true,
-            stencil: false,
-            depth: false,
-          });
-
-          performanceCaveat = true;
-        }
-
-        renderer.setSize(canvas.width, canvas.height, false);
-
-        camera = new THREE.PerspectiveCamera(30, canvas.width / canvas.height, 1, 3000);
-        camera.position.y = 0;
-        camera.position.z = 100;
-
-        const texture = new THREE.CanvasTexture(cloudImage);
-
-        texture.magFilter = THREE.LinearFilter;
-        texture.minFilter = THREE.LinearMipMapLinearFilter;
-
-        const fog = new THREE.Fog(0x4584b4, -100, 3000);
-
-        const material = new THREE.ShaderMaterial({
-          uniforms: {
-            map: { type: "t", value: texture },
-            fogColor: { type: "c", value: fog.color },
-            fogNear: { type: "f", value: fog.near },
-            fogFar: { type: "f", value: fog.far },
-          },
-          vertexShader: vertexShaderSource,
-          fragmentShader: fragmentShaderSource,
-          depthWrite: false,
-          depthTest: false,
-          transparent: true,
-        });
-
-        const plane = new THREE.Mesh(new THREE.PlaneGeometry(64, 64));
-        const geometry = new THREE.Geometry();
-
-        const randomNumbers = [
-          0.546, 0.407, 0.634, 0.321, 0.188, 0.711, 0.45, 0.592, 0.478, 0.594, 0.763, 0.762, 0.367,
-          0.746, 0.274, 0.753, 0.077, 0.169, 0.587, 0.146, 0.416, 0.54, 0.702, 0.438, 0.097, 0.597,
-          0.541, 0.703, 0.331, 0.785, 0.449, 0.4, 0.219, 0.786, 0.748, 0.007, 0.258, 0.582, 0.083,
-          0.089, 0.135, 0.611, 0.541, 0.281, 0.101, 0.245, 0.224, 0.369, 0.166, 0.565, 0.285, 0.696,
-          0.102, 0.829, 0.045, 0.676, 0.364, 0.774, 0.454, 0.151, 0.101, 0.729, 0.936, 0.211, 0.275,
-          0.154, 0.09, 0.859, 0.197, 0.365, 0.16, 0.098, 0.444, 0.182, 0.546, 0.086, 0.197, 0.083,
-          0.367, 0.528, 0.032, 0.497, 0.504, 0.734, 0.296, 0.708, 0.846, 0.673, 0.259, 0.607, 0.358,
-          0.805, 0.775, 0.234, 0.394, 0.538, 0.758, 0.237, 0.33, 0.47, 0.365, 0.473, 0.474, 0.839,
-          0.627, 0.462, 0.656, 0.689, 0.273, 0.226, 0.077, 0.96, 0.457, 0.907, 0.641, 0.589, 0.456,
-          0.115, 0.402, 0.065, 0.205, 0.977, 0.671, 0.344, 0.415, 0.844, 0.895, 0.966, 0.962, 0.719,
-          0.471, 0.556, 0.846, 0.817, 0.355, 0.741, 0.947, 0.172, 0.321, 0.317, 0.24, 0.275, 0.757,
-          0.754, 0.181, 0.534, 0.713, 0.446, 0.103, 0.304, 0.114, 0.178, 0.713, 0.018, 0.666, 0.74,
-          0.246, 0.433, 0.658, 0.729, 0.92, 0.686, 0.634, 0.107, 0.541, 0.166, 0.885, 0.996, 0.126,
-          0.067, 0.332, 0.226, 0.617, 0.867, 0.057, 0.233, 0.581, 0.935, 0.394, 0.156, 0.946, 0.42,
-          0.607, 0.072, 0.114, 0.445, 0.843, 0.724, 0.867, 0.927, 0.506, 0.022, 0.021, 0.688, 0.892,
-          0.213, 0.712, 0.054, 0.852, 0.735, 0.382, 0.725, 0.746, 0.131, 0.927, 0.304, 0.27, 0.974,
-          0.863, 0.674, 0.974, 0.594, 0.959, 0.47, 0.911, 0.634, 0.766, 0.959, 0.035, 0.146, 0.882,
-          0.535, 0.424, 0.173, 0.192, 0.172, 0.839, 0.738, 0.509, 0.828, 0.218, 0.488, 0.382, 0.791,
-          0.336, 0.335, 0.885, 0.588, 0.876, 0.98, 0.42, 0.232, 0.252, 0.493, 0.776, 0.762, 0.741,
-          0.734, 0.375, 0.22, 0.067, 0.03, 0.128, 0.258, 0.429, 0.525, 0.361, 0.074, 0.035, 0.292,
-          0.921, 0.963, 0.482, 0.125, 0.556, 0.406, 0.524, 0.472, 0.769, 0.713, 0.068, 0.975, 0.705,
-          0.124, 0.295, 0.159, 0.581, 0.183, 0.702, 0.552, 0.12, 0.312, 0.794, 0.664, 0.617, 0.233,
-          0.259, 0.709, 0.561, 0.095, 0.263, 0.44, 0.951, 0.167, 0.865, 0.22, 0.743, 0.897, 0.924,
-          0.289,
-        ];
-
-        for (let i = 0; i < 50; i++) {
-          plane.position.x = randomNumbers.pop() * 400;
-          plane.position.y = -randomNumbers.pop() * randomNumbers.pop() * 200 - 15;
-          plane.position.z = i;
-
-          plane.rotation.z = randomNumbers.pop() * Math.PI;
-          plane.scale.x = plane.scale.y = randomNumbers.pop() * randomNumbers.pop() * 1.5 + 0.5;
-
-          plane.updateMatrix();
-          geometry.merge(plane.geometry, plane.matrix);
-
-          plane.position.x = plane.position.x + 400;
-
-          plane.updateMatrix();
-          geometry.merge(plane.geometry, plane.matrix);
-        }
-
-        const mesh_1 = new THREE.Mesh(geometry, material);
-        const mesh_2 = new THREE.Mesh(geometry, material);
-
-        mesh_2.position.z = -100;
-
-        scene = new THREE.Scene();
-        scene.add(mesh_1);
-        scene.add(mesh_2);
-
-        startTime = performance.now();
-
-        if (performanceCaveat) {
-          requestAnimationFrame(renderWebGL);
-          return false;
-        }
-
-        if (typeof Window === "undefined") self.postMessage({ initWebGLSuccess: true });
-
-        return true;
-      }
-
-      function renderWebGL(currentTime) {
-        if (startTime == null) return; // WebGL not finished initializing, ignore draw call
-
-        camera.position.x = (((currentTime - startTime) * 0.0025 + 100 + 100 * offset) % 400) + 200;
-
-        renderer.render(scene, camera);
-      }
-
-      self.onmessage = function (e) {
-        if (e.data.raf) return renderWebGL(e.data.raf);
-
-        return initWebGL(
-          e.data.canvas,
-          e.data.cloudImage,
-          e.data.vertexShaderSource,
-          e.data.fragmentShaderSource
-        );
-      };
-    </script>
+            >Github Pages</a
+          >.</div
+        >
+      </footer>
+    </div>
 
     <script>
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var oneTick = 1000 / 60;
+      var prefersReducedMotion = false;
 
-      function initBgm() {
-        const bgmAudio = document.getElementById("bgm-audio");
-        const bgmButton = document.getElementById("bgm-button");
-
-        const playingText = "Pause Music";
-        const pausedText = "Play Music";
-
-        bgmAudio.onended = function () {
-          bgmButton.textContent = pausedText;
-        };
-
-        bgmButton.onclick = function () {
-          if (bgmAudio.paused) {
-            bgmAudio.play();
-            bgmButton.textContent = playingText;
-          } else {
-            bgmAudio.pause();
-            bgmButton.textContent = pausedText;
-          }
-        };
+      if (window.matchMedia) {
+        prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       }
+
+      var tick = function (func) {
+        setTimeout(function () {
+          func(oneTick, true);
+        }, oneTick);
+      };
+
+      if (typeof requestAnimationFrame !== "undefined") tick = requestAnimationFrame;
 
       function initCanvas() {
-        if (!prefersReducedMotion || prefersReducedMotion.matches) return;
+        if (prefersReducedMotion) return;
 
-        let pause = false; // pause by user scrolled to how-its-made section
+        var canvas = document.getElementById("particles");
+        var context = canvas.getContext("2d");
 
-        if (typeof IntersectionObserver !== "undefined") {
-          const observer = new IntersectionObserver(
-            function (entries) {
-              if (entries[0].isIntersecting) pause = true;
-              else pause = false;
-            },
-            { threshold: [1] }
-          );
+        var pixelRatio = 1;
 
-          observer.observe(document.querySelector("#how-its-made .observation-point"));
-        }
+        if (window.devicePixelRatio) pixelRatio = window.devicePixelRatio;
 
-        const canvas = document.getElementsByTagName("canvas")[0];
-        const vertexShaderSource = document.getElementById("vertex-shader-source").innerHTML;
-        const fragmentShaderSource = document.getElementById("fragment-shader-source").innerHTML;
+        var realWidth = innerWidth * pixelRatio;
+        var realHeight = innerHeight * pixelRatio;
 
-        const width = window.innerWidth;
-        const height = window.innerHeight * 0.8;
+        canvas.width = realWidth;
+        canvas.height = Math.max(Math.min(realHeight, realWidth * 2) * 0.25, 160 * pixelRatio);
 
-        const cloudImage = document.getElementById("cloud-image");
+        var size = Math.round(
+          Math.max(Math.min(realHeight, realWidth * 2) * 0.025, 14 * pixelRatio)
+        );
+        var count = Math.max((canvas.width * canvas.height) / (size * size) / 10, 28);
 
-        if (canvas.transferControlToOffscreen) {
-          // We support off-screen canvas!
-
-          const workerCode = document.getElementById("webgl-code").innerHTML;
-          const workerCodeBlob = new Blob([workerCode], { type: "text/javascript" });
-          const offscreenCanvas = canvas.transferControlToOffscreen();
-
-          offscreenCanvas.width = width;
-          offscreenCanvas.height = height;
-
-          const worker = new Worker(window.URL.createObjectURL(workerCodeBlob));
-
-          const cloudCanvas = document.createElement("canvas");
-          const cloudCanvasContext = cloudCanvas.getContext("2d");
-
-          cloudCanvas.width = 256;
-          cloudCanvas.height = 256;
-
-          cloudCanvasContext.drawImage(cloudImage, 0, 0);
-
-          const cloudImageData = cloudCanvasContext.getImageData(0, 0, 256, 256);
-
-          // Start drawing when worker tells us initialization is complete
-          worker.onmessage = function (e) {
-            const draw = function (totalTime) {
-              if (!pause) worker.postMessage({ raf: totalTime });
-
-              requestAnimationFrame(draw);
-            };
-
-            requestAnimationFrame(draw);
-          };
-
-          // Sent message to worker to kick-start WebGL initialization
-          worker.postMessage(
-            {
-              canvas: offscreenCanvas,
-              cloudImage: cloudImageData,
-              vertexShaderSource: vertexShaderSource,
-              fragmentShaderSource: fragmentShaderSource,
-            },
-            [offscreenCanvas]
-          );
-        } else {
-          // We don't support offscreen canvas, use normal way
-
-          if (window.Promise == null) return; // doesn't support promise, probably IE11
-
-          canvas.width = width;
-          canvas.height = height;
-
-          const ok = initWebGL(canvas, cloudImage, vertexShaderSource, fragmentShaderSource);
-
-          if (ok !== true) return;
-
-          const draw = function (totalTime) {
-            if (!pause) renderWebGL(totalTime);
-
-            requestAnimationFrame(draw);
-          };
-
-          requestAnimationFrame(draw);
-        }
-      }
-
-      function initCarouselScroll() {
-        const projectCount = 5;
-
-        const carousel = document.getElementById("project-carousel");
-        const cards = document.querySelectorAll("#project-carousel li");
-        const left = document.getElementById("project-carousel-left-button");
-        const right = document.getElementById("project-carousel-right-button");
-
-        const newPosition = function (mode) {
-          const scrollPos = carousel.scrollLeft;
-          const carouselWidth = carousel.scrollWidth;
-          const halfCardWidth = ((carouselWidth / (projectCount * 18)) * 16) / 2;
-          const halfWindowWidth = window.innerWidth / 2;
-          const carouselMiddlePos = scrollPos + halfWindowWidth;
-
-          const offsetLefts = [];
-
-          let closestToMiddleDist = 0;
-          let closestToMiddleIndex = 0;
-
-          for (let i = 0; i < cards.length; i++) {
-            offsetLefts.push(cards[i].offsetLeft);
-
-            const middlePos = offsetLefts[i] + halfCardWidth;
-            const distToMiddle = Math.abs(carouselMiddlePos - middlePos);
-
-            if (i === 0 || distToMiddle < closestToMiddleDist) {
-              closestToMiddleIndex = i;
-              closestToMiddleDist = distToMiddle;
-            }
-          }
-
-          const getNewOffsetLeft = function (index) {
-            return offsetLefts[index] - halfWindowWidth + halfCardWidth;
-          };
-
-          if (mode === "left") {
-            // already at leftmost and wants to go left
-            if (closestToMiddleIndex === 0) return 0;
-
-            // the left card is mostly but not completely showing, so completely show it
-            if (offsetLefts[closestToMiddleIndex] < scrollPos) {
-              return getNewOffsetLeft(closestToMiddleIndex);
-            }
-
-            // Show previous card
-            return getNewOffsetLeft(closestToMiddleIndex - 1);
-          }
-
-          if (mode === "right") {
-            // already at rightmost and wants to go right
-            if (closestToMiddleIndex === cards.length - 1) return carouselWidth;
-
-            // the right card is mostly but not completely showing, so completely show it
-            if (
-              scrollPos + window.innerWidth - halfCardWidth * 2 <
-              offsetLefts[closestToMiddleIndex]
-            ) {
-              return getNewOffsetLeft(closestToMiddleIndex);
-            }
-
-            // Show next card
-            return getNewOffsetLeft(closestToMiddleIndex + 1);
-          }
-
-          return 0;
+        var imageLoadedCount = 0;
+        var imageOnLoad = function () {
+          imageLoadedCount += 1;
+          if (imageLoadedCount >= 3) tick(render);
         };
 
-        // feature detection: scrollTo
-        if (!carousel.scrollTo) {
-          carousel.scrollTo = function (obj) {
-            console.log(obj.left);
-            carousel.scrollLeft = obj.left;
+        var circle = new Image();
+        circle.src = "./images/circle.png";
+        circle.onload = imageOnLoad;
+
+        var triangle = new Image();
+        triangle.src = "./images/triangle.png";
+        triangle.onload = imageOnLoad;
+
+        var rectangle = new Image();
+        rectangle.src = "./images/rectangle.png";
+        rectangle.onload = imageOnLoad;
+
+        var images = [triangle, rectangle, circle];
+
+        var particles = [];
+
+        for (var i = 0; i < count; i++) {
+          var yLimit = size;
+
+          var p = {
+            type: Math.floor(i / (count / 3)),
+            angle: Math.random() * Math.PI,
+            size: size,
+
+            x: Math.round(Math.random() * canvas.width),
+            y: Math.round(yLimit + Math.random() * (canvas.height - yLimit * 2)),
+
+            a: Math.random(),
+            b: 0,
+            c: Math.random(),
+            d: -1,
+
+            dAngle: 0.01 + Math.random() * 0.01,
+            dx: Math.round(1 + Math.random() * 3 * pixelRatio),
+            da: 0.01 + Math.random() * 0.01,
           };
+
+          p.scaleY = Math.sqrt(p.c * p.c + p.d * p.d);
+          p.skewX = Math.atan2(-p.c, p.d) / Math.PI / 180;
+          p.halfSize = p.size / 2;
+
+          particles.push(p);
         }
 
-        left.onclick = function () {
-          carousel.scrollTo({
-            left: newPosition("left"),
-            behavior: "smooth",
+        var clear = function () {
+          context.setTransform(1, 0, 0, 1, 0, 0);
+          context.clearRect(0, 0, canvas.width, canvas.height);
+        };
+
+        var draw = function (speedFactor) {
+          particles.forEach(function (p) {
+            context.setTransform(Math.abs(p.a), 0, p.skewX, p.scaleY, p.x, p.y);
+            context.rotate(p.angle);
+            context.drawImage(images[p.type], -p.halfSize, -p.halfSize, p.size, p.size);
+
+            p.x = (p.x + p.dx * speedFactor) % canvas.width;
+            p.a = ((p.a + p.da * speedFactor + 1) % 2) - 1;
+            p.angle = (p.angle + p.dAngle * speedFactor) % (Math.PI * 2);
           });
         };
 
-        right.onclick = function () {
-          carousel.scrollTo({
-            left: newPosition("right"),
-            behavior: "smooth",
-          });
+        var resizeTimeout = null;
+
+        window.onresize = function () {
+          if (innerWidth * pixelRatio === canvas.width) return;
+
+          particles = [];
+
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(function () {
+            initCanvas();
+          }, 200);
+        };
+
+        var pause = false;
+
+        if (typeof IntersectionObserver !== "undefined") {
+          var observer = new IntersectionObserver(
+            function (entries) {
+              if (entries[0].isIntersecting) {
+                pause = true;
+                canvas.style.opacity = "0";
+              } else {
+                pause = false;
+                canvas.style.opacity = "1";
+              }
+            },
+            { threshold: [0.01] }
+          );
+
+          observer.observe(document.querySelector("#me"));
+        }
+
+        var lastTime = 0,
+          elapsed;
+
+        var render = function (time, isElapse) {
+          if (!pause) clear();
+
+          if (particles.length === 0) return;
+
+          if (!pause) {
+            elapsed = time;
+
+            if (!isElapse) {
+              elapsed -= lastTime;
+              lastTime = time;
+            }
+
+            draw(elapsed / oneTick);
+          }
+
+          tick(render);
         };
       }
 
-      function initUsp() {
-        if (!prefersReducedMotion || prefersReducedMotion.matches) return;
+      function initProjectNav() {
+        var projectList = document.querySelector("#projects ul");
 
-        if (typeof IntersectionObserver !== "undefined") {
-          const observer = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                entry.target.previousElementSibling.style.opacity = Math.pow(
-                  entry.intersectionRatio,
-                  8
-                );
-              });
-            },
-            {
-              threshold: [
-                0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.76, 0.78, 0.8, 0.82, 0.84, 0.86, 0.88, 0.9, 0.92,
-                0.94, 0.96, 0.98, 1.0,
-              ],
-            }
-          );
+        var move = function (direction) {
+          var scrollWidth = projectList.scrollWidth;
+          var scrollLeft = projectList.scrollLeft;
+          var halfWidth = innerWidth / 2;
 
-          const intersectionPoints = document.querySelectorAll("#usp .intersection-point");
+          var rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+          var cardSize = rem * 17.5;
 
-          for (let i = 0; i < intersectionPoints.length; i++)
-            observer.observe(intersectionPoints[i]);
-        }
+          var middlePosition = scrollLeft + halfWidth;
+          var cardNearestToMiddle = Math.floor(middlePosition / cardSize);
+
+          var cardToScrollTo = cardNearestToMiddle + direction;
+          var whitespaceToCenterCard = halfWidth - cardSize / 2;
+
+          var scrollTo = cardToScrollTo * cardSize - whitespaceToCenterCard;
+
+          if (projectList.scrollTo && !prefersReducedMotion) {
+            projectList.scrollTo({
+              top: 0,
+              left: scrollTo,
+              behavior: "smooth",
+            });
+          } else {
+            projectList.scrollLeft = scrollTo;
+          }
+        };
+
+        var leftButton = document.querySelector("#projects .left-arrow");
+        var rightButton = document.querySelector("#projects .right-arrow");
+
+        leftButton.addEventListener("click", function () {
+          move(-1);
+        });
+        rightButton.addEventListener("click", function () {
+          move(1);
+        });
       }
 
-      function initScrollMessage() {
-        if (typeof IntersectionObserver !== "undefined") {
-          const scrollMsg = document.querySelector(".scroll");
+      function initToTop() {
+        var doc = document.documentElement;
 
-          const observer = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                if (entry.intersectionRatio === 1.0) scrollMsg.style.opacity = "1";
-                else scrollMsg.style.opacity = "0";
-              });
-            },
-            {
-              threshold: [1.0],
-            }
-          );
+        if (!doc.scrollTo || prefersReducedMotion) return;
 
-          observer.observe(document.querySelector("header"));
-        }
+        document.querySelector(".to-top").addEventListener("click", function (e) {
+          e.preventDefault();
+          doc.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+        });
       }
 
-      initBgm();
-      initUsp();
-      initScrollMessage();
-      initCarouselScroll();
+      tick(initCanvas);
+      initProjectNav();
+      initToTop();
     </script>
-
-    <picture>
-      <source
-        srcset="
-          https://res.cloudinary.com/dedvquoyt/image/upload/f_webp,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ehlxmb2ry29zn3vl5v3b.webp
-        "
-        type="image/webp"
-      />
-      <img
-        id="cloud-image"
-        style="display: none"
-        src="https://res.cloudinary.com/dedvquoyt/image/upload/f_auto,fl_immutable_cache,q_auto:best/jialiang.github.io/images-2/ehlxmb2ry29zn3vl5v3b"
-        alt=""
-        onload="initCanvas()"
-        crossorigin="anonymous"
-      />
-    </picture>
   </body>
 </html>
