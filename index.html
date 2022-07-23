@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,7 +13,14 @@
     <link rel="icon" type="image/x-icon" href="https://jialiang.github.io/favicon.png" />
     <link rel="canonical" href="https://jialiang.github.io/" />
 
-    <link rel="preload" href="./images/bg-2-2560 (optimized).avif" as="image" type="image/avif" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jialiang.github.io/" />
+    <meta property="og:title" content="Jia Liang | Software Engineer" />
+    <meta property="og:image" content="https://jialiang.github.io/preview.png" />
+    <meta property="og:description" content="Personal website of software engineer, Jia Liang" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <style>
       @font-face {
@@ -506,6 +513,7 @@
       #projects li img {
         box-sizing: border-box;
         width: 100%;
+        height: 100%;
         transform: rotate(-1deg);
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
       }
@@ -707,6 +715,8 @@
           id="background"
           src="./images/bg-2-1920%20(optimized).jpg"
           alt=""
+          width="1920"
+          height="1080"
           onload="this.style.opacity = '1';"
         />
       </picture>
@@ -790,6 +800,8 @@
                 <img
                   src="./images/miku-cover%20(optimized).jpg"
                   alt="Hatsune Miku posing for the camera"
+                  width="380"
+                  height="380"
                 />
               </picture>
               <div class="title"><div>3D Engine for Miku</div></div>
@@ -797,7 +809,12 @@
           </li>
           <li>
             <a href="https://github.com/jialiang/HTML-to-PDF-UA/" rel="noreferrer noopener">
-              <img src="./images/pdf-cover.png" alt="Red PDF logo with white bold PDF text" />
+              <img
+                src="./images/pdf-cover.png"
+                alt="Red PDF logo with white bold PDF text"
+                width="380"
+                height="380"
+              />
               <div class="title"><div>HTML to PDF/UA-compliant PDF</div></div>
             </a>
           </li>
@@ -808,6 +825,8 @@
                 <img
                   src="./images/space-gem-cover%20(optimized).jpg"
                   alt="Screenshot of the Space Gems game"
+                  width="380"
+                  height="380"
                 />
               </picture>
               <div class="title"><div>Space Gems</div></div>
@@ -823,6 +842,8 @@
                 <img
                   src="./images/shit-compressor-cover%20(optimized).jpg"
                   alt="Screenshot of the UI of the Shit Compressor programme"
+                  width="380"
+                  height="380"
                 />
               </picture>
               <div class="title"><div>Shit Compressor</div></div>
@@ -835,6 +856,8 @@
                 <img
                   src="./images/yugioh-cover%20(optimized).jpg"
                   alt="Headshot of Madamme Verre"
+                  width="380"
+                  height="380"
                 />
               </picture>
               <div class="title"><div>Yu-Gi-Oh Secret Rare Effect with CSS</div></div>
@@ -845,6 +868,8 @@
               <img
                 src="./images/clock-cover.png"
                 alt="Picture of beige analog clock with scallop outline"
+                width="380"
+                height="380"
               />
               <div class="title">Pure CSS Android 12 Clock</div>
             </a>
