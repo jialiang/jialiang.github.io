@@ -608,6 +608,8 @@
 
       #me .flower-1 {
         width: 12.5rem;
+        cursor: pointer;
+        transition: 0.5s transform;
         vertical-align: middle;
       }
 
@@ -1280,9 +1282,22 @@
         });
       }
 
+      function initFlowerSpin() {
+        var flower = document.querySelector(".flower-1");
+
+        if (!flower || prefersReducedMotion) return;
+
+        flower.addEventListener("click", function () {
+          if (flower.style.transform) flower.style.transform = "";
+          else flower.style.transform = "rotate(720deg)";
+        });
+      }
+
       tick(initCanvas);
+
       initProjectNav();
       initToTop();
+      initFlowerSpin();
     </script>
   </body>
 </html>
