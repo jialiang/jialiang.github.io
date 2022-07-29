@@ -57,7 +57,7 @@
       html {
         font-family: "Noto Serif JP";
         color: black;
-        background: white;
+        background: snow;
       }
 
       @media (max-width: 22.5rem) {
@@ -93,9 +93,19 @@
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
       }
 
-      .right-bar a:hover,
       .right-bar a:focus {
         background: snow;
+        border-color: #333;
+      }
+
+      .right-bar a:focus:not(:focus-visible) {
+        background: rgba(255, 255, 255, 0);
+        border-color: #333;
+      }
+
+      .right-bar a:hover {
+        background: snow !important;
+        border-color: #333 !important;
       }
 
       .right-bar svg {
@@ -122,21 +132,37 @@
         height: 2rem;
         margin: auto;
         padding: 0.5rem;
-        color: white;
-        border: 0.25rem solid white;
+        color: snow;
+        border: 0.25rem solid snow;
         border-radius: 100%;
         box-shadow: none;
       }
 
-      .right-bar .to-top:hover,
       .right-bar .to-top:focus {
         border-color: cyan;
         background: lightcyan;
       }
 
-      .right-bar .to-top:hover svg,
+      .right-bar .to-top:focus:not(:focus-visible) {
+        border-color: snow;
+        background: rgba(255, 255, 255, 0);
+      }
+
+      .right-bar .to-top:hover {
+        border-color: cyan !important;
+        background: lightcyan !important;
+      }
+
       .right-bar .to-top:focus svg {
         fill: #ff454b;
+      }
+
+      .right-bar .to-top:focus:not(:focus-visible) svg {
+        fill: snow;
+      }
+
+      .right-bar .to-top:hover svg {
+        fill: #ff454b !important;
       }
 
       @media (max-width: 64rem) {
@@ -175,6 +201,11 @@
         background: lightcyan;
       }
 
+      a:focus:not(:focus-visible) svg {
+        border-color: rgba(255, 255, 255, 0);
+        background: rgba(255, 255, 255, 0);
+      }
+
       a:hover {
         color: #d300ff;
       }
@@ -211,7 +242,7 @@
         position: relative;
         z-index: 1;
         display: inline-block;
-        margin: 5rem 1rem 9rem 1rem;
+        margin: 5rem 1rem 12.5rem 1rem;
         padding: 2em 2em 3em 1.5em;
         text-align: left;
         border-radius: 5em;
@@ -296,11 +327,21 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
-      #links a:hover,
       #links a:focus {
         border-color: cyan;
         outline: none;
         background: lightcyan;
+      }
+
+      #links a:focus:not(:focus-visible) {
+        border-color: rgba(255, 255, 255, 0);
+        background: snow;
+      }
+
+      #links a:hover {
+        border-color: cyan !important;
+        outline: none !important;
+        background: lightcyan !important;
       }
 
       #links svg {
@@ -389,6 +430,7 @@
         top: -6rem;
         left: -5rem;
         width: 12.5rem;
+        height: 12.5rem;
       }
 
       #usp .star-badge {
@@ -397,6 +439,7 @@
         right: -3.5rem;
         bottom: -6.5rem;
         width: 12.5rem;
+        height: 12.5rem;
       }
 
       @media (max-width: 27.5rem) {
@@ -419,6 +462,7 @@
         top: -2.5rem;
         left: -5rem;
         width: 7.5rem;
+        height: 7.5rem;
       }
 
       #projects h2 {
@@ -474,7 +518,7 @@
           overflow: auto;
           white-space: nowrap;
 
-          scrollbar-color: white rgba(255, 255, 255, 0);
+          scrollbar-color: snow rgba(255, 255, 255, 0);
         }
       }
 
@@ -497,15 +541,19 @@
         box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
-      #projects li a:hover,
       #projects li a:focus {
         border-color: cyan;
         background: lightcyan;
       }
 
-      #projects li a:hover .title,
-      #projects li a:focus-visible .title {
-        border-bottom-color: cyan;
+      #projects li a:focus:not(:focus-visible) {
+        border-color: rgba(255, 255, 255, 0);
+        background: snow;
+      }
+
+      #projects li a:hover {
+        border-color: cyan !important;
+        background: lightcyan !important;
       }
 
       #projects li img {
@@ -527,6 +575,18 @@
         padding: 1rem 0.5rem 1rem 0.5rem;
         color: black;
         border-bottom: 3px double deepskyblue;
+      }
+
+      #projects li a:focus .title {
+        border-bottom-color: cyan;
+      }
+
+      #projects li a:focus:not(:focus-visible) .title {
+        border-bottom-color: deepskyblue;
+      }
+
+      #projects li a:hover .title {
+        border-bottom-color: cyan !important;
       }
 
       #projects li .title div {
@@ -607,7 +667,7 @@
 
       #me .flower-1 {
         width: 12.5rem;
-        height: 12.5rem;
+        height: 12.334rem;
         cursor: pointer;
         transition: 0.5s transform;
         vertical-align: middle;
@@ -773,7 +833,14 @@
         <div class="paper">
           <div class="paper-edge"></div>
 
-          <img class="orange-patch" src="./images/orange-patch.svg" alt="" aria-hidden="true" />
+          <img
+            class="orange-patch"
+            src="./images/orange-patch.svg"
+            alt=""
+            width="512"
+            height="512"
+            aria-hidden="true"
+          />
 
           <h2>Summary</h2>
           <ul>
@@ -788,13 +855,28 @@
             >
           </div>
 
-          <img class="star-badge" src="./images/star-badge.svg" alt="" aria-hidden="true" />
+          <img
+            class="star-badge"
+            src="./images/star-badge.svg"
+            alt=""
+            width="512"
+            height="512"
+            aria-hidden="true"
+          />
         </div>
       </section>
 
       <section id="projects">
         <h2
-          ><img class="bunny" src="./images/bunny.svg" alt="" aria-hidden="true" loading="lazy" />
+          ><img
+            class="bunny"
+            src="./images/bunny.svg"
+            alt=""
+            aria-hidden="true"
+            width="512"
+            height="512"
+            loading="lazy"
+          />
           Personal Projects</h2
         >
 
@@ -915,6 +997,8 @@
               src="./images/flower.svg"
               alt=""
               aria-hidden="true"
+              width="550.254"
+              height="542.939"
               loading="lazy"
             />
             <h2>About Me</h2>
@@ -1031,7 +1115,7 @@
           <svg
             clip-rule="evenodd"
             fill-rule="evenodd"
-            fill="white"
+            fill="snow"
             stroke-linejoin="round"
             stroke-miterlimit="2"
             viewBox="0 0 24 24"
