@@ -90,22 +90,23 @@
         padding: 0.5rem;
         border: 3px solid #333;
         border-radius: 100%;
+        background: snow;
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
       }
 
       .right-bar a:focus {
-        background: snow;
         border-color: #333;
+        background: lightcyan;
       }
 
       .right-bar a:focus:not(:focus-visible) {
-        background: rgba(255, 255, 255, 0);
         border-color: #333;
+        background: rgba(255, 255, 255, 0);
       }
 
       .right-bar a:hover {
-        background: snow !important;
         border-color: cyan !important;
+        background: lightcyan !important;
       }
 
       .right-bar svg {
@@ -135,7 +136,7 @@
         color: snow;
         border: 0.25rem solid snow;
         border-radius: 100%;
-        box-shadow: none;
+        background: rgba(255, 255, 255, 0);
       }
 
       .right-bar .to-top:focus {
@@ -229,12 +230,6 @@
           width: auto;
           height: 100vh;
           transform: translateX(-50%);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        #background {
-          transition: none !important;
         }
       }
 
@@ -471,7 +466,7 @@
         margin-bottom: 2rem;
         margin-left: 2rem;
         padding: 1rem 2rem;
-        transform: rotate(-2deg);
+        transform: rotateZ(-2deg);
         border: 0.5rem double aquamarine;
         border-radius: 0.5rem;
         background: #fcf7dd;
@@ -535,9 +530,15 @@
         padding: 0.5rem;
         white-space: normal;
         color: snow;
-        border: 3px solid rgba(255, 255, 255, 0);
+        border: 2px solid #ccc;
         border-radius: 0.5rem;
-        background: snow;
+        background-color: snow;
+        background-image: linear-gradient(45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
+          linear-gradient(-45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
+          linear-gradient(45deg, rgba(255, 255, 255, 0) 75%, #eee 75%),
+          linear-gradient(-45deg, rgba(255, 255, 255, 0) 75%, #eee 75%);
+        background-position: 0 0, 0 50px, 50px -50px, -50px 0;
+        background-size: 100px 100px;
         box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
@@ -547,8 +548,14 @@
       }
 
       #projects li a:focus:not(:focus-visible) {
-        border-color: rgba(255, 255, 255, 0);
-        background: snow;
+        border-color: #ccc;
+        background-color: snow;
+        background-image: linear-gradient(45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
+          linear-gradient(-45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
+          linear-gradient(45deg, rgba(255, 255, 255, 0) 75%, #eee 75%),
+          linear-gradient(-45deg, rgba(255, 255, 255, 0) 75%, #eee 75%);
+        background-position: 0 0, 0 50px, 50px -50px, -50px 0;
+        background-size: 100px 100px;
       }
 
       #projects li a:hover {
@@ -558,9 +565,10 @@
 
       #projects li img {
         display: block;
-        width: 14.7rem;
-        height: 14.7rem;
-        transform: rotate(-1deg);
+        width: 14.75rem;
+        height: 14.75rem;
+        transform: rotateZ(-1deg);
+        border-radius: 4px;
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
       }
 
@@ -571,21 +579,13 @@
         justify-content: center;
         box-sizing: border-box;
         height: 7.5rem;
+        margin-top: 0.75rem;
         padding: 1rem 0.5rem;
+        transform: rotateZ(-1deg);
         color: black;
-        border-bottom: 3px double deepskyblue;
-      }
-
-      #projects li a:focus .title {
-        border-bottom-color: cyan;
-      }
-
-      #projects li a:focus:not(:focus-visible) .title {
-        border-bottom-color: deepskyblue;
-      }
-
-      #projects li a:hover .title {
-        border-bottom-color: cyan !important;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.67);
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
       }
 
       #projects li .title div {
@@ -612,13 +612,13 @@
         cursor: pointer;
         letter-spacing: -0.1em;
         border: 2px solid aquamarine;
-        background: #fcf7dd;
+        background: #eee;
         box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
       }
 
       #projects .button-container .left-arrow {
         padding-left: 1rem;
-        transform: rotate(5deg);
+        transform: rotateZ(5deg);
         text-align: right;
         border-top-left-radius: 2rem;
         border-top-right-radius: 0.25rem;
@@ -628,7 +628,7 @@
 
       #projects .button-container .right-arrow {
         padding-right: 1rem;
-        transform: rotate(-5deg);
+        transform: rotateZ(-5deg);
         text-align: left;
         border-top-left-radius: 0.25rem;
         border-top-right-radius: 2rem;
@@ -672,6 +672,13 @@
         vertical-align: middle;
       }
 
+      @media (prefers-reduced-motion) {
+        #me .flower-1 {
+          cursor: initial !important;
+          transition: none !important;
+        }
+      }
+
       #me h2 {
         display: inline-block;
         box-sizing: border-box;
@@ -694,7 +701,7 @@
         }
 
         #me h2 {
-          transform: rotate(-2deg);
+          transform: rotateZ(-2deg);
         }
 
         #me .paper {
@@ -711,6 +718,7 @@
         margin: 2.3rem 0;
         padding-bottom: 1px;
         letter-spacing: 0;
+        color: #002d5c;
         background: linear-gradient(to bottom, aqua 1px, rgba(255, 255, 255, 0) 0) 0 0/100% 2.3rem
           repeat-y;
       }
@@ -726,6 +734,7 @@
         z-index: 1;
         height: 4px;
         background: linear-gradient(to right, red, orange, yellow, lime, aqua, purple);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
       }
 
       #credits {
@@ -741,7 +750,6 @@
         background: snow;
         background: linear-gradient(rgba(255, 255, 255, 0), snow),
           radial-gradient(aquamarine 25%, rgba(255, 255, 255, 0) 0) 0 0/5px 5px, snow;
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
       }
 
       #credits div {
@@ -968,7 +976,7 @@
             </a>
           </li>
           <li>
-            <a href="/pure-css-android-12-scallop-clock/">
+            <a href="/pure-css-android-12-scallop-clock/" rel="noreferrer noopener">
               <img
                 src="./images/clock-cover.png"
                 alt="Picture of beige analog clock with scallop outline"
