@@ -10,17 +10,19 @@
     <meta name="description" content="Personal website of software engineer, Jia Liang" />
     <meta name="author" content="Jia Liang, hojialiang@yahoo.com" />
 
-    <link rel="icon" type="image/x-icon" href="https://jialiang.github.io/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
     <link rel="canonical" href="https://jialiang.github.io/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jialiang.github.io/" />
     <meta property="og:title" content="Jia Liang | Software Engineer" />
-    <meta property="og:image" content="https://jialiang.github.io/preview.png" />
+    <meta property="og:image" content="./preview.png" />
     <meta property="og:description" content="Personal website of software engineer, Jia Liang" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+
+    <link rel="preload" href="./images/bg-2-optimized.avif" as="image" type="image/avif" />
 
     <style>
       @font-face {
@@ -78,7 +80,7 @@
         bottom: 0;
         width: 5rem;
         height: 100%;
-        background: #ff454b url(./images/stars.svg) 0 0/100% auto repeat-y;
+        background: #ff2a2a url(./images/stars.svg) 0 0/100% auto repeat-y;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
       }
 
@@ -155,7 +157,7 @@
       }
 
       .right-bar .to-top:focus svg {
-        fill: #ff454b;
+        fill: #ff2a2a;
       }
 
       .right-bar .to-top:focus:not(:focus-visible) svg {
@@ -163,7 +165,7 @@
       }
 
       .right-bar .to-top:hover svg {
-        fill: #ff454b !important;
+        fill: #ff2a2a !important;
       }
 
       @media (max-width: 64rem) {
@@ -239,6 +241,7 @@
         display: inline-block;
         margin: 5rem 1rem 12.5rem 1rem;
         padding: 2em 2em 3em 1.5em;
+        transform: rotateZ(-2deg);
         text-align: left;
         border-radius: 5em;
         background: #6af6ff;
@@ -567,7 +570,6 @@
         display: block;
         width: 14.75rem;
         height: 14.75rem;
-        transform: rotateZ(-1deg);
         border-radius: 4px;
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
       }
@@ -581,7 +583,6 @@
         height: 7.5rem;
         margin-top: 0.75rem;
         padding: 1rem 0.5rem;
-        transform: rotateZ(-1deg);
         color: black;
         border-radius: 4px;
         background: rgba(255, 255, 255, 0.67);
@@ -718,9 +719,8 @@
         margin: 2.3rem 0;
         padding-bottom: 1px;
         letter-spacing: 0;
-        color: #002d5c;
-        background: linear-gradient(to bottom, aqua 1px, rgba(255, 255, 255, 0) 0) 0 0/100% 2.3rem
-          repeat-y;
+        background: linear-gradient(to bottom, #ffd4d4 1px, rgba(255, 255, 255, 0) 0) 0 0/100%
+          2.3rem repeat-y;
       }
 
       #me ol,
@@ -783,15 +783,9 @@
   <body>
     <div class="inner-body">
       <picture>
-        <source type="image/avif" srcset="./images/bg-2-2560-optimized.avif" />
-        <source type="image/webp" srcset="./images/bg-2-1920-optimized.webp" />
-        <img
-          id="background"
-          src="./images/bg-2-1920-optimized.jpg"
-          alt=""
-          width="1920"
-          height="1080"
-        />
+        <source type="image/avif" srcset="./images/bg-2-optimized.avif" />
+        <source type="image/webp" srcset="./images/bg-2-optimized.webp" />
+        <img id="background" src="./images/bg-2-optimized.jpg" alt="" width="1920" height="1080" />
       </picture>
 
       <canvas id="particles"></canvas>
@@ -847,6 +841,7 @@
             width="512"
             height="512"
             aria-hidden="true"
+            loading="lazy"
           />
 
           <h2>Summary</h2>
@@ -869,6 +864,7 @@
             width="512"
             height="512"
             aria-hidden="true"
+            loading="lazy"
           />
         </div>
       </section>
