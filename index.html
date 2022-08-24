@@ -56,8 +56,8 @@
 
       html {
         font-family: "Noto Serif JP";
-        color: black;
-        background: snow;
+        color: #333;
+        background: #fff6e4;
       }
 
       @media (max-width: 22.5rem) {
@@ -77,26 +77,22 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background: #2ddda2;
-        background: url("./images/circles-white.png") 0 100% / auto 25% repeat-x,
-          url("data:image/svg+xml,%3Csvg width='308' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fed84e' d='M0 108h308v810H0z'/%3E%3Ccircle cx='31.13' cy='137.53' r='10' fill='%23fff1cf'/%3E%3Ccircle cx='31.13' cy='345' r='10' fill='%23fff1cf'/%3E%3Ccircle cx='279.54' cy='135.3' r='10' fill='%23fff1cf'/%3E%3Ccircle cx='279.54' cy='345' r='10' fill='%23fff1cf'/%3E%3Ccircle cx='27.35' cy='680.27' r='10' fill='%23fff1cf'/%3E%3Ccircle cx='27.35' cy='887.74' r='10' fill='%23fff1cf'/%3E%3Ccircle cx='275.76' cy='678.04' r='10' fill='%23fff1cf'/%3E%3Ccircle cx='275.76' cy='887.74' r='10' fill='%23fff1cf'/%3E%3Cpath fill='%232cdca1' d='M0 378h308v162H0z'/%3E%3Cpath fill='%23fd567a' d='M0 540h308v108H0zM0 0h308v108H0z'/%3E%3Cpath fill='%232bdbd9' d='M0 918h308v162H0z'/%3E%3C/svg%3E")
-            50% 0 / auto 100% repeat-x;
-        box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.5) inset;
+        background: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23dbe2e3' opacity='0.5' /%3E%3C/svg%3E");
+        box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.25) inset;
+
+        will-change: transform;
       }
 
       #background:after {
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 75%;
         content: "";
-        background: linear-gradient(
-            to right,
-            rgba(255, 250, 250, 0.5) 1px,
-            rgba(255, 255, 255, 0) 2px
-          )
-          50% 0/28.5vh 100%;
+        background: radial-gradient(circle at center, #ffeec7 50%, rgba(0, 0, 0, 0) 51%) 0 95%/2.75rem
+            2.75rem repeat-x,
+          linear-gradient(to bottom, rgba(0, 0, 0, 0), #fff6e4);
       }
 
       .right-bar {
@@ -107,7 +103,7 @@
         width: 5rem;
         height: 100%;
         background: #ff2a2a url(./images/stars.svg) 0 0/100% auto repeat-y;
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
       }
 
       .right-bar a {
@@ -119,25 +115,25 @@
         border: 3px solid #333;
         border-radius: 100%;
         background: snow;
-        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
       }
 
       .right-bar a:focus {
         border-color: cyan;
         background: lightcyan;
-        box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.5);
+        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5);
       }
 
       .right-bar a:focus:not(:focus-visible) {
         border-color: #333;
         background: snow;
-        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
       }
 
       .right-bar a:hover {
         border-color: cyan !important;
         background: lightcyan !important;
-        box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.5) !important;
+        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5) !important;
       }
 
       .right-bar svg {
@@ -167,7 +163,7 @@
         color: snow;
         border: 0.25rem solid snow;
         border-radius: 100%;
-        background: rgba(255, 255, 255, 0);
+        background: rgba(0, 0, 0, 0);
       }
 
       .right-bar .to-top:focus {
@@ -224,7 +220,7 @@
         padding: 0 2px;
         text-decoration: none;
         color: blue;
-        border: 1px solid rgba(255, 255, 255, 0);
+        border: 1px solid rgba(0, 0, 0, 0);
       }
 
       a:focus {
@@ -234,9 +230,9 @@
       }
 
       a:focus:not(:focus-visible) {
-        border-color: rgba(255, 255, 255, 0);
+        border-color: rgba(0, 0, 0, 0);
         outline: initial;
-        background: rgba(255, 255, 255, 0);
+        background: rgba(0, 0, 0, 0);
       }
 
       a:hover {
@@ -309,6 +305,8 @@
         max-height: 50vw;
         margin: auto;
         transition: 0.5s opacity;
+
+        will-change: transform;
       }
 
       #links {
@@ -328,31 +326,31 @@
       #links a {
         line-height: 2;
         padding: 0 0.5em 0.15em 0.5em;
-        color: black;
-        border: 3px solid rgba(255, 255, 255, 0);
+        color: #333;
+        border: 2px solid snow;
         border-radius: 1em;
         background: snow;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       #links a:focus {
         border-color: cyan;
         outline: none;
         background: lightcyan;
-        box-shadow: rgba(0, 255, 255, 0.25) 0 0 1rem 0;
+        box-shadow: rgba(0, 255, 255, 0.2) 0.25rem 0.25rem 0.5rem 0;
       }
 
       #links a:focus:not(:focus-visible) {
-        border-color: rgba(255, 255, 255, 0);
+        border-color: rgba(0, 0, 0, 0);
         background: snow;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       #links a:hover {
         border-color: cyan !important;
         outline: none !important;
         background: lightcyan !important;
-        box-shadow: rgba(0, 255, 255, 0.25) 0 0 1rem 0 !important;
+        box-shadow: rgba(0, 255, 255, 0.2) 0.25rem 0.25rem 0.5rem 0 !important;
       }
 
       #links svg {
@@ -364,7 +362,7 @@
         margin-right: 0.15em;
         vertical-align: middle;
 
-        fill: black;
+        fill: #333;
       }
 
       section {
@@ -404,14 +402,14 @@
         width: 32rem;
         max-width: calc(100% - 2rem);
         margin: 0 1rem;
-        padding: 1rem 1rem 4rem 2rem;
+        padding: 1rem 1rem 5rem 2rem;
         text-align: left;
         border-radius: 4px;
-        background: url("./images/paper (optimized).jpg");
+        background: snow url("./images/paper (optimized).jpg");
         background: linear-gradient(to bottom, aqua 1px, rgba(255, 255, 255, 0) 0) 50% -1px/95% 2.3rem
             repeat-y,
           url("./images/paper (optimized).jpg"), snow;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       @media (max-width: 20.625rem) {
@@ -505,7 +503,7 @@
           linear-gradient(to right, rgba(255, 255, 255, 0) 1px, aqua 2px, rgba(255, 255, 255, 0) 0)
             1.25rem 0/2.5rem 100%,
           #fcf7dd;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       @media (max-width: 27.5rem) {
@@ -529,7 +527,7 @@
           overflow: auto;
           white-space: nowrap;
 
-          scrollbar-color: snow rgba(255, 255, 255, 0);
+          scrollbar-color: snow rgba(0, 0, 0, 0);
         }
       }
 
@@ -546,25 +544,19 @@
         padding: 0.5rem;
         white-space: normal;
         color: snow;
-        border: 2px solid snow;
+        border: 2px solid rgba(0, 0, 0, 0);
         border-radius: 0.5rem;
-        background-color: snow;
-        background-image: linear-gradient(45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
-          linear-gradient(-45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
-          linear-gradient(45deg, rgba(255, 255, 255, 0) 75%, #eee 75%),
-          linear-gradient(-45deg, rgba(255, 255, 255, 0) 75%, #eee 75%);
-        background-position: 0 0, 0 50px, 50px -50px, -50px 0;
-        background-size: 100px 100px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        background: snow url("./images/paper (optimized).jpg");
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       #projects li img {
         display: block;
-        width: 14.75rem;
-        height: 14.75rem;
+        width: calc(15rem - 4px);
+        height: calc(15rem - 4px);
         border: none;
         border-radius: 4px;
-        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
       }
 
       #projects li .title {
@@ -576,10 +568,10 @@
         margin-top: 0.75rem;
         padding: 1rem 0.5rem;
         color: black;
-        border: 1px solid rgba(255, 255, 255, 0);
+        border: 1px solid rgba(0, 0, 0, 0);
         border-radius: 4px;
         background: rgba(255, 255, 255, 0.67);
-        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
       }
 
       #projects li .title div {
@@ -591,52 +583,46 @@
       #projects li a:focus {
         border-color: cyan;
         background: lightcyan;
-        box-shadow: rgba(0, 255, 255, 0.25) 0.5rem 0.5rem 1rem 0;
+        box-shadow: rgba(0, 255, 255, 0.2) 0.25rem 0.25rem 0.5rem 0;
       }
 
       #projects li a:focus img,
       #projects li a:focus .title {
-        box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.25);
+        box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.2);
       }
 
       #projects li a:focus .title {
-        border: 1px solid cyan;
+        border-color: cyan;
       }
 
       #projects li a:focus:not(:focus-visible) {
-        border-color: snow;
-        background-color: snow;
-        background-image: linear-gradient(45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
-          linear-gradient(-45deg, #eee 25%, rgba(255, 255, 255, 0) 25%),
-          linear-gradient(45deg, rgba(255, 255, 255, 0) 75%, #eee 75%),
-          linear-gradient(-45deg, rgba(255, 255, 255, 0) 75%, #eee 75%);
-        background-position: 0 0, 0 50px, 50px -50px, -50px 0;
-        background-size: 100px 100px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        border-color: rgba(0, 0, 0, 0);
+        background: snow url("./images/paper (optimized).jpg");
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       #projects li a:focus:not(:focus-visible) img,
       #projects li a:focus:not(:focus-visible) .title {
-        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
       }
 
       #projects li a:focus:not(:focus-visible) .title {
-        border: 1px solid rgba(255, 255, 255, 0);
+        border-color: rgba(0, 0, 0, 0);
       }
 
       #projects li a:hover {
         border-color: cyan !important;
         background: lightcyan !important;
-        box-shadow: rgba(0, 255, 255, 0.25) 0.5rem 0.5rem 1rem 0 !important;
+        box-shadow: rgba(0, 255, 255, 0.2) 0.25rem 0.25rem 0.5rem 0 !important;
       }
 
       #projects li a:hover img,
       #projects li a:hover .title {
-        box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.25) !important;
+        box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.2) !important;
       }
 
       #projects li a:hover .title {
-        border: 1px solid cyan !important;
+        border-color: cyan !important;
       }
 
       #projects .button-container {
@@ -659,8 +645,8 @@
         cursor: pointer;
         letter-spacing: -0.1em;
         border: 2px solid aquamarine;
-        background: #eee;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        background: #fcf7dd;
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       #projects .button-container .left-arrow {
@@ -701,8 +687,8 @@
         margin: auto;
         padding: 2rem 2rem 4rem 2rem;
         border-radius: 4px;
-        background: url("./images/paper (optimized).jpg"), snow;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        background: snow url("./images/paper (optimized).jpg");
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       #me .header {
@@ -740,7 +726,7 @@
         border-radius: 2rem;
         background: papayawhip;
         background: papayawhip url(./images/circles.png) 0 0 / auto 100% repeat-x;
-        box-shadow: rgba(0, 0, 0, 0.25) 0.5rem 0.5rem 1rem 0;
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       @media (max-width: 38.75rem) {
@@ -787,6 +773,7 @@
         text-align: center;
         letter-spacing: 0;
         color: #333;
+        border-top: 4px solid aquamarine;
         background: snow;
         background: linear-gradient(rgba(255, 255, 255, 0), snow),
           radial-gradient(aquamarine 25%, rgba(255, 255, 255, 0) 0) 0 0/5px 5px, snow;
@@ -795,10 +782,6 @@
       #credits div {
         max-width: 40rem;
         margin: 0 auto 0.25rem auto;
-      }
-
-      #credits div:last-child {
-        margin-top: 1rem;
       }
 
       #credits summary {
@@ -1176,11 +1159,6 @@
           for the icons.</div
         >
         <div
-          >The paper texture and image of Scheveningen Beach are from
-          <a href="https://www.istockphoto.com/" target="_blank" rel="noopener noreferrer">iStock</a
-          >.</div
-        >
-        <div
           >Thanks to Google Fonts for
           <a
             href="https://fonts.google.com/noto/specimen/Noto+Serif+JP"
@@ -1241,7 +1219,7 @@
           Math.max(Math.min(realHeight, realWidth * 2) * 0.025, 14 * pixelRatio)
         );
         var halfSize = size / 2;
-        var count = Math.max((canvas.width * canvas.height) / (size * size) / 10, 28);
+        var count = Math.max((canvas.width * canvas.height) / (size * size) / 7.5, 28);
 
         var imageLoadedCount = 0;
         var imageOnLoad = function () {
