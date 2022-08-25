@@ -57,7 +57,7 @@
       html {
         font-family: "Noto Serif JP";
         color: #333;
-        background: #fff6e4;
+        background: #fff2e4;
       }
 
       @media (max-width: 22.5rem) {
@@ -73,12 +73,17 @@
 
       #background {
         position: fixed;
-        top: 0;
+        top: 10vh;
+        right: 0;
         left: 0;
-        width: 100%;
-        height: 100vh;
-        background: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23dbe2e3' opacity='0.5' /%3E%3C/svg%3E");
-        box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.25) inset;
+        width: 80%;
+        max-width: 75rem;
+        height: 80vh;
+        margin: auto;
+        border-radius: 2rem;
+        background: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23dbe2e3' opacity='0.45' /%3E%3C/svg%3E");
+        background-color: floralwhite;
+        box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.1);
 
         will-change: transform;
       }
@@ -90,9 +95,10 @@
         width: 100%;
         height: 75%;
         content: "";
-        background: radial-gradient(circle at center, #ffeec7 50%, rgba(0, 0, 0, 0) 51%) 0 95%/2.75rem
+        border-radius: 2rem;
+        background: radial-gradient(circle at center, papayawhip 50%, rgba(0, 0, 0, 0) 51%) 50% 95%/2.75rem
             2.75rem repeat-x,
-          linear-gradient(to bottom, rgba(0, 0, 0, 0), #fff6e4);
+          linear-gradient(to bottom, rgba(0, 0, 0, 0), floralwhite);
       }
 
       .right-bar {
@@ -245,7 +251,7 @@
         position: relative;
         z-index: 1;
         display: inline-block;
-        margin: 5rem 1rem 12.5rem 1rem;
+        margin: 5rem 1rem 10rem 1rem;
         padding: 2em 2em 3em 1.5em;
         transform: rotateZ(-2deg);
         text-align: left;
@@ -292,21 +298,6 @@
         header {
           font-size: 4vw;
         }
-      }
-
-      #particles {
-        position: fixed;
-        top: 22.5vh;
-        right: 0;
-        left: 0;
-        width: 100%;
-        height: 25vh;
-        min-height: 160px;
-        max-height: 50vw;
-        margin: auto;
-        transition: 0.5s opacity;
-
-        will-change: transform;
       }
 
       #links {
@@ -410,6 +401,7 @@
             repeat-y,
           url("./images/paper (optimized).jpg"), snow;
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
       }
 
       @media (max-width: 20.625rem) {
@@ -483,7 +475,7 @@
         transform: rotateZ(-2deg);
         border: 0.5rem double aquamarine;
         border-radius: 0.5rem;
-        background: #fcf7dd;
+        background: snow;
         background: linear-gradient(
               to bottom,
               rgba(255, 255, 255, 0) 1px,
@@ -502,7 +494,7 @@
             1.5rem 0/2.5rem 100%,
           linear-gradient(to right, rgba(255, 255, 255, 0) 1px, aqua 2px, rgba(255, 255, 255, 0) 0)
             1.25rem 0/2.5rem 100%,
-          #fcf7dd;
+          snow;
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
@@ -645,7 +637,7 @@
         cursor: pointer;
         letter-spacing: -0.1em;
         border: 2px solid aquamarine;
-        background: #fcf7dd;
+        background: snow;
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
@@ -689,6 +681,7 @@
         border-radius: 4px;
         background: snow url("./images/paper (optimized).jpg");
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
+        filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
       }
 
       #me .header {
@@ -724,8 +717,7 @@
         vertical-align: middle;
         border: 6px double darkorange;
         border-radius: 2rem;
-        background: papayawhip;
-        background: papayawhip url(./images/circles.png) 0 0 / auto 100% repeat-x;
+        background: rgba(255, 240, 0, 0.075);
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
@@ -753,8 +745,8 @@
         margin: 2.3rem 0;
         padding-bottom: 1px;
         letter-spacing: 0;
-        background: linear-gradient(to bottom, #ffd4d4 1px, rgba(255, 255, 255, 0) 0) 0 0/100%
-          2.3rem repeat-y;
+        background: linear-gradient(to bottom, cyan 1px, rgba(255, 255, 255, 0) 0) 0 0/100% 2.3rem
+          repeat-y;
       }
 
       #me ol,
@@ -768,30 +760,25 @@
         line-height: 1.33;
         position: relative;
         z-index: 1;
-        margin-bottom: 0;
-        padding: 1rem;
+        box-sizing: border-box;
+        width: 40rem;
+        max-width: calc(100% - 2rem);
+        margin: 0 auto 6rem auto;
+        padding: 1rem 2rem;
         text-align: center;
         letter-spacing: 0;
         color: #333;
-        border-top: 4px solid aquamarine;
+        border: 1px solid aquamarine;
+        border-bottom: 4px solid aquamarine;
+        border-radius: 1rem;
         background: snow;
         background: linear-gradient(rgba(255, 255, 255, 0), snow),
           radial-gradient(aquamarine 25%, rgba(255, 255, 255, 0) 0) 0 0/5px 5px, snow;
+        box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
       }
 
       #credits div {
-        max-width: 40rem;
-        margin: 0 auto 0.25rem auto;
-      }
-
-      #credits summary {
-        cursor: pointer;
-      }
-
-      @media (max-width: 48rem) {
-        #credits {
-          padding-bottom: 6rem;
-        }
+        margin: 0 auto 0.5rem auto;
       }
     </style>
 
@@ -806,7 +793,6 @@
   <body>
     <div class="inner-body">
       <div id="background"></div>
-      <canvas id="particles"></canvas>
 
       <ul id="links">
         <li
@@ -1184,165 +1170,11 @@
     </div>
 
     <script>
-      var oneTick = 1000 / 60;
       var prefersReducedMotion = false;
+      var rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
 
       if (window.matchMedia) {
         prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      }
-
-      var tick = function (func) {
-        setTimeout(function () {
-          func(oneTick, true);
-        }, oneTick);
-      };
-
-      if (typeof requestAnimationFrame !== "undefined") tick = requestAnimationFrame;
-
-      function initCanvas() {
-        if (prefersReducedMotion) return;
-
-        var canvas = document.getElementById("particles");
-        var context = canvas.getContext("2d");
-
-        var pixelRatio = 1;
-
-        if (window.devicePixelRatio) pixelRatio = window.devicePixelRatio;
-
-        var realWidth = innerWidth * pixelRatio;
-        var realHeight = innerHeight * pixelRatio;
-
-        canvas.width = realWidth;
-        canvas.height = Math.max(Math.min(realHeight, realWidth * 2) * 0.25, 160 * pixelRatio);
-
-        var size = Math.round(
-          Math.max(Math.min(realHeight, realWidth * 2) * 0.025, 14 * pixelRatio)
-        );
-        var halfSize = size / 2;
-        var count = Math.max((canvas.width * canvas.height) / (size * size) / 7.5, 28);
-
-        var imageLoadedCount = 0;
-        var imageOnLoad = function () {
-          imageLoadedCount += 1;
-          if (imageLoadedCount >= 3) tick(render);
-        };
-
-        var circle = new Image();
-        circle.src = "./images/circle.png";
-        circle.onload = imageOnLoad;
-
-        var triangle = new Image();
-        triangle.src = "./images/triangle.png";
-        triangle.onload = imageOnLoad;
-
-        var rectangle = new Image();
-        rectangle.src = "./images/rectangle.png";
-        rectangle.onload = imageOnLoad;
-
-        var images = [triangle, rectangle, circle];
-
-        var particles = [];
-        var yLimit = size;
-        var yHeight = canvas.height - yLimit * 2;
-        var halfPi = Math.PI / 2;
-        var toDeg = 180 * Math.PI;
-
-        for (var i = 0; i < count; i++) {
-          var p = {
-            type: Math.floor(i / (count / 3)),
-            angle: Math.random() * Math.PI,
-            size: size,
-            halfSize: halfSize,
-
-            x: Math.round(Math.random() * canvas.width),
-            y: Math.round(yLimit + Math.random() * yHeight),
-
-            a: Math.random(),
-            // b: 0,
-            // c: Math.random(),
-            // d: -1,
-
-            dAngle: 0.01 + Math.random() * 0.01,
-            dx: Math.round(1 + Math.random() * 3 * pixelRatio),
-            da: 0.01 + Math.random() * 0.01,
-          };
-
-          p.scaleY = 0.4142 * Math.random() + 1; // Math.sqrt(p.c * p.c + p.d * p.d);
-          p.skewX = (Math.PI * Math.random() + halfPi) / toDeg; // Math.atan2(-p.c, p.d) / Math.PI / 180;
-
-          particles.push(p);
-        }
-
-        var clear = function () {
-          context.setTransform(1, 0, 0, 1, 0, 0);
-          context.clearRect(0, 0, canvas.width, canvas.height);
-        };
-
-        var draw = function (speedFactor) {
-          particles.forEach(function (p) {
-            context.setTransform(Math.abs(p.a), 0, p.skewX, p.scaleY, p.x, p.y);
-            context.rotate(p.angle);
-            context.drawImage(images[p.type], -p.halfSize, -p.halfSize, p.size, p.size);
-
-            p.x = (p.x + p.dx * speedFactor) % canvas.width;
-            p.a = ((p.a + p.da * speedFactor + 1) % 2) - 1;
-            p.angle = (p.angle + p.dAngle * speedFactor) % (Math.PI * 2);
-          });
-        };
-
-        var resizeTimeout = null;
-
-        window.onresize = function () {
-          if (innerWidth * pixelRatio === canvas.width) return;
-
-          particles = [];
-
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(function () {
-            initCanvas();
-          }, 200);
-        };
-
-        var pause = false;
-
-        if (typeof IntersectionObserver !== "undefined") {
-          var observer = new IntersectionObserver(
-            function (entries) {
-              if (entries[0].isIntersecting) {
-                pause = true;
-                canvas.style.opacity = "0";
-              } else {
-                pause = false;
-                canvas.style.opacity = "1";
-              }
-            },
-            { threshold: [0.01] }
-          );
-
-          observer.observe(document.querySelector("#me"));
-        }
-
-        var lastTime = 0,
-          elapsed;
-
-        var render = function (time, isElapse) {
-          if (!pause) clear();
-
-          if (particles.length === 0) return;
-
-          if (!pause) {
-            elapsed = time;
-
-            if (!isElapse) {
-              elapsed -= lastTime;
-              lastTime = time;
-            }
-
-            draw(elapsed / oneTick);
-          }
-
-          tick(render);
-        };
       }
 
       function initProjectNav() {
@@ -1353,7 +1185,6 @@
           var scrollLeft = projectList.scrollLeft;
           var halfWidth = innerWidth / 2;
 
-          var rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
           var cardSize = rem * 17.5;
 
           var middlePosition = scrollLeft + halfWidth;
@@ -1412,7 +1243,6 @@
         });
       }
 
-      initCanvas();
       initProjectNav();
       initToTop();
       initFlowerSpin();
