@@ -76,6 +76,7 @@
         top: 10vh;
         right: 0;
         left: 0;
+        overflow: hidden;
         width: 80%;
         max-width: 75rem;
         height: 80vh;
@@ -88,7 +89,7 @@
         will-change: transform;
       }
 
-      #background:after {
+      #background::before {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -96,9 +97,24 @@
         height: 75%;
         content: "";
         border-radius: 2rem;
-        background: radial-gradient(circle at center, papayawhip 50%, rgba(0, 0, 0, 0) 51%) 50% 95%/2.75rem
+        background: radial-gradient(circle at center, papayawhip 50%, rgba(0, 0, 0, 0) 51%) 50% 90%/2.75rem
             2.75rem repeat-x,
           linear-gradient(to bottom, rgba(0, 0, 0, 0), floralwhite);
+      }
+
+      #poporon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 67%;
+        border-bottom-right-radius: 2rem;
+      }
+
+      @media (max-width: 1199px), (max-height: 639px) {
+        #poporon {
+          display: none;
+          background: none;
+        }
       }
 
       .right-bar {
@@ -401,6 +417,7 @@
             repeat-y,
           url("./images/paper (optimized).jpg"), snow;
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
+
         filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
       }
 
@@ -681,6 +698,7 @@
         border-radius: 4px;
         background: snow url("./images/paper (optimized).jpg");
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
+
         filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
       }
 
@@ -792,7 +810,9 @@
   </head>
   <body>
     <div class="inner-body">
-      <div id="background"></div>
+      <div id="background">
+        <img id="poporon" src="./images/poporon.svg" alt="" />
+      </div>
 
       <ul id="links">
         <li
