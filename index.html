@@ -110,15 +110,23 @@
           linear-gradient(to bottom, rgba(0, 0, 0, 0), floralwhite);
       }
 
+      #catship {
+        position: absolute;
+        top: 3%;
+        left: 1%;
+        height: 25%;
+      }
+
       #poporon {
         position: absolute;
         right: 0;
         bottom: 0;
         height: 67%;
-        border-bottom-right-radius: 2rem;
+        border-bottom-right-radius: 4rem;
       }
 
       @media (max-width: 1199px), (max-height: 599px) {
+        #catship,
         #poporon {
           display: none;
           background: none;
@@ -485,10 +493,10 @@
       #projects .bunny {
         position: absolute;
         z-index: 2;
-        top: -2.5rem;
+        top: -2.25rem;
         left: -5rem;
-        width: 7.5rem;
-        height: 7.5rem;
+        width: 7rem;
+        height: 7rem;
       }
 
       #projects h2 {
@@ -900,6 +908,7 @@
   <body>
     <div class="inner-body">
       <div id="background">
+        <img id="catship" src="./images/catship.svg" alt="" />
         <img id="poporon" src="./images/poporon.svg" alt="" />
       </div>
 
