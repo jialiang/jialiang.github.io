@@ -1,15 +1,15 @@
-var prefersReducedMotion = false;
-var rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+function isPrefersReducedMotion() {
+  if (window.matchMedia) return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (window.matchMedia) {
-  prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return false;
 }
 
 function initProjectNav() {
   var projectList = document.querySelector("#projects ul");
 
   var move = function (direction) {
-    var scrollWidth = projectList.scrollWidth;
+    var rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
     var scrollLeft = projectList.scrollLeft;
     var halfWidth = innerWidth / 2;
 
@@ -23,7 +23,7 @@ function initProjectNav() {
 
     var scrollTo = cardToScrollTo * cardSize - whitespaceToCenterCard;
 
-    if (projectList.scrollTo && !prefersReducedMotion) {
+    if (projectList.scrollTo && !isPrefersReducedMotion()) {
       projectList.scrollTo({
         top: 0,
         left: scrollTo,
@@ -48,7 +48,7 @@ function initProjectNav() {
 function initToTop() {
   var doc = document.documentElement;
 
-  if (!doc.scrollTo || prefersReducedMotion) return;
+  if (!doc.scrollTo || isPrefersReducedMotion()) return;
 
   document.querySelector(".to-top").addEventListener("click", function (e) {
     e.preventDefault();
@@ -63,7 +63,7 @@ function initToTop() {
 function initFlowerSpin() {
   var flower = document.querySelector(".flower-1");
 
-  if (!flower || prefersReducedMotion) return;
+  if (!flower || isPrefersReducedMotion()) return;
 
   flower.addEventListener("click", function () {
     if (flower.style.transform) flower.style.transform = "";
@@ -74,3 +74,25 @@ function initFlowerSpin() {
 initProjectNav();
 initToTop();
 initFlowerSpin();
+
+window.addEventListener("load", function () {
+  var lazyImages = document.querySelectorAll("img[loading=lazy]");
+  var i = 0;
+
+  function loadImage() {
+    var img = lazyImages[i];
+    i += 1;
+
+    if (!img) return;
+
+    if (img.naturalWidth === 0) {
+      img.onload = loadImage;
+      img.setAttribute("loading", "");
+    } else {
+      img.setAttribute("loading", "");
+      loadImage();
+    }
+  }
+
+  loadImage();
+});

@@ -280,10 +280,10 @@
         color: black;
         border-radius: 5em;
         background: #6af6ff;
-        background: linear-gradient(to right, rgba(32, 224, 255, 0.4) 50%, rgba(0, 0, 0, 0) 51%) 0 0/3em
-            100% repeat-x,
-          linear-gradient(to bottom, rgba(32, 255, 255, 0.4) 50%, rgba(0, 0, 0, 0) 51%) 0 0/100% 3em
-            repeat-y,
+        background: linear-gradient(to right, rgba(32, 224, 255, 0.67) 50%, rgba(0, 0, 0, 0) 51%) 0
+            0/3em 100% repeat-x,
+          linear-gradient(to bottom, rgba(32, 255, 255, 0.67) 50%, rgba(0, 0, 0, 0) 51%) 0 0/100%
+            3em repeat-y,
           #b5edff;
         box-shadow: rgba(0, 0, 0, 0.125) 0.5em 0.5em 1em 0,
           rgba(0, 0, 0, 0.125) -0.5em -0.5em 1em 0 inset,
@@ -412,9 +412,14 @@
         text-align: center;
       }
 
-      #usp .paper {
+      #usp .paper-container {
         position: relative;
         display: inline-block;
+        max-width: 100%;
+      }
+
+      #usp .paper {
+        position: relative;
         box-sizing: border-box;
         width: 32rem;
         max-width: calc(100% - 2rem);
@@ -768,13 +773,18 @@
         padding: 0 1rem;
       }
 
-      #me .paper {
+      #usp .paper-container {
         position: relative;
+        display: inline-block;
+        max-width: 100%;
+      }
+
+      #me .paper {
         box-sizing: border-box;
         width: 40rem;
         max-width: 100%;
         margin: auto;
-        padding: 2rem 2rem 4rem 2rem;
+        padding: 5rem 2rem 4rem 2rem;
         border-radius: 4px;
         background: snow url("./images/paper.svg");
         box-shadow: rgba(0, 0, 0, 0.1) 0.5rem 0.5rem 1rem 0;
@@ -783,8 +793,10 @@
       }
 
       #me .header {
+        position: relative;
+        z-index: 1;
         max-width: 100%;
-        margin: -8rem auto -1rem auto;
+        margin: -6rem auto -6.5rem auto;
         text-align: center;
       }
 
@@ -822,7 +834,7 @@
       @media (max-width: 38.75rem) {
         #me .header {
           width: 18rem;
-          margin-bottom: 4rem;
+          margin-bottom: -11.5rem;
         }
 
         #me h2 {
@@ -830,6 +842,7 @@
         }
 
         #me .paper {
+          padding-top: 11.5rem;
           background-position: 50% 1.67rem;
         }
       }
@@ -959,9 +972,7 @@
       </header>
 
       <section id="usp">
-        <div class="paper">
-          <div class="paper-edge"></div>
-
+        <div class="paper-container">
           <img
             class="orange-patch"
             src="./images/orange-patch.svg"
@@ -971,20 +982,21 @@
             aria-hidden="true"
             loading="lazy"
           />
-
-          <h2>Summary</h2>
-          <ul>
-            <li><span>4 years Experience</span></li>
-            <li><span>Full-Stack JavaScript</span></li>
-            <li><span>Exceptional Frontend</span></li>
-            <li><span>Information Systems Graduate</span></li>
-          </ul>
-          <div>
-            <a href="/resume%20-%20Jia%20Liang.pdf" class="resume" rel="noreferrer noopener"
-              >View my Resume</a
-            >
+          <div class="paper">
+            <div class="paper-edge"></div>
+            <h2>Summary</h2>
+            <ul>
+              <li><span>4 years Experience</span></li>
+              <li><span>Full-Stack JavaScript</span></li>
+              <li><span>Exceptional Frontend</span></li>
+              <li><span>Information Systems Graduate</span></li>
+            </ul>
+            <div>
+              <a href="/resume%20-%20Jia%20Liang.pdf" class="resume" rel="noreferrer noopener"
+                >View my Resume</a
+              >
+            </div>
           </div>
-
           <img
             class="star-badge"
             src="./images/star-badge.svg"
@@ -1119,86 +1131,88 @@
       </section>
 
       <section id="me">
-        <div class="paper">
-          <div class="paper-edge"></div>
-
+        <div class="paper-container">
           <div class="header">
             <img
               class="flower-1"
               src="./images/flower.svg"
               alt=""
               aria-hidden="true"
-              width="550.254"
-              height="542.939"
+              width="550"
+              height="543"
               loading="lazy"
             />
             <h2>About Me</h2>
           </div>
+          <div class="paper">
+            <div class="paper-edge"></div>
 
-          <figure class="tts">
-            <figcaption>Listen to About Me:</figcaption>
-            <audio src="./tts.mp3" preload="none" controls></audio>
-          </figure>
+            <figure class="tts">
+              <figcaption>Listen to About Me:</figcaption>
+              <audio src="./tts.mp3" preload="none" controls></audio>
+            </figure>
 
-          <p
-            >Currently, I&rsquo;m working as a full stack developer. Our tech team consists of seven
-            people. We&rsquo;re currently on a hybrid work arrangement.</p
-          >
-          <p
-            >My company promotes interior designers on our platform to homeowners looking to
-            renovate. We have several web and mobile applications. I mainly work on the public
-            website and our own custom ERP (Enterprise Resource Planning) tool. We get millions of
-            page views per month for our public website.</p
-          >
-          <p
-            >My tasks are split evenly between frontend and backend. I develop new features, fix
-            bugs, do code reviews and help with tech-related matters.</p
-          >
-          <p>New features are usually things to:</p>
-          <ul>
-            <li>Improve conversions (e.g. website redesigns, A/B testing).</li>
-            <li>Improve efficiency (e.g. automation, data transformation).</li>
-            <li>Improve traffic (e.g. SEO improvements).</li>
-            <li>Improve data collection (e.g. event-based tracking, journey analytics).</li>
-          </ul>
-          <p>Tech support involves stuff like:</p>
-          <ul>
-            <li>Creating new reports in our business intelligence tool.</li>
-            <li>Advising on technical feasibility of ideas.</li>
-            <li
-              >Setting up tools like Facebook Pixels, Google Tag Manager, Shopify and Unbounce.</li
+            <p
+              >Currently, I&rsquo;m working as a full stack developer. Our tech team consists of
+              seven people. We&rsquo;re currently on a hybrid work arrangement.</p
             >
-          </ul>
-          <p
-            >We use Kanban boards to organise our tasks and work through them in order of priority.
-            We see our task to completion independently and liaise with stakeholders as needed. For
-            example, marketing for copy, UI designer for mock-ups, translator for translations,
-            department heads for clarifications etc.</p
-          >
-          <p
-            >I mainly work with React, Redux, JavaScript, HTML, Sass and PostgreSQL. Rarely, my
-            tasks involve MongoDB, ElasticSearch, RabbitMQ, NodeJS and Webpack. We use Git as our
-            version control.</p
-          >
-          <p
-            >In my job before this, I use C#, ASP.NET, Internet Information Services (IIS) and
-            Microsoft SQL Server. But that was a long time ago. I quit that job because working as a
-            government contractor involves too much bureaucracy.</p
-          >
-          <p
-            >Currently, there&rsquo;s no problem that&rsquo;s causing me to leave my current
-            company. I applied because I&rsquo;m curious what other opportunities are out there. I
-            will never mass apply for positions. I send every application after careful
-            consideration of the job posting.</p
-          >
-          <p
-            >It&rsquo;s not a big challenge for me to pick up new technologies. I&rsquo;ve done that
-            for various personal projects without issue.</p
-          >
-          <p
-            >I&rsquo;m also familiar with raster image editors like GIMP and vector image editors
-            like Inkscape.</p
-          >
+            <p
+              >My company promotes interior designers on our platform to homeowners looking to
+              renovate. We have several web and mobile applications. I mainly work on the public
+              website and our own custom ERP (Enterprise Resource Planning) tool. We get millions of
+              page views per month for our public website.</p
+            >
+            <p
+              >My tasks are split evenly between frontend and backend. I develop new features, fix
+              bugs, do code reviews and help with tech-related matters.</p
+            >
+            <p>New features are usually things to:</p>
+            <ul>
+              <li>Improve conversions (e.g. website redesigns, A/B testing).</li>
+              <li>Improve efficiency (e.g. automation, data transformation).</li>
+              <li>Improve traffic (e.g. SEO improvements).</li>
+              <li>Improve data collection (e.g. event-based tracking, journey analytics).</li>
+            </ul>
+            <p>Tech support involves stuff like:</p>
+            <ul>
+              <li>Creating new reports in our business intelligence tool.</li>
+              <li>Advising on technical feasibility of ideas.</li>
+              <li
+                >Setting up tools like Facebook Pixels, Google Tag Manager, Shopify and
+                Unbounce.</li
+              >
+            </ul>
+            <p
+              >We use Kanban boards to organise our tasks and work through them in order of
+              priority. We see our task to completion independently and liaise with stakeholders as
+              needed. For example, marketing for copy, UI designer for mock-ups, translator for
+              translations, department heads for clarifications etc.</p
+            >
+            <p
+              >I mainly work with React, Redux, JavaScript, HTML, Sass and PostgreSQL. Rarely, my
+              tasks involve MongoDB, ElasticSearch, RabbitMQ, NodeJS and Webpack. We use Git as our
+              version control.</p
+            >
+            <p
+              >In my job before this, I use C#, ASP.NET, Internet Information Services (IIS) and
+              Microsoft SQL Server. But that was a long time ago. I quit that job because working as
+              a government contractor involves too much bureaucracy.</p
+            >
+            <p
+              >Currently, there&rsquo;s no problem that&rsquo;s causing me to leave my current
+              company. I applied because I&rsquo;m curious what other opportunities are out there. I
+              will never mass apply for positions. I send every application after careful
+              consideration of the job posting.</p
+            >
+            <p
+              >It&rsquo;s not a big challenge for me to pick up new technologies. I&rsquo;ve done
+              that for various personal projects without issue.</p
+            >
+            <p
+              >I&rsquo;m also familiar with raster image editors like GIMP and vector image editors
+              like Inkscape.</p
+            >
+          </div>
         </div>
       </section>
 
