@@ -144,41 +144,6 @@
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
       }
 
-      .right-bar a {
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin: 0.5rem 0;
-        padding: 0.5rem;
-        transition: 0.05s transform;
-        border: 3px solid #333;
-        border-radius: 100%;
-        background: snow;
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-      }
-
-      .right-bar a:active {
-        transform: scale(0.925);
-      }
-
-      .right-bar a:focus {
-        border-color: cyan;
-        background: lightcyan;
-        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5);
-      }
-
-      .right-bar a:focus:not(:focus-visible) {
-        border-color: #333;
-        background: snow;
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-      }
-
-      .right-bar a:hover {
-        border-color: cyan !important;
-        background: lightcyan !important;
-        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5) !important;
-      }
-
       .right-bar svg {
         width: 2rem;
         height: 2rem;
@@ -193,25 +158,33 @@
         height: 2rem;
         margin: auto;
         padding: 0.5rem;
-        color: snow;
+        transition: 0.05s transform;
         border: 0.25rem solid snow;
         border-radius: 100%;
         background: rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+      }
+
+      .right-bar .top-top:active {
+        transform: scale(0.925);
       }
 
       .right-bar .to-top:focus {
         border-color: cyan;
         background: lightcyan;
+        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5);
       }
 
       .right-bar .to-top:focus:not(:focus-visible) {
         border-color: snow;
         background: rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
       }
 
       .right-bar .to-top:hover {
         border-color: cyan !important;
         background: lightcyan !important;
+        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5) !important;
       }
 
       .right-bar .to-top:focus svg {
@@ -275,19 +248,20 @@
         display: inline-block;
         margin: 5rem 1rem 10rem 1rem;
         padding: 2em 2em 3em 1.5em;
-        transform: rotate(-4deg);
+        transform: rotate(-3deg);
         text-align: left;
-        color: black;
+        color: white;
         border-radius: 5em;
         background: #6af6ff;
-        background: linear-gradient(to right, rgba(32, 224, 255, 0.67) 50%, rgba(0, 0, 0, 0) 51%) 0
-            0/3em 100% repeat-x,
-          linear-gradient(to bottom, rgba(32, 255, 255, 0.67) 50%, rgba(0, 0, 0, 0) 51%) 0 0/100%
-            3em repeat-y,
+        background: linear-gradient(to right, rgba(0, 220, 255, 0.33) 50%, rgba(0, 0, 0, 0) 51%) 0 0/4em
+            100% repeat-x,
+          linear-gradient(to bottom, rgba(0, 243, 255, 0.5) 50%, rgba(0, 0, 0, 0) 51%) 0 0/100%
+            4.5em repeat-y,
           #b5edff;
         box-shadow: rgba(0, 0, 0, 0.125) 0.5em 0.5em 1em 0,
           rgba(0, 0, 0, 0.125) -0.5em -0.5em 1em 0 inset,
           rgba(255, 255, 255, 0.25) 0.5em 0.5em 1em 0 inset;
+        text-shadow: 2px 2px 2px #7e602f, 0 0 2px #7e602f, 0 0 2px #7e602f;
       }
 
       header h1,
