@@ -58,7 +58,7 @@
       html {
         font-family: "Noto Sans JP", sans-serif;
         color: #333;
-        background: papayawhip;
+        background: #ffecc9;
       }
 
       @media (max-width: 22.5rem) {
@@ -90,8 +90,8 @@
         height: 80vh;
         margin: auto;
         border-radius: 4rem;
-        background-color: floralwhite;
-        background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23dbe2e3' opacity='0.45' /%3E%3C/svg%3E");
+        background-color: #fff5e2;
+        background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23e5dac8' opacity='0.45' /%3E%3C/svg%3E");
         box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.1);
 
         backface-visibility: hidden;
@@ -107,11 +107,11 @@
         border-radius: 4rem;
         background: radial-gradient(
               circle at center,
-              rgba(255, 239, 213, 1) 50%,
-              rgba(255, 239, 213, 0) 51%
+              rgba(255, 216, 146, 1) 50%,
+              rgba(255, 216, 146, 0) 51%
             )
             50% 90%/2.75rem 2.75rem repeat-x,
-          linear-gradient(to bottom, rgba(255, 250, 240, 0), rgba(255, 250, 240, 1));
+          linear-gradient(to bottom, rgba(255, 245, 226, 0), rgba(255, 245, 226, 1));
       }
 
       #background .image-container {
@@ -146,92 +146,6 @@
         #background .image-container {
           display: none;
         }
-      }
-
-      .right-bar {
-        position: fixed;
-        z-index: 2;
-        right: 0;
-        bottom: 0;
-        width: 5rem;
-        height: 100%;
-        background: #ff2a2a url(./images/stars.svg) 0 0/100% auto repeat-y;
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-      }
-
-      .right-bar svg {
-        width: 2rem;
-        height: 2rem;
-      }
-
-      .right-bar .to-top {
-        position: absolute;
-        right: 0;
-        bottom: 0.5rem;
-        left: 0;
-        width: 2rem;
-        height: 2rem;
-        margin: auto;
-        padding: 0.5rem;
-        border: 0.25rem solid snow;
-        border-radius: 100%;
-        background: rgba(0, 0, 0, 0);
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-      }
-
-      .right-bar .to-top:active {
-        transform: scale(0.925);
-      }
-
-      .right-bar .to-top:focus {
-        border-color: cyan;
-        background: lightcyan;
-        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5);
-      }
-
-      .right-bar .to-top:focus:not(:focus-visible):not(:hover) {
-        border-color: snow;
-        background: rgba(0, 0, 0, 0);
-        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-      }
-
-      .right-bar .to-top:hover {
-        border-color: cyan;
-        background: lightcyan;
-        box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5);
-      }
-
-      @media (hover: none) {
-        .right-bar .to-top:hover:not(:focus-visible) {
-          border-color: snow;
-          background: rgba(0, 0, 0, 0);
-          box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-        }
-      }
-
-      .right-bar .to-top:focus svg {
-        fill: #ff2a2a;
-      }
-
-      .right-bar .to-top:focus:not(:focus-visible):not(:hover) svg {
-        fill: snow;
-      }
-
-      .right-bar .to-top:hover svg {
-        fill: #ff2a2a;
-      }
-
-      @media (hover: none) {
-        .right-bar .to-top:hover:not(:focus-visible) svg {
-          fill: snow;
-        }
-      }
-
-      .right-bar {
-        width: 4.5rem;
-        height: 4.5rem;
-        margin: 0.5rem;
-        border-radius: 100%;
       }
 
       .inner-body {
@@ -284,18 +198,22 @@
         position: relative;
         z-index: 1;
         display: inline-block;
-        margin: 5rem 1rem 10rem 1rem;
+        margin: 1rem 1rem 10rem 1rem;
         padding: 2em 2em 3em 1.5em;
         transform: rotate(-3deg);
         text-align: left;
         color: white;
         border-radius: 5em;
-        background: #6af6ff;
-        background: linear-gradient(to right, rgba(0, 220, 255, 0.33) 50%, rgba(0, 220, 255, 0) 51%)
+        background: deepskyblue;
+        background: linear-gradient(
+              to right,
+              rgba(255, 255, 255, 0.5) 50%,
+              rgba(255, 255, 255, 0) 51%
+            )
             0 0/4em 100% repeat-x,
-          linear-gradient(to bottom, rgba(0, 243, 255, 0.5) 50%, rgba(0, 243, 255, 0) 51%) 0 0/100%
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.33) 50%, rgba(255, 255, 255, 0) 51%) 0 0/100%
             4.5em repeat-y,
-          #b5edff;
+          linear-gradient(to bottom right, deepskyblue, aqua, aquamarine);
         box-shadow: 0.5em 0.5em 1em 0 rgba(0, 0, 0, 0.125),
           -0.5em -0.5em 1em 0 rgba(0, 0, 0, 0.125) inset,
           0.5em 0.5em 1em 0 rgba(255, 255, 255, 0.25) inset;
@@ -311,13 +229,13 @@
         font-size: 4.15em;
         font-weight: 700;
         margin-bottom: 0.1em;
-        text-shadow: 2px 2px 2px #7e602f, 0 0 2px #7e602f, 0 0 2px #7e602f, 0.4rem 0.4rem 0 salmon;
+        text-shadow: 2px 2px 2px #7e602f, 0 0 2px #7e602f, 0 0 2px #7e602f, 0.4rem 0.4rem 0 #ff5542;
       }
 
       header h2 {
         font-size: 3em;
         font-weight: 400;
-        text-shadow: 2px 2px 2px #7e602f, 0 0 2px #7e602f, 0 0 2px #7e602f, 0.3rem 0.3rem 0 salmon;
+        text-shadow: 2px 2px 2px #7e602f, 0 0 2px #7e602f, 0 0 2px #7e602f, 0.3rem 0.3rem 0 #ff5542;
       }
 
       @media (max-width: 36.5rem) {
@@ -336,6 +254,7 @@
         font-size: 1.2rem;
         position: relative;
         z-index: 1;
+        min-height: 9rem;
         margin: 0;
         padding: 1rem;
         list-style: none;
@@ -898,9 +817,9 @@
         margin: 0;
         padding: 1rem;
         vertical-align: middle;
-        border: 6px double darkorange;
+        border: 6px double #00ffa9;
         border-radius: 2rem;
-        background: rgba(255, 240, 0, 0.075);
+        background: linear-gradient(rgba(255, 230, 0, 0.25), rgba(255, 230, 0, 0)) 0 0/100% 2px;
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
       }
 
@@ -1313,27 +1232,6 @@
           </div>
         </div>
       </section>
-
-      <div class="right-bar">
-        <a class="to-top" href="#links" aria-label="Scroll to top">
-          <svg
-            clip-rule="evenodd"
-            fill-rule="evenodd"
-            fill="snow"
-            stroke-linejoin="round"
-            stroke-miterlimit="2"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            focusable="false"
-          >
-            <path
-              d="M9.001 10.978H5.75a.751.751 0 0 1-.544-1.27l6.069-6.396a.998.998 0 0 1 1.45 0l6.068 6.396a.752.752 0 0 1-.543 1.27h-3.251v9.02c0 .531-.47 1.002-1 1.002h-3.998c-.53 0-1-.471-1-1.002z"
-              fill-rule="nonzero"
-            ></path>
-          </svg>
-        </a>
-      </div>
 
       <footer id="credits">
         <div

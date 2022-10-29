@@ -45,21 +45,6 @@ function initProjectNav() {
   });
 }
 
-function initToTop() {
-  var doc = document.documentElement;
-
-  if (!doc.scrollTo || isPrefersReducedMotion()) return;
-
-  document.querySelector(".to-top").addEventListener("click", function (e) {
-    e.preventDefault();
-    doc.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  });
-}
-
 function initFlowerSpin() {
   var flower = document.querySelector(".flower-1");
 
@@ -72,7 +57,6 @@ function initFlowerSpin() {
 }
 
 initProjectNav();
-initToTop();
 initFlowerSpin();
 
 window.addEventListener("load", function () {
