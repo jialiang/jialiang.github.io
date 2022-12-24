@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fff" />
     <meta name="msapplication-tap-highlight" content="no" />
 
     <title>Jia Liang | Software Engineer</title>
@@ -51,8 +50,8 @@
           url(./fonts/chihaya-jun.woff) format("woff");
       }
 
-      ::selection {
-        background: rgba(255, 255, 0, 0.67);
+      :root {
+        color-scheme: light;
       }
 
       html {
@@ -148,6 +147,12 @@
         }
       }
 
+      @media (max-height: 399px) {
+        #background::before {
+          background: none;
+        }
+      }
+
       .inner-body {
         overflow: hidden;
         width: 100%;
@@ -165,32 +170,129 @@
       }
 
       a:focus,
-      button:focus {
+      a:hover {
         border-color: cyan;
         outline: none;
         background: lightcyan;
       }
 
-      a:focus:not(:focus-visible):not(:hover),
-      button:focus:not(:focus-visible):not(:hover) {
+      a:focus:not(:focus-visible):not(:hover) {
         border-color: rgba(0, 0, 0, 0);
         outline: none;
         background: rgba(0, 0, 0, 0);
       }
 
-      a:hover,
-      button:hover {
-        border-color: cyan;
-        outline: none;
-        background: lightcyan;
-      }
-
       @media (hover: none) {
-        a:hover:not(:focus-visible),
-        button:hover:not(:focus-visible) {
+        a:hover:not(:focus-visible) {
           border-color: rgba(0, 0, 0, 0);
           outline: none;
           background: rgba(0, 0, 0, 0);
+        }
+      }
+
+      .shadow {
+        position: absolute;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        cursor: default;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        color: rgba(0, 0, 0, 0);
+      }
+
+      .text {
+        position: relative;
+        z-index: 1;
+      }
+
+      .theme-toggle-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        padding: 1rem;
+        text-align: right;
+        border: none;
+      }
+
+      .theme-toggle-container legend {
+        position: absolute;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        white-space: nowrap;
+      }
+
+      .theme-toggle-container label {
+        font-size: 0.85rem;
+        line-height: 1;
+        margin-left: 0.25rem;
+        padding: 0.25rem 0.75rem;
+        cursor: pointer;
+        border-radius: 1rem;
+        background: snow;
+
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      .theme-toggle-container label input {
+        margin: 0 0.25rem 0 0;
+        vertical-align: middle;
+        opacity: 0;
+      }
+
+      .theme-toggle-container label span {
+        position: relative;
+      }
+
+      .theme-toggle-container label span::before {
+        position: absolute;
+        top: calc(50% - 0.5rem);
+        left: -1.25rem;
+        width: 1rem;
+        height: 1rem;
+        content: "";
+        border-radius: 2px;
+        background: radial-gradient(
+            circle at center,
+            snow 50%,
+            #ccc 55%,
+            #ccc 65%,
+            rgba(0, 0, 0, 0) 70%
+          )
+          50% 50%/100% 100%;
+      }
+
+      .theme-toggle-container label input:checked ~ span::before {
+        background: radial-gradient(
+            circle at center,
+            #0060df 28%,
+            snow 33%,
+            snow 50%,
+            #0060df 55%,
+            #0060df 65%,
+            rgba(0, 0, 0, 0) 70%
+          )
+          50% 50%/100% 100%;
+      }
+
+      .theme-toggle-container label input:focus ~ span::before,
+      .theme-toggle-container label input:focus-visible ~ span::before {
+        outline: 2px solid deepskyblue;
+        outline-offset: 1px;
+      }
+
+      .theme-toggle-container label input:focus:not(:focus-visible) ~ span::before {
+        outline: none;
+      }
+
+      @supports (filter: brightness(1)) {
+        .theme-toggle-container {
+          display: block;
         }
       }
 
@@ -204,6 +306,17 @@
         text-align: left;
         color: white;
         border-radius: 5em;
+        box-shadow: 0.5em 0.5em 1em 0 rgba(0, 0, 0, 0.125);
+      }
+
+      header::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        border-radius: 5em;
         background: deepskyblue;
         background: linear-gradient(
               to right,
@@ -213,15 +326,15 @@
             0 0/4em 100% repeat-x,
           linear-gradient(to bottom, rgba(255, 255, 255, 0.33) 50%, rgba(255, 255, 255, 0) 51%) 0 0/100%
             4.5em repeat-y,
-          linear-gradient(to bottom right, deepskyblue, aqua, aquamarine);
-        box-shadow: 0.5em 0.5em 1em 0 rgba(0, 0, 0, 0.125),
-          -0.5em -0.5em 1em 0 rgba(0, 0, 0, 0.125) inset,
+          linear-gradient(to bottom right, deepskyblue, cyan, aquamarine);
+        box-shadow: -0.5em -0.5em 1em 0 rgba(0, 0, 0, 0.125) inset,
           0.5em 0.5em 1em 0 rgba(255, 255, 255, 0.25) inset;
       }
 
       header h1,
       header h2 {
         line-height: 1;
+        position: relative;
         margin: 0;
       }
 
@@ -254,8 +367,8 @@
         font-size: 1.2rem;
         position: relative;
         z-index: 1;
-        min-height: 9rem;
-        margin: 0;
+        min-height: 8rem;
+        margin: 10vh 0 0 0;
         padding: 1rem;
         list-style: none;
       }
@@ -282,7 +395,8 @@
         top: 3px;
       }
 
-      #links a:focus {
+      #links a:focus,
+      #links a:hover {
         border-color: cyan;
         background: lightcyan;
         box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2);
@@ -292,12 +406,6 @@
         border-color: snow;
         background: snow;
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-      }
-
-      #links a:hover {
-        border-color: cyan;
-        background: lightcyan;
-        box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2);
       }
 
       @media (hover: none) {
@@ -314,7 +422,7 @@
         width: 1rem;
         height: 1em;
         height: 1rem;
-        margin-right: 0.15em;
+        margin-right: 0.33em;
         vertical-align: middle;
 
         fill: #333;
@@ -369,13 +477,24 @@
         padding: 1rem 1rem 5.5rem 2rem;
         text-align: left;
         border-radius: 4px;
+        box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+        filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.1));
+      }
+
+      #usp .paper::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        content: "";
         background: snow url("./images/paper.svg");
         background: linear-gradient(to bottom, rgba(0, 255, 255, 0.67) 1px, rgba(0, 255, 255, 0) 0)
             50% -1px/90% 2rem repeat-y,
           url("./images/paper.svg"), snow;
-        box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-
-        filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.1));
       }
 
       @media (max-width: 20.625rem) {
@@ -457,6 +576,18 @@
         margin-left: 2rem;
         padding: 1rem 2rem;
         transform: rotateZ(-2deg);
+        box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+      }
+
+      #projects h2::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        content: "";
         border: 0.5rem double aquamarine;
         border-radius: 0.5rem;
         background: snow;
@@ -489,7 +620,6 @@
             )
             1.25rem 0/2.5rem 100%,
           snow;
-        box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
       }
 
       @media (max-width: 27.5rem) {
@@ -558,6 +688,10 @@
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1), 0 0 0.25rem rgba(0, 0, 0, 0.1);
       }
 
+      #projects li a figure {
+        margin: 0;
+      }
+
       #projects li img {
         display: block;
         width: calc(15rem - 4px);
@@ -567,7 +701,7 @@
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
       }
 
-      #projects li .title {
+      #projects li figcaption {
         font-size: 1.75rem;
         display: table;
         box-sizing: border-box;
@@ -582,7 +716,7 @@
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
       }
 
-      #projects li .title div {
+      #projects li figcaption div {
         display: table-cell;
         width: 100%;
         vertical-align: middle;
@@ -592,18 +726,22 @@
         transform: translate3d(0, 3px, 0);
       }
 
-      #projects li a:focus {
+      #projects li a:focus,
+      #projects li a:hover {
         border-color: cyan;
         background: lightcyan;
         box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2);
       }
 
       #projects li a:focus img,
-      #projects li a:focus .title {
+      #projects li a:focus figcaption,
+      #projects li a:hover img,
+      #projects li a:hover figcaption {
         box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.2);
       }
 
-      #projects li a:focus .title {
+      #projects li a:focus figcaption,
+      #projects li a:hover figcaption {
         border-color: cyan;
       }
 
@@ -614,27 +752,12 @@
       }
 
       #projects li a:focus:not(:focus-visible):not(:hover) img,
-      #projects li a:focus:not(:focus-visible):not(:hover) .title {
+      #projects li a:focus:not(:focus-visible):not(:hover) figcaption {
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
       }
 
-      #projects li a:focus:not(:focus-visible):not(:hover) .title {
+      #projects li a:focus:not(:focus-visible):not(:hover) figcaption {
         border-color: rgba(0, 0, 0, 0);
-      }
-
-      #projects li a:hover {
-        border-color: cyan;
-        background: lightcyan;
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 255, 255, 0.2);
-      }
-
-      #projects li a:hover img,
-      #projects li a:hover .title {
-        box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.2);
-      }
-
-      #projects li a:hover .title {
-        border-color: cyan;
       }
 
       @media (hover: none) {
@@ -645,11 +768,11 @@
         }
 
         #projects li a:hover:not(:focus-visible) img,
-        #projects li a:hover:not(:focus-visible) .title {
+        #projects li a:hover:not(:focus-visible) figcaption {
           box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
         }
 
-        #projects li a:hover:not(:focus-visible) .title {
+        #projects li a:hover:not(:focus-visible) figcaption {
           border-color: rgba(0, 0, 0, 0);
         }
       }
@@ -673,16 +796,13 @@
         padding: 0.5rem;
         cursor: pointer;
         letter-spacing: -0.1em;
+        color: #333;
         border: 2px solid aquamarine;
         outline: none;
         background: snow;
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-
-      #projects .button-container button:active span {
-        position: relative;
       }
 
       #projects .button-container .left-arrow {
@@ -713,19 +833,21 @@
         transform: rotateZ(-5deg) translate3d(0, 3px, 0);
       }
 
-      #projects .button-container .left-arrow span,
-      #projects .button-container .right-arrow span {
+      #projects .button-container button span {
+        position: relative;
         border-top: 2px solid pink;
         border-bottom: 2px solid pink;
       }
 
-      #projects .button-container button:focus {
+      #projects .button-container button:focus,
+      #projects .button-container button:hover {
         border-color: cyan;
         background: lightcyan;
         box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2);
       }
 
-      #projects .button-container button:focus span {
+      #projects .button-container button:focus span,
+      #projects .button-container button:hover span {
         border-color: cyan;
       }
 
@@ -737,16 +859,6 @@
 
       #projects .button-container button:focus:not(:focus-visible):not(:hover) span {
         border-color: pink;
-      }
-
-      #projects .button-container button:hover {
-        border-color: cyan;
-        background: lightcyan;
-        box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2);
-      }
-
-      #projects .button-container button:hover span {
-        border-color: cyan;
       }
 
       @media (hover: none) {
@@ -772,16 +884,29 @@
       }
 
       #me .paper {
+        position: relative;
         box-sizing: border-box;
         width: 40rem;
         max-width: 100%;
         margin: auto;
         padding: 5rem 2rem 4rem 2rem;
         border-radius: 4px;
-        background: snow url("./images/paper.svg");
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 
         filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.1));
+      }
+
+      #me .paper::before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        content: "";
+        border-radius: 4px;
+        background: snow url("./images/paper.svg");
       }
 
       #me .header {
@@ -810,6 +935,7 @@
       }
 
       #me h2 {
+        position: relative;
         display: inline-block;
         box-sizing: border-box;
         width: 17rem;
@@ -902,8 +1028,290 @@
       }
     </style>
 
+    <style title="dark" media="(prefers-color-scheme: dark)">
+      @supports (filter: brightness(1)) {
+        :root {
+          color-scheme: dark;
+        }
+
+        html {
+          color: snow;
+          background: #333;
+        }
+
+        a {
+          color: deepskyblue;
+        }
+
+        a:focus,
+        a:hover {
+          background: #163c3c;
+        }
+
+        section h2 {
+          color: snow;
+        }
+
+        .shadow {
+          display: inline;
+        }
+
+        .text {
+          text-shadow: 0 0 0.075em white;
+        }
+
+        #background {
+          background-color: #383838;
+          background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23000000' opacity='0.33' /%3E%3C/svg%3E");
+          box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.33);
+        }
+
+        #background::before {
+          background: linear-gradient(to bottom, rgba(56, 56, 56, 0), rgba(56, 56, 56, 1));
+        }
+
+        #background .image-container {
+          filter: brightness(0.33) contrast(1.67);
+        }
+
+        .theme-toggle-container label {
+          background: #222;
+        }
+
+        #links a {
+          border-color: #222;
+          background: #222;
+          box-shadow: 0 0 5rem -1rem rgba(228, 229, 233, 0.67), 0 0 1rem rgba(228, 229, 233, 0.15);
+        }
+
+        #links svg {
+          fill: snow;
+        }
+
+        #links span {
+          color: snow;
+        }
+
+        #links a:focus,
+        #links a:hover {
+          background: #163c3c;
+        }
+
+        #links a:focus:not(:focus-visible):not(:hover) {
+          border-color: #222;
+          background: #222;
+          box-shadow: 0 0 5rem -1rem rgba(228, 229, 233, 0.67), 0 0 1rem rgba(228, 229, 233, 0.15);
+        }
+
+        @media (hover: none) {
+          #links a:hover:not(:focus-visible) {
+            border-color: #222;
+            background: #222;
+            box-shadow: 0 0 5rem -1rem rgba(228, 229, 233, 0.67), 0 0 1rem rgba(228, 229, 233, 0.15);
+          }
+        }
+
+        header::before {
+          filter: saturate(0.5) brightness(0.25);
+        }
+
+        header h1,
+        header h2 {
+          text-shadow: none;
+        }
+
+        header h1 .shadow {
+          text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5), 0 0 1em #0bc, 0 0 1.5em #0bc,
+            0 0 2em #0bc, 0 0 2.5em #0bc;
+
+          filter: blur(4px);
+        }
+
+        header h2 .shadow {
+          text-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5), 0 0 1em #0fa, 0 0 1.5em #0fa,
+            0 0 2em #0fa, 0 0 2.5em #0fa;
+
+          filter: blur(4px);
+        }
+
+        .paper-edge {
+          display: none;
+        }
+
+        #usp .paper,
+        #me .paper {
+          box-shadow: none;
+
+          filter: none;
+        }
+
+        #usp .paper::before,
+        #me .paper::before {
+          transform: skewY(-3deg);
+          border: 4px double #ffde69;
+          border-right-width: 8px;
+          border-bottom-width: 8px;
+          background: #222;
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(255, 255, 0, 0.1),
+            0 0 1rem 0 rgba(255, 255, 0, 0.33) inset;
+        }
+
+        #usp h2 {
+          color: snow;
+        }
+
+        #projects .bunny {
+          filter: drop-shadow(0px 0 2px white) drop-shadow(0 0 1rem rgba(255, 255, 255, 0.25));
+        }
+
+        #projects h2::before {
+          filter: brightness(0.25);
+        }
+
+        #projects h2 .shadow {
+          text-shadow: 0 0 1rem white, 0 0 1.5rem cyan, 0 0 2rem cyan, 0 0 2.5rem cyan,
+            0 0 3rem cyan, 0 0 4rem cyan, 0 0 5rem cyan, 0 0 6rem cyan;
+
+          filter: blur(4px);
+        }
+
+        #projects li a {
+          background: #222;
+          box-shadow: 0 0 2rem rgba(228, 229, 233, 0.175);
+        }
+
+        #projects li img {
+          box-shadow: none;
+        }
+
+        #projects li figcaption {
+          border: none;
+          background: rgba(0, 0, 0, 0);
+          box-shadow: none;
+        }
+
+        #projects li figcaption div {
+          color: snow;
+        }
+
+        #projects li a:focus,
+        #projects li a:hover {
+          background: #163c3c;
+        }
+
+        #projects li a:focus img,
+        #projects li a:focus figcaption,
+        #projects li a:hover img,
+        #projects li a:hover figcaption {
+          box-shadow: none;
+        }
+
+        #projects li a:focus:not(:focus-visible):not(:hover) {
+          background: #222;
+          box-shadow: 0 0 2rem rgba(228, 229, 233, 0.175);
+        }
+
+        #projects li a:focus:not(:focus-visible):not(:hover) img,
+        #projects li a:focus:not(:focus-visible):not(:hover) figcaption {
+          box-shadow: none;
+        }
+
+        @media (hover: none) {
+          #projects li a:hover:not(:focus-visible) {
+            background: #222;
+            box-shadow: 0 0 2rem rgba(228, 229, 233, 0.175);
+          }
+
+          #projects li a:hover:not(:focus-visible) img,
+          #projects li a:hover:not(:focus-visible) figcaption {
+            box-shadow: none;
+          }
+        }
+
+        #projects .button-container button {
+          color: snow;
+          background: #222;
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+        }
+
+        #projects .button-container button span {
+          border: none;
+        }
+
+        #projects .button-container button:focus,
+        #projects .button-container button:hover {
+          background: #163c3c;
+        }
+
+        #projects .button-container button:focus:not(:focus-visible):not(:hover) {
+          background: #222;
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+        }
+
+        @media (hover: none) {
+          #projects .button-container button:hover:not(:focus-visible) {
+            background: #222;
+            box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+          }
+        }
+
+        #me h2 {
+          transform: none !important;
+          background-color: rgba(0, 0, 0, 0.75);
+          background-image: linear-gradient(rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0));
+          background-size: 100% 2px;
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+        }
+
+        #me h2 .shadow {
+          text-shadow: 0 0 1rem rgba(255, 255, 255, 0.75), 0 0 2rem cyan, 0 0 3rem cyan,
+            0 0 4rem cyan, 0 0 5rem cyan, 0 0 6rem cyan;
+
+          filter: blur(4px);
+        }
+
+        #me p,
+        #me ol,
+        #me ul {
+          background: rgba(0, 0, 0, 0);
+        }
+
+        #credits {
+          color: snow;
+          background: #222;
+          box-shadow: 0.5rem 0.5rem 1rem 0 rgba(127, 255, 212, 0.1);
+        }
+      }
+    </style>
+
+    <script>
+      function isValidTheme(theme) {
+        return theme === "light" || theme === "dark";
+      }
+
+      function setTheme(theme) {
+        if (typeof CSS === "undefined") return;
+        if (!CSS.supports || !CSS.supports("filter", "brightness(1)")) return;
+
+        if (!isValidTheme(theme)) {
+          var localStorageTheme = localStorage.getItem("theme");
+
+          if (isValidTheme(localStorageTheme)) theme = localStorageTheme;
+          else return;
+        }
+
+        var darkStylesheet = document.querySelector("style[title='dark']");
+
+        if (theme === "dark") darkStylesheet.removeAttribute("media");
+        if (theme === "light") darkStylesheet.setAttribute("media", "(width: 10px)");
+      }
+
+      setTheme();
+    </script>
+
     <noscript>
       <style>
+        .theme-toggle-container,
         #projects .button-container {
           display: none !important;
         }
@@ -916,76 +1324,83 @@
   </head>
   <body>
     <div class="inner-body">
-      <div id="background">
+      <div id="background" aria-hidden="true">
         <div class="image-container">
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)"
-            />
+              media="(max-width: 1199px), (max-height: 599px)" />
             <img id="catship" src="./images/catship.svg" alt="" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)"
-            />
+              media="(max-width: 1199px), (max-height: 599px)" />
             <img id="living-millenium" src="./images/living-millenium-bg.svg" alt="" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)"
-            />
+              media="(max-width: 1199px), (max-height: 599px)" />
             <img id="poporon" src="./images/poporon.svg" alt="" />
           </picture>
         </div>
       </div>
 
+      <fieldset class="theme-toggle-container">
+        <legend>Change website theme:</legend>
+        <label><input type="radio" name="theme" value="light" checked /><span>Light</span></label
+        ><label><input type="radio" name="theme" value="dark" /><span>Dark</span></label>
+      </fieldset>
+
+      <!-- prettier-ignore -->
       <ul id="links">
-        <li
-          ><a
+        <li>
+          <a
             class="github"
             href="https://github.com/jialiang"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
               <path
                 d="M12 0a12 12 0 0 0-3.8 23.39c.6.1.8-.26.8-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.09-.72.09-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.3.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.33 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.13 3 .4 2.3-1.56 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17a4.63 4.63 0 0 1 1.24 3.22c0 4.61-2.81 5.63-5.48 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.2.7.8.58A12 12 0 0 0 12 0z"
               />
-            </svg>
-            <span>github.com/jialiang</span>
-          </a></li
-        ><li
-          ><a class="email" href="mailto:hojialiang@yahoo.com">
-            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+            </svg><span>github.com/jialiang</span>
+          </a>
+        </li><li>
+          <a class="email" href="mailto:hojialiang@yahoo.com">
+            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
               <path
                 d="M12 12.71.02 3h23.97L12 12.71zM6.58 10.9 0 5.56v12.5l6.58-7.17zm10.84 0L24 18.06V5.56l-6.58 5.33zm-1.55 1.26L12 15.3l-3.87-3.14L.03 21h23.95l-8.11-8.85z"
               />
-            </svg>
-            <span>hojialiang@yahoo.com</span></a
-          ></li
-        ><li
-          ><a
+            </svg><span>hojialiang@yahoo.com</span>
+          </a>
+        </li><li>
+          <a
             class="contact"
             href="https://docs.google.com/forms/d/e/1FAIpQLSd1YnFT3TzASLxainoYNSd3VFSvdypBARAjs2H3Qy1QE5wFhg/viewform?usp=sf_link"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
               <path
                 d="M13.74 8s1.53-8-3.33-8H2v24h20V11c0-3.42-5.25-3.75-8.26-3zM18 19H6v-1h12v1zm0-3H6v-1h12v1zm0-3H6v-1h12v1zM14.57.07c2.2 1.18 5.94 4.89 7.43 6.89a8.82 8.82 0 0 0-6.1-1.18c.23-1.47-.18-4.54-1.33-5.7z"
               />
-            </svg>
-            <span>Contact</span></a
-          ></li
-        >
+            </svg><span>Contact</span>
+          </a>
+        </li>
       </ul>
 
       <header>
-        <h1>Jia Liang</h1>
-        <h2>Software Engineer</h2>
+        <h1>
+          <span class="shadow" aria-hidden="true">Jia Liang</span>
+          <span class="text">Jia Liang</span>
+        </h1>
+        <h2>
+          <span class="shadow" aria-hidden="true">Software Engineer</span>
+          <span class="text">Software Engineer</span>
+        </h2>
       </header>
 
       <section id="usp">
@@ -997,8 +1412,7 @@
             width="512"
             height="512"
             aria-hidden="true"
-            loading="lazy"
-          />
+            loading="lazy" />
           <div class="paper">
             <div class="paper-edge"></div>
             <h2>Summary</h2>
@@ -1021,123 +1435,136 @@
             width="512"
             height="512"
             aria-hidden="true"
-            loading="lazy"
-          />
+            loading="lazy" />
         </div>
       </section>
 
       <section id="projects">
-        <h2
-          ><img
+        <h2>
+          <img
             class="bunny"
             src="./images/bunny.svg"
             alt=""
             aria-hidden="true"
             width="512"
             height="512"
-            loading="lazy"
-          />
-          Personal Projects</h2
-        >
+            loading="lazy" />
+          <span class="shadow" aria-hidden="true">Personal Projects</span>
+          <span class="text">Personal Projects</span>
+        </h2>
 
         <ul>
           <li>
             <a href="https://github.com/jialiang/SSIM-X/" rel="noreferrer noopener">
-              <img
-                src="./images/terminal.png"
-                alt="White > and _ symbol on black background"
-                width="380"
-                height="380"
-                loading="lazy"
-              />
-              <div class="title"><div>SSIM-X</div></div>
-            </a>
-          </li>
-          <li>
+              <figure>
+                <img
+                  src="./images/terminal.png"
+                  alt="Black computer terminal screen with white text"
+                  width="380"
+                  height="380"
+                  loading="lazy" />
+                <figcaption>
+                  <div>SSIM-X</div>
+                </figcaption>
+              </figure>
+            </a></li
+          ><li>
             <a href="/3D-Engine-For-Miku/" rel="noreferrer noopener">
-              <picture>
-                <source type="image/webp" srcset="./images/miku-cover%20(optimized).webp" />
-                <img
-                  src="./images/miku-cover%20(optimized).jpg"
-                  alt="Hatsune Miku posing for the camera"
-                  width="380"
-                  height="380"
-                  loading="lazy"
-                />
-              </picture>
-              <div class="title"><div>3D Engine for Miku</div></div>
-            </a>
-          </li>
-          <li>
+              <figure>
+                <picture>
+                  <source type="image/webp" srcset="./images/miku-cover%20(optimized).webp" />
+                  <img
+                    src="./images/miku-cover%20(optimized).jpg"
+                    alt="Hatsune Miku posing for the camera"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
+                <figcaption>
+                  <div>3D Engine for Miku</div>
+                </figcaption>
+              </figure>
+            </a></li
+          ><li>
             <a href="https://github.com/jialiang/HTML-to-PDF-UA/" rel="noreferrer noopener">
-              <img
-                src="./images/pdf-cover.png"
-                alt="Red PDF logo with white bold PDF text"
-                width="380"
-                height="380"
-                loading="lazy"
-              />
-              <div class="title"><div>HTML to PDF/UA-compliant PDF</div></div>
-            </a>
-          </li>
-          <li>
+              <figure>
+                <img
+                  src="./images/pdf-cover.png"
+                  alt="Red PDF logo with white bold PDF text"
+                  width="380"
+                  height="380"
+                  loading="lazy" />
+                <figcaption>
+                  <div>HTML to PDF/UA-compliant PDF</div>
+                </figcaption>
+              </figure>
+            </a></li
+          ><li>
             <a href="/space-gems/" rel="noreferrer noopener">
-              <picture>
-                <source type="image/webp" srcset="./images/space-gem-cover%20(optimized).webp" />
-                <img
-                  src="./images/space-gem-cover%20(optimized).jpg"
-                  alt="Screenshot of the Space Gems game"
-                  width="380"
-                  height="380"
-                  loading="lazy"
-                />
-              </picture>
-              <div class="title"><div>Space Gems</div></div>
-            </a>
-          </li>
-          <li>
+              <figure>
+                <picture>
+                  <source type="image/webp" srcset="./images/space-gem-cover%20(optimized).webp" />
+                  <img
+                    src="./images/space-gem-cover%20(optimized).jpg"
+                    alt="Screenshot of the Space Gems game"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
+                <figcaption>
+                  <div>Space Gems</div>
+                </figcaption>
+              </figure>
+            </a></li
+          ><li>
             <a href="https://github.com/jialiang/ShitCompressor" rel="noreferrer noopener">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcset="./images/shit-compressor-cover%20(optimized).webp"
-                />
-                <img
-                  src="./images/shit-compressor-cover%20(optimized).jpg"
-                  alt="Screenshot of the UI of the Shit Compressor programme"
-                  width="380"
-                  height="380"
-                  loading="lazy"
-                />
-              </picture>
-              <div class="title"><div>Shit Compressor</div></div>
-            </a>
-          </li>
-          <li>
+              <figure>
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="./images/shit-compressor-cover%20(optimized).webp" />
+                  <img
+                    src="./images/shit-compressor-cover%20(optimized).jpg"
+                    alt="Screenshot of the UI of the Shit Compressor programme"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
+                <figcaption>
+                  <div>Shit Compressor</div>
+                </figcaption>
+              </figure>
+            </a></li
+          ><li>
             <a href="/ygo-ocg-secret-rare/" rel="noreferrer noopener">
-              <picture>
-                <source type="image/webp" srcset="./images/yugioh-cover%20(optimized).webp" />
+              <figure>
+                <picture>
+                  <source type="image/webp" srcset="./images/yugioh-cover%20(optimized).webp" />
+                  <img
+                    src="./images/yugioh-cover%20(optimized).jpg"
+                    alt="Headshot of Madamme Verre"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
+                <figcaption>
+                  <div>Yu-Gi-Oh Secret Rare Effect with CSS</div>
+                </figcaption>
+              </figure>
+            </a></li
+          ><li>
+            <a href="/pure-css-android-12-scallop-clock/" rel="noreferrer noopener">
+              <figure>
                 <img
-                  src="./images/yugioh-cover%20(optimized).jpg"
-                  alt="Headshot of Madamme Verre"
+                  src="./images/clock-cover.png"
+                  alt="Picture of beige analog clock with scallop outline"
                   width="380"
                   height="380"
-                  loading="lazy"
-                />
-              </picture>
-              <div class="title"><div>Yu-Gi-Oh Secret Rare Effect with CSS</div></div>
-            </a>
-          </li>
-          <li>
-            <a href="/pure-css-android-12-scallop-clock/" rel="noreferrer noopener">
-              <img
-                src="./images/clock-cover.png"
-                alt="Picture of beige analog clock with scallop outline"
-                width="380"
-                height="380"
-                loading="lazy"
-              />
-              <div class="title"><div>Pure CSS Android 12 Clock</div></div>
+                  loading="lazy" />
+                <figcaption>
+                  <div>Pure CSS Android 12 Clock</div>
+                </figcaption>
+              </figure>
             </a>
           </li>
         </ul>
@@ -1157,9 +1584,10 @@
               aria-hidden="true"
               width="550"
               height="543"
-              loading="lazy"
-            />
-            <h2>About Me</h2>
+              loading="lazy" /><h2>
+              <span class="shadow" aria-hidden="true">About Me</span>
+              <span class="text">About Me</span>
+            </h2>
           </div>
           <div class="paper">
             <div class="paper-edge"></div>
@@ -1169,20 +1597,20 @@
               <audio src="./tts.mp3" preload="none" controls></audio>
             </figure>
 
-            <p
-              >Currently, I&rsquo;m working as a full stack developer. Our tech team consists of
-              seven people. We&rsquo;re currently on a hybrid work arrangement.</p
-            >
-            <p
-              >My company promotes interior designers on our platform to homeowners looking to
+            <p>
+              Currently, I&rsquo;m working as a full stack developer. Our tech team consists of
+              seven people. We&rsquo;re currently on a hybrid work arrangement.
+            </p>
+            <p>
+              My company promotes interior designers on our platform to homeowners looking to
               renovate. We have several web and mobile applications. I mainly work on the public
               website and our own custom ERP (Enterprise Resource Planning) tool. We get millions of
-              page views per month for our public website.</p
-            >
-            <p
-              >My tasks are split evenly between frontend and backend. I develop new features, fix
-              bugs, do code reviews and help with tech-related matters.</p
-            >
+              page views per month for our public website.
+            </p>
+            <p>
+              My tasks are split evenly between frontend and backend. I develop new features, fix
+              bugs, do code reviews and help with tech-related matters.
+            </p>
             <p>New features are usually things to:</p>
             <ul>
               <li>Improve conversions (e.g. website redesigns, A/B testing).</li>
@@ -1194,53 +1622,52 @@
             <ul>
               <li>Creating new reports in our business intelligence tool.</li>
               <li>Advising on technical feasibility of ideas.</li>
-              <li
-                >Setting up tools like Facebook Pixels, Google Tag Manager, Shopify and
-                Unbounce.</li
-              >
+              <li>
+                Setting up tools like Facebook Pixels, Google Tag Manager, Shopify and Unbounce.
+              </li>
             </ul>
-            <p
-              >We use Kanban boards to organise our tasks and work through them in order of
-              priority. We see our task to completion independently and liaise with stakeholders as
-              needed. For example, marketing for copy, UI designer for mock-ups, translator for
-              translations, department heads for clarifications etc.</p
-            >
-            <p
-              >I mainly work with React, Redux, JavaScript, HTML, Sass and PostgreSQL. Rarely, my
+            <p>
+              We use Kanban boards to organise our tasks and work through them in order of priority.
+              We see our task to completion independently and liaise with stakeholders as needed.
+              For example, marketing for copy, UI designer for mock-ups, translator for
+              translations, department heads for clarifications etc.
+            </p>
+            <p>
+              I mainly work with React, Redux, JavaScript, HTML, Sass and PostgreSQL. Rarely, my
               tasks involve MongoDB, ElasticSearch, RabbitMQ, NodeJS and Webpack. We use Git as our
-              version control.</p
-            >
-            <p
-              >In my job before this, I use C#, ASP.NET, Internet Information Services (IIS) and
+              version control.
+            </p>
+            <p>
+              In my job before this, I use C#, ASP.NET, Internet Information Services (IIS) and
               Microsoft SQL Server. But that was a long time ago. I quit that job because working as
-              a government contractor involves too much bureaucracy.</p
-            >
-            <p
-              >Currently, there&rsquo;s no problem that&rsquo;s causing me to leave my current
+              a government contractor involves too much bureaucracy.
+            </p>
+            <p>
+              Currently, there&rsquo;s no problem that&rsquo;s causing me to leave my current
               company. I applied because I&rsquo;m curious what other opportunities are out there. I
               will never mass apply for positions. I send every application after careful
-              consideration of the job posting.</p
-            >
-            <p
-              >It&rsquo;s not a big challenge for me to pick up new technologies. I&rsquo;ve done
-              that for various personal projects without issue.</p
-            >
-            <p
-              >I&rsquo;m also familiar with raster image editors like GIMP and vector image editors
-              like Inkscape.</p
-            >
+              consideration of the job posting.
+            </p>
+            <p>
+              It&rsquo;s not a big challenge for me to pick up new technologies. I&rsquo;ve done
+              that for various personal projects without issue.
+            </p>
+            <p>
+              I&rsquo;m also familiar with raster image editors like GIMP and vector image editors
+              like Inkscape.
+            </p>
           </div>
         </div>
       </section>
 
       <footer id="credits">
-        <div
-          >Thank you to Alexander Kahlkopf of
+        <div>
+          Thank you to Alexander Kahlkopf of
           <a href="https://iconmonstr.com/" target="_blank" rel="noopener noreferrer">Iconmonstr</a>
-          for the icons.</div
-        >
-        <div
-          >Thanks to Google Fonts for
+          for the icons.
+        </div>
+        <div>
+          Thanks to Google Fonts for
           <a
             href="https://fonts.google.com/noto/specimen/Noto+Serif+JP"
             target="_blank"
@@ -1253,20 +1680,20 @@
             target="_blank"
             rel="noopener noreferrer"
             >Chihaya Jun</a
-          >.</div
-        >
-        <div
-          >Hosting provided by
+          >.
+        </div>
+        <div>
+          Hosting provided by
           <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer"
             >Github Pages</a
-          >.</div
-        >
-        <div
-          >Text-to-speech by
+          >.
+        </div>
+        <div>
+          Text-to-speech by
           <a href="https://aws.amazon.com/polly/" target="_blank" rel="noopener noreferrer"
             >Amazon Polly</a
-          >.</div
-        >
+          >.
+        </div>
       </footer>
     </div>
 
