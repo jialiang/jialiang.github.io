@@ -141,6 +141,15 @@
         height: 67%;
       }
 
+      #penguin-hat {
+        position: absolute;
+        bottom: 3.25%;
+        left: 0;
+        height: 27.5%;
+        background: linear-gradient(rgba(255, 245, 226, 0) 50%, rgba(255, 245, 226, 1) 0) 0 0/75%
+          100% no-repeat;
+      }
+
       @media (max-width: 1199px), (max-height: 599px) {
         #background .image-container {
           display: none;
@@ -1074,6 +1083,10 @@
           filter: brightness(0.33) contrast(1.67);
         }
 
+        #penguin-hat {
+          background: none;
+        }
+
         .theme-toggle-container label {
           background: #222;
         }
@@ -1343,6 +1356,12 @@
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
               media="(max-width: 1199px), (max-height: 599px)" />
             <img id="poporon" src="./images/poporon.svg" alt="" />
+          </picture>
+          <picture>
+            <source
+              srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+              media="(max-width: 1199px), (max-height: 599px)" />
+            <img id="penguin-hat" src="./images/penguin-hat.svg" alt="" />
           </picture>
         </div>
       </div>
