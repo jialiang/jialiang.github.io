@@ -81,7 +81,7 @@ function initThemeToggle() {
     };
   }
 
-  if (systemDarkMode) {
+  if (systemDarkMode && systemDarkMode.addEventListener) {
     systemDarkMode.addEventListener("change", function (e) {
       var localStorageTheme = localStorage.getItem("theme");
 
@@ -101,9 +101,45 @@ function initThemeToggle() {
   }
 }
 
+function initFaqToggle() {
+  var faqs = document.querySelectorAll(".faq");
+  var questions = document.querySelectorAll(".question");
+
+  for (var i = 0; i < faqs.length; i++) {
+    var faq = faqs[i];
+    var question = questions[i];
+
+    var trigger = (function (faq) {
+      return function (e) {
+        if (e.type === "keydown" && e.keyCode !== 13 && e.keyCode !== 32) return;
+
+        var isOpen = faq.getAttribute("open");
+
+        if (isOpen) faq.removeAttribute("open");
+        else faq.setAttribute("open", true);
+      };
+    })(faq);
+
+    question.onclick = trigger;
+    question.onkeydown = trigger;
+  }
+
+  var expandAll = document.querySelector(".expand");
+  var collapseAll = document.querySelector(".collapse");
+
+  expandAll.onclick = function () {
+    for (var i = 0; i < faqs.length; i++) faqs[i].setAttribute("open", true);
+  };
+
+  collapseAll.onclick = function () {
+    for (var i = 0; i < faqs.length; i++) faqs[i].removeAttribute("open");
+  };
+}
+
 initProjectNav();
 initFlowerSpin();
 initThemeToggle();
+initFaqToggle();
 
 window.addEventListener("load", function () {
   var lazyImages = document.querySelectorAll("img[loading=lazy]");
