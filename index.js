@@ -102,37 +102,34 @@ function initThemeToggle() {
 }
 
 function initFaqToggle() {
-  var faqs = document.querySelectorAll(".faq");
   var questions = document.querySelectorAll(".question");
 
-  for (var i = 0; i < faqs.length; i++) {
-    var faq = faqs[i];
+  for (var i = 0; i < questions.length; i++) {
+    var action = function (e) {
+      var key = e.key || e.keyCode;
+      if (e.type === "keyup" && key !== "Enter" && key !== 13) return;
+
+      var newState = "true";
+      if (e.target.getAttribute("aria-expanded") === "true") newState = "false";
+
+      e.target.setAttribute("aria-expanded", newState);
+    };
+
     var question = questions[i];
 
-    var trigger = (function (faq) {
-      return function (e) {
-        if (e.type === "keydown" && e.keyCode !== 13 && e.keyCode !== 32) return;
-
-        var isOpen = faq.getAttribute("open");
-
-        if (isOpen) faq.removeAttribute("open");
-        else faq.setAttribute("open", true);
-      };
-    })(faq);
-
-    question.onclick = trigger;
-    question.onkeydown = trigger;
+    question.onclick = action;
+    question.onkeyup = action;
   }
 
   var expandAll = document.querySelector(".expand");
   var collapseAll = document.querySelector(".collapse");
 
   expandAll.onclick = function () {
-    for (var i = 0; i < faqs.length; i++) faqs[i].setAttribute("open", true);
+    for (var i = 0; i < questions.length; i++) questions[i].setAttribute("aria-expanded", "true");
   };
 
   collapseAll.onclick = function () {
-    for (var i = 0; i < faqs.length; i++) faqs[i].removeAttribute("open");
+    for (var i = 0; i < questions.length; i++) questions[i].setAttribute("aria-expanded", "false");
   };
 }
 

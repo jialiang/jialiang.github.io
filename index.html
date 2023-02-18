@@ -98,28 +98,9 @@
         height: 80vh;
         margin: auto;
         border-radius: 4rem;
-        background-color: #fff5e2;
-        background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23e5dac8' opacity='0.45' /%3E%3C/svg%3E");
-        box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.1);
+        background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23e5dac8' opacity='0.33' /%3E%3C/svg%3E");
 
         backface-visibility: hidden;
-      }
-
-      #background::before {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 75%;
-        content: "";
-        border-radius: 4rem;
-        background: radial-gradient(
-              circle at center,
-              rgba(255, 216, 146, 1) 50%,
-              rgba(255, 216, 146, 0) 51%
-            )
-            50% 90%/6vh 6vh repeat-x,
-          linear-gradient(to bottom, rgba(255, 245, 226, 0), rgba(255, 245, 226, 1));
       }
 
       @media (min-height: 60rem) {
@@ -143,6 +124,7 @@
         position: absolute;
         top: 3%;
         left: 1%;
+        width: auto;
         height: 25%;
         max-height: 12.5rem;
       }
@@ -151,6 +133,7 @@
         position: absolute;
         right: 0;
         bottom: 0;
+        width: auto;
         height: 67%;
         max-height: 33.5rem;
         border-bottom-right-radius: 4rem;
@@ -160,6 +143,7 @@
         position: absolute;
         right: 10%;
         bottom: 22.5%;
+        width: auto;
         height: 67%;
         max-height: 33.5rem;
       }
@@ -168,10 +152,9 @@
         position: absolute;
         bottom: 3.25%;
         left: 0;
+        width: auto;
         height: 27.5%;
         max-height: 13.75rem;
-        background: linear-gradient(rgba(255, 245, 226, 0) 50%, rgba(255, 245, 226, 1) 0) 0 0/75%
-          100% no-repeat;
       }
 
       @media (max-width: 1199px), (max-height: 599px) {
@@ -195,34 +178,34 @@
       }
 
       a {
+        margin: 0 1px;
         padding: 0 2px;
         text-decoration: none;
         color: blue;
-        border: 1px solid rgba(0, 0, 0, 0);
-        outline: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
 
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
 
-      a:focus,
       a:hover {
-        border-color: cyan;
-        outline: none;
-        background: lightcyan;
-      }
-
-      a:focus:not(:focus-visible):not(:hover) {
-        border-color: rgba(0, 0, 0, 0);
-        outline: none;
-        background: rgba(0, 0, 0, 0);
+        border-bottom-color: currentColor;
       }
 
       @media (hover: none) {
-        a:hover:not(:focus-visible) {
-          border-color: rgba(0, 0, 0, 0);
-          outline: none;
-          background: rgba(0, 0, 0, 0);
+        a:hover {
+          border-bottom-color: rgba(0, 0, 0, 0);
         }
+      }
+
+      a:focus,
+      button:focus {
+        outline: 4px solid orangered;
+        outline-offset: 3px;
+      }
+
+      a:focus:not(:focus-visible),
+      button:focus:not(:focus-visible) {
+        outline: none;
       }
 
       .shadow {
@@ -319,7 +302,7 @@
 
       .theme-toggle-container label input:focus ~ span::before,
       .theme-toggle-container label input:focus-visible ~ span::before {
-        outline: 2px solid deepskyblue;
+        outline: 2px solid orangered;
         outline-offset: 1px;
       }
 
@@ -450,7 +433,7 @@
       #links a:hover {
         border-color: cyan;
         background: lightcyan;
-        box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2);
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 255, 255, 0.2);
       }
 
       #links a:focus:not(:focus-visible):not(:hover) {
@@ -562,7 +545,7 @@
       #usp ul {
         font-size: 2.25rem;
         line-height: 2rem;
-        margin: 4rem 0;
+        margin: 4rem 0 4.25rem 0;
       }
 
       #usp li {
@@ -577,6 +560,16 @@
         font-size: 1.75rem;
         font-weight: 500;
         border-bottom: 6px double;
+      }
+
+      #usp .resume:hover {
+        border-bottom-style: solid;
+      }
+
+      @media (hover: none) {
+        #usp .resume:hover {
+          border-bottom-style: double;
+        }
       }
 
       #usp .orange-patch {
@@ -733,95 +726,14 @@
         color: snow;
         border: 2px solid rgba(0, 0, 0, 0);
         border-radius: 0.5rem;
-        background: snow url("./images/paper.svg");
+        background: snow;
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1), 0 0 0.25rem rgba(0, 0, 0, 0.1),
           -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.1) inset;
       }
 
-      #projects li:nth-child(1) a {
-        z-index: 3;
-        transform: perspective(1000px) rotateY(12.5deg);
-      }
-
-      #projects li:nth-child(2) a {
-        z-index: 3;
-      }
-
-      #projects li:nth-child(3) a {
-        z-index: 3;
-        transform: perspective(1000px) rotateY(5deg);
-      }
-
-      #projects li:nth-child(4) a {
-        z-index: 2;
-      }
-
-      #projects li:nth-child(5) a {
-        z-index: 2;
-        transform: perspective(1000px) rotateY(-10deg);
-      }
-
-      #projects li:nth-child(6) a {
-        z-index: 2;
-        transform: perspective(1000px) rotateY(-7.5deg);
-      }
-
-      #projects li a::before {
-        position: absolute;
-        z-index: 1;
-        top: 0.5rem;
-        right: 0;
-        left: 0;
-        width: 1rem;
-        height: 1rem;
-        margin: auto;
-        content: "";
-        border: 1px solid #ccc;
-        border-radius: 100%;
-        background: #fff5e2;
-        box-shadow: -0.125rem -0.125rem 0.25rem rgba(0, 0, 0, 0.25) inset;
-      }
-
-      #projects li a::after {
-        position: absolute;
-        z-index: 2;
-        top: -2.1rem;
-        right: 0;
-        left: 0;
-        width: 0.33rem;
-        height: 2.85rem;
-        margin: auto;
-        content: "";
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 1rem;
-        border-bottom-left-radius: 1rem;
-        background: linear-gradient(to bottom, #d00000 50%, #830000 0) 0 0/100% 0.33rem repeat-y;
-      }
-
-      #projects li:nth-child(1) a::after,
-      #projects li:nth-child(2) a::after,
-      #projects li:nth-child(3) a::after {
-        top: -1.45rem;
-        right: 0;
-        left: -3rem;
-        width: 4rem;
-        height: 2.34rem;
-        background: url(./images/string.svg) 0 0/100% 100% no-repeat;
-      }
-
       @media (max-width: 55rem) {
-        #projects li:nth-child(n) a {
+        #projects li a {
           transform: perspective(1000px) rotateY(12.5deg);
-        }
-
-        #projects li a::after {
-          top: -1.45rem;
-          right: 0;
-          left: -3rem;
-          width: 4rem;
-          height: 2.34rem;
-          background: url(./images/string.svg) 0 0/100% 100% no-repeat;
         }
       }
 
@@ -863,12 +775,12 @@
         top: 3px;
       }
 
-      #projects li:nth-child(n) a:focus,
-      #projects li:nth-child(n) a:hover {
+      #projects li a:focus,
+      #projects li a:hover {
         transform: scale3d(1.02, 1.02, 1.02);
         border-color: cyan;
         background: lightcyan;
-        box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2),
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 255, 255, 0.2),
           -0.125rem -0.125rem 0.25rem rgba(0, 125, 125, 0.15) inset;
       }
 
@@ -884,7 +796,7 @@
         border-color: cyan;
       }
 
-      #projects li:nth-child(n) a:focus:not(:focus-visible):not(:hover) {
+      #projects li a:focus:not(:focus-visible):not(:hover) {
         border-color: rgba(0, 0, 0, 0);
         background: snow url("./images/paper.svg");
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1),
@@ -901,7 +813,7 @@
       }
 
       @media (hover: none) {
-        #projects li:nth-child(n) a:hover:not(:focus-visible) {
+        #projects li a:hover:not(:focus-visible) {
           border-color: rgba(0, 0, 0, 0);
           background: snow url("./images/paper.svg");
           box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1),
@@ -939,7 +851,6 @@
         letter-spacing: -0.1em;
         color: #333;
         border: 2px solid aquamarine;
-        outline: none;
         background: snow;
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 
@@ -984,7 +895,7 @@
       #projects .button-container button:hover {
         border-color: cyan;
         background: lightcyan;
-        box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(0, 255, 255, 0.2);
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 255, 255, 0.2);
       }
 
       #projects .button-container button:focus span,
@@ -1116,15 +1027,15 @@
         font-size: 0.875rem;
         line-height: 1;
         position: relative;
-        margin-left: 0.25rem;
+        margin-left: 0.5rem;
         padding: 0.5rem 0.75rem;
         cursor: pointer;
         letter-spacing: 0;
-        border: 2px solid #ffd892;
+        border: 2px solid #ffe6b7;
+        border-bottom-width: 3px;
         border-radius: 1rem;
-        background: rgba(255, 216, 146, 0.15);
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-          -0.125rem -0.125rem 0.25rem rgba(255, 164, 0, 0.33) inset;
+        background: #fff5e2;
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
@@ -1135,45 +1046,86 @@
 
       #me .controls button:focus,
       #me .controls button:hover {
-        outline: none;
-        background: #ffd892;
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-          -0.125rem -0.125rem 0.25rem rgba(0, 0, 0, 0.1) inset;
+        border-color: #cdbca5;
+        background: #ffe6b7;
       }
 
       #me .controls button:focus:not(:focus-visible):not(:hover) {
-        background: rgba(255, 216, 146, 0.15);
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-          -0.125rem -0.125rem 0.25rem rgba(255, 164, 0, 0.33) inset;
+        border-color: #ffe6b7;
+        background: #fff5e2;
       }
 
       @media (hover: none) {
         #me .controls button:hover:not(:focus-visible) {
-          background: rgba(255, 216, 146, 0.15);
-          box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-            -0.125rem -0.125rem 0.25rem rgba(255, 164, 0, 0.33) inset;
+          border-color: #ffe6b7;
+          background: #fff5e2;
         }
       }
 
       #me .faq {
-        display: block;
+        position: relative;
         margin-bottom: 1.5rem;
         border-radius: 1rem;
-        background: rgba(255, 216, 146, 0.15);
       }
 
       #me .faq .question {
         line-height: 1.15;
-        position: relative;
         margin: 0;
         padding: 0.75rem 1rem 0.75rem 2.5rem;
         cursor: pointer;
-        border: 2px solid #ffd892;
+        border: 2px solid #ffe6b7;
+        border-bottom-width: 4px;
         border-radius: 1rem;
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-          -0.125rem -0.125rem 0.25rem rgba(255, 164, 0, 0.33) inset;
+        background: #fff5e2;
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      #me .faq .question[aria-expanded="true"] {
+        border-bottom: none;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        background: #ffe6b7;
+      }
+
+      #me .faq .question:active {
+        padding-top: calc(1rem - 1.5px);
+        border-bottom-width: 2px;
+      }
+
+      #me .faq .question:focus,
+      #me .faq .question:hover {
+        border-color: #cdbca5;
+        outline: none;
+        background: #ffe6b7;
+      }
+
+      #me .faq .question:focus:not(:focus-visible):not(:hover) {
+        border-color: #ffe6b7;
+      }
+
+      #me .faq .question[aria-expanded="false"]:focus:not(:focus-visible):not(:hover) {
+        background: #fff5e2;
+      }
+
+      @media (hover: none) {
+        #me .faq .question:hover:not(:focus-visible) {
+          border-color: #ffe6b7;
+        }
+
+        #me .faq .question[aria-expanded="false"]:hover:not(:focus-visible) {
+          background: #fff5e2;
+        }
+      }
+
+      #me .faq .question:focus::after {
+        outline: 4px solid orangered;
+        outline-offset: 3px;
+      }
+
+      #me .faq .question:focus:not(:focus-visible)::after {
+        outline: none;
       }
 
       #me .faq .question::before {
@@ -1186,60 +1138,61 @@
           50% 75%/0.67rem 0.67rem no-repeat;
       }
 
-      #me .faq[open] {
-        border: 2px solid #ffd892;
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-          -0.125rem -0.125rem 0.25rem rgba(255, 164, 0, 0.33) inset;
-      }
-
-      #me .faq[open] .question {
-        border: none;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        background: #ffd892 !important;
-        box-shadow: none !important;
-      }
-
-      #me .faq[open] .question::before {
+      #me .faq .question[aria-expanded="true"]::before {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='531.74' height='460.5' viewBox='0 0 531.74 460.5'%3E%3Cpath d='m530.87.5-265 459L.87.5z'/%3E%3C/svg%3E");
       }
 
-      #me .faq .question:focus,
-      #me .faq .question:hover {
-        outline: none;
-        background: #ffd892;
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-          -0.125rem -0.125rem 0.25rem rgba(0, 0, 0, 0.1) inset;
-      }
-
-      #me .faq .question:focus:not(:focus-visible):not(:hover) {
-        background: rgba(0, 0, 0, 0);
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-          -0.125rem -0.125rem 0.25rem rgba(255, 164, 0, 0.33) inset;
-      }
-
-      @media (hover: none) {
-        #me .faq .question:hover:not(:focus-visible) {
-          background: rgba(0, 0, 0, 0);
-          box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1),
-            -0.125rem -0.125rem 0.25rem rgba(255, 164, 0, 0.33) inset;
-        }
+      #me .faq .question::after {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        border-radius: 1rem;
       }
 
       #me .faq .answer {
+        display: none;
         overflow: hidden;
-        height: 0;
-        padding: 0 1rem 0 2rem;
+        padding: 0 1rem 0 2.5rem;
+        border: 2px solid #ffe6b7;
+        border-top: none;
+        border-bottom-width: 4px;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        background: #fff5e2;
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+      }
+
+      #me .faq .question[aria-expanded="true"] ~ .answer {
+        display: block;
+      }
+
+      #me .faq .question:active ~ .answer {
+        border-bottom-width: 2px;
+      }
+
+      #me .faq .question:focus ~ .answer,
+      #me .faq .question:hover ~ .answer {
+        border-color: #cdbca5;
+      }
+
+      #me .faq .question:focus:not(:focus-visible):not(:hover) ~ .answer {
+        border-color: #ffe6b7;
+      }
+
+      @media (hover: none) {
+        #me .faq .question:hover:not(:focus-visible) ~ .answer {
+          border-color: #ffe6b7;
+        }
       }
 
       #me .faq .answer p:last-child,
       #me .faq .answer ol:last-child,
       #me .faq .answer ul:last-child {
         margin-bottom: 1.5rem;
-      }
-
-      #me .faq[open] .answer {
-        height: auto;
       }
 
       #me h3,
@@ -1298,6 +1251,11 @@
       #credits p {
         margin: 0 auto 1rem auto;
       }
+
+      #credits a:focus {
+        outline-width: 2px;
+        outline-offset: -1px;
+      }
     </style>
 
     <style title="dark" media="(prefers-color-scheme: dark)">
@@ -1315,11 +1273,6 @@
           color: deepskyblue;
         }
 
-        a:focus,
-        a:hover {
-          background: #163c3c;
-        }
-
         section h2 {
           color: snow;
         }
@@ -1333,21 +1286,11 @@
         }
 
         #background {
-          background-color: #383838;
-          background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23000000' opacity='0.2' /%3E%3C/svg%3E");
-          box-shadow: 0 0 5vmin rgba(0, 0, 0, 0.33);
-        }
-
-        #background::before {
-          background: linear-gradient(to bottom, rgba(56, 56, 56, 0), rgba(56, 56, 56, 1));
+          background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23000000' opacity='0.15' /%3E%3C/svg%3E");
         }
 
         #background .image-container {
           filter: brightness(0.33) contrast(1.67);
-        }
-
-        #penguin-hat {
-          background: none;
         }
 
         .theme-toggle-container label {
@@ -1481,8 +1424,8 @@
           filter: brightness(0.33);
         }
 
-        #projects li:nth-child(n) a:focus,
-        #projects li:nth-child(n) a:hover {
+        #projects li a:focus,
+        #projects li a:hover {
           background: #163c3c;
         }
 
@@ -1493,7 +1436,7 @@
           box-shadow: none;
         }
 
-        #projects li:nth-child(n) a:focus:not(:focus-visible):not(:hover) {
+        #projects li a:focus:not(:focus-visible):not(:hover) {
           border-color: #3a3a3a;
           background: #222;
           box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.33);
@@ -1505,7 +1448,7 @@
         }
 
         @media (hover: none) {
-          #projects li:nth-child(n) a:hover:not(:focus-visible) {
+          #projects li a:hover:not(:focus-visible) {
             border-color: #3a3a3a;
             background: #222;
             box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.33);
@@ -1569,7 +1512,7 @@
         #me .controls button:hover {
           border-color: #ffde69;
           background: #414118;
-          box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(255, 255, 0, 0.1);
+          box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 0, 0.1);
         }
 
         #me .controls button:focus:not(:focus-visible):not(:hover) {
@@ -1586,42 +1529,75 @@
           }
         }
 
-        #me .faq {
+        #me .faq .question {
+          border-color: #2a2a2a;
           background: #1a1a1a;
         }
 
-        #me .faq .question {
-          border-color: #2a2a2a;
+        #me .faq .question[aria-expanded="true"] {
+          background: #2a2a2a;
           box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33);
-        }
-
-        #me .faq .question::before {
-          filter: invert(1);
-        }
-
-        #me .faq[open] {
-          border-color: #ffde69;
-          box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(255, 255, 0, 0.1);
-        }
-
-        #me .faq[open] .question {
-          background: #313117 !important;
         }
 
         #me .faq .question:focus,
         #me .faq .question:hover {
           border-color: #ffde69;
           background: #313117;
-          box-shadow: 0.25rem 0.25rem 0.5rem 0 rgba(255, 255, 0, 0.1);
+          box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 0, 0.1);
         }
 
         #me .faq .question:focus:not(:focus-visible):not(:hover) {
+          border-color: #2a2a2a;
+          background: #1a1a1a;
+          box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33);
+        }
+
+        #me .faq .question[aria-expanded="true"]:focus:not(:focus-visible):not(:hover) {
+          background: #2a2a2a;
+        }
+
+        #me .faq .question[aria-expanded="false"]:focus:not(:focus-visible):not(:hover) {
+          background: #1a1a1a;
+        }
+
+        @media (hover: none) {
+          #me .faq .question:hover:not(:focus-visible) {
+            border-color: #2a2a2a;
+            box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33);
+          }
+
+          #me .faq .question[aria-expanded="true"]:hover:not(:focus-visible) {
+            background: #2a2a2a;
+          }
+
+          #me .faq .question[aria-expanded="false"]:hover:not(:focus-visible) {
+            background: #1a1a1a;
+          }
+        }
+
+        #me .faq .question::before {
+          filter: invert(1);
+        }
+
+        #me .faq .answer {
+          border-color: #2a2a2a;
+          background: #1a1a1a;
+          box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33);
+        }
+
+        #me .faq .question:focus ~ .answer,
+        #me .faq .question:hover ~ .answer {
+          border-color: #ffde69;
+          box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 0, 0.1);
+        }
+
+        #me .faq .question:focus:not(:focus-visible):not(:hover) ~ .answer {
           border-color: #2a2a2a;
           box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33);
         }
 
         @media (hover: none) {
-          #me .faq .question:hover:not(:focus-visible) {
+          #me .faq .question:hover:not(:focus-visible) ~ .answer {
             border-color: #2a2a2a;
             box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33);
           }
@@ -1686,23 +1662,32 @@
         }
 
         #me .faq .question {
-          list-style-type: none !important;
+          padding-top: 0.75rem !important;
           cursor: initial !important;
+          border-color: rgba(0, 0, 0, 0) !important;
+          border-bottom: none !important;
           border-bottom-right-radius: 0 !important;
           border-bottom-left-radius: 0 !important;
           background: #ffd892 !important;
-          box-shadow: none !important;
         }
 
         #me .faq .answer {
-          height: initial !important;
+          display: block !important;
+          border-color: #ffd892 !important;
+          border-bottom-width: 4px !important;
         }
 
         @media (prefers-color-scheme: dark) {
           @supports (filter: brightness(1)) {
             #me .faq .question {
-              border-color: rgba(0, 0, 0, 0) !important;
-              background: #333 !important;
+              border-color: #2a2a2a !important;
+              background: #2a2a2a !important;
+              box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33) !important;
+            }
+
+            #me .faq .answer {
+              border-color: #2a2a2a !important;
+              box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.33) !important;
             }
           }
         }
@@ -1717,25 +1702,30 @@
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
               media="(max-width: 1199px), (max-height: 599px)" />
-            <img id="catship" src="./images/catship.svg" alt="" />
+            <img id="catship" src="./images/catship.svg" alt="" width="112" height="66" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
               media="(max-width: 1199px), (max-height: 599px)" />
-            <img id="living-millenium" src="./images/living-millenium-bg.svg" alt="" />
+            <img
+              id="living-millenium"
+              src="./images/living-millenium-bg.svg"
+              alt=""
+              width="425"
+              height="787" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
               media="(max-width: 1199px), (max-height: 599px)" />
-            <img id="poporon" src="./images/poporon.svg" alt="" />
+            <img id="poporon" src="./images/poporon.svg" alt="" width="613" height="859" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
               media="(max-width: 1199px), (max-height: 599px)" />
-            <img id="penguin-hat" src="./images/penguin-hat.svg" alt="" />
+            <img id="penguin-hat" src="./images/penguin-hat.svg" alt="" width="1388" height="531" />
           </picture>
         </div>
       </div>
@@ -1776,11 +1766,9 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-              <path
+            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path
                 d="M13.74 8s1.53-8-3.33-8H2v24h20V11c0-3.42-5.25-3.75-8.26-3zM18 19H6v-1h12v1zm0-3H6v-1h12v1zm0-3H6v-1h12v1zM14.57.07c2.2 1.18 5.94 4.89 7.43 6.89a8.82 8.82 0 0 0-6.1-1.18c.23-1.47-.18-4.54-1.33-5.7z"
-              />
-            </svg><span>Contact</span>
+              /></svg><span>Contact</span>
           </a>
         </li>
       </ul>
@@ -1986,18 +1974,24 @@
             <div class="paper-edge"></div>
 
             <div class="controls">
-              <button class="expand">Expand All</button>
-              <button class="collapse">Collapse All</button>
+              <button class="expand">Expand All</button
+              ><button class="collapse">Collapse All</button>
             </div>
 
             <h3>Current Job</h3>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a1">
                 What does your current company do?
               </h4>
 
               <div
+                id="a1"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2020,11 +2014,17 @@
             </div>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a2">
                 How big is the team you're currently in?
               </h4>
 
               <div
+                id="a2"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2036,11 +2036,17 @@
             </div>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a3">
                 What do you do at your current job?
               </h4>
 
               <div
+                id="a3"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2069,11 +2075,17 @@
             </div>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a4">
                 What technologies do you use in your current job?
               </h4>
 
               <div
+                id="a4"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2087,11 +2099,17 @@
             </div>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a5">
                 How is your current work arrangement?
               </h4>
 
               <div
+                id="a5"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2108,11 +2126,17 @@
             <h3>New Job</h3>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a6">
                 Do you prefer frontend or backend?
               </h4>
 
               <div
+                id="a6"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2124,9 +2148,17 @@
             </div>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">Why do you want to leave?</h4>
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a7"
+                >Why do you want to leave?</h4
+              >
 
               <div
+                id="a7"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2142,11 +2174,17 @@
             <h3>Legal</h3>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a8">
                 What is your work authorisation status?
               </h4>
 
               <div
+                id="a8"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2158,9 +2196,17 @@
             </div>
 
             <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-              <h4 class="question" itemprop="name" tabindex="0">When can you start?</h4>
+              <h4
+                class="question"
+                itemprop="name"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="a9"
+                >When can you start?</h4
+              >
 
               <div
+                id="a9"
                 class="answer"
                 itemscope
                 itemprop="acceptedAnswer"
@@ -2203,8 +2249,8 @@
           >.
         </p>
         <p>
-          This website works with JavaScript-disabled, Internet Explorer 9, screen readers,
-          ultra-widescreens and tamagotchis.
+          This website works with JavaScript-disabled, Internet Explorer 10, screen readers,
+          keyboards, touch, ultra-widescreens and tamagotchis.
         </p>
       </footer>
     </div>
