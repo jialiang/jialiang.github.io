@@ -150,9 +150,9 @@ window.addEventListener("load", function () {
 
     if (img.naturalWidth === 0) {
       img.onload = loadImage;
-      img.setAttribute("loading", "");
+      img.removeAttribute("loading");
     } else {
-      img.setAttribute("loading", "");
+      img.removeAttribute("loading");
       loadImage();
     }
   }
