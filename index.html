@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="msapplication-tap-highlight" content="no" />
 
@@ -36,7 +35,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <style>
+    <style id="critical-styles">
       @font-face {
         font-family: "Noto Sans JP";
         font-weight: 400;
@@ -498,6 +497,7 @@
         line-height: 0.9;
         position: relative;
         z-index: 1;
+        display: none;
         margin-bottom: 12.5rem;
         text-align: left;
         letter-spacing: -0.2rem;
@@ -520,6 +520,7 @@
       }
 
       #usp {
+        display: block;
         text-align: center;
       }
 
@@ -632,13 +633,11 @@
       }
     </style>
 
-    <link rel="stylesheet" href="./index.css" media="print" onload="this.media='all'" />
-
     <noscript>
       <link rel="stylesheet" href="./index.css" />
     </noscript>
 
-    <style id="dark-style" title="dark" media="(prefers-color-scheme: dark)">
+    <style id="dark-styles" title="dark" media="(prefers-color-scheme: dark)">
       @supports (filter: brightness(1)) {
         :root {
           color-scheme: dark;
@@ -1005,7 +1004,7 @@
 
         if (!isValidTheme(theme)) return;
 
-        var darkStylesheet = document.getElementById("dark-style");
+        var darkStylesheet = document.getElementById("dark-styles");
 
         if (theme === "dark") darkStylesheet.removeAttribute("media");
         if (theme === "light") darkStylesheet.setAttribute("media", "(width: 10px)");
@@ -1642,6 +1641,40 @@
       </footer>
     </div>
 
-    <script src="./index.js" defer></script>
+    <script>
+      function afterFCP() {
+        var mainScript = document.createElement("script");
+        mainScript.src = "./index.js";
+        mainScript.defer = true;
+
+        document.body.appendChild(mainScript);
+
+        var deferrableStyles = document.createElement("link");
+        deferrableStyles.rel = "stylesheet";
+        deferrableStyles.href = "./index.css";
+
+        var criticalStyles = document.getElementById("critical-styles");
+
+        criticalStyles.parentNode.insertBefore(deferrableStyles, criticalStyles.nextSibling);
+      }
+
+      if (
+        typeof PerformanceObserver === "function" &&
+        PerformanceObserver.supportedEntryTypes.includes("paint")
+      ) {
+        var observer = new PerformanceObserver(function (entries) {
+          var fcp = entries.getEntriesByName("first-contentful-paint")[0];
+
+          if (fcp) {
+            observer.disconnect();
+            afterFCP();
+          }
+        });
+
+        observer.observe({ type: "paint", buffered: true });
+      } else {
+        window.addEventListener("load", afterFCP);
+      }
+    </script>
   </body>
 </html>

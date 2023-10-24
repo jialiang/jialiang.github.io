@@ -1,3 +1,7 @@
+section {
+  display: block;
+}
+
 #projects {
   width: 55rem;
   max-width: 100%;

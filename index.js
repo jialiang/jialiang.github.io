@@ -133,12 +133,7 @@ function initFaqToggle() {
   };
 }
 
-initProjectNav();
-initFlowerSpin();
-initThemeToggle();
-initFaqToggle();
-
-window.addEventListener("load", function () {
+function initLoadImages() {
   var lazyImages = document.querySelectorAll("img[loading=lazy]");
   var i = 0;
 
@@ -158,4 +153,10 @@ window.addEventListener("load", function () {
   }
 
   loadImage();
-});
+}
+
+initProjectNav();
+initFlowerSpin();
+initThemeToggle();
+initFaqToggle();
+initLoadImages();
