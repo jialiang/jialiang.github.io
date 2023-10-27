@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "glyphhanger": "^5.0.0",
+    "http-server": "^14.1.1"
+  }
+}

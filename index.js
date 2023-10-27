@@ -51,8 +51,11 @@ function initFlowerSpin() {
   if (!flower || isPrefersReducedMotion()) return;
 
   flower.addEventListener("click", function () {
+    if (flower.style.msTransform) flower.style.msTransform = "";
+    else flower.style.msTransform = "rotate(560deg)";
+
     if (flower.style.transform) flower.style.transform = "";
-    else flower.style.transform = "rotate(720deg)";
+    else flower.style.transform = "rotate(560deg)";
   });
 }
 
