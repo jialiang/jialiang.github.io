@@ -525,7 +525,8 @@
         left: -23px;
         width: 25px;
         height: 100%;
-        background: url(./images/paper-edge.png) 0 0/100% auto repeat-y;
+        background: url("data:image/png;base64,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")
+          0 0/100% auto repeat-y;
       }
 
       #usp {
@@ -638,6 +639,10 @@
         #usp .star-badge {
           bottom: -8.5rem;
         }
+      }
+
+      footer {
+        display: none;
       }
     </style>
 
@@ -1170,7 +1175,7 @@
         <div class="paper-container">
           <img
             class="orange-patch"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='549.15' height='502.97' viewBox='0 0 145.3 133.08'%3E%3Cdefs%3E%3Cfilter id='a' width='1.14' height='1.15' x='-.06' y='-.06' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-color='%23000' flood-opacity='.5' result='flood' /%3E%3CfeComposite in='flood' in2='SourceGraphic' operator='in' result='composite1' /%3E%3CfeGaussianBlur in='composite1' result='blur' stdDeviation='3' /%3E%3CfeOffset dx='3' dy='3' result='offset' /%3E%3CfeComposite in='SourceGraphic' in2='offset' result='composite2' /%3E%3C/filter%3E%3Cfilter id='b' width='1.17' height='1.23' x='-.07' y='-.09' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-color='%23000' flood-opacity='.5' result='flood' /%3E%3CfeComposite in='flood' in2='SourceGraphic' operator='in' result='composite1' /%3E%3CfeGaussianBlur in='composite1' result='blur' stdDeviation='3' /%3E%3CfeOffset dx='3' dy='3' result='offset' /%3E%3CfeComposite in='SourceGraphic' in2='offset' result='composite2' /%3E%3C/filter%3E%3C/defs%3E%3Cpath fill='%23f60' d='M103.39 7.48 7.74 74.79l36.13 48.09L135.1 60.5Z' filter='url(%23a)' /%3E%3Cpath fill='%23ff0' d='M7.2 75.02 103.31 7.2l8.74 14.5-97.72 62.34Z' filter='url(%23b)' /%3E%3Cpath fill='%23ff0' d='m132.02 53.09-95 62.96 6.85 6.83L135.1 60.5z' /%3E%3Cpath fill='%23ff0' stroke='%23ff0' stroke-linecap='square' stroke-width='3.97' d='m44.71 74.19-5.54 31.18M24.34 86.26l35.37 8.21m46.78-60.6-5.53 31.18M86.12 45.94l35.37 8.21m-46.27-.25-5.53 31.18M54.84 65.97l35.38 8.21' /%3E%3C/svg%3E"
+            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='549.15'%20height='502.97'%20viewBox='0%200%20145.3%20133.08'%3E%3Cdefs%3E%3Cfilter%20id='a'%20width='1.14'%20height='1.15'%20x='-.06'%20y='-.06'%20color-interpolation-filters='sRGB'%3E%3CfeFlood%20flood-color='%23000'%20flood-opacity='.5'%20result='flood'%20/%3E%3CfeComposite%20in='flood'%20in2='SourceGraphic'%20operator='in'%20result='composite1'%20/%3E%3CfeGaussianBlur%20in='composite1'%20result='blur'%20stdDeviation='3'%20/%3E%3CfeOffset%20dx='3'%20dy='3'%20result='offset'%20/%3E%3CfeComposite%20in='SourceGraphic'%20in2='offset'%20result='composite2'%20/%3E%3C/filter%3E%3Cfilter%20id='b'%20width='1.17'%20height='1.23'%20x='-.07'%20y='-.09'%20color-interpolation-filters='sRGB'%3E%3CfeFlood%20flood-color='%23000'%20flood-opacity='.5'%20result='flood'%20/%3E%3CfeComposite%20in='flood'%20in2='SourceGraphic'%20operator='in'%20result='composite1'%20/%3E%3CfeGaussianBlur%20in='composite1'%20result='blur'%20stdDeviation='3'%20/%3E%3CfeOffset%20dx='3'%20dy='3'%20result='offset'%20/%3E%3CfeComposite%20in='SourceGraphic'%20in2='offset'%20result='composite2'%20/%3E%3C/filter%3E%3C/defs%3E%3Cpath%20fill='%23f60'%20d='M103.39%207.48%207.74%2074.79l36.13%2048.09L135.1%2060.5Z'%20filter='url(%23a)'%20/%3E%3Cpath%20fill='%23ff0'%20d='M7.2%2075.02%20103.31%207.2l8.74%2014.5-97.72%2062.34Z'%20filter='url(%23b)'%20/%3E%3Cpath%20fill='%23ff0'%20d='m132.02%2053.09-95%2062.96%206.85%206.83L135.1%2060.5z'%20/%3E%3Cpath%20fill='%23ff0'%20stroke='%23ff0'%20stroke-linecap='square'%20stroke-width='3.97'%20d='m44.71%2074.19-5.54%2031.18M24.34%2086.26l35.37%208.21m46.78-60.6-5.53%2031.18M86.12%2045.94l35.37%208.21m-46.27-.25-5.53%2031.18M54.84%2065.97l35.38%208.21'%20/%3E%3C/svg%3E"
             alt=""
             width="512"
             height="512"
@@ -1647,11 +1652,24 @@
           This website works with JavaScript-disabled, Internet Explorer 9, screen readers,
           keyboards, touch, ultra-widescreens and tamagotchis.
         </p>
+        <p id="logs"></p>
       </footer>
     </div>
 
     <script>
-      function afterFCP() {
+      var afterFcpExecuted = false;
+      var fcpHardTimeout = setTimeout(afterFcp, 1000);
+      var fcpObserver;
+      var loadedInForeground = !document.hidden;
+
+      function afterFcp(source) {
+        if (afterFcpExecuted) return;
+        else afterFcpExecuted = true;
+
+        clearTimeout(fcpHardTimeout);
+
+        if (fcpObserver) fcpObserver.disconnect();
+
         var mainScript = document.createElement("script");
         mainScript.src = "./index.js";
         mainScript.defer = true;
@@ -1671,18 +1689,13 @@
         typeof PerformanceObserver === "function" &&
         PerformanceObserver.supportedEntryTypes.includes("paint")
       ) {
-        var observer = new PerformanceObserver(function (entries) {
-          var fcp = entries.getEntriesByName("first-contentful-paint")[0];
-
-          if (fcp) {
-            observer.disconnect();
-            afterFCP();
-          }
+        fcpObserver = new PerformanceObserver(function (entries) {
+          if (entries.getEntriesByName("first-contentful-paint")[0]) afterFcp();
         });
 
-        observer.observe({ type: "paint", buffered: true });
+        fcpObserver.observe({ type: "paint", buffered: true });
       } else {
-        window.addEventListener("load", afterFCP);
+        window.addEventListener("load", afterFcp);
       }
     </script>
   </body>

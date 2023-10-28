@@ -670,6 +670,7 @@ section {
   line-height: 1.5;
   position: relative;
   z-index: 1;
+  display: block;
   box-sizing: border-box;
   width: 25rem;
   max-width: calc(100% - 2rem);

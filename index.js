@@ -137,25 +137,89 @@ function initFaqToggle() {
 }
 
 function initLoadImages() {
-  var lazyImages = document.querySelectorAll("img[loading=lazy]");
-  var i = 0;
+  function loadImages() {
+    var lazyImages = document.querySelectorAll("img[loading=lazy]");
+    var i = 0;
 
-  function loadImage() {
-    var img = lazyImages[i];
-    i += 1;
+    function loadImage() {
+      var img = lazyImages[i];
+      i += 1;
 
-    if (!img) return;
+      if (!img) return;
 
-    if (img.naturalWidth === 0) {
-      img.onload = loadImage;
-      img.removeAttribute("loading");
-    } else {
-      img.removeAttribute("loading");
-      loadImage();
+      if (img.naturalWidth === 0) {
+        img.onload = loadImage;
+        img.removeAttribute("loading");
+      } else {
+        img.removeAttribute("loading");
+        loadImage();
+      }
     }
+
+    loadImage();
   }
 
-  loadImage();
+  if (document.readyState === "complete") loadImages();
+  else window.addEventListener("load", loadImages);
+}
+
+function initPerformanceLogs() {
+  if (
+    !loadedInForeground ||
+    typeof performance !== "object" ||
+    typeof performance.getEntries !== "function"
+  ) {
+    return;
+  }
+
+  var entries = performance.getEntries();
+
+  var htmlEntry;
+  var fontEntries = [];
+  var paintEntry;
+
+  entries.forEach((entry) => {
+    if (entry.entryType === "navigation") htmlEntry = entry;
+    if (entry.name.includes(".woff")) fontEntries.push(entry);
+    if (entry.name === "first-contentful-paint") paintEntry = entry;
+  });
+
+  var logs = [];
+
+  if (htmlEntry) {
+    var domainLookupStart = Math.round(htmlEntry.domainLookupStart);
+    var domainLookupEnd = Math.round(htmlEntry.domainLookupEnd);
+    var domainLookupDuration = domainLookupEnd - domainLookupStart;
+
+    var htmlFetchStart = Math.round(htmlEntry.fetchStart);
+    var htmlResponseEnd = Math.round(htmlEntry.responseEnd);
+
+    var htmlFetchDuration = htmlResponseEnd - htmlFetchStart;
+
+    logs.push(`DNS lookup done at ${domainLookupEnd}ms (took ${domainLookupDuration}ms).`);
+    logs.push(`HTML fetch done at ${htmlResponseEnd}ms (took ${htmlFetchDuration}ms).`);
+  }
+
+  if (fontEntries.length) {
+    var fontFetchStarts = fontEntries.map((entry) => entry.fetchStart);
+    var firstFontFetchStart = Math.round(Math.min(...fontFetchStarts));
+
+    var fontResponseEnds = fontEntries.map((entry) => entry.responseEnd);
+    var lastFontResponseEnd = Math.round(Math.max(...fontResponseEnds));
+
+    var fontFetchDuration = lastFontResponseEnd - firstFontFetchStart;
+
+    logs.push(`Font fetches done at ${lastFontResponseEnd}ms (took ${fontFetchDuration}ms).`);
+  }
+
+  if (paintEntry) {
+    var fcpTime = Math.round(paintEntry.startTime);
+    logs.push(`First contentful paint done at ${fcpTime}ms.`);
+  }
+
+  requestAnimationFrame(function () {
+    document.getElementById("logs").innerHTML = logs.join("<br />");
+  });
 }
 
 initProjectNav();
@@ -163,3 +227,4 @@ initFlowerSpin();
 initThemeToggle();
 initFaqToggle();
 initLoadImages();
+initPerformanceLogs();
