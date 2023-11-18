@@ -13,7 +13,7 @@ function initProjectNav() {
     var scrollLeft = projectList.scrollLeft;
     var halfWidth = innerWidth / 2;
 
-    var cardSize = rem * 17.5;
+    var cardSize = rem * 20;
 
     var middlePosition = scrollLeft + halfWidth;
     var cardNearestToMiddle = Math.floor(middlePosition / cardSize);
@@ -172,54 +172,83 @@ function initPerformanceLogs() {
     return;
   }
 
+  var logs = [];
+
+  function createLog(name, doneAt, duration) {
+    var message = name + " done at " + Math.round(doneAt) + "ms";
+
+    if (duration != null) message += " (took " + Math.round(duration) + "ms).";
+    else message += ".";
+
+    logs.push(message);
+  }
+
+  function appendLogs() {
+    document.getElementById("logs").innerHTML = logs.join("<br />");
+  }
+
   var entries = performance.getEntries();
 
   var htmlEntry;
   var fontEntries = [];
   var paintEntry;
 
-  entries.forEach((entry) => {
+  entries.forEach(function (entry) {
     if (entry.entryType === "navigation") htmlEntry = entry;
-    if (entry.name.includes(".woff")) fontEntries.push(entry);
+    else if (performance.timing) htmlEntry = performance.timing;
+
+    if (entry.name.indexOf(".woff") !== -1) fontEntries.push(entry);
+
     if (entry.name === "first-contentful-paint") paintEntry = entry;
   });
 
-  var logs = [];
-
   if (htmlEntry) {
-    var domainLookupStart = Math.round(htmlEntry.domainLookupStart);
-    var domainLookupEnd = Math.round(htmlEntry.domainLookupEnd);
+    var navigationStart = htmlEntry.navigationStart || 0;
+
+    var domainLookupStart = htmlEntry.domainLookupStart - navigationStart;
+    var domainLookupEnd = htmlEntry.domainLookupEnd - navigationStart;
+
+    var htmlFetchStart = htmlEntry.fetchStart - navigationStart;
+    var htmlResponseEnd = htmlEntry.responseEnd - navigationStart;
+
     var domainLookupDuration = domainLookupEnd - domainLookupStart;
-
-    var htmlFetchStart = Math.round(htmlEntry.fetchStart);
-    var htmlResponseEnd = Math.round(htmlEntry.responseEnd);
-
     var htmlFetchDuration = htmlResponseEnd - htmlFetchStart;
 
-    logs.push(`DNS lookup done at ${domainLookupEnd}ms (took ${domainLookupDuration}ms).`);
-    logs.push(`HTML fetch done at ${htmlResponseEnd}ms (took ${htmlFetchDuration}ms).`);
+    createLog("DNS lookup", domainLookupEnd, domainLookupDuration);
+    createLog("HTML fetch", htmlResponseEnd, htmlFetchDuration);
   }
 
   if (fontEntries.length) {
-    var fontFetchStarts = fontEntries.map((entry) => entry.fetchStart);
-    var firstFontFetchStart = Math.round(Math.min(...fontFetchStarts));
+    var fontFetchStarts = fontEntries.map(function (entry) {
+      return entry.fetchStart;
+    });
 
-    var fontResponseEnds = fontEntries.map((entry) => entry.responseEnd);
-    var lastFontResponseEnd = Math.round(Math.max(...fontResponseEnds));
+    var fontResponseEnds = fontEntries.map(function (entry) {
+      return entry.responseEnd;
+    });
+
+    var firstFontFetchStart = Math.min.apply(null, fontFetchStarts);
+    var lastFontResponseEnd = Math.max.apply(null, fontResponseEnds);
 
     var fontFetchDuration = lastFontResponseEnd - firstFontFetchStart;
 
-    logs.push(`Font fetches done at ${lastFontResponseEnd}ms (took ${fontFetchDuration}ms).`);
+    createLog("Font fetches", lastFontResponseEnd, fontFetchDuration);
   }
 
   if (paintEntry) {
-    var fcpTime = Math.round(paintEntry.startTime);
-    logs.push(`First contentful paint done at ${fcpTime}ms.`);
+    var fcpTime = paintEntry.startTime;
+
+    createLog("First contentful paint", fcpTime);
   }
 
-  requestAnimationFrame(function () {
-    document.getElementById("logs").innerHTML = logs.join("<br />");
-  });
+  if (!paintEntry && htmlEntry && htmlEntry.msFirstPaint) {
+    var fcpTime = htmlEntry.msFirstPaint - htmlEntry.navigationStart;
+
+    createLog("First paint", fcpTime);
+  }
+
+  if (typeof requestAnimationFrame !== "function") appendLogs();
+  else requestAnimationFrame(appendLogs);
 }
 
 initProjectNav();

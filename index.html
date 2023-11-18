@@ -46,8 +46,8 @@
         font-family: "Noto Sans JP";
         font-weight: 400;
         font-style: normal;
-        font-display: swap;
 
+        font-display: swap;
         src: url(./fonts/noto-sans-jp-regular.woff2) format("woff2"),
           url(./fonts/noto-sans-jp-regular.woff) format("woff");
       }
@@ -56,8 +56,8 @@
         font-family: "Noto Sans JP";
         font-weight: 700;
         font-style: normal;
-        font-display: swap;
 
+        font-display: swap;
         src: url(./fonts/noto-sans-jp-bold.woff2) format("woff2"),
           url(./fonts/noto-sans-jp-bold.woff) format("woff");
       }
@@ -66,8 +66,8 @@
         font-family: "Chihaya Jun";
         font-weight: 400;
         font-style: normal;
-        font-display: block;
 
+        font-display: block;
         src: url(./fonts/chihaya-jun.woff2) format("woff2"),
           url(./fonts/chihaya-jun.woff) format("woff");
       }
@@ -80,6 +80,7 @@
         font-family: "Noto Sans JP", sans-serif;
         color: #333;
         background: #fffaf0;
+        background: linear-gradient(to right, white 50%, #fffaf0 0) 1.875rem 0/7.5rem 100%;
       }
 
       @media (max-width: 22.5rem) {
@@ -104,6 +105,7 @@
         height: 80vh;
         margin: auto;
         border-radius: 4rem;
+        background-color: #fffdfa;
         background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23e5dac8' opacity='0.33' /%3E%3C/svg%3E");
         box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
 
@@ -125,11 +127,10 @@
 
       #catship {
         position: absolute;
-        top: 3%;
-        left: 1%;
+        top: 1rem;
+        left: 1rem;
         width: auto;
-        height: 25%;
-        max-height: 12.5rem;
+        height: 7.5rem;
       }
 
       #poporon {
@@ -137,39 +138,35 @@
         right: 0;
         bottom: 0;
         width: auto;
-        height: 67%;
-        max-height: 33.5rem;
+        height: 20rem;
         border-bottom-right-radius: 4rem;
       }
 
       #living-millenium {
         position: absolute;
-        right: 10%;
-        bottom: 22.5%;
+        right: 6.5rem;
+        bottom: 8rem;
         width: auto;
-        height: 67%;
-        max-height: 33.5rem;
+        height: 20rem;
       }
 
       #penguin-hat {
         position: absolute;
-        bottom: 3.25%;
-        left: 0;
+        bottom: 1rem;
+        left: 1rem;
         width: auto;
-        height: 27.5%;
-        max-height: 13.75rem;
+        height: 8.25rem;
       }
 
       #nekotofu {
         position: absolute;
-        bottom: 21%;
-        left: 1%;
+        bottom: 6.33rem;
+        left: 1rem;
         width: auto;
-        height: 35%;
-        max-height: 17.5rem;
+        height: 10.5rem;
       }
 
-      @media (max-width: 1199px), (max-height: 599px) {
+      @media (max-width: 56.25rem), (max-height: 37.5rem) {
         #background .image-container {
           display: none;
         }
@@ -283,7 +280,7 @@
         padding: 0.25rem 0.75rem 0.25rem 0.55rem;
         cursor: pointer;
         border-radius: 1rem;
-        background: snow;
+        background: white;
         box-shadow: 0.15rem 0.15rem 0.5rem 0 rgba(0, 0, 0, 0.15);
 
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -305,7 +302,7 @@
         content: "";
         background: radial-gradient(
             circle at center,
-            snow 50%,
+            white 50%,
             #ccc 55%,
             #ccc 65%,
             rgba(0, 0, 0, 0) 70%
@@ -329,8 +326,8 @@
         background: radial-gradient(
             circle at center,
             #0060df 28%,
-            snow 33%,
-            snow 50%,
+            white 33%,
+            white 50%,
             #0060df 55%,
             #0060df 65%,
             rgba(0, 0, 0, 0) 70%
@@ -373,7 +370,7 @@
         height: 100%;
         content: "";
         border-radius: 5em;
-        background: deepskyblue;
+        background: #00a3a3;
         background: linear-gradient(
               to right,
               rgba(255, 255, 255, 0.5) 50%,
@@ -395,7 +392,7 @@
       }
 
       header h1 {
-        font-size: 4.15em;
+        font-size: 5.15em;
         font-weight: 700;
         margin-bottom: 0.1em;
         white-space: nowrap;
@@ -411,6 +408,10 @@
       @media (max-width: 36.5rem) {
         header {
           max-width: 19em;
+        }
+
+        header h1 {
+          font-size: 4.15em;
         }
       }
 
@@ -456,7 +457,7 @@
         color: #333;
         border: 2px solid #eee;
         border-radius: 1em;
-        background: snow;
+        background: white;
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
       }
 
@@ -476,15 +477,15 @@
       }
 
       #links a:focus:not(:focus-visible):not(:hover) {
-        border-color: snow;
-        background: snow;
+        border-color: white;
+        background: white;
         box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
       }
 
       @media (hover: none) {
         #links a:hover:not(:focus-visible) {
-          border-color: snow;
-          background: snow;
+          border-color: white;
+          background: white;
           box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
         }
       }
@@ -567,10 +568,10 @@
         height: 100%;
         content: "";
         border-radius: 4px;
-        background: snow url("./images/paper.svg");
+        background: white url("./images/paper.svg");
         background: linear-gradient(to bottom, rgba(0, 255, 255, 0.67) 1px, rgba(0, 255, 255, 0) 0)
             50% -1px/90% 2rem repeat-y,
-          url("./images/paper.svg"), snow;
+          url("./images/paper.svg"), white;
       }
 
       @media (max-width: 20.625rem) {
@@ -657,7 +658,7 @@
         }
 
         html {
-          color: snow;
+          color: white;
           background: #333;
         }
 
@@ -666,7 +667,7 @@
         }
 
         section h2 {
-          color: snow;
+          color: white;
         }
 
         .shadow {
@@ -678,6 +679,7 @@
         }
 
         #background {
+          background-color: #333;
           background-image: url("data:image/svg+xml,%3Csvg width='237.5' height='237.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.62-.8.07 5.75v2.83L9.45-.8H6.62zm16.97 0L.07 22.72v2.83L26.42-.8h-2.83zm50.9 0L.08 73.63v2.83L77.33-.8H74.5zm16.98 0L.07 90.6v2.83L94.3-.8h-2.83zm16.97 0L.07 107.57v2.83L111.27-.8h-2.83zm50.91 0L.07 158.48v2.83L162.18-.8h-2.83zm16.97 0L.07 175.45v2.83L179.15-.8h-2.83zm16.97 0L.07 192.42v2.83L196.12-.8h-2.83zm44.21 6.7L5.9 237.5h2.83L237.5 8.73V5.9zm0 16.97L22.87 237.5h2.83L237.5 25.7v-2.83zm0 50.92L73.79 237.5h2.82L237.5 76.61V73.8zm0 16.96L90.76 237.5h2.82L237.5 93.58v-2.83zm0 16.98L107.72 237.5h2.83L237.5 110.55v-2.82zm0 50.9-78.86 78.87h2.82l76.04-76.04v-2.82zm0 16.98-61.9 61.89h2.84l59.06-59.06v-2.83zm0 16.97-44.92 44.92h2.83l42.09-42.1v-2.82z' fill='%23000000' opacity='0.15' /%3E%3C/svg%3E");
           box-shadow: 0 0 2rem rgba(0, 0, 0, 0.33);
         }
@@ -698,11 +700,11 @@
         }
 
         #links svg {
-          fill: snow;
+          fill: white;
         }
 
         #links span {
-          color: snow;
+          color: white;
         }
 
         #links a:focus,
@@ -772,7 +774,7 @@
         }
 
         #usp h2 {
-          color: snow;
+          color: white;
         }
 
         #projects .bunny {
@@ -807,7 +809,7 @@
         }
 
         #projects li figcaption div {
-          color: snow;
+          color: white;
         }
 
         #projects li a:focus,
@@ -847,7 +849,7 @@
         }
 
         #projects .button-container button {
-          color: snow;
+          color: white;
           background: #222;
           box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
         }
@@ -1001,7 +1003,7 @@
         }
 
         #credits {
-          color: snow;
+          color: white;
           background: #222;
           box-shadow: 0.5rem 0.5rem 1rem 0 rgba(127, 255, 212, 0.1);
         }
@@ -1083,13 +1085,13 @@
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)" />
+              media="(max-width: 56.25rem), (max-height: 37.5rem)" />
             <img id="catship" src="./images/catship.svg" alt="" width="112" height="66" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)" />
+              media="(max-width: 56.25rem), (max-height: 37.5rem)" />
             <img
               id="living-millenium"
               src="./images/living-millenium-bg.svg"
@@ -1100,19 +1102,19 @@
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)" />
+              media="(max-width: 56.25rem), (max-height: 37.5rem)" />
             <img id="poporon" src="./images/poporon.svg" alt="" width="613" height="859" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)" />
+              media="(max-width: 56.25rem), (max-height: 37.5rem)" />
             <img id="nekotofu" src="./images/nekotofu.svg" alt="" width="107" height="151" />
           </picture>
           <picture>
             <source
               srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-              media="(max-width: 1199px), (max-height: 599px)" />
+              media="(max-width: 56.25rem), (max-height: 37.5rem)" />
             <img id="penguin-hat" src="./images/penguin-hat.svg" alt="" width="1388" height="531" />
           </picture>
         </div>

@@ -3,7 +3,7 @@ section {
 }
 
 #projects {
-  width: 55rem;
+  width: 61rem;
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -40,7 +40,7 @@ section {
   content: "";
   border: 0.5rem double aquamarine;
   border-radius: 0.5rem;
-  background: snow;
+  background: white;
   background: linear-gradient(
         to bottom,
         rgba(255, 192, 203, 0) 1px,
@@ -84,7 +84,7 @@ section {
 
 #projects ul {
   font-size: 0;
-  padding: 1rem 0.25rem;
+  padding: 1rem 0;
   list-style: none;
   transform: translateZ(1px);
 }
@@ -97,13 +97,13 @@ section {
   outline: none;
 }
 
-@media (max-width: 55rem) {
+@media (max-width: 61rem) {
   #projects ul {
     overflow: auto;
     white-space: nowrap;
 
     -ms-scrollbar-arrow-color: #fd87b5;
-    -ms-scrollbar-base-color: snow;
+    -ms-scrollbar-base-color: white;
     scrollbar-color: #fd87b5 rgba(0, 0, 0, 0);
     -ms-scrollbar-face-color: #fd87b5;
     -ms-scrollbar-shadow-color: #fd87b5;
@@ -132,14 +132,14 @@ section {
   display: block;
   box-sizing: border-box;
   width: 16rem;
-  margin: 1rem;
+  margin: 2rem;
   padding: 0.5rem;
   transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
   white-space: normal;
-  color: snow;
+  color: inherit;
   border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 0.5rem;
-  background: snow;
+  background: white;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1), 0 0 0.25rem rgba(0, 0, 0, 0.1),
     -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.1) inset;
 }
@@ -148,7 +148,7 @@ section {
   border-radius: 0.75rem;
 }
 
-@media (max-width: 55rem) {
+@media (max-width: 61rem) {
   #projects li a {
     transform: perspective(1000px) rotateY(12.5deg);
   }
@@ -175,7 +175,6 @@ section {
   height: 7.5rem;
   margin-top: 0.75rem;
   padding: 1rem;
-  color: black;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.67);
@@ -215,7 +214,7 @@ section {
 
 #projects li a:focus:not(:focus-visible):not(:hover) {
   border-color: rgba(0, 0, 0, 0);
-  background: snow url("./images/paper.svg");
+  background: white url("./images/paper.svg");
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1),
     -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.1) inset;
 }
@@ -232,7 +231,7 @@ section {
 @media (hover: none) {
   #projects li a:hover:not(:focus-visible) {
     border-color: rgba(0, 0, 0, 0);
-    background: snow url("./images/paper.svg");
+    background: white url("./images/paper.svg");
     box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1),
       -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.1) inset;
   }
@@ -254,7 +253,7 @@ section {
   padding: 0 1rem;
 }
 
-@media (max-width: 55rem) {
+@media (max-width: 61rem) {
   #projects .button-container {
     display: flex;
   }
@@ -268,7 +267,7 @@ section {
   letter-spacing: -0.1em;
   color: #333;
   border: 2px solid aquamarine;
-  background: snow;
+  background: white;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -336,7 +335,7 @@ section {
 
 #projects .button-container button:focus:not(:focus-visible):not(:hover) {
   border-color: aquamarine;
-  background: snow;
+  background: white;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -347,7 +346,7 @@ section {
 @media (hover: none) {
   #projects .button-container button:hover:not(:focus-visible) {
     border-color: aquamarine;
-    background: snow;
+    background: white;
     box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   }
 
@@ -388,7 +387,7 @@ section {
   height: 100%;
   content: "";
   border-radius: 4px;
-  background: snow url("./images/paper.svg");
+  background: white url("./images/paper.svg");
 }
 
 #me .header {
@@ -427,6 +426,7 @@ section {
   vertical-align: middle;
   border: 6px double #00ffa9;
   border-radius: 2rem;
+  background: rgba(255, 230, 0, 0.25);
   background: linear-gradient(rgba(255, 230, 0, 0.25), rgba(255, 230, 0, 0)) 0 0/100% 2px;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
@@ -682,9 +682,9 @@ section {
   border: 1px solid aquamarine;
   border-bottom: 4px solid aquamarine;
   border-radius: 1rem;
-  background: snow;
+  background: white;
   background: linear-gradient(rgba(255, 250, 250, 0), rgba(255, 250, 250, 1)),
-    radial-gradient(rgba(127, 255, 212, 1) 25%, rgba(127, 255, 212, 0) 0) 0 0/5px 5px, snow;
+    radial-gradient(rgba(127, 255, 212, 1) 25%, rgba(127, 255, 212, 0) 0) 0 0/5px 5px, white;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
