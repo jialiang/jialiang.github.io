@@ -208,11 +208,10 @@ function initPerformanceLogs() {
     var domainLookupStart = htmlEntry.domainLookupStart - navigationStart;
     var domainLookupEnd = htmlEntry.domainLookupEnd - navigationStart;
 
-    var htmlFetchStart = htmlEntry.fetchStart - navigationStart;
     var htmlResponseEnd = htmlEntry.responseEnd - navigationStart;
 
     var domainLookupDuration = domainLookupEnd - domainLookupStart;
-    var htmlFetchDuration = htmlResponseEnd - htmlFetchStart;
+    var htmlFetchDuration = htmlResponseEnd - domainLookupStart;
 
     createLog("DNS lookup", domainLookupEnd, domainLookupDuration);
     createLog("HTML fetch", htmlResponseEnd, htmlFetchDuration);
