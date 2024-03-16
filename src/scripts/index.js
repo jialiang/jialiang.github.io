@@ -60,17 +60,18 @@ function initFlowerSpin() {
 }
 
 function initThemeToggle() {
-  var radioButtons = document.querySelectorAll(".theme-toggle-container input");
+  var radioButtons = document.querySelectorAll("#theme-toggle input");
   var systemDarkMode = null;
 
   if (window.matchMedia) systemDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
   var localStorageTheme = localStorage.getItem("theme");
   var systemTheme = "light";
+  var currentTheme = "";
 
   if (systemDarkMode && systemDarkMode.matches) systemTheme = "dark";
 
-  if (isValidTheme(localStorageTheme)) currentTheme = localStorageTheme;
+  if (window.isValidTheme(localStorageTheme)) currentTheme = localStorageTheme;
   else currentTheme = systemTheme;
 
   for (var i = 0; i < radioButtons.length; i++) {
@@ -80,7 +81,7 @@ function initThemeToggle() {
       var value = e.target.value;
 
       localStorage.setItem("theme", value);
-      setTheme(value);
+      window.setTheme(value);
     };
   }
 
@@ -88,17 +89,17 @@ function initThemeToggle() {
     systemDarkMode.addEventListener("change", function (e) {
       var localStorageTheme = localStorage.getItem("theme");
 
-      if (isValidTheme(localStorageTheme)) {
-        setTheme(localStorageTheme);
+      if (window.isValidTheme(localStorageTheme)) {
+        window.setTheme(localStorageTheme);
         return;
       }
 
       if (e.matches) {
         document.querySelector("input[value='dark']").checked = true;
-        setTheme("dark");
+        window.setTheme("dark");
       } else {
         document.querySelector("input[value='light']").checked = true;
-        setTheme("light");
+        window.setTheme("light");
       }
     });
   }
@@ -165,7 +166,7 @@ function initLoadImages() {
 
 function initPerformanceLogs() {
   if (
-    !loadedInForeground ||
+    !window.loadedInForeground ||
     typeof performance !== "object" ||
     typeof performance.getEntries !== "function"
   ) {
@@ -241,9 +242,9 @@ function initPerformanceLogs() {
   }
 
   if (!paintEntry && htmlEntry && htmlEntry.msFirstPaint) {
-    var fcpTime = htmlEntry.msFirstPaint - htmlEntry.navigationStart;
+    var fpTime = htmlEntry.msFirstPaint - htmlEntry.navigationStart;
 
-    createLog("First paint", fcpTime);
+    createLog("First paint", fpTime);
   }
 
   if (typeof requestAnimationFrame !== "function") appendLogs();
