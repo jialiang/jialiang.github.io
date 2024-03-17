@@ -1,0 +1,66 @@
+@use "sass:meta";
+
+#links {
+  font-size: 1.2rem;
+  min-height: 8rem;
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 0 0.5rem 1rem 0.5rem;
+  }
+
+  a {
+    line-height: 1.8rem;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 0.5rem 0.4rem 0.5rem;
+    color: #333;
+    border: 2px solid #eee;
+    border-radius: 1em;
+    background: white;
+    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
+
+    &::after {
+      border-radius: 1.5em;
+    }
+
+    &:active {
+      top: 3px;
+    }
+
+    @mixin apply-focus-hover {
+      border-color: cyan;
+      background: lightcyan;
+      box-shadow: 0.25rem 0.25rem 0.5rem cyan(0.2);
+    }
+
+    @mixin revert-focus-hover {
+      border-color: white;
+      background: white;
+      box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
+    }
+
+    @include focus-hover-states(
+      meta.get-mixin("apply-focus-hover"),
+      meta.get-mixin("revert-focus-hover")
+    );
+  }
+
+  svg {
+    box-sizing: border-box;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: 0 0.25rem 0 0;
+    padding: 0.2rem 0.25rem 0 0.25rem;
+    vertical-align: middle;
+
+    fill: #333;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+}

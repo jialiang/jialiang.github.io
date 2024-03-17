@@ -1,0 +1,97 @@
+#theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 75rem;
+  margin: auto;
+  padding: 1rem;
+  text-align: right;
+  border: none;
+
+  legend {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+  }
+
+  label {
+    font-size: 0.875rem;
+    line-height: 1;
+    position: relative;
+    margin: 0 0 0 0.5rem;
+    padding: 0.25rem 0.75rem 0.25rem 0.55rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0.15rem 0.15rem 0.5rem 0 black(0.15);
+
+    -webkit-tap-highlight-color: black(0);
+
+    input {
+      font-family: inherit;
+      width: 1rem;
+      margin: 0 0.25rem 0 0;
+      opacity: 0;
+
+      &:checked {
+        ~ span::before {
+          background: radial-gradient(
+              circle at center,
+              #0060df 28%,
+              white 33%,
+              white 50%,
+              #0060df 55%,
+              #0060df 65%,
+              white(0) 70%
+            )
+            50% 50% / 100% 100%;
+        }
+      }
+
+      &:focus {
+        ~ span::after {
+          border-color: orangered;
+        }
+      }
+
+      &:focus:not(:focus-visible) {
+        ~ span::after {
+          border-color: black(0);
+        }
+      }
+    }
+
+    span::before {
+      position: absolute;
+      top: calc(50% - 0.5rem);
+      left: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      content: "";
+      background: radial-gradient(circle at center, white 50%, #ccc 55%, #ccc 65%, white(0) 70%) 50%
+        50% / 100% 100%;
+    }
+
+    span::after {
+      position: absolute;
+      top: -0.15rem;
+      left: -0.15rem;
+      box-sizing: border-box;
+      width: calc(100% + 0.3rem);
+      height: calc(100% + 0.3rem);
+      content: "";
+      border: 0.15rem solid black(0);
+      border-radius: 1.5rem;
+    }
+  }
+
+  @supports (filter: brightness(1)) {
+    display: block;
+  }
+}

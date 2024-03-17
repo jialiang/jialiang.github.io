@@ -1,0 +1,30 @@
+@use "sass:meta";
+
+@function black($percent) {
+  @return rgba(0, 0, 0, $percent);
+}
+
+@function white($percent) {
+  @return rgba(255, 255, 255, $percent);
+}
+
+@function cyan($percent) {
+  @return rgba(0, 255, 255, $percent);
+}
+
+@mixin focus-hover-states($apply-focus-hover, $revert-focus-hover) {
+  &:focus,
+  &:hover {
+    @include meta.apply($apply-focus-hover);
+  }
+
+  &:focus:not(:focus-visible):not(:hover) {
+    @include meta.apply($revert-focus-hover);
+  }
+
+  @media (hover: none) {
+    &:hover:not(:focus-visible) {
+      @include meta.apply($revert-focus-hover);
+    }
+  }
+}
