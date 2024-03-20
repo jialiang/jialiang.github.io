@@ -8,8 +8,28 @@
   @return rgba(255, 255, 255, $percent);
 }
 
+@function snow($percent) {
+  @return rgba(255, 250, 250, $percent);
+}
+
+@function aquamarine($percent) {
+  @return rgba(127, 255, 212, $percent);
+}
+
 @function cyan($percent) {
   @return rgba(0, 255, 255, $percent);
+}
+
+@function darkcyan($percent) {
+  @return rgba(0, 139, 139, $percent);
+}
+
+@function pink($percent) {
+  @return rgba(255, 192, 203, $percent);
+}
+
+@function gold($percent) {
+  @return rgba(255, 230, 0, $percent);
 }
 
 @mixin focus-hover-states($apply-focus-hover, $revert-focus-hover) {

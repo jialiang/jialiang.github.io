@@ -1,0 +1,98 @@
+@use "sass:meta";
+
+#projects a {
+  display: block;
+  box-sizing: border-box;
+  width: 16rem;
+  margin: 2rem;
+  padding: 0.5rem;
+  transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
+  white-space: normal;
+  color: inherit;
+  border: 2px solid black(0);
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1), -0.125rem -0.125rem 0.125rem black(0.1) inset;
+
+  &::after {
+    border-radius: 0.75rem;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: calc(15rem - 4px);
+    height: calc(15rem - 4px);
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.25rem black(0.1);
+  }
+
+  figcaption {
+    font-size: 1.75rem;
+    display: table;
+    box-sizing: border-box;
+    width: 100%;
+    height: 7.5rem;
+    margin: 0.75rem 0 0 0;
+    padding: 1rem;
+    border: 1px solid black(0);
+    border-radius: 0.5rem;
+    background: white(0.67);
+    box-shadow: 0 0 0.25rem black(0.1);
+
+    div {
+      display: table-cell;
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  &:active {
+    top: 3px;
+  }
+
+  @mixin apply-focus-hover {
+    transform: scale3d(1.02, 1.02, 1.02);
+    border-color: cyan;
+    background: lightcyan;
+    box-shadow: 0.25rem 0.25rem 0.5rem cyan(0.2), -0.125rem -0.125rem 0.25rem darkcyan(0.15) inset;
+
+    img {
+      box-shadow: 0 0 0.25rem cyan(0.2);
+    }
+
+    figcaption {
+      border-color: cyan;
+      box-shadow: 0 0 0.25rem cyan(0.2);
+    }
+  }
+
+  @mixin revert-focus-hover {
+    transform: scale3d(1, 1, 1);
+    border-color: black(0);
+    background: white;
+    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1), -0.125rem -0.125rem 0.125rem black(0.1) inset;
+
+    img {
+      box-shadow: 0 0 0.25rem black(0.1);
+    }
+
+    figcaption {
+      border-color: black(0);
+      box-shadow: 0 0 0.25rem black(0.1);
+    }
+  }
+
+  @include focus-hover-states(
+    meta.get-mixin("apply-focus-hover"),
+    meta.get-mixin("revert-focus-hover")
+  );
+
+  @media (max-width: 61rem) {
+    transform: perspective(1000px) rotateY(12.5deg);
+  }
+}
