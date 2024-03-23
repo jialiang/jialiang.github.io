@@ -32,6 +32,10 @@
   @return rgba(255, 230, 0, $percent);
 }
 
+@function yellow($percent) {
+  @return rgba(255, 255, 0, $percent);
+}
+
 @mixin focus-hover-states($apply-focus-hover, $revert-focus-hover) {
   &:focus,
   &:hover {
