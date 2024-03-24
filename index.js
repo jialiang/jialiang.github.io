@@ -46,6 +46,7 @@ const generateHtml = async (cssObj, jsObj) => {
     //
     .replace("/* critical.scss */", cssObj.critical)
     .replace("/* dark.scss */", cssObj.dark)
+    .replace("/* ie9.scss */", cssObj.ie9)
     .replace("/* noscript.scss */", cssObj.noscript)
     //
     .replace("// theme.js", jsObj.theme)
@@ -62,10 +63,11 @@ const generateHtml = async (cssObj, jsObj) => {
 };
 
 const generateCss = async () => {
-  const [critical, deferrable, dark, noscript] = await Promise.all([
+  const [critical, deferrable, dark, ie9, noscript] = await Promise.all([
     sass.compileAsync("./src/styles/critical.scss"),
     sass.compileAsync("./src/styles/deferrable.scss"),
     sass.compileAsync("./src/styles/dark.scss"),
+    sass.compileAsync("./src/styles/ie9.scss"),
     sass.compileAsync("./src/styles/noscript.scss"),
   ]);
 
@@ -75,6 +77,7 @@ const generateCss = async () => {
     critical: critical.css,
     deferrable: deferrable.css,
     dark: dark.css,
+    ie9: ie9.css,
     noscript: noscript.css,
   };
 };

@@ -7,7 +7,7 @@
   padding: 0 1rem;
 
   @media (max-width: 61rem) {
-    display: flex;
+    display: block;
   }
 
   button {
@@ -88,5 +88,10 @@
     &:active {
       transform: rotateZ(-5deg) translate3d(0, 3px, 0);
     }
+  }
+
+  .spacer {
+    display: inline-block;
+    width: calc(100% - 12rem);
   }
 }

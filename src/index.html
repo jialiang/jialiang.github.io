@@ -53,9 +53,9 @@
       /* dark.scss */
     </style>
 
-    <script>
-      // theme.js
-    </script>
+    <style id="ie9-styles" title="ie9" media="(width: 10px)">
+      /* ie9.scss */
+    </style>
 
     <noscript>
       <style>
@@ -64,43 +64,102 @@
     </noscript>
   </head>
   <body>
+    <a
+      id="test"
+      style="
+        display: none;
+        background-image: linear-gradient(to left top, #000, #fff);
+        text-shadow: 1px 1px;
+      "></a>
+    <script>
+      // theme.js
+    </script>
+
+    <svg width="0" height="0" viewbox="0 0 0 0" focusable="false" aria-hidden="true">
+      <defs>
+        <filter id="darken" color-interpolation-filters="sRGB">
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="0.3"></feFuncR>
+            <feFuncG type="linear" slope="0.3"></feFuncG>
+            <feFuncB type="linear" slope="0.3"></feFuncB>
+          </feComponentTransfer>
+          <feComponentTransfer>
+            <feFuncR type="linear" slope="1.6" intercept="-0.3"></feFuncR>
+            <feFuncG type="linear" slope="1.6" intercept="-0.3"></feFuncG>
+            <feFuncB type="linear" slope="1.6" intercept="-0.3"></feFuncB>
+          </feComponentTransfer>
+        </filter>
+        <filter id="blur">
+          <feGaussianBlur stdDeviation="8"></feGaussianBlur>
+        </filter>
+        <filter id="invert">
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="-1 0 0 0 1 
+              0 -1 0 0 1 
+              0 0 -1 0 1
+              0 0 0 1 0"></feColorMatrix>
+        </filter>
+      </defs>
+    </svg>
+
     <div id="background" aria-hidden="true">
       <div class="image-container">
-        <picture>
-          <source
-            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
-          <img id="catship" src="./images/catship.svg" alt="" width="112" height="66" />
-        </picture>
-        <picture>
-          <source
-            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
-          <img
-            id="living-millenium"
-            src="./images/living-millenium-bg.svg"
-            alt=""
-            width="425"
-            height="787" />
-        </picture>
-        <picture>
-          <source
-            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
-          <img id="poporon" src="./images/poporon.svg" alt="" width="613" height="859" />
-        </picture>
-        <picture>
-          <source
-            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
-          <img id="nekotofu" src="./images/nekotofu.svg" alt="" width="107" height="151" />
-        </picture>
-        <picture>
-          <source
-            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
-          <img id="penguin-hat" src="./images/penguin-hat.svg" alt="" width="1388" height="531" />
-        </picture>
+        <svg
+          id="catship"
+          preserveAspectRatio="xMinYMin meet"
+          width="112"
+          height="66"
+          viewbox="0 0 112 66"
+          focusable="false"
+          aria-hidden="true">
+          <image width="112" height="66" href="./images/catship.svg"></image>
+        </svg>
+
+        <svg
+          id="living-millenium"
+          preserveAspectRatio="xMaxYMin meet"
+          width="425"
+          height="787"
+          viewbox="0 0 425 787"
+          focusable="false"
+          aria-hidden="true">
+          <image width="425" height="787" href="./images/living-millenium-bg.svg"></image>
+        </svg>
+
+        <svg
+          id="poporon"
+          preserveAspectRatio="xMaxYMin meet"
+          width="613"
+          height="859"
+          viewbox="0 0 613 859"
+          focusable="false"
+          aria-hidden="true">
+          <image width="613" height="859" href="./images/poporon.svg"></image>
+        </svg>
+
+        <svg
+          id="nekotofu"
+          preserveAspectRatio="xMinYMin meet"
+          width="107"
+          height="151"
+          viewbox="0 0 107 151"
+          focusable="false"
+          aria-hidden="true">
+          <image width="107" height="151" href="./images/nekotofu.svg"></image>
+        </svg>
+
+        <svg
+          id="penguin-hat"
+          preserveAspectRatio="xMinYMin meet"
+          width="1388"
+          height="531"
+          viewbox="0 0 1388 531"
+          focusable="false"
+          aria-hidden="true">
+          <image width="1388" height="531" href="./images/penguin-hat.svg"></image>
+        </svg>
       </div>
     </div>
 
@@ -202,14 +261,27 @@
 
     <section id="projects">
       <h2>
-        <img
+        <svg
           class="bunny"
-          src="./images/bunny.svg"
-          alt=""
-          aria-hidden="true"
-          width="512"
-          height="512"
-          loading="lazy" />
+          width="146.16"
+          height="174.49"
+          viewBox="0 0 146.16 174.49"
+          focusable="false"
+          aria-hidden="true">
+          <defs>
+            <filter id="bunny-glow">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="10"></feGaussianBlur>
+              <feOffset dx="0" dy="0" result="offsetblur"></feOffset>
+              <feFlood flood-color="pink" flood-opacity="0.75"></feFlood>
+              <feComposite in2="offsetblur" operator="in"></feComposite>
+              <feMerge>
+                <feMergeNode></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+              </feMerge>
+            </filter>
+          </defs>
+          <image width="146.16" height="174.49" href="./images/bunny.svg"></image>
+        </svg>
         <span class="shadow" aria-hidden="true">Personal Projects</span>
         <span class="text">Personal Projects</span>
       </h2>
@@ -384,6 +456,7 @@
       </ul>
       <div class="button-container">
         <button class="left-arrow"><span>Prev</span></button>
+        <span class="spacer"></span>
         <button class="right-arrow"><span>Next</span></button>
       </div>
     </section>

@@ -6,6 +6,7 @@
     position: absolute;
     top: -2.25rem;
     left: -5rem;
+    overflow: visible;
     width: 7rem;
     height: 7rem;
   }
@@ -20,6 +21,7 @@
 
     &::before {
       position: absolute;
+      z-index: -1;
       top: 0;
       left: 0;
       box-sizing: border-box;
