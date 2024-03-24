@@ -4,6 +4,7 @@
   "version": "3",
   "scripts": {
     "watch": "npx nodemon --watch index.js --watch ./src index.js --watch ./static -e *",
+    "serve": "node http-server.js",
     "build": "node index.js"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
     "html-minifier-terser": "^7.2.0",
     "htmlparser2": "^9.1.0",
     "marked": "^11.0.0",
+    "mime": "^4.0.1",
     "nodemon": "^3.1.0",
     "postcss": "^8.4.37",
     "postcss-selector-parser": "^6.0.16",
