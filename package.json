@@ -1,7 +1,20 @@
 {
+  "name": "jialiang.github.io",
+  "type": "module",
+  "version": "3",
+  "scripts": {
+    "watch": "npx nodemon --watch index.js --watch ./src index.js --watch ./static -e *",
+    "build": "node index.js"
+  },
   "dependencies": {
-    "glyphhanger": "^5.0.0",
-    "http-server": "^14.1.1",
-    "marked": "^11.0.0"
+    "@csstools/selector-specificity": "^3.0.2",
+    "css-select": "^5.1.0",
+    "html-minifier-terser": "^7.2.0",
+    "htmlparser2": "^9.1.0",
+    "marked": "^11.0.0",
+    "nodemon": "^3.1.0",
+    "postcss": "^8.4.37",
+    "postcss-selector-parser": "^6.0.16",
+    "sass-embedded": "^1.72.0"
   }
 }
