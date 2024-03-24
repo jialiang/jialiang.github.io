@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <title>Jia Liang | Software Engineer</title>
+    <meta name="description" content="Personal website of software engineer, Jia Liang" />
+    <meta name="author" content="Jia Liang, hojialiang@yahoo.com" />
+
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
+    <link rel="canonical" href="https://jialiang.github.io/" />
+
+    <link
+      rel="preload"
+      href="./fonts/noto-sans-jp-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous" />
+    <link
+      rel="preload"
+      href="./fonts/noto-sans-jp-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous" />
+    <link
+      rel="preload"
+      href="./fonts/chihaya-jun-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jialiang.github.io/" />
+    <meta property="og:title" content="Jia Liang | Software Engineer" />
+    <meta property="og:image" content="./preview.png" />
+    <meta property="og:description" content="Personal website of software engineer, Jia Liang" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <style id="critical-styles">
+      /* critical.scss */
+    </style>
+
+    <noscript>
+      <link rel="stylesheet" href="./index.css" />
+    </noscript>
+
+    <style id="dark-styles" title="dark" media="(prefers-color-scheme: dark)">
+      /* dark.scss */
+    </style>
+
+    <script>
+      // theme.js
+    </script>
+
+    <noscript>
+      <style>
+        /* noscript.scss */
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <div id="background" aria-hidden="true">
+      <div class="image-container">
+        <picture>
+          <source
+            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
+          <img id="catship" src="./images/catship.svg" alt="" width="112" height="66" />
+        </picture>
+        <picture>
+          <source
+            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
+          <img
+            id="living-millenium"
+            src="./images/living-millenium-bg.svg"
+            alt=""
+            width="425"
+            height="787" />
+        </picture>
+        <picture>
+          <source
+            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
+          <img id="poporon" src="./images/poporon.svg" alt="" width="613" height="859" />
+        </picture>
+        <picture>
+          <source
+            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
+          <img id="nekotofu" src="./images/nekotofu.svg" alt="" width="107" height="151" />
+        </picture>
+        <picture>
+          <source
+            srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            media="(max-width: 56.25rem), (max-height: 37.5rem)" />
+          <img id="penguin-hat" src="./images/penguin-hat.svg" alt="" width="1388" height="531" />
+        </picture>
+      </div>
+    </div>
+
+    <fieldset id="theme-toggle">
+      <legend>Change website theme:</legend>
+      <label>
+        <input type="radio" name="theme" value="light" checked />
+        <span>Light</span>
+      </label>
+      <label>
+        <input type="radio" name="theme" value="dark" />
+        <span>Dark</span>
+      </label>
+    </fieldset>
+
+    <ul id="links">
+      <li style="min-width: 14.125rem">
+        <a
+          class="github"
+          href="https://github.com/jialiang"
+          target="_blank"
+          rel="noopener noreferrer">
+          <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path
+              d="M12 0a12 12 0 0 0-3.8 23.39c.6.1.8-.26.8-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.09-.72.09-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.3.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.33 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.13 3 .4 2.3-1.56 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17a4.63 4.63 0 0 1 1.24 3.22c0 4.61-2.81 5.63-5.48 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.2.7.8.58A12 12 0 0 0 12 0z"></path>
+          </svg>
+          <span>github.com/jialiang</span>
+        </a>
+      </li>
+      <li style="min-width: 16rem">
+        <a class="email" href="mailto:hojialiang@yahoo.com">
+          <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path
+              d="M12 12.71.02 3h23.97L12 12.71zM6.58 10.9 0 5.56v12.5l6.58-7.17zm10.84 0L24 18.06V5.56l-6.58 5.33zm-1.55 1.26L12 15.3l-3.87-3.14L.03 21h23.95l-8.11-8.85z"></path>
+          </svg>
+          <span>hojialiang@yahoo.com</span>
+        </a>
+      </li>
+      <li style="min-width: 7.5rem">
+        <a
+          class="contact"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSd1YnFT3TzASLxainoYNSd3VFSvdypBARAjs2H3Qy1QE5wFhg/viewform?usp=sf_link"
+          target="_blank"
+          rel="noopener noreferrer">
+          <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path
+              d="M13.74 8s1.53-8-3.33-8H2v24h20V11c0-3.42-5.25-3.75-8.26-3zM18 19H6v-1h12v1zm0-3H6v-1h12v1zm0-3H6v-1h12v1zM14.57.07c2.2 1.18 5.94 4.89 7.43 6.89a8.82 8.82 0 0 0-6.1-1.18c.23-1.47-.18-4.54-1.33-5.7z"></path>
+          </svg>
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+
+    <header>
+      <h1>
+        <span class="shadow" aria-hidden="true">Jia Liang</span>
+        <span class="text">Jia Liang</span>
+      </h1>
+      <h2>
+        <span class="shadow" aria-hidden="true">Software Engineer</span>
+        <span class="text">Software Engineer</span>
+      </h2>
+    </header>
+
+    <section id="usp">
+      <div class="paper-container">
+        <div class="paper">
+          <div class="paper-edge"></div>
+          <h2>Summary</h2>
+          <ul>
+            <li><span>5 years Experience</span></li>
+            <li><span>Full-Stack JavaScript</span></li>
+            <li><span>Exceptional Frontend</span></li>
+            <li><span>Information Systems Graduate</span></li>
+          </ul>
+          <div>
+            <a href="/resume_Jia_Liang.pdf" class="resume" rel="noreferrer noopener">
+              View my Resume
+            </a>
+          </div>
+        </div>
+        <img
+          class="orange-patch"
+          src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='549.15'%20height='502.97'%20viewBox='0%200%20145.3%20133.08'%3E%3Cdefs%3E%3Cfilter%20id='a'%20width='1.14'%20height='1.15'%20x='-.06'%20y='-.06'%20color-interpolation-filters='sRGB'%3E%3CfeFlood%20flood-color='%23000'%20flood-opacity='.5'%20result='flood'%20/%3E%3CfeComposite%20in='flood'%20in2='SourceGraphic'%20operator='in'%20result='composite1'%20/%3E%3CfeGaussianBlur%20in='composite1'%20result='blur'%20stdDeviation='3'%20/%3E%3CfeOffset%20dx='3'%20dy='3'%20result='offset'%20/%3E%3CfeComposite%20in='SourceGraphic'%20in2='offset'%20result='composite2'%20/%3E%3C/filter%3E%3Cfilter%20id='b'%20width='1.17'%20height='1.23'%20x='-.07'%20y='-.09'%20color-interpolation-filters='sRGB'%3E%3CfeFlood%20flood-color='%23000'%20flood-opacity='.5'%20result='flood'%20/%3E%3CfeComposite%20in='flood'%20in2='SourceGraphic'%20operator='in'%20result='composite1'%20/%3E%3CfeGaussianBlur%20in='composite1'%20result='blur'%20stdDeviation='3'%20/%3E%3CfeOffset%20dx='3'%20dy='3'%20result='offset'%20/%3E%3CfeComposite%20in='SourceGraphic'%20in2='offset'%20result='composite2'%20/%3E%3C/filter%3E%3C/defs%3E%3Cpath%20fill='%23f60'%20d='M103.39%207.48%207.74%2074.79l36.13%2048.09L135.1%2060.5Z'%20filter='url(%23a)'%20/%3E%3Cpath%20fill='%23ff0'%20d='M7.2%2075.02%20103.31%207.2l8.74%2014.5-97.72%2062.34Z'%20filter='url(%23b)'%20/%3E%3Cpath%20fill='%23ff0'%20d='m132.02%2053.09-95%2062.96%206.85%206.83L135.1%2060.5z'%20/%3E%3Cpath%20fill='%23ff0'%20stroke='%23ff0'%20stroke-linecap='square'%20stroke-width='3.97'%20d='m44.71%2074.19-5.54%2031.18M24.34%2086.26l35.37%208.21m46.78-60.6-5.53%2031.18M86.12%2045.94l35.37%208.21m-46.27-.25-5.53%2031.18M54.84%2065.97l35.38%208.21'%20/%3E%3C/svg%3E"
+          alt=""
+          width="512"
+          height="512"
+          aria-hidden="true" />
+        <img
+          class="star-badge"
+          src="./images/star-badge.svg"
+          alt=""
+          width="512"
+          height="512"
+          aria-hidden="true"
+          loading="lazy" />
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>
+        <img
+          class="bunny"
+          src="./images/bunny.svg"
+          alt=""
+          aria-hidden="true"
+          width="512"
+          height="512"
+          loading="lazy" />
+        <span class="shadow" aria-hidden="true">Personal Projects</span>
+        <span class="text">Personal Projects</span>
+      </h2>
+
+      <ul>
+        <li>
+          <a
+            href="https://gist.github.com/jialiang/2880d4cc3364df117320e8cb324c2880"
+            rel="noreferrer noopener">
+            <figure>
+              <img
+                src="./images/ubo-tutorial-cover.png"
+                alt="A red square and a teal square side by side"
+                width="380"
+                height="380"
+                loading="lazy" />
+              <figcaption>
+                <div>Uniform Buffer Object Tutorial</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/jialiang/performance-monitor" rel="noreferrer noopener">
+            <figure>
+              <img
+                src="./images/performance-monitor-cover.png"
+                alt="Cloud Function for Firebase logo, stylized flame and ellipsis between angled brackets."
+                width="380"
+                height="380"
+                loading="lazy" />
+              <figcaption>
+                <div>Performance Monitor</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="https://jialiang.github.io/area-sampler/" rel="noreferrer noopener">
+            <figure>
+              <img
+                src="./images/test-image.png"
+                alt="Rendition of SD ECR-1-1978 color bars."
+                width="380"
+                height="380"
+                loading="lazy" />
+              <figcaption>
+                <div>Area Sampler</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/jialiang/SSIM-X/" rel="noreferrer noopener">
+            <figure>
+              <img
+                src="./images/terminal.png"
+                alt="Black computer terminal screen with white text"
+                width="380"
+                height="380"
+                loading="lazy" />
+              <figcaption>
+                <div>SSIM-X</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="/3D-Engine-For-Miku/" rel="noreferrer noopener">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="./images/miku-cover%20(optimized).webp" />
+                <img
+                  src="./images/miku-cover%20(optimized).jpg"
+                  alt="Hatsune Miku posing for the camera"
+                  width="380"
+                  height="380"
+                  loading="lazy" />
+              </picture>
+              <figcaption>
+                <div>3D Engine for Miku</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/jialiang/HTML-to-PDF-UA/" rel="noreferrer noopener">
+            <figure>
+              <img
+                src="./images/pdf-cover.png"
+                alt="Red PDF logo with white bold PDF text"
+                width="380"
+                height="380"
+                loading="lazy" />
+              <figcaption>
+                <div>HTML to PDF/UA-compliant PDF</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="/space-gems/" rel="noreferrer noopener">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="./images/space-gem-cover%20(optimized).webp" />
+                <img
+                  src="./images/space-gem-cover%20(optimized).jpg"
+                  alt="Screenshot of the Space Gems game"
+                  width="380"
+                  height="380"
+                  loading="lazy" />
+              </picture>
+              <figcaption>
+                <div>Space Gems</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/jialiang/ShitCompressor" rel="noreferrer noopener">
+            <figure>
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="./images/shit-compressor-cover%20(optimized).webp" />
+                <img
+                  src="./images/shit-compressor-cover%20(optimized).jpg"
+                  alt="Screenshot of the UI of the Shit Compressor programme"
+                  width="380"
+                  height="380"
+                  loading="lazy" />
+              </picture>
+              <figcaption>
+                <div>Shit Compressor</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="/ygo-ocg-secret-rare/" rel="noreferrer noopener">
+            <figure>
+              <picture>
+                <source type="image/webp" srcset="./images/yugioh-cover%20(optimized).webp" />
+                <img
+                  src="./images/yugioh-cover%20(optimized).jpg"
+                  alt="Headshot of Madamme Verre"
+                  width="380"
+                  height="380"
+                  loading="lazy" />
+              </picture>
+              <figcaption>
+                <div>Yu-Gi-Oh Secret Rare Effect with CSS</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li>
+          <a href="/pure-css-android-12-scallop-clock/" rel="noreferrer noopener">
+            <figure>
+              <img
+                src="./images/clock-cover.png"
+                alt="Picture of beige analog clock with scallop outline"
+                width="380"
+                height="380"
+                loading="lazy" />
+              <figcaption>
+                <div>Pure CSS Android 12 Clock</div>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
+      <div class="button-container">
+        <button class="left-arrow"><span>Prev</span></button>
+        <button class="right-arrow"><span>Next</span></button>
+      </div>
+    </section>
+
+    <section id="me" itemscope itemtype="https://schema.org/FAQPage">
+      <div class="paper-container">
+        <div class="paper">
+          <div class="paper-edge"></div>
+
+          <div class="header">
+            <img
+              class="flower-1"
+              src="./images/flower.svg"
+              alt=""
+              aria-hidden="true"
+              width="550"
+              height="543"
+              loading="lazy" />
+            <h2>
+              <span class="shadow" aria-hidden="true">FAQ</span>
+              <abbr class="text" itemprop="name" title="Frequently Asked Questions">FAQ</abbr>
+            </h2>
+          </div>
+
+          <div class="controls">
+            <button class="expand">Expand All</button>
+            <button class="collapse">Collapse All</button>
+          </div>
+
+          <!-- faq.html -->
+        </div>
+      </div>
+    </section>
+
+    <footer id="credits">
+      <p>
+        Thank you to Alexander Kahlkopf of
+        <a href="https://iconmonstr.com/" target="_blank" rel="noopener noreferrer">Iconmonstr</a>
+        for the icons.
+      </p>
+      <p>
+        Thanks to Google Fonts for
+        <a
+          href="https://fonts.google.com/noto/specimen/Noto+Serif+JP"
+          target="_blank"
+          rel="noopener noreferrer">
+          Noto&nbsp;Serif&nbsp;JP
+        </a>
+        and Chihaya for
+        <a
+          href="https://welina.xyz/font/tegaki/%E3%81%A1%E3%81%AF%E3%82%84%E7%B4%94/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Chihaya&nbsp;Jun
+        </a>
+        .
+      </p>
+      <p>
+        Hosting provided by
+        <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">
+          Github&nbsp;Pages
+        </a>
+        .
+      </p>
+      <p>
+        This website works with JavaScript-disabled, Internet Explorer 9, screen readers, keyboards,
+        touch, ultra-widescreens and tamagotchis.
+      </p>
+      <p id="logs"></p>
+      <p>
+        View
+        <a
+          href="https://lookerstudio.google.com/reporting/6e4d149f-62fe-44c8-8fc8-53d3e845fac1"
+          target="_blank"
+          rel="noopener noreferrer">
+          Network Performance Dashboard
+        </a>
+        .
+      </p>
+    </footer>
+
+    <script>
+      // hydrate.js
+    </script>
+  </body>
+</html>
