@@ -1,0 +1,42 @@
+#theme-toggle,
+#projects .button-container {
+  display: none !important;
+}
+
+#me {
+  .flower-1 {
+    cursor: initial !important;
+  }
+
+  .controls {
+    display: none !important;
+  }
+}
+
+.faq {
+  .question {
+    cursor: initial !important;
+    border-color: #ffe6b7 !important;
+    border-bottom: none !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    background: #ffe6b7 !important;
+  }
+
+  .answer {
+    display: block !important;
+    border-color: #ffe6b7 !important;
+    border-bottom-width: 4px !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .question {
+      border-color: #2a2a2a !important;
+      background: #2a2a2a !important;
+    }
+
+    .answer {
+      border-color: #2a2a2a !important;
+    }
+  }
+}
