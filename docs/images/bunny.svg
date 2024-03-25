@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="146.16" height="174.49" viewBox="0 0 146.16 174.49">
+   <defs>
+      <filter id="a" width="1.16" height="1.13" x="-.07" y="-.06" color-interpolation-filters="sRGB">
+         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+   </defs>
+   <g stroke="#fe80b2" stroke-linecap="round" stroke-linejoin="round" transform="translate(-9.7 -4.28)">
+      <path fill="#fff" stroke-width="3" d="M45.71 101.15 19.3 32.98c-1.44-6.11-1.53-11.02 2.56-12.15l17.32-7.3c6.91-2.64 10.19 4.2 11.1 8.35 0 0 18.61 69.8 19.64 69.41 6.21-2.3 26.98-2.66 31.18-.62 1.39-2.52 11.04-71.22 11.04-71.22.78-3.72 2.36-6.73 9.88-4.5l18.15 6.43c3.19 1 5.78 2.4 1.82 11.63l-19.84 61.98c26.43 15.06 30.98 48 3.06 63.68-19.59 11-50.78 10.48-72.73 2.31-36.62-15.38-20.55-47.4-6.77-59.83Z" filter="url(#a)" />
+      <path fill="none" stroke-width="3" d="M73.9 144.45c4.03 5 8.62 6.63 14.68-.57 8.68 7.67 10.54 2.01 13.1-1.3M58.55 107l11.35 5.93m30-.3 9.94-6.78" />
+      <ellipse cx="78.54" cy="112.02" fill="#fe80b2" stroke-width="1.53" rx="7.21" ry="7.11" transform="rotate(9.2)" />
+      <circle cx="130.34" cy="102.43" r="7.89" fill="#fe80b2" stroke-width="1.69" transform="rotate(9.2)" />
+   </g>
+</svg>

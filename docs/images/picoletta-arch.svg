@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="300" height="120" viewBox="0 0 300 120">
+  <g transform="translate(23)">
+    <path fill="#3b3f4a" d="m277 63.75-17-6-50-35-50-15-34 .4v79.6h151zm-300 0 15-6 50-35 50-15 34 .4v79.6H-23Z"/>
+    <path fill="#e4d89a" d="M104.69 35.1 103 37.74h-3l2 3-2 3h3l1.93 2.31 1.33-2.32 2.74.01-2-3 2-3h-3z"/>
+    <circle cx="9.5" cy="80.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="15.5" cy="75.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="23" cy="71.25" r="1.5" fill="#e4d89a"/>
+    <circle cx="28.5" cy="67.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="35.5" cy="63.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="42.5" cy="59.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="49" cy="56.25" r="1.5" fill="#e4d89a"/>
+    <circle cx="55.5" cy="52.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="63.5" cy="49.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="70.5" cy="46.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="77.5" cy="44.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="85.5" cy="42.75" r="1.5" fill="#e4d89a"/>
+    <circle cx="93.5" cy="41.75" r="1.5" fill="#e4d89a"/>
+    <path fill="none" stroke="#e4d89a" stroke-linejoin="round" stroke-width="10" d="M277 58.75h-16C229.32 26.99 182 5 126 5S22.68 26.99-9 58.75h-14"/>
+    <path fill="none" stroke="#e4d89a" stroke-linejoin="round" stroke-width="2" d="M277 75.75h-25c-29.42-31-71-50-126-51-55 1-96.58 20-126 51h-23"/>
+    <path fill="#e4d89a" d="m126 27.55 4 5.2h7l-3 5 3 7h-7l-4 6.12zm0 0-4 5.2h-7l3 5-3 7h7l4 6.12zm21.31 7.55 1.69 2.65h3l-2 3 2 3h-3l-1.93 2.31-1.33-2.32-2.74.01 2-3-2-3h3z"/>
+    <circle cx="-242.5" cy="80.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-236.5" cy="75.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-229" cy="71.25" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-223.5" cy="67.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-216.5" cy="63.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-209.5" cy="59.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-203" cy="56.25" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-196.5" cy="52.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-188.5" cy="49.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-181.5" cy="46.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-174.5" cy="44.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-166.5" cy="42.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+    <circle cx="-158.5" cy="41.75" r="1.5" fill="#e4d89a" transform="scale(-1 1)"/>
+  </g>
+</svg>
