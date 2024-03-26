@@ -178,7 +178,7 @@ function initPerformanceLogs() {
   function createLog(name, doneAt, duration) {
     var message = name + " done at " + Math.round(doneAt) + "ms";
 
-    if (duration != null) message += " (took " + Math.round(duration) + "ms).";
+    if (duration != null) message += " (took&nbsp;" + Math.round(duration) + "ms).";
     else message += ".";
 
     logs.push(message);

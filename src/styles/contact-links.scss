@@ -10,6 +10,11 @@
   li {
     display: inline-block;
     margin: 0 0.5rem 1rem 0.5rem;
+
+    @media (max-width: 27.5rem) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   a {

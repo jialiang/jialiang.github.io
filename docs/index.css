@@ -275,6 +275,7 @@ section {
   padding: 5rem 2rem 4rem 2rem;
 }
 #me .header {
+  max-width: 100%;
   margin: -11rem auto 0 auto;
   text-align: center;
 }

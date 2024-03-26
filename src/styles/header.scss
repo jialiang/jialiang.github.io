@@ -1,7 +1,7 @@
 header {
   position: relative;
-  display: inline-block;
-  margin: 1rem 1rem 10rem 1rem;
+  width: 25.6875rem;
+  margin: 1rem auto 10rem auto;
   padding: 2em 2em 3em 1.5em;
   transform: rotate(-3deg);
   text-align: left;
@@ -48,14 +48,17 @@ header {
   }
 
   @media (max-width: 36.5rem) {
-    max-width: 19em;
+    width: 18.3rem;
 
     h1 {
       font-size: 4.15em;
     }
   }
 
-  @media (max-width: 24.0625rem) {
+  @media (max-width: 25rem) {
     font-size: 4vw;
+    width: 73.2vw;
+    padding: 8vw 8vw 12vw 6vw;
+    transform: none;
   }
 }
