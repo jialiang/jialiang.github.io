@@ -92,15 +92,6 @@
         <filter id="blur">
           <feGaussianBlur stdDeviation="8"></feGaussianBlur>
         </filter>
-        <filter id="invert">
-          <feColorMatrix
-            in="SourceGraphic"
-            type="matrix"
-            values="-1 0 0 0 1 
-              0 -1 0 0 1 
-              0 0 -1 0 1
-              0 0 0 1 0"></feColorMatrix>
-        </filter>
       </defs>
     </svg>
 
@@ -160,6 +151,17 @@
           aria-hidden="true">
           <image width="1388" height="531" href="./images/penguin-hat.svg"></image>
         </svg>
+
+        <svg
+          id="dove"
+          preserveAspectRatio="xMaxYMin meet"
+          width="426"
+          height="660"
+          viewbox="0 0 426 660"
+          focusable="false"
+          aria-hidden="true">
+          <image width="426" height="660" href="./images/dove.svg"></image>
+        </svg>
       </div>
     </div>
 
@@ -176,7 +178,7 @@
     </fieldset>
 
     <ul id="links">
-      <li style="min-width: 14.7rem">
+      <li>
         <a
           class="github"
           href="https://github.com/jialiang"
@@ -189,7 +191,7 @@
           <span>github.com/jialiang</span>
         </a>
       </li>
-      <li style="min-width: 16.6rem">
+      <li>
         <a class="email" href="mailto:hojialiang@yahoo.com">
           <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
             <path
@@ -198,7 +200,7 @@
           <span>hojialiang@yahoo.com</span>
         </a>
       </li>
-      <li style="min-width: 8.1rem">
+      <li>
         <a
           class="contact"
           href="https://docs.google.com/forms/d/e/1FAIpQLSd1YnFT3TzASLxainoYNSd3VFSvdypBARAjs2H3Qy1QE5wFhg/viewform?usp=sf_link"
@@ -245,7 +247,7 @@
             <li><span>Information Systems Graduate</span></li>
           </ul>
           <div>
-            <a href="/resume_Jia_Liang.pdf" class="resume" rel="noreferrer noopener">
+            <a class="alt" href="/files/resume_Jia_Liang.pdf" rel="noreferrer noopener">
               View my Resume
             </a>
           </div>
@@ -290,26 +292,136 @@
         <span class="text">Personal Projects</span>
       </h2>
 
-      <ul>
-        <li>
+      <div class="featured-container">
+        <div class="image-container">
           <a
+            class="card"
             href="https://gist.github.com/jialiang/2880d4cc3364df117320e8cb324c2880"
             rel="noreferrer noopener">
-            <figure>
-              <img
-                src="./images/ubo-tutorial-cover.png"
-                alt="A red square and a teal square side by side"
-                width="380"
-                height="380"
-                loading="lazy" />
-              <figcaption>
-                <div>Uniform Buffer Object Tutorial</div>
-              </figcaption>
-            </figure>
+            <img
+              src="./images/ubo-tutorial-cover.png"
+              alt="A red square and a teal square side by side"
+              width="380"
+              height="380"
+              loading="lazy" />
           </a>
-        </li>
+        </div>
+
+        <div class="picoletta">
+          <svg
+            id="corner"
+            class="top-left-corner"
+            width="60"
+            height="120"
+            viewBox="0 0 60 120"
+            focusable="false"
+            aria-hidden="true">
+            <path class="p-fill-bg" fill="currentcolor" d="M60 120V60H40v30H5v30z"></path>
+            <path
+              class="p-fill-fg"
+              fill="currentcolor"
+              d="M42 54c-3 0-5 2-5 5v24c0 2 0 4-3 4-9.47 0-19.38.2-30 .15-2.12 0-4 1.72-4 3.85v29h8v-20c0-2 1-4 4-4h28c2 0 5-1 5-4V68c0-3 2-4 4-4h11V54Z"></path>
+            <path
+              class="p-stroke-fg"
+              fill="none"
+              stroke="currentcolor"
+              stroke-width="2"
+              d="M16.5 120v-10c0-2.76 2.24-4 5-4H47a5 5 0 0 0 5-5V81c0-2.76 1.74-5 4.5-5H60"></path>
+          </svg>
+
+          <svg
+            id="arch"
+            class="top-arch"
+            width="300"
+            height="120"
+            viewBox="0 0 300 120"
+            focusable="false"
+            aria-hidden="true">
+            <path
+              class="p-fill-bg"
+              fill="currentcolor"
+              d="m183 7.75 50 15 50 35L300 64v56H0V63.75l15-6 50-35 50-15z" />
+            <path
+              class="p-fill-fg"
+              fill="currentcolor"
+              d="M127.69 35.1 126 37.74h-3l2 3-2 3h3l1.93 2.31 1.33-2.32 2.74.01-2-3 2-3h-3zM32.5 79.25a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6-5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7.5-4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm5.5-3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7-4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7-4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6.5-3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6.5-3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8-1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+            <path
+              class="p-fill-fg"
+              fill="currentcolor"
+              d="M149 0C92.59 0 44.68 22.12 12.08 54H0v10h14c1.33 0 2.6-.78 3.54-1.72C48.28 31.47 94.3 10 149 10s100.72 21.47 131.46 52.28c.94.94 2.21 1.72 3.54 1.72h16V54h-14.08C253.32 22.12 205.42 0 149 0Z" />
+            <path
+              class="p-stroke-fg"
+              fill="none"
+              stroke="currentcolor"
+              stroke-width="2"
+              d="M300 76h-25c-29.42-31-71-50.25-126-51.25C94 25.75 52.42 45 23 76H0" />
+            <path
+              class="p-fill-fg"
+              fill="currentcolor"
+              d="m149 27.55-4 5.2h-7l3 5-3 7h7l4 6.12 4-6.12h7l-3-7 3-5h-7zm21.31 7.55L169 37.75h-3l2 3-2 3 2.74-.01 1.33 2.32 1.93-2.31h3l-2-3 2-3h-3zm95.19 44.15a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6-5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-7.5-4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-5.5-3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-7-4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-7-4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6.5-3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6.5-3.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-8-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-7-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-7-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-8-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-8-1a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5z" />
+          </svg>
+
+          <svg class="top-right-corner" focusable="false" aria-hidden="true">
+            <use href="#corner" width="100%" height="100%"></use>
+          </svg>
+
+          <div class="text-container p-fill-bg">
+            <svg
+              id="vertical-border"
+              class="border-right"
+              preserveAspectRatio="none"
+              width="60"
+              height="7.5"
+              viewBox="0 0 60 7.5"
+              focusable="false"
+              aria-hidden="true">
+              <path class="p-fill-bg" fill="currentcolor" d="M5 0v7.5h55V0z" />
+              <path class="p-fill-fg" fill="currentcolor" d="M0 0v7.5h8V0Z" />
+              <path
+                class="p-stroke-fg"
+                fill="none"
+                stroke="currentcolor"
+                stroke-width="2"
+                d="M16.5 0v7.5" />
+            </svg>
+
+            <h3>Uniform Buffer Object (UBO) Tutorial</h3>
+            <p>
+              There were hardly any resources on the topic at the time, thus I created what might be
+              the Internet's first tutorial on WebGL2 UBOs.
+            </p>
+            <a
+              class="alt"
+              href="https://gist.github.com/jialiang/2880d4cc3364df117320e8cb324c2880"
+              rel="noreferrer noopener">
+              Visit tutorial
+            </a>
+
+            <svg class="border-left" focusable="false" aria-hidden="true">
+              <use href="#vertical-border" width="100%" height="100%"></use>
+            </svg>
+          </div>
+
+          <svg class="bottom-left-corner" focusable="false" aria-hidden="true">
+            <use href="#corner" width="100%" height="100%"></use>
+          </svg>
+
+          <svg class="bottom-arch" focusable="false" aria-hidden="true">
+            <use href="#arch" width="100%" height="100%"></use>
+          </svg>
+
+          <svg class="bottom-right-corner" focusable="false" aria-hidden="true">
+            <use href="#corner" width="100%" height="100%"></use>
+          </svg>
+        </div>
+      </div>
+
+      <ul class="carousel">
         <li>
-          <a href="https://github.com/jialiang/performance-monitor" rel="noreferrer noopener">
+          <a
+            class="card"
+            href="https://github.com/jialiang/performance-monitor"
+            rel="noreferrer noopener">
             <figure>
               <img
                 src="./images/performance-monitor-cover.png"
@@ -324,7 +436,7 @@
           </a>
         </li>
         <li>
-          <a href="https://jialiang.github.io/area-sampler/" rel="noreferrer noopener">
+          <a class="card" href="https://jialiang.github.io/area-sampler/" rel="noreferrer noopener">
             <figure>
               <img
                 src="./images/test-image.png"
@@ -339,7 +451,7 @@
           </a>
         </li>
         <li>
-          <a href="https://github.com/jialiang/SSIM-X/" rel="noreferrer noopener">
+          <a class="card" href="https://github.com/jialiang/SSIM-X/" rel="noreferrer noopener">
             <figure>
               <img
                 src="./images/terminal.png"
@@ -354,7 +466,7 @@
           </a>
         </li>
         <li>
-          <a href="/3D-Engine-For-Miku/" rel="noreferrer noopener">
+          <a class="card" href="/3D-Engine-For-Miku/" rel="noreferrer noopener">
             <figure>
               <picture>
                 <source type="image/webp" srcset="./images/miku-cover%20(optimized).webp" />
@@ -372,7 +484,10 @@
           </a>
         </li>
         <li>
-          <a href="https://github.com/jialiang/HTML-to-PDF-UA/" rel="noreferrer noopener">
+          <a
+            class="card"
+            href="https://github.com/jialiang/HTML-to-PDF-UA/"
+            rel="noreferrer noopener">
             <figure>
               <img
                 src="./images/pdf-cover.png"
@@ -387,7 +502,7 @@
           </a>
         </li>
         <li>
-          <a href="/space-gems/" rel="noreferrer noopener">
+          <a class="card" href="/space-gems/" rel="noreferrer noopener">
             <figure>
               <picture>
                 <source type="image/webp" srcset="./images/space-gem-cover%20(optimized).webp" />
@@ -405,7 +520,10 @@
           </a>
         </li>
         <li>
-          <a href="https://github.com/jialiang/ShitCompressor" rel="noreferrer noopener">
+          <a
+            class="card"
+            href="https://github.com/jialiang/ShitCompressor"
+            rel="noreferrer noopener">
             <figure>
               <picture>
                 <source
@@ -425,7 +543,7 @@
           </a>
         </li>
         <li>
-          <a href="/ygo-ocg-secret-rare/" rel="noreferrer noopener">
+          <a class="card" href="/ygo-ocg-secret-rare/" rel="noreferrer noopener">
             <figure>
               <picture>
                 <source type="image/webp" srcset="./images/yugioh-cover%20(optimized).webp" />
@@ -443,7 +561,7 @@
           </a>
         </li>
         <li>
-          <a href="/pure-css-android-12-scallop-clock/" rel="noreferrer noopener">
+          <a class="card" href="/pure-css-android-12-scallop-clock/" rel="noreferrer noopener">
             <figure>
               <img
                 src="./images/clock-cover.png"

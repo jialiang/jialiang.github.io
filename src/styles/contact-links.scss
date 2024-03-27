@@ -11,17 +11,18 @@
     display: inline-block;
     margin: 0 0.5rem 1rem 0.5rem;
 
-    @media (max-width: 27.5rem) {
-      margin-left: auto;
+    @media (max-width: 25rem) {
       margin-right: auto;
+      margin-left: auto;
     }
   }
 
   a {
-    line-height: 1.8rem;
+    line-height: 1ex;
     display: block;
     box-sizing: border-box;
-    padding: 0 0.5rem 0.4rem 0.5rem;
+    padding: 0.67rem;
+    white-space: nowrap;
     color: #333;
     border: 2px solid #eee;
     border-radius: 1em;
@@ -56,10 +57,9 @@
 
   svg {
     box-sizing: border-box;
-    width: 1.75rem;
-    height: 1.75rem;
-    margin: 0 0.25rem 0 0;
-    padding: 0.2rem 0.25rem 0 0.25rem;
+    width: 1em;
+    height: 1em;
+    margin: 0 0.33rem 0 0;
     vertical-align: middle;
 
     fill: #333;

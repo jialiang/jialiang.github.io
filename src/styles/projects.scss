@@ -48,4 +48,24 @@
       width: 10.5rem;
     }
   }
+
+  .featured-container {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    padding: 5rem 0;
+
+    .image-container {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      transform: rotateZ(-6deg);
+      vertical-align: middle;
+
+      @media (max-width: 39rem) {
+        z-index: 0;
+        left: -15vw;
+      }
+    }
+  }
 }

@@ -1,0 +1,111 @@
+.picoletta {
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 21rem;
+  margin: 0 0 0 -1rem;
+  vertical-align: middle;
+
+  @media (max-width: 39rem) {
+    right: -2.5rem;
+    display: block;
+    margin: -6.5rem auto 0 auto;
+  }
+
+  .top-arch {
+    width: 15rem;
+    height: 6rem;
+    margin: 0 -0.1rem;
+  }
+
+  .bottom-arch {
+    width: 15rem;
+    height: 6rem;
+    margin: 0 -0.1rem;
+    transform: scaleY(-1);
+  }
+
+  .top-left-corner {
+    width: 3rem;
+    height: 6rem;
+  }
+
+  .top-right-corner {
+    width: 3rem;
+    height: 6rem;
+    transform: scaleX(-1);
+  }
+
+  .bottom-left-corner {
+    width: 3rem;
+    height: 6rem;
+    transform: scaleY(-1);
+  }
+
+  .bottom-right-corner {
+    width: 3rem;
+    height: 6rem;
+    transform: scaleX(-1) scaleY(-1);
+  }
+
+  .border-left {
+    position: absolute;
+    top: 0;
+    left: -2.9rem;
+    width: 3rem;
+    height: 100%;
+  }
+
+  .border-right {
+    position: absolute;
+    top: 0;
+    right: -2.9rem;
+    width: 3rem;
+    height: 100%;
+    transform: scaleX(-1);
+  }
+
+  .text-container {
+    position: relative;
+    width: 15rem;
+    margin: -0.1rem auto;
+    text-align: center;
+    letter-spacing: -0.3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 0.75;
+    margin: 0 0 0 0;
+  }
+
+  p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;
+    line-height: 1.33;
+    margin: 0;
+    padding: 1.5rem 0.25em;
+    text-align: left;
+    letter-spacing: 0;
+  }
+
+  a {
+    margin: 0 0 0.1em 0;
+  }
+}
+
+.p-fill-bg {
+  background: white;
+
+  fill: white;
+}
+
+.p-fill-fg {
+  fill: gold;
+}
+
+.p-stroke-fg {
+  stroke: gold;
+}

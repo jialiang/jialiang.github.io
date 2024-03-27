@@ -34,25 +34,6 @@
     }
   }
 
-  .resume {
-    font-size: 1.75rem;
-    border-bottom: 0.375rem double;
-
-    &::after {
-      top: -0.175rem;
-    }
-
-    &:hover {
-      border-bottom-style: solid;
-    }
-
-    @media (hover: none) {
-      &:hover {
-        border-bottom-style: double;
-      }
-    }
-  }
-
   .orange-patch-container {
     position: relative;
     z-index: 2;
