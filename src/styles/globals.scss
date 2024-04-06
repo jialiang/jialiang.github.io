@@ -51,6 +51,14 @@ footer {
   display: none;
 }
 
+svg {
+  overflow: visible;
+}
+
+.defs {
+  display: block;
+}
+
 .shadow {
   cursor: default;
   -webkit-user-select: none;

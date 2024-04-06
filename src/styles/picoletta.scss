@@ -2,10 +2,10 @@
   font-size: 0;
   position: relative;
   display: inline-block;
-  overflow: hidden;
   width: 21rem;
   margin: 0 0 0 -1rem;
   vertical-align: middle;
+  color: white;
 
   @media (max-width: 39rem) {
     right: -2.5rem;
@@ -13,17 +13,11 @@
     margin: -6.5rem auto 0 auto;
   }
 
-  .top-arch {
-    width: 15rem;
-    height: 6rem;
-    margin: 0 -0.1rem;
-  }
-
+  .top-arch,
   .bottom-arch {
     width: 15rem;
     height: 6rem;
     margin: 0 -0.1rem;
-    transform: scaleY(-1);
   }
 
   .top-left-corner {
@@ -93,17 +87,18 @@
 
   a {
     margin: 0 0 0.1em 0;
+    color: deepskyblue;
   }
 }
 
 .p-fill-bg {
-  background: white;
+  background: #353841;
 
-  fill: white;
+  fill: #353841;
 }
 
 .p-fill-fg {
-  fill: gold;
+  fill: #f3d67d;
 }
 
 .p-stroke-fg {

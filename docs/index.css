@@ -68,10 +68,10 @@ section {
   font-size: 0;
   position: relative;
   display: inline-block;
-  overflow: hidden;
   width: 21rem;
   margin: 0 0 0 -1rem;
   vertical-align: middle;
+  color: white;
 }
 @media (max-width: 39rem) {
   .picoletta {
@@ -80,16 +80,11 @@ section {
     margin: -6.5rem auto 0 auto;
   }
 }
-.picoletta .top-arch {
-  width: 15rem;
-  height: 6rem;
-  margin: 0 -0.1rem;
-}
+.picoletta .top-arch,
 .picoletta .bottom-arch {
   width: 15rem;
   height: 6rem;
   margin: 0 -0.1rem;
-  transform: scaleY(-1);
 }
 .picoletta .top-left-corner {
   width: 3rem;
@@ -149,15 +144,16 @@ section {
 }
 .picoletta a {
   margin: 0 0 0.1em 0;
+  color: deepskyblue;
 }
 
 .p-fill-bg {
-  background: white;
-  fill: white;
+  background: #353841;
+  fill: #353841;
 }
 
 .p-fill-fg {
-  fill: gold;
+  fill: #f3d67d;
 }
 
 .p-stroke-fg {
@@ -208,6 +204,7 @@ section {
   display: block;
   box-sizing: border-box;
   width: 16rem;
+  transform: scale3d(1, 1, 1);
   min-height: 19rem;
   padding: 0.5rem;
   transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
@@ -239,9 +236,8 @@ section {
   height: 7.5rem;
   margin: 0.75rem 0 0 0;
   padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.67);
+  background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
 }
 .card figcaption div {
@@ -249,44 +245,42 @@ section {
   width: 100%;
   vertical-align: middle;
 }
-
-a.card:active {
+.card:active {
   top: 3px;
 }
-a.card:focus, a.card:hover {
+.card:focus, .card:hover {
   transform: scale3d(1.02, 1.02, 1.02);
   border-color: cyan;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 255, 255, 0.2), -0.125rem -0.125rem 0.25rem rgba(0, 139, 139, 0.15) inset;
 }
-a.card:focus img, a.card:hover img {
+.card:focus img, .card:hover img {
   box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.2);
 }
-a.card:focus figcaption, a.card:hover figcaption {
-  border-color: cyan;
-  box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.2);
+.card:focus figcaption, .card:hover figcaption {
+  box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.75);
 }
-a.card:focus:not(:focus-visible):not(:hover) {
+.card:focus:not(:focus-visible):not(:hover) {
   transform: scale3d(1, 1, 1);
   border-color: rgba(0, 0, 0, 0);
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1), -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.1) inset;
 }
-a.card:focus:not(:focus-visible):not(:hover) img {
+.card:focus:not(:focus-visible):not(:hover) img {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
 }
-a.card:focus:not(:focus-visible):not(:hover) figcaption {
+.card:focus:not(:focus-visible):not(:hover) figcaption {
   border-color: rgba(0, 0, 0, 0);
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
 }
 @media (hover: none) {
-  a.card:hover:not(:focus-visible) {
+  .card:hover:not(:focus-visible) {
     transform: scale3d(1, 1, 1);
     border-color: rgba(0, 0, 0, 0);
     box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1), -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.1) inset;
   }
-  a.card:hover:not(:focus-visible) img {
+  .card:hover:not(:focus-visible) img {
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
   }
-  a.card:hover:not(:focus-visible) figcaption {
+  .card:hover:not(:focus-visible) figcaption {
     border-color: rgba(0, 0, 0, 0);
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
   }
@@ -294,17 +288,17 @@ a.card:focus:not(:focus-visible):not(:hover) figcaption {
 
 .carousel .card {
   margin: 2rem;
-  background: #fbfbfb;
+  background: #f4f4f8;
 }
 .carousel .card:focus, .carousel .card:hover {
   background: lightcyan;
 }
 .carousel .card:focus:not(:focus-visible):not(:hover) {
-  background: #fbfbfb;
+  background: #f4f4f8;
 }
 @media (hover: none) {
   .carousel .card:hover:not(:focus-visible) {
-    background: #fbfbfb;
+    background: #f4f4f8;
   }
 }
 @media (max-width: 61rem) {
@@ -314,17 +308,17 @@ a.card:focus:not(:focus-visible):not(:hover) figcaption {
 }
 
 .featured-container .card {
-  background: #3b3f4a;
+  background: #f4f4f8;
 }
 .featured-container .card:focus, .featured-container .card:hover {
-  background: #004c4d;
+  background: #bff;
 }
 .featured-container .card:focus:not(:focus-visible):not(:hover) {
-  background: #3b3f4a;
+  background: #f4f4f8;
 }
 @media (hover: none) {
   .featured-container .card:hover:not(:focus-visible) {
-    background: #3b3f4a;
+    background: #f4f4f8;
   }
 }
 
@@ -458,6 +452,7 @@ a.card:focus:not(:focus-visible):not(:hover) figcaption {
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 #me h2 abbr {
+  display: block;
   text-decoration-thickness: 2px;
 }
 #me .controls {
@@ -521,13 +516,13 @@ a.card:focus:not(:focus-visible):not(:hover) figcaption {
 .faq {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
+  line-height: 1.33;
   position: relative;
   margin: 0 0 1.5rem 0;
   letter-spacing: 0;
   border-radius: 1rem;
 }
 .faq .question {
-  line-height: 1.15;
   margin: 0;
   padding: 1rem 1rem 1rem 2.5rem;
   cursor: pointer;
@@ -614,7 +609,6 @@ a.card:focus:not(:focus-visible):not(:hover) figcaption {
 }
 .faq .answer {
   display: none;
-  line-height: 1.33;
   padding: 1rem 1rem 0.5rem 2.5rem;
   border: 2px solid #ffe6b7;
   border-top: none;

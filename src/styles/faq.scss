@@ -3,13 +3,13 @@
 .faq {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
+  line-height: 1.33;
   position: relative;
   margin: 0 0 1.5rem 0;
   letter-spacing: 0;
   border-radius: 1rem;
 
   .question {
-    line-height: 1.15;
     margin: 0;
     padding: 1rem 1rem 1rem 2.5rem;
     cursor: pointer;
@@ -109,7 +109,6 @@
 
   .answer {
     display: none;
-    line-height: 1.33;
     padding: 1rem 1rem 0.5rem 2.5rem;
     border: 2px solid #ffe6b7;
     border-top: none;

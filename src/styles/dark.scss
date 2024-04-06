@@ -9,9 +9,7 @@
 html {
   color: white;
   background: #2a2a2a;
-}
 
-html {
   a {
     color: deepskyblue;
   }
@@ -37,18 +35,19 @@ html {
 
   #links {
     a {
-      border-color: #404040;
+      border-color: skyblue;
       background: #111;
-      box-shadow: 0.25rem 0.25rem 0.75rem black(0.25);
+      box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.15);
 
       @mixin apply-focus-hover {
         background: #163c3c;
+        box-shadow: 0 0 0.5rem cyan(0.5), 0 0 2rem cyan(0.2);
       }
 
       @mixin revert-focus-hover {
-        border-color: #404040;
+        border-color: skyblue;
         background: #111;
-        box-shadow: 0.25rem 0.25rem 0.75rem black(0.25);
+        box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.25);
       }
 
       @include focus-hover-states(
@@ -123,7 +122,7 @@ html {
     }
 
     .paper::before {
-      background: #111;
+      background: black(0.5);
     }
   }
 
@@ -161,32 +160,29 @@ html {
 
   #projects {
     .card {
-      border-color: #3a3a3a;
+      border-color: skyblue;
       background: #111;
-      box-shadow: 0.5rem 0.5rem 1.5rem black(0.33);
+      box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.15);
 
       img {
         box-sizing: border-box;
-        border: 2px solid #3a3a3a;
-        box-shadow: none;
+        border: 2px solid #404040;
+        background: #404040;
       }
 
       figcaption {
-        border: none;
         background: black(0);
         box-shadow: none;
       }
-    }
 
-    a.card {
       @mixin apply-focus-hover {
         border-color: cyan;
         background: #163c3c;
-        box-shadow: 0.25rem 0.25rem 0.5rem cyan(0.2),
-          -0.125rem -0.125rem 0.25rem darkcyan(0.15) inset;
+        box-shadow: 0 0 0.5rem cyan(0.5), 0 0 3rem cyan(0.2);
 
         img {
           border-color: cyan;
+          background: cyan;
         }
 
         figcaption {
@@ -195,12 +191,13 @@ html {
       }
 
       @mixin revert-focus-hover {
-        border-color: #3a3a3a;
+        border-color: skyblue;
         background: #111;
-        box-shadow: 0.5rem 0.5rem 1.5rem black(0.33);
+        box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.15);
 
         img {
-          border-color: #3a3a3a;
+          border-color: #404040;
+          background: #404040;
         }
       }
 
@@ -211,7 +208,12 @@ html {
     }
 
     .picoletta {
-      filter: drop-shadow(0 0 1rem white(0.25));
+      filter: drop-shadow(0 0 1rem rgba(166, 129, 180, 0.25))
+        drop-shadow(0 0 0.25rem rgba(255, 129, 180, 0.5));
+
+      p {
+        color: #eaeaea;
+      }
     }
 
     .button-container button {
@@ -288,6 +290,8 @@ html {
       background: #1a1a1a;
       box-shadow: none;
 
+      -webkit-font-smoothing: antialiased;
+
       &::before {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath fill='%23fff' d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
       }
@@ -347,14 +351,14 @@ html {
 }
 
 .p-fill-bg {
-  fill: #1a1a1a;
-  background: #1a1a1a;
+  fill: #1d1f25;
+  background: #1d1f25;
 }
 
 .p-fill-fg {
-  fill: lightpink;
+  fill: #a681b4;
 }
 
 .p-stroke-fg {
-  stroke: lightpink;
+  stroke: #a681b4;
 }

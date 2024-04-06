@@ -17,7 +17,7 @@ window.isValidTheme = function (theme) {
 
 window.setTheme = function (theme) {
   if (!window.isValidTheme(theme)) return;
-  if (!svgFiltersSupport || !gradientSupport) return;
+  if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) return;
 
   var darkStylesheet = document.getElementById("dark-styles");
 
