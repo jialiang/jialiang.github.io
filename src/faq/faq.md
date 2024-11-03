@@ -2,7 +2,7 @@
 
 ## What does your current company do?
 
-We're a multinational marketing technology company involved in the renovation and furnishing industry.
+We're a multinational marketing technology company catering to the renovation and furnishing industry.
 
 We help interior firms increase their business' visibility, drive leads to them and offer lead management tools.
 
@@ -30,9 +30,9 @@ My tasks generally come with the goals of:
 
 I mainly work with React, Redux, NextJS, JavaScript, HTML, Sass, PostgreSQL and Git.
 
-## How is your current work arrangement?
+## What is your current work arrangement?
 
-I'm currently on a hybrid work arrangement of 2 days in the office and 3 days from home.
+I'm currently on a hybrid work arrangement of 1 day in the office and 4 days from home.
 
 # CULTURE FIT
 
@@ -92,6 +92,7 @@ E.g. using the website with a screen reader and keyboard-only navigation.
 Yes, my most recent experience is implementing bearer token authentication for a new web frontend.
 
 Some best practices I implemented include:
+
 - Setting the HttpOnly flag on token cookies to prevent access by client-side code;
 - Setting the Secure flag on token cookies to limit their transimission to secure channels.
 - Implement an expiry date on the bearer token and require a refresh token to obtain a new bearer token.
@@ -126,6 +127,13 @@ Generally I prefer front-end work but am fine with both.
 ## Why do you want to leave?
 
 I'm happy with my current situation but am always open to new opportunities.
+
+## When are you available for a call?
+
+Generally, I'm available:
+
+- After 11am on Monday and Wednesday.
+- After 9am rest of the week.
 
 ## When can you start?
 
