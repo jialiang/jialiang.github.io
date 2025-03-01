@@ -1,6 +1,7 @@
 @use "sass:meta";
 
 #links {
+  font-family: "Noto Sans JP Critical", sans-serif;
   font-size: 1.2rem;
   min-height: 8rem;
   margin: 0;
@@ -10,6 +11,19 @@
   li {
     display: inline-block;
     margin: 0 0.5rem 1rem 0.5rem;
+    text-align: left;
+
+    &:nth-child(1) a {
+      width: 14.1rem;
+    }
+
+    &:nth-child(2) a {
+      width: 16rem;
+    }
+
+    &:nth-child(3) a {
+      width: 7.5rem;
+    }
 
     @media (max-width: 25rem) {
       margin-right: auto;
@@ -18,10 +32,10 @@
   }
 
   a {
-    line-height: 1ex;
+    line-height: 1;
     display: block;
     box-sizing: border-box;
-    padding: 0.67rem;
+    padding: 0.4rem 0.67rem 0.67rem 0.67rem;
     white-space: nowrap;
     color: #333;
     border: 2px solid #eee;
@@ -44,7 +58,7 @@
     }
 
     @mixin revert-focus-hover {
-      border-color: white;
+      border-color: #eee;
       background: white;
       box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
     }
@@ -57,8 +71,8 @@
 
   svg {
     box-sizing: border-box;
-    width: 1em;
-    height: 1em;
+    width: 1.25rem;
+    height: 1.25rem;
     margin: 0 0.33rem 0 0;
     vertical-align: middle;
 

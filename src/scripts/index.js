@@ -191,14 +191,11 @@ function initPerformanceLogs() {
   var entries = performance.getEntries();
 
   var htmlEntry;
-  var fontEntries = [];
   var paintEntry;
 
   entries.forEach(function (entry) {
     if (entry.entryType === "navigation") htmlEntry = entry;
     else if (performance.timing) htmlEntry = performance.timing;
-
-    if (entry.name.indexOf(".woff") !== -1) fontEntries.push(entry);
 
     if (entry.name === "first-contentful-paint") paintEntry = entry;
   });
@@ -216,23 +213,6 @@ function initPerformanceLogs() {
 
     createLog("DNS lookup", domainLookupEnd, domainLookupDuration);
     createLog("HTML fetch", htmlResponseEnd, htmlFetchDuration);
-  }
-
-  if (fontEntries.length) {
-    var fontFetchStarts = fontEntries.map(function (entry) {
-      return entry.fetchStart;
-    });
-
-    var fontResponseEnds = fontEntries.map(function (entry) {
-      return entry.responseEnd;
-    });
-
-    var firstFontFetchStart = Math.min.apply(null, fontFetchStarts);
-    var lastFontResponseEnd = Math.max.apply(null, fontResponseEnds);
-
-    var fontFetchDuration = lastFontResponseEnd - firstFontFetchStart;
-
-    createLog("Font fetches", lastFontResponseEnd, fontFetchDuration);
   }
 
   if (paintEntry) {

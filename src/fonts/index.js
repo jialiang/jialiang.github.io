@@ -19,7 +19,7 @@ const normalizeValue = (value) => {
     case '"Chihaya Jun"':
       return "chihaya-jun";
     default:
-      return value;
+      return false;
   }
 };
 
@@ -47,13 +47,15 @@ const subsetFonts = async (htmlStr, cssObj) => {
       if (prop !== "font-family" && prop !== "font-weight") continue;
       if (value === "inherit") continue;
 
+      const normalizedValue = normalizeValue(value);
+      if (!normalizedValue) continue;
+
       selector.split(",").forEach((selector) => {
         const selectorAst = selectorProcessor.astSync(selector);
         const { a, b, c } = selectorSpecificity(selectorAst);
 
         const specificityScore = (a * 100 + b * 10 + c) * 10000 + index;
         const compiledQuery = cssSelect.compile(`${selector}, ${selector} *`);
-        const normalizedValue = normalizeValue(value);
 
         fontWeightSelectors.push({
           prop: prop.split("-")[1],

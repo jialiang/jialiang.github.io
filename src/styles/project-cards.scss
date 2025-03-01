@@ -4,10 +4,10 @@
   display: block;
   box-sizing: border-box;
   width: 16rem;
-  transform: scale3d(1, 1, 1);
   min-height: 19rem;
   padding: 0.5rem;
   transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
+  transform: scale3d(1, 1, 1);
   white-space: normal;
   color: inherit;
   border: 2px solid black(0);
