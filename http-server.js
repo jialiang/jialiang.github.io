@@ -2,6 +2,7 @@ import http from "http";
 import url from "url";
 import fs from "fs";
 import mime from "mime";
+import zlib from "zlib";
 
 http
   .createServer((req, res) => {
@@ -15,7 +16,7 @@ http
     const chunks = [];
 
     stream.on("error", (error) => {
-      console.log(`Error reading ${pathname}:\n`, error);
+      console.error(`Error reading ${pathname}:\n`, error);
       res.writeHead(404).end();
     });
 
@@ -30,10 +31,17 @@ http
     stream.on("end", () => {
       console.log(`Finished reading ${pathname}.`);
 
-      res.setHeader("Content-Type", mime.getType(pathname));
-      res.writeHead(200);
-
-      res.end(Buffer.concat(chunks));
+      zlib.gzip(Buffer.concat(chunks), (error, result) => {
+        if (error) {
+          console.error(`Error with gzip: ${error}`);
+          res.writeHead(500).end();
+        } else {
+          res.setHeader("Content-Type", mime.getType(pathname));
+          res.setHeader("Content-Encoding", "gzip");
+          res.writeHead(200);
+          res.end(result);
+        }
+      });
     });
   })
   .listen(8080);
