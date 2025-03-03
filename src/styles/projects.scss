@@ -2,6 +2,8 @@
   width: 61rem;
   max-width: 100%;
 
+  @include chihaya-jun-font;
+
   .bunny {
     position: absolute;
     top: -2.25rem;

@@ -55,9 +55,15 @@ const generateHtml = async (cssObj, jsObj) => {
   const minifiedHtml = await minify(outputHtml, {
     collapseWhitespace: true,
     collapseInlineTagWhitespace: true,
+    decodeEntities: true,
   });
 
-  await fs.writeFile("./docs/index.html", minifiedHtml);
+  const minifiedHtmlWithWhitespace = minifiedHtml
+    .replaceAll("<aa", " <a")
+    .replaceAll("</aa>", "</a> ")
+    .replaceAll("</a> .", "</a>.");
+
+  await fs.writeFile("./docs/index.html", minifiedHtmlWithWhitespace);
 
   return minifiedHtml;
 };

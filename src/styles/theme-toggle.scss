@@ -1,5 +1,4 @@
 #theme-toggle {
-  font-family: "Noto Sans JP Critical", sans-serif;
   position: absolute;
   z-index: 1;
   top: 0;
@@ -13,6 +12,8 @@
   text-align: right;
   border: none;
 
+  @include noto-sans-jp-critical-font;
+
   legend {
     position: absolute;
     overflow: hidden;
@@ -23,14 +24,13 @@
 
   label {
     font-size: 0.875rem;
-    line-height: 1.75rem;
     position: relative;
     display: inline-block;
     box-sizing: border-box;
     width: 4.625rem;
     height: 1.85rem;
     margin: 0 0 0 0.5rem;
-    padding: 0 0.75rem 0 0.55rem;
+    padding: 0.235rem 0.75rem 0 0.55rem;
     cursor: pointer;
     text-align: left;
     white-space: nowrap;
@@ -42,8 +42,10 @@
 
     input {
       font-family: inherit;
-      width: 1rem;
-      margin: 0 0.25rem 0 0;
+      width: 0.875rem;
+      height: 0.875rem;
+      margin: 0 0.375rem 0 0;
+      vertical-align: middle;
       opacity: 0;
 
       &:checked {
@@ -72,6 +74,10 @@
           border-color: black(0);
         }
       }
+    }
+
+    span {
+      vertical-align: middle;
     }
 
     span::before {

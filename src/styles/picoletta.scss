@@ -65,24 +65,23 @@
     width: 15rem;
     margin: -0.1rem auto;
     text-align: center;
-    letter-spacing: -0.3rem;
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 0.75;
     margin: 0 0 0 0;
   }
 
   p {
-    font-family: "Noto Sans JP", sans-serif;
     font-size: 1rem;
     line-height: 1.33;
     margin: 0;
     padding: 1.5rem 0.25em;
     text-align: left;
     letter-spacing: 0;
+
+    @include noto-sans-jp-font;
   }
 
   a {

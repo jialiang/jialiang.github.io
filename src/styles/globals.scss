@@ -3,11 +3,13 @@
 }
 
 html {
-  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1;
   overflow-y: scroll;
   color: #333;
   background: #fffaf0;
   background: linear-gradient(to right, white 50%, #fffaf0 0) 1.875rem 0/7.5rem 100%;
+
+  @include noto-sans-jp-font;
 
   @media (max-width: 22.5rem) {
     font-size: 4.44vw;
@@ -30,20 +32,19 @@ body {
 }
 
 section {
-  font-family: "Chihaya Jun";
-  line-height: 0.9;
   position: relative;
   z-index: 1;
   display: none;
   margin: 0 auto 12.5rem auto;
-  letter-spacing: -0.2rem;
 
   h2 {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     font-weight: 400;
     margin: 0;
     text-align: center;
     color: black;
+
+    @include chihaya-jun-font;
   }
 }
 

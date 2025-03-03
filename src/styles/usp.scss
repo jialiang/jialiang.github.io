@@ -1,13 +1,17 @@
 #usp {
+  line-height: 2rem;
   display: block;
   overflow: hidden;
 
+  @include chihaya-jun-font;
+
   h2 {
+    line-height: 1.75rem;
     color: #2f467e;
   }
 
   .paper {
-    padding: 3.75rem 2rem 5.5rem 2rem;
+    padding: 4rem 2rem 5.5rem 2rem;
 
     &::before {
       background: linear-gradient(to bottom, cyan(0.67) 1px, cyan(0) 0) 50% -1px / 90% 2rem repeat-y,
@@ -20,20 +24,21 @@
   }
 
   ul {
-    font-size: 2.25rem;
-    line-height: 2rem;
-    margin: 3.6rem 0 4.25rem 0;
+    font-size: 1.875rem;
+    margin: 4rem 0 2rem 0;
     padding: 0 0 0 2.5rem;
   }
 
-  li {
-    margin: 0 0 2rem 0;
-
-    &::marker {
-      font-family: "Chihaya Jun";
-    }
+  li::marker {
+    font-family: inherit;
+    font-size-adjust: inherit;
   }
 
+  li span {
+    display: inline-block;
+    margin: 0 0 2rem 0;
+    vertical-align: top;
+  }
   .orange-patch-container {
     position: relative;
     z-index: 2;

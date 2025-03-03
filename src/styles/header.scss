@@ -1,5 +1,4 @@
 header {
-  font-family: "Noto Sans JP Critical", sans-serif;
   position: relative;
   width: 25.75rem;
   margin: 1rem auto 10rem auto;
@@ -9,6 +8,8 @@ header {
   color: white;
   border-radius: 5em;
   box-shadow: 0.5em 0.5em 1em 0 black(0.125);
+
+  @include noto-sans-jp-critical-font;
 
   &::before {
     position: absolute;
@@ -29,7 +30,6 @@ header {
 
   h1,
   h2 {
-    line-height: 1;
     position: relative;
   }
 

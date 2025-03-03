@@ -16,7 +16,7 @@ const normalizeValue = (value) => {
       return "regular";
     case '"Noto Sans JP", sans-serif':
       return "noto-sans-jp";
-    case '"Chihaya Jun"':
+    case '"Chihaya Jun", sans-serif':
       return "chihaya-jun";
     default:
       return false;

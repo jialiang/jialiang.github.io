@@ -52,3 +52,18 @@
     }
   }
 }
+
+@mixin noto-sans-jp-critical-font {
+  font-family: "Noto Sans JP Critical", sans-serif;
+  font-size-adjust: 0.545;
+}
+
+@mixin noto-sans-jp-font {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size-adjust: 0.545;
+}
+
+@mixin chihaya-jun-font {
+  font-family: "Chihaya Jun", sans-serif;
+  font-size-adjust: 0.45;
+}

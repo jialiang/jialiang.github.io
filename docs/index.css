@@ -5,6 +5,8 @@ section {
 #projects {
   width: 61rem;
   max-width: 100%;
+  font-family: "Chihaya Jun", sans-serif;
+  font-size-adjust: 0.45;
 }
 #projects .bunny {
   position: absolute;
@@ -125,22 +127,21 @@ section {
   width: 15rem;
   margin: -0.1rem auto;
   text-align: center;
-  letter-spacing: -0.3rem;
 }
 .picoletta h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 0.75;
   margin: 0 0 0 0;
 }
 .picoletta p {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
   line-height: 1.33;
   margin: 0;
   padding: 1.5rem 0.25em;
   text-align: left;
   letter-spacing: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size-adjust: 0.545;
 }
 .picoletta a {
   margin: 0 0 0.1em 0;
@@ -229,7 +230,7 @@ section {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
 }
 .card figcaption {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   display: table;
   box-sizing: border-box;
   width: 100%;
@@ -334,9 +335,8 @@ section {
   }
 }
 #projects .button-container button {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   padding: 0.5rem;
-  letter-spacing: -0.1em;
   border: 2px solid aquamarine;
   background: white;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
@@ -345,6 +345,10 @@ section {
   position: relative;
   border-top: 2px solid pink;
   border-bottom: 2px solid pink;
+  display: inline-block;
+  height: 2rem;
+  line-height: 1.85rem;
+  padding: 0 0.5rem;
 }
 #projects .button-container button:focus, #projects .button-container button:hover {
   border-color: cyan;
@@ -373,7 +377,7 @@ section {
   }
 }
 #projects .button-container .left-arrow {
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  padding: 0.5rem 0 0.5rem 0.375rem;
   transform: rotateZ(5deg);
   border-top-left-radius: 2rem;
   border-top-right-radius: 0.25rem;
@@ -390,7 +394,7 @@ section {
   transform: rotateZ(5deg) translate3d(0, 3px, 0);
 }
 #projects .button-container .right-arrow {
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  padding: 0.5rem 0.375rem 0.5rem 0;
   transform: rotateZ(-5deg);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 2rem;
@@ -460,9 +464,7 @@ section {
   text-align: right;
 }
 #me .controls button {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
-  line-height: 1;
   margin: 0 0 0 0.5rem;
   padding: 0.5rem 0.75rem;
   letter-spacing: 0;
@@ -494,9 +496,7 @@ section {
   }
 }
 #me h3 {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: 0.875rem;
-  line-height: 1;
   margin: 3rem 0 1.5rem 0;
   letter-spacing: 0;
   color: #555;
@@ -514,7 +514,6 @@ section {
 }
 
 .faq {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
   line-height: 1.33;
   position: relative;
