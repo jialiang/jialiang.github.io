@@ -93,13 +93,13 @@
 
     span::after {
       position: absolute;
-      top: -0.15rem;
-      left: -0.15rem;
+      top: -0.125rem;
+      left: -0.125rem;
       box-sizing: border-box;
       width: calc(100% + 0.3rem);
       height: calc(100% + 0.3rem);
       content: "";
-      border: 0.15rem solid black(0);
+      border: 0.125rem solid black(0);
       border-radius: 1.5rem;
     }
   }

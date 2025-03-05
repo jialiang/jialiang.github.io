@@ -10,6 +10,7 @@ const template = `<div class="faq" itemscope itemprop="mainEntity" itemtype="htt
     aria-expanded="false"
     aria-controls="{{id}}">
    {{question}}
+   <div class="bottom"></div>
   </h4>
 
   <div
@@ -22,6 +23,8 @@ const template = `<div class="faq" itemscope itemprop="mainEntity" itemtype="htt
       {{answer}}
     </div>
   </div>
+
+  <div class="focus-ring"></div>
 </div>`;
 
 export default {

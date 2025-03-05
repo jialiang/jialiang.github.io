@@ -122,7 +122,7 @@ html {
     }
 
     .paper::before {
-      background: black(0.5);
+      background: black(0.45);
     }
   }
 
@@ -208,9 +208,6 @@ html {
     }
 
     .picoletta {
-      filter: drop-shadow(0 0 1rem rgba(166, 129, 180, 0.25))
-        drop-shadow(0 0 0.25rem rgba(255, 129, 180, 0.5));
-
       p {
         color: #eaeaea;
       }
@@ -288,31 +285,49 @@ html {
     .question {
       border-color: #2a2a2a;
       background: #1a1a1a;
-      box-shadow: none;
 
       -webkit-font-smoothing: antialiased;
-
-      &::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath fill='%23fff' d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
-      }
 
       @mixin apply-focus-hover {
         border-color: #ffde69;
         background: #313117;
-        box-shadow: 0.25rem 0.25rem 0.5rem yellow(0.1);
 
-        ~ .answer {
+        &[aria-expanded="false"] {
+          box-shadow: 0.25rem 0.25rem 0.5rem yellow(0.25);
+        }
+
+        + .answer {
           border-color: #ffde69;
+
+          &::before {
+            box-shadow: 0.25rem 0.25rem 0.5rem yellow(0.25);
+          }
+        }
+
+        .bottom {
+          background: #ffde69;
         }
       }
 
       @mixin revert-focus-hover {
         border-color: #2a2a2a;
-        background: #1a1a1a;
-        box-shadow: none;
 
-        ~ .answer {
+        &[aria-expanded="false"] {
+          background: #1a1a1a;
+          box-shadow: none;
+        }
+
+        + .answer {
           border-color: #2a2a2a;
+
+          &::before {
+            box-shadow: none;
+          }
+        }
+
+        .bottom {
+          background: #2a2a2a;
+          box-shadow: none;
         }
       }
 
@@ -321,8 +336,14 @@ html {
         meta.get-mixin("revert-focus-hover")
       );
 
+      &[aria-expanded="false"] {
+        &::before {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath fill='%23fff' d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
+        }
+      }
+
       &[aria-expanded="true"] {
-        background: #2a2a2a !important;
+        background: #2a2a2a;
 
         &::before {
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='46'%3E%3Cpath fill='%23fff' d='M53 0 26.5 46 0 0Z'/%3E%3C/svg%3E");
@@ -341,6 +362,11 @@ html {
         color: #eee;
       }
     }
+
+    .bottom {
+      background: #2a2a2a;
+      box-shadow: none;
+    }
   }
 
   #credits {
@@ -351,14 +377,16 @@ html {
 }
 
 .p-fill-bg {
-  fill: #1d1f25;
-  background: #1d1f25;
+  background: #0d1d16;
+  background: radial-gradient(closest-side, #132c22, #0d1d16);
+
+  fill: #0d1d16;
 }
 
 .p-fill-fg {
-  fill: #a681b4;
+  fill: #b17439;
 }
 
 .p-stroke-fg {
-  stroke: #a681b4;
+  stroke: #b17439;
 }

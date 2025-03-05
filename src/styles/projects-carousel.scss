@@ -4,7 +4,7 @@
   list-style: none;
 
   &:focus {
-    outline: 0.15rem solid orangered;
+    outline: 0.125rem solid orangered;
   }
 
   &:focus:not(:focus-visible) {
