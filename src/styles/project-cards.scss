@@ -1,5 +1,7 @@
 @use "sass:meta";
 
+@use "./util.scss" as *;
+
 .card {
   display: block;
   box-sizing: border-box;
@@ -60,7 +62,7 @@
     box-shadow: 0.25rem 0.25rem 0.5rem cyan(0.2), -0.125rem -0.125rem 0.25rem darkcyan(0.15) inset;
 
     img {
-      box-shadow: 0 0 0.25rem cyan(0.2);
+      box-shadow: 0 0 0.25rem cyan(0.75);
     }
 
     figcaption {
@@ -78,7 +80,6 @@
     }
 
     figcaption {
-      border-color: black(0);
       box-shadow: 0 0 0.25rem black(0.1);
     }
   }

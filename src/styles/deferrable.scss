@@ -1,21 +1,19 @@
-@import "./util.scss";
+@use "./projects.scss";
+
+@use "./picoletta.scss";
+
+@use "./projects-carousel.scss";
+
+@use "./project-cards.scss";
+
+@use "./projects-carousel-buttons.scss";
+
+@use "./me.scss";
+
+@use "./faq.scss";
+
+@use "./credits.scss";
 
 section {
   display: block;
 }
-
-@import "./projects.scss";
-
-@import "./picoletta.scss";
-
-@import "./projects-carousel.scss";
-
-@import "./project-cards.scss";
-
-@import "./projects-carousel-buttons.scss";
-
-@import "./me.scss";
-
-@import "./faq.scss";
-
-@import "./credits.scss";

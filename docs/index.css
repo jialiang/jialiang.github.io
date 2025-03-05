@@ -1,7 +1,3 @@
-section {
-  display: block;
-}
-
 #projects {
   width: 61rem;
   max-width: 100%;
@@ -255,7 +251,7 @@ section {
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 255, 255, 0.2), -0.125rem -0.125rem 0.25rem rgba(0, 139, 139, 0.15) inset;
 }
 .card:focus img, .card:hover img {
-  box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.75);
 }
 .card:focus figcaption, .card:hover figcaption {
   box-shadow: 0 0 0.25rem rgba(0, 255, 255, 0.75);
@@ -269,7 +265,6 @@ section {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
 }
 .card:focus:not(:focus-visible):not(:hover) figcaption {
-  border-color: rgba(0, 0, 0, 0);
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
 }
 @media (hover: none) {
@@ -282,7 +277,6 @@ section {
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
   }
   .card:hover:not(:focus-visible) figcaption {
-    border-color: rgba(0, 0, 0, 0);
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
   }
 }
@@ -680,4 +674,8 @@ section {
   left: -2px;
   width: calc(100% + 4px);
   height: calc(100% + 2px);
+}
+
+section {
+  display: block;
 }

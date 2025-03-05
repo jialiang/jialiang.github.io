@@ -1,5 +1,7 @@
 @use "sass:meta";
 
+@use "./util.scss" as *;
+
 #projects .button-container {
   display: none;
   justify-content: space-between;

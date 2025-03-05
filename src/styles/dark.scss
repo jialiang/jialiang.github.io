@@ -1,6 +1,6 @@
 @use "sass:meta";
 
-@import "./util.scss";
+@use "./util.scss" as *;
 
 :root {
   color-scheme: dark;

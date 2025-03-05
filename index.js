@@ -132,6 +132,8 @@ const build = async () => {
   await Promise.all([main(), timeTask(copy, 0, ["./static", "./docs"])]);
 
   console.log(`\nTook ${Math.round(performance.now() - start)}ms to build.\n`);
+
+  process.stdout.write("\u0007");
 };
 
 build();

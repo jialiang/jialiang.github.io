@@ -1,5 +1,7 @@
 @use "sass:meta";
 
+@use "./util.scss" as *;
+
 #me {
   .paper {
     width: 36rem;

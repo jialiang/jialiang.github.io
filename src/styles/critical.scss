@@ -1,17 +1,15 @@
-@import "./util.scss";
+@use "./fonts.scss";
 
-@import "./fonts.scss";
+@use "./globals.scss";
 
-@import "./globals.scss";
+@use "./background.scss";
 
-@import "./background.scss";
+@use "./anchors-buttons.scss";
 
-@import "./anchors-buttons.scss";
+@use "./theme-toggle.scss";
 
-@import "./theme-toggle.scss";
+@use "./contact-links.scss";
 
-@import "./contact-links.scss";
+@use "./header.scss";
 
-@import "./header.scss";
-
-@import "./usp.scss";
+@use "./usp.scss";

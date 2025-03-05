@@ -1,5 +1,7 @@
 @use "sass:meta";
 
+@use "./util.scss" as *;
+
 .faq {
   font-size: 1rem;
   line-height: 1.33;

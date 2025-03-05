@@ -1,5 +1,7 @@
 @use "sass:meta";
 
+@use "./util.scss" as *;
+
 #links {
   font-size: 1.2rem;
   min-height: 8rem;
