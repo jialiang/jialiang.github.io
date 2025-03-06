@@ -45,7 +45,7 @@ const generateHtml = async (cssObj, jsObj) => {
     .replace("<!-- faq.html -->", faqHtml)
     //
     .replace("/* critical.scss */", cssObj.critical)
-    .replace("/* dark.scss */", cssObj.dark)
+    .replace("/* critical-dark.scss */", cssObj.criticalDark)
     .replace("/* ie9.scss */", cssObj.ie9)
     .replace("/* noscript.scss */", cssObj.noscript)
     //
@@ -69,20 +69,23 @@ const generateHtml = async (cssObj, jsObj) => {
 };
 
 const generateCss = async () => {
-  const [critical, deferrable, dark, ie9, noscript] = await Promise.all([
+  const [critical, deferrable, criticalDark, deferrableDark, ie9, noscript] = await Promise.all([
     sass.compileAsync("./src/styles/critical.scss"),
     sass.compileAsync("./src/styles/deferrable.scss"),
-    sass.compileAsync("./src/styles/dark.scss"),
+    sass.compileAsync("./src/styles/dark-critical.scss"),
+    sass.compileAsync("./src/styles/dark-deferrable.scss"),
     sass.compileAsync("./src/styles/ie9.scss"),
     sass.compileAsync("./src/styles/noscript.scss"),
   ]);
 
   await fs.writeFile("./docs/index.css", deferrable.css);
+  await fs.writeFile("./docs/index-dark.css", deferrableDark.css);
 
   return {
     critical: critical.css,
     deferrable: deferrable.css,
-    dark: dark.css,
+    criticalDark: criticalDark.css,
+    deferrableDark: deferrableDark.css,
     ie9: ie9.css,
     noscript: noscript.css,
   };

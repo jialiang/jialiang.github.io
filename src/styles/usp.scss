@@ -14,10 +14,11 @@
 
   .paper {
     padding: 4rem 2rem 5.5rem 2rem;
+    transform: rotateZ(-0.5deg);
 
     &::before {
       background: linear-gradient(to bottom, cyan(0.67) 1px, cyan(0) 0) 50% -1px / 90% 2rem repeat-y,
-        url("./images/paper.svg"), white;
+        url("./images/paper.svg"), #f8f8f8;
     }
 
     @media (max-width: 20.625rem) {

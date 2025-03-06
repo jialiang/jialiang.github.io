@@ -22,9 +22,17 @@ function afterFcp() {
   deferrableStyles.rel = "stylesheet";
   deferrableStyles.href = "./index.css";
 
+  var deferrableDarkStyles = document.createElement("link");
+  deferrableDarkStyles.id = "deferrable-dark-styles";
+  deferrableDarkStyles.rel = "stylesheet";
+  deferrableDarkStyles.href = "./index-dark.css";
+
+  if (window.currentTheme !== "dark") deferrableDarkStyles.media = "(width: 10px)";
+
   var criticalStyles = document.getElementById("critical-styles");
 
   criticalStyles.parentNode.insertBefore(deferrableStyles, criticalStyles.nextSibling);
+  criticalStyles.parentNode.insertBefore(deferrableDarkStyles, deferrableStyles.nextSibling);
 }
 
 if (

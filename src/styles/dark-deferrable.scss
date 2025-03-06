@@ -1,0 +1,264 @@
+@use "sass:meta";
+
+@use "./util.scss" as *;
+
+:root {
+  color-scheme: dark;
+}
+
+#projects {
+  .bunny image {
+    filter: url(#bunny-glow);
+  }
+
+  h2 {
+    &::before {
+      $cyan-0: rgba(0, 39, 39, 0);
+      $cyan-1: rgba(0, 39, 39, 1);
+      $pink-0: rgba(41, 31, 33, 0);
+      $pink-1: rgba(41, 31, 33, 1);
+
+      border-color: #172b25;
+      background: linear-gradient(to bottom, $pink-0 1px, $pink-1 2px, $pink-0 3px) 0 1rem / 100%
+          2.5rem,
+        linear-gradient(to bottom, $cyan-0 1px, $cyan-1 2px, $cyan-0 0) 0 1.25rem / 100% 2.5rem,
+        linear-gradient(to right, $pink-0 1px, $pink-1 2px, $pink-0 3px) 1.5rem 0 / 2.5rem 100%,
+        linear-gradient(to right, $cyan-0 1px, $cyan-1 2px, $cyan-0 0) 1.25rem 0 / 2.5rem 100%;
+      background-color: #302f2f;
+    }
+
+    .shadow {
+      text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff,
+        0 0 2.5em #0ff;
+      text-shadow: 0 0 0.25em 1px #0ff, 0 0 0.5em 1px #0ff, 0 0 1em 1px #0ff, 0 0 1.5em 1px #0ff,
+        0 0 2em 1px #0ff, 0 0 2.5em 1px #0ff;
+
+      filter: url(#blur);
+    }
+  }
+}
+
+#projects {
+  .card {
+    border-color: skyblue;
+    background: #111;
+    box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.15);
+
+    img {
+      box-sizing: border-box;
+      border: 2px solid #404040;
+      background: #404040;
+    }
+
+    @mixin apply-focus-hover {
+      border-color: cyan;
+      background: #163c3c;
+      box-shadow: 0 0 0.5rem cyan(0.5), 0 0 3rem cyan(0.2);
+
+      img {
+        border-color: cyan;
+        background: cyan;
+      }
+    }
+
+    @mixin revert-focus-hover {
+      border-color: skyblue;
+      background: #111;
+      box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.15);
+
+      img {
+        border-color: #404040;
+        background: #404040;
+      }
+    }
+
+    @include focus-hover-states(
+      meta.get-mixin("apply-focus-hover"),
+      meta.get-mixin("revert-focus-hover")
+    );
+  }
+
+  .picoletta {
+    filter: drop-shadow(0 0 1rem yellow(0.2));
+
+    p {
+      color: #eaeaea;
+    }
+  }
+
+  .button-container button {
+    background: #111;
+    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
+
+    span {
+      border: none;
+    }
+
+    @mixin apply-focus-hover {
+      background: #163c3c;
+    }
+
+    @mixin revert-focus-hover {
+      background: #111;
+      box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
+    }
+
+    @include focus-hover-states(
+      meta.get-mixin("apply-focus-hover"),
+      meta.get-mixin("revert-focus-hover")
+    );
+  }
+}
+
+#me {
+  h2 {
+    transform: none;
+    background-color: black(0.75);
+    background-image: linear-gradient(cyan(0.15), cyan(0));
+    background-size: 100% 2px;
+    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
+
+    .shadow {
+      text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff,
+        0 0 2.5em #0ff;
+
+      filter: url(#blur);
+    }
+  }
+
+  h3 {
+    color: #ddd;
+  }
+
+  .controls button {
+    border-color: #2a2a2a;
+    background: #1a1a1a;
+    box-shadow: none;
+
+    @mixin apply-focus-hover {
+      border-color: #ffde69;
+      background: #414118;
+      box-shadow: 0 0 1rem rgba(255, 255, 0, 0.33);
+    }
+
+    @mixin revert-focus-hover {
+      border-color: #2a2a2a;
+      background: #1a1a1a;
+      box-shadow: none;
+    }
+
+    @include focus-hover-states(
+      meta.get-mixin("apply-focus-hover"),
+      meta.get-mixin("revert-focus-hover")
+    );
+  }
+}
+
+.faq {
+  .question {
+    border-color: #2a2a2a;
+    background: #1a1a1a;
+
+    -webkit-font-smoothing: antialiased;
+
+    @mixin apply-focus-hover {
+      border-color: #ffde69;
+      background: #313117;
+
+      &[aria-expanded="false"] {
+        box-shadow: 0.25rem 0.25rem 0.5rem yellow(0.25);
+      }
+
+      + .answer {
+        border-color: #ffde69;
+
+        &::before {
+          box-shadow: 0.25rem 0.25rem 0.5rem yellow(0.25);
+        }
+      }
+
+      .bottom {
+        background: #ffde69;
+      }
+    }
+
+    @mixin revert-focus-hover {
+      border-color: #2a2a2a;
+
+      &[aria-expanded="false"] {
+        background: #1a1a1a;
+        box-shadow: none;
+      }
+
+      + .answer {
+        border-color: #2a2a2a;
+
+        &::before {
+          box-shadow: none;
+        }
+      }
+
+      .bottom {
+        background: #2a2a2a;
+        box-shadow: none;
+      }
+    }
+
+    @include focus-hover-states(
+      meta.get-mixin("apply-focus-hover"),
+      meta.get-mixin("revert-focus-hover")
+    );
+
+    &[aria-expanded="false"] {
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath fill='%23fff' d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
+      }
+    }
+
+    &[aria-expanded="true"] {
+      background: #2a2a2a;
+
+      &::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='46'%3E%3Cpath fill='%23fff' d='M53 0 26.5 46 0 0Z'/%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  .answer {
+    border-color: #2a2a2a;
+    background: #1a1a1a;
+    box-shadow: none;
+
+    p,
+    ol,
+    ul {
+      color: #eee;
+    }
+  }
+
+  .bottom {
+    background: #2a2a2a;
+    box-shadow: none;
+  }
+}
+
+#credits {
+  color: white;
+  background: #111;
+  box-shadow: 0.5rem 0.5rem 1rem 0 aquamarine(0.1);
+}
+
+.p-fill-bg {
+  background: #0f1f18;
+  background: radial-gradient(closest-side, #132c22, #0f1f18);
+
+  fill: #0f1f18;
+}
+
+.p-fill-fg {
+  fill: #972;
+}
+
+.p-stroke-fg {
+  stroke: gold;
+}

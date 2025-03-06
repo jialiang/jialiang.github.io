@@ -19,10 +19,22 @@ window.setTheme = function (theme) {
   if (!window.isValidTheme(theme)) return;
   if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) return;
 
-  var darkStylesheet = document.getElementById("dark-styles");
+  var criticalDarkStylesheet = document.getElementById("critical-dark-styles");
+  var deferrableDarkStylesheet = document.getElementById("deferrable-dark-styles");
 
-  if (theme === "dark") darkStylesheet.removeAttribute("media");
-  if (theme === "light") darkStylesheet.setAttribute("media", "(width: 10px)");
+  if (theme === "dark") {
+    window.currentTheme = "dark";
+    criticalDarkStylesheet.removeAttribute("media");
+
+    if (deferrableDarkStylesheet) deferrableDarkStylesheet.removeAttribute("media");
+  }
+
+  if (theme === "light") {
+    window.currentTheme = "light";
+    criticalDarkStylesheet.setAttribute("media", "(width: 10px)");
+
+    if (deferrableDarkStylesheet) deferrableDarkStylesheet.setAttribute("media", "(width: 10px)");
+  }
 };
 
 window.setTheme(localStorage.getItem("theme"));

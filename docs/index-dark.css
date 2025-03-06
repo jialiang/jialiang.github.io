@@ -1,0 +1,221 @@
+:root {
+  color-scheme: dark;
+}
+
+#projects .bunny image {
+  filter: url(#bunny-glow);
+}
+#projects h2::before {
+  border-color: #172b25;
+  background: linear-gradient(to bottom, rgba(41, 31, 33, 0) 1px, rgb(41, 31, 33) 2px, rgba(41, 31, 33, 0) 3px) 0 1rem/100% 2.5rem, linear-gradient(to bottom, rgba(0, 39, 39, 0) 1px, rgb(0, 39, 39) 2px, rgba(0, 39, 39, 0) 0) 0 1.25rem/100% 2.5rem, linear-gradient(to right, rgba(41, 31, 33, 0) 1px, rgb(41, 31, 33) 2px, rgba(41, 31, 33, 0) 3px) 1.5rem 0/2.5rem 100%, linear-gradient(to right, rgba(0, 39, 39, 0) 1px, rgb(0, 39, 39) 2px, rgba(0, 39, 39, 0) 0) 1.25rem 0/2.5rem 100%;
+  background-color: #302f2f;
+}
+#projects h2 .shadow {
+  text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff, 0 0 2.5em #0ff;
+  text-shadow: 0 0 0.25em 1px #0ff, 0 0 0.5em 1px #0ff, 0 0 1em 1px #0ff, 0 0 1.5em 1px #0ff, 0 0 2em 1px #0ff, 0 0 2.5em 1px #0ff;
+  filter: url(#blur);
+}
+
+#projects .card {
+  border-color: skyblue;
+  background: #111;
+  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
+}
+#projects .card img {
+  box-sizing: border-box;
+  border: 2px solid #404040;
+  background: #404040;
+}
+#projects .card:focus, #projects .card:hover {
+  border-color: cyan;
+  background: #163c3c;
+  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 3rem rgba(0, 255, 255, 0.2);
+}
+#projects .card:focus img, #projects .card:hover img {
+  border-color: cyan;
+  background: cyan;
+}
+#projects .card:focus:not(:focus-visible):not(:hover) {
+  border-color: skyblue;
+  background: #111;
+  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
+}
+#projects .card:focus:not(:focus-visible):not(:hover) img {
+  border-color: #404040;
+  background: #404040;
+}
+@media (hover: none) {
+  #projects .card:hover:not(:focus-visible) {
+    border-color: skyblue;
+    background: #111;
+    box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
+  }
+  #projects .card:hover:not(:focus-visible) img {
+    border-color: #404040;
+    background: #404040;
+  }
+}
+#projects .picoletta {
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 0, 0.2));
+}
+#projects .picoletta p {
+  color: #eaeaea;
+}
+#projects .button-container button {
+  background: #111;
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+}
+#projects .button-container button span {
+  border: none;
+}
+#projects .button-container button:focus, #projects .button-container button:hover {
+  background: #163c3c;
+}
+#projects .button-container button:focus:not(:focus-visible):not(:hover) {
+  background: #111;
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+}
+@media (hover: none) {
+  #projects .button-container button:hover:not(:focus-visible) {
+    background: #111;
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+  }
+}
+
+#me h2 {
+  transform: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  background-image: linear-gradient(rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0));
+  background-size: 100% 2px;
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+}
+#me h2 .shadow {
+  text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff, 0 0 2.5em #0ff;
+  filter: url(#blur);
+}
+#me h3 {
+  color: #ddd;
+}
+#me .controls button {
+  border-color: #2a2a2a;
+  background: #1a1a1a;
+  box-shadow: none;
+}
+#me .controls button:focus, #me .controls button:hover {
+  border-color: #ffde69;
+  background: #414118;
+  box-shadow: 0 0 1rem rgba(255, 255, 0, 0.33);
+}
+#me .controls button:focus:not(:focus-visible):not(:hover) {
+  border-color: #2a2a2a;
+  background: #1a1a1a;
+  box-shadow: none;
+}
+@media (hover: none) {
+  #me .controls button:hover:not(:focus-visible) {
+    border-color: #2a2a2a;
+    background: #1a1a1a;
+    box-shadow: none;
+  }
+}
+
+.faq .question {
+  border-color: #2a2a2a;
+  background: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+.faq .question:focus, .faq .question:hover {
+  border-color: #ffde69;
+  background: #313117;
+}
+.faq .question:focus[aria-expanded=false], .faq .question:hover[aria-expanded=false] {
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 0, 0.25);
+}
+.faq .question:focus + .answer, .faq .question:hover + .answer {
+  border-color: #ffde69;
+}
+.faq .question:focus + .answer::before, .faq .question:hover + .answer::before {
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 0, 0.25);
+}
+.faq .question:focus .bottom, .faq .question:hover .bottom {
+  background: #ffde69;
+}
+.faq .question:focus:not(:focus-visible):not(:hover) {
+  border-color: #2a2a2a;
+}
+.faq .question:focus:not(:focus-visible):not(:hover)[aria-expanded=false] {
+  background: #1a1a1a;
+  box-shadow: none;
+}
+.faq .question:focus:not(:focus-visible):not(:hover) + .answer {
+  border-color: #2a2a2a;
+}
+.faq .question:focus:not(:focus-visible):not(:hover) + .answer::before {
+  box-shadow: none;
+}
+.faq .question:focus:not(:focus-visible):not(:hover) .bottom {
+  background: #2a2a2a;
+  box-shadow: none;
+}
+@media (hover: none) {
+  .faq .question:hover:not(:focus-visible) {
+    border-color: #2a2a2a;
+  }
+  .faq .question:hover:not(:focus-visible)[aria-expanded=false] {
+    background: #1a1a1a;
+    box-shadow: none;
+  }
+  .faq .question:hover:not(:focus-visible) + .answer {
+    border-color: #2a2a2a;
+  }
+  .faq .question:hover:not(:focus-visible) + .answer::before {
+    box-shadow: none;
+  }
+  .faq .question:hover:not(:focus-visible) .bottom {
+    background: #2a2a2a;
+    box-shadow: none;
+  }
+}
+.faq .question[aria-expanded=false]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath fill='%23fff' d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
+}
+.faq .question[aria-expanded=true] {
+  background: #2a2a2a;
+}
+.faq .question[aria-expanded=true]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='46'%3E%3Cpath fill='%23fff' d='M53 0 26.5 46 0 0Z'/%3E%3C/svg%3E");
+}
+.faq .answer {
+  border-color: #2a2a2a;
+  background: #1a1a1a;
+  box-shadow: none;
+}
+.faq .answer p,
+.faq .answer ol,
+.faq .answer ul {
+  color: #eee;
+}
+.faq .bottom {
+  background: #2a2a2a;
+  box-shadow: none;
+}
+
+#credits {
+  color: white;
+  background: #111;
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(127, 255, 212, 0.1);
+}
+
+.p-fill-bg {
+  background: #0f1f18;
+  background: radial-gradient(closest-side, #132c22, #0f1f18);
+  fill: #0f1f18;
+}
+
+.p-fill-fg {
+  fill: #972;
+}
+
+.p-stroke-fg {
+  stroke: gold;
+}

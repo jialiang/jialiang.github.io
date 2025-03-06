@@ -4,5 +4,5 @@
     <feColorMatrix in="noise" result="noise2" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.25 0" />
     <feComposite in="noise2" in2="noise2" k2="1" k4=".85" operator="arithmetic" />
   </filter>
-  <path fill="#fff" d="M0 0h100v100H0z" filter="url(#a)" />
+  <path fill="#f8f8f8" d="M0 0h100v100H0z" filter="url(#a)" />
 </svg>
