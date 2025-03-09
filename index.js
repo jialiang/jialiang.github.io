@@ -105,6 +105,21 @@ const generateJavaScript = async () => {
 
 const generateFonts = fonts.subsetFonts;
 
+const base64Fonts = async () => {
+  const [html, notoSansJPCriticalRegularBase64, notoSansJPCriticalBoldBase64] = await Promise.all([
+    fs.readFile("./docs/index.html", { encoding: "utf-8" }),
+    fs.readFile("./docs/fonts/noto-sans-jp-critical-regular.woff2", { encoding: "base64" }),
+    fs.readFile("./docs/fonts/noto-sans-jp-critical-bold.woff2", { encoding: "base64" }),
+  ]);
+
+  await fs.writeFile(
+    "./docs/index.html",
+    html
+      .replace("<--noto-sans-jp-critical-regular.woff2-->", notoSansJPCriticalRegularBase64)
+      .replace("<--noto-sans-jp-critical-bold.woff2-->", notoSansJPCriticalBoldBase64)
+  );
+};
+
 const timeTask = async (task, level = 0, args = []) => {
   const start = performance.now();
 
@@ -130,6 +145,7 @@ const build = async () => {
     const htmlStr = await timeTask(generateHtml, 1, [cssObj, jsObj]);
 
     await timeTask(generateFonts, 1, [htmlStr, cssObj]);
+    await timeTask(base64Fonts, 1);
   };
 
   await Promise.all([main(), timeTask(copy, 0, ["./static", "./docs"])]);
