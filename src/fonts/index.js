@@ -9,18 +9,14 @@ import { Parser as HtmlParser, DomUtils, DomHandler } from "htmlparser2";
 import * as cssSelect from "css-select";
 
 const normalizeValue = (value) => {
-  switch (value) {
-    case "700":
-      return "bold";
-    case "400":
-      return "regular";
-    case '"Noto Sans JP", sans-serif':
-      return "noto-sans-jp";
-    case '"Chihaya Jun", sans-serif':
-      return "chihaya-jun";
-    default:
-      return false;
-  }
+  if (value === "700") return "bold";
+  if (value === "400") return "regular";
+
+  if (value.includes("Noto Sans JP Critical")) return "noto-sans-jp-critical";
+  if (value.includes("Noto Sans JP")) return "noto-sans-jp";
+  if (value.includes("Chihaya Jun")) return "chihaya-jun";
+
+  return false;
 };
 
 const fontToExtraCharacters = {
@@ -107,8 +103,10 @@ const subsetFonts = async (htmlStr, cssObj) => {
 
   await fs.mkdir("./docs/fonts", { recursive: true });
 
+  const subsetTasks = [];
+
   Object.entries(fontToCharacters).forEach(([fontName, characters]) => {
-    const extraCharacters = fontToExtraCharacters[fontName];
+    const extraCharacters = fontToExtraCharacters[fontName] || "";
     const characterArray = (characters + extraCharacters).split("");
     const uniqueCharactersSet = new Set(characterArray);
     const textToSubset = Array.from(uniqueCharactersSet).join("");
@@ -116,24 +114,32 @@ const subsetFonts = async (htmlStr, cssObj) => {
     const formats = ["woff", "woff2"];
 
     formats.forEach((format) => {
-      const childProcess = spawn(
-        "pyftsubset",
-        [
-          `./src/fonts/originals/${fontName}.ttf`,
-          `--text="${textToSubset}"`,
-          "--no-ignore-missing-unicodes",
-          `--output-file=./docs/fonts/${fontName}.${format}`,
-          `--flavor=${format}`,
-          "--with-zopfli",
-        ],
-        { shell: true, stdio: "inherit" }
-      );
+      const subsetTask = new Promise((resolve) => {
+        const childProcess = spawn(
+          "pyftsubset",
+          [
+            `./src/fonts/originals/${fontName.replace("-critical", "")}.ttf`,
+            `--text="${textToSubset}"`,
+            "--no-ignore-missing-unicodes",
+            `--output-file=./docs/fonts/${fontName}.${format}`,
+            `--flavor=${format}`,
+            "--with-zopfli",
+            "--harfbuzz-repacker",
+          ],
+          { shell: true, stdio: "inherit" }
+        );
 
-      childProcess.on("exit", (code) => {
-        console.log(`Subset font ${fontName}.${format} exited with code ${code}.`);
+        childProcess.on("exit", (code) => {
+          console.log(`Subset font ${fontName}.${format} exited with code ${code}.`);
+          resolve();
+        });
       });
+
+      subsetTasks.push(subsetTask);
     });
   });
+
+  await Promise.all(subsetTasks);
 };
 
 export default { subsetFonts };

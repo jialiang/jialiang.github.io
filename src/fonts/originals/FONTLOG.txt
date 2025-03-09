@@ -1,0 +1,8 @@
+FONTLOG for Chihaya Jyun
+
+- Autowidth all non-whitespace glyphs (seperation: 150, min: 10, max: 300)
+- Scaled uniformly to 120% for glyphs U+20 to U+7F
+- Center all glyphs in width
+- Change OS/2 version to 4
+- Change all OS/2 metrics to 0 offset
+- Change OS/2 Sub/Super, Panose and Charset to Default
