@@ -79,14 +79,12 @@ header {
 
   h1 .shadow {
     text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff;
-    text-shadow: 0 0 0.25em 1px #0ff, 0 0 0.5em 1px #0ff, 0 0 1em 1px #0ff, 0 0 1.5em 1px #0ff;
 
     filter: url(#blur);
   }
 
   h2 .shadow {
     text-shadow: 0 0 0.25em #0fa, 0 0 0.5em #0fa, 0 0 1em #0fa, 0 0 1.5em #0fa;
-    text-shadow: 0 0 0.25em 1px #0fa, 0 0 0.5em 1px #0fa, 0 0 1em 1px #0fa, 0 0 1.5em 1px #0fa;
 
     filter: url(#blur);
   }

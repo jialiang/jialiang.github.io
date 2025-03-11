@@ -10,7 +10,7 @@ const template = `<div class="faq" itemscope itemprop="mainEntity" itemtype="htt
     aria-expanded="false"
     aria-controls="{{id}}">
    {{question}}
-   <div class="bottom"></div>
+   <span class="bottom"></span>
   </h4>
 
   <div
