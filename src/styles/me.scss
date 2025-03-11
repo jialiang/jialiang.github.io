@@ -19,10 +19,30 @@
     height: 12.334rem;
     margin: 0 -2.5rem 0 -1rem;
     cursor: pointer;
-    transition: 0.5s transform;
+    transform: rotateZ(1deg);
     vertical-align: middle;
 
     -webkit-tap-highlight-color: black(0);
+
+    &.spin-1 {
+      animation: 5s spin-1;
+    }
+
+    &.spin-2 {
+      animation: 5s spin-2;
+    }
+
+    @keyframes spin-1 {
+      100% {
+        transform: rotateZ(3600deg);
+      }
+    }
+
+    @keyframes spin-2 {
+      100% {
+        transform: rotateZ(3600deg);
+      }
+    }
 
     @media (prefers-reduced-motion) {
       cursor: initial !important;
@@ -58,6 +78,7 @@
 
     button {
       font-size: 0.875rem;
+      font-weight: 500;
       margin: 0 0 0 0.5rem;
       padding: 0.5rem 0.75rem;
       letter-spacing: 0;
@@ -95,7 +116,7 @@
 
   h3 {
     font-size: 0.875rem;
-    margin: 3rem 0 1.5rem 0;
+    margin: 3rem 0 2rem 0;
     letter-spacing: 0;
     color: #555;
   }

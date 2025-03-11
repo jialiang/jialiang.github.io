@@ -28,6 +28,16 @@
 
 @font-face {
   font-family: "Noto Sans JP";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+
+  src: url(./fonts/noto-sans-jp-medium.woff2) format("woff2"),
+    url(./fonts/noto-sans-jp-medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans JP";
   font-weight: 700;
   font-style: normal;
   font-display: swap;

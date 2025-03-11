@@ -2,19 +2,19 @@
 
 ## What does your current company do?
 
-We're a multinational marketing technology company catering to the renovation and furnishing industry.
+We're a multinational marketing technology company for the renovation and furnishing industry.
 
-We help interior firms increase their business' visibility, drive leads to them and offer lead management tools.
+We help companies in brand visibility, lead generation and offer lead management tools.
 
-We help homeowners in the renovation process by providing services like recommendations, deposit safeguards and dispute resolution.
+For renovating homeowners, we provide services like recommendations, deposit safeguards and dispute resolution.
 
 ## How big is the team you're currently in?
 
-At the moment, our tech team consists of 6 people.
+The team I'm on consists of 6 people.
 
 ## What do you do at your current job?
 
-I propose, implement and maintain technical solutions to business problems.
+Broadly, I propose, implement and maintain technical solutions to business problems.
 
 I take on various responsibilities depending on the business priorities, whether that be the frontend, backend, database development or IT operations.
 
@@ -33,13 +33,13 @@ I'm currently on a hybrid work arrangement of 1 day in the office and 4 days fro
 
 # CULTURE FIT
 
-## Why are you interested in working at our company?
+## Why are you interested in our company?
 
 I send each application after careful consideration rather than relying on large numbers.
 
 I apply because I'm confident that I would contribute meaningfully, believe that our values align and feel positive about your company's offerings.
 
-## How do you handle project deadlines and prioritise tasks?
+## How do you handle project deadlines?
 
 I try to break down and tackle large tasks into smaller independently releasable chunks.
 These tasks are then worked on in order of importance and urgency.
@@ -47,7 +47,7 @@ These tasks are then worked on in order of importance and urgency.
 Frequent communication with stakeholders helps manage expectations.
 E.g. time estimates, current progress, blockers etc.
 
-## Describe your ideal work environment.
+## What is your ideal work environment?
 
 My ideal work environment prioritises work-life balance along with a balanced pace and an outcome-oriented culture.
 
@@ -61,7 +61,7 @@ I aim to become a trusted resource for colleagues and a key driver of progress.
 
 # EXPERIENCE
 
-## How do you stay updated with the latest web development trends and technologies?
+## How do you stay updated?
 
 I keep myself informed by engaging in online communities like Reddit.
 A diverse range of articles and projects related to web development are shared and discussed there.
@@ -69,7 +69,7 @@ A diverse range of articles and projects related to web development are shared a
 I also build personal projects from time to time to solve problems in my daily life.
 These projects sometimes lead me to trying out new tools, technologies and methods.
 
-## Have you led a development team or mentored junior developers?
+## Have you led a team or mentored juniors?
 
 I've mentored junior developers and collaborated closely with teammates.
 

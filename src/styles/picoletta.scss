@@ -70,18 +70,19 @@
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
     margin: 0 0 0 0;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.33;
     margin: 0;
-    padding: 1.5rem 0.25em;
+    padding: 1rem 0.25em 1.5rem 0.25rem;
     text-align: left;
     letter-spacing: 0;
+    color: #eee;
 
     @include noto-sans-jp-font;
   }

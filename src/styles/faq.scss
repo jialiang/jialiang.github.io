@@ -3,15 +3,15 @@
 @use "./util.scss" as *;
 
 .faq {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.33;
   position: relative;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   letter-spacing: 0;
   border-radius: 1rem;
 
   .question {
-    margin: 0 0 -2px 0;
+    margin: 0;
     padding: 1rem 1rem 1rem 2.5rem;
     cursor: pointer;
     border: 2px solid #ffe6b7;
@@ -76,8 +76,11 @@
     }
 
     &:active {
-      margin-bottom: 0;
       transform: translateY(2px);
+
+      + .answer {
+        transform: translateY(2px);
+      }
 
       .bottom {
         visibility: hidden;
@@ -107,13 +110,15 @@
   }
 
   .answer {
+    font-weight: 500;
     display: none;
     padding: 1rem 1rem 0.5rem 2.5rem;
     border: 2px solid #ffe6b7;
     border-top: none;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
-    background: #fff5e2;
+    background: snow;
+    color: #666;
 
     &::before {
       position: absolute;

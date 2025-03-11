@@ -125,17 +125,18 @@
   text-align: center;
 }
 .picoletta h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 400;
   margin: 0 0 0 0;
 }
 .picoletta p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.33;
   margin: 0;
-  padding: 1.5rem 0.25em;
+  padding: 1rem 0.25em 1.5rem 0.25rem;
   text-align: left;
   letter-spacing: 0;
+  color: #eee;
   font-family: "Noto Sans JP", sans-serif;
   font-size-adjust: 0.545;
 }
@@ -414,9 +415,25 @@
   height: 12.334rem;
   margin: 0 -2.5rem 0 -1rem;
   cursor: pointer;
-  transition: 0.5s transform;
+  transform: rotateZ(1deg);
   vertical-align: middle;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#me .flower-1.spin-1 {
+  animation: 5s spin-1;
+}
+#me .flower-1.spin-2 {
+  animation: 5s spin-2;
+}
+@keyframes spin-1 {
+  100% {
+    transform: rotateZ(3600deg);
+  }
+}
+@keyframes spin-2 {
+  100% {
+    transform: rotateZ(3600deg);
+  }
 }
 @media (prefers-reduced-motion) {
   #me .flower-1 {
@@ -450,6 +467,7 @@
 }
 #me .controls button {
   font-size: 0.875rem;
+  font-weight: 500;
   margin: 0 0 0 0.5rem;
   padding: 0.5rem 0.75rem;
   letter-spacing: 0;
@@ -482,7 +500,7 @@
 }
 #me h3 {
   font-size: 0.875rem;
-  margin: 3rem 0 1.5rem 0;
+  margin: 3rem 0 2rem 0;
   letter-spacing: 0;
   color: #555;
 }
@@ -499,15 +517,15 @@
 }
 
 .faq {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.33;
   position: relative;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   letter-spacing: 0;
   border-radius: 1rem;
 }
 .faq .question {
-  margin: 0 0 -2px 0;
+  margin: 0;
   padding: 1rem 1rem 1rem 2.5rem;
   cursor: pointer;
   border: 2px solid #ffe6b7;
@@ -571,7 +589,9 @@
   border-color: rgba(0, 0, 0, 0);
 }
 .faq .question:active {
-  margin-bottom: 0;
+  transform: translateY(2px);
+}
+.faq .question:active + .answer {
   transform: translateY(2px);
 }
 .faq .question:active .bottom {
@@ -593,13 +613,15 @@
   display: block;
 }
 .faq .answer {
+  font-weight: 500;
   display: none;
   padding: 1rem 1rem 0.5rem 2.5rem;
   border: 2px solid #ffe6b7;
   border-top: none;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  background: #fff5e2;
+  background: snow;
+  color: #666;
 }
 .faq .answer::before {
   position: absolute;

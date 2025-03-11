@@ -10,6 +10,7 @@ import * as cssSelect from "css-select";
 
 const normalizeValue = (value) => {
   if (value === "700") return "bold";
+  if (value === "500") return "medium";
   if (value === "400") return "regular";
 
   if (value.includes("Noto Sans JP Critical")) return "noto-sans-jp-critical";

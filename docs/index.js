@@ -47,15 +47,14 @@ function initProjectNav() {
 
 function initFlowerSpin() {
   var flower = document.querySelector(".flower-1");
+  var spin = 1;
 
   if (!flower || isPrefersReducedMotion()) return;
 
   flower.addEventListener("click", function () {
-    if (flower.style.msTransform) flower.style.msTransform = "";
-    else flower.style.msTransform = "rotate(560deg)";
-
-    if (flower.style.transform) flower.style.transform = "";
-    else flower.style.transform = "rotate(560deg)";
+    console.log("abc");
+    flower.className = "flower-1 spin-" + spin;
+    spin = spin === 1 ? 2 : 1;
   });
 }
 
