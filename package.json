@@ -1,7 +1,7 @@
 {
   "name": "jialiang.github.io",
   "type": "module",
-  "version": "6.0.16",
+  "version": "6.0.17",
   "scripts": {
     "watch": "npx nodemon --watch index.js --watch ./src --watch ./static --ext *",
     "serve": "node http-server.js",

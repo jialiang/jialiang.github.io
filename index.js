@@ -56,6 +56,7 @@ const generateHtml = async (cssObj, jsObj) => {
     collapseWhitespace: true,
     collapseInlineTagWhitespace: true,
     decodeEntities: true,
+    removeComments: true,
   });
 
   const minifiedHtmlWithWhitespace = minifiedHtml
