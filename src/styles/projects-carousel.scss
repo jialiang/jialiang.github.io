@@ -14,17 +14,25 @@
   li {
     display: inline-block;
     vertical-align: middle;
+
+    &:first-child {
+      position: relative;
+      top: -4rem;
+
+      @media (max-width: 61rem) {
+        top: -2rem;
+      }
+    }
   }
 
   @media (max-width: 61rem) {
     overflow: auto;
     white-space: nowrap;
-
     -ms-scrollbar-arrow-color: #fd87b5;
     scrollbar-arrow-color: #fd87b5;
     -ms-scrollbar-base-color: white;
     scrollbar-base-color: white;
-    scrollbar-color: #fd87b5 rgba(0, 0, 0, 0);
+    scrollbar-color: #fd87b5 rgba(0, 0, 0, 0%);
     -ms-scrollbar-face-color: #fd87b5;
     scrollbar-face-color: #fd87b5;
     -ms-scrollbar-shadow-color: #fd87b5;
@@ -40,7 +48,7 @@
     }
 
     &::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0);
+      background: rgba(0, 0, 0, 0%);
     }
   }
 }

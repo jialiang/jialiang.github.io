@@ -3,7 +3,7 @@
 }
 
 #projects .bunny image {
-  filter: url(#bunny-glow);
+  filter: url("#bunny-glow");
 }
 #projects h2::before {
   border-color: #172b25;
@@ -11,15 +11,14 @@
   background-color: #302f2f;
 }
 #projects h2 .shadow {
+  filter: url("#blur");
   text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff, 0 0 2.5em #0ff;
   text-shadow: 0 0 0.25em 1px #0ff, 0 0 0.5em 1px #0ff, 0 0 1em 1px #0ff, 0 0 1.5em 1px #0ff, 0 0 2em 1px #0ff, 0 0 2.5em 1px #0ff;
-  filter: url(#blur);
 }
-
 #projects .card {
+  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
   border-color: skyblue;
   background: #111;
-  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
 }
 #projects .card img {
   box-sizing: border-box;
@@ -27,28 +26,28 @@
   background: #404040;
 }
 #projects .card:focus, #projects .card:hover {
+  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 3rem rgba(0, 255, 255, 0.2);
   border-color: cyan;
   background: #163c3c;
-  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 3rem rgba(0, 255, 255, 0.2);
 }
 #projects .card:focus img, #projects .card:hover img {
   border-color: cyan;
   background: cyan;
 }
-#projects .card:focus:not(:focus-visible):not(:hover) {
+#projects .card:focus:not(:focus-visible, :hover) {
+  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
   border-color: skyblue;
   background: #111;
-  box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
 }
-#projects .card:focus:not(:focus-visible):not(:hover) img {
+#projects .card:focus:not(:focus-visible, :hover) img {
   border-color: #404040;
   background: #404040;
 }
 @media (hover: none) {
   #projects .card:hover:not(:focus-visible) {
+    box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
     border-color: skyblue;
     background: #111;
-    box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);
   }
   #projects .card:hover:not(:focus-visible) img {
     border-color: #404040;
@@ -62,8 +61,8 @@
   color: #eaeaea;
 }
 #projects .button-container button {
-  background: #111;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+  background: #111;
 }
 #projects .button-container button span {
   border: none;
@@ -71,51 +70,51 @@
 #projects .button-container button:focus, #projects .button-container button:hover {
   background: #163c3c;
 }
-#projects .button-container button:focus:not(:focus-visible):not(:hover) {
-  background: #111;
+#projects .button-container button:focus:not(:focus-visible, :hover) {
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+  background: #111;
 }
 @media (hover: none) {
   #projects .button-container button:hover:not(:focus-visible) {
-    background: #111;
     box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+    background: #111;
   }
 }
 
 #me h2 {
   transform: none;
-  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
   background-image: linear-gradient(rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0));
   background-size: 100% 2px;
-  box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 #me h2 .shadow {
+  filter: url("#blur");
   text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff, 0 0 2.5em #0ff;
-  filter: url(#blur);
 }
 #me h3 {
   color: #ddd;
 }
 #me .controls button {
+  box-shadow: none;
   border-color: #2a2a2a;
   background: #1a1a1a;
-  box-shadow: none;
 }
 #me .controls button:focus, #me .controls button:hover {
+  box-shadow: 0 0 1rem rgba(255, 255, 0, 0.33);
   border-color: #ffde69;
   background: #414118;
-  box-shadow: 0 0 1rem rgba(255, 255, 0, 0.33);
 }
-#me .controls button:focus:not(:focus-visible):not(:hover) {
+#me .controls button:focus:not(:focus-visible, :hover) {
+  box-shadow: none;
   border-color: #2a2a2a;
   background: #1a1a1a;
-  box-shadow: none;
 }
 @media (hover: none) {
   #me .controls button:hover:not(:focus-visible) {
+    box-shadow: none;
     border-color: #2a2a2a;
     background: #1a1a1a;
-    box-shadow: none;
   }
 }
 
@@ -140,30 +139,30 @@
 .faq .question:focus .bottom, .faq .question:hover .bottom {
   background: #ffde69;
 }
-.faq .question:focus:not(:focus-visible):not(:hover) {
+.faq .question:focus:not(:focus-visible, :hover) {
   border-color: #2a2a2a;
 }
-.faq .question:focus:not(:focus-visible):not(:hover)[aria-expanded=false] {
+.faq .question:focus:not(:focus-visible, :hover)[aria-expanded=false] {
+  box-shadow: none;
   background: #1a1a1a;
-  box-shadow: none;
 }
-.faq .question:focus:not(:focus-visible):not(:hover) + .answer {
+.faq .question:focus:not(:focus-visible, :hover) + .answer {
   border-color: #2a2a2a;
 }
-.faq .question:focus:not(:focus-visible):not(:hover) + .answer::before {
+.faq .question:focus:not(:focus-visible, :hover) + .answer::before {
   box-shadow: none;
 }
-.faq .question:focus:not(:focus-visible):not(:hover) .bottom {
-  background: #2a2a2a;
+.faq .question:focus:not(:focus-visible, :hover) .bottom {
   box-shadow: none;
+  background: #2a2a2a;
 }
 @media (hover: none) {
   .faq .question:hover:not(:focus-visible) {
     border-color: #2a2a2a;
   }
   .faq .question:hover:not(:focus-visible)[aria-expanded=false] {
-    background: #1a1a1a;
     box-shadow: none;
+    background: #1a1a1a;
   }
   .faq .question:hover:not(:focus-visible) + .answer {
     border-color: #2a2a2a;
@@ -172,8 +171,8 @@
     box-shadow: none;
   }
   .faq .question:hover:not(:focus-visible) .bottom {
-    background: #2a2a2a;
     box-shadow: none;
+    background: #2a2a2a;
   }
 }
 .faq .question[aria-expanded=false]::before {
@@ -186,9 +185,9 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='46'%3E%3Cpath fill='%23fff' d='M53 0 26.5 46 0 0Z'/%3E%3C/svg%3E");
 }
 .faq .answer {
+  box-shadow: none;
   border-color: #2a2a2a;
   background: #1a1a1a;
-  box-shadow: none;
 }
 .faq .answer p,
 .faq .answer ol,
@@ -196,14 +195,14 @@
   color: #eee;
 }
 .faq .bottom {
-  background: #2a2a2a;
   box-shadow: none;
+  background: #2a2a2a;
 }
 
 #credits {
-  color: white;
-  background: #111;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(127, 255, 212, 0.1);
+  background: #111;
+  color: white;
 }
 
 .p-fill-bg {

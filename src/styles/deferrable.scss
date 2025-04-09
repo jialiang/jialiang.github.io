@@ -1,18 +1,18 @@
-@use "./projects.scss";
+@use "./projects";
 
-@use "./picoletta.scss";
+@use "./picoletta";
 
-@use "./projects-carousel.scss";
+@use "./projects-carousel";
 
-@use "./project-cards.scss";
+@use "./project-cards";
 
-@use "./projects-carousel-buttons.scss";
+@use "./projects-carousel-buttons";
 
-@use "./me.scss";
+@use "./me";
 
-@use "./faq.scss";
+@use "./faq";
 
-@use "./credits.scss";
+@use "./credits";
 
 section {
   display: block;

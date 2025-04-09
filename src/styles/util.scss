@@ -42,7 +42,7 @@
     @include meta.apply($apply-focus-hover);
   }
 
-  &:focus:not(:focus-visible):not(:hover) {
+  &:focus:not(:focus-visible, :hover) {
     @include meta.apply($revert-focus-hover);
   }
 

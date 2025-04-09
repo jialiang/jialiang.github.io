@@ -1,23 +1,24 @@
 @use "./util.scss" as *;
 
 #credits {
-  line-height: 1.5;
   display: block;
   box-sizing: border-box;
-  width: 25rem;
-  max-width: calc(100% - 2rem);
-  margin: 0 auto 6rem auto;
-  padding: 1rem 2rem;
+  margin: 0 auto 6rem;
+  box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
   border: 1px solid aquamarine;
   border-bottom: 4px solid aquamarine;
   border-radius: 1rem;
-  background: linear-gradient(snow(0), snow),
+  background:
+    linear-gradient(snow(0), snow),
     radial-gradient(aquamarine 25%, aquamarine(0) 0) 0 0 / 5px 5px;
   background-color: white;
-  box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
+  padding: 1rem 2rem;
+  width: 25rem;
+  max-width: calc(100% - 2rem);
+  line-height: 1.5;
 
   p {
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1rem;
   }
 
   a::after {

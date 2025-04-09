@@ -1,25 +1,25 @@
 @use "./util.scss" as *;
 
 .picoletta {
-  font-size: 0;
-  position: relative;
   display: inline-block;
-  width: 21rem;
-  margin: 0 0 0 -1rem;
+  position: relative;
   vertical-align: middle;
+  margin: 0 0 0 -1rem;
+  width: 21rem;
   color: white;
+  font-size: 0;
 
   @media (max-width: 39rem) {
-    right: -2.5rem;
     display: block;
-    margin: -6.5rem auto 0 auto;
+    right: -2.5rem;
+    margin: -6.5rem auto 0;
   }
 
   .top-arch,
   .bottom-arch {
+    margin: 0 -0.1rem;
     width: 15rem;
     height: 6rem;
-    margin: 0 -0.1rem;
   }
 
   .top-left-corner {
@@ -28,21 +28,21 @@
   }
 
   .top-right-corner {
+    transform: scaleX(-1);
     width: 3rem;
     height: 6rem;
-    transform: scaleX(-1);
   }
 
   .bottom-left-corner {
+    transform: scaleY(-1);
     width: 3rem;
     height: 6rem;
-    transform: scaleY(-1);
   }
 
   .bottom-right-corner {
+    transform: scaleX(-1) scaleY(-1);
     width: 3rem;
     height: 6rem;
-    transform: scaleX(-1) scaleY(-1);
   }
 
   .border-left {
@@ -57,45 +57,44 @@
     position: absolute;
     top: 0;
     right: -2.9rem;
+    transform: scaleX(-1);
     width: 3rem;
     height: 100%;
-    transform: scaleX(-1);
   }
 
   .text-container {
     position: relative;
-    width: 15rem;
     margin: -0.1rem auto;
+    width: 15rem;
     text-align: center;
   }
 
   h3 {
-    font-size: 1.6rem;
+    margin: 0;
     font-weight: 400;
-    margin: 0 0 0 0;
+    font-size: 1.6rem;
   }
 
   p {
-    font-size: 1.1rem;
-    line-height: 1.33;
     margin: 0;
     padding: 1rem 0.25em 1.5rem 0.25rem;
-    text-align: left;
-    letter-spacing: 0;
     color: #eee;
+    font-size: 1.1rem;
+    line-height: 1.33;
+    letter-spacing: 0;
+    text-align: left;
 
     @include noto-sans-jp-font;
   }
 
   a {
-    margin: 0 0 0.1em 0;
+    margin: 0 0 0.1em;
     color: deepskyblue;
   }
 }
 
 .p-fill-bg {
   background: #353841;
-
   fill: #353841;
 }
 

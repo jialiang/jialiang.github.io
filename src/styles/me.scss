@@ -4,24 +4,23 @@
 
 #me {
   .paper {
+    padding: 5rem 2rem 4rem;
     width: 36rem;
-    padding: 5rem 2rem 4rem 2rem;
   }
 
   .header {
+    margin: -11rem auto 0;
     max-width: 100%;
-    margin: -11rem auto 0 auto;
     text-align: center;
   }
 
   .flower-1 {
+    vertical-align: middle;
+    transform: rotateZ(1deg);
+    cursor: pointer;
+    margin: 0 -2.5rem 0 -1rem;
     width: 12.5rem;
     height: 12.334rem;
-    margin: 0 -2.5rem 0 -1rem;
-    cursor: pointer;
-    transform: rotateZ(1deg);
-    vertical-align: middle;
-
     -webkit-tap-highlight-color: black(0);
 
     &.spin-1 {
@@ -45,26 +44,26 @@
     }
 
     @media (prefers-reduced-motion) {
-      cursor: initial !important;
       transition: none !important;
+      cursor: initial !important;
     }
   }
 
   h2 {
-    position: relative;
     display: inline-block;
-    box-sizing: border-box;
-    width: 15rem;
-    max-width: 100%;
-    margin: 0;
-    padding: 1rem;
-    transform: rotateZ(-2.5deg);
+    position: relative;
     vertical-align: middle;
+    transform: rotateZ(-2.5deg);
+    box-sizing: border-box;
+    margin: 0;
+    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
     border: 6px double #00ffa9;
     border-radius: 2rem;
     background: gold(0.25);
     background: linear-gradient(gold(0.25), gold(0)) 0 0 / 100% 2px;
-    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
+    padding: 1rem;
+    width: 15rem;
+    max-width: 100%;
 
     abbr {
       display: block;
@@ -73,21 +72,21 @@
   }
 
   .controls {
-    margin: 1.5rem 0 -1.5rem 0;
+    margin: 1.5rem 0 -1.5rem;
     text-align: right;
 
     button {
-      font-size: 0.875rem;
-      font-weight: 500;
       margin: 0 0 0 0.5rem;
-      padding: 0.5rem 0.75rem;
-      letter-spacing: 0;
-      color: inherit;
+      box-shadow: 0.25rem 0.25rem 0.5rem black(0.1);
       border: 2px solid #ffe6b7;
       border-bottom-width: 3px;
       border-radius: 1rem;
       background: #fff5e2;
-      box-shadow: 0.25rem 0.25rem 0.5rem black(0.1);
+      padding: 0.5rem 0.75rem;
+      color: inherit;
+      font-weight: 500;
+      font-size: 0.875rem;
+      letter-spacing: 0;
 
       &::after {
         border-radius: 1.5rem;
@@ -115,10 +114,10 @@
   }
 
   h3 {
-    font-size: 0.875rem;
-    margin: 3rem 0 2rem 0;
-    letter-spacing: 0;
+    margin: 3rem 0 2rem;
     color: #555;
+    font-size: 0.875rem;
+    letter-spacing: 0;
   }
 
   @media (max-width: 34rem) {
@@ -127,11 +126,11 @@
     }
 
     .flower-1 {
-      margin: 0 0 -2.5rem 0;
+      margin: 0 0 -2.5rem;
     }
 
     .controls {
-      margin: 3rem 0 -1.5rem 0;
+      margin: 3rem 0 -1.5rem;
     }
   }
 }

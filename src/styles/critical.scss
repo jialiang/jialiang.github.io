@@ -1,15 +1,15 @@
-@use "./fonts.scss";
+@use "./fonts";
 
-@use "./globals.scss";
+@use "./globals";
 
-@use "./background.scss";
+@use "./background";
 
-@use "./anchors-buttons.scss";
+@use "./anchors-buttons";
 
-@use "./theme-toggle.scss";
+@use "./theme-toggle";
 
-@use "./contact-links.scss";
+@use "./contact-links";
 
-@use "./header.scss";
+@use "./header";
 
-@use "./usp.scss";
+@use "./usp";

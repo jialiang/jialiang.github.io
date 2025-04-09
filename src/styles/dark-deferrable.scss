@@ -8,19 +8,19 @@
 
 #projects {
   .bunny image {
-    filter: url(#bunny-glow);
+    filter: url("#bunny-glow");
   }
 
   h2 {
     &::before {
-      $cyan-0: rgba(0, 39, 39, 0);
-      $cyan-1: rgba(0, 39, 39, 1);
-      $pink-0: rgba(41, 31, 33, 0);
-      $pink-1: rgba(41, 31, 33, 1);
+      $cyan-0: rgba(0, 39, 39, 0%);
+      $cyan-1: rgba(0, 39, 39, 100%);
+      $pink-0: rgba(41, 31, 33, 0%);
+      $pink-1: rgba(41, 31, 33, 100%);
 
       border-color: #172b25;
-      background: linear-gradient(to bottom, $pink-0 1px, $pink-1 2px, $pink-0 3px) 0 1rem / 100%
-          2.5rem,
+      background:
+        linear-gradient(to bottom, $pink-0 1px, $pink-1 2px, $pink-0 3px) 0 1rem / 100% 2.5rem,
         linear-gradient(to bottom, $cyan-0 1px, $cyan-1 2px, $cyan-0 0) 0 1.25rem / 100% 2.5rem,
         linear-gradient(to right, $pink-0 1px, $pink-1 2px, $pink-0 3px) 1.5rem 0 / 2.5rem 100%,
         linear-gradient(to right, $cyan-0 1px, $cyan-1 2px, $cyan-0 0) 1.25rem 0 / 2.5rem 100%;
@@ -28,21 +28,30 @@
     }
 
     .shadow {
-      text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff,
+      filter: url("#blur");
+      text-shadow:
+        0 0 0.25em #0ff,
+        0 0 0.5em #0ff,
+        0 0 1em #0ff,
+        0 0 1.5em #0ff,
+        0 0 2em #0ff,
         0 0 2.5em #0ff;
-      text-shadow: 0 0 0.25em 1px #0ff, 0 0 0.5em 1px #0ff, 0 0 1em 1px #0ff, 0 0 1.5em 1px #0ff,
-        0 0 2em 1px #0ff, 0 0 2.5em 1px #0ff;
-
-      filter: url(#blur);
+      text-shadow:
+        0 0 0.25em 1px #0ff,
+        0 0 0.5em 1px #0ff,
+        0 0 1em 1px #0ff,
+        0 0 1.5em 1px #0ff,
+        0 0 2em 1px #0ff,
+        0 0 2.5em 1px #0ff;
     }
   }
-}
 
-#projects {
   .card {
+    box-shadow:
+      0 0 0.5rem cyan(0.5),
+      0 0 1.5rem white(0.15);
     border-color: skyblue;
     background: #111;
-    box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.15);
 
     img {
       box-sizing: border-box;
@@ -51,9 +60,11 @@
     }
 
     @mixin apply-focus-hover {
+      box-shadow:
+        0 0 0.5rem cyan(0.5),
+        0 0 3rem cyan(0.2);
       border-color: cyan;
       background: #163c3c;
-      box-shadow: 0 0 0.5rem cyan(0.5), 0 0 3rem cyan(0.2);
 
       img {
         border-color: cyan;
@@ -62,9 +73,11 @@
     }
 
     @mixin revert-focus-hover {
+      box-shadow:
+        0 0 0.5rem cyan(0.5),
+        0 0 1.5rem white(0.15);
       border-color: skyblue;
       background: #111;
-      box-shadow: 0 0 0.5rem cyan(0.5), 0 0 1.5rem white(0.15);
 
       img {
         border-color: #404040;
@@ -87,8 +100,8 @@
   }
 
   .button-container button {
-    background: #111;
     box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
+    background: #111;
 
     span {
       border: none;
@@ -99,8 +112,8 @@
     }
 
     @mixin revert-focus-hover {
-      background: #111;
       box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
+      background: #111;
     }
 
     @include focus-hover-states(
@@ -113,16 +126,20 @@
 #me {
   h2 {
     transform: none;
-    background-color: black(0.75);
+    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
     background-image: linear-gradient(cyan(0.15), cyan(0));
     background-size: 100% 2px;
-    box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
+    background-color: black(0.75);
 
     .shadow {
-      text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff,
+      filter: url("#blur");
+      text-shadow:
+        0 0 0.25em #0ff,
+        0 0 0.5em #0ff,
+        0 0 1em #0ff,
+        0 0 1.5em #0ff,
+        0 0 2em #0ff,
         0 0 2.5em #0ff;
-
-      filter: url(#blur);
     }
   }
 
@@ -131,20 +148,20 @@
   }
 
   .controls button {
+    box-shadow: none;
     border-color: #2a2a2a;
     background: #1a1a1a;
-    box-shadow: none;
 
     @mixin apply-focus-hover {
+      box-shadow: 0 0 1rem rgba(255, 255, 0, 33%);
       border-color: #ffde69;
       background: #414118;
-      box-shadow: 0 0 1rem rgba(255, 255, 0, 0.33);
     }
 
     @mixin revert-focus-hover {
+      box-shadow: none;
       border-color: #2a2a2a;
       background: #1a1a1a;
-      box-shadow: none;
     }
 
     @include focus-hover-states(
@@ -158,7 +175,6 @@
   .question {
     border-color: #2a2a2a;
     background: #1a1a1a;
-
     -webkit-font-smoothing: antialiased;
 
     @mixin apply-focus-hover {
@@ -186,8 +202,8 @@
       border-color: #2a2a2a;
 
       &[aria-expanded="false"] {
-        background: #1a1a1a;
         box-shadow: none;
+        background: #1a1a1a;
       }
 
       + .answer {
@@ -199,8 +215,8 @@
       }
 
       .bottom {
-        background: #2a2a2a;
         box-shadow: none;
+        background: #2a2a2a;
       }
     }
 
@@ -225,9 +241,9 @@
   }
 
   .answer {
+    box-shadow: none;
     border-color: #2a2a2a;
     background: #1a1a1a;
-    box-shadow: none;
 
     p,
     ol,
@@ -237,21 +253,20 @@
   }
 
   .bottom {
-    background: #2a2a2a;
     box-shadow: none;
+    background: #2a2a2a;
   }
 }
 
 #credits {
-  color: white;
-  background: #111;
   box-shadow: 0.5rem 0.5rem 1rem 0 aquamarine(0.1);
+  background: #111;
+  color: white;
 }
 
 .p-fill-bg {
   background: #0f1f18;
   background: radial-gradient(closest-side, #132c22, #0f1f18);
-
   fill: #0f1f18;
 }
 

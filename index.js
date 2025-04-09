@@ -1,5 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
+import postcss from "postcss";
+import autoprefixer from "autoprefixer";
 import { minify } from "html-minifier-terser";
 import * as sass from "sass-embedded";
 
@@ -31,7 +33,7 @@ async function copy(src, dest) {
 
       if (file.isDirectory()) await copy(_src, _dest);
       else await fs.copyFile(_src, _dest);
-    })
+    }),
   );
 }
 
@@ -70,26 +72,27 @@ const generateHtml = async (cssObj, jsObj) => {
 };
 
 const generateCss = async () => {
-  const [critical, deferrable, criticalDark, deferrableDark, ie9, noscript] = await Promise.all([
-    sass.compileAsync("./src/styles/critical.scss"),
-    sass.compileAsync("./src/styles/deferrable.scss"),
-    sass.compileAsync("./src/styles/dark-critical.scss"),
-    sass.compileAsync("./src/styles/dark-deferrable.scss"),
-    sass.compileAsync("./src/styles/ie9.scss"),
-    sass.compileAsync("./src/styles/noscript.scss"),
-  ]);
+  const paths = [
+    "./src/styles/critical.scss",
+    "./src/styles/deferrable.scss",
+    "./src/styles/dark-critical.scss",
+    "./src/styles/dark-deferrable.scss",
+    "./src/styles/ie9.scss",
+    "./src/styles/noscript.scss",
+  ];
+
+  const [critical, deferrable, criticalDark, deferrableDark, ie9, noscript] = await Promise.all(
+    paths.map((path) => sass.compileAsync(path)),
+  ).then((results) =>
+    results.map((result, index) =>
+      postcss(autoprefixer()).process(result.css, { from: paths[index] }),
+    ),
+  );
 
   await fs.writeFile("./docs/index.css", deferrable.css);
   await fs.writeFile("./docs/index-dark.css", deferrableDark.css);
 
-  return {
-    critical: critical.css,
-    deferrable: deferrable.css,
-    criticalDark: criticalDark.css,
-    deferrableDark: deferrableDark.css,
-    ie9: ie9.css,
-    noscript: noscript.css,
-  };
+  return { critical, deferrable, criticalDark, deferrableDark, ie9, noscript };
 };
 
 const generateJavaScript = async () => {
@@ -117,7 +120,7 @@ const base64Fonts = async () => {
     "./docs/index.html",
     html
       .replace("<--noto-sans-jp-critical-regular.woff2-->", notoSansJPCriticalRegularBase64)
-      .replace("<--noto-sans-jp-critical-bold.woff2-->", notoSansJPCriticalBoldBase64)
+      .replace("<--noto-sans-jp-critical-bold.woff2-->", notoSansJPCriticalBoldBase64),
   );
 };
 

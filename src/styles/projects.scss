@@ -10,36 +10,36 @@
     position: absolute;
     top: -2.25rem;
     left: -5rem;
-    overflow: visible;
     width: 7rem;
     height: 7rem;
+    overflow: visible;
   }
 
   h2 {
-    position: relative;
     display: inline-block;
-    margin: 0 0 2rem 2rem;
-    padding: 1rem 2rem;
+    position: relative;
     transform: rotateZ(-2deg);
+    margin: 0 0 2rem 2rem;
     box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
+    padding: 1rem 2rem;
 
     &::before {
       position: absolute;
-      z-index: -1;
       top: 0;
       left: 0;
+      z-index: -1;
       box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-      content: "";
       border: 0.5rem double aquamarine;
       border-radius: 0.5rem;
-      background: linear-gradient(to bottom, pink(0) 1px, pink 2px, pink(0) 3px) 0 1rem / 100%
-          2.5rem,
+      background:
+        linear-gradient(to bottom, pink(0) 1px, pink 2px, pink(0) 3px) 0 1rem / 100% 2.5rem,
         linear-gradient(to bottom, cyan(0) 1px, cyan 2px, cyan(0) 0) 0 1.25rem / 100% 2.5rem,
         linear-gradient(to right, pink(0) 1px, pink 2px, pink(0) 3px) 1.5rem 0 / 2.5rem 100%,
         linear-gradient(to right, cyan(0) 1px, cyan 2px, cyan(0) 0) 1.25rem 0 / 2.5rem 100%;
       background-color: snow;
+      width: 100%;
+      height: 100%;
+      content: "";
     }
   }
 
@@ -55,20 +55,20 @@
 
   .featured-container {
     display: inline-block;
-    overflow: hidden;
-    width: 100%;
     padding: 5rem 0;
+    width: 100%;
+    overflow: hidden;
 
     .image-container {
-      position: relative;
-      z-index: 2;
       display: inline-block;
-      transform: rotateZ(-6deg);
+      position: relative;
       vertical-align: middle;
+      transform: rotateZ(-6deg);
+      z-index: 2;
 
       @media (max-width: 39rem) {
-        z-index: 0;
         left: -15vw;
+        z-index: 0;
       }
     }
   }

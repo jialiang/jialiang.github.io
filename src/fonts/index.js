@@ -127,7 +127,7 @@ const subsetFonts = async (htmlStr, cssObj) => {
             "--with-zopfli",
             "--harfbuzz-repacker",
           ],
-          { shell: true, stdio: "inherit" }
+          { shell: true, stdio: "inherit" },
         );
 
         childProcess.on("exit", (code) => {
