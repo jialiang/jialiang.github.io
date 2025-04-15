@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewbox="0 0 100 100">
+  <filter id="a">
+    <feTurbulence baseFrequency=".45" result="noise" type="fractalNoise" />
+    <feColorMatrix in="noise" result="noise2" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.25 0" />
+    <feComposite in="noise2" in2="noise2" k2="1" k4=".85" operator="arithmetic" />
+  </filter>
+  <path fill="#f8f8f8" d="M0 0h100v100H0z" filter="url(#a)" />
+</svg>

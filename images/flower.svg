@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="550.25" height="542.94" viewBox="0 0 145.59 143.65">
+   <defs>
+      <pattern xlink:href="#a" id="h" patternTransform="matrix(-.5125 0 0 2.875 -170 520)" />
+      <pattern xlink:href="#b" id="k" patternTransform="translate(-170 520) scale(.3994)" />
+      <pattern xlink:href="#c" id="d" patternTransform="matrix(10 0 0 10 168.05 -521.02)" />
+      <pattern id="c" width="2" height="2" patternTransform="scale(10)" patternUnits="userSpaceOnUse">
+         <path d="M0 0h1v1H0zm1 1h1v1H1z" />
+      </pattern>
+      <pattern id="f" width="37.07" height="37.07" patternTransform="translate(-168.05 521.02)" patternUnits="userSpaceOnUse">
+         <path fill="#f9f9f9" d="M0 0h37.07v37.07H0z" />
+         <path fill="url(#d)" d="M0 0h37.07v37.07H0z" />
+      </pattern>
+      <pattern id="b" width="40" height="40" patternTransform="translate(-170 520)" patternUnits="userSpaceOnUse">
+         <path fill="#ff2a2a" stroke-width="0" d="M0 0h40v40H0z" />
+         <path fill="#ffd5d5" stroke-linecap="square" stroke-width="0" d="M20 0h20v40H20z" />
+         <path fill="#f60" stroke-linecap="square" stroke-width="0" d="M0 0h40v20H0z" opacity=".5" />
+      </pattern>
+      <pattern id="a" width="40" height="40" patternTransform="translate(-170 520)" patternUnits="userSpaceOnUse">
+         <path fill="#d5f" d="M0 0h40v40H0z" />
+         <path fill="#405" stroke-width=".71" d="M20 0h20v40H20z" />
+      </pattern>
+      <filter id="e" width="1.32" height="1.28" x="-.13" y="-.12" color-interpolation-filters="sRGB">
+         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+      <filter id="g" width="1.3" height="1.34" x="-.12" y="-.14" color-interpolation-filters="sRGB">
+         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+      <filter id="i" width="1.37" height="1.31" x="-.15" y="-.13" color-interpolation-filters="sRGB">
+         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+      <filter id="j" width="1.29" height="1.42" x="-.12" y="-.17" color-interpolation-filters="sRGB">
+         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+      <filter id="l" width="1.31" height="1.36" x="-.13" y="-.15" color-interpolation-filters="sRGB">
+         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+      <filter id="m" width="1.5" height="1.5" x="-.21" y="-.21" color-interpolation-filters="sRGB">
+         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+         <feOffset dx="3" dy="3" result="offset" />
+         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+      </filter>
+   </defs>
+   <g transform="translate(4.43 1.68)">
+      <path fill="#0f6" d="m62.88 64.3 3.23-58.67c19.6-.83 37.07 3.29 50.84 16.02L73.8 67.06Z" filter="url(#e)" />
+      <path fill="url(#f)" d="m72.4 67.85 50.46-15.23c12.39 6.17 9.18 30.45-.32 50.75L72.92 78.53Z" filter="url(#g)" />
+      <path fill="url(#h)" d="m73.1 76.17 30.88 42.02c-14.02 9.88-29.27 15.33-46.67 13.08l6.15-51.81z" filter="url(#i)" />
+      <path fill="#2ad4ff" d="m61.8 77.95-32.62 35.29C10.18 107.62.84 97.38 3.1 81.36l52.74-9.82z" filter="url(#j)" />
+      <path fill="url(#k)" d="M60.52 66.86 8.81 58.54c1.08-16.24 6.36-30.26 18.93-40.4l36.24 39.98z" filter="url(#l)" />
+      <ellipse cx="88.78" cy="37.26" fill="#ff0" filter="url(#m)" rx="17.24" ry="17.3" transform="matrix(.92777 .37315 -.34888 .93717 0 0)" />
+   </g>
+</svg>
