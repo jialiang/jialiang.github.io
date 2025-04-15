@@ -9,12 +9,12 @@ import faq from "./src/faq/index.js";
 import fonts from "./src/fonts/index.js";
 
 const clean = async () => {
-  await fs.mkdir("./docs", { recursive: true });
+  await fs.mkdir("./dist", { recursive: true });
 
-  const files = await fs.readdir("./docs");
+  const files = await fs.readdir("./dist");
 
   const promises = files.map(async (file) => {
-    await fs.rm(path.join("./docs", file), { recursive: true });
+    await fs.rm(path.join("./dist", file), { recursive: true });
   });
 
   await Promise.all(promises);
@@ -66,7 +66,7 @@ const generateHtml = async (cssObj, jsObj) => {
     .replaceAll("</aa>", "</a> ")
     .replaceAll("</a> .", "</a>.");
 
-  await fs.writeFile("./docs/index.html", minifiedHtmlWithWhitespace);
+  await fs.writeFile("./dist/index.html", minifiedHtmlWithWhitespace);
 
   return minifiedHtml;
 };
@@ -89,8 +89,8 @@ const generateCss = async () => {
     ),
   );
 
-  await fs.writeFile("./docs/index.css", deferrable.css);
-  await fs.writeFile("./docs/index-dark.css", deferrableDark.css);
+  await fs.writeFile("./dist/index.css", deferrable.css);
+  await fs.writeFile("./dist/index-dark.css", deferrableDark.css);
 
   return { critical, deferrable, criticalDark, deferrableDark, ie9, noscript };
 };
@@ -102,7 +102,7 @@ const generateJavaScript = async () => {
     fs.readFile("./src/scripts/index.js", { encoding: "utf-8" }),
   ]);
 
-  await fs.writeFile("./docs/index.js", index);
+  await fs.writeFile("./dist/index.js", index);
 
   return { theme, hydrate };
 };
@@ -111,13 +111,13 @@ const generateFonts = fonts.subsetFonts;
 
 const base64Fonts = async () => {
   const [html, notoSansJPCriticalRegularBase64, notoSansJPCriticalBoldBase64] = await Promise.all([
-    fs.readFile("./docs/index.html", { encoding: "utf-8" }),
-    fs.readFile("./docs/fonts/noto-sans-jp-critical-regular.woff2", { encoding: "base64" }),
-    fs.readFile("./docs/fonts/noto-sans-jp-critical-bold.woff2", { encoding: "base64" }),
+    fs.readFile("./dist/index.html", { encoding: "utf-8" }),
+    fs.readFile("./dist/fonts/noto-sans-jp-critical-regular.woff2", { encoding: "base64" }),
+    fs.readFile("./dist/fonts/noto-sans-jp-critical-bold.woff2", { encoding: "base64" }),
   ]);
 
   await fs.writeFile(
-    "./docs/index.html",
+    "./dist/index.html",
     html
       .replace("<--noto-sans-jp-critical-regular.woff2-->", notoSansJPCriticalRegularBase64)
       .replace("<--noto-sans-jp-critical-bold.woff2-->", notoSansJPCriticalBoldBase64),
@@ -152,7 +152,7 @@ const build = async () => {
     await timeTask(base64Fonts, 1);
   };
 
-  await Promise.all([main(), timeTask(copy, 0, ["./static", "./docs"])]);
+  await Promise.all([main(), timeTask(copy, 0, ["./static", "./dist"])]);
 
   console.log(`\nTook ${Math.round(performance.now() - start)}ms to build.\n`);
 

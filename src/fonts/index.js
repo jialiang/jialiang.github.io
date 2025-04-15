@@ -102,7 +102,7 @@ const subsetFonts = async (htmlStr, cssObj) => {
     }
   }, dom);
 
-  await fs.mkdir("./docs/fonts", { recursive: true });
+  await fs.mkdir("./dist/fonts", { recursive: true });
 
   const subsetTasks = [];
 
@@ -122,7 +122,7 @@ const subsetFonts = async (htmlStr, cssObj) => {
             `./src/fonts/originals/${fontName.replace("-critical", "")}.ttf`,
             `--text="${textToSubset}"`,
             "--no-ignore-missing-unicodes",
-            `--output-file=./docs/fonts/${fontName}.${format}`,
+            `--output-file=./dist/fonts/${fontName}.${format}`,
             `--flavor=${format}`,
             "--with-zopfli",
             "--harfbuzz-repacker",
