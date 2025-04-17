@@ -99,6 +99,25 @@
     }
   }
 
+  .clock {
+    .face,
+    .edge {
+      background: #412c1a;
+    }
+
+    .hour {
+      background: #d17c28;
+    }
+
+    .minute {
+      background: #ffdcb7;
+    }
+
+    .second {
+      background: #e0e7b1;
+    }
+  }
+
   .button-container button {
     box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
     background: #111;
