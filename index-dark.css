@@ -60,6 +60,19 @@
 #projects .picoletta p {
   color: #eaeaea;
 }
+#projects .clock .face,
+#projects .clock .edge {
+  background: #412c1a;
+}
+#projects .clock .hour {
+  background: #d17c28;
+}
+#projects .clock .minute {
+  background: #ffdcb7;
+}
+#projects .clock .second {
+  background: #e0e7b1;
+}
 #projects .button-container button {
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
   background: #111;
