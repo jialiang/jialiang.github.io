@@ -230,9 +230,26 @@ function initPerformanceLogs() {
   else requestAnimationFrame(appendLogs);
 }
 
+function initClock() {
+  var now = new Date();
+
+  var hours = now.getHours() % 12;
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+
+  var hourRotation = -216000 * ((hours * 60 + minutes) / (12 * 60));
+  var minuteRotation = -3600 * (minutes / 60);
+  var secondRotation = -60 * (seconds / 60);
+
+  document.querySelector(".hour").style.animationDelay = hourRotation + "s";
+  document.querySelector(".minute").style.animationDelay = minuteRotation + "s";
+  document.querySelector(".second").style.animationDelay = secondRotation + "s";
+}
+
 initProjectNav();
 initFlowerSpin();
 initThemeToggle();
 initFaqToggle();
 initLoadImages();
 initPerformanceLogs();
+initClock();
