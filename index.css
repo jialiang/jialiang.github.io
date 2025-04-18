@@ -363,40 +363,40 @@
   height: 20%;
 }
 .clock .edge:nth-child(1) {
-  transform: rotate(0) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(0) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(2) {
-  transform: rotate(30deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(30deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(3) {
-  transform: rotate(60deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(60deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(4) {
-  transform: rotate(90deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(90deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(5) {
-  transform: rotate(120deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(120deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(6) {
-  transform: rotate(150deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(150deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(7) {
-  transform: rotate(180deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(180deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(8) {
-  transform: rotate(210deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(210deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(9) {
-  transform: rotate(240deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(240deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(10) {
-  transform: rotate(270deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(270deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(11) {
-  transform: rotate(300deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(300deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .edge:nth-child(12) {
-  transform: rotate(330deg) translateY(-202%) rotate(60deg) skewY(-36deg);
+  transform: rotate(330deg) translateY(-200%) rotate(60deg) skewY(-36deg);
 }
 .clock .hand {
   position: absolute;
