@@ -73,6 +73,8 @@ function initThemeToggle() {
   if (window.isValidTheme(localStorageTheme)) currentTheme = localStorageTheme;
   else currentTheme = systemTheme;
 
+  window.setTheme(currentTheme);
+
   for (var i = 0; i < radioButtons.length; i++) {
     if (radioButtons[i].value === currentTheme) radioButtons[i].checked = true;
 
@@ -88,6 +90,7 @@ function initThemeToggle() {
     systemDarkMode.addEventListener("change", function (e) {
       var localStorageTheme = localStorage.getItem("theme");
 
+      // Valid local Storage theme overrides system theme
       if (window.isValidTheme(localStorageTheme)) {
         window.setTheme(localStorageTheme);
         return;
