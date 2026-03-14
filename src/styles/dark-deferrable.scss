@@ -13,10 +13,10 @@
 
   h2 {
     &::before {
-      $cyan-0: rgba(0, 39, 39, 0%);
-      $cyan-1: rgba(0, 39, 39, 100%);
-      $pink-0: rgba(41, 31, 33, 0%);
-      $pink-1: rgba(41, 31, 33, 100%);
+      $cyan-0: rgb(0, 39, 39, 0%);
+      $cyan-1: rgb(0, 39, 39, 100%);
+      $pink-0: rgb(41, 31, 33, 0%);
+      $pink-1: rgb(41, 31, 33, 100%);
 
       border-color: #172b25;
       background:
@@ -172,7 +172,7 @@
     background: #1a1a1a;
 
     @mixin apply-focus-hover {
-      box-shadow: 0 0 1rem rgba(255, 255, 0, 33%);
+      box-shadow: 0 0 1rem rgb(255, 255, 0, 33%);
       border-color: #ffde69;
       background: #414118;
     }

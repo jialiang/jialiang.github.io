@@ -73,8 +73,8 @@ a {
 }
 
 header {
-  $grey-0: rgba(100, 100, 100, 0%);
-  $grey-1: rgba(50, 125, 125, 7.5%);
+  $grey-0: rgb(100, 100, 100, 0%);
+  $grey-1: rgb(50, 125, 125, 7.5%);
 
   &::before {
     box-shadow:
