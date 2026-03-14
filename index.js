@@ -52,7 +52,6 @@ function initFlowerSpin() {
   if (!flower || isPrefersReducedMotion()) return;
 
   flower.addEventListener("click", function () {
-    console.log("abc");
     flower.className = "flower-1 spin-" + spin;
     spin = spin === 1 ? 2 : 1;
   });
