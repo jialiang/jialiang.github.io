@@ -142,8 +142,8 @@ const build = async () => {
 
   const main = async () => {
     const [cssObj, jsObj] = await Promise.all([
-      await timeTask(generateCss, 2),
-      await timeTask(generateJavaScript, 2),
+      timeTask(generateCss, 2),
+      timeTask(generateJavaScript, 2),
     ]);
 
     const htmlStr = await timeTask(generateHtml, 1, [cssObj, jsObj]);
