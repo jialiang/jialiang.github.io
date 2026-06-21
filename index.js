@@ -111,6 +111,43 @@ const generateJavaScript = async () => {
   return { theme, hydrate };
 };
 
+const generateSitemap = async (html) => {
+  const origin = "https://jialiang.github.io";
+  const base = `${origin}/`;
+
+  const paths = new Set(["/"]);
+
+  for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
+    if (!URL.canParse(href, base)) continue;
+
+    const url = new URL(href, base);
+
+    if (url.hostname !== "jialiang.github.io") continue;
+
+    const lastSegment = url.pathname.split("/").pop();
+    const isAsset = lastSegment.includes(".") && !lastSegment.toLowerCase().endsWith(".pdf");
+    if (isAsset) continue;
+
+    paths.add(url.pathname);
+  }
+
+  const lastmod = new Date().toISOString().slice(0, 10);
+
+  const parts = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ];
+
+  for (const pathname of [...paths].sort()) {
+    const lastmodTag = pathname === "/" ? `<lastmod>${lastmod}</lastmod>` : "";
+    parts.push(`<url><loc>${origin}${pathname}</loc>${lastmodTag}</url>`);
+  }
+
+  parts.push("</urlset>");
+
+  await fs.writeFile("./dist/sitemap.xml", parts.join(""));
+};
+
 const generateFonts = fonts.subsetFonts;
 
 const base64Fonts = async () => {
@@ -152,6 +189,7 @@ const build = async () => {
 
     const htmlStr = await timeTask(generateHtml, 1, [cssObj, jsObj]);
 
+    await timeTask(generateSitemap, 1, [htmlStr]);
     await timeTask(generateFonts, 1, [htmlStr, cssObj]);
     await timeTask(base64Fonts, 1);
   };
