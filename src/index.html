@@ -28,6 +28,43 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://jialiang.github.io/#website",
+            "url": "https://jialiang.github.io/",
+            "name": "Jia Liang | Software Engineer",
+            "description": "Personal website of software engineer, Jia Liang",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://jialiang.github.io/#profilepage",
+            "url": "https://jialiang.github.io/",
+            "isPartOf": { "@id": "https://jialiang.github.io/#website" },
+            "mainEntity": { "@id": "https://jialiang.github.io/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://jialiang.github.io/#person",
+            "name": "Jia Liang",
+            "jobTitle": "Software Engineer",
+            "url": "https://jialiang.github.io/",
+            "description": "Full-stack JavaScript software engineer with /* years-of-experience */ years of experience and a strong frontend focus.",
+            "knowsAbout": [
+              "Full-Stack JavaScript Development",
+              "Frontend Engineering",
+              "Information Systems"
+            ],
+            "sameAs": ["https://github.com/jialiang"]
+          }
+        ]
+      }
+    </script>
+
     <style id="critical-styles">
       /* critical.scss */
     </style>

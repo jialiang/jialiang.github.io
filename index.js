@@ -53,7 +53,7 @@ const generateHtml = async (cssObj, jsObj) => {
     .replace("/* critical-dark.scss */", cssObj.criticalDark)
     .replace("/* ie9.scss */", cssObj.ie9)
     .replace("/* noscript.scss */", cssObj.noscript)
-    .replace("/* years-of-experience */", yearsOfExperience)
+    .replaceAll("/* years-of-experience */", yearsOfExperience)
     //
     .replace("// theme.js", jsObj.theme)
     .replace("// hydrate.js", jsObj.hydrate);
