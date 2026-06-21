@@ -1,0 +1,17 @@
+# Normalize all text files to LF in the repository.
+# Working trees check out as CRLF to match prettier.config.js (endOfLine: "crlf").
+* text=auto eol=crlf
+
+# Binary assets git must never normalize.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
