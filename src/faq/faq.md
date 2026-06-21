@@ -95,7 +95,7 @@ What I offer instead is adaptability and problem solving skills. When we catch u
 
 ## Do you prefer frontend or backend?
 
-Generally I prefer front-end work but am fine with both.
+Generally I prefer frontend work but am fine with both.
 
 ## Why do you want to leave?
 
@@ -107,4 +107,4 @@ Generally, I'm available Tuesday to Friday after 10am.
 
 ## When can you start?
 
-My current job requires a 2 month notice period.
+My current job requires a 2-month notice period.
