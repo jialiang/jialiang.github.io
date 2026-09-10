@@ -134,7 +134,7 @@
           viewBox="0 0 2560 1440"
           focusable="false"
           aria-hidden="true">
-          <image width="2560" height="1440" href="./images/endcard.svg"></image>
+          <image width="2560" height="1440" href="./images/originals/endcard.svg"></image>
         </svg>
 
         <svg
@@ -145,7 +145,7 @@
           viewBox="0 0 112 66"
           focusable="false"
           aria-hidden="true">
-          <image width="112" height="66" href="./images/catship.svg"></image>
+          <image width="112" height="66" href="./images/originals/catship.svg"></image>
         </svg>
 
         <svg
@@ -156,7 +156,7 @@
           viewBox="0 0 425 787"
           focusable="false"
           aria-hidden="true">
-          <image width="425" height="787" href="./images/living-millenium-bg.svg"></image>
+          <image width="425" height="787" href="./images/originals/living-millenium-bg.svg"></image>
         </svg>
 
         <svg
@@ -167,7 +167,7 @@
           viewBox="0 0 613 859"
           focusable="false"
           aria-hidden="true">
-          <image width="613" height="859" href="./images/poporon.svg"></image>
+          <image width="613" height="859" href="./images/originals/poporon.svg"></image>
         </svg>
 
         <svg
@@ -178,7 +178,7 @@
           viewBox="0 0 107 151"
           focusable="false"
           aria-hidden="true">
-          <image width="107" height="151" href="./images/nekotofu.svg"></image>
+          <image width="107" height="151" href="./images/originals/nekotofu.svg"></image>
         </svg>
 
         <svg
@@ -189,7 +189,7 @@
           viewBox="0 0 1388 531"
           focusable="false"
           aria-hidden="true">
-          <image width="1388" height="531" href="./images/penguin-hat.svg"></image>
+          <image width="1388" height="531" href="./images/originals/penguin-hat.svg"></image>
         </svg>
 
         <svg
@@ -200,7 +200,7 @@
           viewBox="0 0 426 660"
           focusable="false"
           aria-hidden="true">
-          <image width="426" height="660" href="./images/dove.svg"></image>
+          <image width="426" height="660" href="./images/originals/dove.svg"></image>
         </svg>
 
         <svg
@@ -211,7 +211,7 @@
           viewBox="0 0 250 250"
           focusable="false"
           aria-hidden="true">
-          <image width="250" height="250" href="./images/jirachi.svg"></image>
+          <image width="250" height="250" href="./images/originals/jirachi.svg"></image>
         </svg>
       </div>
     </div>
@@ -309,7 +309,7 @@
           <div class="star-badge-container">
             <img
               class="star-badge"
-              src="./images/star-badge.svg"
+              src="./images/originals/star-badge.svg"
               alt=""
               width="512"
               height="512"
@@ -340,7 +340,7 @@
                 </feMerge>
               </filter>
             </defs>
-            <image width="146.16" height="174.49" href="./images/bunny.svg"></image>
+            <image width="146.16" height="174.49" href="./images/originals/bunny.svg"></image>
           </svg>
           <span class="shadow" aria-hidden="true">Personal Projects</span>
           <span class="text">Personal Projects</span>
@@ -352,12 +352,15 @@
               class="card"
               href="https://gist.github.com/jialiang/2880d4cc3364df117320e8cb324c2880"
               rel="noreferrer noopener">
-              <img
-                src="./images/ubo-tutorial-cover.png"
-                alt="A red square and a teal square side by side"
-                width="380"
-                height="380"
-                loading="lazy" />
+              <picture>
+                <source type="image/webp" srcset="./images/ubo-tutorial-cover.webp" />
+                <img
+                  src="./images/originals/ubo-tutorial-cover.png"
+                  alt="A red square and a teal square side by side"
+                  width="380"
+                  height="380"
+                  loading="lazy" />
+              </picture>
             </a>
           </div>
 
@@ -482,10 +485,9 @@
             <a class="card" href="/ygo-ocg-secret-rare/" rel="noreferrer noopener">
               <figure>
                 <picture>
-                  <source type="image/avif" srcset="./images/yugioh-cover%20(optimized).avif" />
-                  <source type="image/webp" srcset="./images/yugioh-cover%20(optimized).webp" />
+                  <source type="image/avif" srcset="./images/yugioh-cover.avif" />
                   <img
-                    src="./images/originals/yugioh-cover.png"
+                    src="./images/yugioh-cover.jpg"
                     alt="Headshot of Madamme Verre"
                     width="380"
                     height="380"
@@ -500,12 +502,16 @@
           <li>
             <a class="card" href="https://github.com/jialiang/RT-Ragdoll" rel="noreferrer noopener">
               <figure>
-                <img
-                  src="./images/rt-cover%20(optimized).jpg"
-                  alt="Warhammer 40,000: Rogue Trader emblem, a skull in a laurel wreath over a sunburst"
-                  width="380"
-                  height="380"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="./images/rt-cover.avif" />
+                  <source type="image/webp" srcset="./images/rt-cover.webp" />
+                  <img
+                    src="./images/rt-cover.jpg"
+                    alt="Warhammer 40,000: Rogue Trader emblem, a skull in a laurel wreath over a sunburst"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
                 <figcaption>
                   <div>Warhammer 40k: Rogue Trader Ragdoll Tweaks</div>
                 </figcaption>
@@ -518,12 +524,16 @@
               href="https://github.com/jialiang/BG3-Single-File-Formation"
               rel="noreferrer noopener">
               <figure>
-                <img
-                  src="./images/bg3-cover%20(optimized).jpg"
-                  alt="Baldur's Gate 3 logo"
-                  width="380"
-                  height="380"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="./images/bg3-cover.avif" />
+                  <source type="image/webp" srcset="./images/bg3-cover.webp" />
+                  <img
+                    src="./images/bg3-cover.jpg"
+                    alt="Baldur's Gate 3 logo"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
                 <figcaption>
                   <div>Baldur's Gate 3 Single File Formation Mod</div>
                 </figcaption>
@@ -536,12 +546,16 @@
               href="https://github.com/jialiang/performance-monitor"
               rel="noreferrer noopener">
               <figure>
-                <img
-                  src="./images/performance-monitor-cover.png"
-                  alt="Cloud Function for Firebase logo, stylized flame and ellipsis between angled brackets"
-                  width="380"
-                  height="380"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="./images/performance-monitor-cover.avif" />
+                  <source type="image/webp" srcset="./images/performance-monitor-cover.webp" />
+                  <img
+                    src="./images/originals/performance-monitor-cover.png"
+                    alt="Cloud Function for Firebase logo, stylized flame and ellipsis between angled brackets"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
                 <figcaption>
                   <div>Performance Monitor</div>
                 </figcaption>
@@ -554,12 +568,15 @@
               href="https://jialiang.github.io/area-sampler/"
               rel="noreferrer noopener">
               <figure>
-                <img
-                  src="./images/test-image.png"
-                  alt="Rendition of SD ECR-1-1978 color bars"
-                  width="380"
-                  height="380"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/webp" srcset="./images/test-image.webp" />
+                  <img
+                    src="./images/originals/test-image.png"
+                    alt="Rendition of SD ECR-1-1978 color bars"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
                 <figcaption>
                   <div>Area Sampler</div>
                 </figcaption>
@@ -572,12 +589,16 @@
               href="https://github.com/jialiang/image-optimization-toolkit"
               rel="noreferrer noopener">
               <figure>
-                <img
-                  src="./images/terminal.png"
-                  alt="Black computer terminal screen with white chevron and underscore"
-                  width="380"
-                  height="380"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="./images/terminal.avif" />
+                  <source type="image/webp" srcset="./images/terminal.webp" />
+                  <img
+                    src="./images/originals/terminal.png"
+                    alt="Black computer terminal screen with white chevron and underscore"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
                 <figcaption>
                   <div>Image Optimization Toolkit</div>
                 </figcaption>
@@ -588,9 +609,9 @@
             <a class="card" href="/3D-Engine-For-Miku/" rel="noreferrer noopener">
               <figure>
                 <picture>
-                  <source type="image/webp" srcset="./images/miku-cover%20(optimized).webp" />
+                  <source type="image/avif" srcset="./images/miku-cover.avif" />
                   <img
-                    src="./images/miku-cover%20(optimized).jpg"
+                    src="./images/miku-cover.jpg"
                     alt="Hatsune Miku posing for the camera"
                     width="380"
                     height="380"
@@ -608,12 +629,16 @@
               href="https://github.com/jialiang/HTML-to-PDF-UA/"
               rel="noreferrer noopener">
               <figure>
-                <img
-                  src="./images/pdf-cover.png"
-                  alt="Red PDF logo with white bold PDF text"
-                  width="380"
-                  height="380"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="./images/pdf-cover.avif" />
+                  <source type="image/webp" srcset="./images/pdf-cover.webp" />
+                  <img
+                    src="./images/originals/pdf-cover.png"
+                    alt="Red PDF logo with white bold PDF text"
+                    width="380"
+                    height="380"
+                    loading="lazy" />
+                </picture>
                 <figcaption>
                   <div>HTML to PDF/UA-compliant PDF</div>
                 </figcaption>
@@ -624,9 +649,9 @@
             <a class="card" href="/space-gems/" rel="noreferrer noopener">
               <figure>
                 <picture>
-                  <source type="image/webp" srcset="./images/space-gem-cover%20(optimized).webp" />
+                  <source type="image/avif" srcset="./images/space-gem-cover.avif" />
                   <img
-                    src="./images/space-gem-cover%20(optimized).jpg"
+                    src="./images/space-gem-cover.jpg"
                     alt="Screenshot of the Space Gems game"
                     width="380"
                     height="380"
@@ -686,7 +711,7 @@
             <div class="header">
               <img
                 class="flower-1"
-                src="./images/flower.svg"
+                src="./images/originals/flower.svg"
                 alt=""
                 aria-hidden="true"
                 width="550"
