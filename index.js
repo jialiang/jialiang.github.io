@@ -20,6 +20,8 @@ const clean = async () => {
   await Promise.all(promises);
 };
 
+const filesystemMetadata = new Set([".DS_Store", "Thumbs.db", "desktop.ini"]);
+
 async function copy(src, dest) {
   const [files] = await Promise.all([
     fs.readdir(src, { withFileTypes: true }),
@@ -28,6 +30,8 @@ async function copy(src, dest) {
 
   await Promise.all(
     files.map(async (file) => {
+      if (filesystemMetadata.has(file.name)) return;
+
       const _src = path.join(src, file.name);
       const _dest = path.join(dest, file.name);
 
