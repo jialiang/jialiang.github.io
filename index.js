@@ -115,9 +115,9 @@ function initFaqToggle() {
       if (e.type === "keyup" && key !== "Enter" && key !== 13) return;
 
       var newState = "true";
-      if (e.target.getAttribute("aria-expanded") === "true") newState = "false";
+      if (e.currentTarget.getAttribute("aria-expanded") === "true") newState = "false";
 
-      e.target.setAttribute("aria-expanded", newState);
+      e.currentTarget.setAttribute("aria-expanded", newState);
     };
 
     var question = questions[i];
@@ -149,13 +149,17 @@ function initLoadImages() {
 
       if (!img) return;
 
-      if (img.naturalWidth === 0) {
-        img.onload = loadImage;
-        img.removeAttribute("loading");
-      } else {
+      if (img.naturalWidth !== 0) {
         img.removeAttribute("loading");
         loadImage();
+
+        return;
       }
+
+      img.onload = loadImage;
+      img.onerror = loadImage;
+
+      img.removeAttribute("loading");
     }
 
     loadImage();
