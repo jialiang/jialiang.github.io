@@ -2,10 +2,6 @@
 
 @use "./util.scss" as *;
 
-:root {
-  color-scheme: dark;
-}
-
 #projects {
   .bunny image {
     filter: url("#bunny-glow");
@@ -36,13 +32,6 @@
         0 0 1.5em #0ff,
         0 0 2em #0ff,
         0 0 2.5em #0ff;
-      text-shadow:
-        0 0 0.25em 1px #0ff,
-        0 0 0.5em 1px #0ff,
-        0 0 1em 1px #0ff,
-        0 0 1.5em 1px #0ff,
-        0 0 2em 1px #0ff,
-        0 0 2.5em 1px #0ff;
     }
   }
 

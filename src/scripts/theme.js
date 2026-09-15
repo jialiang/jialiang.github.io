@@ -15,26 +15,25 @@ window.isValidTheme = function (theme) {
   return theme === "light" || theme === "dark";
 };
 
+window.disabledMedia = "(width: 10px)";
+
+function setStylesheetMedia(stylesheet, media) {
+  if (!stylesheet || stylesheet.getAttribute("media") === media) return;
+
+  if (media) stylesheet.setAttribute("media", media);
+  else stylesheet.removeAttribute("media");
+}
+
 window.setTheme = function (theme) {
   if (!window.isValidTheme(theme)) return;
   if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) return;
 
-  var criticalDarkStylesheet = document.getElementById("critical-dark-styles");
-  var deferrableDarkStylesheet = document.getElementById("deferrable-dark-styles");
+  var media = theme === "dark" ? null : window.disabledMedia;
 
-  if (theme === "dark") {
-    window.currentTheme = "dark";
-    criticalDarkStylesheet.removeAttribute("media");
+  window.currentTheme = theme;
 
-    if (deferrableDarkStylesheet) deferrableDarkStylesheet.removeAttribute("media");
-  }
-
-  if (theme === "light") {
-    window.currentTheme = "light";
-    criticalDarkStylesheet.setAttribute("media", "(width: 10px)");
-
-    if (deferrableDarkStylesheet) deferrableDarkStylesheet.setAttribute("media", "(width: 10px)");
-  }
+  setStylesheetMedia(document.getElementById("critical-dark-styles"), media);
+  setStylesheetMedia(document.getElementById("deferrable-dark-styles"), media);
 };
 
 window.setTheme(localStorage.getItem("theme"));

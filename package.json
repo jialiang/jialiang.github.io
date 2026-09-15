@@ -14,7 +14,6 @@
     "css-select": "^6.0.0",
     "html-minifier-terser": "^7.2.0",
     "htmlparser2": "^10.0.0",
-    "jialiang.github.io": "file:",
     "marked": "^16.2.1",
     "mime": "^4.0.7",
     "nodemon": "^3.1.10",
