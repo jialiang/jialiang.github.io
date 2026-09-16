@@ -125,3 +125,57 @@
     meta.get-mixin("revert-focus-hover")
   );
 }
+
+.carousel .nexus {
+  display: block;
+  margin: -3rem 0 0 6.5rem;
+  box-shadow: 0.125rem 0.125rem 0.25rem black(0.5);
+  border: 2px solid black(0);
+  border-radius: 1rem;
+  background: black;
+  padding: 0.25rem 0;
+  width: 11rem;
+  color: white;
+  font-weight: 500;
+  line-height: 1.5rem;
+
+  @include noto-sans-jp-font;
+
+  > img {
+    vertical-align: middle;
+    margin: 0 0 0 0.25rem;
+    height: 1.5rem;
+  }
+
+  > span {
+    position: relative;
+    top: -0.0625rem;
+    vertical-align: middle;
+  }
+
+  &::after {
+    border-radius: 1.5rem;
+  }
+
+  @mixin apply-focus-hover {
+    box-shadow: 0.125rem 0.125rem 0.25rem cyan(0.25);
+    border-color: deepskyblue;
+    background: #163c3c;
+  }
+
+  @mixin revert-focus-hover {
+    box-shadow: 0.125rem 0.125rem 0.25rem black(0.5);
+    border-color: black(0);
+    background: black;
+  }
+
+  @include focus-hover-states(
+    meta.get-mixin("apply-focus-hover"),
+    meta.get-mixin("revert-focus-hover")
+  );
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: none !important;
+  }
+}
