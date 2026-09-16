@@ -2,15 +2,16 @@ import fs from "fs";
 
 import { marked } from "marked";
 
-const template = `<div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-  <h4
-    class="question"
-    itemprop="name"
-    tabindex="0"
-    aria-expanded="false"
-    aria-controls="{{id}}">
-   {{question}}
-   <span class="bottom"></span>
+const template = `
+<div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+  <h4 class="question" data-expanded="false">
+    <button
+      type="button"
+      itemprop="name"
+      aria-expanded="false"
+      aria-controls="{{id}}">
+      {{question}}
+    </button>
   </h4>
 
   <div
@@ -24,7 +25,7 @@ const template = `<div class="faq" itemscope itemprop="mainEntity" itemtype="htt
     </div>
   </div>
 
-  <div class="focus-ring"></div>
+  <div class="border"></div>
 </div>`;
 
 export default {
@@ -40,7 +41,7 @@ export default {
 
     let output = "";
 
-    input.split("\n# ").forEach((section, i) => {
+    input.split("\n# ").forEach((section, sectionIndex) => {
       if (section.trim() === "") return;
 
       const lines = section.split("\n");
@@ -51,7 +52,7 @@ export default {
 
       const faqs = lines.join("\n").split("\n## ");
 
-      faqs.forEach((faq, j) => {
+      faqs.forEach((faq, faqIndex) => {
         if (faq.trim() === "") return;
 
         const lines = faq.split("\n");
@@ -63,7 +64,8 @@ export default {
         const answer = marked.parse(lines.join("\n")).trim();
 
         output += template
-          .replace(/{{id}}/gi, `s${i}a${j}`)
+          .trim()
+          .replace(/{{id}}/g, `s${sectionIndex}a${faqIndex}`)
           .replace("{{question}}", question)
           .replace("{{answer}}", answer);
 

@@ -16,22 +16,37 @@
     border: 2px solid #ffe6b7;
     border-radius: 1rem;
     background: #fff5e2;
-    padding: 1rem 1rem 1rem 2.5rem;
-    -webkit-tap-highlight-color: black(0);
 
-    &::before {
-      display: inline-block;
-      margin: 0 0.5rem 0 -1.5rem;
-      background-position: 50% 77.5%;
-      background-size: 0.67rem;
-      background-repeat: no-repeat;
-      width: 1rem;
-      height: 1rem;
-      content: "";
+    button {
+      display: block;
+      appearance: none;
+      border: none;
+      background: none;
+      padding: 1rem 1rem 1rem 2.5rem;
+      width: 100%;
+      font-weight: inherit;
+      font-size: inherit;
+      font-family: inherit;
+      text-align: inherit;
+
+      &::before {
+        display: inline-block;
+        margin: 0 0.5rem 0 -1.5rem;
+        background-position: 50% 77.5%;
+        background-size: 0.67rem;
+        background-repeat: no-repeat;
+        width: 1rem;
+        height: 1rem;
+        content: "";
+      }
+
+      &::after {
+        border-radius: 1.5rem;
+        height: calc(100% + 1rem + 2px);
+      }
     }
 
     @mixin apply-focus-hover {
-      outline: none;
       border-color: #cdbca5;
       background: #ffe6b7;
 
@@ -39,16 +54,15 @@
         border-color: #cdbca5;
       }
 
-      .bottom {
+      ~ .border {
         background: #cdbca5;
       }
     }
 
     @mixin revert-focus-hover {
-      outline: none;
       border-color: #ffe6b7;
 
-      &[aria-expanded="false"] {
+      &[data-expanded="false"] {
         background: #fff5e2;
       }
 
@@ -56,7 +70,7 @@
         border-color: #ffe6b7;
       }
 
-      .bottom {
+      ~ .border {
         background: #ffe6b7;
       }
     }
@@ -66,14 +80,6 @@
       meta.get-mixin("revert-focus-hover")
     );
 
-    &:focus ~ .focus-ring {
-      border-color: orangered;
-    }
-
-    &:focus:not(:focus-visible) ~ .focus-ring {
-      border-color: black(0);
-    }
-
     &:active {
       transform: translateY(2px);
 
@@ -81,24 +87,24 @@
         transform: translateY(2px);
       }
 
-      .bottom {
-        visibility: hidden;
+      ~ .border {
+        opacity: 0;
       }
     }
 
-    &[aria-expanded="false"] {
-      &::before {
+    &[data-expanded="false"] {
+      button::before {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
       }
     }
 
-    &[aria-expanded="true"] {
+    &[data-expanded="true"] {
       border-bottom-width: 0;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
       background: #ffe6b7;
 
-      &::before {
+      button::before {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='46'%3E%3Cpath d='M53 0 26.5 46 0 0Z'/%3E%3C/svg%3E");
       }
 
@@ -119,17 +125,6 @@
     color: #666;
     font-weight: 500;
 
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      border-radius: 1rem;
-      width: 100%;
-      height: 100%;
-      content: "";
-    }
-
     p,
     ul,
     ol {
@@ -141,7 +136,7 @@
     }
   }
 
-  .bottom {
+  .border {
     position: absolute;
     bottom: -2px;
     left: 0;
@@ -151,17 +146,5 @@
     background: #ffe6b7;
     width: 100%;
     height: 100%;
-  }
-
-  .focus-ring {
-    position: absolute;
-    top: -0.5rem;
-    left: -0.5rem;
-    z-index: -1;
-    box-sizing: border-box;
-    border: 0.125rem solid black(0);
-    border-radius: 1.5rem;
-    width: calc(100% + 1rem);
-    height: calc(100% + 1rem);
   }
 }

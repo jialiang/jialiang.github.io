@@ -109,32 +109,28 @@ function initThemeToggle() {
 function initFaqToggle() {
   var questions = document.querySelectorAll(".question");
 
+  var setQuestionExpanded = function (question, isExpanded) {
+    question.setAttribute("data-expanded", isExpanded);
+    question.firstElementChild.setAttribute("aria-expanded", isExpanded);
+  };
+
   for (var i = 0; i < questions.length; i++) {
-    var action = function (e) {
-      var key = e.key || e.keyCode;
-      if (e.type === "keyup" && key !== "Enter" && key !== 13) return;
+    questions[i].onclick = function (e) {
+      var question = e.currentTarget;
 
-      var newState = "true";
-      if (e.currentTarget.getAttribute("aria-expanded") === "true") newState = "false";
-
-      e.currentTarget.setAttribute("aria-expanded", newState);
+      setQuestionExpanded(question, question.getAttribute("data-expanded") === "false");
     };
-
-    var question = questions[i];
-
-    question.onclick = action;
-    question.onkeyup = action;
   }
 
   var expandAll = document.querySelector(".expand");
   var collapseAll = document.querySelector(".collapse");
 
   expandAll.onclick = function () {
-    for (var i = 0; i < questions.length; i++) questions[i].setAttribute("aria-expanded", "true");
+    for (var j = 0; j < questions.length; j++) setQuestionExpanded(questions[j], true);
   };
 
   collapseAll.onclick = function () {
-    for (var i = 0; i < questions.length; i++) questions[i].setAttribute("aria-expanded", "false");
+    for (var j = 0; j < questions.length; j++) setQuestionExpanded(questions[j], false);
   };
 }
 
