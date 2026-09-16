@@ -693,6 +693,7 @@
 }
 .faq .question button::after {
   border-radius: 1.5rem;
+  height: calc(100% + 1rem + 2px);
 }
 .faq .question:focus, .faq .question:hover {
   border-color: #cdbca5;
