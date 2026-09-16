@@ -49,6 +49,9 @@
     background: #404040;
   }
 }
+#projects .nexus {
+  border: 2px solid deepskyblue;
+}
 #projects .picoletta {
   filter: drop-shadow(0 0 1rem rgba(255, 255, 0, 0.2));
 }
