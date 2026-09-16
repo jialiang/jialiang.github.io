@@ -1,8 +1,11 @@
 import http from "http";
 import url from "url";
 import fs from "fs";
+import path from "path";
 import mime from "mime";
 import zlib from "zlib";
+
+const servedRoot = path.resolve("./dist");
 
 http
   .createServer((req, res) => {
@@ -12,7 +15,15 @@ http
 
     if (pathname === "/") pathname = "/index.html";
 
-    const stream = fs.createReadStream("./dist" + pathname);
+    const filePath = path.resolve(servedRoot, "." + pathname);
+
+    if (filePath !== servedRoot && !filePath.startsWith(servedRoot + path.sep)) {
+      console.error(`Blocked request outside dist: ${pathname}`);
+      res.writeHead(403).end();
+      return;
+    }
+
+    const stream = fs.createReadStream(filePath);
     const chunks = [];
 
     stream.on("error", (error) => {
