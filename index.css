@@ -668,10 +668,20 @@
   border: 2px solid #ffe6b7;
   border-radius: 1rem;
   background: #fff5e2;
-  padding: 1rem 1rem 1rem 2.5rem;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.faq .question::before {
+.faq .question button {
+  display: block;
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 1rem 1rem 1rem 2.5rem;
+  width: 100%;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: inherit;
+}
+.faq .question button::before {
   display: inline-block;
   margin: 0 0.5rem 0 -1.5rem;
   background-position: 50% 77.5%;
@@ -681,73 +691,67 @@
   height: 1rem;
   content: "";
 }
+.faq .question button::after {
+  border-radius: 1.5rem;
+}
 .faq .question:focus, .faq .question:hover {
-  outline: none;
   border-color: #cdbca5;
   background: #ffe6b7;
 }
 .faq .question:focus + .answer, .faq .question:hover + .answer {
   border-color: #cdbca5;
 }
-.faq .question:focus .bottom, .faq .question:hover .bottom {
+.faq .question:focus ~ .border, .faq .question:hover ~ .border {
   background: #cdbca5;
 }
 .faq .question:focus:not(:focus-visible, :hover) {
-  outline: none;
   border-color: #ffe6b7;
 }
-.faq .question:focus:not(:focus-visible, :hover)[aria-expanded=false] {
+.faq .question:focus:not(:focus-visible, :hover)[data-expanded=false] {
   background: #fff5e2;
 }
 .faq .question:focus:not(:focus-visible, :hover) + .answer {
   border-color: #ffe6b7;
 }
-.faq .question:focus:not(:focus-visible, :hover) .bottom {
+.faq .question:focus:not(:focus-visible, :hover) ~ .border {
   background: #ffe6b7;
 }
 @media (hover: none) {
   .faq .question:hover:not(:focus-visible) {
-    outline: none;
     border-color: #ffe6b7;
   }
-  .faq .question:hover:not(:focus-visible)[aria-expanded=false] {
+  .faq .question:hover:not(:focus-visible)[data-expanded=false] {
     background: #fff5e2;
   }
   .faq .question:hover:not(:focus-visible) + .answer {
     border-color: #ffe6b7;
   }
-  .faq .question:hover:not(:focus-visible) .bottom {
+  .faq .question:hover:not(:focus-visible) ~ .border {
     background: #ffe6b7;
   }
-}
-.faq .question:focus ~ .focus-ring {
-  border-color: orangered;
-}
-.faq .question:focus:not(:focus-visible) ~ .focus-ring {
-  border-color: rgba(0, 0, 0, 0);
 }
 .faq .question:active {
   transform: translateY(2px);
 }
+.faq .question:active .border {
+  opacity: 0;
+}
 .faq .question:active + .answer {
   transform: translateY(2px);
 }
-.faq .question:active .bottom {
-  visibility: hidden;
-}
-.faq .question[aria-expanded=false]::before {
+.faq .question[data-expanded=false] button::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
 }
-.faq .question[aria-expanded=true] {
+.faq .question[data-expanded=true] {
   border-bottom-width: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   background: #ffe6b7;
 }
-.faq .question[aria-expanded=true]::before {
+.faq .question[data-expanded=true] button::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='46'%3E%3Cpath d='M53 0 26.5 46 0 0Z'/%3E%3C/svg%3E");
 }
-.faq .question[aria-expanded=true] + .answer {
+.faq .question[data-expanded=true] + .answer {
   display: block;
 }
 .faq .answer {
@@ -761,16 +765,6 @@
   color: #666;
   font-weight: 500;
 }
-.faq .answer::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: 1rem;
-  width: 100%;
-  height: 100%;
-  content: "";
-}
 .faq .answer p,
 .faq .answer ul,
 .faq .answer ol {
@@ -779,7 +773,7 @@
 .faq .answer li {
   margin: 0 0 0.67rem;
 }
-.faq .bottom {
+.faq .border {
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -789,17 +783,6 @@
   background: #ffe6b7;
   width: 100%;
   height: 100%;
-}
-.faq .focus-ring {
-  position: absolute;
-  top: -0.5rem;
-  left: -0.5rem;
-  z-index: -1;
-  box-sizing: border-box;
-  border: 0.125rem solid rgba(0, 0, 0, 0);
-  border-radius: 1.5rem;
-  width: calc(100% + 1rem);
-  height: calc(100% + 1rem);
 }
 
 #credits {

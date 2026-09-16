@@ -135,32 +135,23 @@
   border-color: #ffde69;
   background: #313117;
 }
-.faq .question:focus[aria-expanded=false], .faq .question:hover[aria-expanded=false] {
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 0, 0.25);
-}
 .faq .question:focus + .answer, .faq .question:hover + .answer {
   border-color: #ffde69;
 }
-.faq .question:focus + .answer::before, .faq .question:hover + .answer::before {
+.faq .question:focus ~ .border, .faq .question:hover ~ .border {
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(255, 255, 0, 0.25);
-}
-.faq .question:focus .bottom, .faq .question:hover .bottom {
   background: #ffde69;
 }
 .faq .question:focus:not(:focus-visible, :hover) {
   border-color: #2a2a2a;
 }
-.faq .question:focus:not(:focus-visible, :hover)[aria-expanded=false] {
-  box-shadow: none;
+.faq .question:focus:not(:focus-visible, :hover)[data-expanded=false] {
   background: #1a1a1a;
 }
 .faq .question:focus:not(:focus-visible, :hover) + .answer {
   border-color: #2a2a2a;
 }
-.faq .question:focus:not(:focus-visible, :hover) + .answer::before {
-  box-shadow: none;
-}
-.faq .question:focus:not(:focus-visible, :hover) .bottom {
+.faq .question:focus:not(:focus-visible, :hover) ~ .border {
   box-shadow: none;
   background: #2a2a2a;
 }
@@ -168,32 +159,27 @@
   .faq .question:hover:not(:focus-visible) {
     border-color: #2a2a2a;
   }
-  .faq .question:hover:not(:focus-visible)[aria-expanded=false] {
-    box-shadow: none;
+  .faq .question:hover:not(:focus-visible)[data-expanded=false] {
     background: #1a1a1a;
   }
   .faq .question:hover:not(:focus-visible) + .answer {
     border-color: #2a2a2a;
   }
-  .faq .question:hover:not(:focus-visible) + .answer::before {
-    box-shadow: none;
-  }
-  .faq .question:hover:not(:focus-visible) .bottom {
+  .faq .question:hover:not(:focus-visible) ~ .border {
     box-shadow: none;
     background: #2a2a2a;
   }
 }
-.faq .question[aria-expanded=false]::before {
+.faq .question[data-expanded=false] button::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='53'%3E%3Cpath fill='%23fff' d='m0 0 46 26.5L0 53Z'/%3E%3C/svg%3E");
 }
-.faq .question[aria-expanded=true] {
+.faq .question[data-expanded=true] {
   background: #2a2a2a;
 }
-.faq .question[aria-expanded=true]::before {
+.faq .question[data-expanded=true] button::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='46'%3E%3Cpath fill='%23fff' d='M53 0 26.5 46 0 0Z'/%3E%3C/svg%3E");
 }
 .faq .answer {
-  box-shadow: none;
   border-color: #2a2a2a;
   background: #1a1a1a;
 }
@@ -202,7 +188,7 @@
 .faq .answer ul {
   color: #eee;
 }
-.faq .bottom {
+.faq .border {
   box-shadow: none;
   background: #2a2a2a;
 }
