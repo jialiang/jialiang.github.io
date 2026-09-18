@@ -29,7 +29,7 @@ My tasks generally come with the goals of:
 
 ## What is your current work arrangement?
 
-I'm currently on a hybrid work arrangement of 1 day in the office and 4 days from home.
+I'm currently on a hybrid work arrangement of 2 days in the office and 3 days from home.
 
 # CULTURE FIT
 

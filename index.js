@@ -44,6 +44,13 @@ async function copy(src, dest) {
 const careerStart = new Date(2018, 3, 1); // April 2018, including prior internship
 const yearsOfExperience = Math.round((Date.now() - careerStart) / (365.25 * 24 * 60 * 60 * 1000));
 
+const faqLastUpdated = new Date().toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "Asia/Singapore",
+});
+
 const generateHtml = async (cssObj, jsObj) => {
   const [inputHtml, faqHtml] = await Promise.all([
     fs.readFile("./src/index.html", { encoding: "utf-8" }),
@@ -58,6 +65,7 @@ const generateHtml = async (cssObj, jsObj) => {
     .replace("/* ie9.scss */", cssObj.ie9)
     .replace("/* noscript.scss */", cssObj.noscript)
     .replaceAll("/* years-of-experience */", yearsOfExperience)
+    .replace("/* faq-last-updated */", faqLastUpdated)
     //
     .replace("// theme.js", jsObj.theme)
     .replace("// hydrate.js", jsObj.hydrate);
