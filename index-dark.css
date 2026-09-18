@@ -106,6 +106,9 @@
 #me h3 {
   color: #ddd;
 }
+#me .last-updated {
+  color: #ddd;
+}
 #me .controls button {
   box-shadow: none;
   border-color: #2a2a2a;

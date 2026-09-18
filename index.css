@@ -511,7 +511,6 @@
 }
 #projects .button-container {
   display: none;
-  justify-content: space-between;
   margin: 1rem 0 0;
   padding: 0 1rem;
 }
@@ -649,8 +648,14 @@
   display: block;
   text-decoration-thickness: 2px;
 }
+#me .last-updated {
+  margin: 1.5rem 0 1rem;
+  color: #555;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+}
 #me .controls {
-  margin: 1.5rem 0 -1.5rem;
+  margin: 0 0 -1.5rem;
   text-align: right;
 }
 #me .controls button {
@@ -699,8 +704,8 @@
   #me .flower-1 {
     margin: 0 0 -2.5rem;
   }
-  #me .controls {
-    margin: 3rem 0 -1.5rem;
+  #me .last-updated {
+    margin: 3rem 0 1rem;
   }
 }
 
