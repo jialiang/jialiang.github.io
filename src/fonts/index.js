@@ -20,8 +20,10 @@ const normalizeValue = (value) => {
   return false;
 };
 
+// Text that scripts write at runtime
 const fontToExtraCharacters = {
-  "noto-sans-jp-regular": "1234567890",
+  "noto-sans-jp-regular":
+    "1234567890 DNS lookup HTML fetch First contentful paint done at ms (took\u00a0).",
 };
 
 const subsetFonts = async (htmlStr, cssObj) => {
@@ -52,7 +54,7 @@ const subsetFonts = async (htmlStr, cssObj) => {
         const { a, b, c } = selectorSpecificity(selectorAst);
 
         const specificityScore = (a * 100 + b * 10 + c) * 10000 + index;
-        const compiledQuery = cssSelect.compile(`${selector}, ${selector} *`);
+        const compiledQuery = cssSelect.compile(selector);
 
         fontWeightSelectors.push({
           prop: prop.split("-")[1],
@@ -79,28 +81,30 @@ const subsetFonts = async (htmlStr, cssObj) => {
     DomUtils.removeElement(node);
   });
 
-  DomUtils.findAll((node) => {
-    for (const selector of fontWeightSelectors) {
-      const { prop, value, compiledQuery } = selector;
+  const findMatchingValue = (node, prop) =>
+    fontWeightSelectors.find(
+      (selector) => selector.prop === prop && cssSelect.is(node, selector.compiledQuery),
+    )?.value;
 
-      if (node[prop] || !cssSelect.is(node, compiledQuery)) continue;
+  const collectCharacters = (nodes, inherited) => {
+    for (const node of nodes) {
+      if (node.type !== "tag") continue;
 
-      node[prop] = value;
-
-      if (!node.family || !node.weight) continue;
-
-      const { family, weight } = node;
+      const family = findMatchingValue(node, "family") ?? inherited.family;
+      const weight = findMatchingValue(node, "weight") ?? inherited.weight;
 
       for (const child of node.children) {
-        if (child.type !== "text") continue;
+        if (child.type !== "text" || !family || !weight) continue;
 
         fontToCharacters[`${family}-${weight}`] ??= "";
         fontToCharacters[`${family}-${weight}`] += child.data;
       }
 
-      break;
+      collectCharacters(node.children, { family, weight });
     }
-  }, dom);
+  };
+
+  collectCharacters(dom, {});
 
   await fs.mkdir("./dist/fonts", { recursive: true });
 
