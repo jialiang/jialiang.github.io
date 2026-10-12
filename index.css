@@ -826,8 +826,24 @@
 .faq .answer ol {
   margin: 0 0 1rem;
 }
-.faq .answer li {
+.faq .answer ul {
+  list-style-type: disc;
+}
+.faq .answer ul > li,
+.faq .answer ol > li {
   margin: 0 0 0.67rem;
+}
+.faq .answer ul ul,
+.faq .answer ul ol,
+.faq .answer ol ul,
+.faq .answer ol ol {
+  margin: 0.67rem 0 0 0;
+}
+.faq .answer ul ul li,
+.faq .answer ul ol li,
+.faq .answer ol ul li,
+.faq .answer ol ol li {
+  margin: 0.33rem 0 0 0;
 }
 .faq .border {
   position: absolute;
