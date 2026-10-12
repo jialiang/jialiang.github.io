@@ -1,36 +1,3 @@
-# CURRENT JOB
-
-## What does your current company do?
-
-We're a multinational marketing technology company for the renovation and furnishing industry.
-
-We help companies with brand visibility and lead generation. We also offer them lead management tools.
-
-For renovating homeowners, we provide services like recommendations, deposit safeguards and dispute resolution.
-
-## How big is the team you're currently in?
-
-The team I'm on consists of 6 people.
-
-## What do you do at your current job?
-
-Broadly, I propose, implement and maintain technical solutions to business problems.
-
-I take on various responsibilities depending on the business priorities, whether that be the frontend, backend, database development or IT operations.
-
-My tasks generally come with the goals of:
-
-- Improving conversions (e.g. feature development, A/B testing).
-- Improving efficiency (e.g. process automation, data transformation).
-- Improving traffic (e.g. SEO improvements, page speed optimisation).
-- Improving data collection (e.g. event-based tracking, journey analytics).
-- Improving business intelligence (e.g. dashboards and reports).
-- Improving reliability (e.g. application monitoring, error tracking).
-
-## What is your current work arrangement?
-
-I'm currently on a hybrid work arrangement of 2 days in the office and 3 days from home.
-
 # CULTURE FIT
 
 ## Why are you interested in our company?
@@ -94,6 +61,39 @@ They're stable enough that they rarely need active development, so my day-to-day
 Probably not all of them. Tools change faster than anyone can learn them in advance, so I value being able to pick things up quickly over knowing a fixed list.
 
 My track record reflects that: I started my career on .NET, moved to a React and Redux stack built on a 2015-era boilerplate and later led its migration to Next.js. My personal projects have also taken me into Java, Lua and PowerShell.
+
+# CURRENT JOB
+
+## What does your current company do?
+
+We're a multinational marketing technology company for the renovation and furnishing industry.
+
+We help companies with brand visibility and lead generation. We also offer them lead management tools.
+
+For renovating homeowners, we provide services like recommendations, deposit safeguards and dispute resolution.
+
+## How big is the team you're currently in?
+
+The team I'm on consists of 6 people.
+
+## What do you do at your current job?
+
+Broadly, I propose, implement and maintain technical solutions to business problems.
+
+I take on various responsibilities depending on the business priorities, whether that be the frontend, backend, database development or IT operations.
+
+My tasks generally come with the goals of:
+
+- Improving conversions (e.g. feature development, A/B testing).
+- Improving efficiency (e.g. process automation, data transformation).
+- Improving traffic (e.g. SEO improvements, page speed optimisation).
+- Improving data collection (e.g. event-based tracking, journey analytics).
+- Improving business intelligence (e.g. dashboards and reports).
+- Improving reliability (e.g. application monitoring, error tracking).
+
+## What is your current work arrangement?
+
+I'm currently on a hybrid work arrangement of 2 days in the office and 3 days from home.
 
 # NEXT JOB
 

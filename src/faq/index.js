@@ -4,11 +4,11 @@ import { marked } from "marked";
 
 const template = `
 <div class="faq" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-  <h4 class="question" data-expanded="false">
+  <h4 class="question" data-expanded="{{isExpanded}}">
     <button
       type="button"
       itemprop="name"
-      aria-expanded="false"
+      aria-expanded="{{isExpanded}}"
       aria-controls="{{id}}">
       {{question}}
     </button>
@@ -40,6 +40,7 @@ export default {
     });
 
     let output = "";
+    let isFirstQuestion = true;
 
     input.split("\n# ").forEach((section, sectionIndex) => {
       if (section.trim() === "") return;
@@ -66,10 +67,12 @@ export default {
         output += template
           .trim()
           .replace(/{{id}}/g, `s${sectionIndex}a${faqIndex}`)
+          .replace(/{{isExpanded}}/g, isFirstQuestion)
           .replace("{{question}}", question)
           .replace("{{answer}}", answer);
 
         output += "\n\n";
+        isFirstQuestion = false;
       });
     });
 
