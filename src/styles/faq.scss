@@ -131,8 +131,24 @@
       margin: 0 0 1rem;
     }
 
-    li {
-      margin: 0 0 0.67rem;
+    ul {
+      list-style-type: disc;
+    }
+
+    ul,
+    ol {
+      > li {
+        margin: 0 0 0.67rem;
+      }
+
+      ul,
+      ol {
+        margin: 0.67rem 0 0 0;
+
+        li {
+          margin: 0.33rem 0 0 0;
+        }
+      }
     }
   }
 

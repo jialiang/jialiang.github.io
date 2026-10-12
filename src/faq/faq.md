@@ -4,7 +4,7 @@
 
 We're a multinational marketing technology company for the renovation and furnishing industry.
 
-We help companies in brand visibility, lead generation and offer lead management tools.
+We help companies with brand visibility and lead generation. We also offer them lead management tools.
 
 For renovating homeowners, we provide services like recommendations, deposit safeguards and dispute resolution.
 
@@ -24,7 +24,7 @@ My tasks generally come with the goals of:
 - Improving efficiency (e.g. process automation, data transformation).
 - Improving traffic (e.g. SEO improvements, page speed optimisation).
 - Improving data collection (e.g. event-based tracking, journey analytics).
-- Improving business intelligence (e.g. dashboard and reports).
+- Improving business intelligence (e.g. dashboards and reports).
 - Improving reliability (e.g. application monitoring, error tracking).
 
 ## What is your current work arrangement?
@@ -35,61 +35,65 @@ I'm currently on a hybrid work arrangement of 2 days in the office and 3 days fr
 
 ## Why are you interested in our company?
 
-I send each application after careful consideration rather than relying on large numbers.
+I don't apply widely. Instead, I find roles with a job sweeper I built in Python:
 
-I apply because I'm confident that I would contribute meaningfully, believe that our values align and feel positive about your company's offerings.
+1.  LinkedIn and MyCareersFuture are crawled for relevant job titles. Scanning the last 14 days yields around 900 new postings.
+2.  Postings by companies whose nature of business is incompatible with what I'm looking for are filtered out. This cuts the number by half.
+3.  Claude reads every remaining posting. About 10 remain on the shortlist after curating the postings by:
+    - Technologies used
+    - Role and responsibilities
+    - The company's product or services
+    - Work arrangement
+
+Finally, I thoroughly consider my fit for the companies on the shortlist before manually applying.
 
 ## How do you handle project deadlines?
 
-I try to break down and tackle large tasks into smaller independently releasable chunks.
-These tasks are then worked on in order of importance and urgency.
+I break large tasks down into smaller, independently releasable chunks and tackle them in order of importance and urgency.
 
-Frequent communication with stakeholders helps manage expectations.
-E.g. time estimates, current progress, blockers etc.
+Frequent communication with stakeholders (time estimates, current progress, blockers) helps manage expectations.
 
 ## What is your ideal work environment?
 
-My ideal work environment prioritises work-life balance along with a balanced pace and an outcome-oriented culture.
+A pragmatic team that trusts people to get the work done. One where people are frank with each other rather than beating around the bush.
 
-I thrive in a collaborative, supportive team with a focus on quality over quantity and open communication.
+For example, being able to point out a bad product decision or flag my own oversight without fear of blame or embarrassment.
+
+## How do you handle disagreements with product or stakeholders?
+
+I raise my concerns tactfully, along with the reasoning behind them. After that, the decision belongs to whoever owns it. I'll commit to it even if I'd have chosen differently.
 
 ## Where do you see yourself in 3 years?
 
-I see myself as a valuable member of your company with extensive knowledge and understanding of its business and technical domain.
+Rather than plan my career around a ladder, I focus on the present and rise to whatever challenges the company faces.
 
-I aim to become a trusted resource for colleagues and a key driver of progress.
+I've been at my current company since 2019, so when a place fits, I tend to stay.
 
 # EXPERIENCE
 
 ## How do you stay updated?
 
-I keep myself informed by engaging in online communities like Reddit.
-A diverse range of articles and projects related to web development are shared and discussed there.
+I keep up through Reddit, mainly subreddits where new articles, tools and projects get shared and picked apart.
 
-I also build personal projects from time to time to solve problems in my daily life.
-These projects sometimes lead me to trying out new tools, technologies and methods.
+I also build personal projects from time to time to solve problems in my daily life. These projects sometimes lead me to try out new tools, technologies and methods.
 
 ## Have you led a team or mentored juniors?
 
-I've mentored junior developers and collaborated closely with teammates.
+Yes. At my current company, I co-led a greenfield vertical, led our migration to Next.js (which doubled our PageSpeed score) and drove the team's move to AI-assisted development.
 
-I've provided support through code reviews, pair programming, and knowledge sharing.
+I've also mentored junior developers through code reviews, pair programming and knowledge sharing.
 
 ## Do you have experience with microservices?
 
-Yes, I have experience building scalable and modular services.
+Some. Our platform runs as several services: Docker containers for PostgreSQL, MongoDB, Redis and Elasticsearch, RabbitMQ for messaging between them and PM2 managing the cron and worker processes.
 
-I've used Docker for containerisation of services like PostgreSQL, MongoDB, Redis and Elasticsearch.
-
-I've also used RabbitMQ for messaging and PM2 for process management of cron and worker services.
+They're stable enough that they rarely need active development, so my day-to-day work is on the product itself. But I know how the pieces fit together and how to keep them running.
 
 ## Do you know X? What about Y?
 
-Chances are I've not worked directly with every technology listed in the job description.
+Probably not all of them. Tools change faster than anyone can learn them in advance, so I value being able to pick things up quickly over knowing a fixed list.
 
-Even so, technology evolves and businesses constantly adopt new tools.
-
-What I offer instead is adaptability and problem solving skills. When we catch up, I would be happy to share some examples with you.
+My track record reflects that: I started my career on .NET, moved to a React and Redux stack built on a 2015-era boilerplate and later led its migration to Next.js. My personal projects have also taken me into Java, Lua and PowerShell.
 
 # NEXT JOB
 
@@ -103,7 +107,7 @@ I'm happy with my current situation but am always open to new opportunities.
 
 ## When are you available for a call?
 
-Generally, I'm available Tuesday to Friday after 10am.
+Generally, I'm available Tuesday to Friday after 10am Singapore time.
 
 ## When can you start?
 
