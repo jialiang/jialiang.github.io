@@ -17,15 +17,23 @@
     text-align: left;
 
     &:nth-child(1) a {
-      width: 14.1rem;
+      width: 7rem;
     }
 
     &:nth-child(2) a {
-      width: 16rem;
+      width: 16.05rem;
     }
 
     &:nth-child(3) a {
-      width: 7.5rem;
+      width: 7.55rem;
+    }
+
+    &:nth-child(4) a {
+      width: 8.85rem;
+    }
+
+    &:nth-child(5) a {
+      width: 8.05rem;
     }
 
     @media (max-width: 25rem) {
@@ -51,6 +59,7 @@
 
     &:active {
       top: 3px;
+      box-shadow: none !important;
     }
 
     @mixin apply-focus-hover {
@@ -72,12 +81,22 @@
   }
 
   svg {
+    position: relative;
+    top: 0.0313rem;
     vertical-align: middle;
     box-sizing: border-box;
     margin: 0 0.33rem 0 0;
     width: 1.25rem;
     height: 1.25rem;
     fill: #333;
+  }
+
+  .email svg {
+    top: 0.0625rem;
+  }
+
+  .linkedin svg {
+    top: -0.0625rem;
   }
 
   span {
