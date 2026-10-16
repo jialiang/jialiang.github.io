@@ -47,7 +47,8 @@ export default {
 
       const lines = section.split("\n");
 
-      output += `<h3>${lines[0].trim()}</h3>\n\n`;
+      output += `<div class="pillars"><div class="hole"><h3>${lines[0].trim()}</h3></div></div>`;
+      output += `<div class="faqs">`;
 
       lines.shift();
 
@@ -71,11 +72,12 @@ export default {
           .replace("{{question}}", question)
           .replace("{{answer}}", answer);
 
-        output += "\n\n";
         isFirstQuestion = false;
       });
+
+      output += `</div>`;
     });
 
-    return `<div>${output.trim()}</div>`;
+    return output.trim();
   },
 };

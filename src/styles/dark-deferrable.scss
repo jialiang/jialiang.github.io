@@ -136,6 +136,13 @@
 }
 
 #me {
+  .paper {
+    &:before {
+      background: linear-gradient(#111 5.5rem, black(0) 0);
+      height: 100%;
+    }
+  }
+
   h2 {
     transform: none;
     box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
@@ -155,35 +162,70 @@
     }
   }
 
-  h3 {
-    color: #ddd;
-  }
-
   .last-updated {
+    background: linear-gradient(to bottom, #111 2.25rem, black(0.45));
     color: #ddd;
   }
 
-  .controls button {
-    box-shadow: none;
-    border-color: #2a2a2a;
-    background: #1a1a1a;
+  .controls {
+    background: black(0.45);
 
-    @mixin apply-focus-hover {
-      box-shadow: 0 0 1rem rgb(255, 255, 0, 33%);
-      border-color: #ffde69;
-      background: #414118;
-    }
-
-    @mixin revert-focus-hover {
+    button {
       box-shadow: none;
       border-color: #2a2a2a;
       background: #1a1a1a;
+
+      @mixin apply-focus-hover {
+        box-shadow: 0 0 1rem rgb(255, 255, 0, 33%);
+        border-color: #ffde69;
+        background: #414118;
+      }
+
+      @mixin revert-focus-hover {
+        box-shadow: none;
+        border-color: #2a2a2a;
+        background: #1a1a1a;
+      }
+
+      @include focus-hover-states(
+        meta.get-mixin("apply-focus-hover"),
+        meta.get-mixin("revert-focus-hover")
+      );
+    }
+  }
+
+  .pillars {
+    &:before,
+    &:after {
+      background: black(0.45);
     }
 
-    @include focus-hover-states(
-      meta.get-mixin("apply-focus-hover"),
-      meta.get-mixin("revert-focus-hover")
-    );
+    .hole {
+      box-shadow: 0 0 1rem 0 aquamarine(0.33) inset;
+      border: 4px double #00ffa9;
+      background: none;
+    }
+
+    h3 {
+      color: white;
+      text-shadow: 0 0 1rem aquamarine;
+    }
+  }
+
+  .faqs {
+    background: black(0.45);
+  }
+
+  @media (max-width: 34rem) {
+    .paper {
+      &:before {
+        background: linear-gradient(#111 9.5rem, black(0) 0);
+      }
+    }
+
+    .last-updated {
+      background: linear-gradient(to bottom, #111 1.1rem, black(0.45));
+    }
   }
 }
 

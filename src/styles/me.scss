@@ -4,11 +4,18 @@
 
 #me {
   .paper {
-    padding: 5rem 2rem 4rem;
+    padding: 5rem 0 0 0;
     width: 36rem;
+
+    &::before {
+      z-index: 0;
+      height: 7.5rem;
+    }
   }
 
   .header {
+    position: relative;
+    z-index: 1;
     margin: -11rem auto 0;
     max-width: 100%;
     text-align: center;
@@ -72,14 +79,22 @@
   }
 
   .last-updated {
-    margin: 1.5rem 0 1rem;
+    margin: -2rem 0 0 0;
+    background: #f8f8f8 url("./images/originals/paper.svg");
+    padding: 3.5rem 2rem 1rem 2rem;
     color: #555;
     font-size: 0.875rem;
     letter-spacing: 0;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
   }
 
   .controls {
-    margin: 0 0 -1.5rem;
+    background: #f8f8f8 url("./images/originals/paper.svg");
+    padding: 0 2rem 2rem 2rem;
     text-align: right;
 
     button {
@@ -120,11 +135,56 @@
     }
   }
 
-  h3 {
-    margin: 3rem 0 2rem;
-    color: #555;
-    font-size: 0.875rem;
-    letter-spacing: 0;
+  .pillars {
+    position: relative;
+    height: 10rem;
+
+    &:before,
+    &::after {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      background: #f8f8f8 url("./images/originals/paper.svg");
+      width: 3rem;
+      height: 100%;
+      content: "";
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    .hole {
+      position: absolute;
+      top: 0;
+      left: 3rem;
+      box-sizing: border-box;
+      box-shadow:
+        0 0 1rem 0 rgba(0, 0, 0, 0.1) inset,
+        0 0 0.25rem 0 rgba(0, 0, 0, 0.1) inset;
+      background: linear-gradient(to bottom, cyan(0.67) 1px, cyan(0) 0) 0 -1px / 100% 2rem repeat-y;
+      width: calc(100% - 6rem);
+      height: 100%;
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 1rem;
+      left: 0.5rem;
+      margin: 0;
+      color: #555;
+      font-size: 1.75rem;
+      letter-spacing: 0;
+    }
+  }
+
+  .faqs {
+    background: #f8f8f8 url("./images/originals/paper.svg");
+    padding: 2rem 2rem 4rem 2rem;
   }
 
   @media (max-width: 34rem) {
@@ -137,7 +197,7 @@
     }
 
     .last-updated {
-      margin: 3rem 0 1rem;
+      padding: 5rem 2rem 2rem 2rem;
     }
   }
 }

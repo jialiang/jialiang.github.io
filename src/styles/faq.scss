@@ -4,13 +4,19 @@
 
 .faq {
   position: relative;
-  margin: 0 0 2rem;
+  margin: 2rem 0 0 0;
   border-radius: 1rem;
   font-size: 1.1rem;
   line-height: 1.33;
   letter-spacing: 0;
 
+  &:first-child {
+    margin-top: 0;
+  }
+
   .question {
+    position: relative;
+    z-index: 1;
     cursor: pointer;
     margin: 0;
     border: 2px solid #ffe6b7;
@@ -116,6 +122,8 @@
 
   .answer {
     display: none;
+    position: relative;
+    z-index: 1;
     border: 2px solid #ffe6b7;
     border-top: none;
     border-bottom-right-radius: 1rem;
@@ -137,6 +145,8 @@
 
     ul,
     ol {
+      padding-left: 1.75rem;
+
       > li {
         margin: 0 0 0.67rem;
       }
@@ -156,7 +166,6 @@
     position: absolute;
     bottom: -2px;
     left: 0;
-    z-index: -1;
     box-shadow: 0.25rem 0.25rem 0.5rem black(0.1);
     border-radius: 1rem;
     background: #ffe6b7;
