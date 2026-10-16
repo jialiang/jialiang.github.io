@@ -336,6 +336,7 @@
 .carousel .nexus > img {
   vertical-align: middle;
   margin: 0 0 0 0.25rem;
+  border: none;
   height: 1.5rem;
 }
 .carousel .nexus > span {
@@ -589,10 +590,16 @@
 }
 
 #me .paper {
-  padding: 5rem 2rem 4rem;
+  padding: 5rem 0 0 0;
   width: 36rem;
 }
+#me .paper::before {
+  z-index: 0;
+  height: 7.5rem;
+}
 #me .header {
+  position: relative;
+  z-index: 1;
   margin: -11rem auto 0;
   max-width: 100%;
   text-align: center;
@@ -649,13 +656,20 @@
   text-decoration-thickness: 2px;
 }
 #me .last-updated {
-  margin: 1.5rem 0 1rem;
+  margin: -2rem 0 0 0;
+  background: #f8f8f8 url("./images/originals/paper.svg");
+  padding: 3.5rem 2rem 1rem 2rem;
   color: #555;
   font-size: 0.875rem;
   letter-spacing: 0;
 }
+#me .last-updated span {
+  position: relative;
+  z-index: 1;
+}
 #me .controls {
-  margin: 0 0 -1.5rem;
+  background: #f8f8f8 url("./images/originals/paper.svg");
+  padding: 0 2rem 2rem 2rem;
   text-align: right;
 }
 #me .controls button {
@@ -691,11 +705,47 @@
     background: #fff5e2;
   }
 }
-#me h3 {
-  margin: 3rem 0 2rem;
+#me .pillars {
+  position: relative;
+  height: 10rem;
+}
+#me .pillars:before, #me .pillars::after {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: #f8f8f8 url("./images/originals/paper.svg");
+  width: 3rem;
+  height: 100%;
+  content: "";
+}
+#me .pillars:before {
+  left: 0;
+}
+#me .pillars:after {
+  right: 0;
+}
+#me .pillars .shadow {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1) inset, 0 0 0.25rem 0 rgba(0, 0, 0, 0.1) inset;
+  background: linear-gradient(to bottom, rgba(0, 255, 255, 0.67) 1px, rgba(0, 255, 255, 0) 0) 0 -1px/100% 2rem repeat-y;
+  width: calc(100% - 6rem);
+  height: 100%;
+}
+#me .pillars h3 {
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+  margin: 0;
   color: #555;
-  font-size: 0.875rem;
+  font-size: 1.75rem;
   letter-spacing: 0;
+}
+#me .faqs {
+  background: #f8f8f8 url("./images/originals/paper.svg");
+  padding: 2rem 2rem 4rem 2rem;
 }
 @media (max-width: 34rem) {
   #me .header {
@@ -705,19 +755,24 @@
     margin: 0 0 -2.5rem;
   }
   #me .last-updated {
-    margin: 3rem 0 1rem;
+    padding: 5rem 2rem 2rem 2rem;
   }
 }
 
 .faq {
   position: relative;
-  margin: 0 0 2rem;
+  margin: 2rem 0 0 0;
   border-radius: 1rem;
   font-size: 1.1rem;
   line-height: 1.33;
   letter-spacing: 0;
 }
+.faq:first-child {
+  margin-top: 0;
+}
 .faq .question {
+  position: relative;
+  z-index: 1;
   cursor: pointer;
   margin: 0;
   border: 2px solid #ffe6b7;
@@ -812,6 +867,8 @@
 }
 .faq .answer {
   display: none;
+  position: relative;
+  z-index: 1;
   border: 2px solid #ffe6b7;
   border-top: none;
   border-bottom-right-radius: 1rem;
@@ -828,6 +885,10 @@
 }
 .faq .answer ul {
   list-style-type: disc;
+}
+.faq .answer ul,
+.faq .answer ol {
+  padding-left: 1.75rem;
 }
 .faq .answer ul > li,
 .faq .answer ol > li {
@@ -849,7 +910,6 @@
   position: absolute;
   bottom: -2px;
   left: 0;
-  z-index: -1;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   background: #ffe6b7;
