@@ -26,18 +26,17 @@ const fontToExtraCharacters = {
     "1234567890 DNS lookup HTML fetch First contentful paint done at ms (took\u00a0).",
 };
 
-const subsetFonts = async (htmlStr, cssObj) => {
-  const browserCss = `
-    html { font-weight: 400; }
-    h1, h2, h3, h4, b, strong { font-weight: 700; }
-  `;
+const browserCss = `
+  html { font-weight: 400; }
+  h1, h2, h3, h4, b, strong { font-weight: 700; }
+`;
 
-  const css = browserCss + Object.values(cssObj).join("\n\n");
+const selectorProcessor = selectorParser();
+
+const parseFontRules = async (stylesheets) => {
+  const css = browserCss + stylesheets.join("\n\n");
   const ast = await postcss().process(css, { from: undefined });
-
-  const selectorProcessor = selectorParser();
   const fontWeightSelectors = [];
-  const fontToCharacters = {};
 
   ast.root.nodes.forEach(({ selector, nodes }, index) => {
     if (!selector || selector.includes("::")) return;
@@ -66,7 +65,16 @@ const subsetFonts = async (htmlStr, cssObj) => {
     }
   });
 
-  fontWeightSelectors.sort((a, b) => b.specificityScore - a.specificityScore);
+  return fontWeightSelectors.sort((a, b) => b.specificityScore - a.specificityScore);
+};
+
+const subsetFonts = async (htmlStr, cssObj) => {
+  const { criticalDark, deferrableDark, ...lightCssObj } = cssObj;
+  const lightCss = Object.values(lightCssObj);
+  const darkCss = [...lightCss, criticalDark, deferrableDark];
+  const themeSelectors = await Promise.all([parseFontRules(lightCss), parseFontRules(darkCss)]);
+
+  const fontToCharacters = {};
 
   const dom = await new Promise((resolve, reject) => {
     const domHandler = new DomHandler((error, dom) => {
@@ -81,17 +89,17 @@ const subsetFonts = async (htmlStr, cssObj) => {
     DomUtils.removeElement(node);
   });
 
-  const findMatchingValue = (node, prop) =>
+  const findMatchingValue = (fontWeightSelectors, node, prop) =>
     fontWeightSelectors.find(
       (selector) => selector.prop === prop && cssSelect.is(node, selector.compiledQuery),
     )?.value;
 
-  const collectCharacters = (nodes, inherited) => {
+  const collectCharacters = (fontWeightSelectors, nodes, inherited) => {
     for (const node of nodes) {
       if (node.type !== "tag") continue;
 
-      const family = findMatchingValue(node, "family") ?? inherited.family;
-      const weight = findMatchingValue(node, "weight") ?? inherited.weight;
+      const family = findMatchingValue(fontWeightSelectors, node, "family") ?? inherited.family;
+      const weight = findMatchingValue(fontWeightSelectors, node, "weight") ?? inherited.weight;
 
       for (const child of node.children) {
         if (child.type !== "text" || !family || !weight) continue;
@@ -100,11 +108,11 @@ const subsetFonts = async (htmlStr, cssObj) => {
         fontToCharacters[`${family}-${weight}`] += child.data;
       }
 
-      collectCharacters(node.children, { family, weight });
+      collectCharacters(fontWeightSelectors, node.children, { family, weight });
     }
   };
 
-  collectCharacters(dom, {});
+  themeSelectors.forEach((fontWeightSelectors) => collectCharacters(fontWeightSelectors, dom, {}));
 
   await fs.mkdir("./dist/fonts", { recursive: true });
 
