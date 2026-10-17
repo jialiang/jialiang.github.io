@@ -46,6 +46,7 @@
       box-sizing: border-box;
       border: 2px solid #404040;
       background: #404040;
+      color: white;
     }
 
     @mixin apply-focus-hover {
@@ -58,6 +59,7 @@
       img {
         border-color: cyan;
         background: cyan;
+        color: #555;
       }
     }
 
