@@ -30,7 +30,7 @@
     height: calc(100vh - 12rem);
   }
 
-  @media (max-width: 60rem), (max-height: 40rem) {
+  @media (max-height: 40rem) {
     .image-container {
       display: none;
     }
@@ -52,6 +52,10 @@
   border-bottom-right-radius: 4rem;
   width: auto;
   height: 20rem;
+
+  @media (max-width: 60rem) {
+    display: none;
+  }
 }
 
 #living-millenium {
@@ -60,6 +64,10 @@
   bottom: 8rem;
   width: auto;
   height: 20rem;
+
+  @media (max-width: 60rem) {
+    display: none;
+  }
 }
 
 #penguin-hat {
@@ -84,6 +92,10 @@
   bottom: 1.5rem;
   width: auto;
   height: 18rem;
+
+  @media (max-width: 60rem) {
+    display: none;
+  }
 }
 
 #jirachi {
@@ -92,6 +104,10 @@
   left: 1.5rem;
   width: 12.5rem;
   height: 12.5rem;
+
+  @media (max-width: 60rem) {
+    display: none;
+  }
 
   @media (max-height: 50rem) {
     top: 8.5rem;
