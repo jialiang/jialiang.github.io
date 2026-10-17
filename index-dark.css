@@ -139,13 +139,14 @@
 #me .pillars:before, #me .pillars:after {
   background: rgba(0, 0, 0, 0.45);
 }
-#me .pillars .shadow {
-  box-shadow: 0 0 1rem 0 rgba(255, 255, 0, 0.33) inset;
-  border: 4px double #ffde69;
+#me .pillars .hole {
+  box-shadow: 0 0 1rem 0 rgba(127, 255, 212, 0.33) inset;
+  border: 4px double #00ffa9;
   background: none;
 }
 #me .pillars h3 {
   color: white;
+  text-shadow: 0 0 1rem aquamarine;
 }
 #me .faqs {
   background: rgba(0, 0, 0, 0.45);

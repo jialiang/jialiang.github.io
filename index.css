@@ -724,7 +724,7 @@
 #me .pillars:after {
   right: 0;
 }
-#me .pillars .shadow {
+#me .pillars .hole {
   position: absolute;
   top: 0;
   left: 3rem;
