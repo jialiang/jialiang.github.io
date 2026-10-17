@@ -141,8 +141,14 @@
 }
 #me .pillars .hole {
   box-shadow: 0 0 1rem 0 rgba(127, 255, 212, 0.33) inset;
-  border: 4px double #00ffa9;
+  border-radius: 2rem;
   background: none;
+}
+#me .pillars .hole::before {
+  border-color: #00ffa9;
+}
+#me .pillars .hole .corner {
+  background-image: url("./images/originals/hole-corner-dark.svg");
 }
 #me .pillars h3 {
   color: white;
