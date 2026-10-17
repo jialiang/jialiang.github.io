@@ -24,6 +24,12 @@ header {
   display: none;
 }
 
-#me .flower-1 {
-  cursor: auto !important;
+#me {
+  .flower-1 {
+    cursor: auto !important;
+  }
+
+  .corner {
+    display: none;
+  }
 }

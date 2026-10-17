@@ -202,8 +202,16 @@
 
     .hole {
       box-shadow: 0 0 1rem 0 aquamarine(0.33) inset;
-      border: 4px double #00ffa9;
+      border-radius: 2rem;
       background: none;
+
+      &::before {
+        border-color: #00ffa9;
+      }
+
+      .corner {
+        background-image: url("./images/originals/hole-corner-dark.svg");
+      }
     }
 
     h3 {

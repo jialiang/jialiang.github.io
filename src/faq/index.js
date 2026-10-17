@@ -47,7 +47,9 @@ export default {
 
       const lines = section.split("\n");
 
-      output += `<div class="pillars"><div class="hole"><h3>${lines[0].trim()}</h3></div></div>`;
+      output += `<div class="pillars"><div class="hole">`;
+      output += `<div class="corner"></div><div class="corner"></div><div class="corner"></div><div class="corner"></div>`;
+      output += `<h3>${lines[0].trim()}</h3></div></div>`;
       output += `<div class="faqs">`;
 
       lines.shift();
