@@ -364,9 +364,9 @@
     background: black;
   }
 }
-.carousel .nexus:active {
+.carousel .nexus:active, .carousel .nexus:active:hover {
   transform: translateY(2px);
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .clock-container {
@@ -570,8 +570,9 @@
 #projects .button-container .left-arrow::after {
   border-radius: 3rem 0.375rem 0.375rem 3rem;
 }
-#projects .button-container .left-arrow:active {
+#projects .button-container .left-arrow:active, #projects .button-container .left-arrow:active:hover {
   transform: rotateZ(5deg) translate3d(0, 3px, 0);
+  box-shadow: none;
 }
 #projects .button-container .right-arrow {
   transform: rotateZ(-5deg);
@@ -581,8 +582,9 @@
 #projects .button-container .right-arrow::after {
   border-radius: 0.375rem 3rem 3rem 0.375rem;
 }
-#projects .button-container .right-arrow:active {
+#projects .button-container .right-arrow:active, #projects .button-container .right-arrow:active:hover {
   transform: rotateZ(-5deg) translate3d(0, 3px, 0);
+  box-shadow: none;
 }
 #projects .button-container .spacer {
   display: inline-block;
@@ -688,8 +690,9 @@
 #me .controls button::after {
   border-radius: 1.5rem;
 }
-#me .controls button:active {
+#me .controls button:active, #me .controls button:active:hover {
   top: 3px;
+  box-shadow: none;
 }
 #me .controls button:focus, #me .controls button:hover {
   border-color: #cdbca5;

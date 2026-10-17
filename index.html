@@ -547,10 +547,6 @@ button {
 #links a::after {
   border-radius: 1.5em;
 }
-#links a:active {
-  top: 3px;
-  box-shadow: none !important;
-}
 #links a:focus, #links a:hover {
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 255, 255, 0.2);
   border-color: cyan;
@@ -567,6 +563,10 @@ button {
     border-color: #eee;
     background: white;
   }
+}
+#links a:active, #links a:active:hover {
+  top: 3px;
+  box-shadow: none;
 }
 #links svg {
   position: relative;
@@ -844,6 +844,10 @@ header h2 .text {
   display: none !important;
 }
 
+.clock .hand {
+  animation: none !important;
+}
+
 #me .flower-1 {
   cursor: initial !important;
 }
@@ -851,18 +855,23 @@ header h2 .text {
   display: none !important;
 }
 
-.faq .question {
+.faq button {
   cursor: initial !important;
+  -webkit-user-select: text !important;
+          user-select: text !important;
+}
+.faq .question {
+  transform: none !important;
   border-color: #ffe6b7 !important;
-  border-bottom: none !important;
-  border-bottom-right-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
   background: #ffe6b7 !important;
 }
 .faq .answer {
-  display: block !important;
+  transform: none !important;
   border-bottom-width: 4px !important;
   border-color: #ffe6b7 !important;
+}
+.faq .border {
+  display: none !important;
 }
 @media (prefers-color-scheme: dark) {
   .faq .question {
