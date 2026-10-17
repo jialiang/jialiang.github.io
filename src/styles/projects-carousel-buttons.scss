@@ -63,8 +63,10 @@
       border-radius: 3rem 0.375rem 0.375rem 3rem;
     }
 
-    &:active {
+    &:active,
+    &:active:hover {
       transform: rotateZ(5deg) translate3d(0, 3px, 0);
+      box-shadow: none;
     }
   }
 
@@ -77,8 +79,10 @@
       border-radius: 0.375rem 3rem 3rem 0.375rem;
     }
 
-    &:active {
+    &:active,
+    &:active:hover {
       transform: rotateZ(-5deg) translate3d(0, 3px, 0);
+      box-shadow: none;
     }
   }
 

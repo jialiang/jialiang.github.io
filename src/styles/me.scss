@@ -114,8 +114,10 @@
         border-radius: 1.5rem;
       }
 
-      &:active {
+      &:active,
+      &:active:hover {
         top: 3px;
+        box-shadow: none;
       }
 
       @mixin apply-focus-hover {

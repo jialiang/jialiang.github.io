@@ -57,11 +57,6 @@
       border-radius: 1.5em;
     }
 
-    &:active {
-      top: 3px;
-      box-shadow: none !important;
-    }
-
     @mixin apply-focus-hover {
       box-shadow: 0.25rem 0.25rem 0.5rem cyan(0.2);
       border-color: cyan;
@@ -78,6 +73,12 @@
       meta.get-mixin("apply-focus-hover"),
       meta.get-mixin("revert-focus-hover")
     );
+
+    &:active,
+    &:active:hover {
+      top: 3px;
+      box-shadow: none;
+    }
   }
 
   svg {

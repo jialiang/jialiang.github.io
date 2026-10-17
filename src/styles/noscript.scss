@@ -3,6 +3,12 @@
   display: none !important;
 }
 
+.clock {
+  .hand {
+    animation: none !important;
+  }
+}
+
 #me {
   .flower-1 {
     cursor: initial !important;
@@ -14,19 +20,25 @@
 }
 
 .faq {
-  .question {
+  button {
     cursor: initial !important;
+    user-select: text !important;
+  }
+
+  .question {
+    transform: none !important;
     border-color: #ffe6b7 !important;
-    border-bottom: none !important;
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
     background: #ffe6b7 !important;
   }
 
   .answer {
-    display: block !important;
+    transform: none !important;
     border-bottom-width: 4px !important;
     border-color: #ffe6b7 !important;
+  }
+
+  .border {
+    display: none !important;
   }
 
   @media (prefers-color-scheme: dark) {

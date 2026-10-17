@@ -175,8 +175,9 @@
     meta.get-mixin("revert-focus-hover")
   );
 
-  &:active {
+  &:active,
+  &:active:hover {
     transform: translateY(2px);
-    box-shadow: none !important;
+    box-shadow: none;
   }
 }
