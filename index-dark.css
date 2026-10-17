@@ -19,6 +19,7 @@
   box-sizing: border-box;
   border: 2px solid #404040;
   background: #404040;
+  color: white;
 }
 #projects .card:focus, #projects .card:hover {
   box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 3rem rgba(0, 255, 255, 0.2);
@@ -28,6 +29,7 @@
 #projects .card:focus img, #projects .card:hover img {
   border-color: cyan;
   background: cyan;
+  color: #555;
 }
 #projects .card:focus:not(:focus-visible, :hover) {
   box-shadow: 0 0 0.5rem rgba(0, 255, 255, 0.5), 0 0 1.5rem rgba(255, 255, 255, 0.15);

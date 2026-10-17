@@ -237,8 +237,8 @@
   width: calc(15rem - 4px);
   height: calc(15rem - 4px);
   color: #555;
-  font-size: 1.25rem;
-  font-family: sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size-adjust: 0.545;
 }
 .card figcaption {
   display: table;
@@ -329,7 +329,7 @@
   width: 11rem;
   color: white;
   font-weight: 500;
-  line-height: 1.5rem;
+  white-space: initial;
   font-family: "Noto Sans JP", sans-serif;
   font-size-adjust: 0.545;
 }
