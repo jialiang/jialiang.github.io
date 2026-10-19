@@ -1,4 +1,4 @@
 Brotli==1.2.0
-fonttools==4.63.0
-uharfbuzz==0.55.0
+fonttools==4.67.0
+uharfbuzz==0.56.3
 zopfli==0.4.3
