@@ -4,7 +4,7 @@
 
 #me {
   .paper {
-    padding: 5rem 0 0 0;
+    padding: 5rem 0 0;
     width: 36rem;
 
     &::before {
@@ -79,9 +79,9 @@
   }
 
   .last-updated {
-    margin: -2rem 0 0 0;
+    margin: -2rem 0 0;
     background: #f8f8f8 url("./images/originals/paper.svg");
-    padding: 3.5rem 2rem 1rem 2rem;
+    padding: 3.5rem 2rem 1rem;
     color: #555;
     font-size: 0.875rem;
     letter-spacing: 0;
@@ -94,7 +94,7 @@
 
   .controls {
     background: #f8f8f8 url("./images/originals/paper.svg");
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 2rem;
     text-align: right;
 
     button {
@@ -141,7 +141,7 @@
     position: relative;
     height: 10rem;
 
-    &:before,
+    &::before,
     &::after {
       position: absolute;
       top: 0;
@@ -152,11 +152,11 @@
       content: "";
     }
 
-    &:before {
+    &::before {
       left: 0;
     }
 
-    &:after {
+    &::after {
       right: 0;
     }
 
@@ -166,8 +166,8 @@
       left: 3rem;
       box-sizing: border-box;
       box-shadow:
-        0 0 1rem 0 rgba(0, 0, 0, 0.1) inset,
-        0 0 0.25rem 0 rgba(0, 0, 0, 0.1) inset;
+        0 0 1rem 0 rgb(0, 0, 0, 10%) inset,
+        0 0 0.25rem 0 rgb(0, 0, 0, 10%) inset;
       background: linear-gradient(to bottom, cyan(0.67) 1px, cyan(0) 0) 0 -1px / 100% 2rem repeat-y;
       width: calc(100% - 6rem);
       height: 100%;
@@ -188,7 +188,7 @@
     .corner {
       position: absolute;
       z-index: 1;
-      background: url("./images/originals/hole-corner-paper.svg") 0 0/100% 100%;
+      background: url("./images/originals/hole-corner-paper.svg") 0 0 / 100% 100%;
       width: 2rem;
       height: 2rem;
 
@@ -229,7 +229,7 @@
 
   .faqs {
     background: #f8f8f8 url("./images/originals/paper.svg");
-    padding: 2rem 2rem 4rem 2rem;
+    padding: 2rem 2rem 4rem;
   }
 
   @media (max-width: 34rem) {
@@ -242,7 +242,7 @@
     }
 
     .last-updated {
-      padding: 5rem 2rem 2rem 2rem;
+      padding: 5rem 2rem 2rem;
     }
   }
 }

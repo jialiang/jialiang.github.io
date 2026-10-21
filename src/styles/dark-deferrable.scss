@@ -139,7 +139,7 @@
 
 #me {
   .paper {
-    &:before {
+    &::before {
       background: linear-gradient(#111 5.5rem, black(0) 0);
       height: 100%;
     }
@@ -197,8 +197,8 @@
   }
 
   .pillars {
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       background: black(0.45);
     }
 
@@ -228,7 +228,7 @@
 
   @media (max-width: 34rem) {
     .paper {
-      &:before {
+      &::before {
         background: linear-gradient(#111 9.5rem, black(0) 0);
       }
     }
