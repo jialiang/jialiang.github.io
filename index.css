@@ -592,7 +592,7 @@
 }
 
 #me .paper {
-  padding: 5rem 0 0 0;
+  padding: 5rem 0 0;
   width: 36rem;
 }
 #me .paper::before {
@@ -658,9 +658,9 @@
   text-decoration-thickness: 2px;
 }
 #me .last-updated {
-  margin: -2rem 0 0 0;
+  margin: -2rem 0 0;
   background: #f8f8f8 url("./images/originals/paper.svg");
-  padding: 3.5rem 2rem 1rem 2rem;
+  padding: 3.5rem 2rem 1rem;
   color: #555;
   font-size: 0.875rem;
   letter-spacing: 0;
@@ -671,7 +671,7 @@
 }
 #me .controls {
   background: #f8f8f8 url("./images/originals/paper.svg");
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 2rem 2rem;
   text-align: right;
 }
 #me .controls button {
@@ -712,7 +712,7 @@
   position: relative;
   height: 10rem;
 }
-#me .pillars:before, #me .pillars::after {
+#me .pillars::before, #me .pillars::after {
   position: absolute;
   top: 0;
   z-index: -1;
@@ -721,10 +721,10 @@
   height: 100%;
   content: "";
 }
-#me .pillars:before {
+#me .pillars::before {
   left: 0;
 }
-#me .pillars:after {
+#me .pillars::after {
   right: 0;
 }
 #me .pillars .hole {
@@ -785,7 +785,7 @@
 }
 #me .faqs {
   background: #f8f8f8 url("./images/originals/paper.svg");
-  padding: 2rem 2rem 4rem 2rem;
+  padding: 2rem 2rem 4rem;
 }
 @media (max-width: 34rem) {
   #me .header {
@@ -795,13 +795,13 @@
     margin: 0 0 -2.5rem;
   }
   #me .last-updated {
-    padding: 5rem 2rem 2rem 2rem;
+    padding: 5rem 2rem 2rem;
   }
 }
 
 .faq {
   position: relative;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 0;
   border-radius: 1rem;
   font-size: 1.1rem;
   line-height: 1.33;
@@ -938,13 +938,13 @@
 .faq .answer ul ol,
 .faq .answer ol ul,
 .faq .answer ol ol {
-  margin: 0.67rem 0 0 0;
+  margin: 0.67rem 0 0;
 }
 .faq .answer ul ul li,
 .faq .answer ul ol li,
 .faq .answer ol ul li,
 .faq .answer ol ol li {
-  margin: 0.33rem 0 0 0;
+  margin: 0.33rem 0 0;
 }
 .faq .border {
   position: absolute;

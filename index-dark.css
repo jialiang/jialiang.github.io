@@ -94,7 +94,7 @@
   }
 }
 
-#me .paper:before {
+#me .paper::before {
   background: linear-gradient(#111 5.5rem, rgba(0, 0, 0, 0) 0);
   height: 100%;
 }
@@ -138,7 +138,7 @@
     background: #1a1a1a;
   }
 }
-#me .pillars:before, #me .pillars:after {
+#me .pillars::before, #me .pillars::after {
   background: rgba(0, 0, 0, 0.45);
 }
 #me .pillars .hole {
@@ -160,7 +160,7 @@
   background: rgba(0, 0, 0, 0.45);
 }
 @media (max-width: 34rem) {
-  #me .paper:before {
+  #me .paper::before {
     background: linear-gradient(#111 9.5rem, rgba(0, 0, 0, 0) 0);
   }
   #me .last-updated {
