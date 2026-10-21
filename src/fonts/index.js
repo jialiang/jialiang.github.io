@@ -128,18 +128,19 @@ const subsetFonts = async (htmlStr, cssObj) => {
 
     formats.forEach((format) => {
       const subsetTask = new Promise((resolve) => {
+        // No shell, so quotes in the page text reach --text intact.
         const childProcess = spawn(
-          "pyftsubset",
+          "./.venv/Scripts/pyftsubset.exe",
           [
             `./src/fonts/originals/${fontName.replace("-critical", "")}.ttf`,
-            `--text="${textToSubset}"`,
+            `--text=${textToSubset}`,
             "--no-ignore-missing-unicodes",
             `--output-file=./dist/fonts/${fontName}.${format}`,
             `--flavor=${format}`,
             "--with-zopfli",
             "--harfbuzz-repacker",
           ],
-          { shell: true, stdio: "inherit" },
+          { stdio: "inherit" },
         );
 
         childProcess.on("exit", (code) => {

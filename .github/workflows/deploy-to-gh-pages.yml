@@ -29,7 +29,9 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Install Python dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m venv .venv
+          .venv\Scripts\pip install -r requirements.txt
 
       - name: Build webpage
         run: node index.js
