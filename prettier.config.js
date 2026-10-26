@@ -3,5 +3,6 @@ export default {
   importOrder: ["<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^[./]"],
   bracketSameLine: true,
   printWidth: 100,
+  trailingComma: "es5",
   endOfLine: "crlf",
 };

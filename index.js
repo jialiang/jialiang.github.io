@@ -38,7 +38,7 @@ async function copy(src, dest) {
 
       if (file.isDirectory()) await copy(_src, _dest);
       else await fs.copyFile(_src, _dest);
-    }),
+    })
   );
 }
 
@@ -99,11 +99,11 @@ const generateCss = async () => {
   ];
 
   const [critical, deferrable, criticalDark, deferrableDark, ie9, noscript] = await Promise.all(
-    paths.map((path) => sass.compileAsync(path)),
+    paths.map((path) => sass.compileAsync(path))
   ).then((results) =>
     results.map((result, index) =>
-      postcss(autoprefixer()).process(result.css, { from: paths[index] }),
-    ),
+      postcss(autoprefixer()).process(result.css, { from: paths[index] })
+    )
   );
 
   await fs.writeFile("./dist/index.css", deferrable.css);
@@ -194,7 +194,7 @@ const base64Fonts = async () => {
     "./dist/index.html",
     html
       .replace("<--noto-sans-jp-critical-regular.woff2-->", notoSansJPCriticalRegularBase64)
-      .replace("<--noto-sans-jp-critical-bold.woff2-->", notoSansJPCriticalBoldBase64),
+      .replace("<--noto-sans-jp-critical-bold.woff2-->", notoSansJPCriticalBoldBase64)
   );
 };
 
