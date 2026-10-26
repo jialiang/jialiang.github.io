@@ -1,12 +1,13 @@
 import fs from "fs/promises";
 import path from "path";
-import postcss from "postcss";
+
 import autoprefixer from "autoprefixer";
+import { subsetFonts } from "font-subsetter";
 import { minify } from "html-minifier-terser";
+import postcss from "postcss";
 import * as sass from "sass-embedded";
 
 import faq from "./src/faq/index.js";
-import fonts from "./src/fonts/index.js";
 
 const clean = async () => {
   await fs.mkdir("./dist", { recursive: true });
@@ -160,7 +161,27 @@ const generateSitemap = async (html) => {
   await fs.writeFile("./dist/sitemap.xml", parts.join(""));
 };
 
-const generateFonts = fonts.subsetFonts;
+const generateFonts = async (html, cssObj) => {
+  const { criticalDark, deferrableDark, ...lightCssObj } = cssObj;
+  const lightCss = Object.values(lightCssObj);
+  const darkCss = [...lightCss, criticalDark, deferrableDark];
+
+  await subsetFonts({
+    html,
+    stylesheets: [lightCss.join("\n"), darkCss.join("\n")],
+    families: {
+      "Noto Sans JP": "noto-sans-jp",
+      "Noto Sans JP Critical": { name: "noto-sans-jp-critical", source: "noto-sans-jp" },
+      "Chihaya Jun": "chihaya-jun",
+    },
+    extraCharacters: {
+      "noto-sans-jp-regular":
+        "1234567890 DNS lookup HTML fetch First contentful paint done at ms (took\u00a0).",
+    },
+    sourceDirectory: "./src/fonts/originals",
+    outputDirectory: "./dist/fonts",
+  });
+};
 
 const base64Fonts = async () => {
   const [html, notoSansJPCriticalRegularBase64, notoSansJPCriticalBoldBase64] = await Promise.all([
@@ -213,4 +234,7 @@ const build = async () => {
   process.stdout.write("\u0007");
 };
 
-build();
+build().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

@@ -9,16 +9,13 @@
     "lint": "npx eslint . && npx stylelint **/*.scss --fix && npx prettier . --write"
   },
   "dependencies": {
-    "@csstools/selector-specificity": "^5.0.0",
     "autoprefixer": "^10.4.21",
-    "css-select": "^6.0.0",
+    "font-subsetter": "github:jialiang/font-subsetter",
     "html-minifier-terser": "^7.2.0",
-    "htmlparser2": "^10.0.0",
     "marked": "^16.2.1",
     "mime": "^4.0.7",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.23",
-    "postcss-selector-parser": "^7.1.6",
     "sass-embedded": "^1.91.0"
   },
   "devDependencies": {
