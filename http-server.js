@@ -1,9 +1,10 @@
-import http from "http";
-import url from "url";
 import fs from "fs";
+import http from "http";
 import path from "path";
-import mime from "mime";
+import url from "url";
 import zlib from "zlib";
+
+import mime from "mime";
 
 const servedRoot = path.resolve("./dist");
 
