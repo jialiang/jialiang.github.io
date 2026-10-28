@@ -1,73 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="550.25" height="542.94" viewBox="0 0 145.59 143.65">
-   <defs>
-      <pattern xlink:href="#a" id="h" patternTransform="matrix(-.5125 0 0 2.875 -170 520)" />
-      <pattern xlink:href="#b" id="k" patternTransform="translate(-170 520) scale(.3994)" />
-      <pattern xlink:href="#c" id="d" patternTransform="matrix(10 0 0 10 168.05 -521.02)" />
-      <pattern id="c" width="2" height="2" patternTransform="scale(10)" patternUnits="userSpaceOnUse">
-         <path d="M0 0h1v1H0zm1 1h1v1H1z" />
-      </pattern>
-      <pattern id="f" width="37.07" height="37.07" patternTransform="translate(-168.05 521.02)" patternUnits="userSpaceOnUse">
-         <path fill="#f9f9f9" d="M0 0h37.07v37.07H0z" />
-         <path fill="url(#d)" d="M0 0h37.07v37.07H0z" />
-      </pattern>
-      <pattern id="b" width="40" height="40" patternTransform="translate(-170 520)" patternUnits="userSpaceOnUse">
-         <path fill="#ff2a2a" stroke-width="0" d="M0 0h40v40H0z" />
-         <path fill="#ffd5d5" stroke-linecap="square" stroke-width="0" d="M20 0h20v40H20z" />
-         <path fill="#f60" stroke-linecap="square" stroke-width="0" d="M0 0h40v20H0z" opacity=".5" />
-      </pattern>
-      <pattern id="a" width="40" height="40" patternTransform="translate(-170 520)" patternUnits="userSpaceOnUse">
-         <path fill="#d5f" d="M0 0h40v40H0z" />
-         <path fill="#405" stroke-width=".71" d="M20 0h20v40H20z" />
-      </pattern>
-      <filter id="e" width="1.32" height="1.28" x="-.13" y="-.12" color-interpolation-filters="sRGB">
-         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
-         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
-         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
-         <feOffset dx="3" dy="3" result="offset" />
-         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
-      </filter>
-      <filter id="g" width="1.3" height="1.34" x="-.12" y="-.14" color-interpolation-filters="sRGB">
-         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
-         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
-         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
-         <feOffset dx="3" dy="3" result="offset" />
-         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
-      </filter>
-      <filter id="i" width="1.37" height="1.31" x="-.15" y="-.13" color-interpolation-filters="sRGB">
-         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
-         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
-         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
-         <feOffset dx="3" dy="3" result="offset" />
-         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
-      </filter>
-      <filter id="j" width="1.29" height="1.42" x="-.12" y="-.17" color-interpolation-filters="sRGB">
-         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
-         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
-         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
-         <feOffset dx="3" dy="3" result="offset" />
-         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
-      </filter>
-      <filter id="l" width="1.31" height="1.36" x="-.13" y="-.15" color-interpolation-filters="sRGB">
-         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
-         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
-         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
-         <feOffset dx="3" dy="3" result="offset" />
-         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
-      </filter>
-      <filter id="m" width="1.5" height="1.5" x="-.21" y="-.21" color-interpolation-filters="sRGB">
-         <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
-         <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
-         <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
-         <feOffset dx="3" dy="3" result="offset" />
-         <feComposite in="SourceGraphic" in2="offset" result="composite2" />
-      </filter>
-   </defs>
-   <g transform="translate(4.43 1.68)">
-      <path fill="#0f6" d="m62.88 64.3 3.23-58.67c19.6-.83 37.07 3.29 50.84 16.02L73.8 67.06Z" filter="url(#e)" />
-      <path fill="url(#f)" d="m72.4 67.85 50.46-15.23c12.39 6.17 9.18 30.45-.32 50.75L72.92 78.53Z" filter="url(#g)" />
-      <path fill="url(#h)" d="m73.1 76.17 30.88 42.02c-14.02 9.88-29.27 15.33-46.67 13.08l6.15-51.81z" filter="url(#i)" />
-      <path fill="#2ad4ff" d="m61.8 77.95-32.62 35.29C10.18 107.62.84 97.38 3.1 81.36l52.74-9.82z" filter="url(#j)" />
-      <path fill="url(#k)" d="M60.52 66.86 8.81 58.54c1.08-16.24 6.36-30.26 18.93-40.4l36.24 39.98z" filter="url(#l)" />
-      <ellipse cx="88.78" cy="37.26" fill="#ff0" filter="url(#m)" rx="17.24" ry="17.3" transform="matrix(.92777 .37315 -.34888 .93717 0 0)" />
-   </g>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="550.25"
+  height="542.94"
+  viewBox="0 0 145.59 143.65">
+  <defs>
+    <filter id="c" width="1.32" height="1.28" x="-.13" y="-.12" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+      <feOffset dx="3" dy="3" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+    </filter>
+    <filter id="g" width="1.3" height="1.34" x="-.12" y="-.14" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+      <feOffset dx="3" dy="3" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+    </filter>
+    <filter id="i" width="1.37" height="1.31" x="-.15" y="-.13" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+      <feOffset dx="3" dy="3" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+    </filter>
+    <filter id="j" width="1.29" height="1.42" x="-.12" y="-.17" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+      <feOffset dx="3" dy="3" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+    </filter>
+    <filter id="l" width="1.31" height="1.36" x="-.13" y="-.15" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+      <feOffset dx="3" dy="3" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+    </filter>
+    <filter id="m" width="1.5" height="1.5" x="-.21" y="-.21" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#000" flood-opacity=".5" result="flood" />
+      <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" />
+      <feGaussianBlur in="composite1" result="blur" stdDeviation="3" />
+      <feOffset dx="1.74" dy="3.93" result="offset" />
+      <feComposite in="SourceGraphic" in2="offset" result="composite2" />
+    </filter>
+    <pattern
+      id="h"
+      width="20.5"
+      height="115"
+      patternTransform="translate(59.93 61.68)"
+      patternUnits="userSpaceOnUse">
+      <path fill="#d5f" d="M0 0h20.5v115H0z" />
+      <path fill="#405" d="M0 0h10.25v115H0z" />
+    </pattern>
+    <pattern
+      id="k"
+      width="15.98"
+      height="15.98"
+      patternTransform="translate(42.12 42.4)"
+      patternUnits="userSpaceOnUse">
+      <path fill="#ff2a2a" d="M0 0h15.98v15.98H0z" />
+      <path fill="#ffd5d5" d="M7.99 0h7.99v15.98h-8z" />
+      <path fill="#f60" d="M0 0h15.98v7.99H0z" opacity=".5" />
+    </pattern>
+    <pattern xlink:href="#a" id="b" patternTransform="matrix(10 0 0 10 168.05 -521.02)" />
+    <pattern id="a" width="2" height="2" patternTransform="scale(10)" patternUnits="userSpaceOnUse">
+      <path d="M0 0h1v1H0zm1 1h1v1H1z" />
+    </pattern>
+    <pattern
+      id="d"
+      width="37.07"
+      height="37.07"
+      patternTransform="translate(58.8 40.79)"
+      patternUnits="userSpaceOnUse">
+      <path fill="#f9f9f9" d="M0 0h37.07v37.07H0z" />
+      <path fill="url(#b)" d="M0 0h37.07v37.07H0z" />
+    </pattern>
+  </defs>
+  <path
+    fill="#0f6"
+    d="m67.31 65.98 3.23-58.67c19.6-.83 37.07 3.29 50.84 16.02L78.23 68.74Z"
+    filter="url(#c)" />
+  <path
+    fill="url(#d)"
+    d="m76.83 69.53 50.46-15.23c12.39 6.17 9.18 30.45-.32 50.75L77.35 80.21Z"
+    filter="url(#g)" />
+  <path
+    fill="url(#h)"
+    d="m77.53 77.85 30.88 42.02c-14.02 9.88-29.27 15.33-46.67 13.08l6.15-51.81z"
+    filter="url(#i)" />
+  <path
+    fill="#2ad4ff"
+    d="m66.23 79.63-32.62 35.29c-19-5.62-28.34-15.86-26.08-31.88l52.74-9.82z"
+    filter="url(#j)" />
+  <path
+    fill="url(#k)"
+    d="m64.95 68.54-51.71-8.32c1.08-16.24 6.36-30.26 18.93-40.4L68.41 59.8z"
+    filter="url(#l)" />
+  <path
+    fill="#ff0"
+    d="M79.8 86.16a17.5 17.04 69.97 0 1-22.01-10.6A17.5 17.04 69.97 0 1 67.8 53.3a17.5 17.04 69.97 0 1 22 10.6 17.5 17.04 69.97 0 1-10.02 22.27"
+    filter="url(#m)" />
 </svg>
