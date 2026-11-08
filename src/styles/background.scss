@@ -21,7 +21,7 @@
     height: 100%;
 
     svg {
-      filter: drop-shadow(2px 2px 4px black(0.1));
+      filter: drop-shadow(0.125rem 0.125rem 0.25rem black(0.1));
     }
   }
 
@@ -31,6 +31,12 @@
   }
 
   @media (max-height: 39rem) {
+    .image-container {
+      display: none;
+    }
+  }
+
+  @media (max-width: 30rem) {
     .image-container {
       display: none;
     }
@@ -54,6 +60,23 @@
   height: 20rem;
 
   @media (max-width: 60rem) {
+    display: none;
+  }
+}
+
+#kuromi {
+  position: absolute;
+  right: 8.5rem;
+  bottom: 25.25rem;
+  transform: scaleX(-1);
+  width: 10rem;
+  height: 10rem;
+
+  @media (max-width: 60rem) {
+    display: none;
+  }
+
+  @media (max-height: 43.125rem) {
     display: none;
   }
 }
@@ -104,10 +127,6 @@
   left: 1.5rem;
   width: 12.5rem;
   height: 12.5rem;
-
-  @media (max-width: 60rem) {
-    display: none;
-  }
 
   @media (max-height: 50rem) {
     top: 8.5rem;
