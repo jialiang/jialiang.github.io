@@ -370,6 +370,23 @@
   box-shadow: none;
 }
 
+.carousel .promo {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  transform: rotate(-10deg);
+  filter: drop-shadow(0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5));
+  box-sizing: border-box;
+  background: url("./images/originals/promo.svg") 0 0/100% 100%;
+  padding: 2.33rem 0.67rem 0;
+  width: 7.5rem;
+  height: 7.5rem;
+  color: black;
+  font-size: 1.625rem;
+  line-height: 0.75;
+  text-align: center;
+}
+
 .clock-container {
   border-radius: 0.5rem;
   background: #f4c99a;
