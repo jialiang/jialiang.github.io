@@ -182,3 +182,18 @@
     box-shadow: none;
   }
 }
+
+.carousel .promo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.25rem;
+  transform: rotate(-10deg);
+  box-sizing: border-box;
+  width: 7.5rem;
+  height: 7.5rem;
+  color: black;
+  font-size: 1.75rem;
+  line-height: 0.75;
+  text-align: center;
+  text-shadow: 0 0 0.25rem white;
+}
