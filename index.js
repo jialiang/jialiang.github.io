@@ -8,6 +8,7 @@ import postcss from "postcss";
 import * as sass from "sass-embedded";
 
 import faq from "./src/faq/index.js";
+import lotus from "./src/lotus/index.js";
 
 const clean = async () => {
   await fs.mkdir("./dist", { recursive: true });
@@ -229,7 +230,11 @@ const build = async () => {
     await timeTask(base64Fonts, 1);
   };
 
-  await Promise.all([main(), timeTask(copy, 0, ["./static", "./dist"])]);
+  await Promise.all([
+    main(),
+    timeTask(copy, 0, ["./static", "./dist"]),
+    timeTask(lotus.generateLotusBackgrounds),
+  ]);
 
   console.log(`\nTook ${Math.round(performance.now() - start)}ms to build.\n`);
 

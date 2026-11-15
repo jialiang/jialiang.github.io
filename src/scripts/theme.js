@@ -6,10 +6,13 @@ var testElementStyle = document.getElementById("test").style;
 
 var gradientSupport = !!testElementStyle.backgroundImage;
 var textShadowSupport = !!testElementStyle.textShadow;
+var blendModeSupport = !!testElementStyle.mixBlendMode;
 
 if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) {
   document.getElementById("ie9-styles").removeAttribute("media");
 }
+
+if (!blendModeSupport) document.documentElement.className += " no-blend-modes";
 
 window.isValidTheme = function (theme) {
   return theme === "light" || theme === "dark" || theme === "lotus";
