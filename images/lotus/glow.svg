@@ -1,0 +1,169 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1706.67"
+  height="960"
+  viewBox="0 0 1706.67 960">
+  <defs>
+    <filter id="l" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+    <filter id="p" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+    <filter id="n" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+    <filter id="d" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+    <filter id="f" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+    <filter id="h" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+    <filter id="j" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+    <filter id="b" color-interpolation-filters="sRGB">
+      <feGaussianBlur result="blur" stdDeviation="5 5" />
+    </filter>
+  </defs>
+  <use
+    xlink:href="#a"
+    width="100%"
+    height="100%"
+    filter="url(#b)"
+    transform="matrix(1.2 0 0 1.2 -114.1 -41.04)" />
+  <path
+    id="a"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="9.21"
+    d="M602.33 133.51h-31.8v143.36h31.8c32-47.67 32.54-95.63 0-143.36m-63.61 0h31.8v143.36h-31.8c-31.99-47.67-32.54-95.63 0-143.36"
+    display="inline" />
+  <use
+    xlink:href="#c"
+    width="100%"
+    height="100%"
+    filter="url(#d)"
+    transform="matrix(1.2 0 0 1.2 -43.16 -86.14)" />
+  <path
+    id="c"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="4.33"
+    d="M230.76 397.02H215.8v67.38h14.95c15.03-22.4 15.29-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
+    display="inline" />
+  <use
+    xlink:href="#e"
+    width="100%"
+    height="100%"
+    filter="url(#f)"
+    transform="matrix(1.2 0 0 1.2 -13.05 -69.47)" />
+  <path
+    id="e"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="4.33"
+    d="M80.19 313.67H65.24v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38H50.29c-15.04-22.4-15.3-44.95 0-67.38"
+    display="inline" />
+  <use
+    xlink:href="#g"
+    width="100%"
+    height="100%"
+    filter="url(#h)"
+    transform="matrix(1.2 0 0 1.2 -54.25 -17.27)" />
+  <path
+    id="g"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="4.33"
+    d="M286.19 52.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
+    display="inline" />
+  <use
+    xlink:href="#i"
+    width="100%"
+    height="100%"
+    filter="url(#j)"
+    transform="matrix(1.2 0 0 1.2 -78.45 -50.27)" />
+  <path
+    id="i"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="4.33"
+    d="M407.19 217.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
+    display="inline" />
+  <use
+    xlink:href="#k"
+    width="100%"
+    height="100%"
+    filter="url(#l)"
+    transform="matrix(1.2 0 0 1.2 -207.25 -33.67)" />
+  <path
+    id="k"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="4.33"
+    d="M1051.19 134.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
+    display="inline" />
+  <use
+    xlink:href="#m"
+    width="100%"
+    height="100%"
+    filter="url(#n)"
+    transform="matrix(1.2 0 0 1.2 -240.45 -89.47)" />
+  <path
+    id="m"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="4.33"
+    d="M1217.19 413.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
+    display="inline" />
+  <use
+    xlink:href="#o"
+    width="100%"
+    height="100%"
+    filter="url(#p)"
+    transform="matrix(1.2 0 0 1.2 -278.85 -44.87)" />
+  <path
+    id="o"
+    fill="#fbc684"
+    fill-opacity="1"
+    stroke="none"
+    stroke-dasharray="none"
+    stroke-miterlimit="4"
+    stroke-opacity="1"
+    stroke-width="4.33"
+    d="M1409.19 190.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
+    display="inline" />
+</svg>

@@ -28,7 +28,9 @@
   box-sizing: border-box;
   border: 0.5rem double aquamarine;
   border-radius: 0.5rem;
-  background: linear-gradient(to bottom, rgba(255, 192, 203, 0) 1px, pink 2px, rgba(255, 192, 203, 0) 3px) 0 1rem/100% 2.5rem, linear-gradient(to bottom, rgba(0, 255, 255, 0) 1px, cyan 2px, rgba(0, 255, 255, 0) 0) 0 1.25rem/100% 2.5rem, linear-gradient(to right, rgba(255, 192, 203, 0) 1px, pink 2px, rgba(255, 192, 203, 0) 3px) 1.5rem 0/2.5rem 100%, linear-gradient(to right, rgba(0, 255, 255, 0) 1px, cyan 2px, rgba(0, 255, 255, 0) 0) 1.25rem 0/2.5rem 100%;
+  background-image: linear-gradient(to bottom, rgba(255, 192, 203, 0) 1px, pink 0.125rem, rgba(255, 192, 203, 0) 0.1875rem), linear-gradient(to bottom, rgba(0, 255, 255, 0) 1px, cyan 0.125rem, rgba(0, 255, 255, 0) 0), linear-gradient(to right, rgba(255, 192, 203, 0) 1px, pink 0.125rem, rgba(255, 192, 203, 0) 0.1875rem), linear-gradient(to right, rgba(0, 255, 255, 0) 1px, cyan 0.125rem, rgba(0, 255, 255, 0) 0);
+  background-position: 0 1rem, 0 1.25rem, 1.5rem 0, 1.25rem 0;
+  background-size: 100% 2.5rem, 100% 2.5rem, 2.5rem 100%, 2.5rem 100%;
   background-color: snow;
   width: 100%;
   height: 100%;
@@ -214,7 +216,7 @@
   transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
   box-sizing: border-box;
   box-shadow: -0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1), -0.125rem -0.125rem 0.125rem rgba(0, 0, 0, 0.1) inset;
-  border: 2px solid rgba(0, 0, 0, 0);
+  border: 0.125rem solid rgba(0, 0, 0, 0);
   border-radius: 1rem;
   padding: 0.5rem;
   width: 16rem;
@@ -234,8 +236,8 @@
   border: none;
   border-radius: 0.5rem;
   background: #fdfdfd;
-  width: calc(15rem - 4px);
-  height: calc(15rem - 4px);
+  width: 14.75rem;
+  height: 14.75rem;
   color: #555;
   font-family: "Noto Sans JP", sans-serif;
   font-size-adjust: 0.545;
@@ -253,7 +255,7 @@
   width: 100%;
 }
 .card:active {
-  top: 3px;
+  top: 0.1875rem;
 }
 .card:focus, .card:hover {
   transform: scale3d(1.02, 1.02, 1.02);
@@ -299,7 +301,7 @@
 }
 @media (max-width: 61rem) {
   .carousel .card {
-    transform: perspective(1000px) rotateY(12.5deg);
+    transform: perspective(62.5rem) rotateY(12.5deg);
   }
 }
 
@@ -322,7 +324,7 @@
   display: block;
   margin: -3rem 0 0 6.5rem;
   box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(0, 0, 0, 0);
+  border: 0.125rem solid rgba(0, 0, 0, 0);
   border-radius: 1rem;
   background: black;
   padding: 0.25rem 0;
@@ -366,7 +368,7 @@
   }
 }
 .carousel .nexus:active, .carousel .nexus:active:hover {
-  transform: translateY(2px);
+  transform: translateY(0.125rem);
   box-shadow: none;
 }
 
@@ -397,8 +399,8 @@
   position: relative;
   transform: rotate(180deg);
   margin: auto;
-  width: calc(13rem - 4px);
-  height: calc(13rem - 4px);
+  width: 12.75rem;
+  height: 12.75rem;
   overflow: hidden;
 }
 .clock .face {
@@ -538,7 +540,7 @@
 }
 #projects .button-container button {
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  border: 2px solid aquamarine;
+  border: 0.125rem solid aquamarine;
   background: white;
   padding: 0.5rem;
   font-size: 1.5rem;
@@ -546,8 +548,8 @@
 #projects .button-container button span {
   display: inline-block;
   position: relative;
-  border-top: 2px solid pink;
-  border-bottom: 2px solid pink;
+  border-top: 0.125rem solid pink;
+  border-bottom: 0.125rem solid pink;
   padding: 0 0.5rem;
   height: 2rem;
   line-height: 1.85rem;
@@ -587,7 +589,7 @@
   border-radius: 3rem 0.375rem 0.375rem 3rem;
 }
 #projects .button-container .left-arrow:active, #projects .button-container .left-arrow:active:hover {
-  transform: rotateZ(5deg) translate3d(0, 3px, 0);
+  transform: rotateZ(5deg) translate3d(0, 0.1875rem, 0);
   box-shadow: none;
 }
 #projects .button-container .right-arrow {
@@ -599,7 +601,7 @@
   border-radius: 0.375rem 3rem 3rem 0.375rem;
 }
 #projects .button-container .right-arrow:active, #projects .button-container .right-arrow:active:hover {
-  transform: rotateZ(-5deg) translate3d(0, 3px, 0);
+  transform: rotateZ(-5deg) translate3d(0, 0.1875rem, 0);
   box-shadow: none;
 }
 #projects .button-container .spacer {
@@ -661,22 +663,22 @@
   box-sizing: border-box;
   margin: 0;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  border: 6px double #00ffa9;
+  border: 0.375rem double #00ffa9;
   border-radius: 2rem;
   background: rgba(255, 230, 0, 0.25);
-  background: linear-gradient(rgba(255, 230, 0, 0.25), rgba(255, 230, 0, 0)) 0 0/100% 2px;
+  background: linear-gradient(rgba(255, 230, 0, 0.25), rgba(255, 230, 0, 0)) 0 0/100% 0.125rem;
   padding: 1rem;
   width: 15rem;
   max-width: 100%;
 }
 #me h2 abbr {
   display: block;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 0.125rem;
 }
 #me .last-updated {
-  margin: -2rem 0 0;
+  margin: -7.5rem 0 0;
   background: #f8f8f8 url("./images/originals/paper.svg");
-  padding: 3.5rem 2rem 1rem;
+  padding: 9rem 2rem 1rem;
   color: #555;
   font-size: 0.875rem;
   letter-spacing: 0;
@@ -693,8 +695,8 @@
 #me .controls button {
   margin: 0 0 0 0.5rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  border: 2px solid #ffe6b7;
-  border-bottom-width: 3px;
+  border: 0.125rem solid #ffe6b7;
+  border-bottom-width: 0.1875rem;
   border-radius: 1rem;
   background: #fff5e2;
   padding: 0.5rem 0.75rem;
@@ -707,7 +709,7 @@
   border-radius: 1.5rem;
 }
 #me .controls button:active, #me .controls button:active:hover {
-  top: 3px;
+  top: 0.1875rem;
   box-shadow: none;
 }
 #me .controls button:focus, #me .controls button:hover {
@@ -758,7 +760,7 @@
   top: 0;
   left: 0;
   box-sizing: border-box;
-  border: 4px double rgba(0, 0, 0, 0);
+  border: 0.25rem double rgba(0, 0, 0, 0);
   border-radius: 2rem;
   width: 100%;
   height: 100%;
@@ -772,22 +774,22 @@
   height: 2rem;
 }
 #me .pillars .corner:nth-child(1) {
-  top: -1px;
+  top: -0.1px;
   left: 0;
 }
 #me .pillars .corner:nth-child(2) {
-  top: -1px;
+  top: -0.1px;
   right: 0;
   transform: rotateZ(90deg);
 }
 #me .pillars .corner:nth-child(3) {
-  bottom: -1px;
+  bottom: -0.1px;
   left: 0;
   transform: rotateZ(-90deg);
 }
 #me .pillars .corner:nth-child(4) {
   right: 0;
-  bottom: -1px;
+  bottom: -0.1px;
   transform: rotateZ(180deg);
 }
 #me .pillars h3 {
@@ -795,7 +797,7 @@
   bottom: 1rem;
   left: 1rem;
   margin: 0;
-  color: #555;
+  color: #444;
   font-size: 1.75rem;
   letter-spacing: 0;
 }
@@ -831,7 +833,7 @@
   z-index: 1;
   cursor: pointer;
   margin: 0;
-  border: 2px solid #ffe6b7;
+  border: 0.125rem solid #ffe6b7;
   border-radius: 1rem;
   background: #fff5e2;
 }
@@ -859,7 +861,7 @@
 }
 .faq .question button::after {
   border-radius: 1.5rem;
-  height: calc(100% + 1rem + 2px);
+  height: calc(100% + 1.125rem);
 }
 .faq .question:focus, .faq .question:hover {
   border-color: #cdbca5;
@@ -898,10 +900,10 @@
   }
 }
 .faq .question:active {
-  transform: translateY(2px);
+  transform: translateY(0.125rem);
 }
 .faq .question:active + .answer {
-  transform: translateY(2px);
+  transform: translateY(0.125rem);
 }
 .faq .question:active ~ .border {
   opacity: 0;
@@ -925,13 +927,13 @@
   display: none;
   position: relative;
   z-index: 1;
-  border: 2px solid #ffe6b7;
+  border: 0.125rem solid #ffe6b7;
   border-top: none;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   background: snow;
   padding: 1rem 1rem 0.5rem 2.5rem;
-  color: #666;
+  color: #444;
   font-weight: 500;
 }
 .faq .answer p,
@@ -964,7 +966,7 @@
 }
 .faq .border {
   position: absolute;
-  bottom: -2px;
+  bottom: -0.125rem;
   left: 0;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
@@ -979,9 +981,9 @@
   margin: 0 auto 6rem;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   border: 1px solid aquamarine;
-  border-bottom: 4px solid aquamarine;
+  border-bottom: 0.25rem solid aquamarine;
   border-radius: 1rem;
-  background: linear-gradient(rgba(255, 250, 250, 0), snow), radial-gradient(aquamarine 25%, rgba(127, 255, 212, 0) 0) 0 0/5px 5px;
+  background: linear-gradient(rgba(255, 250, 250, 0), snow), radial-gradient(aquamarine 25%, rgba(127, 255, 212, 0) 0) 0 0/0.3125rem 0.3125rem;
   background-color: white;
   padding: 1rem 2rem;
   width: 25rem;
@@ -993,9 +995,9 @@
 }
 #credits a::after {
   top: 0;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 2px);
+  left: -0.125rem;
+  width: calc(100% + 0.25rem);
+  height: calc(100% + 0.125rem);
 }
 
 section {

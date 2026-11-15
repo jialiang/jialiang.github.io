@@ -1,12 +1,12 @@
 #projects .bunny image {
   filter: url("#bunny-glow");
 }
-#projects h2::before {
+html:not([data-theme=lotus]) #projects h2::before {
   border-color: #172b25;
-  background: linear-gradient(to bottom, rgba(41, 31, 33, 0) 1px, rgb(41, 31, 33) 2px, rgba(41, 31, 33, 0) 3px) 0 1rem/100% 2.5rem, linear-gradient(to bottom, rgba(0, 39, 39, 0) 1px, rgb(0, 39, 39) 2px, rgba(0, 39, 39, 0) 0) 0 1.25rem/100% 2.5rem, linear-gradient(to right, rgba(41, 31, 33, 0) 1px, rgb(41, 31, 33) 2px, rgba(41, 31, 33, 0) 3px) 1.5rem 0/2.5rem 100%, linear-gradient(to right, rgba(0, 39, 39, 0) 1px, rgb(0, 39, 39) 2px, rgba(0, 39, 39, 0) 0) 1.25rem 0/2.5rem 100%;
+  background-image: linear-gradient(to bottom, rgba(41, 31, 33, 0) 1px, rgb(41, 31, 33) 0.125rem, rgba(41, 31, 33, 0) 0.1875rem), linear-gradient(to bottom, rgba(0, 39, 39, 0) 1px, rgb(0, 39, 39) 0.125rem, rgba(0, 39, 39, 0) 0), linear-gradient(to right, rgba(41, 31, 33, 0) 1px, rgb(41, 31, 33) 0.125rem, rgba(41, 31, 33, 0) 0.1875rem), linear-gradient(to right, rgba(0, 39, 39, 0) 1px, rgb(0, 39, 39) 0.125rem, rgba(0, 39, 39, 0) 0);
   background-color: #302f2f;
 }
-#projects h2 .shadow {
+html:not([data-theme=lotus]) #projects h2 .shadow {
   filter: url("#blur");
   text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff, 0 0 2.5em #0ff;
 }
@@ -17,7 +17,7 @@
 }
 #projects .card img {
   box-sizing: border-box;
-  border: 2px solid #404040;
+  border: 0.125rem solid #404040;
   background: #404040;
   color: white;
 }
@@ -52,7 +52,7 @@
   }
 }
 #projects .nexus {
-  border: 2px solid deepskyblue;
+  border: 0.125rem solid deepskyblue;
 }
 #projects .picoletta {
   filter: drop-shadow(0 0 1rem rgba(255, 255, 0, 0.2));
@@ -95,14 +95,14 @@
 }
 
 #me .paper::before {
-  background: linear-gradient(#111 5.5rem, rgba(0, 0, 0, 0) 0);
-  height: 100%;
+  background: none;
+  height: calc(100% - 1rem);
 }
 #me h2 {
   transform: none;
   box-shadow: 0.5rem 0.5rem 1rem 0 rgba(0, 0, 0, 0.33);
   background-image: linear-gradient(rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0));
-  background-size: 100% 2px;
+  background-size: 100% 0.125rem;
   background-color: rgba(0, 0, 0, 0.75);
 }
 #me h2 .shadow {
@@ -110,7 +110,7 @@
   text-shadow: 0 0 0.25em #0ff, 0 0 0.5em #0ff, 0 0 1em #0ff, 0 0 1.5em #0ff, 0 0 2em #0ff, 0 0 2.5em #0ff;
 }
 #me .last-updated {
-  background: linear-gradient(to bottom, #111 2.25rem, rgba(0, 0, 0, 0.45));
+  background: linear-gradient(-3deg, rgba(0, 0, 0, 0.45) 10.55rem, transparent 0);
   color: #ddd;
 }
 #me .controls {
@@ -150,7 +150,7 @@
   border-color: #00ffa9;
 }
 #me .pillars .hole .corner {
-  background-image: url("./images/originals/hole-corner-dark.svg");
+  background-image: url("./images/originals/hole-corner-dark-0.45.svg");
 }
 #me .pillars h3 {
   color: white;
@@ -158,6 +158,10 @@
 }
 #me .faqs {
   background: rgba(0, 0, 0, 0.45);
+}
+#me .faqs:last-child {
+  background: linear-gradient(-3deg, rgba(0, 0, 0, 0) 2rem, rgba(0, 0, 0, 0.45) 0);
+  padding-bottom: 5rem;
 }
 @media (max-width: 34rem) {
   #me .paper::before {

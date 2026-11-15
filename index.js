@@ -46,7 +46,7 @@ function initProjectNav() {
 }
 
 function initFlowerSpin() {
-  var flower = document.querySelector(".flower-1");
+  var flower = document.querySelector("#me .flower-1");
   var spin = 1;
 
   if (!flower || isPrefersReducedMotion()) return;
@@ -55,6 +55,40 @@ function initFlowerSpin() {
     flower.className = "flower-1 spin-" + spin;
     spin = spin === 1 ? 2 : 1;
   });
+}
+
+function initLotusSections() {
+  var lotus = document.getElementById("lotus");
+  var projects = document.getElementById("projects");
+  var faq = document.getElementById("me");
+  var isFrameRequested = false;
+
+  function updateSection() {
+    isFrameRequested = false;
+
+    // A section counts as reached once its top passes the middle of the screen.
+    var line = innerHeight / 2;
+    var section = "red";
+
+    if (projects.getBoundingClientRect().top <= line) section = "blue";
+    if (faq.getBoundingClientRect().top <= line) section = "plain";
+
+    if (lotus.className !== section) lotus.className = section;
+  }
+
+  function requestUpdate() {
+    if (isFrameRequested) return;
+
+    isFrameRequested = true;
+    requestAnimationFrame(updateSection);
+  }
+
+  // The page starts plain, color fades in after pause.
+  setTimeout(function () {
+    addEventListener("scroll", requestUpdate);
+    addEventListener("resize", requestUpdate);
+    requestUpdate();
+  }, 250);
 }
 
 function initThemeToggle() {
@@ -250,6 +284,7 @@ function initClock() {
 
 initProjectNav();
 initFlowerSpin();
+initLotusSections();
 initThemeToggle();
 initFaqToggle();
 initLoadImages();
