@@ -40,6 +40,18 @@ window.setTheme = function (theme) {
   setStylesheetMedia(document.getElementById("critical-dark-styles"), darkMedia);
   setStylesheetMedia(document.getElementById("deferrable-dark-styles"), darkMedia);
   setStylesheetMedia(document.getElementById("critical-lotus-styles"), lotusMedia);
+
+  window.loadBackgroundImages();
+};
+
+window.loadBackgroundImages = function () {
+  if (window.currentTheme === "lotus") return;
+
+  var source = document.getElementById("background-images");
+
+  if (!source) return;
+
+  source.outerHTML = source.textContent;
 };
 
 window.setTheme(localStorage.getItem("theme"));
