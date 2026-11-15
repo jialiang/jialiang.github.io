@@ -13,7 +13,7 @@
 
   button {
     box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
-    border: 2px solid aquamarine;
+    border: 0.125rem solid aquamarine;
     background: white;
     padding: 0.5rem;
     font-size: 1.5rem;
@@ -21,8 +21,8 @@
     span {
       display: inline-block;
       position: relative;
-      border-top: 2px solid pink;
-      border-bottom: 2px solid pink;
+      border-top: 0.125rem solid pink;
+      border-bottom: 0.125rem solid pink;
       padding: 0 0.5rem;
       height: 2rem;
       line-height: 1.85rem;
@@ -65,7 +65,7 @@
 
     &:active,
     &:active:hover {
-      transform: rotateZ(5deg) translate3d(0, 3px, 0);
+      transform: rotateZ(5deg) translate3d(0, 0.1875rem, 0);
       box-shadow: none;
     }
   }
@@ -81,7 +81,7 @@
 
     &:active,
     &:active:hover {
-      transform: rotateZ(-5deg) translate3d(0, 3px, 0);
+      transform: rotateZ(-5deg) translate3d(0, 0.1875rem, 0);
       box-shadow: none;
     }
   }

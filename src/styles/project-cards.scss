@@ -10,7 +10,7 @@
   box-shadow:
     -0.5rem 0.5rem 1rem 0 black(0.1),
     -0.125rem -0.125rem 0.125rem black(0.1) inset;
-  border: 2px solid black(0);
+  border: 0.125rem solid black(0);
   border-radius: 1rem;
   padding: 0.5rem;
   width: 16rem;
@@ -32,8 +32,8 @@
     border: none;
     border-radius: 0.5rem;
     background: #fdfdfd;
-    width: calc(15rem - 4px);
-    height: calc(15rem - 4px);
+    width: 14.75rem;
+    height: 14.75rem;
     color: #555;
 
     @include noto-sans-jp-font;
@@ -54,7 +54,7 @@
   }
 
   &:active {
-    top: 3px;
+    top: 0.1875rem;
   }
 
   @mixin apply-focus-hover {
@@ -105,7 +105,7 @@
   );
 
   @media (max-width: 61rem) {
-    transform: perspective(1000px) rotateY(12.5deg);
+    transform: perspective(62.5rem) rotateY(12.5deg);
   }
 }
 
@@ -130,7 +130,7 @@
   display: block;
   margin: -3rem 0 0 6.5rem;
   box-shadow: 0.125rem 0.125rem 0.25rem black(0.5);
-  border: 2px solid black(0);
+  border: 0.125rem solid black(0);
   border-radius: 1rem;
   background: black;
   padding: 0.25rem 0;
@@ -178,7 +178,7 @@
 
   &:active,
   &:active:hover {
-    transform: translateY(2px);
+    transform: translateY(0.125rem);
     box-shadow: none;
   }
 }

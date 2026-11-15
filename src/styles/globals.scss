@@ -119,9 +119,9 @@ svg {
 .paper-left-edge {
   position: absolute;
   top: 0;
-  left: -23px;
+  left: -1.375rem;
   background-size: 100% auto;
-  width: 25px;
+  width: 1.5rem;
   height: 100%;
 }
 
@@ -131,7 +131,7 @@ svg {
   right: -1px;
   transform: scaleX(-1);
   background-position: 100% 0;
-  background-size: 25px 100rem;
-  width: 3px;
+  background-size: 1.5rem 100rem;
+  width: 0.1875rem;
   height: 100%;
 }

@@ -19,7 +19,7 @@
     z-index: 1;
     cursor: pointer;
     margin: 0;
-    border: 2px solid #ffe6b7;
+    border: 0.125rem solid #ffe6b7;
     border-radius: 1rem;
     background: #fff5e2;
 
@@ -48,7 +48,7 @@
 
       &::after {
         border-radius: 1.5rem;
-        height: calc(100% + 1rem + 2px);
+        height: calc(100% + 1.125rem);
       }
     }
 
@@ -87,10 +87,10 @@
     );
 
     &:active {
-      transform: translateY(2px);
+      transform: translateY(0.125rem);
 
       + .answer {
-        transform: translateY(2px);
+        transform: translateY(0.125rem);
       }
 
       ~ .border {
@@ -124,7 +124,7 @@
     display: none;
     position: relative;
     z-index: 1;
-    border: 2px solid #ffe6b7;
+    border: 0.125rem solid #ffe6b7;
     border-top: none;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
@@ -164,7 +164,7 @@
 
   .border {
     position: absolute;
-    bottom: -2px;
+    bottom: -0.125rem;
     left: 0;
     box-shadow: 0.25rem 0.25rem 0.5rem black(0.1);
     border-radius: 1rem;

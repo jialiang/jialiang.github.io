@@ -31,11 +31,21 @@
       box-sizing: border-box;
       border: 0.5rem double aquamarine;
       border-radius: 0.5rem;
-      background:
-        linear-gradient(to bottom, pink(0) 1px, pink 2px, pink(0) 3px) 0 1rem / 100% 2.5rem,
-        linear-gradient(to bottom, cyan(0) 1px, cyan 2px, cyan(0) 0) 0 1.25rem / 100% 2.5rem,
-        linear-gradient(to right, pink(0) 1px, pink 2px, pink(0) 3px) 1.5rem 0 / 2.5rem 100%,
-        linear-gradient(to right, cyan(0) 1px, cyan 2px, cyan(0) 0) 1.25rem 0 / 2.5rem 100%;
+      background-image:
+        linear-gradient(to bottom, pink(0) 1px, pink 0.125rem, pink(0) 0.1875rem),
+        linear-gradient(to bottom, cyan(0) 1px, cyan 0.125rem, cyan(0) 0),
+        linear-gradient(to right, pink(0) 1px, pink 0.125rem, pink(0) 0.1875rem),
+        linear-gradient(to right, cyan(0) 1px, cyan 0.125rem, cyan(0) 0);
+      background-position:
+        0 1rem,
+        0 1.25rem,
+        1.5rem 0,
+        1.25rem 0;
+      background-size:
+        100% 2.5rem,
+        100% 2.5rem,
+        2.5rem 100%,
+        2.5rem 100%;
       background-color: snow;
       width: 100%;
       height: 100%;

@@ -46,7 +46,7 @@
     display: block;
     box-sizing: border-box;
     box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
-    border: 2px solid #eee;
+    border: 0.125rem solid #eee;
     border-radius: 1em;
     background: white;
     padding: 0.4rem 0.67rem 0.67rem;
@@ -76,7 +76,7 @@
 
     &:active,
     &:active:hover {
-      top: 3px;
+      top: 0.1875rem;
       box-shadow: none;
     }
   }

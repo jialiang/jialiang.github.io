@@ -15,11 +15,11 @@
       $pink-1: rgb(41, 31, 33, 100%);
 
       border-color: #172b25;
-      background:
-        linear-gradient(to bottom, $pink-0 1px, $pink-1 2px, $pink-0 3px) 0 1rem / 100% 2.5rem,
-        linear-gradient(to bottom, $cyan-0 1px, $cyan-1 2px, $cyan-0 0) 0 1.25rem / 100% 2.5rem,
-        linear-gradient(to right, $pink-0 1px, $pink-1 2px, $pink-0 3px) 1.5rem 0 / 2.5rem 100%,
-        linear-gradient(to right, $cyan-0 1px, $cyan-1 2px, $cyan-0 0) 1.25rem 0 / 2.5rem 100%;
+      background-image:
+        linear-gradient(to bottom, $pink-0 1px, $pink-1 0.125rem, $pink-0 0.1875rem),
+        linear-gradient(to bottom, $cyan-0 1px, $cyan-1 0.125rem, $cyan-0 0),
+        linear-gradient(to right, $pink-0 1px, $pink-1 0.125rem, $pink-0 0.1875rem),
+        linear-gradient(to right, $cyan-0 1px, $cyan-1 0.125rem, $cyan-0 0);
       background-color: #302f2f;
     }
 
@@ -44,7 +44,7 @@
 
     img {
       box-sizing: border-box;
-      border: 2px solid #404040;
+      border: 0.125rem solid #404040;
       background: #404040;
       color: white;
     }
@@ -83,7 +83,7 @@
   }
 
   .nexus {
-    border: 2px solid deepskyblue;
+    border: 0.125rem solid deepskyblue;
   }
 
   .picoletta {
@@ -149,7 +149,7 @@
     transform: none;
     box-shadow: 0.5rem 0.5rem 1rem 0 black(0.33);
     background-image: linear-gradient(cyan(0.15), cyan(0));
-    background-size: 100% 2px;
+    background-size: 100% 0.125rem;
     background-color: black(0.75);
 
     .shadow {

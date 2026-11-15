@@ -6,11 +6,11 @@
   margin: 0 auto 6rem;
   box-shadow: 0.5rem 0.5rem 1rem 0 black(0.1);
   border: 1px solid aquamarine;
-  border-bottom: 4px solid aquamarine;
+  border-bottom: 0.25rem solid aquamarine;
   border-radius: 1rem;
   background:
     linear-gradient(snow(0), snow),
-    radial-gradient(aquamarine 25%, aquamarine(0) 0) 0 0 / 5px 5px;
+    radial-gradient(aquamarine 25%, aquamarine(0) 0) 0 0 / 0.3125rem 0.3125rem;
   background-color: white;
   padding: 1rem 2rem;
   width: 25rem;
@@ -23,8 +23,8 @@
 
   a::after {
     top: 0;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% + 2px);
+    left: -0.125rem;
+    width: calc(100% + 0.25rem);
+    height: calc(100% + 0.125rem);
   }
 }
