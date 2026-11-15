@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <filter id="a" width="100%" height="100%" x="0" y="0" color-interpolation-filters="sRGB">
+    <feTurbulence
+      baseFrequency=".7"
+      result="grain-noise"
+      seed="1"
+      stitchTiles="stitch"
+      type="fractalNoise" />
+    <feColorMatrix in="grain-noise" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 12 0 0 0 -7.5" />
+    <feComponentTransfer result="grain">
+      <feFuncA tableValues="0 0.3" type="table" />
+    </feComponentTransfer>
+    <feTurbulence
+      baseFrequency=".2"
+      numOctaves="2"
+      result="fleck-noise"
+      seed="7"
+      stitchTiles="stitch"
+      type="fractalNoise" />
+    <feColorMatrix in="fleck-noise" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 20 0 0 0 -14.5" />
+    <feComponentTransfer result="fleck">
+      <feFuncA tableValues="0 0.4" type="table" />
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode in="grain" />
+      <feMergeNode in="fleck" />
+    </feMerge>
+    <feComponentTransfer>
+      <feFuncA slope=".5" type="linear" />
+    </feComponentTransfer>
+  </filter>
+  <path fill="none" d="M0 0h300v300H0z" filter="url(#a)" />
+</svg>
