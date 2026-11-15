@@ -46,13 +46,17 @@ I also build personal projects from time to time to solve problems in my daily l
 
 ## Have you led a team or mentored juniors?
 
-Yes. At my current company, I co-led a greenfield vertical, led our migration to Next.js (which doubled our PageSpeed score) and drove the team's move to AI-assisted development.
+Yes. At my current company, I co-led building a new CRM for renovation firms from scratch. I also led our migration to Next.js (which doubled our PageSpeed score) and drove the team's move to AI-assisted development.
 
 I've also mentored junior developers through code reviews, pair programming and knowledge sharing.
 
 ## Do you have experience with microservices?
 
-Some. Our platform runs as several services: Docker containers for PostgreSQL, MongoDB, Redis and Elasticsearch, RabbitMQ for messaging between them and PM2 managing the cron and worker processes.
+Some. Our platform runs as several services:
+
+- Docker containers for PostgreSQL, MongoDB, Redis and Elasticsearch.
+- RabbitMQ for messaging between them.
+- PM2 for scheduled and background jobs.
 
 They're stable enough that they rarely need active development, so my day-to-day work is on the product itself. But I know how the pieces fit together and how to keep them running.
 
@@ -60,7 +64,7 @@ They're stable enough that they rarely need active development, so my day-to-day
 
 Probably not all of them. Tools change faster than anyone can learn them in advance, so I value being able to pick things up quickly over knowing a fixed list.
 
-My track record reflects that: I started my career on .NET, moved to a React and Redux stack built on a 2015-era boilerplate and later led its migration to Next.js. My personal projects have also taken me into Java, Lua and PowerShell.
+My track record reflects that. I started my career on .NET, then moved to a React and Redux stack built on a 2015-era boilerplate. Later, I led its migration to Next.js. My personal projects have also taken me into Java, Lua and PowerShell.
 
 # CURRENT JOB
 
