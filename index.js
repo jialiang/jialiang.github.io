@@ -63,6 +63,7 @@ const generateHtml = async (cssObj, jsObj) => {
     //
     .replace("/* critical.scss */", cssObj.critical)
     .replace("/* critical-dark.scss */", cssObj.criticalDark)
+    .replace("/* lotus-critical.scss */", cssObj.criticalLotus)
     .replace("/* ie9.scss */", cssObj.ie9)
     .replace("/* noscript.scss */", cssObj.noscript)
     .replaceAll("/* years-of-experience */", yearsOfExperience)
@@ -94,22 +95,22 @@ const generateCss = async () => {
     "./src/styles/deferrable.scss",
     "./src/styles/dark-critical.scss",
     "./src/styles/dark-deferrable.scss",
+    "./src/styles/lotus-critical.scss",
     "./src/styles/ie9.scss",
     "./src/styles/noscript.scss",
   ];
 
-  const [critical, deferrable, criticalDark, deferrableDark, ie9, noscript] = await Promise.all(
-    paths.map((path) => sass.compileAsync(path))
-  ).then((results) =>
-    results.map((result, index) =>
-      postcss(autoprefixer()).process(result.css, { from: paths[index] })
-    )
-  );
+  const [critical, deferrable, criticalDark, deferrableDark, criticalLotus, ie9, noscript] =
+    await Promise.all(paths.map((path) => sass.compileAsync(path))).then((results) =>
+      results.map((result, index) =>
+        postcss(autoprefixer()).process(result.css, { from: paths[index] })
+      )
+    );
 
   await fs.writeFile("./dist/index.css", deferrable.css);
   await fs.writeFile("./dist/index-dark.css", deferrableDark.css);
 
-  return { critical, deferrable, criticalDark, deferrableDark, ie9, noscript };
+  return { critical, deferrable, criticalDark, deferrableDark, criticalLotus, ie9, noscript };
 };
 
 const generateJavaScript = async () => {
@@ -162,13 +163,14 @@ const generateSitemap = async (html) => {
 };
 
 const generateFonts = async (html, cssObj) => {
-  const { criticalDark, deferrableDark, ...lightCssObj } = cssObj;
+  const { criticalDark, deferrableDark, criticalLotus, ...lightCssObj } = cssObj;
   const lightCss = Object.values(lightCssObj);
   const darkCss = [...lightCss, criticalDark, deferrableDark];
+  const lotusCss = [...darkCss, criticalLotus];
 
   await subsetFonts({
     html,
-    stylesheets: [lightCss.join("\n"), darkCss.join("\n")],
+    stylesheets: [lightCss.join("\n"), darkCss.join("\n"), lotusCss.join("\n")],
     families: {
       "Noto Sans JP": "noto-sans-jp",
       "Noto Sans JP Critical": { name: "noto-sans-jp-critical", source: "noto-sans-jp" },

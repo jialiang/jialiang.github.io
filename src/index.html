@@ -82,6 +82,10 @@
       /* critical-dark.scss */
     </style>
 
+    <style id="critical-lotus-styles" media="(width: 10px)">
+      /* lotus-critical.scss */
+    </style>
+
     <style id="ie9-styles" title="ie9" media="(width: 10px)">
       /* ie9.scss */
     </style>
@@ -227,6 +231,41 @@
       </div>
     </div>
 
+    <div id="lotus" class="plain" aria-hidden="true">
+      <div class="background">
+        <div class="room"></div>
+        <div class="glow"></div>
+        <div class="lotus-paper"></div>
+        <div class="dust"></div>
+        <div class="tint"></div>
+
+        <div class="red-filter"></div>
+        <div class="blue-filter"></div>
+      </div>
+
+      <div class="red-decorations">
+        <div class="pillar"></div>
+        <div class="pillar"></div>
+        <div class="flower-1"></div>
+        <div class="flower-2"></div>
+      </div>
+
+      <div class="blue-decorations">
+        <div class="fish-1"></div>
+        <div class="fish-2"></div>
+      </div>
+
+      <svg
+        class="cover"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1706.667 960"
+        preserveAspectRatio="none">
+        <path
+          d="M0 124.2c206.25-47.977 424.076-63.795 642.053-79.196l50.205 14.142 451.84-19.092c178.004 4.59 346.625-5.83 562.545 59.428L1706.666 0H0zM1706.68 839.735L271 917 0 807.062V960h1706.667z"></path>
+      </svg>
+    </div>
+
     <fieldset id="theme-toggle">
       <legend>Change website theme:</legend>
       <label>
@@ -236,6 +275,10 @@
       <label>
         <input type="radio" name="theme" value="dark" />
         <span>Dark</span>
+      </label>
+      <label class="lotus-label">
+        <input type="radio" name="theme" value="lotus" />
+        <span>Lotus Juice</span>
       </label>
     </fieldset>
 
@@ -910,6 +953,30 @@
           aria-label="screenshot of the Chihaya Jun font page"
           >screenshot</a
         >).
+      </p>
+      <p>
+        The Lotus Juice theme draws on
+        <aa
+          href="https://pixabay.com/vectors/abstract-background-flower-design-1262341/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Abstract Background Flower</aa
+        >
+        by Garik Barseghyan and
+        <aa
+          href="https://pixabay.com/illustrations/pattern-fish-carp-koi-koi-carp-3296033/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Pattern Fish Carp</aa
+        >
+        by Anna Kulikova and
+        <aa
+          href="https://www.transparenttextures.com/asfalt-light.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Asfalt (Light)</aa
+        >
+        by Atle Mo from Subtle Patterns.
       </p>
       <p>
         Hosting provided by

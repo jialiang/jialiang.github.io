@@ -105,6 +105,10 @@
     }
   }
 
+  .lotus-label {
+    width: 7.25rem;
+  }
+
   @supports (filter: brightness(1)) {
     display: block;
   }

@@ -1,0 +1,72 @@
+@use "./util.scss" as *;
+
+@use "./lotus/background";
+@use "./lotus/red";
+@use "./lotus/blue";
+
+html {
+  background: black;
+}
+
+#background {
+  display: none;
+}
+
+#lotus {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  .cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    margin: auto;
+    width: 153vh;
+    max-width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
+  }
+}
+
+#projects h2 {
+  color: #333;
+}
+
+#usp .paper::before,
+#me .faqs,
+#me .controls,
+#me .pillars::before,
+#me .pillars::after {
+  background: black(0.8);
+}
+
+#me .faqs:last-child {
+  background: linear-gradient(-3deg, black(0) 2rem, black(0.8) 0);
+}
+
+#me .last-updated {
+  background: linear-gradient(-3deg, black(0.8) 10.55rem, black(0) 0);
+
+  @media (max-width: 34rem) {
+    background: linear-gradient(-3deg, black(0.8) 13.55rem, black(0) 0);
+  }
+}
+
+#me .pillars .hole {
+  background: black(0.4);
+
+  .corner {
+    background-image: url("./images/originals/hole-corner-dark-0.8.svg");
+  }
+}

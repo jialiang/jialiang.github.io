@@ -1,0 +1,99 @@
+@use "../util.scss" as *;
+@use "./util.scss" as *;
+
+#lotus .background {
+  @include lotus-box(0);
+
+  background: black;
+  isolation: isolate;
+
+  // IE has no blend modes, so it gets plain translucent layers.
+  @include ie {
+    background: black(0);
+  }
+
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.room {
+  background: url("./images/lotus/bg.svg") 0 0 / auto 100% no-repeat;
+}
+
+.glow {
+  animation: 0.2s lotus-flicker steps(1) infinite;
+  background: url("./images/lotus/glow.svg") 0 0 / auto 100% no-repeat;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none !important;
+  }
+}
+
+.lotus-paper {
+  opacity: 0.5;
+  background: url("./images/lotus/paper.svg") 0 0 / auto 100% no-repeat;
+}
+
+.dust {
+  mix-blend-mode: exclusion;
+  background: url("./images/lotus/asfalt-light.png") 0 0 / 150px 150px repeat;
+}
+
+.tint {
+  mix-blend-mode: exclusion;
+  background: linear-gradient(to top right, black(0) 67%, darkslategray);
+
+  @media (max-aspect-ratio: 1 / 1) {
+    display: none;
+  }
+}
+
+.red-filter,
+.blue-filter {
+  opacity: 0;
+  mix-blend-mode: hard-light;
+  transition: 0.3s opacity;
+}
+
+.red-filter {
+  background: radial-gradient(#ddd, #ccc 25%, saddlebrown);
+
+  @include ie {
+    background: radial-gradient(white 5%, chocolate(0.5) 67%);
+  }
+
+  .red & {
+    opacity: 1;
+  }
+}
+
+.blue-filter {
+  background: radial-gradient(dodgerblue, turquoise, slateblue);
+
+  @include ie {
+    background: radial-gradient(dodgerblue(0.35), aquamarine, plainblue(0.35));
+  }
+
+  .blue & {
+    opacity: 1;
+  }
+}
+
+@keyframes lotus-flicker {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

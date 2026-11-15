@@ -7,7 +7,7 @@
     filter: url("#bunny-glow");
   }
 
-  h2 {
+  html:not([data-theme="lotus"]) & h2 {
     &::before {
       $cyan-0: rgb(0, 39, 39, 0%);
       $cyan-1: rgb(0, 39, 39, 100%);
@@ -140,8 +140,8 @@
 #me {
   .paper {
     &::before {
-      background: linear-gradient(#111 5.5rem, black(0) 0);
-      height: 100%;
+      background: none;
+      height: calc(100% - 1rem);
     }
   }
 
@@ -165,7 +165,7 @@
   }
 
   .last-updated {
-    background: linear-gradient(to bottom, #111 2.25rem, black(0.45));
+    background: linear-gradient(-3deg, black(0.45) 10.55rem, transparent 0);
     color: #ddd;
   }
 
@@ -212,7 +212,7 @@
       }
 
       .corner {
-        background-image: url("./images/originals/hole-corner-dark.svg");
+        background-image: url("./images/originals/hole-corner-dark-0.45.svg");
       }
     }
 
@@ -224,17 +224,18 @@
 
   .faqs {
     background: black(0.45);
+
+    &:last-child {
+      background: linear-gradient(-3deg, black(0) 2rem, black(0.45) 0);
+      padding-bottom: 5rem;
+    }
   }
 
   @media (max-width: 34rem) {
-    .paper {
-      &::before {
-        background: linear-gradient(#111 9.5rem, black(0) 0);
-      }
-    }
-
     .last-updated {
-      background: linear-gradient(to bottom, #111 1.1rem, black(0.45));
+      margin-top: -10rem;
+      background: linear-gradient(-3deg, black(0.45) 13.55rem, black(0) 0);
+      padding-top: 11.5rem;
     }
   }
 }

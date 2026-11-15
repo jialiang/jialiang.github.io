@@ -1,0 +1,94 @@
+@use "../util.scss" as *;
+@use "./util.scss" as *;
+
+.red-decorations {
+  @include lotus-box(1);
+
+  > div {
+    position: absolute;
+    transition: 0.25s transform;
+  }
+
+  .pillar {
+    top: 0;
+    background:
+      linear-gradient(to right, black(0) 25%, black(0.5) 30%, black(0.5) 70%, black(0) 75%) 0 33% /
+        3.125vh 25vh repeat-x,
+      linear-gradient(to right, maroon, firebrick(0.6), red);
+    height: 110%;
+
+    &:nth-child(1) {
+      left: 0;
+      transform: rotate3d(0, 0, 1, -5deg) translate3d(-115%, 0, 0);
+      transform-origin: left;
+      width: 25%;
+
+      @media (max-aspect-ratio: 1 / 1) {
+        transform: rotate3d(0, 0, 1, -5deg) translate3d(-33vw, 0, 0);
+      }
+
+      .red & {
+        transform: rotate3d(0, 0, 1, -5deg) translate3d(0, 0, 0);
+        transition: 0.25s transform 0.35s;
+      }
+    }
+
+    &:nth-child(2) {
+      left: 75%;
+      transform: rotate3d(0, 0, 1, 5deg) translate3d(225%, 0, 0);
+      transform-origin: right;
+      width: 12.5%;
+
+      @media (max-aspect-ratio: 1 / 1) {
+        transform: rotate3d(0, 0, 1, -5deg) translate3d(33vw, 0, 0);
+      }
+
+      .red & {
+        transform: rotate3d(0, 0, 1, 5deg) translate3d(0, 0, 0);
+        transition: 0.25s transform 0.5s;
+      }
+    }
+  }
+
+  .flower-1,
+  .flower-2 {
+    background: url("./images/lotus/floral.svg") 0 100% / 100% auto no-repeat;
+    width: 55vmin;
+    min-width: 350px;
+    height: 55vmin;
+    min-height: 350px;
+
+    @media (max-width: 350px), (max-height: 350px) {
+      width: 100vmin;
+      min-width: auto;
+      height: 100vmin;
+      min-height: auto;
+    }
+  }
+
+  .flower-1 {
+    bottom: -1%;
+    left: -1%;
+    transform: rotate3d(0, 0, 1, 24deg) scale3d(0, 0, 0);
+
+    .red & {
+      transform: rotate3d(0, 0, 1, 24deg) scale3d(1, 1, 1);
+      transition: 0.25s transform 0.15s;
+    }
+  }
+
+  .flower-2 {
+    top: -5%;
+    right: -1%;
+    transform: rotate3d(0, 0, 1, -90deg) scale3d(0, 0, 1);
+
+    @media (max-height: 629px) and (max-width: 529px) {
+      display: none;
+    }
+
+    .red & {
+      transform: rotate3d(0, 0, 1, -90deg) scale3d(1, 1, 1);
+      transition: 0.25s transform 0.65s;
+    }
+  }
+}

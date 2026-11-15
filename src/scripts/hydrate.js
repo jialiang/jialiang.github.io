@@ -27,7 +27,9 @@ function afterFcp() {
   deferrableDarkStyles.rel = "stylesheet";
   deferrableDarkStyles.href = "./index-dark.css";
 
-  if (window.currentTheme !== "dark") deferrableDarkStyles.media = window.disabledMedia;
+  if (window.currentTheme !== "dark" && window.currentTheme !== "lotus") {
+    deferrableDarkStyles.media = window.disabledMedia;
+  }
 
   var criticalStyles = document.getElementById("critical-styles");
 

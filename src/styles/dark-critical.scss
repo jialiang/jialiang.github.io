@@ -15,7 +15,8 @@ a {
   color: deepskyblue;
 }
 
-.text {
+html:not([data-theme="lotus"]) .text,
+#me .text {
   text-shadow: 0 0 0.075em white;
 }
 
@@ -72,7 +73,7 @@ a {
   }
 }
 
-header {
+html:not([data-theme="lotus"]) header {
   $grey-0: rgb(100, 100, 100, 0%);
   $grey-1: rgb(50, 125, 125, 7.5%);
 

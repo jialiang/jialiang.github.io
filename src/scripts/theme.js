@@ -12,7 +12,7 @@ if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) {
 }
 
 window.isValidTheme = function (theme) {
-  return theme === "light" || theme === "dark";
+  return theme === "light" || theme === "dark" || theme === "lotus";
 };
 
 window.disabledMedia = "(width: 10px)";
@@ -28,12 +28,15 @@ window.setTheme = function (theme) {
   if (!window.isValidTheme(theme)) return;
   if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) return;
 
-  var media = theme === "dark" ? null : window.disabledMedia;
+  var darkMedia = theme === "dark" || theme === "lotus" ? null : window.disabledMedia;
+  var lotusMedia = theme === "lotus" ? null : window.disabledMedia;
 
   window.currentTheme = theme;
+  document.documentElement.setAttribute("data-theme", theme);
 
-  setStylesheetMedia(document.getElementById("critical-dark-styles"), media);
-  setStylesheetMedia(document.getElementById("deferrable-dark-styles"), media);
+  setStylesheetMedia(document.getElementById("critical-dark-styles"), darkMedia);
+  setStylesheetMedia(document.getElementById("deferrable-dark-styles"), darkMedia);
+  setStylesheetMedia(document.getElementById("critical-lotus-styles"), lotusMedia);
 };
 
 window.setTheme(localStorage.getItem("theme"));

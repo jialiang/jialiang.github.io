@@ -79,9 +79,9 @@
   }
 
   .last-updated {
-    margin: -2rem 0 0;
+    margin: -7.5rem 0 0;
     background: #f8f8f8 url("./images/originals/paper.svg");
-    padding: 3.5rem 2rem 1rem;
+    padding: 9rem 2rem 1rem;
     color: #555;
     font-size: 0.875rem;
     letter-spacing: 0;
@@ -193,25 +193,25 @@
       height: 2rem;
 
       &:nth-child(1) {
-        top: -1px;
+        top: -0.1px;
         left: 0;
       }
 
       &:nth-child(2) {
-        top: -1px;
+        top: -0.1px;
         right: 0;
         transform: rotateZ(90deg);
       }
 
       &:nth-child(3) {
-        bottom: -1px;
+        bottom: -0.1px;
         left: 0;
         transform: rotateZ(-90deg);
       }
 
       &:nth-child(4) {
         right: 0;
-        bottom: -1px;
+        bottom: -0.1px;
         transform: rotateZ(180deg);
       }
     }
@@ -221,7 +221,7 @@
       bottom: 1rem;
       left: 1rem;
       margin: 0;
-      color: #555;
+      color: #444;
       font-size: 1.75rem;
       letter-spacing: 0;
     }
