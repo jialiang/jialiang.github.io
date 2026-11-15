@@ -20,7 +20,9 @@
 
     @media (max-width: 350px), (max-height: 350px) {
       width: 100vmin;
+      min-width: auto;
       height: 100vmin;
+      min-height: auto;
     }
   }
 
