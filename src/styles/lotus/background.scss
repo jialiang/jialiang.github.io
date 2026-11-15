@@ -26,12 +26,7 @@
 }
 
 .glow {
-  animation: 0.2s lotus-flicker steps(1) infinite;
   background: url("./images/lotus/glow.svg") 0 0 / auto 100% no-repeat;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none !important;
-  }
 }
 
 .lotus-paper {
@@ -80,20 +75,6 @@
   }
 
   .blue & {
-    opacity: 1;
-  }
-}
-
-@keyframes lotus-flicker {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.75;
-  }
-
-  100% {
     opacity: 1;
   }
 }
