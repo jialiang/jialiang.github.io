@@ -43,8 +43,8 @@ window.setTheme = function (theme) {
   window.loadLotusImages();
 };
 
-window.loadLotusImages = function () {
-  if (window.currentTheme !== "lotus") return;
+window.loadLotusImages = function (isEager) {
+  if (!isEager && window.currentTheme !== "lotus") return;
 
   var images = document.querySelectorAll("#lotus img[data-src]");
 
@@ -57,14 +57,21 @@ window.loadLotusImages = function () {
   }
 };
 
-window.loadBackgroundImages = function () {
-  if (window.currentTheme === "lotus") return;
+window.loadBackgroundImages = function (isEager) {
+  if (!isEager && window.currentTheme === "lotus") return;
 
   var source = document.getElementById("background-images");
 
   if (!source) return;
 
   source.outerHTML = source.textContent;
+};
+
+window.loadOtherThemeImages = function () {
+  if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) return;
+
+  window.loadBackgroundImages(true);
+  window.loadLotusImages(true);
 };
 
 window.setTheme(localStorage.getItem("theme"));

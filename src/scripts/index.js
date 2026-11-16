@@ -177,7 +177,10 @@ function initLoadImages() {
       var img = lazyImages[i];
       i += 1;
 
-      if (!img) return;
+      if (!img) {
+        window.loadOtherThemeImages();
+        return;
+      }
 
       if (img.naturalWidth !== 0) {
         img.removeAttribute("loading");
