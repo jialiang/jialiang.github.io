@@ -4,7 +4,8 @@
 .red-decorations {
   @include lotus-box(1);
 
-  > div {
+  > div,
+  > img {
     position: absolute;
     transition: 0.25s transform;
   }
@@ -52,7 +53,6 @@
 
   .flower-1,
   .flower-2 {
-    background: url("./images/lotus/floral.svg") 0 100% / 100% auto no-repeat;
     width: 55vmin;
     min-width: 350px;
     height: 55vmin;

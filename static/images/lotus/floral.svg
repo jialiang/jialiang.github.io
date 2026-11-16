@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="139.67" height="111.27" viewBox="0 0 139.67 111.27">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="139.67"
+  height="111.27"
+  viewBox="0 0 139.67 111.27"
+  preserveAspectRatio="xMinYMax meet">
   <path
     fill="#b18e32"
     stroke="#000"

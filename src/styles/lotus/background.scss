@@ -3,37 +3,22 @@
 #lotus .background {
   @include lotus-box(0);
 
-  > div {
+  img {
     position: absolute;
     top: 0;
     left: 0;
-    background-position: 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
   }
-}
 
-$colours: "plain", "red", "blue";
-
-@each $colour in $colours {
-  .background-#{$colour} {
-    background-image: url("./images/lotus/background-#{$colour}.svg");
-
-    .no-blend-modes & {
-      background-image: url("./images/lotus/background-#{$colour}-fallback.svg");
-    }
+  .red,
+  .blue {
+    opacity: 0.01;
+    transition: 0.3s opacity;
   }
 }
 
-.background-red,
-.background-blue {
-  opacity: 0.01;
-  transition: 0.3s opacity;
-}
-
-.red .background-red,
-.blue .background-blue {
+#lotus.red .background .red,
+#lotus.blue .background .blue {
   opacity: 1;
 }

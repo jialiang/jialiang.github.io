@@ -245,21 +245,33 @@
 
     <div id="lotus" class="plain" aria-hidden="true">
       <div class="background">
-        <div class="background-plain"></div>
-        <div class="background-red"></div>
-        <div class="background-blue"></div>
+        <img
+          class="plain"
+          alt=""
+          data-src="./images/lotus/background-plain.svg"
+          data-fallback-src="./images/lotus/background-plain-fallback.svg" />
+        <img
+          class="red"
+          alt=""
+          data-src="./images/lotus/background-red.svg"
+          data-fallback-src="./images/lotus/background-red-fallback.svg" />
+        <img
+          class="blue"
+          alt=""
+          data-src="./images/lotus/background-blue.svg"
+          data-fallback-src="./images/lotus/background-blue-fallback.svg" />
       </div>
 
       <div class="red-decorations">
         <div class="pillar"></div>
         <div class="pillar"></div>
-        <div class="flower-1"></div>
-        <div class="flower-2"></div>
+        <img class="flower-1" alt="" data-src="./images/lotus/floral.svg" />
+        <img class="flower-2" alt="" data-src="./images/lotus/floral.svg" />
       </div>
 
       <div class="blue-decorations">
-        <div class="fish-1"></div>
-        <div class="fish-2"></div>
+        <img class="fish-1" alt="" data-src="./images/lotus/fish.svg" />
+        <img class="fish-2" alt="" data-src="./images/lotus/fish.svg" />
       </div>
 
       <svg
@@ -272,6 +284,9 @@
           d="M0 124.2c206.25-47.977 424.076-63.795 642.053-79.196l50.205 14.142 451.84-19.092c178.004 4.59 346.625-5.83 562.545 59.428L1706.666 0H0zM1706.68 839.735L271 917 0 807.062V960h1706.667z"></path>
       </svg>
     </div>
+    <script>
+      window.loadLotusImages();
+    </script>
 
     <fieldset id="theme-toggle">
       <legend>Change website theme:</legend>

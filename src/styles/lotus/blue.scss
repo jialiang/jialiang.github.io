@@ -3,7 +3,7 @@
 .blue-decorations {
   @include lotus-box(1);
 
-  > div {
+  > img {
     position: absolute;
     transition: 0.25s transform;
   }
@@ -12,10 +12,9 @@
   .fish-2 {
     transform: scale3d(0, 0, 1);
     transform-origin: bottom left;
-    background: url("./images/lotus/fish.svg") 0 0 / auto 100% no-repeat;
-    width: 0.55vmin;
+    width: 55vmin;
     min-width: 350px;
-    height: 0.55vmin;
+    height: 55vmin;
     min-height: 350px;
 
     @media (max-width: 350px), (max-height: 350px) {
@@ -38,15 +37,15 @@
 
   .fish-2 {
     right: 0;
-    bottom: 350px;
-    transform: rotate3d(0, 0, 1, 90deg) scale3d(0, 0, 1);
+    bottom: 0;
+    transform: translate3d(0, -100%, 0) rotate3d(0, 0, 1, 90deg) scale3d(0, 0, 1);
 
     @media (max-width: 750px) {
       display: none;
     }
 
     .blue & {
-      transform: rotate3d(0, 0, 1, 90deg) scale3d(1, 1, 1);
+      transform: translate3d(0, -100%, 0) rotate3d(0, 0, 1, 90deg) scale3d(1, 1, 1);
       transition: 0.25s transform 0.4s;
     }
   }

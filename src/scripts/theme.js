@@ -12,8 +12,6 @@ if (!svgFiltersSupport || !gradientSupport || !textShadowSupport) {
   document.getElementById("ie9-styles").removeAttribute("media");
 }
 
-if (!blendModeSupport) document.documentElement.className += " no-blend-modes";
-
 window.isValidTheme = function (theme) {
   return theme === "light" || theme === "dark" || theme === "lotus";
 };
@@ -42,6 +40,21 @@ window.setTheme = function (theme) {
   setStylesheetMedia(document.getElementById("critical-lotus-styles"), lotusMedia);
 
   window.loadBackgroundImages();
+  window.loadLotusImages();
+};
+
+window.loadLotusImages = function () {
+  if (window.currentTheme !== "lotus") return;
+
+  var images = document.querySelectorAll("#lotus img[data-src]");
+
+  for (var i = 0; i < images.length; i++) {
+    var image = images[i];
+    var fallbackSource = !blendModeSupport && image.getAttribute("data-fallback-src");
+
+    image.src = fallbackSource || image.getAttribute("data-src");
+    image.removeAttribute("data-src");
+  }
 };
 
 window.loadBackgroundImages = function () {
