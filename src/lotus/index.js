@@ -8,9 +8,16 @@ const suffixes = ["", "-fallback"];
 
 const readSource = (name) => fs.readFile(path.join(sourceDirectory, name), { encoding: "utf-8" });
 
-const compact = (markup) => markup.replace(/>\s+</g, "><").trim();
+const compact = (markup) => markup.replace(/>\s+</g, "><").replace(/\s+/g, " ").trim();
 
-const dataUri = (markup) => `data:image/svg+xml,${encodeURIComponent(compact(markup))}`;
+const dataUri = (markup) => {
+  const escaped = compact(markup)
+    .replace(/[%#<&]/g, encodeURIComponent)
+    .replace(/'/g, "%27")
+    .replace(/"/g, "'");
+
+  return `data:image/svg+xml,${escaped}`;
+};
 
 const fillTemplate = (template, values) =>
   template.replace(/\{\{([\w-]+)\}\}/g, (_, name) => {

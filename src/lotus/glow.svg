@@ -5,29 +5,8 @@
   height="960"
   viewBox="0 0 1706.67 960">
   <defs>
-    <filter id="l" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
-    </filter>
-    <filter id="p" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
-    </filter>
-    <filter id="n" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
-    </filter>
-    <filter id="d" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
-    </filter>
-    <filter id="f" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
-    </filter>
-    <filter id="h" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
-    </filter>
-    <filter id="j" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
-    </filter>
     <filter id="b" color-interpolation-filters="sRGB">
-      <feGaussianBlur result="blur" stdDeviation="5 5" />
+      <feGaussianBlur stdDeviation="5" />
     </filter>
   </defs>
   <use
@@ -51,7 +30,7 @@
     xlink:href="#c"
     width="100%"
     height="100%"
-    filter="url(#d)"
+    filter="url(#b)"
     transform="matrix(1.2 0 0 1.2 -43.16 -86.14)" />
   <path
     id="c"
@@ -65,13 +44,13 @@
     d="M230.76 397.02H215.8v67.38h14.95c15.03-22.4 15.29-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
     display="inline" />
   <use
-    xlink:href="#e"
+    xlink:href="#d"
     width="100%"
     height="100%"
-    filter="url(#f)"
+    filter="url(#b)"
     transform="matrix(1.2 0 0 1.2 -13.05 -69.47)" />
   <path
-    id="e"
+    id="d"
     fill="#fbc684"
     fill-opacity="1"
     stroke="none"
@@ -82,13 +61,13 @@
     d="M80.19 313.67H65.24v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38H50.29c-15.04-22.4-15.3-44.95 0-67.38"
     display="inline" />
   <use
-    xlink:href="#g"
+    xlink:href="#e"
     width="100%"
     height="100%"
-    filter="url(#h)"
+    filter="url(#b)"
     transform="matrix(1.2 0 0 1.2 -54.25 -17.27)" />
   <path
-    id="g"
+    id="e"
     fill="#fbc684"
     fill-opacity="1"
     stroke="none"
@@ -99,13 +78,13 @@
     d="M286.19 52.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
     display="inline" />
   <use
-    xlink:href="#i"
+    xlink:href="#f"
     width="100%"
     height="100%"
-    filter="url(#j)"
+    filter="url(#b)"
     transform="matrix(1.2 0 0 1.2 -78.45 -50.27)" />
   <path
-    id="i"
+    id="f"
     fill="#fbc684"
     fill-opacity="1"
     stroke="none"
@@ -116,13 +95,13 @@
     d="M407.19 217.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
     display="inline" />
   <use
-    xlink:href="#k"
+    xlink:href="#g"
     width="100%"
     height="100%"
-    filter="url(#l)"
+    filter="url(#b)"
     transform="matrix(1.2 0 0 1.2 -207.25 -33.67)" />
   <path
-    id="k"
+    id="g"
     fill="#fbc684"
     fill-opacity="1"
     stroke="none"
@@ -133,13 +112,13 @@
     d="M1051.19 134.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
     display="inline" />
   <use
-    xlink:href="#m"
+    xlink:href="#i"
     width="100%"
     height="100%"
-    filter="url(#n)"
+    filter="url(#b)"
     transform="matrix(1.2 0 0 1.2 -240.45 -89.47)" />
   <path
-    id="m"
+    id="i"
     fill="#fbc684"
     fill-opacity="1"
     stroke="none"
@@ -150,13 +129,13 @@
     d="M1217.19 413.67h-14.95v67.38h14.95c15.04-22.4 15.3-44.95 0-67.38m-29.9 0h14.95v67.38h-14.95c-15.04-22.4-15.3-44.95 0-67.38"
     display="inline" />
   <use
-    xlink:href="#o"
+    xlink:href="#k"
     width="100%"
     height="100%"
-    filter="url(#p)"
+    filter="url(#b)"
     transform="matrix(1.2 0 0 1.2 -278.85 -44.87)" />
   <path
-    id="o"
+    id="k"
     fill="#fbc684"
     fill-opacity="1"
     stroke="none"
