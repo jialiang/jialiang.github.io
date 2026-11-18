@@ -77,9 +77,6 @@
     <filter id="O" color-interpolation-filters="sRGB">
       <feGaussianBlur stdDeviation="6" />
     </filter>
-    <filter id="R" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="1.8" />
-    </filter>
     <filter id="Z" color-interpolation-filters="sRGB">
       <feGaussianBlur stdDeviation="3.8 6.8" />
     </filter>
@@ -346,40 +343,6 @@
     d="M234.5 392.92h-17.93v80.86h17.94c18.04-26.89 18.35-53.93 0-80.86m-35.87 0h17.94v80.86h-17.94c-18.05-26.89-18.35-53.93 0-80.86"
     filter="url(#O)"
     opacity=".7" />
-  <use
-    xlink:href="#Q"
-    width="100%"
-    height="100%"
-    filter="url(#R)"
-    transform="matrix(1.2 0 0 1.2 -54.4 -17.8)" />
-  <path
-    id="Q"
-    fill="#fa843f"
-    fill-opacity="1"
-    stroke="none"
-    stroke-dasharray="none"
-    stroke-miterlimit="4"
-    stroke-opacity="1"
-    stroke-width="20.56"
-    d="M296.92 32.85H272v112.3h24.92c25.06-37.34 25.49-74.91 0-112.3m-49.84 0H272v112.3h-24.92c-25.06-37.34-25.49-74.91 0-112.3"
-    display="inline" />
-  <use
-    xlink:href="#S"
-    width="100%"
-    height="100%"
-    filter="url(#R)"
-    transform="matrix(1.2 0 0 1.2 -54.4 -17.8)" />
-  <path
-    id="S"
-    fill="#fbc684"
-    fill-opacity="1"
-    stroke="none"
-    stroke-dasharray="none"
-    stroke-miterlimit="4"
-    stroke-opacity="1"
-    stroke-width="12.34"
-    d="M286.95 55.3H272v67.4h14.95c15.04-22.42 15.3-44.96 0-67.4m-29.9 0H272v67.4h-14.95c-15.04-22.42-15.3-44.96 0-67.4"
-    display="inline" />
   <use
     xlink:href="#T"
     width="100%"
