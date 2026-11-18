@@ -70,7 +70,8 @@
 }
 
 @mixin noto-sans-jp-critical-font {
-  font-family: "Noto Sans JP Critical", "Noto Sans JP", sans-serif;
+  // Note Firefox hides text while ANY font in stack is still downloading
+  font-family: "Noto Sans JP Critical", sans-serif;
   font-size-adjust: 0.545;
 }
 
