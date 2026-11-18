@@ -69,7 +69,7 @@
   .flower-1 {
     bottom: -8%;
     left: -1%;
-    transform: rotate3d(0, 0, 1, 24deg) scale3d(0, 0, 0);
+    transform: rotate3d(0, 0, 1, 24deg) scale3d(0, 0, 1);
 
     .red & {
       transform: rotate3d(0, 0, 1, 24deg) scale3d(1, 1, 1);
