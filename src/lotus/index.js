@@ -4,15 +4,13 @@ import path from "path";
 const sourceDirectory = "./src/lotus";
 const outputDirectory = "./dist/images/lotus";
 
-const suffixes = ["", "-fallback"];
-
 const readSource = (name) => fs.readFile(path.join(sourceDirectory, name), { encoding: "utf-8" });
 
 const compact = (markup) => markup.replace(/>\s+</g, "><").replace(/\s+/g, " ").trim();
 
 const dataUri = (markup) => {
   const escaped = compact(markup)
-    .replace(/[%#<&]/g, encodeURIComponent)
+    .replace(/[%#<>&]/g, encodeURIComponent)
     .replace(/'/g, "%27")
     .replace(/"/g, "'");
 
@@ -39,18 +37,9 @@ export default {
       dust: dataUri(dust),
     };
 
+    const markup = fillTemplate(template, art);
+
     await fs.mkdir(outputDirectory, { recursive: true });
-
-    const writes = suffixes.flatMap((suffix) =>
-      ["plain", "red", "blue"].map((colour) => {
-        const wash = colour === "plain" ? "none" : `url(#${colour}${suffix})`;
-        const markup = fillTemplate(template, { ...art, wash });
-        const outputPath = path.join(outputDirectory, `background-${colour}${suffix}.svg`);
-
-        return fs.writeFile(outputPath, compact(markup));
-      })
-    );
-
-    await Promise.all(writes);
+    await fs.writeFile(path.join(outputDirectory, "background.svg"), compact(markup));
   },
 };
