@@ -24,14 +24,6 @@
   @return rgba(0, 139, 139, $percent);
 }
 
-@function plainblue($percent) {
-  @return rgba(0, 0, 255, $percent);
-}
-
-@function dodgerblue($percent) {
-  @return rgba(30, 144, 255, $percent);
-}
-
 @function pink($percent) {
   @return rgba(255, 192, 203, $percent);
 }
@@ -42,10 +34,6 @@
 
 @function yellow($percent) {
   @return rgba(255, 255, 0, $percent);
-}
-
-@function chocolate($percent) {
-  @return rgb(255, 100, 0, $percent);
 }
 
 @function firebrick($percent) {
@@ -83,11 +71,4 @@
 @mixin chihaya-jun-font {
   font-family: "Chihaya Jun", sans-serif;
   font-size-adjust: 0.45;
-}
-
-// IE11 and IE10, note ie9.scss exists
-@mixin ie {
-  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    @content;
-  }
 }
