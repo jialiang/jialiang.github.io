@@ -2,17 +2,19 @@
 
 ## Why are you interested in our company?
 
-I don't apply widely. Instead, I find roles with a job sweeper I built in Python:
+I apply selectively instead of spamming. I find roles with a Python job sweeper:
 
 1.  LinkedIn and MyCareersFuture are crawled for relevant job titles. Scanning the last 14 days yields around 900 new postings.
-2.  Postings by companies whose nature of business is incompatible with what I'm looking for are filtered out. This cuts the number by half.
+2.  Postings by agencies, consultancies and outsourcing shops are filtered out. This cuts the number by half.
 3.  Claude reads every remaining posting. About 10 remain on the shortlist after curating the postings by:
-    - Technologies used
-    - Role and responsibilities
-    - The company's product or services
-    - Work arrangement
+    - Technologies used (web development with Node.js backend)
+    - Role and responsibilities (in-house engineering)
+    - The company's product or services (own product with outside users)
+    - Work arrangement (hybrid or remote)
 
 Finally, I thoroughly consider my fit for the companies on the shortlist before manually applying.
+
+I don't overfit my resume to the job description to bypass ATS filters. Every resume I send is the exact version posted on this page.
 
 ## How do you handle project deadlines?
 
@@ -108,6 +110,8 @@ Generally I prefer frontend work but am fine with both.
 ## Why do you want to leave?
 
 I'm happy with my current situation but am always open to new opportunities.
+
+That isn't a polite dodge. I'd rate my current company an 8 or 9 out of 10. I've looked around and few places match it.
 
 ## When are you available for a call?
 
