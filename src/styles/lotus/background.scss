@@ -15,6 +15,7 @@
   .blue {
     opacity: 0.01;
     transition: 0.3s opacity;
+    will-change: opacity;
   }
 }
 
