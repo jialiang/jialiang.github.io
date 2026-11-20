@@ -54,7 +54,7 @@
   <svg width="100%" height="100%" viewBox="0 0 1706.67 960" preserveAspectRatio="xMinYMin slice">
     <image xlink:href="{{room}}" width="1706.67" height="960" />
     <image xlink:href="{{glow}}" width="1706.67" height="960" />
-    <image xlink:href="{{paper}}" width="1706.67" height="960" opacity="0.5" />
+    <image xlink:href="{{paper}}" width="1706.67" height="960" opacity="0.25" />
   </svg>
 
   <rect width="100%" height="100%" fill="url(#dust)" style="mix-blend-mode: exclusion" />
