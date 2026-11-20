@@ -59,8 +59,11 @@ function initFlowerSpin() {
 
 function initLotusSections() {
   var lotus = document.getElementById("lotus");
+  var plain = lotus.querySelector("img.plain");
   var projects = document.getElementById("projects");
   var faq = document.getElementById("me");
+
+  var isInit = false;
   var isFrameRequested = false;
 
   function updateSection() {
@@ -83,12 +86,19 @@ function initLotusSections() {
     requestAnimationFrame(updateSection);
   }
 
-  // The page starts plain, color fades in after pause.
-  setTimeout(function () {
+  function init() {
+    if (isInit) return;
+
+    isInit = true;
     addEventListener("scroll", requestUpdate);
     addEventListener("resize", requestUpdate);
     requestUpdate();
-  }, 250);
+  }
+
+  if (plain.complete) return init();
+
+  plain.onload = init;
+  plain.onerror = init;
 }
 
 function initThemeToggle() {
@@ -182,7 +192,7 @@ function initLoadImages() {
         return;
       }
 
-      if (img.naturalWidth !== 0) {
+      if (img.complete) {
         img.removeAttribute("loading");
         loadImage();
 
