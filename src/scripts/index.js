@@ -60,8 +60,11 @@ function initFlowerSpin() {
 function initLotusSections() {
   var lotus = document.getElementById("lotus");
   var plain = lotus.querySelector("img.plain");
+
   var projects = document.getElementById("projects");
   var faq = document.getElementById("me");
+
+  var deferrableStyles = document.getElementById("deferrable-styles");
 
   var isInit = false;
   var isFrameRequested = false;
@@ -73,8 +76,14 @@ function initLotusSections() {
     var line = innerHeight / 2;
     var section = "red";
 
-    if (projects.getBoundingClientRect().top <= line) section = "blue";
-    if (faq.getBoundingClientRect().top <= line) section = "plain";
+    // getBoundingClientRect().top returns 0 if element is hidden
+    // so need to check height first
+    var projectsBox = projects.getBoundingClientRect();
+    if (projectsBox.height === 0) return;
+    if (projectsBox.top <= line) section = "blue";
+
+    var faqBox = faq.getBoundingClientRect();
+    if (faqBox.top <= line) section = "plain";
 
     if (lotus.className !== section) lotus.className = section;
   }
@@ -90,8 +99,12 @@ function initLotusSections() {
     if (isInit) return;
 
     isInit = true;
+
     addEventListener("scroll", requestUpdate);
     addEventListener("resize", requestUpdate);
+
+    deferrableStyles.addEventListener("load", requestUpdate);
+
     requestUpdate();
   }
 

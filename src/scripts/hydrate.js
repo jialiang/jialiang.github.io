@@ -19,6 +19,7 @@ function afterFcp() {
   document.body.appendChild(mainScript);
 
   var deferrableStyles = document.createElement("link");
+  deferrableStyles.id = "deferrable-styles";
   deferrableStyles.rel = "stylesheet";
   deferrableStyles.href = "./index.css";
 
