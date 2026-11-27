@@ -11,14 +11,16 @@
     height: 100%;
   }
 
+  .plain,
   .red,
   .blue {
     opacity: 0.01;
-    transition: 0.3s opacity;
+    transition: 0.75s opacity;
     will-change: opacity;
   }
 }
 
+#lotus.plain .background .plain,
 #lotus.red .background .red,
 #lotus.blue .background .blue {
   opacity: 1;
