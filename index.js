@@ -59,14 +59,13 @@ function initFlowerSpin() {
 
 function initLotusSections() {
   var lotus = document.getElementById("lotus");
-  var plain = lotus.querySelector("img.plain");
+  var backgrounds = document.querySelectorAll("#lotus img");
 
   var projects = document.getElementById("projects");
   var faq = document.getElementById("me");
 
   var deferrableStyles = document.getElementById("deferrable-styles");
 
-  var isInit = false;
   var isFrameRequested = false;
 
   function updateSection() {
@@ -96,10 +95,6 @@ function initLotusSections() {
   }
 
   function init() {
-    if (isInit) return;
-
-    isInit = true;
-
     addEventListener("scroll", requestUpdate);
     addEventListener("resize", requestUpdate);
 
@@ -108,10 +103,28 @@ function initLotusSections() {
     requestUpdate();
   }
 
-  if (plain.complete) return init();
+  var completedBackgrounds = 0;
 
-  plain.onload = init;
-  plain.onerror = init;
+  function signalCompleted() {
+    completedBackgrounds += 1;
+
+    // requestUpdate has RAF too
+    // first RAF prepares image drawn at 0.01 opacity
+    // second RAF begins animation
+    if (completedBackgrounds === backgrounds.length) requestAnimationFrame(init);
+  }
+
+  for (var i = 0; i < backgrounds.length; i++) {
+    var background = backgrounds[i];
+
+    if (background.complete) {
+      signalCompleted();
+      continue;
+    }
+
+    background.onload = signalCompleted;
+    background.onerror = signalCompleted;
+  }
 }
 
 function initThemeToggle() {
